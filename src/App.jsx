@@ -1,6 +1,6 @@
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import LoginPage from "./pages/Login";
+import SignInPage from "./pages/SignIn";
 
 const Layout = ({ children }) => (<div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
   <Header />
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <Layout className="App">
-      <LoginPage />
+      <SignInPage />
     </Layout>
   );
 }
