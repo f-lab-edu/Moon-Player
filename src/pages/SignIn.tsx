@@ -5,7 +5,7 @@ const SignInPage = () => {
   const [text, setText] = useState('button');
   return (<main>
     <h1>Login Page</h1>
-    <Button><input type='text' value={text} onChange={({ target: { value }}) => setText(value)} />{text}</Button>
+    
   </main>)
 }
 

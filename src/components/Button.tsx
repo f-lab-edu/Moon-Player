@@ -1,4 +1,5 @@
-const Button = ({ children }) => {
+
+const Button = ({ children}:any) => {
   return <button>{children}</button>
 
 }
