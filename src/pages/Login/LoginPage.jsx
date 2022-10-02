@@ -1,16 +1,25 @@
-import { useState } from "react";
-import Button from "../../components/Button";
+import styled from 'styled-components'
+import LoginHeader from "./component/LoginHeader";
+import LoginContent from "./component/LoginContent";
+
+
+
+const Container = styled.div`
+  display:flex;
+  height:100vh;
+  flex-direction: column;
+  align-items: center;
+`
 
 
 
 const LoginPage = () => {
-  const [text, setText] = useState('button');
   return (
-    <LoginHeader></LoginHeader>
-    <main>
-    <h1>Login Page</h1>
-    <Button><input type='text' value={text} onChange={({ target: { value }}) => setText(value)} />{text}</Button>
-  </main>)
+    <Container>     
+    <LoginHeader />
+    <LoginContent/>
+    </Container>
+    )
 }
 
 export default LoginPage;
