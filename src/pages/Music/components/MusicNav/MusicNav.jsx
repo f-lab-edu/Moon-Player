@@ -1,8 +1,24 @@
+import styled from "styled-components"
+import MusicNavList from "./MusicNavList"
+
+const Container=styled.nav`
+    display: flex;
+    flex-direction: column;
+`
+const Title=styled.h1`
+ font-size :25px;
+ color: #6633cc;
+ font-weight: 900;
+ margin-left: 15px;
+`
+
+
 const MusicNav = () => {
     return (
-        <nav>
-            nav
-        </nav>
+        <Container>
+            <Title>인기차트</Title>
+            <MusicNavList/>
+        </Container>
     )   
 }
 
