@@ -31,7 +31,9 @@ const LoginBox = () => {
         <Button>
           <Link to="/music">로그인</Link>
         </Button>
-        <Button>회원가입</Button>
+        <Button>
+          <Link to="/music">회원가입</Link>
+        </Button>
       </Box>
     </Container>
   );

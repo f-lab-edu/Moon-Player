@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Title from "components/items/Title";
 
 const Container = styled.header`
   display: flex;
@@ -7,11 +8,7 @@ const Container = styled.header`
   align-items: center;
   margin: 10px 0px;
 `;
-const Title = styled.h3`
-  font-size: 35px;
-  color: #6633cc;
-  text-shadow: 2px 2px 2px gray;
-`;
+
 
 const LoginHeader = () => {
   return (

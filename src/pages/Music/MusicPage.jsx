@@ -1,5 +1,26 @@
+import styled from "styled-components";
+import MusicHeader from "./components/MusicHeader/MusicHeader";
+import MusicNav from "./components/MusicNav/MusicNav";
+import MusicMain from "./components/MusicMain/MusicMain";
+import MusicFooter from "./components/MusicFooter/MusicFooter";
+
+
+const Container=styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: black;
+
+
+`
+
 const MusicPage = () => {
-  return <div>Music Page</div>;
+  return <Container>
+    <MusicHeader />
+    <MusicNav />
+    <MusicMain />
+    <MusicFooter/>  
+  </Container>
 };
 
 export default MusicPage;
