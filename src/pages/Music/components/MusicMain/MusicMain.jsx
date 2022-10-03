@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import MusicList from "./MusicList/MusicList"
 
 const Container=styled.main`
     display: flex;
@@ -13,11 +14,9 @@ const Box=styled.div`
 const MusicMain = () => {
     return (
         <Container>
+            <MusicList/>
             <Box>
-                123
-            </Box>
-            <Box>
-                123
+                플레이어부분
             </Box>
 
         </Container>

@@ -5,8 +5,8 @@ import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
 const Container = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    margin-left: 30px;
 `
 const Card = styled.div`
 display: flex;
@@ -26,12 +26,13 @@ font-weight :900;
 const MusicNavList = () => {
     return (
         <Container>
+            
             <Card>해외 랩/힙합</Card>
             <Card>해외 랩/힙합</Card>
             <Card>해외 랩/힙합</Card>
             <Card>해외 랩/힙합</Card>
             <Card>해외 랩/힙합</Card>
-            <Card>해외 랩/힙합</Card>
+
             <Card>해외 랩/힙합</Card>
 
 

@@ -5,8 +5,9 @@ const Container=styled.nav`
     display: flex;
     flex-direction: column;
 `
-const Title=styled.h1`
- font-size :25px;
+const Title = styled.h1`
+text-align: center;
+ font-size :30px;
  color: #6633cc;
  font-weight: 900;
  margin-left: 15px;

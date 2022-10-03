@@ -6,7 +6,7 @@ const Container=styled.header`
      display: flex;
      justify-content: space-between;
      align-items: center;
-     margin: 0px 10px;
+     margin: 0px 30px;
 `
 const MusicHeader = () => {
     return (
