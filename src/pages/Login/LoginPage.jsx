@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import LoginHeader from "./component/LoginHeader";
-import LoginContent from "./component/LoginContent";
+import LoginHeader from "./components/LoginHeader";
+import LoginMain from "./components/LoginMain";
 
 
 
@@ -17,7 +17,7 @@ const LoginPage = () => {
   return (
     <Container>     
     <LoginHeader />
-    <LoginContent/>
+    <LoginMain/>
     </Container>
     )
 }
