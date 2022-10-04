@@ -5,9 +5,11 @@ import MusicPlayer from "./MusicPlayer/MusicPlayer"
 const Container=styled.main`
     display: flex;
     flex-direction:row;
+    justify-content: center;
     align-items: center;
     padding: 10px;
     margin-top: 40px;
+
 
 `
 

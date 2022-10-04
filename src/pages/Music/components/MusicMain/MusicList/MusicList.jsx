@@ -5,29 +5,28 @@ import MusicListItem from "./MusicListItem"
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    height: 40vh;
     overflow: scroll;
+    height:50vh;
     &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.4);
+          display: none;
     }
-    &::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 6px;
-    }
-
+`
+const Title=styled.h3`
+    color:white;
 `
 const MusicList = () => {
     return (
         <Container>
+            <Title>해외 랩/힙합</Title>
             <MusicListItem/>
             <MusicListItem/>
             <MusicListItem/>
             <MusicListItem />
             <MusicListItem/>
             <MusicListItem/>
+            <MusicListItem/>
+            <MusicListItem />
+            
             <MusicListItem/>
             <MusicListItem/>
         </Container>
