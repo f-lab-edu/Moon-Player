@@ -10,6 +10,7 @@ const Container=styled.div`
   flex-direction: column;
   height: 100vh;
   padding: 0px 15px;
+  background-color: black;
 
 `
 

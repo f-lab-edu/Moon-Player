@@ -18,7 +18,7 @@ const ItemBox=styled.ul`
 `
 const Item=styled.li`
     margin-top: 5px;
-    color: #ff9eae;
+    color: whitesmoke;
     font-weight: 900;
 `
 

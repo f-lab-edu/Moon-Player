@@ -7,7 +7,7 @@ const Container=styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid rgba(0,0,0,0.3);
+    border: 1px solid white;
     list-style: none;
     width: 800px;
     height: 50px;
@@ -26,6 +26,7 @@ const Box=styled.ul`
     padding-left: 0px;
     color: #6633cc;
     font-weight: 900;
+    margin-right: 10px;
 `
 const Item = styled.li`
 margin-left: 5px;
