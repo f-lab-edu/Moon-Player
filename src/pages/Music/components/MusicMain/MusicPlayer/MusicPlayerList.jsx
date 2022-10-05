@@ -6,7 +6,7 @@ import MusicPlayListHeader from "./MusicPlayListHeader";
 const Container=styled.div`
     display: flex;
     flex-direction: row;
-    width: 500px;
+    width: 400px;
     padding-left: 0px;
     color: #6633cc;
     flex-wrap: wrap;

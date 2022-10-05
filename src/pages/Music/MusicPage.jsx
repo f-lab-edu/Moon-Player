@@ -7,8 +7,9 @@ import MusicMain from "./components/MusicMain/MusicMain";
 const Container=styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
+
   padding: 0px 15px;
+
   background-color: black;
 
 `

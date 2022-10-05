@@ -10,6 +10,7 @@ const Container = styled.div`
     &::-webkit-scrollbar {
           display: none;
     }
+
 `
 const Title=styled.h3`
     color:white;
@@ -26,9 +27,6 @@ const MusicList = () => {
             <MusicListItem/>
             <MusicListItem/>
             <MusicListItem />
-            
-            <MusicListItem/>
-            <MusicListItem/>
         </Container>
     )
 }
