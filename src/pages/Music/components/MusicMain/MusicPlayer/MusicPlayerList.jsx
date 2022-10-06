@@ -1,9 +1,9 @@
 import styled from "styled-components"
-import MusicPlayListItem from './MusicPlayListItem';
+import MusicPlayListItem from "./MusicPlayListItem";
 import MusicPlayListHeader from "./MusicPlayListHeader";
 
 
-const Container=styled.div`
+const Container = styled.div`
     display: flex;
     flex-direction: row;
     width: 400px;
@@ -20,23 +20,23 @@ const Container=styled.div`
 
 
 const MusicPlayerList = () => {
-    return (
-        <Container>
-            <MusicPlayListHeader/>
-            <MusicPlayListItem />
-            <MusicPlayListItem />
-            <MusicPlayListItem />
-            <MusicPlayListItem />
+  return (
+    <Container>
+      <MusicPlayListHeader />
+      <MusicPlayListItem />
+      <MusicPlayListItem />
+      <MusicPlayListItem />
+      <MusicPlayListItem />
 
-            <MusicPlayListItem />
-            <MusicPlayListItem />
+      <MusicPlayListItem />
+      <MusicPlayListItem />
 
-            <MusicPlayListItem />
+      <MusicPlayListItem />
 
-            <MusicPlayListItem />
+      <MusicPlayListItem />
 
 
-        </Container>
-    )
+    </Container>
+  )
 }
 export default MusicPlayerList

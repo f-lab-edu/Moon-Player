@@ -17,7 +17,7 @@ height: 55px;
 }
 padding-left: 10px;
 `
-const PlayerInfo=styled.h3`
+const PlayerInfo = styled.h3`
     font-size: 20px;
     font-weight: 900;
     
@@ -25,15 +25,15 @@ const PlayerInfo=styled.h3`
 
 
 const MusicPlayListHeader = () => {
-    return (
-         <>
-            <Container>    
-                <PlayerInfo>셔플</PlayerInfo>
-                <FontAwesomeIcon icon={faShuffle} size={"2x"} color={"#6633cc"} />
-                    
-            </Container>
-        </> 
-    )
+  return (
+    <>
+      <Container>
+        <PlayerInfo>셔플</PlayerInfo>
+        <FontAwesomeIcon icon={faShuffle} size={"2x"} color={"#6633cc"} />
+
+      </Container>
+    </>
+  )
 }
 
 export default MusicPlayListHeader

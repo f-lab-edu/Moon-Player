@@ -1,8 +1,8 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faCirclePlay,faCircleCheck} from "@fortawesome/free-solid-svg-icons";
+import { faCirclePlay, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
-const Container=styled.div`
+const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -18,7 +18,7 @@ const Container=styled.div`
 
 `
 
-const Box=styled.ul`
+const Box = styled.ul`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,21 +44,21 @@ const Image = styled.div`
 `
 
 const MusicListItem = () => {
-    return (
-          <Container>
-            <Box>
-                <Item>1</Item>
-                <Image/>
-                <Item>아이유</Item>
-            </Box>
-            <Box>
-            <Item>좋은날</Item>
-            </Box>
-            <Box>
-                <Item><FontAwesomeIcon icon={faCirclePlay} size={"2x"} /></Item>
-                <Item><FontAwesomeIcon icon={faCircleCheck} size={"2x"}/></Item>
-            </Box>
-            </Container>
-    )
+  return (
+    <Container>
+      <Box>
+        <Item>1</Item>
+        <Image />
+        <Item>아이유</Item>
+      </Box>
+      <Box>
+        <Item>좋은날</Item>
+      </Box>
+      <Box>
+        <Item><FontAwesomeIcon icon={faCirclePlay} size={"2x"} /></Item>
+        <Item><FontAwesomeIcon icon={faCircleCheck} size={"2x"} /></Item>
+      </Box>
+    </Container>
+  )
 }
 export default MusicListItem

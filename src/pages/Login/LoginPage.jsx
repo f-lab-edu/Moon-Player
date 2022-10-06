@@ -1,25 +1,23 @@
-import styled from 'styled-components'
-import LoginHeader from "./components/LoginHeader";
-import LoginMain from "./components/LoginMain";
+import styled from "styled-components"
+import Layout from "../../components/items/Layout";
+import LoginPageHeader from "./components/LoginPageHeader";
+import LoginMain from "./components/LoginPageMain";
 
 
 
-const Container = styled.div`
-  display:flex;
-  height:100vh;
-  flex-direction: column;
+const LoginPageLayout = styled(Layout)`
   align-items: center;
+  height:100vh;
 `
 
 
 
 const LoginPage = () => {
-  return (
-    <Container>     
-    <LoginHeader />
-    <LoginMain/>
-    </Container>
-    )
+  return <LoginPageLayout>
+    <LoginPageHeader />
+    <LoginMain />
+  </LoginPageLayout>
+
 }
 
 export default LoginPage;

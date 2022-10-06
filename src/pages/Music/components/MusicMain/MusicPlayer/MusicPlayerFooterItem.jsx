@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlayCircle,faForwardStep,faBackwardStep} from "@fortawesome/free-solid-svg-icons";
+import { faPlayCircle, faForwardStep, faBackwardStep } from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled.div`
 display: flex;
@@ -10,20 +10,20 @@ width: inherit;
 
 
 `
-const Wrapper=styled.div`
+const Wrapper = styled.div`
 `
-const WrpperIcon=styled.div`
+const WrpperIcon = styled.div`
     >svg{
         margin: 3px;
     }
 `
-const MusicInfoBox=styled.div`
+const MusicInfoBox = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
    
 `
-const MusicInfo=styled.h3`
+const MusicInfo = styled.h3`
     font-size: 15px;
     margin: 1px;
     font-weight: 900;
@@ -40,27 +40,27 @@ const Image = styled.div`
 `
 
 const MusicPlayerFooterItem = () => {
-    return (
-        <>
-            <Container>    
-                <MusicInfoBox>
-                    <Image />
-                    <Wrapper>
-                    <MusicInfo>노래 : 좋은날</MusicInfo>
-                    <MusicInfo>가수 : 아이유 </MusicInfo>
-                    </Wrapper>
-                </MusicInfoBox>
-                <WrpperIcon>
-                
-                    <FontAwesomeIcon icon={faBackwardStep} size={"2x"} color={"#6633cc"} />
-                <FontAwesomeIcon icon={faPlayCircle} size={"2x"} color={"#6633cc"} />
-                    <FontAwesomeIcon icon={faForwardStep} size={"2x"} color={"#6633cc"} />
-                    
-                </WrpperIcon>
-            </Container>
-        </> 
-        
-        )       
+  return (
+    <>
+      <Container>
+        <MusicInfoBox>
+          <Image />
+          <Wrapper>
+            <MusicInfo>노래 : 좋은날</MusicInfo>
+            <MusicInfo>가수 : 아이유 </MusicInfo>
+          </Wrapper>
+        </MusicInfoBox>
+        <WrpperIcon>
+
+          <FontAwesomeIcon icon={faBackwardStep} size={"2x"} color={"#6633cc"} />
+          <FontAwesomeIcon icon={faPlayCircle} size={"2x"} color={"#6633cc"} />
+          <FontAwesomeIcon icon={faForwardStep} size={"2x"} color={"#6633cc"} />
+
+        </WrpperIcon>
+      </Container>
+    </>
+
+  )
 }
-            
+
 export default MusicPlayerFooterItem

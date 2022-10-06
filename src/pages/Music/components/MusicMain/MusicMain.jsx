@@ -1,8 +1,8 @@
 import styled from "styled-components"
 import MusicList from "./MusicList/MusicList"
-import MusicPlayer from "./MusicPlayer/MusicPlayer"
+import MusicPlayer from "./MusicPlayer/MusicPlayerMain"
 
-const Container=styled.main`
+const Container = styled.main`
     display: flex;
     flex-direction:row;
     justify-content: center;
@@ -15,12 +15,12 @@ const Container=styled.main`
 
 
 const MusicMain = () => {
-    return (
-        <Container>
-            <MusicList/>
-            <MusicPlayer/>
+  return (
+    <Container>
+      <MusicList />
+      <MusicPlayer />
 
-        </Container>
-    )
+    </Container>
+  )
 }
 export default MusicMain

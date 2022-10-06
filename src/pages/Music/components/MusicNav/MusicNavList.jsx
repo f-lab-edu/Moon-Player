@@ -24,20 +24,17 @@ font-weight :900;
 `
 
 const MusicNavList = () => {
-    return (
-        <Container>
-            
-            <Card>해외 랩/힙합</Card>
-            <Card>해외 랩/힙합</Card>
-            <Card>해외 랩/힙합</Card>
-            <Card>해외 랩/힙합</Card>
-            <Card>해외 랩/힙합</Card>
+  return (
+    <Container>
 
-            <Card>해외 랩/힙합</Card>
-
-
-            <FontAwesomeIcon icon={faCircleArrowRight} size={"2x"} color={"#6633cc"}/> 
-        </Container>
-    )
+      <Card>해외 랩/힙합</Card>
+      <Card>해외 랩/힙합</Card>
+      <Card>해외 랩/힙합</Card>
+      <Card>해외 랩/힙합</Card>
+      <Card>해외 랩/힙합</Card>
+      <Card>해외 랩/힙합</Card>
+      <FontAwesomeIcon icon={faCircleArrowRight} size={"2x"} color={"#6633cc"} />
+    </Container>
+  )
 }
 export default MusicNavList

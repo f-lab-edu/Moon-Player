@@ -12,23 +12,23 @@ const Container = styled.div`
     }
 
 `
-const Title=styled.h3`
+const Title = styled.h3`
     color:white;
 `
 const MusicList = () => {
-    return (
-        <Container>
-            <Title>해외 랩/힙합</Title>
-            <MusicListItem/>
-            <MusicListItem/>
-            <MusicListItem/>
-            <MusicListItem />
-            <MusicListItem/>
-            <MusicListItem/>
-            <MusicListItem/>
-            <MusicListItem />
-        </Container>
-    )
+  return (
+    <Container>
+      <Title>해외 랩/힙합</Title>
+      <MusicListItem />
+      <MusicListItem />
+      <MusicListItem />
+      <MusicListItem />
+      <MusicListItem />
+      <MusicListItem />
+      <MusicListItem />
+      <MusicListItem />
+    </Container>
+  )
 }
 
 export default MusicList

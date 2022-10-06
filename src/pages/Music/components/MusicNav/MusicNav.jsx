@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import MusicNavList from "./MusicNavList"
 
-const Container=styled.nav`
+const Container = styled.nav`
     display: flex;
     flex-direction: column;
 `
@@ -15,12 +15,12 @@ text-align: center;
 
 
 const MusicNav = () => {
-    return (
-        <Container>
-            <Title>인기차트</Title>
-            <MusicNavList/>
-        </Container>
-    )   
+  return (
+    <Container>
+      <Title>인기차트</Title>
+      <MusicNavList />
+    </Container>
+  )
 }
 
 export default MusicNav

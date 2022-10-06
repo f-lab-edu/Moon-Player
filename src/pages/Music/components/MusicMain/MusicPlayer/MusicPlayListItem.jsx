@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faClose } from "@fortawesome/free-solid-svg-icons";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled.div`
 display: flex;
@@ -14,13 +14,13 @@ border-bottom: 1px solid white;
     margin-right: 10px;
 }
 `
-const MusicInfoBox=styled.div`
+const MusicInfoBox = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
    
 `
-const MusicInfo=styled.h3`
+const MusicInfo = styled.h3`
     font-size: 15px;
     margin: 1px;
     font-weight: 900;
@@ -37,22 +37,22 @@ const Image = styled.div`
 `
 
 const MusicPlayListItem = () => {
-    return (
-        <>
-            <Container>    
-                <MusicInfoBox>
-                    <Image />
-                    <div>
-                    <MusicInfo>노래 : 좋은날</MusicInfo>
-                    <MusicInfo>가수 : 아이유 </MusicInfo>
-                    </div>
-                </MusicInfoBox>
-                <FontAwesomeIcon icon={faClose} size={"2x"} color={"#6633cc"} />
-                    
-            </Container>
-        </> 
-        
-        )       
+  return (
+    <>
+      <Container>
+        <MusicInfoBox>
+          <Image />
+          <div>
+            <MusicInfo>노래 : 좋은날</MusicInfo>
+            <MusicInfo>가수 : 아이유 </MusicInfo>
+          </div>
+        </MusicInfoBox>
+        <FontAwesomeIcon icon={faClose} size={"2x"} color={"#6633cc"} />
+
+      </Container>
+    </>
+
+  )
 }
-            
+
 export default MusicPlayListItem
