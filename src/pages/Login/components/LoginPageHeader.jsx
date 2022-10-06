@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Title from "components/items/Title";
 
-const LoginHeaderLayout = styled.header`
+const LoginPageHeaderLayout = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center; 
@@ -13,9 +13,9 @@ const LoginHeaderLayout = styled.header`
 
 const LoginPageHeader = () => {
   return (
-    <LoginHeaderLayout>
+    <LoginPageHeaderLayout>
       <Title>Moon Player</Title>
-    </LoginHeaderLayout>
+    </LoginPageHeaderLayout>
   );
 };
 

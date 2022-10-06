@@ -1,39 +1,39 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShuffle } from "@fortawesome/free-solid-svg-icons";
+import Title from "components/items/Title";
 
 
-const Container = styled.div`
+const MusicPlayerHeaderLayout = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
 width: inherit;
-border-bottom: 1px solid white;
-
+border-bottom: 1px solid rgba(0,0,0,0.3);
 height: 55px;
 
 >:last-child{
     margin-right: 10px;
 }
-padding-left: 10px;
 `
-const PlayerInfo = styled.h3`
+const MusicPlayerInfo = styled(Title)`
     font-size: 20px;
     font-weight: 900;
+    color: black;
     
 `
 
 
-const MusicPlayListHeader = () => {
+const MusicPlayerHeader = () => {
   return (
     <>
-      <Container>
-        <PlayerInfo>셔플</PlayerInfo>
+      <MusicPlayerHeaderLayout>
+        <MusicPlayerInfo>셔플</MusicPlayerInfo>
         <FontAwesomeIcon icon={faShuffle} size={"2x"} color={"#6633cc"} />
 
-      </Container>
+      </MusicPlayerHeaderLayout>
     </>
   )
 }
 
-export default MusicPlayListHeader
+export default MusicPlayerHeader

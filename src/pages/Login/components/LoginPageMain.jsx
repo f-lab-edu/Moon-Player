@@ -3,7 +3,7 @@ import Avatar from "components/items/Avatar";
 import LoginPageMainSignBox from "./items/LoginPageMainSignBox";
 import LoginPagMainInputBox from "./items/LoginPageMainInputBox";
 
-const LoginMainLayout = styled.main`
+const LoginPageMainLayout = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,14 +17,14 @@ const LoginMainLayout = styled.main`
   }
 `;
 
-const LoginMain = () => {
+const LoginPageMain = () => {
   return (
-    <LoginMainLayout>
+    <LoginPageMainLayout>
       <Avatar />
       <LoginPagMainInputBox />
       <LoginPageMainSignBox />
-    </LoginMainLayout>
+    </LoginPageMainLayout>
   );
 };
 
-export default LoginMain;
+export default LoginPageMain;

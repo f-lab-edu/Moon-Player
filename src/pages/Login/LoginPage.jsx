@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Layout from "../../components/items/Layout";
+import LoginPageMain from "./components/LoginPageMain";
 import LoginPageHeader from "./components/LoginPageHeader";
-import LoginMain from "./components/LoginPageMain";
 
 
 
@@ -15,7 +15,7 @@ const LoginPageLayout = styled(Layout)`
 const LoginPage = () => {
   return <LoginPageLayout>
     <LoginPageHeader />
-    <LoginMain />
+    <LoginPageMain />
   </LoginPageLayout>
 
 }

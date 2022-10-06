@@ -1,25 +1,21 @@
 import styled from "styled-components";
-import MusicHeader from "./components/MusicHeader/MusicHeader";
-import MusicNav from "./components/MusicNav/MusicNav";
-import MusicMain from "./components/MusicMain/MusicMain";
+import MusicPageHeader from "./components/MusicHeader/MusicPageHeader";
+import MusicPageNav from "./components/MusicNav/MusicPageNav";
+import MusicPageMain from "./components/MusicMain/MusicPageMain";
+import Layout from "components/items/Layout";
 
-
-const Container=styled.div`
-  display: flex;
-  flex-direction: column;
-
+const MusicPageLayout = styled(Layout)`
   padding: 0px 15px;
-
-  background-color: black;
+  height: 100vh;
 
 `
 
 const MusicPage = () => {
-  return <Container>
-    <MusicHeader />
-    <MusicNav />
-    <MusicMain />
-  </Container>
+  return <MusicPageLayout>
+    <MusicPageHeader />
+    <MusicPageNav />
+    <MusicPageMain />
+  </MusicPageLayout>
 };
 
 export default MusicPage;

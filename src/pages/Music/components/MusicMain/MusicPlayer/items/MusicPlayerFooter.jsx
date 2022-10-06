@@ -1,18 +1,16 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle, faForwardStep, faBackwardStep } from "@fortawesome/free-solid-svg-icons";
+import Image from "components/items/Image";
+import Title from "components/items/Title";
 
-const Container = styled.div`
+const MusicPlayerFooterLayout = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
 width: inherit;
-
-
 `
-const Wrapper = styled.div`
-`
-const WrpperIcon = styled.div`
+const IconBox = styled.div`
     >svg{
         margin: 3px;
     }
@@ -23,44 +21,39 @@ const MusicInfoBox = styled.div`
     align-items: center;
    
 `
-const MusicInfo = styled.h3`
+const MusicTitle = styled(Title)`
     font-size: 15px;
+    color:black;
     margin: 1px;
     font-weight: 900;
 `
-const Image = styled.div`
+const MusicPlayerImage = styled(Image)`
     margin: 0px 10px 1px 0px;
     width: 60px;
     height: 70px;
-    background-image: url("http://image.cine21.com/resize/cine21/article/2022/0603/15_30_27__6299aa83cb210[W578-].jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
 `
 
-const MusicPlayerFooterItem = () => {
+
+const MusicPlayerFooter = () => {
   return (
     <>
-      <Container>
+      <MusicPlayerFooterLayout>
         <MusicInfoBox>
-          <Image />
-          <Wrapper>
-            <MusicInfo>노래 : 좋은날</MusicInfo>
-            <MusicInfo>가수 : 아이유 </MusicInfo>
-          </Wrapper>
+          <MusicPlayerImage />
+          <div>
+            <MusicTitle>노래 : 좋은날</MusicTitle>
+            <MusicTitle>가수 : 아이유 </MusicTitle>
+          </div>
         </MusicInfoBox>
-        <WrpperIcon>
-
+        <IconBox>
           <FontAwesomeIcon icon={faBackwardStep} size={"2x"} color={"#6633cc"} />
           <FontAwesomeIcon icon={faPlayCircle} size={"2x"} color={"#6633cc"} />
           <FontAwesomeIcon icon={faForwardStep} size={"2x"} color={"#6633cc"} />
-
-        </WrpperIcon>
-      </Container>
+        </IconBox>
+      </MusicPlayerFooterLayout>
     </>
 
   )
 }
 
-export default MusicPlayerFooterItem
+export default MusicPlayerFooter

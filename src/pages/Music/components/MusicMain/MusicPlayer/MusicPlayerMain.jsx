@@ -1,17 +1,20 @@
 import styled from "styled-components"
-import MusicPlayerList from "./MusicPlayerList"
-import MusicPlayerListFooter from "./MusicPlayerFooter";
-const Container = styled.div`
-margin-left: 15px;
+import MusicPlayerMainContent from "./MusicPlayerMainContent"
+import MusicPlayerMainFooter from "./MusicPlayerMainFooter";
+
+
+
+const MusicPlayerLayout = styled.div`
+margin-left: 20px;
 
 `
 
 const MusicPlayer = () => {
   return (
-    <Container>
-      <MusicPlayerList />
-      <MusicPlayerListFooter />
-    </Container>
+    <MusicPlayerLayout>
+      <MusicPlayerMainContent />
+      <MusicPlayerMainFooter />
+    </MusicPlayerLayout>
 
   )
 }
