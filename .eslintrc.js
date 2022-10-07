@@ -19,7 +19,8 @@ module.exports = {
   "rules": {
     "indent": ["error", 2],
     "quotes": ["error", "double"],
-    "no-unused-vars": "error",
-    "react/react-in-jsx-scope": "off"
+    "no-unused-vars": "warn",
+    "react/react-in-jsx-scope": "off",
+
   }
 }

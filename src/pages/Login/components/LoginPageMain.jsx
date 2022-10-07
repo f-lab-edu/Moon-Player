@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Avatar from "components/items/Avatar";
 import LoginPageMainSignBox from "./items/LoginPageMainSignBox";
 import LoginPagMainInputBox from "./items/LoginPageMainInputBox";
+import { useEffect, useState } from "react";
 
 const LoginPageMainLayout = styled.main`
   display: flex;
@@ -17,14 +18,34 @@ const LoginPageMainLayout = styled.main`
   }
 `;
 
+
+
 const LoginPageMain = () => {
+  const [SignData, setSignData] = useState()
+  const [isSign, setSign] = useState(true)
+
+
+
+  useEffect(() => {
+    if (SignData) {
+      setSign(false)
+    }
+    else {
+      setSign(true)
+    }
+  }, [SignData])
+
+
+
   return (
     <LoginPageMainLayout>
       <Avatar />
-      <LoginPagMainInputBox />
-      <LoginPageMainSignBox />
+      <LoginPagMainInputBox setSignData={setSignData} />
+      <LoginPageMainSignBox isSign={isSign} SignData={SignData} />
     </LoginPageMainLayout>
   );
 };
+
+
 
 export default LoginPageMain;
