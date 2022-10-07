@@ -10,8 +10,7 @@ const MusicPageMainLayout = styled.main`
     justify-content: center;
     align-items: center;
     padding: 15px;
-    margin: auto;
-    border: 1px solid rgba(0,0,0,0.3);
+    margin-top:50px;
 `
 
 

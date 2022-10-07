@@ -12,8 +12,7 @@ const MusicNavLayout = styled(Layout)`
 `
 
 const MusicNavCard = styled(Card)`
-background-color: white;
-border: 1px solid rgba(0,0,0,0.3);
+box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
 color: #6633cc;
 font-weight :900;
 `

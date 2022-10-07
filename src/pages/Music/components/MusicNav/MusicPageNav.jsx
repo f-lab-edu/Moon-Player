@@ -8,15 +8,19 @@ const MusicNavLayout = styled.nav`
     
 `
 const MusicNavTitle = styled(Title)`
+
+  text-shadow: 1px 1px 1px gray;
+  font-weight: 900;
  text-align: center;
- font-size :25px;
+ font-size :30px;
+
 `
 
 
 const MusicPageNav = () => {
   return (
     <MusicNavLayout>
-      <MusicNavTitle>인기차트</MusicNavTitle>
+      <MusicNavTitle>인기 차트</MusicNavTitle>
       <MusicPageNavItems />
     </MusicNavLayout>
   )

@@ -16,7 +16,9 @@ const MusicHeaderItemBox = styled(ItemLayout)`
 `
 const MusicHeaderItem = styled.li`
     margin-top: 5px;
-    color: purple;
+    color: white;
+
+    text-shadow: 1px 1px 1px gray;
     font-weight: 900;
 `
 

@@ -23,7 +23,7 @@ const MusicInfoBox = styled.div`
 `
 const MusicTitle = styled(Title)`
     font-size: 15px;
-    color:black;
+    color:white;
     margin: 1px;
     font-weight: 900;
 `

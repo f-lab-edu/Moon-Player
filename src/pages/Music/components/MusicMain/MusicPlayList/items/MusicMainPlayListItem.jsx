@@ -9,7 +9,7 @@ const MusicListItemLayout = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.1);
     width: 700px;
     height: 50px;
     border-left:none;

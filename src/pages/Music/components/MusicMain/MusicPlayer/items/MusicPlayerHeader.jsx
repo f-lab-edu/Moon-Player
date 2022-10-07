@@ -9,7 +9,6 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 width: inherit;
-border-bottom: 1px solid rgba(0,0,0,0.3);
 height: 55px;
 
 >:last-child{
@@ -19,7 +18,7 @@ height: 55px;
 const MusicPlayerInfo = styled(Title)`
     font-size: 20px;
     font-weight: 900;
-    color: black;
+    color: white;
     
 `
 
