@@ -1,18 +1,14 @@
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
-import LoginPage from "pages/LoginPage";
-
-
-const Layout = ({ children }) => (<div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
-  <Header />
-  <main style={{ flex: 1 }}>{children}</main>
-  <Footer />
-</div>);
-
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import LoginPage from "pages/Login/LoginPage";
+import MusicPage from "pages/Music/MusicPage";
 
 function App() {
   return (
-      <LoginPage />
+    <Routes>
+      <Route path="/" element={<LoginPage />}></Route>;
+      <Route path="/music" element={<MusicPage />}></Route>;
+    </Routes>
   );
 }
 
