@@ -25,7 +25,6 @@ const LoginPageMain = () => {
   const [isSign, setSign] = useState(true)
 
 
-
   useEffect(() => {
     if (SignData) {
       setSign(false)

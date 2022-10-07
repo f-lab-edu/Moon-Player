@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faMagnifyingGlass, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import Layout from "components/items/Layout";
@@ -23,13 +23,21 @@ const MusicHeaderItem = styled.li`
 `
 
 const MusicPageHeaderItems = () => {
+  const navigate = useNavigate()
+  const onLogOutHandler = (e) => {
+    e.preventDefault()
+    localStorage.clear()
+    navigate("/")
+    alert("정상적으로 로그아웃 되었습니다.")
+  }
+
   return (
     <MusicHeaderContentLayout>
       <MusicHeaderItemBox>
         <MusicHeaderItem>
-          <Link><FontAwesomeIcon icon={faRightFromBracket} /></Link>
+          <Link onClick={onLogOutHandler}><FontAwesomeIcon icon={faRightFromBracket} /></Link>
         </MusicHeaderItem>
-        <MusicHeaderItem>로그아웃</MusicHeaderItem>
+        <MusicHeaderItem >로그아웃</MusicHeaderItem>
       </MusicHeaderItemBox>
       <MusicHeaderItemBox>
         <MusicHeaderItem><Link><FontAwesomeIcon icon={faMagnifyingGlass} /></Link></MusicHeaderItem>
