@@ -16,6 +16,7 @@
     "styled-components": "^5.3.6"
   },
   "scripts": {
+    "lint:fix": "eslint --fix --ext .js,.jsx .",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import Avatar from "components/items/Avatar";
-import LoginPageMainSignBox from "./items/LoginPageMainSignBox";
-import LoginPagMainInputBox from "./items/LoginPageMainInputBox";
-import useAuthenticator from "hooks/useAuthenticator";
+import styled from 'styled-components';
+import Avatar from 'components/items/Avatar';
+import LoginPageMainSignBox from './items/LoginPageMainSignBox';
+import LoginPagMainInputBox from './items/LoginPageMainInputBox';
+import useAuthenticator from 'hooks/useAuthenticator';
 
 const LoginPageMainLayout = styled.main`
   display: flex;
@@ -18,21 +18,16 @@ const LoginPageMainLayout = styled.main`
   }
 `;
 
-
-
 const LoginPageMain = () => {
-  const { isSignIn, SignUp, setSignData } = useAuthenticator()
-
+  const { isSignedIn, SignUp, setSignData } = useAuthenticator()
 
   return (
     <LoginPageMainLayout>
       <Avatar />
       <LoginPagMainInputBox setSignData={setSignData} />
-      <LoginPageMainSignBox isSignIn={isSignIn} SignUp={SignUp} />
+      <LoginPageMainSignBox isSignedIn={isSignedIn} SignUp={SignUp} />
     </LoginPageMainLayout>
   );
 };
-
-
 
 export default LoginPageMain;

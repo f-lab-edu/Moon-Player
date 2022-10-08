@@ -1,7 +1,6 @@
-import styled from "styled-components"
-import MusicPlayerItem from "./items/MusicPlayerItem";
-import MusicPlayerHeader from "./items/MusicPlayerHeader";
-
+import styled from 'styled-components'
+import MusicPlayerItem from './items/MusicPlayerItem';
+import MusicPlayerHeader from './items/MusicPlayerHeader';
 
 const MusicPlayerMainContentLayout = styled.div`
     display: flex;
@@ -16,8 +15,6 @@ const MusicPlayerMainContentLayout = styled.div`
           display: none;
     }
 `
-
-
 
 const MusicPlayerMainContent = () => {
   return (

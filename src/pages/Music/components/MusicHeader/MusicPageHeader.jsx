@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import Title from "components/items/Title";
-import MusicPageHeaderItems from "./items/MusicPageHeaderItems";
+import styled from 'styled-components';
+import Title from 'components/items/Title';
+import MusicPageHeaderItems from './items/MusicPageHeaderItems';
 
 const MusicHeaderLayout = styled.header`
      display: flex;
@@ -17,8 +17,6 @@ const MusicPageHeader = () => {
     <MusicHeaderTitle>Moon Player</MusicHeaderTitle>
     <MusicPageHeaderItems />
   </MusicHeaderLayout>
-
-
 
 }
 

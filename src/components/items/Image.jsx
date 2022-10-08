@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 const Image = styled.div`
     margin: 0px 15px;
     width: 40px;

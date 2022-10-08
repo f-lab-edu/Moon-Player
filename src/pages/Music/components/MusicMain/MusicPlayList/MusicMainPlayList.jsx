@@ -1,8 +1,7 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 // import Layout from "components/items/Layout"
-import Title from "../../../../../components/items/Title";
-import MusicMainPlayListItem from "./items/MusicMainPlayListItem";
-
+import Title from '../../../../../components/items/Title';
+import MusicMainPlayListItem from './items/MusicMainPlayListItem';
 
 const MusicMainPlayListLayout = styled.div`
     display: flex;

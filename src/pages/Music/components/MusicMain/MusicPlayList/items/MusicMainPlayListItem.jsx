@@ -1,8 +1,8 @@
-import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlay, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
-import ItemLayout from "components/items/ItemLayout";
-import Image from "components/items/Image";
+import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlay, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import ItemLayout from 'components/items/ItemLayout';
+import Image from 'components/items/Image';
 
 const MusicListItemLayout = styled.div`
     display: flex;
@@ -32,7 +32,6 @@ const MusicImage = styled(Image)`
   width:50px;
 `
 
-
 const MusicMainPlayListItem = () => {
   return (
     <MusicListItemLayout>
@@ -45,8 +44,8 @@ const MusicMainPlayListItem = () => {
         <MusicPlayListItem>좋은날</MusicPlayListItem>
       </MusicPlayListItems>
       <MusicPlayListItems>
-        <MusicPlayListItem><FontAwesomeIcon icon={faCirclePlay} size={"2x"} /></MusicPlayListItem>
-        <MusicPlayListItem><FontAwesomeIcon icon={faCircleCheck} size={"2x"} /></MusicPlayListItem>
+        <MusicPlayListItem><FontAwesomeIcon icon={faCirclePlay} size={'2x'} /></MusicPlayListItem>
+        <MusicPlayListItem><FontAwesomeIcon icon={faCircleCheck} size={'2x'} /></MusicPlayListItem>
       </MusicPlayListItems>
     </MusicListItemLayout>
   )

@@ -1,9 +1,8 @@
-import styled from "styled-components";
-import PropTypes from "prop-types"
-import { Link } from "react-router-dom";
-import Layout from "components/items/Layout";
-import { useRef } from "react";
-
+import styled from 'styled-components';
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
+import Layout from 'components/items/Layout';
+import { useRef } from 'react';
 
 const LoginInputLayout = styled(Layout)`
   > a {
@@ -30,7 +29,6 @@ const isValidInput = (email, password) => {
   return email.length && password.length
 }
 
-
 const LoginPagMainInputBox = ({ setSignData }) => {
   const userEmail = useRef(null)
   const userPassowrd = useRef(null)
@@ -48,7 +46,6 @@ const LoginPagMainInputBox = ({ setSignData }) => {
     }
   }
 
-
   return (
     <LoginInputLayout>
       <Stylednput placeholder="Email" type="email" onChange={onInputChangeHandler} ref={userEmail} />
@@ -63,6 +60,6 @@ LoginPagMainInputBox.propTypes = {
 }
 
 // displayName Error발생해서 넣음
-LoginPagMainInputBox.displayName = "LoginPagMainInputBox"
+LoginPagMainInputBox.displayName = 'LoginPagMainInputBox'
 
 export default LoginPagMainInputBox;
