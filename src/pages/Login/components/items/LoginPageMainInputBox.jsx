@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Layout from "components/items/Layout";
 import { useRef } from "react";
 
-import { isValidInput } from "pages/Login/utils/LoginPage";
 
 const LoginInputLayout = styled(Layout)`
   > a {
@@ -27,15 +26,18 @@ const Stylednput = styled.input`
   font-size: 20px;
 `;
 
+const isValidInput = (email, password) => {
+  return email.length && password.length
+}
 
 
 const LoginPagMainInputBox = ({ setSignData }) => {
-  const userInfo = useRef([])
+  const userEmail = useRef(null)
+  const userPassowrd = useRef(null)
 
   const onInputChangeHandler = () => {
-    const email = userInfo.current[0].value
-    const password = userInfo.current[1].value
-
+    let email = userEmail.current.value
+    let password = userPassowrd.current.value
     // email password 둘다 값이 들어가면 SignData로 지정
     if (isValidInput(email, password)) {
       setSignData({ email, password })
@@ -44,14 +46,13 @@ const LoginPagMainInputBox = ({ setSignData }) => {
     else {
       setSignData(null)
     }
-
   }
 
 
   return (
     <LoginInputLayout>
-      <Stylednput placeholder="Email" type="email" onChange={onInputChangeHandler} ref={(e) => (userInfo.current[0] = e)} />
-      <Stylednput placeholder="Password" type="password" onChange={onInputChangeHandler} ref={(e) => (userInfo.current[1] = e)} />
+      <Stylednput placeholder="Email" type="email" onChange={onInputChangeHandler} ref={userEmail} />
+      <Stylednput placeholder="Password" type="password" onChange={onInputChangeHandler} ref={userPassowrd} />
       <Link>아이디 / 비밀번호 찾기</Link>
     </LoginInputLayout>
   )

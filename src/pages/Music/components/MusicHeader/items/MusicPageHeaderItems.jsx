@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faMagnifyingGlass, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import Layout from "components/items/Layout";
 import ItemLayout from "../../../../../components/items/ItemLayout";
+import useAuthenticator from "../../../../../hooks/useAuthenticator";
 
 
 const MusicHeaderContentLayout = styled(Layout)`
@@ -23,12 +24,10 @@ const MusicHeaderItem = styled.li`
 `
 
 const MusicPageHeaderItems = () => {
-  const navigate = useNavigate()
+  const { SignOut } = useAuthenticator()
   const onLogOutHandler = (e) => {
     e.preventDefault()
-    localStorage.clear()
-    navigate("/")
-    alert("정상적으로 로그아웃 되었습니다.")
+    SignOut()
   }
 
   return (
