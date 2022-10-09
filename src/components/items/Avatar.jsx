@@ -11,7 +11,8 @@ const Avatar = styled.div`
   background-image: url("https://play-lh.googleusercontent.com/5QpWmJd1Ib8UBXqEzBdszC4PuuqIlVKxAmkrMIA4WsGwKawvTT8nzw9WJa8hgeZ0tZg");
   background-position: center;
   background-size: cover;
-  margin-bottom: 10px;
+  margin: 30px 0 40px 0;
+  transform:scale(1.2);
 `;
 
 export default Avatar

@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+// 인증 여부에 필요한 로직만 넣어라 
+
 const useAuthenticator = () => {
   const navigate = useNavigate()
   const isTokenExists = !!localStorage.getItem('authToken');
