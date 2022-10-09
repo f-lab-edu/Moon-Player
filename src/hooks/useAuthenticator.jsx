@@ -8,11 +8,13 @@ const useAuthenticator = () => {
   const isTokenExists = !!localStorage.getItem('authToken');
   // TODO: use Context
   const [isSignedIn, setIsSignedIn] = useState(isTokenExists);
+  // 로그인 허용할지 안할지결정
 
+  // 회원가입
   const signUp = () => {
     const items = localStorage.getItem('authToken')
     if (!items) {
-      // const result = await (await fetch('/signin')).json()
+      // const result = await (await fetch('/signUp')).json()
       // localStorage.setItem('authToken', result.token);
       localStorage.setItem('authToken', 'token')
       alert('계정을 생성하였습니다.')
@@ -22,6 +24,7 @@ const useAuthenticator = () => {
     }
     navigate('/music')
   }
+  // 로그인
   const signIn = () => {
     // if (email !== '' && password !== '') {
     //   const result = await (await fetch('/signin')).json()
@@ -31,6 +34,7 @@ const useAuthenticator = () => {
     navigate('/music');
   }
 
+  // 로그아웃
   const signOut = () => {
     localStorage.clear()
     alert('정상적으로 로그아웃 되었습니다.')

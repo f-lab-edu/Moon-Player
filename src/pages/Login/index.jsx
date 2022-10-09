@@ -1,24 +1,21 @@
 import styled from 'styled-components'
-import Layout from '../../components/items/Layout';
 import Title from 'components/items/Title';
 import Avatar from 'components/items/Avatar';
 import Button from 'components/items/Button';
-import Input from 'components/items/Input';
-import { Link } from 'react-router-dom';
-import LoginPagMainInput from './components/LoginPageMainInput';
+import Layout from 'components/items/Layout';
 import useAuthenticator from 'hooks/useAuthenticator';
+import Form from './components/Form';
 
 const LoginPageLayout = styled(Layout)`
   align-items: center;
   background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
   height: 100vh;
- 
 `
-const LoginPageHeader = styled.header`
+const HeaderLayout = styled.header`
   display: flex;
   flex-direction: column;
 `
-const LoginPageMain = styled.main`
+const MainLayout = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,38 +31,28 @@ const LoginPageMain = styled.main`
   margin: 0px 0px 15px 0px;
 `;
 
-const LoginPageMainSignBox = styled(Layout)``
-const LoginPageButton = styled(Button)``
-const LoginPageMainInputBox = styled(Layout)`
-  > a {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
-    text-decoration: none;
-  }
-`;
+const ButtonBox = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
+// 한개의 페이지에 여러 커스텀 훅 사용
 const LoginPage = () => {
-  const { isSignedIn, signUp, signIn, signOut } = useAuthenticator()
+  const { isSignedIn, signUp, signIn } = useAuthenticator()
+
   return (
     <LoginPageLayout>
-      <LoginPageHeader>
+      <HeaderLayout>
         <Title>Moon Player</Title>
-      </LoginPageHeader>
-
-      <LoginPageMain>
+      </HeaderLayout>
+      <MainLayout>
         <Avatar />
-        <LoginPageMainInputBox>
-          <Input placeholder="Email" type="email" />
-          <Input placeholder="Password" type="password" />
-          <Link>아이디 / 비밀번호 찾기</Link>
-        </LoginPageMainInputBox>
-        <LoginPageMainSignBox>
-          <LoginPageButton onClick={() => signIn()}>로그인</LoginPageButton>
-          <LoginPageButton>회원가입</LoginPageButton>
-        </LoginPageMainSignBox>
-
-      </LoginPageMain>
+        <Form />
+        <ButtonBox>
+          <Button onClick={() => signIn()}>로그인</Button>
+          <Button>회원가입</Button>
+        </ButtonBox>
+      </MainLayout>
 
     </LoginPageLayout>
   )
