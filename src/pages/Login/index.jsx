@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 import Title from 'components/items/Title';
 import Avatar from 'components/items/Avatar';
-import Button from 'components/items/Button';
 import Layout from 'components/items/Layout';
-import useAuthenticator from 'hooks/useAuthenticator';
 import Form from './components/Form';
 
 const LoginPageLayout = styled(Layout)`
@@ -31,14 +29,8 @@ const MainLayout = styled.main`
   margin: 0px 0px 15px 0px;
 `;
 
-const ButtonBox = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
 // 한개의 페이지에 여러 커스텀 훅 사용
 const LoginPage = () => {
-  const { isSignedIn, signUp, signIn } = useAuthenticator()
 
   return (
     <LoginPageLayout>
@@ -48,10 +40,6 @@ const LoginPage = () => {
       <MainLayout>
         <Avatar />
         <Form />
-        <ButtonBox>
-          <Button onClick={() => signIn()}>로그인</Button>
-          <Button>회원가입</Button>
-        </ButtonBox>
       </MainLayout>
 
     </LoginPageLayout>

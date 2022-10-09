@@ -7,9 +7,8 @@ border: 0;
 background: transparent;
 border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 outline-width: 0;
-padding: 20px 0px;
-margin-top: 20px;
-font-size: 17px;
-box-sizing: border-box;
+margin-top: 23px;
+font-size: 20px;
+
 `;
 export default Input

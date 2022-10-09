@@ -8,8 +8,8 @@ export const checkEmail = (obj) => {
   return pattern.test(email) ? true : false;
 }
 
-// 2. 주어진 Email string이 빈값인지 확인 
-export const checkEmailRequired = (obj) => {
-  const { email } = obj
-  return email !== '' ? true : false
+// 2. 주어진 값이 빈값인지  체크  
+export const checkRequired = (obj) => {
+  const { email, password } = obj
+  return email !== '' && password !== '' ? true : false
 }
