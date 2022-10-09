@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Input from 'components/items/Input';
 import useValidator from 'hooks/useValidator';
-import { checkEmail, checkRequired } from '../../../utils/Validator';
+import { checkEmail, checkEmailRequired } from '../../../utils/Validator';
 
 const Box = styled.div`
   display: flex;
@@ -25,13 +25,7 @@ const Form = () => {
   //  Input 값 변경 시 동작 
   const onInputChangeHandler = () => {
     const emailValue = emailRef.current.value
-    const passwordValue = passwordRef.current.value
-    validate(
-      {
-        email: emailValue,
-        password: passwordValue,
-        fns: [checkEmail, checkRequired]
-      })
+    validate({ email: emailValue, fns: [checkEmail, checkEmailRequired] })
   }
 
   return (
