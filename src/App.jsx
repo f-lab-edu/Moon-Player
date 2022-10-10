@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import MusicPage from 'pages/Music/MusicPage';
+import MusicPage from 'pages/Music/index.jsx';
 import UserPage from 'pages/User/UserPage';
 import LoginPage from 'pages/Login/index.jsx';
 
