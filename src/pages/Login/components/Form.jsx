@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Input from 'components/items/Input';
 import useValidator from 'hooks/useValidator';
 import useAuthenticator from '../../../hooks/useAuthenticator';
-import { checkEmail, checkRequired } from '../../../utils/Validator';
+import { checkEmail, checkRequired, checkPassowrd } from '../../../utils/Validator';
 
 const InputBox = styled.div`
   display: flex;
@@ -19,15 +19,18 @@ const InputBox = styled.div`
 `;
 
 const EmailInput = styled(Input)`
-border-bottom: 1px solid ${({ errors }) => errors.error ? 'rgba(255,0,0, 0.3)' : 'rgba(0, 0, 0, 0.1)'};
-color: ${({ errors }) => errors.error ? 'red' : 'black'};
+border-bottom: 1px solid ${({ errors }) => errors.type === 'email' ? 'rgba(255,0,0, 0.3)' : 'rgba(0, 0, 0, 0.1)'};
+color: ${({ errors }) => errors.type === 'email' ? 'red' : 'black'};
 `
+
 const PassWordInput = styled(Input)`
+border-bottom: 1px solid ${({ errors }) => errors.type === 'password' ? 'rgba(255,0,0, 0.3)' : 'rgba(0, 0, 0, 0.1)'};
+color: ${({ errors }) => errors.type === 'password' ? 'red' : 'black'};
 `
 
 const ButtonBox = styled.div`
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 `
 
 const Form = () => {
@@ -42,15 +45,14 @@ const Form = () => {
     const emailValue = emailRef.current.value
     const passwordValue = passwordRef.current.value
 
-    validate({ email: emailValue, password: passwordValue, fns: [checkEmail, checkRequired] })
+    validate({ email: emailValue, password: passwordValue, fns: [checkEmail, checkRequired, checkPassowrd] })
   }
 
   // 버튼 클릭시 동작  비밀번호 예외?
   const onButtonClickHandler = () => {
-    const { error } = errors
-
-    if (error) {
-      alert(error)
+    const { message } = errors
+    if (message) {
+      alert(message)
     }
     else {
       alert('로그인하였습니다.')
@@ -63,7 +65,7 @@ const Form = () => {
     <>
       <InputBox>
         <EmailInput placeholder="Email" type="email" onChange={onInputChangeHandler} ref={emailRef} errors={errors} />
-        <PassWordInput placeholder="Password" type="password" onChange={onInputChangeHandler} ref={passwordRef} />
+        <PassWordInput placeholder="Password" type="password" onChange={onInputChangeHandler} ref={passwordRef} errors={errors} />
         <Link>아이디 / 비밀번호 찾기</Link>
       </InputBox>
 
