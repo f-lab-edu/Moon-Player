@@ -20,9 +20,15 @@ const PlayListItemsLayout = styled.div`
       width: 500px;
 
     }
-    
-    @media screen and (max-width:600px){
-      width: 350px;
+    @media screen and (max-width:1000px){
+      width: 670px;
+    }
+    @media screen and (max-width:770px){
+      width: 565px;
+
+    }
+    @media screen and (max-width:580px){
+      width: 370px;
 
     }
 

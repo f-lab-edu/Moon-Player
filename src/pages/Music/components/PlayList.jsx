@@ -13,8 +13,17 @@ const PlayListLayout = styled.div`
     &::-webkit-scrollbar {
           display: none;
     }
-   
+    @media screen and (max-width:1000px){
+      width: 700px;
+    }
 
+    @media screen and (max-width:770px){
+      width: 600px;
+    }
+    @media screen and (max-width:580px){
+      width: 400px;
+
+    }
   
 `
 const PlayListTitle = styled(Title)`

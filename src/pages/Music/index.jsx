@@ -22,7 +22,8 @@ const HeaderTitle = styled(Title)`
 const NavLayout = styled.nav`
     display: flex;
     flex-direction: column;
-    
+    justify-content :center;
+    align-items: center;
 `
 const NavTitle = styled(Title)`
  text-shadow: 1px 1px 1px gray;
@@ -48,7 +49,7 @@ const MainLayout = styled.main`
     @media screen and (max-width:1000px){
       flex-direction: column;
       align-items: center;
-      gap: 50px;
+      gap: 20px;
 
     }
 

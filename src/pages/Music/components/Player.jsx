@@ -11,8 +11,21 @@ margin-left: 50px;
 box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
 padding: 15px;
 border-radius:7px;
-@media screen and (max-width:900px){
+
+@media screen and (max-width:1000px){
       margin: 0px;
+      width: 700px;
+}
+
+@media screen and (max-width:770px){
+      margin: 0px;
+      width: 600px;
+}
+
+@media screen and (max-width:580px){
+  margin: 0px;
+      width: 400px;
+
 }
 
 `
@@ -23,7 +36,17 @@ const Layout = styled.div`
     overflow: scroll;
       &::-webkit-scrollbar {
           display: none;
-    }   
+    }
+    @media screen and (max-width:1000px){
+      width: 670px;
+    }
+    @media screen and (max-width:770px){
+      width: 570px;
+    }
+    @media screen and (max-width:580px){
+      width: 370px;
+
+    }
 `
 const Header = styled.div`
 display: flex;
