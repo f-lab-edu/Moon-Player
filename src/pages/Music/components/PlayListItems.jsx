@@ -15,6 +15,18 @@ const PlayListItemsLayout = styled.div`
     border-left:none;
     border-right:none;
     border-bottom: none;
+
+    @media screen and (max-width:1200px){
+      width: 500px;
+
+    }
+    
+    @media screen and (max-width:600px){
+      width: 350px;
+
+    }
+
+   
 `
 const PlayListItemBox = styled(ItemLayout)`
     flex-direction: row;
@@ -22,6 +34,7 @@ const PlayListItemBox = styled(ItemLayout)`
     color: #6633cc;
     font-weight: 900;
     margin-right: 10px;
+   
 `
 
 const PlayListItem = styled.li`

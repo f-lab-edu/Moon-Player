@@ -11,6 +11,10 @@ margin-left: 50px;
 box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
 padding: 15px;
 border-radius:7px;
+@media screen and (max-width:900px){
+      margin: 0px;
+}
+
 `
 const Layout = styled.div`
     width: 350px;
@@ -36,7 +40,6 @@ const MainTitle = styled(Title)`
 const PlayingLayout = styled.footer`
 
 `
-
 const PlayingItem = styled.div`
 display: flex;
 justify-content: space-between;

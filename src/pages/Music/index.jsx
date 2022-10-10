@@ -37,7 +37,21 @@ const MainLayout = styled.main`
     justify-content: center;
     align-items: center;
     padding: 15px;
-    margin-top:50px;
+    margin-top:50px;    
+
+    @media screen and (max-width:1200px){
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+    }
+    @media screen and (max-width:1000px){
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+
+    }
+
 `
 
 const FooterLayout = styled.footer`
