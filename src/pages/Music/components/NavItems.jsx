@@ -11,15 +11,10 @@ const NavLayout = styled(Layout)`
     justify-content: center;
     align-items: center;
 
-
     @media screen and (max-width:1000px){
     flex-direction: column;
-    width: 100%;
     gap:10px 
-    }
-
-    
-    
+    }    
   
 `
 
@@ -31,7 +26,7 @@ font-weight :900;
   border-radius: 7px;
   font-size: 25px;
   font-weight:bold;
-  width:90%;
+  width:90vw;
   box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.2);
 }
 `

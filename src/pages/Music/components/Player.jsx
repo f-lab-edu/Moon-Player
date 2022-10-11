@@ -14,18 +14,7 @@ border-radius:7px;
 
 @media screen and (max-width:1000px){
       margin: 0px;
-      width: 700px;
-}
-
-@media screen and (max-width:770px){
-      margin: 0px;
-      width: 600px;
-}
-
-@media screen and (max-width:580px){
-  margin: 0px;
-      width: 400px;
-
+      width: 100%; 
 }
 
 `
@@ -38,15 +27,9 @@ const Layout = styled.div`
           display: none;
     }
     @media screen and (max-width:1000px){
-      width: 670px;
+      width:100%;
     }
-    @media screen and (max-width:770px){
-      width: 570px;
-    }
-    @media screen and (max-width:580px){
-      width: 370px;
 
-    }
 `
 const Header = styled.div`
 display: flex;

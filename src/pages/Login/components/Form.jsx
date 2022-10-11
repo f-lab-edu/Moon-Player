@@ -16,6 +16,10 @@ const InputBox = styled.div`
     margin-top: 10px;
     text-decoration: none;
   }
+  @media screen and (max-width:700px){
+    width: 70vw;
+    overflow: hidden;
+  }
 `;
 
 const EmailInput = styled(Input)`
@@ -31,6 +35,10 @@ color: ${({ errors }) => errors.type === 'password' ? 'red' : 'black'};
 const ButtonBox = styled.div`
 display: flex;
 flex-direction: column;
+@media screen and (max-width:700px){
+    width: 70vw;
+    overflow: hidden;
+  }
 `
 
 const Form = () => {
