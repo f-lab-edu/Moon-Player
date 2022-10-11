@@ -8,6 +8,7 @@ import Player from './components/Player';
 
 const MusicPageLayout = styled(Layout)`
 background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+
 `
 const HeaderLayout = styled.header`
      display: flex;
@@ -39,13 +40,7 @@ const MainLayout = styled.main`
     align-items: center;
     padding: 15px;
     margin-top:50px;    
-
-    @media screen and (max-width:1200px){
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-
-    }
+    
     @media screen and (max-width:1000px){
       flex-direction: column;
       align-items: center;

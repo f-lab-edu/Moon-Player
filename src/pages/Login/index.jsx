@@ -7,7 +7,10 @@ import Form from './components/Form';
 const LoginPageLayout = styled(Layout)`
   align-items: center;
   background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
-  height: 100vh;
+ 
+  
+ 
+
 `
 const HeaderLayout = styled.header`
   display: flex;
@@ -27,6 +30,10 @@ const MainLayout = styled.main`
     margin-top: 15px;
   }
   margin: 0px 0px 15px 0px;
+
+  @media screen and (max-width:700px){
+    width: 80vw;
+  }
 `;
 
 // 한개의 페이지에 여러 커스텀 훅 사용

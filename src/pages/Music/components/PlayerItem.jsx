@@ -21,6 +21,10 @@ border-bottom: 1px solid rgba(0,0,0,0.1);
 >:last-child{
     margin-right: 10px;
 }
+@media screen and (max-width:1000px){
+      width: 100%; 
+}
+
 `
 const Box = styled.div`
     display: flex;
