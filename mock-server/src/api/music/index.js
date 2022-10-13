@@ -1,17 +1,18 @@
+const fs = require('fs')
 const Router = require('koa-router');
+const path = require('path');
+const ncsMusicFile = fs.readFileSync(path.join(process.cwd(), "src/musicfile/ncs.json"), 'utf-8')
+const ncsMusicData = JSON.parse(ncsMusicFile);
 
-const musicData = [
-  { id: 1, name: '유저1' },
-  { id: 2, name: '유저2' },
-  { id: 3, name: '유저3' }
-]
+
 
 const musics = new Router()
 
 
 
-musics.get('/', ctx => {
-  ctx.body = { ok: true, musics: musicData }
+musics.get('/ncs', ctx => {
+  ctx.body = { music: ncsMusicData }
 })
+
 
 module.exports = musics
