@@ -1,0 +1,24 @@
+{
+  "name": "moon-player",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "npx nodemon mock-server/src/index.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f-lab-edu/Moon-Player.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/f-lab-edu/Moon-Player/issues"
+  },
+  "homepage": "https://github.com/f-lab-edu/Moon-Player#readme",
+  "devDependencies": {
+    "concurrently": "^7.4.0"
+  }
+}
