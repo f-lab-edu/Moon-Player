@@ -21,6 +21,14 @@ const InputBox = styled.div`
     overflow: hidden;
   }
 `;
+const ButtonBox = styled.div`
+display: flex;
+flex-direction: column;
+@media screen and (max-width:700px){
+    width: 70vw;
+    overflow: hidden;
+  }
+`
 
 const EmailInput = styled(Input)`
 border-bottom: 1px solid ${({ errors }) => errors.type === 'email' ? 'rgba(255,0,0, 0.3)' : 'rgba(0, 0, 0, 0.1)'};
@@ -30,15 +38,6 @@ color: ${({ errors }) => errors.type === 'email' ? 'red' : 'black'};
 const PassWordInput = styled(Input)`
 border-bottom: 1px solid ${({ errors }) => errors.type === 'password' ? 'rgba(255,0,0, 0.3)' : 'rgba(0, 0, 0, 0.1)'};
 color: ${({ errors }) => errors.type === 'password' ? 'red' : 'black'};
-`
-
-const ButtonBox = styled.div`
-display: flex;
-flex-direction: column;
-@media screen and (max-width:700px){
-    width: 70vw;
-    overflow: hidden;
-  }
 `
 
 const Form = () => {
@@ -74,9 +73,8 @@ const Form = () => {
       <InputBox>
         <EmailInput placeholder="Email" type="email" onChange={onInputChangeHandler} ref={emailRef} errors={errors} />
         <PassWordInput placeholder="Password" type="password" onChange={onInputChangeHandler} ref={passwordRef} errors={errors} />
-        <Link>아이디 / 비밀번호 찾기</Link>
+        <Link to="#">아이디 / 비밀번호 찾기</Link>
       </InputBox>
-
       <ButtonBox>
         <Button onClick={onButtonClickHandler}>로그인</Button>
         <Button>회원가입</Button>

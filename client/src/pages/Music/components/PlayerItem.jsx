@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose, } from '@fortawesome/free-solid-svg-icons';
 import Image from 'components/items/Image';
 
-const MusicTitle = styled.h3`
+const Title = styled.h3`
     font-size: 15px;
     margin: 1px;
     font-weight: 900;
 `
-const ItemImage = styled(Image)`
+const PlayerItemImage = styled(Image)`
     margin: 0px 10px 1px 0px;
     width: 50px;
     height: 50px;
@@ -33,22 +33,18 @@ const Box = styled.div`
 `
 
 // 재사용 가능
-const Item = () => {
+const PlayerItem = () => {
   return (
-    <>
-      <Layout>
-        <Box>
-          <ItemImage />
-          <div>
-            <MusicTitle>노래 : 좋은날</MusicTitle>
-            <MusicTitle>가수 : 아이유 </MusicTitle>
-          </div>
-        </Box>
-        <FontAwesomeIcon icon={faClose} size={'2x'} color={'#6633cc'} />
-      </Layout>
-
-    </>
-
+    <Layout>
+      <Box>
+        <PlayerItemImage />
+        <div>
+          <Title>노래 : 좋은날</Title>
+          <Title>가수 : 아이유 </Title>
+        </div>
+      </Box>
+      <FontAwesomeIcon icon={faClose} size={'2x'} color={'#6633cc'} />
+    </Layout>
   )
 }
-export default Item
+export default PlayerItem

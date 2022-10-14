@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import Title from '../../../components/items/Title';
-import PlayListItems from './PlayListItems';
+import PlayListItem from './PlayListItem';
 
-const PlayListLayout = styled.div`
+const Layout = styled.div`
     display: flex;
     flex-direction: column;
     height: 47vh;
@@ -21,32 +21,30 @@ const PlayListLayout = styled.div`
 `
 const PlayListTitle = styled(Title)`
   font-size:20px;
-
   color: white;
 `
-const PlayListBox = styled.div`
-
+const Box = styled.div`
   padding: 20px;
   height:inherit;
 `
 const PlayList = () => {
   return (
-    <PlayListLayout>
-      <PlayListBox>
+    <Layout>
+      <Box>
         <PlayListTitle>해외 랩/힙합</PlayListTitle>
-        <PlayListItems />
-        <PlayListItems />
-        <PlayListItems />
-        <PlayListItems />
-        <PlayListItems />
-        <PlayListItems />
-        <PlayListItems />
-        <PlayListItems />
-        <PlayListItems />
-        <PlayListItems />
-        <PlayListItems />
-      </PlayListBox>
-    </PlayListLayout>
+        <PlayListItem />
+        <PlayListItem />
+        <PlayListItem />
+        <PlayListItem />
+        <PlayListItem />
+        <PlayListItem />
+        <PlayListItem />
+        <PlayListItem />
+        <PlayListItem />
+        <PlayListItem />
+        <PlayListItem />
+      </Box>
+    </Layout>
   )
 }
 

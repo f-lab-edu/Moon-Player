@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShuffle, faBackwardStep, faPlayCircle, faForwardStep } from '@fortawesome/free-solid-svg-icons';
 import Image from 'components/items/Image';
 import Progressbar from 'components/items/Progressbar';
-import Item from './PlayerItem';
+import PlayerItem from './PlayerItem';
 
-const Root = styled.div`
+const Layout = styled.div`
 margin-left: 50px;
 box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
 padding: 15px;
@@ -18,7 +18,7 @@ border-radius:7px;
 }
 
 `
-const Layout = styled.div`
+const HeaderBox = styled.div`
     width: 350px;
     color: #6633cc;
     height: 40vh;
@@ -38,19 +38,18 @@ align-items: center;
 height: 50px;
 margin-bottom: 15px;
 `
-const MainTitle = styled(Title)`
+const HeaderTitle = styled(Title)`
     font-size: 20px;
     font-weight: 900;
     color: white;
 `
-const PlayingLayout = styled.footer`
 
-`
-const PlayingItem = styled.div`
+const FooterBox = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
 width: inherit;
+
 
 `
 const PlayingIconBox = styled.div`
@@ -79,21 +78,21 @@ const PlayingImage = styled(Image)`
 
 const Player = () => {
   return (
-    <Root>
-      <Layout>
+    <Layout>
+      <HeaderBox>
         <Header>
-          <MainTitle>셔플</MainTitle>
+          <HeaderTitle>셔플</HeaderTitle>
           <FontAwesomeIcon icon={faShuffle} size={'2x'} color={'#6633cc'} />
         </Header>
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-      </Layout>
-      <PlayingLayout>
+        <PlayerItem />
+        <PlayerItem />
+        <PlayerItem />
+        <PlayerItem />
+        <PlayerItem />
+      </HeaderBox>
+      <footer>
         <Progressbar />
-        <PlayingItem>
+        <FooterBox>
           <PlayingInfoBox>
             <PlayingImage />
             <div>
@@ -106,9 +105,9 @@ const Player = () => {
             <FontAwesomeIcon icon={faPlayCircle} size={'2x'} color={'#6633cc'} />
             <FontAwesomeIcon icon={faForwardStep} size={'2x'} color={'#6633cc'} />
           </PlayingIconBox>
-        </PlayingItem>
-      </PlayingLayout>
-    </Root>
+        </FooterBox>
+      </footer>
+    </Layout>
 
   )
 }

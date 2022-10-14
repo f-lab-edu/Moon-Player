@@ -26,12 +26,12 @@ const useAuthenticator = () => {
   }
   // 로그인
   const signIn = async () => {
-    try {
-      const result = await (await fetch('/api/music/ncs')).json()
-      console.log(result)
-    } catch (error) {
-      console.log('error' + error)
-    }
+    // try {
+    //   const result = await (await fetch('/api/music/ncs')).json()
+    //   console.log(result)
+    // } catch (error) {
+    //   console.log('error' + error)
+    // }
     // if (email !== '' && password !== '') {
     //   const result = await (await fetch('/signin')).json()
     //   localStorage.setItem('authToken', result.token);

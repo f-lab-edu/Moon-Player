@@ -1,22 +1,19 @@
 import styled from 'styled-components'
 import Title from 'components/items/Title';
 import Avatar from 'components/items/Avatar';
-import Layout from 'components/items/Layout';
 import Form from './components/Form';
 
-const LoginPageLayout = styled(Layout)`
+const Layout = styled.div`
+  display: flex;
+  flex-direction: column;
   align-items: center;
   background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
- 
-  
- 
-
 `
-const HeaderLayout = styled.header`
+const Header = styled.header`
   display: flex;
   flex-direction: column;
 `
-const MainLayout = styled.main`
+const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,16 +37,15 @@ const MainLayout = styled.main`
 const LoginPage = () => {
 
   return (
-    <LoginPageLayout>
-      <HeaderLayout>
+    <Layout>
+      <Header>
         <Title>Moon Player</Title>
-      </HeaderLayout>
-      <MainLayout>
+      </Header>
+      <Main>
         <Avatar />
         <Form />
-      </MainLayout>
-
-    </LoginPageLayout>
+      </Main>
+    </Layout>
   )
 }
 
