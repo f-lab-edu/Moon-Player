@@ -83,6 +83,14 @@ const PlayingImage = styled(Image)`
 // 플레이어 메인
 
 const Player = () => {
+  // const [musics, setMusics] = useState([])
+  // useEffect(() => {
+  //   const result = await(await fetch()).json()
+  //   setMusics(result)
+  // }, [])
+
+  // musics.map((music) => <MusicListItem music={music} />)
+
   return (
     <Layout>
       <HeaderBox>
