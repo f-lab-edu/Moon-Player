@@ -4,22 +4,16 @@
 const emailPattern = /^([\w\.\_\-])*[a-zA-Z0-9]+([\w\.\_\-])*([a-zA-Z0-9])+([\w\.\_\-])+@([a-zA-Z0-9]+\.)+[a-zA-Z0-9]{2,8}$/
 
 // 숫자와영문조합으로 8개이상 15개이하
+// TODO - detail: 대문자 최소 1개 & 특문 최소 1개
 const passwordPattern = /^[a-zA-Z0-9]{8,15}$/
 
-// 1. 올바른 이메일 형식인지 체크
-export const checkEmail = (obj) => {
-  const { email } = obj
-  return emailPattern.test(email)
+export const checkEmail = (str) => {
+  return emailPattern.test(str) ? '' : '이메일을 양식에 맞춰 입력해주세요'
 }
-
-// 2. 주어진 값이 빈값인지  체크  
-export const checkRequired = (obj) => {
-  const { email, password } = obj
-  return email !== '' && password !== '' ? true : false
+export const checkRequired = (str) => {
+  return str !== '' ? '' : '필수 항목입니다'
 }
-//  3. 올바른 패스워드 형식인지 확인 
-export const checkPassowrd = (obj) => {
-  const { password } = obj
-  return passwordPattern.test(password)
+export const checkPassword = (str) => {
+  return passwordPattern.test(str) ? '' : '비밀번호를 양식에 맞춰 입력해주세요'
 }
 
