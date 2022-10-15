@@ -14,16 +14,16 @@ const useValidator = () => {
     const [checkEmail, checkRequired, checkPassowrd] = obj.fns
 
     if (!checkEmail(obj)) {
-      setErrors({ message: ['올바른 형식의 이메일이 아닙니다.'], type: 'email' })
+      setErrors({ 'message': ['올바른 형식의 이메일이 아닙니다.'], type: 'email' })
       return
     }
-    if (!checkPassowrd(obj)) {
+    else if (!checkPassowrd(obj)) {
       setErrors({ message: ['비밀번호가 숫자와 영문조합으로 8개이상 15개 이하인지 확인하세요 !'], type: 'password' })
       return
     }
-    // 값 입력안한 부분있는지 체크 
-    if (!checkRequired(obj)) {
-      setErrors({ message: ['값을 입력 하세요 !'] })
+    // 
+    else if (!checkRequired(obj)) { //값 입력안한 부분있는지 체크
+      setErrors({ 'message': ['값을 입력 하세요 !'] })
       return
     }
 

@@ -17,12 +17,20 @@ const Box = styled.ul`
     justify-content: center;
     align-items: center;
     list-style: none;
+    >:last-child {
+      a {
+        color:white;
+      }
+    }
 `
 
 const Wrapper = styled.li`
   color: white;
   text-shadow: 1px 1px 1px gray;
   font-weight: 900;
+  > a{
+    text-decoration: none;
+  }
 `
 
 const HeaderItems = () => {

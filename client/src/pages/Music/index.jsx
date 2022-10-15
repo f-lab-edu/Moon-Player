@@ -13,6 +13,8 @@ background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
 `
 const Header = styled.header`
      display: flex;
+     position: sticky;
+     top: 0px;
      justify-content: space-between;
      align-items: center;
      padding: 0px 30px;

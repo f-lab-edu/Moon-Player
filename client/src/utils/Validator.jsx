@@ -9,7 +9,7 @@ const passwordPattern = /^[a-zA-Z0-9]{8,15}$/
 // 1. 올바른 이메일 형식인지 체크
 export const checkEmail = (obj) => {
   const { email } = obj
-  return emailPattern.test(email) ? true : false;
+  return emailPattern.test(email)
 }
 
 // 2. 주어진 값이 빈값인지  체크  
@@ -20,6 +20,6 @@ export const checkRequired = (obj) => {
 //  3. 올바른 패스워드 형식인지 확인 
 export const checkPassowrd = (obj) => {
   const { password } = obj
-  return passwordPattern.test(password) ? true : false
+  return passwordPattern.test(password)
 }
 
