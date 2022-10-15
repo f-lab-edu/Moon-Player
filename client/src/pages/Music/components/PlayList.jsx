@@ -22,6 +22,7 @@ const Layout = styled.div`
 const PlayListTitle = styled(Title)`
   font-size:20px;
   color: white;
+
 `
 const Box = styled.div`
   padding: 20px;
@@ -31,6 +32,7 @@ const PlayList = () => {
   return (
     <Layout>
       <Box>
+
         <PlayListTitle>해외 랩/힙합</PlayListTitle>
         <PlayListItem />
         <PlayListItem />

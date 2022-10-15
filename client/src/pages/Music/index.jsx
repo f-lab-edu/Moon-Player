@@ -18,6 +18,9 @@ const Header = styled.header`
      justify-content: space-between;
      align-items: center;
      padding: 0px 30px;
+     @media screen and (max-width:1000px){
+      position: relative;
+}
 `
 const HeaderTitle = styled(Title)`
   font-size:30px;
@@ -45,6 +48,7 @@ const Main = styled.main`
     margin-top:50px;    
     
     @media screen and (max-width:1000px){
+ 
       flex-direction: column;
       align-items: center;
       gap: 20px;

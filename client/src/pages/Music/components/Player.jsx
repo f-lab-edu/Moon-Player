@@ -33,10 +33,10 @@ const HeaderBox = styled.div`
 `
 const Header = styled.div`
 display: flex;
-justify-content: space-between;
 align-items: center;
 height: 50px;
-margin-bottom: 15px;
+margin-bottom: 8px;
+
 `
 const HeaderTitle = styled(Title)`
     font-size: 20px;
@@ -53,8 +53,14 @@ width: inherit;
 
 `
 const PlayingIconBox = styled.div`
+    display: flex;
+    align-items: center;
+
     >svg{
-        margin: 3px;
+      margin:3px;
+    }
+    >:last-child{
+      margin:10px;
     }
 `
 const PlayingInfoBox = styled.div`
@@ -81,9 +87,17 @@ const Player = () => {
     <Layout>
       <HeaderBox>
         <Header>
-          <HeaderTitle>셔플</HeaderTitle>
-          <FontAwesomeIcon icon={faShuffle} size={'2x'} color={'#6633cc'} />
+          <HeaderTitle>재생 목록</HeaderTitle>
         </Header>
+        <PlayerItem />
+        <PlayerItem />
+        <PlayerItem />
+        <PlayerItem />
+        <PlayerItem />
+
+        <PlayerItem />
+        <PlayerItem />
+        <PlayerItem />
         <PlayerItem />
         <PlayerItem />
         <PlayerItem />
@@ -98,12 +112,16 @@ const Player = () => {
             <div>
               <PlayingTitle>노래 : 좋은날</PlayingTitle>
               <PlayingTitle>가수 : 아이유 </PlayingTitle>
+
             </div>
           </PlayingInfoBox>
           <PlayingIconBox>
             <FontAwesomeIcon icon={faBackwardStep} size={'2x'} color={'#6633cc'} />
             <FontAwesomeIcon icon={faPlayCircle} size={'2x'} color={'#6633cc'} />
             <FontAwesomeIcon icon={faForwardStep} size={'2x'} color={'#6633cc'} />
+            <div>
+              <FontAwesomeIcon icon={faShuffle} size={'2x'} color={'#6633cc'} />
+            </div>
           </PlayingIconBox>
         </FooterBox>
       </footer>
