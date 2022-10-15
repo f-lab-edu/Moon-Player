@@ -1,8 +1,7 @@
-import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShuffle } from "@fortawesome/free-solid-svg-icons";
-import Title from "components/items/Title";
-
+import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShuffle } from '@fortawesome/free-solid-svg-icons';
+import Title from 'components/items/Title';
 
 const MusicPlayerHeaderLayout = styled.div`
 display: flex;
@@ -22,13 +21,12 @@ const MusicPlayerInfo = styled(Title)`
     
 `
 
-
 const MusicPlayerHeader = () => {
   return (
     <>
       <MusicPlayerHeaderLayout>
         <MusicPlayerInfo>셔플</MusicPlayerInfo>
-        <FontAwesomeIcon icon={faShuffle} size={"2x"} color={"#6633cc"} />
+        <FontAwesomeIcon icon={faShuffle} size={'2x'} color={'#6633cc'} />
 
       </MusicPlayerHeaderLayout>
     </>

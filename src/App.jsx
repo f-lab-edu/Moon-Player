@@ -1,8 +1,8 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import LoginPage from "pages/Login/LoginPage";
-import MusicPage from "pages/Music/MusicPage";
-import UserPage from "pages/User/UserPage";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import MusicPage from 'pages/Music/MusicPage';
+import UserPage from 'pages/User/UserPage';
+import LoginPage from 'pages/Login/index.jsx';
 
 function App() {
   return (

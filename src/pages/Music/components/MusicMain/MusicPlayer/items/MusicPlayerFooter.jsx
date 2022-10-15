@@ -1,8 +1,8 @@
-import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlayCircle, faForwardStep, faBackwardStep } from "@fortawesome/free-solid-svg-icons";
-import Image from "components/items/Image";
-import Title from "components/items/Title";
+import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlayCircle, faForwardStep, faBackwardStep } from '@fortawesome/free-solid-svg-icons';
+import Image from 'components/items/Image';
+import Title from 'components/items/Title';
 
 const MusicPlayerFooterLayout = styled.div`
 display: flex;
@@ -33,7 +33,6 @@ const MusicPlayerImage = styled(Image)`
     height: 70px;
 `
 
-
 const MusicPlayerFooter = () => {
   return (
     <>
@@ -46,9 +45,9 @@ const MusicPlayerFooter = () => {
           </div>
         </MusicInfoBox>
         <IconBox>
-          <FontAwesomeIcon icon={faBackwardStep} size={"2x"} color={"#6633cc"} />
-          <FontAwesomeIcon icon={faPlayCircle} size={"2x"} color={"#6633cc"} />
-          <FontAwesomeIcon icon={faForwardStep} size={"2x"} color={"#6633cc"} />
+          <FontAwesomeIcon icon={faBackwardStep} size={'2x'} color={'#6633cc'} />
+          <FontAwesomeIcon icon={faPlayCircle} size={'2x'} color={'#6633cc'} />
+          <FontAwesomeIcon icon={faForwardStep} size={'2x'} color={'#6633cc'} />
         </IconBox>
       </MusicPlayerFooterLayout>
     </>

@@ -1,8 +1,7 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
-import MusicPlayer from "./MusicPlayer/MusicPlayerMain"
-import MusicMainPlayList from "./MusicPlayList/MusicMainPlayList";
-
+import MusicPlayer from './MusicPlayer/MusicPlayerMain'
+import MusicMainPlayList from './MusicPlayList/MusicMainPlayList';
 
 const MusicPageMainLayout = styled.main`
     display: flex;
@@ -12,7 +11,6 @@ const MusicPageMainLayout = styled.main`
     padding: 15px;
     margin-top:50px;
 `
-
 
 const MusicPageMain = () => {
   return (

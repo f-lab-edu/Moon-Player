@@ -3,7 +3,8 @@
     "module": "ES6",
     "jsx": "preserve",
     "checkJs": true,
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "moduleResolution": "node"
   },
   "exclude": ["node_modules", "**/node_modules/*"]
 }

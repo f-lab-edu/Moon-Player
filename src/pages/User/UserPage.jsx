@@ -1,7 +1,7 @@
 // import Layout from "components/items/Layout";
-import UserNav from "./components/UserNav";
-import UserMain from "./components/UserMain";
-import styled from "styled-components";
+import UserNav from './components/UserNav';
+import UserMain from './components/UserMain';
+import styled from 'styled-components';
 
 const UserPageLayout = styled.div`
   display: flex;

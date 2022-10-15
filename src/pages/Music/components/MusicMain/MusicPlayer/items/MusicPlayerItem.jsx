@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClose } from "@fortawesome/free-solid-svg-icons";
-import Image from "components/items/Image";
+import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
+import Image from 'components/items/Image';
 
 const MusicPlayerItemLayout = styled.div`
 display: flex;
@@ -32,7 +32,6 @@ const MusicPlayerItemImage = styled(Image)`
     
 `
 
-
 const MusicPlayerItem = () => {
   return (
     <>
@@ -44,7 +43,7 @@ const MusicPlayerItem = () => {
             <MusicPlayerItemTitle>가수 : 아이유 </MusicPlayerItemTitle>
           </div>
         </MusicPlayerItems>
-        <FontAwesomeIcon icon={faClose} size={"2x"} color={"#6633cc"} />
+        <FontAwesomeIcon icon={faClose} size={'2x'} color={'#6633cc'} />
 
       </MusicPlayerItemLayout>
     </>

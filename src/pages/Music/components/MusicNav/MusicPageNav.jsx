@@ -1,6 +1,6 @@
-import styled from "styled-components"
-import Title from "components/items/Title"
-import MusicPageNavItems from "./items/MusicPageNavItems";
+import styled from 'styled-components'
+import Title from 'components/items/Title'
+import MusicPageNavItems from './items/MusicPageNavItems';
 
 const MusicNavLayout = styled.nav`
     display: flex;
@@ -15,7 +15,6 @@ const MusicNavTitle = styled(Title)`
  font-size :30px;
 
 `
-
 
 const MusicPageNav = () => {
   return (
