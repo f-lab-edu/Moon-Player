@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Title from '../../../components/items/Title';
-import PlayListItem from './PlayListItem';
+import PlayListItem from './PlayerList/PlayListItem';
 
 const Layout = styled.div`
     display: flex;

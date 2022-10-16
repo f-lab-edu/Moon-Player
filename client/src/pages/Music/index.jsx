@@ -51,6 +51,7 @@ const Main = styled.main`
  
       flex-direction: column;
       align-items: center;
+      /* height:100vh; */
       gap: 20px;
 
     }
@@ -67,7 +68,10 @@ const FooterTitle = styled.h3`
 font-size: 13px;
 `
 
+// Json파일을 뿌려준다.
+
 const MusicPage = () => {
+
   return <Layout>
     <Header>
       <HeaderTitle>Moon Player</HeaderTitle>
