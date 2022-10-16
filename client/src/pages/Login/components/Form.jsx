@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Button from 'components/items/Button';
-import { Link } from 'react-router-dom';
 import Input from 'components/items/Input';
+import Text from '../../../components/items/Text';
 import useValidator from 'hooks/useValidator';
 import useAuthenticator from '../../../hooks/useAuthenticator';
 import { checkEmail, checkRequired, checkPassword } from '../../../utils/Validator';
@@ -36,15 +36,16 @@ const Form = () => {
   const { errors, validate } = useValidator()
   const { signIn } = useAuthenticator()
 
-  // 버튼 클릭시 동작  비밀번호 예외?
   const onButtonClickHandler = () => {
-    const result = validate({
-      email: { value: email, fns: [checkRequired, checkEmail]},
-      password: { value: password, fns: [checkRequired, checkPassword]},
-    })
+    //  현재 inputvalue 를 validate로 보냄
+    // return 에러메시지에 대한 result
 
+    const result = validate({
+      email: { value: email, funcs: [checkRequired, checkEmail] },
+      password: { value: password, funcs: [checkRequired, checkPassword] },
+    })
+    // 에러메시지가 존재하면 로그인 실패
     if (Object.keys(result).length !== 0) return
-    
     alert('로그인하였습니다.')
     signIn()
   }
@@ -52,9 +53,10 @@ const Form = () => {
   return (
     <>
       <InputBox>
-        <Input placeholder="Email" type="email" onChange={({ target: { value }}) => setEmail(value)} value={email} error={errors.email ? errors.email.join('') : ''} />
-        <Input placeholder="Password" type="password" onChange={({ target: { value }}) => setPassword(value)} value={password} errors={errors.password ? errors.password.join('') : ''} />
-        <Link to="#">아이디 / 비밀번호 찾기</Link>
+        <Input placeholder="Email" type="email" onChange={({ target: { value } }) => setEmail(value)} error={errors.email ? errors.email.join('') : ''} />
+        <Text error={errors.email ? errors.email.join('') : ''}>{errors.email ? errors.email.join('') : ''}</Text>
+        <Input placeholder="Password" type="password" onChange={({ target: { value } }) => setPassword(value)} error={errors.password ? errors.password.join('') : ''} />
+        <Text error={errors.password ? errors.password.join('') : ''}>{errors.password ? errors.password.join('') : ''}</Text>
       </InputBox>
       <ButtonBox>
         <Button onClick={onButtonClickHandler}>로그인</Button>

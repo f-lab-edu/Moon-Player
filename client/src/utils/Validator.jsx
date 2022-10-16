@@ -7,13 +7,15 @@ const emailPattern = /^([\w\.\_\-])*[a-zA-Z0-9]+([\w\.\_\-])*([a-zA-Z0-9])+([\w\
 // TODO - detail: 대문자 최소 1개 & 특문 최소 1개
 const passwordPattern = /^[a-zA-Z0-9]{8,15}$/
 
+// 빈값반환 하면 검증 통과
 export const checkEmail = (str) => {
-  return emailPattern.test(str) ? '' : '이메일을 양식에 맞춰 입력해주세요'
+  return emailPattern.test(str) ? '' : '이메일 양식에 맞춰 입력해주세요'
 }
+
 export const checkRequired = (str) => {
-  return str !== '' ? '' : '필수 항목입니다'
+  return str !== '' ? '' : '필수 항목입니다. '
 }
 export const checkPassword = (str) => {
-  return passwordPattern.test(str) ? '' : '비밀번호를 양식에 맞춰 입력해주세요'
+  return passwordPattern.test(str) ? '' : '비밀번호 : 숫자 영문조합 (8-15개이하)'
 }
 
