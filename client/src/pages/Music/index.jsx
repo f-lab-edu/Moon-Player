@@ -68,7 +68,7 @@ const FooterTitle = styled.h3`
 font-size: 13px;
 `
 
-// Json파일을 뿌려준다.
+// 1. MusicPage에서 Nav에 대한 Json파일을 뿌려준다. /api/music/music_title
 
 const MusicPage = () => {
 

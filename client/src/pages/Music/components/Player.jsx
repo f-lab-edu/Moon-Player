@@ -57,9 +57,13 @@ const Player = () => {
       <HeaderBox>
         <Header>
           <HeaderTitle>재생 목록</HeaderTitle>
+
         </Header>
+        <PlayerItem />
+        <PlayerItem />
+        <PlayerItem />
       </HeaderBox>
-      {/* <PlayerFooter /> */}
+      <PlayerFooter />
 
     </Layout>
 
