@@ -1,29 +1,27 @@
-{
-  "music_title_list": [
-    {
-      "music_title": "NCS 음악 1~50",
-      "music_img": "https:\/\/i.ytimg.com\/vi\/0i7yrJjmcGY\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCN8KqlDufztTVqKATo5aLZKmyowQ",
-      "music_id": 1
-    },
-    {
-      "music_title:": "NCS 음악 51~101",
-      "music_image": "https:\/\/i.ytimg.com\/vi\/ywwTbMd_scc\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCJYnCwHw0SYW6e_UsjbegPGmCqJw",
-      "music_id": 2
-    },
-    {
-      "music_title:": "NCS 음악 102~152",
-      "music_image": "https:\/\/i.ytimg.com\/vi\/WdKMcRQmtqU\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBOhMrPnVLxjk15a0UgfTnvmzX21A",
-      "music_id": 3
-    },
-    {
-      "music_title:": "NCS 음악 153~203",
-      "music_image": "https:\/\/i.ytimg.com\/vi\/tqBJWfBrevg\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCCHATePHv0npLSdwbQ5SKwSz2kUg",
-      "music_id": 4
-    },
-    {
-      "music_title:": "NCS 음악 204~215",
-      "music_image": "https:\/\/i.ytimg.com\/vi\/K4DyBUG242c\/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA635wYOTkaXrnqEX3FMJ8mazAEtA",
-      "music_id": 5
-    }
-  ]
-}
+[
+  {
+    "genre": "NCS : 1-50",
+    "genre_img": "https:\/\/i.ytimg.com\/vi\/0i7yrJjmcGY\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCN8KqlDufztTVqKATo5aLZKmyowQ",
+    "genre_id": 1
+  },
+  {
+    "genre": "NCS : 51-101",
+    "genre_img": "https:\/\/i.ytimg.com\/vi\/ywwTbMd_scc\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCJYnCwHw0SYW6e_UsjbegPGmCqJw",
+    "genre_id": 2
+  },
+  {
+    "genre": "NCS : 102-152",
+    "genre_img": "https:\/\/i.ytimg.com\/vi\/WdKMcRQmtqU\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBOhMrPnVLxjk15a0UgfTnvmzX21A",
+    "genre_id": 3
+  },
+  {
+    "genre": "NCS : 153-203",
+    "genre_img": "https:\/\/i.ytimg.com\/vi\/tqBJWfBrevg\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCCHATePHv0npLSdwbQ5SKwSz2kUg",
+    "genre_id": 4
+  },
+  {
+    "genre": "NCS : 204-215",
+    "genre_img": "https:\/\/i.ytimg.com\/vi\/K4DyBUG242c\/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA635wYOTkaXrnqEX3FMJ8mazAEtA",
+    "genre_id": 5
+  }
+]

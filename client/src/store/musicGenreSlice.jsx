@@ -5,7 +5,7 @@ const fetchmusicGenre = createAsyncThunk(
   'fetch/musicgenre',
   async () => {
     const data = await (await fetch('http://localhost:4000/api/music/genre')).json()
-    return data
+    return data.music
   }
 )
 
@@ -13,7 +13,7 @@ const fetchmusicGenre = createAsyncThunk(
 export const musicGenreSlice = createSlice({
   name: 'music',
   initialState: {
-    value: null,
+    music: [],
   },
   // // 동기적인 액션 처리
   reducers: {},
