@@ -1,4 +1,9 @@
 import styled from 'styled-components'
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { fetchmusicGenre } from 'store/musicGenreSlice';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -38,6 +43,14 @@ font-weight :900;
 `
 
 const NavItems = () => {
+  const dispatch = useDispatch()
+  const data = useSelector(state => {
+    console.log(state)
+  })
+  useEffect(() => {
+    dispatch(fetchmusicGenre())
+  }, [])
+
   return (
     <Layout>
       <Card>해외 랩/힙합</Card>
