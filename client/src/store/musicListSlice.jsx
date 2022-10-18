@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 // 액션 생성
 const fetchmusicList = createAsyncThunk(
-  'fetch/musicList',
+  'fetch/musicgenreList',
   async (music_id) => {
     const data = await (await fetch(`http://localhost:4000/api/music/genre/${music_id}`)).json()
     return data.music
@@ -25,7 +25,8 @@ export const musicListSlice = createSlice({
 
     builder.addCase(fetchmusicList.fulfilled, (state, action) => {
       state.status = 'Complete';
-      state.value = action.payload;
+
+      state.music = action.payload;
 
     })
 

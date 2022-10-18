@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 import Title from '../../../components/items/Title';
 import PlayListItem from './PlayList/PlayListItem';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchmusicList } from 'store/musicListSlice';
 
 const Layout = styled.div`
     display: flex;
@@ -16,7 +19,6 @@ const Layout = styled.div`
     @media screen and (max-width:1200px){
       width: 100%;
     }
-
   
 `
 const PlayListTitle = styled(Title)`
@@ -26,25 +28,26 @@ const PlayListTitle = styled(Title)`
 `
 const Box = styled.div`
   padding: 20px;
-  height:inherit;
 `
 const PlayList = () => {
+
+  const dispatch = useDispatch()
+  const playListItems = useSelector((state) => {
+    return state.musicList ? state.musicList.music : [];
+  })
+
+  useEffect(() => {
+    dispatch(fetchmusicList(1))
+  }, [])
+
   return (
     <Layout>
       <Box>
 
-        <PlayListTitle>해외 랩/힙합</PlayListTitle>
-        <PlayListItem />
-        <PlayListItem />
-        <PlayListItem />
-        <PlayListItem />
-        <PlayListItem />
-        <PlayListItem />
-        <PlayListItem />
-        <PlayListItem />
-        <PlayListItem />
-        <PlayListItem />
-        <PlayListItem />
+        <PlayListTitle>{playListItems.title}</PlayListTitle>
+        {
+          playListItems.musics && playListItems.musics.map(({ video_title, id, video_img }) => <PlayListItem key={id} id={id} title={video_title} img={video_img}></PlayListItem>)
+        }
       </Box>
     </Layout>
   )

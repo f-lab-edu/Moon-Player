@@ -1,12 +1,11 @@
 import styled from 'styled-components'
-const Image = styled.div`
+const Image = styled.div(({ img }) => `
     margin: 0px 15px;
-    width: 40px;
-    height: 40px;
-    background-image: url("http://image.cine21.com/resize/cine21/article/2022/0603/15_30_27__6299aa83cb210[W578-].jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-`
+    background: url('${img}') center center / cover no-repeat;
+    position: absolute; top:0; left: 0;
+    width:100%; 
+    height:100%;
+    object-fit:cover;
+
+`)
 export default Image

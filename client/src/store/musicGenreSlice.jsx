@@ -25,7 +25,7 @@ export const musicGenreSlice = createSlice({
 
     builder.addCase(fetchmusicGenre.fulfilled, (state, action) => {
       state.status = 'Complete';
-      state.value = action.payload;
+      state.music = action.payload;
 
     })
 

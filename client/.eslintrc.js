@@ -23,6 +23,7 @@ module.exports = {
     'no-unused-vars': 'warn',
     'no-multiple-empty-lines': [1, { max: 1 }],
     'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
     // 정규 표현식 
     'no-control-regex': 'off',
     'no-useless-escape': 'off'

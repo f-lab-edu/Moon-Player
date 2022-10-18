@@ -2,10 +2,11 @@ import styled from 'styled-components'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchmusicGenre } from 'store/musicGenreSlice';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
+
+import { fetchmusicGenre } from 'store/musicGenreSlice';
+import { fetchmusicList } from 'store/musicListSlice';
 
 const Layout = styled.div`
     display: flex;
@@ -20,7 +21,7 @@ const Layout = styled.div`
   
 `
 
-const Card = styled.div(({ img }) => `
+const Card = styled.img(({ img }) => `
 
 display: flex;
 justify-content: center;
@@ -43,26 +44,35 @@ cursor:pointer;
   font-size: 25px;
   font-weight:bold;
   width:90vw;
-  box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.2);
-  padding-top: calc(450 / 1000 * 90vw);
+  height:30vh;
+  background-size:100% 100%;
+  background-position: center center;
+  box-shadow: 2px 1px 10px 1px rgba(218, 120, 120, 0.2);
+
 }
 `)
 
 const Genre = () => {
   const dispatch = useDispatch()
-  const musicGenreItem = useSelector(({ musicGenre }) => {
-    return musicGenre.music ? musicGenre.value : []
-  })
 
-  console.log(musicGenreItem)
   useEffect(() => {
     dispatch(fetchmusicGenre())
   }, [])
 
+  const genreItem = useSelector(state => {
+    return state.musicGenre ? state.musicGenre.music : []
+  })
+
+  const onCardClickHanlder = ({ target }) => {
+    const genre_id = target.id
+    dispatch(fetchmusicList(genre_id))
+    return
+  }
+
   return (
     <Layout>
       {
-        musicGenreItem && musicGenreItem.map(({ genre_img, genre_id }) => <Card img={genre_img} key={genre_id}></Card>)
+        genreItem && genreItem.map(({ genre_img, genre_id }) => <Card onClick={onCardClickHanlder} img={genre_img} key={genre_id} id={genre_id}></Card>)
       }
       < FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'#6633cc'} />
 
