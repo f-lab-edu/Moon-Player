@@ -34,22 +34,27 @@ border: 1px solid rgba(0,0,0,0.3);
 box-shadow: 2px 1px 10px 1px rgba(133, 99, 99, 0.3);
 color: #6633cc;
 font-weight :900;
-background-image: url('${img}');
-background-size:cover;
+background: url('${img}') center center / cover no-repeat;
+
+
+cursor:pointer;
 @media screen and (max-width:1000px){
   border-radius: 7px;
   font-size: 25px;
   font-weight:bold;
   width:90vw;
   box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.2);
+  padding-top: calc(450 / 1000 * 90vw);
 }
 `)
 
-const NavItems = () => {
+const Genre = () => {
   const dispatch = useDispatch()
-  const data = useSelector(({ music }) => {
-    return music.value ? music.value : []
+  const musicGenreItem = useSelector(({ musicGenre }) => {
+    return musicGenre.music ? musicGenre.value : []
   })
+
+  console.log(musicGenreItem)
   useEffect(() => {
     dispatch(fetchmusicGenre())
   }, [])
@@ -57,11 +62,11 @@ const NavItems = () => {
   return (
     <Layout>
       {
-        data && data.map(({ genre_img, genre_id }) => <Card img={genre_img} key={genre_id}></Card>)
+        musicGenreItem && musicGenreItem.map(({ genre_img, genre_id }) => <Card img={genre_img} key={genre_id}></Card>)
       }
       < FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'#6633cc'} />
 
     </Layout >
   )
 }
-export default NavItems
+export default Genre

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import HeaderItems from './components/HeaderItems';
-import NavItems from './components/NavItems';
+import Genre from './components/Genre';
 import Title from 'components/items/Title';
 import PlayList from './components/PlayList';
 import Player from './components/Player';
@@ -32,7 +32,7 @@ const Nav = styled.nav`
     justify-content :center;
     align-items: center;
 `
-const NavTitle = styled(Title)`
+const GenreTitle = styled(Title)`
  text-shadow: 1px 1px 1px gray;
  font-weight: 900;
  text-align: center;
@@ -78,8 +78,8 @@ const MusicPage = () => {
       <HeaderItems />
     </Header>
     <Nav>
-      <NavTitle>인기 차트</NavTitle>
-      <NavItems />
+      <GenreTitle>인기 음악</GenreTitle>
+      <Genre />
     </Nav>
     <Main>
       <PlayList />
