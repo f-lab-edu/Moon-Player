@@ -34,7 +34,9 @@ const PlayList = () => {
 
   const dispatch = useDispatch()
   const playListItems = useSelector((state) => {
-    return state.musicList ? state.musicList.music : [];
+
+    // state.store이름명.state이름. json파일 object name
+    return state.musicList ? state.musicList.musics : [];
   })
 
   useEffect(() => {

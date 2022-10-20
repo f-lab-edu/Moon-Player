@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit'
 
 // 액션 생성
 const fetchmusicList = createAsyncThunk(
@@ -11,12 +11,17 @@ const fetchmusicList = createAsyncThunk(
 
 // Reducer
 export const musicListSlice = createSlice({
-  name: 'music',
+  name: 'musicList',
+
+  // 가져온 음악리스트 들이 존재
   initialState: {
-    music: [],
+    musics: [],
   },
+
   // // 동기적인 액션 처리
-  reducers: {},
+  reducers: {
+
+  },
   // 비동기적인 액션처리(action create 자동생성 불가능)
   extraReducers: (builder) => {
     builder.addCase(fetchmusicList.pending, (state, action) => {
@@ -26,7 +31,7 @@ export const musicListSlice = createSlice({
     builder.addCase(fetchmusicList.fulfilled, (state, action) => {
       state.status = 'Complete';
 
-      state.music = action.payload;
+      state.musics = action.payload;
 
     })
 
@@ -38,4 +43,5 @@ export const musicListSlice = createSlice({
 
 })
 export default musicListSlice;
+export const { select } = musicListSlice.actions
 export { fetchmusicList }

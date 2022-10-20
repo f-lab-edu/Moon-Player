@@ -7,7 +7,7 @@ const Title = styled.h3`
     margin: 1px;
     font-weight: 900;
 `
-const Image = styled.image`
+const Image = styled.img`
 `
 const Layout = styled.div`
 display: flex;
@@ -38,18 +38,17 @@ const Box = styled.div`
 `
 
 // 재사용 가능
-const PlayerItem = () => {
+const PlayerItem = (({ title, image, id, video_id }) => {
   return (
     <Layout>
       <Box>
         <Image />
         <div>
-          <Title>노래 : 좋은날</Title>
-          <Title>가수 : 아이유 </Title>
+          <Title>{title}</Title>
         </div>
       </Box>
       <FontAwesomeIcon icon={faTrash} size={'2x'} color={'#6633cc'} />
     </Layout>
   )
-}
+})
 export default PlayerItem

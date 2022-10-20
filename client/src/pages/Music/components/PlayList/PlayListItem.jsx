@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { add } from 'store/musicPlayerSlice';
 
 const Layout = styled.div`
     display: flex;
@@ -70,6 +72,17 @@ const Image = styled.img(({ img }) => `
 `)
 
 const PlayListItem = ({ id, title, img, }) => {
+  const dispatch = useDispatch()
+  const playListItems = useSelector(state => state.musicList.musics.musics)
+
+  // 아이디 값을 기반으로 musicList 스토어의 selected에 저장
+  const onAddButtonHandler = () => {
+    // 단일 return object
+    const selected_item = playListItems.filter((item) => item.id === id)[0]
+    // musicPlayer store에 playerItems 에 add한다.
+    dispatch(add(selected_item))
+    return
+  }
 
   return (
     <Layout>
@@ -79,7 +92,7 @@ const PlayListItem = ({ id, title, img, }) => {
       <div>{`${title}`}</div>
       <div>
         <FontAwesomeIcon icon={faCirclePlay} size={'2x'} />
-        <FontAwesomeIcon icon={faCirclePlus} size={'2x'} />
+        <FontAwesomeIcon onClick={onAddButtonHandler} icon={faCirclePlus} size={'2x'} />
       </div>
     </Layout>
   )

@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { musicGenreSlice } from 'store/musicGenreSlice'
-import { musicListSlice } from 'store/musicListSlice'
+import { musicGenreSlice } from './musicGenreSlice'
+import { musicListSlice } from './musicListSlice'
+import { musicPlayerSlice } from './musicPlayerSlice';
 
 //  1. Redux 스토어를 만들어준다 여기서 store를관리 그리고 Redux DevTools extension도 사용가능
 // 각각의 Slice의 reducer들이 들어간다
@@ -8,6 +9,8 @@ import { musicListSlice } from 'store/musicListSlice'
 export const store = configureStore({
   reducer: {
     musicGenre: musicGenreSlice.reducer,
-    musicList: musicListSlice.reducer
+    musicList: musicListSlice.reducer,
+    musicPlayer: musicPlayerSlice.reducer
+
   },
 })
