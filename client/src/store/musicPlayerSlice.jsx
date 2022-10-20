@@ -16,10 +16,13 @@ export const musicPlayerSlice = createSlice({
       // playerItems에 중복 체크
       const isItem = state.playerItems.filter((item) => item.video_id === action.payload.video_id).length
       state.playerItems = isItem ? [...state.playerItems] : [...state.playerItems, Object.assign({}, action.payload)]
+    },
+    remove: (state, action) => {
+      state.playerItems = state.playerItems.filter((item) => item.video_id !== action.payload)
     }
 
   },
 
 })
 export default musicPlayerSlice;
-export const { add } = musicPlayerSlice.actions
+export const { add, remove } = musicPlayerSlice.actions

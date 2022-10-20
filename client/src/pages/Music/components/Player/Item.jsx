@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from 'react-redux';
+import { remove } from 'store/musicPlayerSlice';
 
 const Layout = styled.div`
 display: flex;
@@ -52,12 +54,18 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 // 재사용 가능
 const Item = (({ title, image, video_id }) => {
+  const dispatch = useDispatch(video_id)
+  const onRemoveHandler = () => {
+
+    dispatch(remove(video_id))
+    console.log('remove')
+  }
   return (
     <Layout>
       <Image img={image} />
       <Title>{title}</Title>
 
-      <FontAwesomeIcon icon={faTrash} size={'2x'} color={'#6633cc'} />
+      <FontAwesomeIcon onClick={onRemoveHandler} icon={faTrash} size={'2x'} color={'#6633cc'} />
     </Layout>
   )
 })
