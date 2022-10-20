@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import Title from '../../../components/items/Title';
-import PlayListItem from './PlayList/PlayListItem';
+import Item from './PlayList/Item';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchmusicList } from 'store/musicListSlice';
+import { fetchmusicList } from 'store/musicPlayListSlice';
 
 const Layout = styled.div`
     display: flex;
@@ -34,11 +34,11 @@ const PlayList = () => {
 
   const dispatch = useDispatch()
   const playListItems = useSelector((state) => {
-
     // state.store이름명.state이름. json파일 object name
-    return state.musicList ? state.musicList.musics : [];
+    return state.musicPlayList ? state.musicPlayList.musicList : [];
   })
 
+  // 초기 렌더링시에 musicList(1) 아이템을 요청
   useEffect(() => {
     dispatch(fetchmusicList(1))
   }, [])
@@ -49,7 +49,7 @@ const PlayList = () => {
 
         <PlayListTitle>{playListItems.title}</PlayListTitle>
         {
-          playListItems.musics && playListItems.musics.map(({ video_title, id, video_img }) => <PlayListItem key={id} id={id} title={video_title} img={video_img}></PlayListItem>)
+          playListItems.musics && playListItems.musics.map(({ video_title, id, video_img }) => <Item key={video_title} id={id} title={video_title} img={video_img}></Item>)
         }
       </Box>
     </Layout>

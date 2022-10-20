@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import HeaderItems from './components/HeaderItems';
+import Items from './components/Header/Items';
 import Genre from './components/Genre';
 import Title from 'components/items/Title';
 import PlayList from './components/PlayList';
@@ -75,7 +75,7 @@ const MusicPage = () => {
   return <Layout>
     <Header>
       <HeaderTitle>Moon Player</HeaderTitle>
-      <HeaderItems />
+      <Items />
     </Header>
     <Nav>
       <GenreTitle>인기 음악</GenreTitle>

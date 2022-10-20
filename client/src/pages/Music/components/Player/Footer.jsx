@@ -42,7 +42,7 @@ const PlayingImage = styled(Image)`
     width: 60px;
     height: 70px;
 `
-const PlayerFooter = () => {
+const Footer = () => {
   return (
     <footer>
       <Progressbar />
@@ -69,4 +69,4 @@ const PlayerFooter = () => {
   )
 }
 
-export default PlayerFooter
+export default Footer

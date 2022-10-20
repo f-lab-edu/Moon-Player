@@ -7,8 +7,12 @@ const Title = styled.h3`
     margin: 1px;
     font-weight: 900;
 `
-const Image = styled.img`
-`
+const Image = styled.img(({ url }) => `
+console.log(url)
+
+
+`)
+
 const Layout = styled.div`
 display: flex;
 justify-content: space-between;
@@ -38,11 +42,11 @@ const Box = styled.div`
 `
 
 // 재사용 가능
-const PlayerItem = (({ title, image, id, video_id }) => {
+const Item = (({ title, image, video_id }) => {
   return (
     <Layout>
       <Box>
-        <Image />
+        <Image url={image} />
         <div>
           <Title>{title}</Title>
         </div>
@@ -51,4 +55,4 @@ const PlayerItem = (({ title, image, id, video_id }) => {
     </Layout>
   )
 })
-export default PlayerItem
+export default Item

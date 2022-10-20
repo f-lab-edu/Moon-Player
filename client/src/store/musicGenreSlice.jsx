@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 // 액션 생성
 const fetchmusicGenre = createAsyncThunk(
-  'fetch/musicgenre',
+  'musicGenre',
   async () => {
     const data = await (await fetch('http://localhost:4000/api/music/genre')).json()
     return data.music
@@ -11,9 +11,9 @@ const fetchmusicGenre = createAsyncThunk(
 
 // Reducer
 export const musicGenreSlice = createSlice({
-  name: 'music',
+  name: 'Genre',
   initialState: {
-    music: [],
+    musicList: [],
   },
   // // 동기적인 액션 처리
   reducers: {},
@@ -23,9 +23,10 @@ export const musicGenreSlice = createSlice({
       state.status = 'Loading';
     })
 
+    // action 후 미들웨어 실행
     builder.addCase(fetchmusicGenre.fulfilled, (state, action) => {
       state.status = 'Complete';
-      state.music = action.payload;
+      state.musicList = action.payload;
 
     })
 

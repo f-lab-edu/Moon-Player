@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { fetchmusicGenre } from 'store/musicGenreSlice';
-import { fetchmusicList } from 'store/musicListSlice';
+import { fetchmusicList } from 'store/musicPlayListSlice';
 
 const Layout = styled.div`
     display: flex;
@@ -55,15 +55,16 @@ cursor:pointer;
 const Genre = () => {
   const dispatch = useDispatch()
 
+  // 초기 렌더링시에 Genre Item들을 서버로부터 요청해서 가져옴
   useEffect(() => {
     dispatch(fetchmusicGenre())
   }, [])
 
   const genreItem = useSelector(state => {
-    return state.musicGenre ? state.musicGenre.music : []
+    return state.musicGenre ? state.musicGenre.musicList : []
   })
 
-  // genre를 누를떄마다 musicList state값 변경
+  // 다른 genre Card 를 누를떄마다 musicList state값 변경
   const onCardClickHanlder = ({ target }) => {
     const genre_id = target.id
     dispatch(fetchmusicList(genre_id))

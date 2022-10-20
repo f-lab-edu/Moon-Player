@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Title from 'components/items/Title';
-import PlayerItem from './Player/PlayerItem';
-import PlayerFooter from './Player/PlayerFooter';
+import Item from './Player/Item';
+import Footer from './Player/Footer';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -47,8 +47,8 @@ const PlayerTitle = styled(Title)`
 
 const Player = () => {
 
-  // 사용자가 선택한 PlayerItem 만 렌더링
-  const playerList = useSelector(state => state.musicPlayer.playerItems)
+  // 사용자가 선택한 Item 만 렌더링
+  const playerItems = useSelector(state => state.musicPlayer.playerItems)
 
   return (
     <Layout>
@@ -56,11 +56,11 @@ const Player = () => {
         <Header>
           <PlayerTitle>재생 목록</PlayerTitle>
         </Header>
-        {playerList.map(({ video_title, video_img, id, video_id }) => <PlayerItem title={video_title} image={video_img} video_id={video_id} key={id}></PlayerItem>)
+        {playerItems.map(({ video_title, video_img, video_id }) => <Item title={video_title} image={video_img} video_id={video_id} key={video_id}></Item>)
         }
       </Box>
 
-      <PlayerFooter />
+      <Footer />
 
     </Layout>
 

@@ -8,13 +8,13 @@ export const musicPlayerSlice = createSlice({
   initialState: {
     playerItems: [],
   },
-  // // 동기적인 액션 처리
 
+  // 동기적인 액션 처리
   reducers: {
     // 플레이어에 add 해주는 함수
     add: (state, action) => {
-      const isItem = state.playerItems.filter((item) => item.id === action.payload.id).length
-      // playerItems에 중복이 있으면 추가 x
+      // playerItems에 중복 체크
+      const isItem = state.playerItems.filter((item) => item.video_id === action.payload.video_id).length
       state.playerItems = isItem ? [...state.playerItems] : [...state.playerItems, Object.assign({}, action.payload)]
     }
 

@@ -71,9 +71,9 @@ const Image = styled.img(({ img }) => `
 
 `)
 
-const PlayListItem = ({ id, title, img, }) => {
+const Item = ({ id, title, img, }) => {
   const dispatch = useDispatch()
-  const playListItems = useSelector(state => state.musicList.musics.musics)
+  const playListItems = useSelector(state => state.musicPlayList.musicList.musics)
 
   // 아이디 값을 기반으로 musicList 스토어의 selected에 저장
   const onAddButtonHandler = () => {
@@ -98,4 +98,4 @@ const PlayListItem = ({ id, title, img, }) => {
   )
 }
 
-export default PlayListItem
+export default Item
