@@ -14,6 +14,7 @@ const Layout = styled.div`
     justify-content: center;
     align-items: center;
 
+    
     @media screen and (max-width:1000px){
     flex-direction: column;
     gap:10px 
@@ -22,23 +23,22 @@ const Layout = styled.div`
 `
 
 const Card = styled.img(({ img }) => `
-
-display: flex;
-justify-content: center;
-align-items: center;
 width: 150px;
 height: 100px;
-box-sizing: border-box;
 margin: 0px 10px;
 border-radius: 30px;
 border: 1px solid rgba(0,0,0,0.3);
-box-shadow: 2px 1px 10px 1px rgba(133, 99, 99, 0.3);
+box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 color: #6633cc;
 font-weight :900;
 background: url('${img}') center center / cover no-repeat;
-
+transition-duration:0.4s;
+&:active{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
 
 cursor:pointer;
+
 @media screen and (max-width:1000px){
   border-radius: 7px;
   font-size: 25px;
@@ -63,6 +63,7 @@ const Genre = () => {
     return state.musicGenre ? state.musicGenre.music : []
   })
 
+  // genre를 누를떄마다 musicList state값 변경
   const onCardClickHanlder = ({ target }) => {
     const genre_id = target.id
     dispatch(fetchmusicList(genre_id))

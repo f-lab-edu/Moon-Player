@@ -1,7 +1,7 @@
 import styled from 'styled-components'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlay, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
-// import Image from 'components/items/Image';
+import { faCirclePlay, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 const Layout = styled.div`
     display: flex;
@@ -16,7 +16,7 @@ const Layout = styled.div`
     border-left:none;
     border-right:none;
     border-bottom: none;
-
+  
     gap:10px;
     >div:nth-of-type(1){
       width:10px;
@@ -37,6 +37,15 @@ const Layout = styled.div`
       >svg{
         margin-left: 3px;
         cursor: pointer;
+        transition: 0.3s;
+        &:active{
+          margin-left: 5px;
+          margin-top:5px;
+        }
+        &:hover{
+          color:white;
+        }
+      
       }
     }
     
@@ -55,11 +64,13 @@ const Image = styled.img(({ img }) => `
     background-position: center;
     width:100px;
     height:50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 
 `)
 
-const PlayListItem = ({ id, title, img }) => {
+const PlayListItem = ({ id, title, img, }) => {
+
   return (
     <Layout>
       <div>{id}</div>
@@ -68,7 +79,7 @@ const PlayListItem = ({ id, title, img }) => {
       <div>{`${title}`}</div>
       <div>
         <FontAwesomeIcon icon={faCirclePlay} size={'2x'} />
-        <FontAwesomeIcon icon={faCircleCheck} size={'2x'} />
+        <FontAwesomeIcon icon={faCirclePlus} size={'2x'} />
       </div>
     </Layout>
   )

@@ -3,6 +3,7 @@ import Title from '../../../components/items/Title';
 import PlayListItem from './PlayList/PlayListItem';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { fetchmusicList } from 'store/musicListSlice';
 
 const Layout = styled.div`
@@ -27,7 +28,7 @@ const PlayListTitle = styled(Title)`
 
 `
 const Box = styled.div`
-  padding: 20px;
+  padding: 10px 20px;
 `
 const PlayList = () => {
 
