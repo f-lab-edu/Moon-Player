@@ -20,7 +20,7 @@ const Header = styled.header`
      padding: 0px 30px;
      @media screen and (max-width:1000px){
       position: relative;
-}
+    }
 `
 const HeaderTitle = styled(Title)`
   font-size:30px;
@@ -45,13 +45,12 @@ const Main = styled.main`
     justify-content: center;
     align-items: center;
     padding: 15px;
-    margin-top:50px;    
+    margin-top:50px;
     
     @media screen and (max-width:1000px){
  
       flex-direction: column;
       align-items: center;
-      /* height:100vh; */
       gap: 20px;
 
     }

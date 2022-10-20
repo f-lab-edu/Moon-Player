@@ -9,13 +9,22 @@ import { fetchmusicList } from 'store/musicPlayListSlice';
 const Layout = styled.div`
     display: flex;
     flex-direction: column;
+    width:60vw;
     height: 47vh;
-    overflow: scroll;
+    overflow-y: scroll;
     border-radius: 7px;
     box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
     
-    &::-webkit-scrollbar {
-          display: none;
+
+    &::-webkit-scrollbar{
+      width:10px;
+    }
+      
+    &::-webkit-scrollbar-thumb {
+      height: 30%;
+      background: purple; 
+      border-radius:7px;
+       
     }
     @media screen and (max-width:1200px){
       width: 100%;

@@ -6,10 +6,12 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Layout = styled.div`
+width: 30vw;
 margin-left: 50px;
 box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
 padding: 15px;
 border-radius:7px;
+
 
 @media screen and (max-width:1000px){
       margin: 0px;
@@ -18,13 +20,23 @@ border-radius:7px;
 
 `
 const Box = styled.div`
-    width: 350px;
     color: #6633cc;
     height: 40vh;
-    overflow: scroll;
-      &::-webkit-scrollbar {
-          display: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+    padding-right: 10px;
+    &::-webkit-scrollbar{
+      width:10px;
     }
+      
+    &::-webkit-scrollbar-thumb {
+    
+      height: 5%;
+      background: purple; 
+      border-radius:7px;
+    }
+    
     @media screen and (max-width:1000px){
       width:100%;
     }

@@ -13,38 +13,32 @@ const Layout = styled.div`
     border: 1px solid rgba(0,0,0,0.1);
     color: #6633cc;
     font-weight: 900;
-    width: 700px;
-    height: 50px;
     border-left:none;
     border-right:none;
     border-bottom: none;
-  
-    gap:10px;
-    >div:nth-of-type(1){
-      width:10px;
-    }
-    
+    text-align: center;
+    gap:20px;
 
+    /* 텍스트 */
     >div:nth-of-type(2){
-       overflow: hidden;
-       text-overflow: ellipsis;
-       white-space: nowrap;
-       width:300px;
+      width:60%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; 
+      font-weight: 900;
     }
-
+    /* 버튼 */
     >div:nth-of-type(3){
       display: flex;
-      justify-content: center;
-      align-items: center;
+      gap: 2px;
       >svg{
-        margin-left: 3px;
         cursor: pointer;
-        transition: 0.3s;
+      transition: all 0.3s linear;
         &:active{
-          margin-left: 5px;
-          margin-top:5px;
+          transform: translateY(4px);
+
         }
-        &:hover{
+        &:hover{  
           color:white;
         }
       
@@ -60,16 +54,22 @@ const Layout = styled.div`
 `
 
 const Image = styled.img(({ img }) => `
-    
     background: url('${img}') no-repeat;
     background-size: cover;
     background-position: center;
     width:100px;
     height:50px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
 `)
+const Box = styled.div`
+  display: flex;
+  align-items: center;
+  gap:20px;
+  >:first-child{
+    width: 10px;
+  }
+
+`
 
 const Item = ({ id, title, img, }) => {
   const dispatch = useDispatch()
@@ -86,8 +86,10 @@ const Item = ({ id, title, img, }) => {
 
   return (
     <Layout>
-      <div>{id}</div>
-      <Image img={img} />
+      <Box>
+        <div>{id}</div>
+        <Image img={img} />
+      </Box>
 
       <div>{`${title}`}</div>
       <div>
