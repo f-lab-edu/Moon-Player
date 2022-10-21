@@ -59,16 +59,17 @@ const PlayerTitle = styled(Title)`
 
 const Player = () => {
 
+  console.log('Player Component !!')
   // 사용자가 선택한 Item 만 렌더링
-  const playerItems = useSelector(state => state.musicPlayer.playerItems)
-
+  const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
   return (
     <Layout>
       <Box>
         <Header>
           <PlayerTitle>재생 목록</PlayerTitle>
         </Header>
-        {playerItems.map(({ video_title, video_img, video_id }) => <Item title={video_title} image={video_img} video_id={video_id} key={video_id}></Item>)
+        {playerItems.length > 0 ? playerItems.map(({ video_title, video_img, video_id }) => <Item title={video_title} image={video_img} video_id={video_id} key={video_id}></Item>) :
+          <h3>재생목록이 비어있습니다.</h3>
         }
       </Box>
 

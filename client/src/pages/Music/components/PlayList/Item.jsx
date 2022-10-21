@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { add } from 'store/musicPlayerSlice';
+import { add } from 'store/feature/music/PlayerSlice';
 
 const Layout = styled.div`
     display: flex;
@@ -73,7 +73,8 @@ const Box = styled.div`
 
 const Item = ({ id, title, img, }) => {
   const dispatch = useDispatch()
-  const playListItems = useSelector(state => state.musicPlayList.musicList.musics)
+  // 안티패턴?
+  const playListItems = useSelector(state => state.musicReducer.musicPlayList.musicList.musics)
 
   // 아이디 값을 기반으로 musicList 스토어의 selected에 저장
   const onAddButtonHandler = () => {

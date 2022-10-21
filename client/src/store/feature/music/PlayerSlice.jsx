@@ -17,6 +17,7 @@ export const musicPlayerSlice = createSlice({
       const isItem = state.playerItems.filter((item) => item.video_id === action.payload.video_id).length
       state.playerItems = isItem ? [...state.playerItems] : [...state.playerItems, Object.assign({}, action.payload)]
     },
+    // 플레이어에서 삭제하는 함수
     remove: (state, action) => {
       state.playerItems = state.playerItems.filter((item) => item.video_id !== action.payload)
     }

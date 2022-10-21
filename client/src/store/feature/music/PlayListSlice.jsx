@@ -1,11 +1,12 @@
-import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { fetchById } from '../../utils/API/musicAPI';
 
 // 액션 생성
 const fetchmusicList = createAsyncThunk(
   'musicList',
-  async (music_id) => {
-    const data = await (await fetch(`http://localhost:4000/api/music/genre/${music_id}`)).json()
-    return data.music
+  async (id) => {
+    const response = await fetchById(id)
+    return response.music
   }
 )
 
@@ -43,5 +44,4 @@ export const musicPlayListSlice = createSlice({
 
 })
 export default musicPlayListSlice;
-export const { select } = musicPlayListSlice.actions
 export { fetchmusicList }

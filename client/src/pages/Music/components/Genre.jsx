@@ -1,12 +1,11 @@
 import styled from 'styled-components'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-import { fetchmusicGenre } from 'store/musicGenreSlice';
-import { fetchmusicList } from 'store/musicPlayListSlice';
+import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
+import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 
 const Layout = styled.div`
     display: flex;
@@ -61,7 +60,7 @@ const Genre = () => {
   }, [])
 
   const genreItem = useSelector(state => {
-    return state.musicGenre ? state.musicGenre.musicList : []
+    return state.musicReducer.musicGenre ? state.musicReducer.musicGenre.musicList : []
   })
 
   // 다른 genre Card 를 누를떄마다 musicList state값 변경

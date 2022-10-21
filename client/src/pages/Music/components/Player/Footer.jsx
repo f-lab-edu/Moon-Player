@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Title from 'components/items/Title';
-
 import { faShuffle, faBackwardStep, faPlayCircle, faForwardStep } from '@fortawesome/free-solid-svg-icons';
 import Progressbar from 'components/items/Progressbar';
 import Image from 'components/items/Image';
 
-const FooterBox = styled.div`
+const Box = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -14,7 +13,7 @@ width: inherit;
 
 
 `
-const PlayingIconBox = styled.div`
+const IconBox = styled.div`
     display: flex;
     align-items: center;
 
@@ -46,24 +45,23 @@ const Footer = () => {
   return (
     <footer>
       <Progressbar />
-      <FooterBox>
+      <Box>
         <PlayingInfoBox>
           <PlayingImage />
           <div>
-            <PlayingTitle>노래 : 좋은날</PlayingTitle>
-            <PlayingTitle>가수 : 아이유 </PlayingTitle>
+            {/* <PlayingTitle>노래 : 좋은날</PlayingTitle> */}
 
           </div>
         </PlayingInfoBox>
-        <PlayingIconBox>
+        <IconBox>
           <FontAwesomeIcon icon={faBackwardStep} size={'2x'} color={'#6633cc'} />
           <FontAwesomeIcon icon={faPlayCircle} size={'2x'} color={'#6633cc'} />
           <FontAwesomeIcon icon={faForwardStep} size={'2x'} color={'#6633cc'} />
           <div>
             <FontAwesomeIcon icon={faShuffle} size={'2x'} color={'#6633cc'} />
           </div>
-        </PlayingIconBox>
-      </FooterBox>
+        </IconBox>
+      </Box>
     </footer>
 
   )
