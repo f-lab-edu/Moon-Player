@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faMagnifyingGlass, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-import useAuthenticator from '../../../hooks/useAuthenticator';
+import useAuthenticator from '../../../../hooks/useAuthenticator';
 
 const Layout = styled.div`
   display: flex;
@@ -33,7 +33,7 @@ const Wrapper = styled.li`
   }
 `
 
-const HeaderItems = () => {
+const Items = () => {
   const { signOut } = useAuthenticator()
   const onLogOutHandler = (e) => {
     e.preventDefault()
@@ -71,4 +71,4 @@ const HeaderItems = () => {
   )
 }
 
-export default HeaderItems
+export default Items

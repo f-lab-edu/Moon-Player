@@ -16,6 +16,6 @@ export const checkRequired = (str) => {
   return str !== '' ? '' : '필수 항목입니다. '
 }
 export const checkPassword = (str) => {
-  return passwordPattern.test(str) ? '' : '비밀번호 : 숫자 영문조합 (8-15개이하)'
+  return passwordPattern.test(str) ? '' : '숫자 영문조합 (8-15개이하)'
 }
 
