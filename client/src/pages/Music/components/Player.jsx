@@ -1,8 +1,7 @@
 import styled from 'styled-components'
-import Title from 'components/items/Title';
+import Title from 'components/Common/Title';
 import Item from './Player/Item';
 import Footer from './Player/Footer';
-import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Layout = styled.div`
@@ -50,6 +49,8 @@ margin-bottom: 8px;
 
 `
 const PlayerTitle = styled(Title)`
+    position: sticky;
+    top: 0px;
     font-size: 20px;
     font-weight: 900;
     color: white;
@@ -59,18 +60,18 @@ const PlayerTitle = styled(Title)`
 
 const Player = () => {
 
-  console.log('Player Component !!')
   // 사용자가 선택한 Item 만 렌더링
   const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
+  const items = playerItems.length > 0 ? playerItems.map(({ video_title, video_img, video_id }) => <Item title={video_title} image={video_img} video_id={video_id} key={video_id}></Item>) :
+    <h3>재생목록이 비어있습니다.</h3>
+
   return (
     <Layout>
+      <Header>
+        <PlayerTitle>재생 목록</PlayerTitle>
+      </Header>
       <Box>
-        <Header>
-          <PlayerTitle>재생 목록</PlayerTitle>
-        </Header>
-        {playerItems.length > 0 ? playerItems.map(({ video_title, video_img, video_id }) => <Item title={video_title} image={video_img} video_id={video_id} key={video_id}></Item>) :
-          <h3>재생목록이 비어있습니다.</h3>
-        }
+        {items}
       </Box>
 
       <Footer />

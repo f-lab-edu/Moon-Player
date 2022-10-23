@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Title from '../../../components/items/Title';
+import Title from 'components/Common/Title';
 import Item from './PlayList/Item';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -42,9 +42,8 @@ const Box = styled.div`
 const PlayList = () => {
   const dispatch = useDispatch()
 
-  const playListItems = useSelector((state) => {
-    return state.musicReducer.musicPlayList ? state.musicReducer.musicPlayList.musicList : [];
-  })
+  const playListStoreItems = useSelector((state) => state.musicReducer.musicPlayList ? state.musicReducer.musicPlayList.musicList : [])
+  const items = playListStoreItems.musics && playListStoreItems.musics.map(({ video_title, id, video_img }) => <Item key={video_title} id={id} title={video_title} img={video_img}></Item>)
 
   // 초기 렌더링시에 musicList(1) 아이템을 요청
   useEffect(() => {
@@ -54,11 +53,9 @@ const PlayList = () => {
   return (
     <Layout>
       <Box>
+        <PlayListTitle>{playListStoreItems.title}</PlayListTitle>
+        {items}
 
-        <PlayListTitle>{playListItems.title}</PlayListTitle>
-        {
-          playListItems.musics && playListItems.musics.map(({ video_title, id, video_img }) => <Item key={video_title} id={id} title={video_title} img={video_img}></Item>)
-        }
       </Box>
     </Layout>
   )

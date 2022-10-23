@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Title from 'components/items/Title';
+import Title from 'components/Common/Title';
 import { faShuffle, faBackwardStep, faPlayCircle, faForwardStep } from '@fortawesome/free-solid-svg-icons';
-import Progressbar from 'components/items/Progressbar';
-import Image from 'components/items/Image';
+import Progressbar from 'components/Common/Progressbar';
+import Image from 'components/Common/Image';
 
 const Box = styled.div`
 display: flex;

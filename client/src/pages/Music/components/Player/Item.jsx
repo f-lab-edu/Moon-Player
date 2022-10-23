@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux';
 import { remove } from 'store/feature/music/PlayerSlice';
+import Text from 'components/Common/Text';
 
 const Layout = styled.div`
 display: flex;
@@ -27,18 +28,12 @@ text-align: center;
 }
 `
 
-const Title = styled.h3`
+const Title = styled(Text)`
   font-size: 15px;
   width:300px;  
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; 
-  font-weight: 900;
   @media screen and (max-width:1000px){
   width: 100%; 
   }
-
-    
 `
 const Image = styled.img(({ img }) => `
 width:150px;
@@ -55,7 +50,7 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 // 재사용 가능
 const Item = (({ title, image, video_id }) => {
   const dispatch = useDispatch(video_id)
-  const onRemoveHandler = () => {
+  const handleClickRemoveButton = () => {
 
     dispatch(remove(video_id))
     console.log('remove')
@@ -65,7 +60,7 @@ const Item = (({ title, image, video_id }) => {
       <Image img={image} />
       <Title>{title}</Title>
 
-      <FontAwesomeIcon onClick={onRemoveHandler} icon={faTrash} size={'2x'} color={'#6633cc'} />
+      <FontAwesomeIcon onClick={handleClickRemoveButton} icon={faTrash} size={'2x'} color={'#6633cc'} />
     </Layout>
   )
 })

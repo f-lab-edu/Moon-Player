@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Items from './components/Header/Items';
 import Genre from './components/Genre';
-import Title from 'components/items/Title';
+import Title from 'components/Common/Title';
 import PlayList from './components/PlayList';
 import Player from './components/Player';
 
@@ -66,8 +66,6 @@ const Footer = styled.footer`
 const FooterTitle = styled.h3`
 font-size: 13px;
 `
-
-// 1. MusicPage에서 Nav에 대한 Json파일을 뿌려준다. /api/music/music_title
 
 const MusicPage = () => {
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faMagnifyingGlass, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-import useAuthenticator from '../../../../hooks/useAuthenticator';
+import useAuthenticator from 'hooks/useAuthenticator.jsx';
 
 const Layout = styled.div`
   display: flex;
@@ -35,7 +35,7 @@ const Wrapper = styled.li`
 
 const Items = () => {
   const { signOut } = useAuthenticator()
-  const onLogOutHandler = (e) => {
+  const handleClickLogout = (e) => {
     e.preventDefault()
     signOut()
   }
@@ -44,10 +44,10 @@ const Items = () => {
     <Layout>
       <Box>
         <Wrapper>
-          <Link to="#" onClick={onLogOutHandler}><FontAwesomeIcon icon={faRightFromBracket} /></Link>
+          <Link to="#" onClick={handleClickLogout}><FontAwesomeIcon icon={faRightFromBracket} /></Link>
         </Wrapper>
         <Wrapper >
-          <Link to="#" onClick={onLogOutHandler}>
+          <Link to="#" onClick={handleClickLogout}>
             로그아웃
           </Link>
         </Wrapper>
