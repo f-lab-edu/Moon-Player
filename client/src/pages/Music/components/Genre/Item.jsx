@@ -5,9 +5,8 @@ import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Image from 'components/Common/Image';
 
 const CardImage = styled(Image)`
-width: 200px;
-height: 150px;
-margin: 0px 10px;
+width: 190px;
+height: auto;
 border-radius: 7px;
 border: 1px solid rgba(0,0,0,0.3);
 box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -16,12 +15,14 @@ transition-duration:0.4s;
 &:active{
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
+max-width: 100%;
 cursor:pointer;
     @media screen and (max-width:1000px){
-      
       width:250px;
-      height:150px;
-    }    
+    }
+    @media screen and (max-width:630px){
+      width:500px;
+    } 
 `
 
 const Item = ({ img, id }) => {

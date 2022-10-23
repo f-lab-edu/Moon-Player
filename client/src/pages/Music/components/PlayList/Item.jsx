@@ -62,7 +62,7 @@ const Item = ({ id, title, img, }) => {
       </Box>
 
       <Text>{`${title}`}</Text>
-      <div>
+      <Box>
         <SmallButton>
           <FontAwesomeIcon icon={faCirclePlay} size={'2x'} />
         </SmallButton>
@@ -70,7 +70,7 @@ const Item = ({ id, title, img, }) => {
           <FontAwesomeIcon onClick={handleClickAddButton} icon={faCirclePlus} size={'2x'} />
         </SmallButton>
 
-      </div>
+      </Box>
     </Layout>
   )
 }

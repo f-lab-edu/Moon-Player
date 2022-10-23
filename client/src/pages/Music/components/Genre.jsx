@@ -9,24 +9,42 @@ import Item from './Genre/Item';
 
 const Layout = styled.div`
   display:flex;
+
   justify-content: center;
   align-items: center;
+  
 
 `
 
 const Grid = styled.div`
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 100%;
-    
+    grid-template-columns: repeat(6,15%);
+    grid-template-rows: 1fr;
+    grid-gap:20px;
+    padding-left: 20px;
+
     @media screen and (max-width:1000px){
       display: grid;
-      grid-template-columns: 30% 30% 30%;
-      grid-template-rows: 50% 50%;
-      grid-gap:20px
-
+      grid-template-columns: repeat(3,30%);
+      grid-template-rows: repeat(2,1fr);
+      grid-gap:30px;
+     
     }    
   
+    @media screen and (max-width:630px){
+      display: grid;
+      grid-gap:20px;
+      grid-template-columns: repeat(1,100%);
+      grid-template-rows: repeat(6,1fr);
+     
+    }  
+  
+`
+const Box = styled.div`
+
+    @media screen and (max-width:900px){
+      padding: 0px 15px;
+    }
 `
 
 const Genre = () => {
@@ -44,7 +62,9 @@ const Genre = () => {
       <Grid>
         {items}
       </Grid >
-      < FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'#6633cc'} />
+      <Box>
+        < FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'#6633cc'} />
+      </Box>
     </Layout>
   )
 }
