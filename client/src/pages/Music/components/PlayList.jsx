@@ -48,6 +48,7 @@ const PlayList = () => {
   // 초기 렌더링시에 musicList(1) 아이템을 요청
   useEffect(() => {
     dispatch(fetchmusicList(1))
+
   }, [])
 
   return (
@@ -60,5 +61,4 @@ const PlayList = () => {
     </Layout>
   )
 }
-
 export default PlayList

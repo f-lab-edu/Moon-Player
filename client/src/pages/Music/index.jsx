@@ -67,7 +67,6 @@ font-size: 13px;
 `
 
 const MusicPage = () => {
-
   return <Layout>
     <Header>
       <HeaderTitle>Moon Player</HeaderTitle>

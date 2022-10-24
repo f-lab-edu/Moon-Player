@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { remove } from 'store/feature/music/PlayerSlice';
 import Text from 'components/Common/Text';
 import useMoveDownScroll from 'hooks/useMoveDownScroll';
+import usePrevious from 'hooks/usePrevious';
+
 import { useEffect } from 'react';
 
 const Layout = styled.div`
@@ -14,6 +16,10 @@ align-items: center;
 border-bottom: 1px solid rgba(0,0,0,0.1);
 gap:20px;
 text-align: center;
+>:first-child{
+  width:1px;
+  font-weight: 900;
+}
 >:last-child{
   cursor:pointer;
   transition: all 0.3s linear;
@@ -27,6 +33,7 @@ text-align: center;
 @media screen and (max-width:1000px){
   width: 100%; 
 }
+
 `
 
 const Title = styled(Text)`
@@ -48,20 +55,25 @@ background-position: center;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `)
 
-const Item = (({ title, image, video_id }) => {
-  const dispatch = useDispatch(video_id)
+const Item = (({ title, image, video_id, order }) => {
+  const playerItemlength = useSelector(state => state.musicReducer.musicPlayer.playerItems).length
+  const prevPlayerItemlength = usePrevious(playerItemlength)
+  const { element, handleScrollElement } = useMoveDownScroll()
 
-  const { handleScrollElement, element } = useMoveDownScroll()
+  useEffect(() => {
+    if (playerItemlength > prevPlayerItemlength) {
+      handleScrollElement()
+    }
+  }, [playerItemlength])
+
+  const dispatch = useDispatch()
   const handleClickRemoveButton = () => {
     dispatch(remove(video_id))
   }
 
-  useEffect(() => {
-    handleScrollElement()
-  }, [title])
-
   return (
     <Layout ref={element}>
+      <div>{order}</div>
       <Image img={image} />
       <Title>{title}</Title>
 

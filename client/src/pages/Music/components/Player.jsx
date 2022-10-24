@@ -23,7 +23,6 @@ const ScrollBox = styled.div`
     height: 40vh;
     overflow-y: scroll;
 
-
     padding-right: 10px;
     &::-webkit-scrollbar{
       width:10px;
@@ -59,7 +58,7 @@ const PlayerTitle = styled(Title)`
 const Player = () => {
   const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
 
-  const items = playerItems.length > 0 ? playerItems.map(({ video_title, video_img, video_id }) => <Item title={video_title} image={video_img} video_id={video_id} key={video_id}></Item>) :
+  const items = playerItems.length > 0 ? playerItems.map(({ video_title, video_img, video_id }, index) => <Item title={video_title} image={video_img} video_id={video_id} key={index} order={++index}></Item>) :
     <h3>재생목록이 비어있습니다.</h3>
 
   return (
@@ -76,6 +75,6 @@ const Player = () => {
     </Layout>
 
   )
-}
+};
 
 export default Player
