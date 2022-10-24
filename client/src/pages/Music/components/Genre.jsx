@@ -12,7 +12,7 @@ const Layout = styled.div`
 
   justify-content: center;
   align-items: center;
-  
+
 
 `
 

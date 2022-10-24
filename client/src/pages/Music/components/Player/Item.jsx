@@ -4,6 +4,8 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux';
 import { remove } from 'store/feature/music/PlayerSlice';
 import Text from 'components/Common/Text';
+import useMoveDownScroll from 'hooks/useMoveDownScroll';
+import { useEffect } from 'react';
 
 const Layout = styled.div`
 display: flex;
@@ -12,7 +14,6 @@ align-items: center;
 border-bottom: 1px solid rgba(0,0,0,0.1);
 gap:20px;
 text-align: center;
-
 >:last-child{
   cursor:pointer;
   transition: all 0.3s linear;
@@ -47,21 +48,26 @@ background-position: center;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `)
 
-// 재사용 가능
 const Item = (({ title, image, video_id }) => {
   const dispatch = useDispatch(video_id)
-  const handleClickRemoveButton = () => {
 
+  const { handleScrollElement, element } = useMoveDownScroll()
+  const handleClickRemoveButton = () => {
     dispatch(remove(video_id))
-    console.log('remove')
   }
+
+  useEffect(() => {
+    handleScrollElement()
+  }, [title])
+
   return (
-    <Layout>
+    <Layout ref={element}>
       <Image img={image} />
       <Title>{title}</Title>
 
       <FontAwesomeIcon onClick={handleClickRemoveButton} icon={faTrash} size={'2x'} color={'#6633cc'} />
-    </Layout>
+    </Layout >
   )
-})
+});
+
 export default Item

@@ -9,7 +9,6 @@ const Layout = styled.div`
 display: flex;
 flex-direction: column;
 background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
-
 `
 const Header = styled.header`
      display: flex;
