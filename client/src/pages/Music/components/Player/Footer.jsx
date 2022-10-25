@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import SmallButton from 'components/Common/SmallButton';
 import usePlayer from 'hooks/usePlayer';
-import ReactPlayer from 'react-player/youtube';
 
 const IconBox = styled.div`
     display: flex;
@@ -39,29 +38,27 @@ const PlayingImage = styled(Image)`
    height: auto;
 `
 const Footer = () => {
-  const music = useSelector(state => state.musicReducer.musicPlayer.playItem)
-  const { handlePlay, player } = usePlayer(music)
+  const playMusics = useSelector(state => state.musicReducer.musicPlayer.playItems)
+  const { player, handlePlayMusic, playIndex } = usePlayer(playMusics)
 
   const handleClickPlay = () => {
-    handlePlay()
+    handlePlayMusic()
   }
 
   return (
     <footer>
 
       <ImageBox>
-        <PlayingImage img={music.image} />
+        {playMusics.length > 0 ? <PlayingImage img={playMusics[playIndex].video_img} /> : <></>}
       </ImageBox>
 
-      <PlayingTitle>{music.title}</PlayingTitle>
+      {playMusics.length > 0 ? <PlayingTitle>{playMusics[playIndex].video_title}</PlayingTitle> : <></>}
       <div>
         <IconBox>
-          {player}
-
+          {playMusics.length > 0 ? player : <></>}
           <div>
             <FontAwesomeIcon icon={faBackwardStep} size={'3x'} color={'#6633cc'} />
             <SmallButton onClick={handleClickPlay}>
-
               <FontAwesomeIcon icon={faPlayCircle} size={'3x'} color={'#6633cc'} />
             </SmallButton>
             <FontAwesomeIcon icon={faForwardStep} size={'3x'} color={'#6633cc'} />

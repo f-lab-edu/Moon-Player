@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { current, createSlice } from '@reduxjs/toolkit'
 
 // Reducer
 export const musicPlayerSlice = createSlice({
@@ -7,7 +7,7 @@ export const musicPlayerSlice = createSlice({
   // 가져온 음악리스트 들이 존재
   initialState: {
     playerItems: [],
-    playItem: {}
+    playItems: []
   },
 
   // 동기적인 액션 처리
@@ -19,14 +19,17 @@ export const musicPlayerSlice = createSlice({
       },
 
     },
-    // 플레이어에서 삭제하는 함수
+    // 플레이어에서 삭제하는 함수 
+    // playItems도 업데이트 되어야함
     removePlayerList: (state, action) => {
       state.playerItems = state.playerItems.filter((item) => item.video_id !== action.payload)
+      state.playItems = state.playItems.filter((item) => item.video_id !== action.payload)
+
     },
 
     playmusic: {
       reducer: (state, action) => {
-        state.playItem = action.payload
+        state.playItems = action.payload
       }
     }
   },

@@ -49,35 +49,38 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `)
 
 const Item = (({ title, image, video_id, order }) => {
-  const playerItemlength = useSelector(state => state.musicReducer.musicPlayer.playerItems).length
-  const prevPlayerItemlength = usePrevious(playerItemlength)
+  const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
+  const playerItemslength = playerItems.length
+  const prevPlayerItemslength = usePrevious(playerItemslength)
   const { element, handleScrollElement } = useMoveDownScroll()
 
   useEffect(() => {
-    if (playerItemlength > prevPlayerItemlength) {
+    if (playerItemslength > prevPlayerItemslength) {
       handleScrollElement()
     }
-  }, [playerItemlength])
+  }, [playerItemslength])
 
   const dispatch = useDispatch()
-  const handleClickRemoveButton = () => {
+  const handleClickRemove = () => {
     dispatch(removePlayerList(video_id))
   }
 
-  const handleClickMusic = () => {
+  const handleClickPlayMusic = () => {
     // PlayerFooter렌더링
-    const newMusic = { title, image, video_id }
-    dispatch(playmusic(newMusic))
+    let playerItemindex = playerItems.findIndex((item) => item.video_title === title)
+    const newMusics = [...playerItems.slice(playerItemindex), ...playerItems.slice(0, playerItemindex)]
+    // 현재 선택된 음악 포함해서 현재 선택된 음악전까지의 음악들
+    dispatch(playmusic(newMusics))
   }
 
   return (
     <Layout ref={element}>
       <div>{order}</div>
-      <Image onClick={handleClickMusic} img={image} />
-      <Title onClick={handleClickMusic}>{title}</Title>
+      <Image onClick={handleClickPlayMusic} img={image} />
+      <Title onClick={handleClickPlayMusic}>{title}</Title>
 
       <SmallButton>
-        <FontAwesomeIcon onClick={handleClickRemoveButton} icon={faTrash} size={'2x'} color={'#6633cc'} />
+        <FontAwesomeIcon onClick={handleClickRemove} icon={faTrash} size={'2x'} color={'#6633cc'} />
       </SmallButton>
 
     </Layout >
