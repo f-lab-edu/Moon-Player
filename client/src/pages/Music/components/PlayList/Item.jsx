@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import Image from 'components/Common/Image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlay, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
-import { add } from 'store/feature/music/PlayerSlice';
+import { addPlayerList } from 'store/feature/music/PlayerSlice';
 import SmallButton from 'components/Common/SmallButton';
 import Text from 'components/Common/Text';
 import { useDispatch, useSelector } from 'react-redux';
@@ -50,7 +50,7 @@ const Item = ({ id, title, img }) => {
     // 단일 return object
     const selected_item = playListItems.filter((item) => item.id === id)[0]
     // musicPlayer store에 playerItems 에 add한다.
-    dispatch(add(selected_item))
+    dispatch(addPlayerList(selected_item))
   }
 
   return (
@@ -61,15 +61,11 @@ const Item = ({ id, title, img }) => {
       </Box>
 
       <Text>{`${title}`}</Text>
-      <Box>
-        <SmallButton>
-          <FontAwesomeIcon icon={faCirclePlay} size={'2x'} />
-        </SmallButton>
+      <div>
         <SmallButton disabled={isInPlayer}>
-          <FontAwesomeIcon onClick={handleClickAddButton} icon={faCirclePlus} size={'2x'} />
+          <FontAwesomeIcon onClick={handleClickAddButton} icon={faCirclePlus} size={'3x'} />
         </SmallButton>
-
-      </Box>
+      </div>
     </Layout>
   )
 }

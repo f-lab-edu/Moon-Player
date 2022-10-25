@@ -2,12 +2,13 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { remove } from 'store/feature/music/PlayerSlice';
+import { playmusic, removePlayerList } from 'store/feature/music/PlayerSlice';
 import Text from 'components/Common/Text';
 import useMoveDownScroll from 'hooks/useMoveDownScroll';
 import usePrevious from 'hooks/usePrevious';
 
 import { useEffect } from 'react';
+import SmallButton from 'components/Common/SmallButton';
 
 const Layout = styled.div`
 display: flex;
@@ -20,16 +21,7 @@ text-align: center;
   width:1px;
   font-weight: 900;
 }
->:last-child{
-  cursor:pointer;
-  transition: all 0.3s linear;
-  &:hover{
-    color:white;
-  }
-  &:active{
-    transform: translateY(4px);
-  }
-}
+
 @media screen and (max-width:1000px){
   width: 100%; 
 }
@@ -38,7 +30,8 @@ text-align: center;
 
 const Title = styled(Text)`
   font-size: 15px;
-  width:300px;  
+  width:300px; 
+  cursor: pointer;
   @media screen and (max-width:1000px){
   width: 100%; 
   }
@@ -68,16 +61,25 @@ const Item = (({ title, image, video_id, order }) => {
 
   const dispatch = useDispatch()
   const handleClickRemoveButton = () => {
-    dispatch(remove(video_id))
+    dispatch(removePlayerList(video_id))
+  }
+
+  const handleClickMusic = () => {
+    // PlayerFooter렌더링
+    const newMusic = { title, image, video_id }
+    dispatch(playmusic(newMusic))
   }
 
   return (
     <Layout ref={element}>
       <div>{order}</div>
-      <Image img={image} />
-      <Title>{title}</Title>
+      <Image onClick={handleClickMusic} img={image} />
+      <Title onClick={handleClickMusic}>{title}</Title>
 
-      <FontAwesomeIcon onClick={handleClickRemoveButton} icon={faTrash} size={'2x'} color={'#6633cc'} />
+      <SmallButton>
+        <FontAwesomeIcon onClick={handleClickRemoveButton} icon={faTrash} size={'2x'} color={'#6633cc'} />
+      </SmallButton>
+
     </Layout >
   )
 });

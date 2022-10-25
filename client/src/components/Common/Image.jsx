@@ -4,8 +4,10 @@ const Image = styled.img.attrs(({ img }) => ({
 }))`
     object-fit:fill;
     width:100px;
-    height:50px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+   max-width: 100%;
+   height:auto;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
 export default Image

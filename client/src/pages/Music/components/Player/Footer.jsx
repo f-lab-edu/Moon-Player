@@ -4,64 +4,75 @@ import Title from 'components/Common/Title';
 import { faShuffle, faBackwardStep, faPlayCircle, faForwardStep } from '@fortawesome/free-solid-svg-icons';
 import Progressbar from 'components/Common/Progressbar';
 import Image from 'components/Common/Image';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import SmallButton from 'components/Common/SmallButton';
+import usePlayer from 'hooks/usePlayer';
+import ReactPlayer from 'react-player/youtube';
 
-const Box = styled.div`
-display: flex;
-justify-content: space-between;
-align-items: center;
-width: inherit;
-
-
-`
 const IconBox = styled.div`
     display: flex;
+    padding: 20px;
+    justify-content: space-between;
     align-items: center;
-
-    >svg{
-      margin:3px;
-    }
-    >:last-child{
-      margin:10px;
-    }
+    cursor:pointer;
+    >:nth-child(2){
+      display: flex;
+      gap:20px;
+     }
 `
-const PlayingInfoBox = styled.div`
+const ImageBox = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding:10px 0px;
     align-items: center;
    
 `
 const PlayingTitle = styled(Title)`
-    font-size: 15px;
+    font-size: 20px;
     color:white;
-    margin: 1px;
+    text-align: center;
     font-weight: 900;
 `
 const PlayingImage = styled(Image)`
-    margin: 0px 10px 1px 0px;
-    width: 60px;
-    height: 70px;
+   width: 400px;
+   height: auto;
 `
 const Footer = () => {
+  const music = useSelector(state => state.musicReducer.musicPlayer.playItem)
+  const { handlePlay, player } = usePlayer(music)
+
+  const handleClickPlay = () => {
+    handlePlay()
+  }
+
   return (
     <footer>
-      <Progressbar />
-      <Box>
-        <PlayingInfoBox>
-          <PlayingImage />
-          <div>
-            {/* <PlayingTitle>노래 : 좋은날</PlayingTitle> */}
 
-          </div>
-        </PlayingInfoBox>
+      <ImageBox>
+        <PlayingImage img={music.image} />
+      </ImageBox>
+
+      <PlayingTitle>{music.title}</PlayingTitle>
+      <div>
         <IconBox>
-          <FontAwesomeIcon icon={faBackwardStep} size={'2x'} color={'#6633cc'} />
-          <FontAwesomeIcon icon={faPlayCircle} size={'2x'} color={'#6633cc'} />
-          <FontAwesomeIcon icon={faForwardStep} size={'2x'} color={'#6633cc'} />
+          {player}
+
+          <div>
+            <FontAwesomeIcon icon={faBackwardStep} size={'3x'} color={'#6633cc'} />
+            <SmallButton onClick={handleClickPlay}>
+
+              <FontAwesomeIcon icon={faPlayCircle} size={'3x'} color={'#6633cc'} />
+            </SmallButton>
+            <FontAwesomeIcon icon={faForwardStep} size={'3x'} color={'#6633cc'} />
+          </div>
           <div>
             <FontAwesomeIcon icon={faShuffle} size={'2x'} color={'#6633cc'} />
           </div>
+
         </IconBox>
-      </Box>
+      </div>
+      <Progressbar />
     </footer>
 
   )
