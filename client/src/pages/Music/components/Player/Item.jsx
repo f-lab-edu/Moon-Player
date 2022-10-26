@@ -10,13 +10,13 @@ import usePrevious from 'hooks/usePrevious';
 import { useEffect } from 'react';
 import SmallButton from 'components/Common/SmallButton';
 
-const Layout = styled.div(({ selected }) => `
+const Layout = styled.div(({ isSelected }) => `
 display: flex;
 justify-content: space-between;
 align-items: center;
 border-bottom: 1px solid rgba(0,0,0,0.1);
-background:${selected && '#FA7CD7'};
-opacity:${selected && '0.7'};
+background:${isSelected && '#FA7CD7'};
+opacity:${isSelected && '0.7'};
 gap:20px;
 text-align: center;
 >:first-child{
@@ -55,6 +55,7 @@ const Item = (({ title, image, order }) => {
 
   const dispatch = useDispatch()
   const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
+  const isSelectedMusic = useSelector(state => state.musicReducer.musicPlayer.playing.music).video_title === title
   const playerItemslength = playerItems.length
   const prevPlayerItemslength = usePrevious(playerItemslength)
   const { element, handleScrollElement } = useMoveDownScroll()
@@ -72,16 +73,13 @@ const Item = (({ title, image, order }) => {
 
   // 재생할 음악을 눌렀을떄
   const handleClickPlayMusic = () => {
-    let playerItemindex = playerItems.findIndex((item) => item.video_title === title)
-    const newMusics = [...playerItems.slice(playerItemindex), ...playerItems.slice(0, playerItemindex)]
-    console.log(playerItemindex, newMusics)
-    // 현재 선택된 음악 포함해서 현재 선택된 음악전까지의 음악들
-    dispatch(handlePlayItem(newMusics))
+    const music = playerItems.find((item) => item.video_title === title)
+    dispatch(handlePlayItem(music))
 
   }
 
   return (
-    <Layout ref={element}>
+    <Layout ref={element} isSelected={isSelectedMusic} >
       <div>{order}</div>
       <Image onClick={handleClickPlayMusic} img={image} />
       <Title onClick={handleClickPlayMusic}>{title}</Title>

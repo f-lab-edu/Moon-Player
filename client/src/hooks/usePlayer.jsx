@@ -1,7 +1,8 @@
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import ReactPlayer from 'react-player/lazy'
-import usePrevious from './usePrevious';
+import { useDispatch } from 'react-redux';
+import { handleNextMusic } from 'store/feature/music/PlayerSlice';
 
 const DEFAULT_STATE = {
   playing: false,     // 재생중인지
@@ -14,50 +15,33 @@ const DEFAULT_STATE = {
   duration: 0,       // 전체 시간
 }
 
-const usePlayer = (playingItems) => {
-  console.log(playingItems)
+const usePlayer = (music, playerItems) => {
+  const dispatch = useDispatch()
   const [state, setState] = useState(DEFAULT_STATE)
-  const [playIndex, setIndex] = useState(0)
-  const playMusics = playingItems
-  const playMusicslength = playMusics.length
-  const prevMusicslength = usePrevious(playMusicslength)
-
   const { playing, volume } = state
 
-  useEffect(() => {
-    console.log('delelte', playMusicslength, prevMusicslength)
-    if (playMusicslength < prevMusicslength) {
-      console.log('delete', playIndex)
-      setIndex(0)
-    }
-  }, [playMusicslength])
-
-  // 1. 다음 음악으로
-  const handleNextMusic = () => {
-    return playIndex === playMusics.length - 1 ? setIndex(0) : setIndex(playIndex + 1)
-  }
-  // 2. 이전 음악으로 
-  const handlePrevMusic = () => {
-    return playIndex === 0 ? setIndex(playMusics.length - 1) : setIndex(playIndex - 1)
-  }
-  // 3. 현재 음악 재생 or 정지
   const handlePlayMusic = () => {
     setState({ ...state, playing: !state.playing });
   }
+  const handleEndedMusic = () => {
+    const nextMusicIndex = playerItems.findIndex((item) => music.video_title === item.video_title) + 1
+    const nextMusic = nextMusicIndex < playerItems.length ? playerItems[nextMusicIndex] : playerItems[0]
+    dispatch(handleNextMusic(nextMusic))
+  }
 
-  const player = <ReactPlayer
-    // style={{ opacity: 0 }}
-    width="100px"
-    height="100px"
+  const musicPlayer = <ReactPlayer
+    style={{ opacity: 0 }}
+    width="10px"
+    height="10px"
     volume={volume}
     controls={true}
-    url={playMusics.length > 0 && playMusics[0].video_link}
+    url={music && music.video_link}
     playing={playing}
-    onEnded={handleNextMusic}
-  // 재생이 끝나면 다음 음악재생 
-  ></ReactPlayer>
+    // 재생이 끝나면 다음 음악재생 
+    onEnded={handleEndedMusic}
 
-  return { player, playing, handleNextMusic, handlePrevMusic, handlePlayMusic, playIndex }
+  ></ReactPlayer>
+  return { musicPlayer, playing, handlePlayMusic }
 }
 
 export default usePlayer
