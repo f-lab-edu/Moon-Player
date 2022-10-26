@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Title from 'components/Common/Title';
-import { faShuffle, faBackwardStep, faPlayCircle, faForwardStep } from '@fortawesome/free-solid-svg-icons';
+import { faShuffle, faBackwardStep, faPlayCircle, faForwardStep, faCirclePause } from '@fortawesome/free-solid-svg-icons';
 import Progressbar from 'components/Common/Progressbar';
 import Image from 'components/Common/Image';
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import SmallButton from 'components/Common/SmallButton';
 import usePlayer from 'hooks/usePlayer';
 
@@ -38,32 +37,35 @@ const PlayingImage = styled(Image)`
    height: auto;
 `
 const Footer = () => {
-  const playMusics = useSelector(state => state.musicReducer.musicPlayer.playItems)
-  const { player, handlePlayMusic, playIndex } = usePlayer(playMusics)
+  const playingItems = useSelector(state => state.musicReducer.musicPlayer.playing)
+  const playingMusics = playingItems.items
+  const { player, playing, handleNextMusic, handlePrevMusic, handlePlayMusic, playIndex } = usePlayer(playingMusics)
 
-  const handleClickPlay = () => {
-    handlePlayMusic()
-  }
+  const PlayButton = <SmallButton onClick={handlePlayMusic} > <FontAwesomeIcon icon={faPlayCircle} size={'3x'} color={'#6633cc'} /></SmallButton >
+  const PauseButton = <SmallButton onClick={handlePlayMusic}><FontAwesomeIcon icon={faCirclePause} size={'3x'} color={'#6633cc'} /></SmallButton>
 
   return (
     <footer>
 
       <ImageBox>
-        {playMusics.length > 0 ? <PlayingImage img={playMusics[playIndex].video_img} /> : <></>}
+        {playingMusics.length > 0 ? <PlayingImage img={playingMusics[playIndex].video_img} /> : <></>}
       </ImageBox>
 
-      {playMusics.length > 0 ? <PlayingTitle>{playMusics[playIndex].video_title}</PlayingTitle> : <></>}
+      {playingMusics.length > 0 ? <PlayingTitle>{playingMusics[playIndex].video_title}</PlayingTitle> : <></>}
       <div>
         <IconBox>
-          {playMusics.length > 0 ? player : <></>}
+          {playingMusics.length > 0 ? player : <div></div>}
           <div>
-            <FontAwesomeIcon icon={faBackwardStep} size={'3x'} color={'#6633cc'} />
-            <SmallButton onClick={handleClickPlay}>
-              <FontAwesomeIcon icon={faPlayCircle} size={'3x'} color={'#6633cc'} />
+            <SmallButton onClick={handlePrevMusic}>
+              <FontAwesomeIcon icon={faBackwardStep} size={'3x'} color={'#6633cc'} />
             </SmallButton>
-            <FontAwesomeIcon icon={faForwardStep} size={'3x'} color={'#6633cc'} />
+            {playing ? PauseButton : PlayButton}
+            <SmallButton onClick={handleNextMusic}>
+              <FontAwesomeIcon icon={faForwardStep} size={'3x'} color={'#6633cc'} />
+            </SmallButton>
           </div>
           <div>
+
             <FontAwesomeIcon icon={faShuffle} size={'2x'} color={'#6633cc'} />
           </div>
 

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { playmusic, removePlayerList } from 'store/feature/music/PlayerSlice';
+import { removePlayerList, handlePlayItem } from 'store/feature/music/PlayerSlice';
 import Text from 'components/Common/Text';
 import useMoveDownScroll from 'hooks/useMoveDownScroll';
 import usePrevious from 'hooks/usePrevious';
@@ -10,15 +10,18 @@ import usePrevious from 'hooks/usePrevious';
 import { useEffect } from 'react';
 import SmallButton from 'components/Common/SmallButton';
 
-const Layout = styled.div`
+const Layout = styled.div(({ selected }) => `
 display: flex;
 justify-content: space-between;
 align-items: center;
 border-bottom: 1px solid rgba(0,0,0,0.1);
+background:${selected && '#FA7CD7'};
+opacity:${selected && '0.7'};
 gap:20px;
 text-align: center;
 >:first-child{
   width:1px;
+  padding-left:10px;
   font-weight: 900;
 }
 
@@ -26,7 +29,7 @@ text-align: center;
   width: 100%; 
 }
 
-`
+`)
 
 const Title = styled(Text)`
   font-size: 15px;
@@ -48,7 +51,9 @@ background-position: center;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `)
 
-const Item = (({ title, image, video_id, order }) => {
+const Item = (({ title, image, order }) => {
+
+  const dispatch = useDispatch()
   const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
   const playerItemslength = playerItems.length
   const prevPlayerItemslength = usePrevious(playerItemslength)
@@ -60,17 +65,19 @@ const Item = (({ title, image, video_id, order }) => {
     }
   }, [playerItemslength])
 
-  const dispatch = useDispatch()
+  // 플레이어 리스트에서 삭제함 
   const handleClickRemove = () => {
-    dispatch(removePlayerList(video_id))
+    dispatch(removePlayerList(title))
   }
 
+  // 재생할 음악을 눌렀을떄
   const handleClickPlayMusic = () => {
-    // PlayerFooter렌더링
     let playerItemindex = playerItems.findIndex((item) => item.video_title === title)
     const newMusics = [...playerItems.slice(playerItemindex), ...playerItems.slice(0, playerItemindex)]
+    console.log(playerItemindex, newMusics)
     // 현재 선택된 음악 포함해서 현재 선택된 음악전까지의 음악들
-    dispatch(playmusic(newMusics))
+    dispatch(handlePlayItem(newMusics))
+
   }
 
   return (

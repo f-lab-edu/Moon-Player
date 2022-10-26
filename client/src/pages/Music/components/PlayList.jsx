@@ -42,8 +42,8 @@ const Box = styled.div`
 const PlayList = () => {
   const dispatch = useDispatch()
 
-  const playListStoreItems = useSelector((state) => state.musicReducer.musicPlayList ? state.musicReducer.musicPlayList.musicList : [])
-  const items = playListStoreItems.musics && playListStoreItems.musics.map(({ video_title, id, video_img }) => <Item key={video_title} id={id} title={video_title} img={video_img}></Item>)
+  const playListItems = useSelector((state) => state.musicReducer.musicPlayList ? state.musicReducer.musicPlayList.musicList : [])
+  const items = playListItems.musics && playListItems.musics.map(({ video_title, id, video_img }) => <Item key={video_title} id={id} title={video_title} img={video_img}></Item>)
 
   // 초기 렌더링시에 musicList(1) 아이템을 요청
   useEffect(() => {
@@ -54,7 +54,7 @@ const PlayList = () => {
   return (
     <Layout>
       <Box>
-        <PlayListTitle>{playListStoreItems.title}</PlayListTitle>
+        <PlayListTitle>{playListItems.title}</PlayListTitle>
         {items}
 
       </Box>

@@ -6,7 +6,7 @@ import Image from 'components/Common/Image';
 
 const CardImage = styled(Image)`
 width: 190px;
-height: auto;
+height: 120px;
 border-radius: 7px;
 border: 1px solid rgba(0,0,0,0.3);
 box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;

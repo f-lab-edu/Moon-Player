@@ -58,8 +58,7 @@ const PlayerTitle = styled(Title)`
 
 const Player = () => {
   const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
-
-  const items = playerItems.length > 0 ? playerItems.map(({ video_title, video_img, video_id }, index) => <Item title={video_title} image={video_img} video_id={video_id} key={index} order={++index}></Item>) :
+  const items = playerItems.length > 0 ? playerItems.map(({ video_title, video_img }, index) => <Item title={video_title} image={video_img} key={index} order={++index}></Item>) :
     <h3>재생목록이 비어있습니다.</h3>
 
   return (
