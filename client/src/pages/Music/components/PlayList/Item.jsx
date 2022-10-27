@@ -3,7 +3,7 @@ import Image from 'components/Common/Image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
-import { addPlayerList } from 'store/feature/music/PlayerSlice';
+import { handleAddMusic } from 'store/feature/music/PlayerSlice';
 import SmallButton from 'components/Common/SmallButton';
 import Text from 'components/Common/Text';
 import { useDispatch, useSelector } from 'react-redux';
@@ -48,9 +48,9 @@ const Item = ({ id, title, img }) => {
   // 아이디 값을 기반으로 musicList 스토어의 selected에 저장
   const handleClickAddButton = () => {
     // 단일 return object
-    const selected_item = playListItems.filter((item) => item.id === id)[0]
+    const selectedItem = playListItems.filter((item) => item.id === id)[0]
     // musicPlayer store에 playerItems 에 add한다.
-    dispatch(addPlayerList(selected_item))
+    dispatch(handleAddMusic(selectedItem))
   }
 
   return (

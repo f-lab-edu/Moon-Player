@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { removePlayerList, handlePlayItem } from 'store/feature/music/PlayerSlice';
+import { handleRemoveMusic, handlePlayMusic } from 'store/feature/music/PlayerSlice';
 import Text from 'components/Common/Text';
 import useMoveDownScroll from 'hooks/useMoveDownScroll';
 import usePrevious from 'hooks/usePrevious';
@@ -68,13 +68,13 @@ const Item = (({ title, image, order }) => {
 
   // 플레이어 리스트에서 삭제함 
   const handleClickRemove = () => {
-    dispatch(removePlayerList(title))
+    dispatch(handleRemoveMusic(title))
   }
 
   // 재생할 음악을 눌렀을떄
   const handleClickPlayMusic = () => {
     const music = playerItems.find((item) => item.video_title === title)
-    dispatch(handlePlayItem(music))
+    dispatch(handlePlayMusic(music))
 
   }
 
