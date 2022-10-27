@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 import { handleAddMusic } from 'store/feature/music/PlayerSlice';
-import SmallButton from 'components/Common/SmallButton';
+import IconButton from 'components/Common/IconButton';
 import Text from 'components/Common/Text';
 import { useDispatch, useSelector } from 'react-redux';
 const Layout = styled.div`
@@ -62,9 +62,9 @@ const Item = ({ id, title, img }) => {
 
       <Text>{`${title}`}</Text>
       <div>
-        <SmallButton disabled={isInPlayer}>
+        <IconButton disabled={isInPlayer}>
           <FontAwesomeIcon onClick={handleClickAddButton} icon={faCirclePlus} size={'3x'} />
-        </SmallButton>
+        </IconButton>
       </div>
     </Layout>
   )

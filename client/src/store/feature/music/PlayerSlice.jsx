@@ -1,4 +1,4 @@
-import { current, createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 // Reducer
 export const musicPlayerSlice = createSlice({
@@ -10,9 +10,9 @@ export const musicPlayerSlice = createSlice({
 
     playing: {
       music: '',
-      repeat: false,
+      isrepeat: false,
       isplaying: false,
-      volume: 100,
+      volume: 50,
     }
 
   },
@@ -48,14 +48,17 @@ export const musicPlayerSlice = createSlice({
       state.playing.music = action.payload
     },
     handleRepeatMusic: (state, action) => {
-      state.playing.repeat = action.payload
+      state.playing.isrepeat = action.payload
     },
     handlePlayerState: (state, action) => {
       state.playing.isplaying = action.payload
+    },
+    handleVolumeState: (state, action) => {
+      state.playing.volume = action.payload
     }
 
   },
 
 })
 export default musicPlayerSlice;
-export const { handleAddMusic, handleRemoveMusic, handlePlayMusic, handleNextMusic, handlePrevMusic, handleShuffleMusic, handleRepeatMusic, handlePlayerState } = musicPlayerSlice.actions
+export const { handleAddMusic, handleRemoveMusic, handlePlayMusic, handleNextMusic, handlePrevMusic, handleShuffleMusic, handleRepeatMusic, handlePlayerState, handleVolumeState } = musicPlayerSlice.actions

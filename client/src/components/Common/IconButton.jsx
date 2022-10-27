@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SmallButton = styled.button(({ disabled, repeat }) => `
+const IconButton = styled.button(({ disabled, repeat }) => `
 
 background: none;
 border:0px;
@@ -20,4 +20,4 @@ opacity:${disabled ? 0.5 : 1};
 
 `)
 
-export default SmallButton
+export default IconButton

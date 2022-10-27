@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Title from 'components/Common/Title';
-import { faShuffle, faBackwardStep, faPlayCircle, faForwardStep, faCirclePause, faRepeat } from '@fortawesome/free-solid-svg-icons';
+import { faShuffle, faBackwardStep, faPlayCircle, faForwardStep, faCirclePause, faRepeat, faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
 import Progressbar from 'components/Common/Progressbar';
 import Image from 'components/Common/Image';
 import { useSelector, useDispatch } from 'react-redux';
-import SmallButton from 'components/Common/SmallButton';
+import IconButton from 'components/Common/IconButton';
 import usePlayer from 'hooks/usePlayer';
 
 import { prevPlayMusic, nextPlayMusic, shuffleMusic } from 'pages/Music/utils/Player';
-import { handleNextMusic, handlePrevMusic, handleShuffleMusic, handleRepeatMusic, handlePlayerState } from 'store/feature/music/PlayerSlice';
+import { handleNextMusic, handlePrevMusic, handleShuffleMusic, handleRepeatMusic, handlePlayerState, handleVolumeState } from 'store/feature/music/PlayerSlice';
+import Slider from 'components/Common/Slider';
 
 const IconBox = styled.div`
     display: flex;
@@ -39,50 +40,67 @@ const MusicImage = styled(Image)`
    width: 400px;
    height: auto;
 `
+const VolumeBox = styled.div`
+display :flex;
+align-items: center;
+color:#6633cc;
+padding: 20px;
+>:nth-child(1){
+  margin-right: 20px;
+}
+
+
+`
 
 const Footer = () => {
   const dispatch = useDispatch()
-  const playingMusic = useSelector(state => state.musicReducer.musicPlayer.playing.music)
+  const playingItems = useSelector(state => state.musicReducer.musicPlayer.playing)
   const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
-  const isRepeatMusic = useSelector(state => state.musicReducer.musicPlayer.playing.repeat)
-  const isPlaying = useSelector(state => state.musicReducer.musicPlayer.playing.isplaying)
   const { musicPlayer } = usePlayer()
 
-  const handleClickPrevButton = () => dispatch(handlePrevMusic(prevPlayMusic(playerItems, playingMusic)))
-  const handleClickNextButton = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, playingMusic)))
+  const handleClickPrevButton = () => dispatch(handlePrevMusic(prevPlayMusic(playerItems, playingItems.music)))
+  const handleClickNextButton = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, playingItems.music)))
   const handleShuffleButton = () => dispatch(handleShuffleMusic(shuffleMusic(playerItems)))
-  const handleRepeatButton = () => dispatch(handleRepeatMusic(!isRepeatMusic))
-  const handleClickPlayButton = () => { dispatch(handlePlayerState(!isPlaying)) }
+  const handleRepeatButton = () => dispatch(handleRepeatMusic(!playingItems.isrepeat))
+  const handleClickPlayButton = () => { dispatch(handlePlayerState(!playingItems.isplaying)) }
+  const handleChangeVolume = (event) => { dispatch(handleVolumeState(+event.target.value)) }
 
-  const PlayButton = <SmallButton onClick={handleClickPlayButton} > <FontAwesomeIcon icon={faPlayCircle} size={'3x'} /></SmallButton >
-  const PauseButton = <SmallButton onClick={handleClickPlayButton}><FontAwesomeIcon icon={faCirclePause} size={'3x'} /></SmallButton>
+  const PlayButton = <IconButton onClick={handleClickPlayButton} > <FontAwesomeIcon icon={faPlayCircle} size={'3x'} /></IconButton >
+  const PauseButton = <IconButton onClick={handleClickPlayButton}><FontAwesomeIcon icon={faCirclePause} size={'3x'} /></IconButton>
 
   return (
     <footer>
       <ImageBox>
-        {playingMusic && <MusicImage img={playingMusic.video_img} />}
+        {playingItems.music && <MusicImage img={playingItems.music.video_img} />}
       </ImageBox>
 
-      {playingMusic && <MusicTitle>{playingMusic.video_title}</MusicTitle>}
+      {playingItems.music && <MusicTitle>{playingItems.music.video_title}</MusicTitle>}
       <div>
-        {playingMusic && musicPlayer}
+        {playingItems.music && musicPlayer}
         <IconBox>
-          <SmallButton repeat={isRepeatMusic} onClick={handleRepeatButton}><FontAwesomeIcon icon={faRepeat} size={'2x'} /> </SmallButton>
+          <IconButton repeat={playingItems.isrepeat} onClick={handleRepeatButton}><FontAwesomeIcon icon={faRepeat} size={'2x'} /> </IconButton>
           <div>
-            <SmallButton onClick={handleClickPrevButton}>
+            <IconButton onClick={handleClickPrevButton}>
               <FontAwesomeIcon icon={faBackwardStep} size={'3x'} />
-            </SmallButton>
-            {isPlaying ? PauseButton : PlayButton}
-            <SmallButton onClick={handleClickNextButton}>
+            </IconButton>
+            {playingItems.isplaying ? PauseButton : PlayButton}
+            <IconButton onClick={handleClickNextButton}>
               <FontAwesomeIcon icon={faForwardStep} size={'3x'} />
-            </SmallButton>
+            </IconButton>
           </div>
-          <SmallButton onClick={handleShuffleButton}>
+          <IconButton onClick={handleShuffleButton}>
             <FontAwesomeIcon icon={faShuffle} size={'2x'} />
-          </SmallButton>
+          </IconButton>
         </IconBox>
       </div>
-      <Progressbar />
+      <div>
+        <VolumeBox>
+          <FontAwesomeIcon icon={faVolumeHigh} size={'2x'} />
+          <Slider onChange={handleChangeVolume} volume={playingItems.volume} />
+        </VolumeBox>
+
+        <Progressbar />
+      </div>
     </footer>
 
   )

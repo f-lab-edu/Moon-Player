@@ -3,7 +3,6 @@ import Title from 'components/Common/Title';
 import Item from './Player/Item';
 import Footer from './Player/Footer';
 import { useSelector } from 'react-redux';
-//import useYoutube from 'hooks/api/useYoutube';
 
 const Layout = styled.div`
 width: 30vw;
@@ -55,11 +54,9 @@ const PlayerTitle = styled(Title)`
 `
 
 // 플레이어 메인
-
 const Player = () => {
   const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
-  const items = playerItems.length > 0 ? playerItems.map(({ video_title, video_img }, index) => <Item title={video_title} image={video_img} key={index} order={++index}></Item>) :
-    <h3>재생목록이 비어있습니다.</h3>
+  const items = playerItems && playerItems.map(({ video_title, video_img }, index) => <Item title={video_title} image={video_img} key={index} order={++index}></Item>)
 
   return (
     <Layout>

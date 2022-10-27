@@ -1,5 +1,4 @@
 
-import { useState } from 'react'
 import ReactPlayer from 'react-player/lazy'
 import { useDispatch, useSelector } from 'react-redux';
 import { handleNextMusic } from 'store/feature/music/PlayerSlice';
@@ -17,25 +16,25 @@ import { nextPlayMusic } from 'pages/Music/utils/Player';
 //   duration: 0,       // 전체 시간
 // }
 
+//  전역스토어에있는 값만가지고 음악을 재생시켜주는 훅
 const usePlayer = () => {
-
-  const playingMusic = useSelector(state => state.musicReducer.musicPlayer.playing.music)
+  const playingItems = useSelector(state => state.musicReducer.musicPlayer.playing)
   const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
-  const isRepeatMusic = useSelector(state => state.musicReducer.musicPlayer.playing.repeat)
-  const isPlaying = useSelector(state => state.musicReducer.musicPlayer.playing.isplaying)
+
   const dispatch = useDispatch()
 
-  const handleEndedMusic = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, playingMusic)))
+  console.log(playingItems.volume)
+  const handleEndedMusic = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, playingItems.music)))
 
   const musicPlayer = <ReactPlayer
     style={{ opacity: 0 }}
-    width="10px"
-    height="10px"
-    volume={100}
+    width="1px"
+    height="1px"
+    volume={parseFloat(playingItems.volume / 100)}
     controls={true}
-    url={playingMusic && playingMusic.video_link}
-    playing={isPlaying}
-    loop={isRepeatMusic}
+    url={playingItems.music && playingItems.music.video_link}
+    playing={playingItems.isplaying}
+    loop={playingItems.isrepeat}
     // 재생이 끝나면 다음 음악재생 
     onEnded={handleEndedMusic}
 

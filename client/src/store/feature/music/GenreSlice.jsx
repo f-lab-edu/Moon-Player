@@ -21,8 +21,6 @@ export const musicGenreSlice = createSlice({
   initialState: {
     musicList: [],
   },
-  // // 동기적인 액션 처리
-  reducers: {},
   // 비동기적인 액션처리(action create 자동생성 불가능)
   extraReducers: (builder) => {
     builder.addCase(fetchmusicGenre.pending, (state, action) => {

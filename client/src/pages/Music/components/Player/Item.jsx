@@ -8,7 +8,7 @@ import useMoveDownScroll from 'hooks/useMoveDownScroll';
 import usePrevious from 'hooks/usePrevious';
 
 import { useEffect } from 'react';
-import SmallButton from 'components/Common/SmallButton';
+import IconButton from 'components/Common/IconButton';
 
 const Layout = styled.div(({ isSelected }) => `
 display: flex;
@@ -31,7 +31,7 @@ text-align: center;
 
 `)
 
-const Title = styled(Text)`
+const MusicTitle = styled(Text)`
   font-size: 15px;
   width:300px; 
   cursor: pointer;
@@ -39,7 +39,7 @@ const Title = styled(Text)`
   width: 100%; 
   }
 `
-const Image = styled.img(({ img }) => `
+const MusicImage = styled.img(({ img }) => `
 width:150px;
 height:50px;
 
@@ -81,12 +81,12 @@ const Item = (({ title, image, order }) => {
   return (
     <Layout ref={element} isSelected={isSelectedMusic} >
       <div>{order}</div>
-      <Image onClick={handleClickPlayMusic} img={image} />
-      <Title onClick={handleClickPlayMusic}>{title}</Title>
+      <MusicImage onClick={handleClickPlayMusic} img={image} />
+      <MusicTitle onClick={handleClickPlayMusic}>{title}</MusicTitle>
 
-      <SmallButton>
+      <IconButton>
         <FontAwesomeIcon onClick={handleClickRemove} icon={faTrash} size={'2x'} color={'#6633cc'} />
-      </SmallButton>
+      </IconButton>
 
     </Layout >
   )

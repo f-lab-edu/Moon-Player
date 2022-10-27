@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit'
 import { fetchById } from 'store/utils/API/musicAPI';
 
 // 액션 생성
@@ -11,7 +11,6 @@ const fetchmusicList = createAsyncThunk(
     } catch (error) {
       console.log(error)
       //  Alert Store 생성해서 오류 발생시 addAlert() action 호출하는 방식으로 UI 노출 가능
-
     }
   }
 )
@@ -23,21 +22,6 @@ export const musicPlayListSlice = createSlice({
   // 가져온 음악리스트 들이 존재
   initialState: {
     musicList: [],
-  },
-
-  // // 동기적인 액션 처리
-  reducers: {
-
-    updatePlayList: {
-      reducer: (state, action) => {
-
-      },
-      // 리듀서로 가기전에 데이터 변경
-      prepare: () => {
-
-      }
-    }
-
   },
   // 비동기적인 액션처리(action create 자동생성 불가능)
   extraReducers: (builder) => {

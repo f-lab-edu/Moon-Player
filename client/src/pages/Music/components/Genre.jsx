@@ -40,8 +40,7 @@ const Grid = styled.div`
     }  
   
 `
-const Box = styled.div`
-
+const IconBox = styled.div`
     @media screen and (max-width:900px){
       padding: 0px 15px;
     }
@@ -54,17 +53,17 @@ const Genre = () => {
     dispatch(fetchmusicGenre())
   }, [])
 
-  const genres = useSelector(state => state.musicReducer.musicGenre ? state.musicReducer.musicGenre.musicList : [])
-  const items = genres && genres.map(({ genre_img, genre_id }) => <Item img={genre_img} key={genre_id} id={genre_id}></Item>)
+  const genres = useSelector(state => state.musicReducer.musicGenre.musicList)
 
+  const items = genres.length > 0 ? genres.map(({ genre_img, genre_id }) => <Item img={genre_img} key={genre_id} id={genre_id}></Item>) : <h3>장르가 비어있습니다.</h3>
   return (
     <Layout>
       <Grid>
         {items}
       </Grid >
-      <Box>
-        < FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'#6633cc'} />
-      </Box>
+      <IconBox>
+        <FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'#6633cc'} />
+      </IconBox>
     </Layout>
   )
 }
