@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit'
-import { fetchById } from 'store/utils/API/musicAPI';
+import { fetchById } from 'utils/API'
 
 // 액션 생성
 const fetchmusicList = createAsyncThunk(

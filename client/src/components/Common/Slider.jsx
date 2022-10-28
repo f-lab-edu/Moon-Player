@@ -15,7 +15,7 @@ cursor: pointer;
   width: 100%;
   height: 13px;
   cursor: pointer;
-  background: #AC51B5;
+  background: #FA7CD7;
 }
 &::-webkit-slider-thumb {
 

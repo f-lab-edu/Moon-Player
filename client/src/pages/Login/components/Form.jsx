@@ -29,7 +29,7 @@ flex-direction: column;
   }
 `
 
-const ErrorText = styled.span(({ error }) => `
+const Text = styled.span(({ error }) => `
   visibility:${error ? 'visible' : 'hidden'};
   margin-top:3px;
   color: ${error ? 'red' : 'black'};
@@ -60,9 +60,9 @@ const Form = () => {
     <>
       <InputBox>
         <Input placeholder="Email" type="email" onChange={({ target: { value } }) => setEmail(value)} error={errors.email ? errors.email.join('') : ''} />
-        <ErrorText error={errors.email ? errors.email.join('') : ''}>{errors.email ? errors.email.join('') : ''}</ErrorText>
+        <Text error={errors.email ? errors.email.join('') : ''}>{errors.email ? errors.email.join('') : ''}</Text>
         <Input placeholder="Password" type="password" onChange={({ target: { value } }) => setPassword(value)} error={errors.password ? errors.password.join('') : ''} />
-        <ErrorText error={errors.password ? errors.password.join('') : ''}>{errors.password ? errors.password.join('') : ''}</ErrorText>
+        <Text error={errors.password ? errors.password.join('') : ''}>{errors.password ? errors.password.join('') : ''}</Text>
       </InputBox>
       <ButtonBox>
         <Button onClick={handleClickLogOut}>로그인</Button>

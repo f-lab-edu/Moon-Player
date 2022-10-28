@@ -1,8 +1,8 @@
 
 import { combineReducers } from '@reduxjs/toolkit';
-import { musicGenreSlice } from './feature/music/GenreSlice'
-import { musicPlayerSlice } from './feature/music/PlayerSlice';
-import { musicPlayListSlice } from './feature/music/PlayListSlice';
+import { musicGenreSlice } from '../feature/music/GenreSlice'
+import { musicPlayerSlice } from '../feature/music/PlayerSlice';
+import { musicPlayListSlice } from '../feature/music/PlayListSlice';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 

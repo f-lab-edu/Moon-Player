@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player/lazy'
 import { useDispatch, useSelector } from 'react-redux';
 import { handleNextMusic } from 'store/feature/music/PlayerSlice';
 
-import { nextPlayMusic } from 'pages/Music/utils/Player';
+import { nextPlayMusic } from 'utils/Player';
 
 // const DEFAULT_STATE = {
 //   playing: false,     // 재생중인지
@@ -23,7 +23,6 @@ const usePlayer = () => {
 
   const dispatch = useDispatch()
 
-  console.log(playingItems.volume)
   const handleEndedMusic = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, playingItems.music)))
 
   const musicPlayer = <ReactPlayer

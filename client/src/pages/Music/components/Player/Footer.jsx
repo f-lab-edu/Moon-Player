@@ -8,7 +8,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import IconButton from 'components/Common/IconButton';
 import usePlayer from 'hooks/usePlayer';
 
-import { prevPlayMusic, nextPlayMusic, shuffleMusic } from 'pages/Music/utils/Player';
+import { prevPlayMusic, nextPlayMusic, shuffleMusic } from 'utils/Player';
+
 import { handleNextMusic, handlePrevMusic, handleShuffleMusic, handleRepeatMusic, handlePlayerState, handleVolumeState } from 'store/feature/music/PlayerSlice';
 import Slider from 'components/Common/Slider';
 

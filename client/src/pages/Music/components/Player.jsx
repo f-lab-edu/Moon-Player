@@ -52,11 +52,11 @@ const PlayerTitle = styled(Title)`
     font-weight: 900;
     color: white;
 `
-
 // 플레이어 메인
 const Player = () => {
   const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
-  const items = playerItems && playerItems.map(({ video_title, video_img }, index) => <Item title={video_title} image={video_img} key={index} order={++index}></Item>)
+
+  const items = playerItems.length > 0 ? playerItems.map(({ video_title, video_img }, index) => <Item title={video_title} image={video_img} key={index} order={++index}></Item>) : <h3>재생목록이 비어있습니다.</h3>
 
   return (
     <Layout>
