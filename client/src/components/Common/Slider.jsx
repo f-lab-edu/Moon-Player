@@ -6,6 +6,8 @@ const Slider = styled.input.attrs(({ volume }) => ({
   max: '100',
   value: volume
 }))`
+
+border-radius: 7px;
 cursor: pointer;
 -webkit-appearance: none;
 &:focus{
@@ -14,6 +16,8 @@ cursor: pointer;
 &::-webkit-slider-runnable-track {
   width: 100%;
   height: 13px;
+  background: #FA7CD7;
+
   cursor: pointer;
 }
 &::-webkit-slider-thumb {

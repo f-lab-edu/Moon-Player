@@ -28,19 +28,12 @@ const Nav = styled.nav`
     flex-direction: column;
     justify-content :center;
     align-items: center;
+    margin:20px;
 `
-const GenreTitle = styled(Title)`
- text-shadow: 1px 1px 1px gray;
- font-weight: 900;
- text-align: center;
- font-size :40px;
 
-`
 const Main = styled.main`
     display: flex;
-    flex-direction:row;
-    justify-content: center;
-    align-items: center;
+    height:auto;
     padding: 15px;
     margin-top:50px;
     
@@ -54,16 +47,6 @@ const Main = styled.main`
 
 `
 
-const Footer = styled.footer`
-  display: flex;
-  justify-content:center;
-  align-items: center;
- 
-`
-const FooterTitle = styled.h3`
-font-size: 13px;
-`
-
 const MusicPage = () => {
   return <Layout>
     <Header>
@@ -71,16 +54,13 @@ const MusicPage = () => {
       <HeaderList />
     </Header>
     <Nav>
-      <GenreTitle>인기 음악</GenreTitle>
       <Genre />
     </Nav>
     <Main>
       <PlayList />
       <Player />
     </Main>
-    <Footer>
-      <FooterTitle>Copyrightⓒ2022 문준영 All rights reserved.</FooterTitle>
-    </Footer>
+
   </Layout>
 };
 

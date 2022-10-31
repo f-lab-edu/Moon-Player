@@ -9,16 +9,17 @@ import OverFlowText from 'components/Common/OverFlowText';
 
 import { useEffect } from 'react';
 import IconButton from 'components/Common/IconButton';
+import Image from 'components/Common/Image';
 
 const Root = styled.div(({ isSelected }) => `
+
 display: flex;
 justify-content: space-between;
 align-items: center;
 border-bottom: 1px solid rgba(0,0,0,0.1);
 background:${isSelected && '#FA7CD7'};
 opacity:${isSelected && '0.7'};
-gap:20px;
-text-align: center;
+gap:15px;
 >:first-child{
   width:1px;
   padding-left:10px;
@@ -32,24 +33,20 @@ text-align: center;
 `)
 
 const MusicTitle = styled(OverFlowText)`
-  font-size: 15px;
-  width:300px; 
   cursor: pointer;
+  width: 50%;
+  font-size:15px;
   @media screen and (max-width:1000px){
   width: 100%; 
   }
+
 `
-const MusicImage = styled.img(({ img }) => `
-width:150px;
-height:50px;
-
+const MusicImage = styled(Image)`
 cursor:pointer;
-background: url('${img}') center center / cover no-repeat;
-background-size: cover;
-background-position: center;
-
+width:100px;
+height:50px;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-`)
+`
 
 export const Item = (({ title, image, order }) => {
 

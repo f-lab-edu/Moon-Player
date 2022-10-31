@@ -8,11 +8,13 @@ import { Item } from './Item';
 const Root = styled.div`
     display: flex;
     flex-direction: column;
-    width:60vw;
-    height: 47vh;
+    width:70%;
+    height:100vh;
     overflow-y: scroll;
     border-radius: 7px;
     box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
+
+    margin : 0px 40px;
 
     &::-webkit-scrollbar{
       width:10px;

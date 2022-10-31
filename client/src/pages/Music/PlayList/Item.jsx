@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const Root = styled.div`
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border: 1px solid rgba(0,0,0,0.1);
@@ -18,21 +17,36 @@ const Root = styled.div`
     border-left:none;
     border-right:none;
     border-bottom: none;
-    text-align: center;
-    gap:20px;
+    gap:30px;
     @media screen and (max-width:1200px){
       width: 100%;
     }
     >:first-child{
-      display: flex;
-      align-items: center;
-      gap:20px;
-      >:first-child{
-      width: 10px;
-      }
+    width:1px;
+    
     }
- 
 `
+const MusicTitle = styled(OverFlowText)`
+  width: 50%;
+  font-size:15px;
+  @media screen and (max-width:1000px){
+  width: 100%; 
+  }
+
+`
+const MusicImage = styled(Image)`
+width:100px;
+height:50px;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+`
+const Button = styled(IconButton)`
+
+&:hover{
+  transform:scale(1.2);
+  color: white;
+}
+`
+
 export const Item = ({ id, title, img }) => {
   const dispatch = useDispatch()
   const playListItems = useSelector(state => state.musicReducer.musicPlayList.musicList.musics)
@@ -48,16 +62,14 @@ export const Item = ({ id, title, img }) => {
 
   return (
     <Root>
-      <div>
-        <div>{id}</div>
-        <Image img={img} />
-      </div>
-      <OverFlowText>{title}</OverFlowText>
-      <div>
-        <IconButton disabled={isInPlayer}>
-          <FontAwesomeIcon onClick={handleAddMusic} icon={faCirclePlus} size={'3x'} />
-        </IconButton>
-      </div>
+
+      <div>{id}</div>
+      <MusicImage img={img} />
+      <MusicTitle>{title}</MusicTitle>
+
+      <Button disabled={isInPlayer}>
+        <FontAwesomeIcon onClick={handleAddMusic} icon={faCirclePlus} size={'2x'} />
+      </Button>
     </Root>
   )
 }

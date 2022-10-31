@@ -65,7 +65,7 @@ export const Footer = () => {
   return (
     <div>
       <ImageBox>
-        {playerState.music && <MusicImage img={playerState.music.video_img} />}
+        {playerState && playerState.music ? <MusicImage img={playerState.music.video_img} /> : <MusicImage img={'https://via.placeholder.com/400?text=No+Selected+Music'} />}
       </ImageBox>
       {playerState.music && <MusicTitle>{playerState.music.video_title}</MusicTitle>}
       <div>

@@ -19,9 +19,11 @@ max-width: 100%;
 cursor:pointer;
     @media screen and (max-width:1000px){
       width:250px;
+      height:150px;
     }
     @media screen and (max-width:630px){
-      width:500px;
+      width:400px;
+      height:200px;
     } 
 `
 
