@@ -1,311 +1,1206 @@
 {
   "title": "NCS 음악",
+  "id": 2,
   "musics": [
     {
-      "video_id": "ywwTbMd_scc",
-      "video_title": "Razihel - Faster [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/ywwTbMd_scc\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCJYnCwHw0SYW6e_UsjbegPGmCqJw",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=K4DyBUG242c",
+      "video_title": "Cartoon - On & On (feat. Daniel Levi) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/K4DyBUG242c\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDL_rZFJCJ_xo0iKbc0KRhMYuUU7g",
       "id": 1
     },
     {
-      "video_id": "2N2HQgTWC38",
-      "video_title": "The Arcturians & Defunk - Back For More [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/2N2HQgTWC38\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAsr0oobeAtKkr4x-MlCJloms8U9A",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=3nQNiWdeH2Q",
+      "video_title": "Janji - Heroes Tonight (feat. Johnning) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/3nQNiWdeH2Q\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA0IjaQC8QEuKv86cc6gIKSJsmdXA",
       "id": 2
     },
     {
-      "video_id": "6ln2xuKfFFw",
-      "video_title": "SFRNG, Madzi, Just Isac & Custody - No Way Back [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/6ln2xuKfFFw\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLARzoy7Z51kdsQcogmcxO50c8pCKg",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=J2X5mJ3HDYE",
+      "video_title": "DEAF KEV - Invincible [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/J2X5mJ3HDYE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCuawa3A0QruL3UkVZbFgILY7_w-Q",
       "id": 3
     },
     {
-      "video_id": "Lxf65uhlR6s",
-      "video_title": "More Plastic & VinDon - Patience [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/Lxf65uhlR6s\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD20i89qt2hOGNUz_D139aZq79lDg",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=jK2aIUmmdP4",
+      "video_title": "Different Heaven & EH!DE - My Heart [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/jK2aIUmmdP4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCMckMyGx40whB7bJ-F6WBG1d1p3Q",
       "id": 4
     },
     {
-      "video_id": "QwNb-yJmngs",
-      "video_title": "Simbai & Frizzy The Streetz - Set Me Free [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/QwNb-yJmngs\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAQYDRuBUhmk_Kki9vYH3xeIRO7pA",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=p7ZsBPK656s",
+      "video_title": "Disfigure - Blank [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/p7ZsBPK656s\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLApfVM6GQv94G1_RZpeu_DU1f3RhQ",
       "id": 5
     },
     {
-      "video_id": "Jw4P24oPPhI",
-      "video_title": "Almost Weekend & Max Vermeulen - Island (ft. Michael Shynes) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/Jw4P24oPPhI\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCL6TgGLiLb_bdZuTHtY_6KxrWd0A",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=TW9d8vYrVFQ",
+      "video_title": "Elektronomia - Sky High [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/TW9d8vYrVFQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDJAmJYzzOJjUi49kEBo7r3yYDAVA",
       "id": 6
     },
     {
-      "video_id": "4KQwiUTQgCM",
-      "video_title": "Zack Merci - BOUNCE! (feat. Nieko) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/4KQwiUTQgCM\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB6-BMznSYcV1JQXGQX96e91Q5CSw",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=yJg-Y5byMMw",
+      "video_title": "Warriyo - Mortals (feat. Laura Brehm) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/yJg-Y5byMMw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB8mp2YWlk4SU3i_-Qpk2_snfyH3w",
       "id": 7
     },
     {
-      "video_id": "zDNmvvlUcOU",
-      "video_title": "Raptures & SOXX - Signs (feat. Barmuda) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/zDNmvvlUcOU\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCjUZQ9liOpUMD8qhUubd99dAdp3Q",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=__CRWE-L45k",
+      "video_title": "Electro-Light - Symbolism [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/__CRWE-L45k\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCe0eeIVknDneNcebs_dNH9lsTm3Q",
       "id": 8
     },
     {
-      "video_id": "DJZYlFi68PA",
-      "video_title": "borne & Arya - One More Try (feat. imallryt) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/DJZYlFi68PA\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCir8aAthuU67dCSX_65Y_4kxll2g",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=zyXmsVwZqX4",
+      "video_title": "Cartoon - Why We Lose (feat. Coleman Trapp) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/zyXmsVwZqX4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBjzfqYpX2dBprfSASV9uu7dN-iZQ",
       "id": 9
     },
     {
-      "video_id": "oN702MWeXow",
-      "video_title": "Shiah Maisel & ESAI - Away From Me [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/oN702MWeXow\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGffuiAJ9v39MgV3hZ9UnJio69Iw",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=EP625xQIGzs",
+      "video_title": "Tobu - Hope [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/EP625xQIGzs\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAzxZJA_lZaFI_CT7ev0VdLdsuN4A",
       "id": 10
     },
     {
-      "video_id": "z4RfRxxz5lw",
-      "video_title": "Tetrix Bass & ROY KNOX - When I'm Gone (feat. Ellen Louise) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/z4RfRxxz5lw\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDUifFghJtH51Nn3bTgW7chfCxeYQ",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=S19UcWdOA-I",
+      "video_title": "Lost Sky - Fearless pt.II (feat. Chris Linton) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/S19UcWdOA-I\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDnLIzXN2_eh08EwcN1RwckPBqoQA",
       "id": 11
     },
     {
-      "video_id": "crz9Wo8VaaA",
-      "video_title": "Raptures & DigEx - Feel [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/crz9Wo8VaaA\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC7nAjfDLqofGFqzrwg46ozNtjGOg",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=n4tK7LYFxI0",
+      "video_title": "Spektrem - Shine [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/n4tK7LYFxI0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBjm67A1OwoReaBJYb0lZXoXik46A",
       "id": 12
     },
     {
-      "video_id": "cOKydzQPXuE",
-      "video_title": "Everen Maxwell - A Day at Sea [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/cOKydzQPXuE\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBHDFDPYB7QHZ3AYdW7miORTSgPYw",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=VtKbiyyVZks",
+      "video_title": "Itro & Tobu - Cloud 9 [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/VtKbiyyVZks\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBEsYFQ2gzZgH2vy3SBWBo4MWNnPA",
       "id": 13
     },
     {
-      "video_id": "10P_bK-QwEI",
-      "video_title": "Wiguez & EH!DE - The Path (ft. Agassi) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/10P_bK-QwEI\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA6cSsJm2yjykrGg4hNS0m14PIKIg",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=LHvYrn3FAgI",
+      "video_title": "Unknown Brain - Superhero (feat. Chris Linton) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/LHvYrn3FAgI\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAvp-1Yx5octHwejbrsuqdyKk2DRg",
       "id": 14
     },
     {
-      "video_id": "lMM3Iqlid0U",
-      "video_title": "Perk Pietrek & Abstrakt - Pressure [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/lMM3Iqlid0U\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAYjXnFptieEEYQWZmC3Hzazm3dqA",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=q1ULJ92aldE",
+      "video_title": "Syn Cole - Feel Good [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/q1ULJ92aldE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDtGSn1_cZxBiy5K6YJQR2ElMqgaw",
       "id": 15
     },
     {
-      "video_id": "WroIBvPu5tw",
-      "video_title": "Cajama - You Did Me Wrong [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/WroIBvPu5tw\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDxmZSZiuqGOMvViL-fsrqUZlIV9Q",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=C6IaUMAg3Dc",
+      "video_title": "Jo Cohen & Sex Whales - We Are [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/C6IaUMAg3Dc\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLARyxXq3YTlNV8fryKxTtnm_w7e3Q",
       "id": 16
     },
     {
-      "video_id": "j69XpPGIYgg",
-      "video_title": "STAR SEED & Cafe Disko - Innocent (feat. Michaella) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/j69XpPGIYgg\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA27angQPoxdV1Mf0X3I9nv-isImA",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=bdE_SyHad90",
+      "video_title": "Robin Hustin x TobiMorrow - Light It Up (feat. Jex) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/bdE_SyHad90\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB1hzLCsiaCHUAtRBvKFNTNykoNEA",
       "id": 17
     },
     {
-      "video_id": "5G9IwIKgvNo",
-      "video_title": "Raptures - Spark [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/5G9IwIKgvNo\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAMHIohGxYjKewQCpOpSiic5XBErA",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=4lXBHD5C8do",
+      "video_title": "Tobu & Itro - Sunburst [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/4lXBHD5C8do\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAHnXv1CygmvzJt4Hd9uREMV0lTOg",
       "id": 18
     },
     {
-      "video_id": "NY6f4HnPgqc",
-      "video_title": "Cartoon - On & On (Feat. Daniel Levi) (nuumi Remix) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/NY6f4HnPgqc\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBVuQsqqlQMEqywXDRgHtGURiEehg",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=6FNHe3kf8_s",
+      "video_title": "Different Heaven - Nekozilla [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/6FNHe3kf8_s\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLClX_sgy-LOn6bZvOPHyX_SE7SSUA",
       "id": 19
     },
     {
-      "video_id": "iHA1utIzpws",
-      "video_title": "Tobu - If I Disappear (ft. Tom Mårtensson) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/iHA1utIzpws\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC5aFDk2MnTj2vWki5Le087jo0Tog",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=8xlDwukxjnA",
+      "video_title": "Ship Wrek & Zookeepers - Ark [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/8xlDwukxjnA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA5ynCu4GjwR1xGeH5P934SOytT8A",
       "id": 20
     },
     {
-      "video_id": "SOEkdtS8rUg",
-      "video_title": "Tisoki & Cajama - Feelings [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/SOEkdtS8rUg\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBC3sx7Q56MwBxkazVPmKNmQyfBfQ",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=ux8-EbW6DUI",
+      "video_title": "Tobu - Infectious [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/ux8-EbW6DUI\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDHHrs_Vq7CRtLDX-u5wwvYIII3cQ",
       "id": 21
     },
     {
-      "video_id": "fjHq4M8wpSI",
-      "video_title": "James Roche - Away [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/fjHq4M8wpSI\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDP-812O8KJQjmaa3ie3PMWLrwTfw",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=JSY6vBPunpY",
+      "video_title": "Desmeon - Hellcat [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/JSY6vBPunpY\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDTP1A93_qxpG7lfc7N4XT72iHrsg",
       "id": 22
     },
     {
-      "video_id": "KbC5_JEhqL8",
-      "video_title": "Egzod, Maestro Chives & Alaina Cross - No Rival [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/KbC5_JEhqL8\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDq119snZSldLMEgCWV8CeFBwGDCQ",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=PTF5xgT-pm8",
+      "video_title": "Aero Chord feat. DDARK - Shootin Stars [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/PTF5xgT-pm8\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAQEPyFP5uzoD6Z3tZOhucOKljaYA",
       "id": 23
     },
     {
-      "video_id": "5VYI_S8WP7M",
-      "video_title": "Jay Eskar - To The Top (feat. Srikar) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/5VYI_S8WP7M\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCWuaXYp6P-pd6h-3D80eJj8rUDfQ",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=IIrCDAV3EgI",
+      "video_title": "Tobu - Candyland [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/IIrCDAV3EgI\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCBwt4NAwtRyN4dpedfjVFAKBIjSg",
       "id": 24
     },
     {
-      "video_id": "HRWY427zhqY",
-      "video_title": "Wiguez - Pray Tonight (ft. P-One) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/HRWY427zhqY\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDxaKF0W6BG1_fkB56lLTaM3FlxiQ",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=x_OwcYTNbHs",
+      "video_title": "Jim Yosef - Firefly [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/x_OwcYTNbHs\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLALjQ0O8Q033EVX53MKaIhMjsnxTQ",
       "id": 25
     },
     {
-      "video_id": "EIWyuA1eFd4",
-      "video_title": "Andromedik & Used - Take Me [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/EIWyuA1eFd4\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDuulk5ifFQa1SLrn0t9DSUtZMEdg",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=u1I9ITfzqFs",
+      "video_title": "Diviners - Savannah (feat. Philly K) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/u1I9ITfzqFs\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAwLPdhRHk0Knug9o2OZOSX-b8LQg",
       "id": 26
     },
     {
-      "video_id": "6m5L856DsdU",
-      "video_title": "Elektronomia x Lunaar x Donna Tella - Champions [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/6m5L856DsdU\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB4nuZsOj6_4OynwgkXYR0_WZhj5w",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=vBGiFtb8Rpw",
+      "video_title": "Culture Code - Make Me Move (feat. Karra) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/vBGiFtb8Rpw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBLO7Ei7899TNL59pYDbUvFQlqkZw",
       "id": 27
     },
     {
-      "video_id": "C7C5gppCqL0",
-      "video_title": "MILANE & Greg Aven - Like You [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/C7C5gppCqL0\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAjh-ag8NR1ChmBc6fpWjqE290EqA",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=fzNMd3Tu1Zw",
+      "video_title": "Elektronomia - Energy [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/fzNMd3Tu1Zw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBGvK0JCQnl98kyPzUeiqtrNVfuFg",
       "id": 28
     },
     {
-      "video_id": "fu92a6DgiWo",
-      "video_title": "Sam Ourt, AKIAL & Srikar - Escape [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/fu92a6DgiWo\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC_fz7XOT1NSjNTMou78Bi-B743kw",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=AlXfbVpDUdo",
+      "video_title": "Unknown Brain - MATAFAKA (feat. Marvin Divine) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/AlXfbVpDUdo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAeN7vUyUMN_VbDh62SrgcATq-fag",
       "id": 29
     },
     {
-      "video_id": "14CjyUYO8lE",
-      "video_title": "Lost Identities x Robbie Rosen - Moments [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/14CjyUYO8lE\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB6sJPDGgR4WW-RyWOCAZctPZEofg",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=9iHM6X6uUH8",
+      "video_title": "Jim Yosef - Link [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/9iHM6X6uUH8\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDckqdIubXyn8k_qjOBtLmYoWQjWw",
       "id": 30
     },
     {
-      "video_id": "dWEuF1tjdU4",
-      "video_title": "Arya & blankfaces - Daydream [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/dWEuF1tjdU4\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA0onHDbKpqCvUFhWypqcaUlh23RA",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=S6RWY8OYwbk",
+      "video_title": "Anikdote - Turn It Up [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/S6RWY8OYwbk\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDxIcPb6Y54iwL978jmvLRpcf3R0A",
       "id": 31
     },
     {
-      "video_id": "NIMlmq6jpnI",
-      "video_title": "Rival - Falling (with CRVN) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/NIMlmq6jpnI\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDNo040BF8Xw_IUnvPAmKsps1x_QA",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=tcHJodG5hX8",
+      "video_title": "Unknown Brain - Why Do I? (feat. Bri Tolani) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/tcHJodG5hX8\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAWcJLooQ7moXUnVcexQj5Zc-xKoA",
       "id": 32
     },
     {
-      "video_id": "WXcwiFrayL0",
-      "video_title": "Shiah Maisel, Abstrakt, Perk Pietrek - Running Away [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/WXcwiFrayL0\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDf7mriLy2r1b81PsggXf8GLzIKAA",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=Tv6WImqSuxA",
+      "video_title": "JPB - High [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/Tv6WImqSuxA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDREMDUoNZWzihBBhv2d-5zOd5CdA",
       "id": 33
     },
     {
-      "video_id": "6vS9ZlY4FzM",
-      "video_title": "Arcando - In My Head (feat. Britt Lari) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/6vS9ZlY4FzM\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB_sOJG70_roXknh6E5kdBlKrWB6Q",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=mSLuJYtl89Y",
+      "video_title": "Lensko - Let's Go! [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/mSLuJYtl89Y\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDzZKQa0Ux7OhcqVh00EicAKT8ShQ",
       "id": 34
     },
     {
-      "video_id": "KB_qRRNbYC0",
-      "video_title": "T & Sugah ft. Mara Necia - Bring Me The Light (Rob Gasser Remix) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/KB_qRRNbYC0\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAE6WdhHAt3wSIoH0cUxl393eF-rQ",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=f2xGxd9xPYA",
+      "video_title": "JJD - Adventure [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/f2xGxd9xPYA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBED0fw6jTnKV7H7di0mwT34uMUFg",
       "id": 35
     },
     {
-      "video_id": "gR2irrU9Xeo",
-      "video_title": "QR - XXI [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/gR2irrU9Xeo\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC29KIsR9tjqzEHrKbckpn_vIv65A",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=_XspQUK22-U",
+      "video_title": "Diamond Eyes - Everything [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/_XspQUK22-U\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBUwutJ2-xkDbwuWJAgoTzzb3kxSg",
       "id": 36
     },
     {
-      "video_id": "uDEy060DZXg",
-      "video_title": "Cartoon & Andromedik - Whatever (ft. Jüri Pootsmann) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/uDEy060DZXg\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDoyG6KxOc7MhFVDGj8GItzOmD_uQ",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=cNcy3J4x62M",
+      "video_title": "Elektronomia - Limitless [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/cNcy3J4x62M\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCArGxyXn6h5cmO7O0P02UtMpaLTA",
       "id": 37
     },
     {
-      "video_id": "X0aiejD-PJY",
-      "video_title": "Millbrook - Lost Without You (ft. Felix Samuel) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/X0aiejD-PJY\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAFevl_oAjIVgU2PtTIQguicj0IWQ",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=NJNp6DnAAIo",
+      "video_title": "Cartoon - C U Again feat. Mikk Mäe (Cartoon vs Futuristik VIP) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/NJNp6DnAAIo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBNl4CL3AV4nfGDmoXKVfMptAu47A",
       "id": 38
     },
     {
-      "video_id": "tnRxocc7PpA",
-      "video_title": "WIBERG & WBN - Complicated [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/tnRxocc7PpA\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBZRWK3awvlBNwGmDfEdrKyQLS5UQ",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=RX7fZ5I709Y",
+      "video_title": "Vanze - Forever (feat. Brenton Mattheus) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/RX7fZ5I709Y\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAXuadyiP2c-D4a_6Np87VQUUH3XQ",
       "id": 39
     },
     {
-      "video_id": "xr6iSSZs74Q",
-      "video_title": "NIVIRO - The Edge (feat. Harley Bird) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/xr6iSSZs74Q\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC9_1BA-lKq19FcwPcrfdEfd6Qx5A",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=u6RJv7f__Mg",
+      "video_title": "Diviners feat. Contacreast - Tropic Love [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/u6RJv7f__Mg\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBBd84GjJGVFM5nkE0ydAiwHNtHHQ",
       "id": 40
     },
     {
-      "video_id": "bNXMlIogpXc",
-      "video_title": "Abstrakt - Nobody Else [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/bNXMlIogpXc\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAzIoaypGPEyxRZ6s5qCg3czXitow",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=OBwl2glmqC0",
+      "video_title": "Tobu - Life [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/OBwl2glmqC0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCA1_YmIJpgMfYa6kJ7XsTOD-j2-A",
       "id": 41
     },
     {
-      "video_id": "ruBndZY_1DM",
-      "video_title": "DigEx - Fall In Love [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/ruBndZY_1DM\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBSN6rhHDaBebWf2Va-jn-l34BuKg",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=IIwiM777OzQ",
+      "video_title": "Prismo - Stronger [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/IIwiM777OzQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB62Q70ksACqrl0-G3nu2e0YV7ohA",
       "id": 42
     },
     {
-      "video_id": "y2ewoCflHhY",
-      "video_title": "Neoni - Haunted House [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/y2ewoCflHhY\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBEu8AkLy2sqngkTQbqdRDrQH8TAQ",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=mj9KRKSvdbk",
+      "video_title": "Clarx - H.A.Y [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/mj9KRKSvdbk\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCE58p2yIf3k33tCQ16RNi1_VOmYw",
       "id": 43
     },
     {
-      "video_id": "xwgmycH8Yhk",
-      "video_title": "OBLVYN x RIELL - With You [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/xwgmycH8Yhk\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBbCMzcVIIT_D6F8mAcobLOxreQyA",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=CLiXUT3MS34",
+      "video_title": "Heuse & Zeus x Crona - Pill (feat. Emma Sameth) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/CLiXUT3MS34\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCIrGzoKSInsnFcYOJdWgkW4sHRPQ",
       "id": 44
     },
     {
-      "video_id": "sRjBFf0zi3Y",
-      "video_title": "Anna Yvette - Running Out of Time [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/sRjBFf0zi3Y\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAPCYjvcoS1ntH9YhdZE2aY6i9VpQ",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=OJBxNA8cX-E",
+      "video_title": "Razihel - Love U [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/OJBxNA8cX-E\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBj_NTGyArufxTEPaHqPTbJGboEfg",
       "id": 45
     },
     {
-      "video_id": "WUL0hSLFbTA",
-      "video_title": "RYVN - Avatar [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/WUL0hSLFbTA\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBBJY9wc6ZlwKOtpsv9WJao8iVg6Q",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=dOo2jWb73JY",
+      "video_title": "K-391 - Earth [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/dOo2jWb73JY\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCKZXxs3CVAl4Gg5_F0hHJnRaN_Q",
       "id": 46
     },
     {
-      "video_id": "xwcwExC4t7w",
-      "video_title": "Coopex, Nito-Onna & DJ Frog - Whispered Promises [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/xwcwExC4t7w\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAKutafEszzKfY3EVLlKnbHKHydjg",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=TN_8D-79BZg",
+      "video_title": "RetroVision - Puzzle [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/TN_8D-79BZg\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAD-1kZugTJCigpmfwVbeEvqKMoLQ",
       "id": 47
     },
     {
-      "video_id": "zvrMzRVtj1s",
-      "video_title": "Goodknight. - Freedom [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/zvrMzRVtj1s\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC7F0xqgZgCHUwHBroloxDA6F5-7w",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=Lq2UrnDsI_s",
+      "video_title": "Laszlo - Fall To Light [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/Lq2UrnDsI_s\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA6RpdqNZ2YVN6WDvQE4MOmUE_2rg",
       "id": 48
     },
     {
-      "video_id": "f_zLB1CTXlQ",
-      "video_title": "Diviners & Azertion - Reality (feat. Dayce Williams) [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/f_zLB1CTXlQ\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAy50pEe6b9lDVlImSgXSCxQ7z7mw",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=sA_p0rQtDXE",
+      "video_title": "Axol x Alex Skrindo - You [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/sA_p0rQtDXE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBhPCvSSVpOi3X4NiQ1LwsPqgvCog",
       "id": 49
     },
     {
-      "video_id": "uZi8_rnqgHg",
-      "video_title": "Beave - Talk [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/uZi8_rnqgHg\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAXq9x7ayAyIHMimRDVoF7VBWwkBA",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=8Yue9YYdNLM",
+      "video_title": "Dirty Palm - Oblivion (feat. Micah Martin) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/8Yue9YYdNLM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDY_6S45S0NvrmZjCAxzOY1mWJOsg",
       "id": 50
     },
     {
-      "video_id": "uFkzXH9t2cA",
-      "video_title": "Tollef - Take Our Time [NCS Release]",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/uFkzXH9t2cA\/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBGPUmt5z0k5A23-tMVmRZoLmznKQ",
+      "video_link": "https:\/\/www.youtube.com\/watch?v=A_AtqKMqPUE",
+      "video_title": "JPB - Defeat The Night (feat. Ashley Apollodor) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/A_AtqKMqPUE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAjrKCTd96f-_qTZuV-sJx-n8eAmg",
       "id": 51
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=yHLtE1wFeRQ",
+      "video_title": "Jim Yosef & Anna Yvette - Linked [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/yHLtE1wFeRQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCINfCNgV-suCpMnl-QF9Zjvs4uNg",
+      "id": 52
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=9rujCfYXhQc",
+      "video_title": "Lost Sky - Fearless [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/9rujCfYXhQc\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA0FmhcGmvHqTzIozWdsTQje-sL3w",
+      "id": 53
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=SHFTHDncw0g",
+      "video_title": "Lost Sky - Dreams [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/SHFTHDncw0g\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAObz5gjDXkWXEQLqzlM_8rTGWZuw",
+      "id": 54
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=n79aphwhpW0",
+      "video_title": "Y&V - Lune [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/n79aphwhpW0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBvt8iGNHQpC3YlANS0A7wPoGECfg",
+      "id": 55
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=13ARO0HDZsQ",
+      "video_title": "Different Heaven - Safe And Sound [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/13ARO0HDZsQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBTsZRFqNAx8spWGoXRcO1iKIcfZQ",
+      "id": 56
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=2jwj9wVx3mg",
+      "video_title": "Dirty Palm - Freakshow (feat. LexBlaze) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/2jwj9wVx3mg\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAjuoZZUiO2E9M3gv5CcaO242cvEg",
+      "id": 57
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=LJeiQw2RmSg",
+      "video_title": "Kisma - Fingertips [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/LJeiQw2RmSg\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDG_PCacmG5Ot6H3jN13wzq6NW7UA",
+      "id": 58
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=qrmc7KVIoKQ",
+      "video_title": "Krys Talk & Cole Sipe - Way Back Home [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/qrmc7KVIoKQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC6_CsqoS_BpmVREReBJXbMSUz_qg",
+      "id": 59
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=SvRFNNbxuAk",
+      "video_title": "Prismo - Weakness [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/SvRFNNbxuAk\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCV7UQJu_gG3dNHxwT5WblCpN9fVw",
+      "id": 60
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=ztvIhqVtrrw",
+      "video_title": "Lensko - Circles [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/ztvIhqVtrrw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAxaXVCAMKLV4r95FmZEjj9471kQw",
+      "id": 61
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=h18gwLKQf_Q",
+      "video_title": "Tobu - Seven [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/h18gwLKQf_Q\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDU61RIJQea8M5y6RtNP6BY2MY1mA",
+      "id": 62
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=1WP_YLn1D1c",
+      "video_title": "Jim Yosef - Eclipse [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/1WP_YLn1D1c\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAJkYcxRjgjahYhnVK9jF3pmikI0A",
+      "id": 63
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=K8DUjObr_tU",
+      "video_title": "LFZ - Popsicle[NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/K8DUjObr_tU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCfBXdHctq-w9e8at9JfdzNXMIc5A",
+      "id": 64
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=i3vrV-WNmsc",
+      "video_title": "Lensko - Cetus [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/i3vrV-WNmsc\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBEixXIaRtVbqWIr2CVslNRwvT90Q",
+      "id": 65
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=rgW_I8saK1o",
+      "video_title": "Giraffe Squad - Wait For Me [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/rgW_I8saK1o\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCxtLvX_qJbx4ahGwJuikKz2KNe_g",
+      "id": 66
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=aCH1eyWq9B0",
+      "video_title": "Unknown Brain - Inspiration (feat. Aviella) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/aCH1eyWq9B0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDoe5h7Bx_HlRa3EMOhvb9smOJACw",
+      "id": 67
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=lTEzfj8IAR0",
+      "video_title": "NIVIRO - The Ghost [NCS Official Video]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/lTEzfj8IAR0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBhkQMc16baAYL30g57hP6foJWmHQ",
+      "id": 68
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=AEVaK0e1kTE",
+      "video_title": "Unknown Brain - Perfect 10 (feat. Heather Sommer) [NCS Lyric Video]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/AEVaK0e1kTE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCTZL8usBQPnEz5y2FCZGIWKW_m0Q",
+      "id": 69
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=PXf4rkguwDI",
+      "video_title": "Ship Wrek, Zookeepers & Trauzers - Vessel [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/PXf4rkguwDI\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDzalgYlU1X0OsL2o58wnzhStjpsw",
+      "id": 70
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=v4Za061pQac",
+      "video_title": "Alex Skrindo - Jumbo [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/v4Za061pQac\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB0vr3lyoiCEX6SQbLNb4BdXuwsCg",
+      "id": 71
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=h-nHdqC3pPs",
+      "video_title": "Lost Sky - Lost [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/h-nHdqC3pPs\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCn8trRIvZ7s7YdEtzYdLc2Lh3YVg",
+      "id": 72
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=8uSx3DyJjk0",
+      "video_title": "Paul Flint - Savage [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/8uSx3DyJjk0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBUNFNQdG8e4Y7mjLHMR7RTi4bddA",
+      "id": 73
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=bzehQ60b3XI",
+      "video_title": "IZECOLD - Close (feat. Molly Ann) [Brooks Remix] | NCS x FHM Release",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/bzehQ60b3XI\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC_OT7QlUCPfNPEIwNMEKHzjUuGPA",
+      "id": 74
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=lD4ZIzosp_c",
+      "video_title": "Tobu & Syndec - Dusk [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/lD4ZIzosp_c\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDmOBDtW-QQN-cGNwoOj2MP1ha63g",
+      "id": 75
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=A2AydJcUKR8",
+      "video_title": "Distrion & Electro-Light - Rubik[NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/A2AydJcUKR8\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDl3G9cq6Uh8ds4NKji1IoLcEaaEQ",
+      "id": 76
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=5LI5QZVUU98",
+      "video_title": "Jim Yosef - Arrow [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/5LI5QZVUU98\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBAVCGOziAZJ9lCRaezgD8ZTY3u9Q",
+      "id": 77
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=aCyQu00rZrM",
+      "video_title": "Wontolla, Kasger & Limitless - Miles Away [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/aCyQu00rZrM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAjQwfJ67Dx6srr4_TprXmiTangTA",
+      "id": 78
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=iaKgF1Vf5bQ",
+      "video_title": "Distrion & Alex Skrindo - Entropy [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/iaKgF1Vf5bQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCrsBDxwiMUa1PzCC3PdOh8GzUiXQ",
+      "id": 79
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=UHbDJ1oPuGo",
+      "video_title": "it's different - Shadows (feat. Miss Mary) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/UHbDJ1oPuGo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD2Ix-atOs1RBgm0aggFUqjeZJEzw",
+      "id": 80
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=MqUCDzom5Xw",
+      "video_title": "Jim Yosef - Can't Wait (feat. Anna Yvette) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/MqUCDzom5Xw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDctuFuchrzAD4x3eTHGulFNx28wQ",
+      "id": 81
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=xYfn7MWU7TQ",
+      "video_title": "Axol & The Tech Thieves - Bleed [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/xYfn7MWU7TQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDnbgrTV4NuFCTM_TvL8mltHoAOTg",
+      "id": 82
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=OFWT4yfPdjo",
+      "video_title": "Desmeon - Back From The Dead[NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/OFWT4yfPdjo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA3AQmDbLctkDRoztQkYzPYK05uTw",
+      "id": 83
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=CLEWmT_8ppM",
+      "video_title": "Clarx - Zig Zag [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/CLEWmT_8ppM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBR-trpTV2sINIS_a0UlzZwSVpuCg",
+      "id": 84
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=j5DCb1ycXyA",
+      "video_title": "Disfigure - Blank VIP (feat. Tara Louise) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/j5DCb1ycXyA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC4XFeB1fEOil4toHpTHRbI4_x4xQ",
+      "id": 85
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=QHoqD47gQG8",
+      "video_title": "Valence - Infinite [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/QHoqD47gQG8\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCl2eiqxtgRaZW_8wq6LAKkx01RAg",
+      "id": 86
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=cvl8e2se8Q4",
+      "video_title": "Vanze - Survive (feat. Neon Dreams) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/cvl8e2se8Q4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAtHo63NMG9-hAlpCt9XnaB7AJARg",
+      "id": 87
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=ZLohS_HScwc",
+      "video_title": "3rd Prototype - Dancefloor [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/ZLohS_HScwc\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAhi8WqSRcnPWq4Pl0T8MN0c1kYXA",
+      "id": 88
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=7wNb0pHyGuI",
+      "video_title": "Tobu - Roots [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/7wNb0pHyGuI\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDKC8O6IJ0JIc-g0aaXXAiGSroqQg",
+      "id": 89
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=xzyRoshFFaA",
+      "video_title": "Fareoh - Under Water [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/xzyRoshFFaA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDvwReCYL9AItSFDLVMJNKstZ6lxg",
+      "id": 90
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=gEbRqpFkTBk",
+      "video_title": "Zaza - Be Together [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/gEbRqpFkTBk\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCEMsXVonm1rOyThby2-MoREIfWwA",
+      "id": 91
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=otD-XbAhMbU",
+      "video_title": "RedMoon & Meron Ryan - Heavyweight [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/otD-XbAhMbU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCaUuFcg9FdQJdZnFAE8tyoEuuXPA",
+      "id": 92
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=Y2Lu0o3S2sU",
+      "video_title": "it's different - Outlaw (feat. Miss Mary) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/Y2Lu0o3S2sU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBR49PHTUGd6u2O9NYYx5gp7jdX4g",
+      "id": 93
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=fugQAnzL1uk",
+      "video_title": "Uplink - To Myself (feat. NK) [NCS Release] | Official Video",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/fugQAnzL1uk\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC0zncNVX12anA9GSeSG42T9Uw-uw",
+      "id": 94
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=3PS5jAMkCmU",
+      "video_title": "Mendum - Elysium [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/3PS5jAMkCmU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAvIjTYykpoNktsRZ3GiVoHdM7ouA",
+      "id": 95
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=1lcc21RQx_A",
+      "video_title": "Geoxor - You & I [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/1lcc21RQx_A\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAzeKJkezVFeaYeX7FwKUtQybIN5Q",
+      "id": 96
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=8ciZGNmlWgo",
+      "video_title": "Audioscribe - Free Fall [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/8ciZGNmlWgo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBDJuyKV8It9PV9vPP4cScT4R0B9w",
+      "id": 97
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=O3M8zZFF0WM",
+      "video_title": "Tobu - Mesmerize [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/O3M8zZFF0WM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAHwRMhHJCU-NeJf-ZCTdqro1uC3w",
+      "id": 98
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=VoQcGrSYQXI",
+      "video_title": "Distrion & Electro-Light - You And Me (feat. Ke'nekt) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/VoQcGrSYQXI\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD1CxJMk45znq59iMI5yUMbqHWmOw",
+      "id": 99
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=3wjb3HtD32c",
+      "video_title": "Cartoon feat. Jüri Pootsmann - I Remember U [NCS Official Video]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/3wjb3HtD32c\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDHfHWEnsbSfnr594HAbtiQuVX8PA",
+      "id": 100
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=Q5GgD_HvJMs",
+      "video_title": "Tobu - Sound of Goodbye [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/Q5GgD_HvJMs\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBBLAM4pnlKcrmdFl5L72Afq8gZnQ",
+      "id": 101
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=FkKjZz2vpy4",
+      "video_title": "Itro - Panda [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/FkKjZz2vpy4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB4SpvI8CRleel-HmO4M0adcZ9JKQ",
+      "id": 102
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=dXYFK-jEr8Y",
+      "video_title": "JPB & MYRNE - Feels Right (ft. Yung Fusion) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/dXYFK-jEr8Y\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCtvZJTuRwInVilBs_ViJsshG3w2w",
+      "id": 103
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=AHBnM1Jin9A",
+      "video_title": "Chime & Adam Tell - Whole (Rob Gasser Remix) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/AHBnM1Jin9A\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCTyvaSqwLFovP1CqwagjeBiLXo3Q",
+      "id": 104
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=HoCw_gaCHXE",
+      "video_title": "Elektronomia - Summersong 2018 [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/HoCw_gaCHXE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD0XuSbPN8TQ3xKMs64Jq7AabdzoA",
+      "id": 105
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=PwJVaJJ664g",
+      "video_title": "Rival x Cadmium - Seasons (feat. Harley Bird) [Futuristik & Whogaux Remix] [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/PwJVaJJ664g\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCork1VHEJMu6t7ksWH_EuueiLxow",
+      "id": 106
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=vb3ks4WllXA",
+      "video_title": "Jim Yosef - Lights [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/vb3ks4WllXA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB0Syc_PL2pmNnamJrST9ICmH0k5Q",
+      "id": 107
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=-M60_YUvA5o",
+      "video_title": "Ellis - Migraine (feat. Anna Yvette) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/-M60_YUvA5o\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLABvXjdq0Tkk8ZfstFZfYwPIDLX1g",
+      "id": 108
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=i1jSCpo1Vq0",
+      "video_title": "Sex Whales & Roee Yeger - Where Was I (feat. Ashley Apollodor) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/i1jSCpo1Vq0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDmJBMOuTGKeWiM7ELb05QaQ-td1Q",
+      "id": 109
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=nQT_2XS45Uk",
+      "video_title": "Tobu & Marcus Mouya - Running Away [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/nQT_2XS45Uk\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBR-p9ITWqR7HkJz0le5oOeEAS9Jw",
+      "id": 110
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=MEJCwccKWG0",
+      "video_title": "Tobu - Colors [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/MEJCwccKWG0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCydr3MjVLoqSwHEkOXYXiLp5Iy2w",
+      "id": 111
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=beDFafObkFw",
+      "video_title": "Aero Chord - Time Leap [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/beDFafObkFw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCsV0wsKmF2dw2m9svQFsBmZGsHJg",
+      "id": 112
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=0E6KXgWuaHo",
+      "video_title": "Desmeon - Undone (feat. Steklo) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/0E6KXgWuaHo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBfi-C5uzvtgT4HAAbS5ttTgFlUFg",
+      "id": 113
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=4ZvnbsfXRk0",
+      "video_title": "Different Heaven - Nekozilla (LFZ Remix) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/4ZvnbsfXRk0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBdmJQYHbQQwZHgMR8zKWae3SePRw",
+      "id": 114
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=Yw9-WYvv4y8",
+      "video_title": "Disfigure - Summer Tune [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/Yw9-WYvv4y8\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDMLW_6XZll9e96R5AQxtTw2abRvA",
+      "id": 115
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=YHSH9k9ooZY",
+      "video_title": "Tobu - Good Times [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/YHSH9k9ooZY\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCNAKAaEy8NcfJwZksh9XJHs92amw",
+      "id": 116
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=HpaHvUOk3F0",
+      "video_title": "Different Heaven - Far Away [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/HpaHvUOk3F0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCO7MYcLnbfz2Aa_w-ESlEU_xu3Ng",
+      "id": 117
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=BEvkowdXijA",
+      "video_title": "Fransis Derelle - Fly (feat. Parker Pohill) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/BEvkowdXijA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCmeaFBAGMh-ti0oWFtNkdXF01g4A",
+      "id": 118
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=tua4SVV-GSE",
+      "video_title": "Different Heaven - OMG [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/tua4SVV-GSE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCTEx_OucwLgq6m0fUggNw9CZkO4w",
+      "id": 119
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=0ewGL1NpD84",
+      "video_title": "SirensCeol - Coming Home [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/0ewGL1NpD84\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCUtwC3mHvBjadlT4_2BnboHAUi8Q",
+      "id": 120
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=ZhECyz85FMc",
+      "video_title": "Waysons - Eternal Minds [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/ZhECyz85FMc\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC4Gn1EY76savVik1zggAsLMhNsuA",
+      "id": 121
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=MM0lWsvieaE",
+      "video_title": "K-391 - Everybody [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/MM0lWsvieaE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDzb4lf9jYvXmu4Qp-YSOfy6RHmhw",
+      "id": 122
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=UDEpRK8WL_I",
+      "video_title": "Ship Wrek - Pain (feat. Mia Vaile) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/UDEpRK8WL_I\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAtnO8_v7l_jPUl0Ghc9lmBqtaP7g",
+      "id": 123
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=ACFvhTR__OI",
+      "video_title": "ÉWN & Whogaux - Start That Fire [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/ACFvhTR__OI\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBVZGm70Im9RE_atSM49lacDcibRA",
+      "id": 124
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=pIzq5BmcKF4",
+      "video_title": "WATEVA - Ber Zer Ker [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/pIzq5BmcKF4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAvp4Z71Hu3Wo1o8sRWX7CiNV6WiA",
+      "id": 125
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=cmVdgWL5548",
+      "video_title": "Raven & Kreyn - So Happy [NCS Official Video]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/cmVdgWL5548\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAEtkJi1l-Y6YKMz9fFTKkAb06FGg",
+      "id": 126
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=5pfDp6Wrf6Y",
+      "video_title": "T & Sugah x NCT - Stardust (feat. Miyoki) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/5pfDp6Wrf6Y\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB7uxJkthrjDLUvEEHkmgdmY_6Zfg",
+      "id": 127
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=Nvc0hgt9I1g",
+      "video_title": "Vexento - Masked Raver [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/Nvc0hgt9I1g\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBIANAvFH_4eM9_3tJ68vINYaz10w",
+      "id": 128
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=w9WwDddpHrg",
+      "video_title": "Domastic - Weird Dream [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/w9WwDddpHrg\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBtLyPP_sfIZ5jqIlnOXzdq7wf8eA",
+      "id": 129
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=ZWOA6lQiETk",
+      "video_title": "Jim Yosef - Forces (feat. Ivan Jamile & Kédo Rebelle) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/ZWOA6lQiETk\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDmOf996D-HL2_4eSZ_AaSUWIVXJA",
+      "id": 130
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=_95eFs4sHZs",
+      "video_title": "Mendum - Stay With Me (Krys Talk Remix) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/_95eFs4sHZs\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA1qqwGPBnVOikxnpk7G77BGIRoWg",
+      "id": 131
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=gDwVGS75sUA",
+      "video_title": "Lemon Fight - Stronger (feat. Jessica Reynoso) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/gDwVGS75sUA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAmyncA35ztDPVoPtEjz4WopZXEwA",
+      "id": 132
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=YGLA_V_yZXo",
+      "video_title": "Culture Code - Feel Again (feat. Harley Bird) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/YGLA_V_yZXo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDOLdZyAE9r-EFk0KIhc9Z08fnEGA",
+      "id": 133
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=ulPvZFgoGYk",
+      "video_title": "Glude - Breathe [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/ulPvZFgoGYk\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA6f4q427Oy6yWN-xAGEWWvpHN5pw",
+      "id": 134
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=9Va88Kt0NN0",
+      "video_title": "Elektronomia & JJD - Free [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/9Va88Kt0NN0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDX_h8eopTe-bLXm4cntRQJdIPtbg",
+      "id": 135
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=LfDfb-87F_s",
+      "video_title": "Krys Talk - Fly Away [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/LfDfb-87F_s\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA1mOWtnKOkQrTpqYlEHIt5csVc1w",
+      "id": 136
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=rWVjht-MIto",
+      "video_title": "Spektrem - Shine (Gabriel Drew & Bloom Remix) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/rWVjht-MIto\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDvNlvF_Cl5XcwOBfqDspjikdtZxQ",
+      "id": 137
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=Q_ojhcx-wrk",
+      "video_title": "LFZ - Echoes [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/Q_ojhcx-wrk\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAeqCjNbqQWATj-k0ljXsOphJY73A",
+      "id": 138
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=ZynbJWCjJxg",
+      "video_title": "Waysons - Daydream [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/ZynbJWCjJxg\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBxYWI5zcB5uPg2po9ijQLbxlpyBA",
+      "id": 139
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=SeyweGHLxSg",
+      "video_title": "JJD - Halcyon [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/SeyweGHLxSg\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCRrmt0oyp8aDLFEzy61srZ5gKtTg",
+      "id": 140
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=PUpS-ZrrZnU",
+      "video_title": "Desmeon - On That Day (feat. ElDiablo, Flint & Zadik) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/PUpS-ZrrZnU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCGwkQOxQHUNbOuE-7q-dv8uKmA0w",
+      "id": 141
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=pGMojZB0Lm0",
+      "video_title": "Krale - Frontier (ft. Jasmina Lin & Jay Christopher) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/pGMojZB0Lm0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD5IL-n1vJp7hwB-C_26RbPukdZ4A",
+      "id": 142
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=OtzIeRvDvrg",
+      "video_title": "Diviners - Falling (feat. Harley Bird) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/OtzIeRvDvrg\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAJuq87YfKAp82kx94Lpg4BApx_Sw",
+      "id": 143
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=vbXl-Ne-eMM",
+      "video_title": "Verm - Explode [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/vbXl-Ne-eMM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAYATA8JsUVSBjdLlwpmbT4h04o5g",
+      "id": 144
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=V-mP3VU0DCg",
+      "video_title": "NIVIRO - Flares [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/V-mP3VU0DCg\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD5qMp8dij1Va7DGGR1WXGJg_wXNQ",
+      "id": 145
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=pXppQviIKCc",
+      "video_title": "Laszlo - Imaginary Friends [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/pXppQviIKCc\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLATUGcn6vnzwOG4FsAjsQEy6uvXaQ",
+      "id": 146
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=T-zcs6yDM3k",
+      "video_title": "DM Galaxy - Paralyzed (feat. Tyler Fiore) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/T-zcs6yDM3k\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAynj3itiZj52DAU9CH9mZXdJKbZw",
+      "id": 147
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=2UeMLPCL1Cs",
+      "video_title": "Alex Skrindo - Get Up Again (feat. Axol) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/2UeMLPCL1Cs\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBA0-LfXp9oh8NZnNgTRmR45uWQ6w",
+      "id": 148
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=1TJsN58hv74",
+      "video_title": "William Ekh - Adventures (feat. Alexa Lusader)[NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/1TJsN58hv74\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDK_Zot_RqqMmH3gKEDP6HfYN84kA",
+      "id": 149
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=FseAiTb8Se0",
+      "video_title": "Kovan & Electro-Light - Skyline [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/FseAiTb8Se0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD3ZTiuHnl-4ILUwLnUXxDNCSZ3yA",
+      "id": 150
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=LY1ik-Do_MU",
+      "video_title": "floatinurboat - Spirit of Things [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/LY1ik-Do_MU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCL_aY1mTD7fZA24XMuNsW0yDWCSA",
+      "id": 151
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=PhzDIABahyc",
+      "video_title": "Jensation - Delicious [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/PhzDIABahyc\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLACgniXBvm9HurpxcU_u3Rc9VSCTQ",
+      "id": 152
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=wmgrnv0-oUc",
+      "video_title": "Tetrix Bass Feat. Veela - The Light [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/wmgrnv0-oUc\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBjJlVRdNANbJreo4sxmfa_wYZIeQ",
+      "id": 153
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=hgXZQfHySDw",
+      "video_title": "NIVIRO - Memes [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/hgXZQfHySDw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB5KWOmECDK-PPfbKWLFiiNq5DL0Q",
+      "id": 154
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=IHtL_BKO804",
+      "video_title": "Alex Skrindo & Stahl! - Moments [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/IHtL_BKO804\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC34QYC8Vyg0N5hnnsCvf08afVsTA",
+      "id": 155
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=besNDPvEwQw",
+      "video_title": "Killercats - Tell Me (feat. Alex Skrindo) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/besNDPvEwQw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB_0ud381dBmU_DTDGOeFavqVHoXQ",
+      "id": 156
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=cXLadJlS_nA",
+      "video_title": "Electro-Light - Throwback [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/cXLadJlS_nA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBYhn2PYIZUUMmP5MjRlYKtcs_ONw",
+      "id": 157
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=Au6fH-6xrEU",
+      "video_title": "Mountkid - Dino [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/Au6fH-6xrEU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBfRCXDK-hzQjMiC2CavP5B--8oSg",
+      "id": 158
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=2DGxm1csQQM",
+      "video_title": "Levianth & Axol - Remember (feat. The Tech Thieves) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/2DGxm1csQQM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA_3_FwejTjh6iwESg-b2ZgO55Mqw",
+      "id": 159
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=aPPbFcg38MM",
+      "video_title": "Different Heaven feat. ReesaLunn - Pentakill [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/aPPbFcg38MM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB3ddks45VeqUz9V4plCxAiLVqCUw",
+      "id": 160
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=8VDjPYcL-oU",
+      "video_title": "Unison - Aperture [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/8VDjPYcL-oU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCb4zeI9I7xs68lZZUu8sBnoJVLTQ",
+      "id": 161
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=AbIqBZWWiQQ",
+      "video_title": "NIVIRO - The Apocalypse [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/AbIqBZWWiQQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDXd3Ft6XiCu-cdqf34wUCAksZx9w",
+      "id": 162
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=6CQHm0jvgkw",
+      "video_title": "Rob Gasser & Laura Brehm - Vertigo [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/6CQHm0jvgkw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBb6CiLevx3F9ft4tHsot17QBT-GA",
+      "id": 163
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=odThebFOFVg",
+      "video_title": "Elektronomia - The Other Side [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/odThebFOFVg\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCjnmH6Y5yDkFVBf5YYr_HTM27SkA",
+      "id": 164
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=YDCDemLIUO0",
+      "video_title": "Culture Code - Electricity (feat. Michael Zhonga) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/YDCDemLIUO0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAzlmN57u6mvEEFmtxfuiyyWYSztQ",
+      "id": 165
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=1-AODuJpCG4",
+      "video_title": "NoCopyrightSounds 24\/7: Gaming Music Live Stream • Chill Out Mix • Electronic Radio 🎧",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/1-AODuJpCG4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA76KppZ0vz04HxBV5Uetaqaewapg",
+      "id": 166
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=r9OWmGwbRG0",
+      "video_title": "Kontinuum - Lost (feat. Savoi) [JJD Remix] | NCS Release",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/r9OWmGwbRG0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDkmiwF05Oyc6vX2v6WPT8q2GndPw",
+      "id": 167
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=UhVbNDEDc1k",
+      "video_title": "Ash O'Connor & Curbi - Steeper [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/UhVbNDEDc1k\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAsz_A5y3eh5lkJMY6QnEUvzIgVmg",
+      "id": 168
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=EFE7ZkHbSKA",
+      "video_title": "K.Safo & Alex Skrindo - Future Vibes (feat. Stewart Wallace) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/EFE7ZkHbSKA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA4hQ-G5mSJ_rLIq7ALbIFvaL8r-g",
+      "id": 169
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=yHU6g3-35IU",
+      "video_title": "NIVIRO - The Guardian Of Angels [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/yHU6g3-35IU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCHu-24WEFkjOjG9ckPkAxFCwN8MQ",
+      "id": 170
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=q1jqaK49SgU",
+      "video_title": "Codeko - Crest [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/q1jqaK49SgU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBEd5jOOKVS_41JFPvPI1JXPGxnTQ",
+      "id": 171
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=pxEKoZKpCew",
+      "video_title": "Jim Yosef & Alex Skrindo - Passion [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/pxEKoZKpCew\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD9eu8YfRbcXy8-KJ0_ITK0UcH4GA",
+      "id": 172
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=NVy0L4CxCVo",
+      "video_title": "OLWIK - This Life (feat. Johnning) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/NVy0L4CxCVo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBT1LC07XszsGPABR24XATovvTnEA",
+      "id": 173
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=eT0tYnWX2sQ",
+      "video_title": "T-Mass - Ignoring My Heart [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/eT0tYnWX2sQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLClstGBkFziAdG2lpbroggx5LNW-A",
+      "id": 174
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=U7gDB634iAA",
+      "video_title": "Electro-Light - Symbolism pt.II [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/U7gDB634iAA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC6AF43Ri4XxbreK51lCc_M_D6U9w",
+      "id": 175
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=iScT5IfgG-Q",
+      "video_title": "Electric Joy Ride - Origin [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/iScT5IfgG-Q\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDVlRkO5mvfGERw64yjqn-s1n6JMA",
+      "id": 176
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=lm4OJxGQm_E",
+      "video_title": "Different Heaven & Sian Area - Feel Like Horrible [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/lm4OJxGQm_E\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBBSR_ytX3m3PekTCJq2aVyuthJOQ",
+      "id": 177
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=PbIjuqd4ENY",
+      "video_title": "Vidya Vidya - Safari Fruits [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/PbIjuqd4ENY\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBvt_ey08Q-c2jhSIdCc_x3c-aAhw",
+      "id": 178
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=B-m7X1-T1hQ",
+      "video_title": "Defqwop - Awakening[NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/B-m7X1-T1hQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAb2gUGcllUC7p5_ODcCae1l6z6GA",
+      "id": 179
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=HSF3PneTBDU",
+      "video_title": "Halvorsen - She Got Me Like [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/HSF3PneTBDU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC2N7paKOBltSqEueoDUiQbedweHA",
+      "id": 180
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=dML91GqvjSQ",
+      "video_title": "Halcyon - Runaway (feat. Valentina Franco) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/dML91GqvjSQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDV_w-8scQdz3T82krouZ8riTlOmQ",
+      "id": 181
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=MqyOPyBPlns",
+      "video_title": "Uplink & Castion - Euphoria [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/MqyOPyBPlns\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDnn_ACsPZMUMvndpwX-kHlMHqsnw",
+      "id": 182
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=QfhF0V9VlJA",
+      "video_title": "RetroVision - Heroes [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/QfhF0V9VlJA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDlNN0coIf_RbCjbcu84mP1AFOF6w",
+      "id": 183
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=eipHfzNEn2o",
+      "video_title": "Mendum - One Third [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/eipHfzNEn2o\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBFKLfcWPWsTVHsDFOL-Rqz9UPBmw",
+      "id": 184
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=sIqx8ajdShU",
+      "video_title": "Krys Talk - Fly Away (JPB Remix) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/sIqx8ajdShU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD5lFN-WnRtuR2n_W0CEKgmqUlq6g",
+      "id": 185
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=yPPuloAGvwA",
+      "video_title": "Unison - Translucent [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/yPPuloAGvwA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBvA7jCSK2x3ln8oNWVaZr8NEahnQ",
+      "id": 186
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=MRwmxS1AL6E",
+      "video_title": "Culture Code - Make Me Move (feat. Karra) [Tobu Remix] | NCS Release",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/MRwmxS1AL6E\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA4u6WfvGIex2RkkkTz3sKyizBN2Q",
+      "id": 187
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=ReBDW-4mtyo",
+      "video_title": "David Bulla - Unexpected [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/ReBDW-4mtyo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCXmMXp69wBa8KJzH8IQcvHnjjUQQ",
+      "id": 188
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=gBt9kSpQCBk",
+      "video_title": "Ship Wrek & Essy - Fools Gold [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/gBt9kSpQCBk\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB5yFjxfBQf3IRBBc2MTl41_xTuzQ",
+      "id": 189
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=yQYFNdyS3fc",
+      "video_title": "SKYL1NK - The Wizard [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/yQYFNdyS3fc\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDT2Cl6BQ8kvJ-uS1W83elIUYBDFg",
+      "id": 190
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=UkUweq5FAcE",
+      "video_title": "Foria - Break Away [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/UkUweq5FAcE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBh9Obmd7-H6vnElNfUXbxbbTlWew",
+      "id": 191
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=DdISOatomY4",
+      "video_title": "Andromedik - Let Me In [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/DdISOatomY4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAbc79hcu_i1_iowuk3MbIMKidXvQ",
+      "id": 192
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=kF6lrNkC9bo",
+      "video_title": "Raven & Kreyn - Bubble [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/kF6lrNkC9bo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDHy1Au-4MOFlcO_i8b89mpEpBG7g",
+      "id": 193
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=T4Gq9pkToS8",
+      "video_title": "Rob Gasser - Ricochet [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/T4Gq9pkToS8\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCT8ngIdrGF2EnjT7O6eUeScreXwA",
+      "id": 194
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=0gxIZLHBxBQ",
+      "video_title": "Futuristik - Little Bit (feat. Sethh) [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/0gxIZLHBxBQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCA5kYy_2QpFJNrF-pJJfuqLDlNXw",
+      "id": 195
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=agi-FWTLMh0",
+      "video_title": "Kasger - Highland [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/agi-FWTLMh0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBZL_zSJcCVxr5kcLswKvTrsGIvRw",
+      "id": 196
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=UFEi2FOMXVs",
+      "video_title": "Cartoon - Immortality (feat. Kristel Aaslaid) [Futuristik Remix] | NCS Release",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/UFEi2FOMXVs\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC5TifdrDEfjreHQLYZz7CQhmqeCQ",
+      "id": 197
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=OgtJ8_wQXi0",
+      "video_title": "Music Predators - Adventure Time [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/OgtJ8_wQXi0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD9dUyhJ_MSyPdM9zlxTbUaSORcRA",
+      "id": 198
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=M4_ivwYfWFo",
+      "video_title": "Kasger - Reflections [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/M4_ivwYfWFo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD1pVp82KXl9tj3aD_HjsF8264-Gw",
+      "id": 199
+    },
+    {
+      "video_link": "https:\/\/www.youtube.com\/watch?v=v4h-JW22YhM",
+      "video_title": "T-Mass & Enthic - Can You Feel It [NCS Release]",
+      "video_img": "https:\/\/i.ytimg.com\/vi\/v4h-JW22YhM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDTwK8R5idLYAzg0UtR_WhhyAmN2A",
+      "id": 200
     }
   ]
 }

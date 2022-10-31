@@ -5,79 +5,66 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
-import { fetchmusicList } from 'store/feature/music/PlayListSlice';
+import Item from './Genre/Item';
 
 const Layout = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display:flex;
 
-    
-    @media screen and (max-width:1000px){
-    flex-direction: column;
-    gap:10px 
-    }    
-  
+  justify-content: center;
+  align-items: center;
+
+
 `
 
-const Card = styled.img(({ img }) => `
-width: 150px;
-height: 100px;
-margin: 0px 10px;
-border-radius: 30px;
-border: 1px solid rgba(0,0,0,0.3);
-box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-color: #6633cc;
-font-weight :900;
-background: url('${img}') center center / cover no-repeat;
-transition-duration:0.4s;
-&:active{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(6,15%);
+    grid-template-rows: 1fr;
+    grid-gap:20px;
+    padding-left: 20px;
 
-cursor:pointer;
-
-@media screen and (max-width:1000px){
-  border-radius: 7px;
-  font-size: 25px;
-  font-weight:bold;
-  width:90vw;
-  height:30vh;
-  background-size:100% 100%;
-  background-position: center center;
-  box-shadow: 2px 1px 10px 1px rgba(218, 120, 120, 0.2);
-
-}
-`)
+    @media screen and (max-width:1000px){
+      display: grid;
+      grid-template-columns: repeat(3,30%);
+      grid-template-rows: repeat(2,1fr);
+      grid-gap:30px;
+     
+    }    
+  
+    @media screen and (max-width:630px){
+      display: grid;
+      grid-gap:20px;
+      grid-template-columns: repeat(1,100%);
+      grid-template-rows: repeat(6,1fr);
+     
+    }  
+  
+`
+const IconBox = styled.div`
+    @media screen and (max-width:900px){
+      padding: 0px 15px;
+    }
+`
 
 const Genre = () => {
   const dispatch = useDispatch()
 
-  // 초기 렌더링시에 Genre Item들을 서버로부터 요청해서 가져옴
   useEffect(() => {
     dispatch(fetchmusicGenre())
   }, [])
 
-  const genreItem = useSelector(state => {
-    return state.musicReducer.musicGenre ? state.musicReducer.musicGenre.musicList : []
-  })
+  const genres = useSelector(state => state.musicReducer.musicGenre.musicList)
 
-  // 다른 genre Card 를 누를떄마다 musicList state값 변경
-  const onCardClickHanlder = ({ target }) => {
-    const genre_id = target.id
-    dispatch(fetchmusicList(genre_id))
-    return
-  }
-
+  const items = genres.length > 0 ? genres.map(({ genre_img, genre_id }) => <Item img={genre_img} key={genre_id} id={genre_id}></Item>) : <h3>장르가 비어있습니다.</h3>
   return (
     <Layout>
-      {
-        genreItem && genreItem.map(({ genre_img, genre_id }) => <Card onClick={onCardClickHanlder} img={genre_img} key={genre_id} id={genre_id}></Card>)
-      }
-      < FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'#6633cc'} />
-
-    </Layout >
+      <Grid>
+        {items}
+      </Grid >
+      <IconBox>
+        <FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'#6633cc'} />
+      </IconBox>
+    </Layout>
   )
 }
 export default Genre

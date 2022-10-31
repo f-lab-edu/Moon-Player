@@ -1,12 +1,17 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { fetchData } from 'store/utils/API/musicAPI'
+import { fetchData } from 'utils/API';
 
 // 액션 생성
 const fetchmusicGenre = createAsyncThunk(
   'musicGenre',
   async () => {
-    const response = await fetchData();
-    return response.music
+    try {
+      const response = await fetchData();
+      return response.music
+    } catch (error) {
+      console.log(error)
+      //  Alert Store 생성해서 오류 발생시 addAlert() action 호출하는 방식으로 UI 노출 가능
+    }
   }
 )
 
@@ -16,8 +21,6 @@ export const musicGenreSlice = createSlice({
   initialState: {
     musicList: [],
   },
-  // // 동기적인 액션 처리
-  reducers: {},
   // 비동기적인 액션처리(action create 자동생성 불가능)
   extraReducers: (builder) => {
     builder.addCase(fetchmusicGenre.pending, (state, action) => {
@@ -32,7 +35,7 @@ export const musicGenreSlice = createSlice({
     })
 
     builder.addCase(fetchmusicGenre.rejected, (state, action) => {
-      state.status = 'fail';
+      state.status = 'Fail';
     })
 
   }

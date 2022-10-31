@@ -1,9 +1,8 @@
 import styled from 'styled-components'
-import Title from 'components/items/Title';
+import Title from 'components/Common/Title';
 import Item from './Player/Item';
 import Footer from './Player/Footer';
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Layout = styled.div`
 width: 30vw;
@@ -19,19 +18,17 @@ border-radius:7px;
 }
 
 `
-const Box = styled.div`
+const ScrollBox = styled.div`
     color: #6633cc;
     height: 40vh;
     overflow-y: scroll;
-    overflow-x: hidden;
-    
+
     padding-right: 10px;
     &::-webkit-scrollbar{
       width:10px;
     }
       
     &::-webkit-scrollbar-thumb {
-    
       height: 5%;
       background: purple; 
       border-radius:7px;
@@ -40,7 +37,6 @@ const Box = styled.div`
     @media screen and (max-width:1000px){
       width:100%;
     }
-
 `
 const Header = styled.div`
 display: flex;
@@ -50,34 +46,32 @@ margin-bottom: 8px;
 
 `
 const PlayerTitle = styled(Title)`
+    position: sticky;
+    top: 0px;
     font-size: 20px;
     font-weight: 900;
     color: white;
 `
-
 // 플레이어 메인
-
 const Player = () => {
-
-  console.log('Player Component !!')
-  // 사용자가 선택한 Item 만 렌더링
   const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
+
+  const items = playerItems.length > 0 ? playerItems.map(({ video_title, video_img }, index) => <Item title={video_title} image={video_img} key={index} order={++index}></Item>) : <h3>재생목록이 비어있습니다.</h3>
+
   return (
     <Layout>
-      <Box>
-        <Header>
-          <PlayerTitle>재생 목록</PlayerTitle>
-        </Header>
-        {playerItems.length > 0 ? playerItems.map(({ video_title, video_img, video_id }) => <Item title={video_title} image={video_img} video_id={video_id} key={video_id}></Item>) :
-          <h3>재생목록이 비어있습니다.</h3>
-        }
-      </Box>
+      <Header>
+        <PlayerTitle>재생 목록</PlayerTitle>
+      </Header>
+      <ScrollBox>
+        {items}
+      </ScrollBox>
 
       <Footer />
 
     </Layout>
 
   )
-}
+};
 
 export default Player

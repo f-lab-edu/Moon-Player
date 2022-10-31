@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import Title from 'components/items/Title';
-import Avatar from 'components/items/Avatar';
+import Title from 'components/Common/Title';
+import Avatar from 'components/Common/Avatar';
 import Form from './components/Form';
 
 const Layout = styled.div`

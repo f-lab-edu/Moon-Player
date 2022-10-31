@@ -18,4 +18,3 @@ export const checkRequired = (str) => {
 export const checkPassword = (str) => {
   return passwordPattern.test(str) ? '' : '숫자 영문조합 (8-15개이하)'
 }
-

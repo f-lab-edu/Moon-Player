@@ -1,10 +1,9 @@
 import styled from 'styled-components'
-import Button from 'components/items/Button';
-import Input from 'components/items/Input';
-import Text from '../../../components/items/Text';
+import Button from 'components/Common/Button';
+import Input from 'components/Common/Input';
 import useValidator from 'hooks/useValidator';
-import useAuthenticator from '../../../hooks/useAuthenticator';
-import { checkEmail, checkRequired, checkPassword } from '../../../utils/Validator';
+import useAuthenticator from 'hooks/useAuthenticator';
+import { checkEmail, checkRequired, checkPassword } from 'utils/Validator';
 import { useState } from 'react';
 
 const InputBox = styled.div`
@@ -30,13 +29,20 @@ flex-direction: column;
   }
 `
 
+const Text = styled.span(({ error }) => `
+  visibility:${error ? 'visible' : 'hidden'};
+  margin-top:3px;
+  color: ${error ? 'red' : 'black'};
+  
+`)
+
 const Form = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const { errors, validate } = useValidator()
   const { signIn } = useAuthenticator()
 
-  const onButtonClickHandler = () => {
+  const handleClickLogOut = () => {
     //  현재 inputvalue 를 validate로 보냄
     // return 에러메시지에 대한 result
 
@@ -59,7 +65,7 @@ const Form = () => {
         <Text error={errors.password ? errors.password.join('') : ''}>{errors.password ? errors.password.join('') : ''}</Text>
       </InputBox>
       <ButtonBox>
-        <Button onClick={onButtonClickHandler}>로그인</Button>
+        <Button onClick={handleClickLogOut}>로그인</Button>
         <Button>회원가입</Button>
       </ButtonBox>
     </>

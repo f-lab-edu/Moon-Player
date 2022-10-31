@@ -1,29 +1,64 @@
-import { createSlice, current } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 // Reducer
 export const musicPlayerSlice = createSlice({
   name: 'musicPlayer',
 
-  // 가져온 음악리스트 들이 존재
+  // playerItems 이랑 , playingItem이랑 따로 관리
   initialState: {
     playerItems: [],
+
+    playing: {
+      music: '',
+      isrepeat: false,
+      isplaying: false,
+      volume: 50,
+    }
+
   },
 
   // 동기적인 액션 처리
   reducers: {
     // 플레이어에 add 해주는 함수
-    add: (state, action) => {
-      // playerItems에 중복 체크
-      const isItem = state.playerItems.filter((item) => item.video_id === action.payload.video_id).length
-      state.playerItems = isItem ? [...state.playerItems] : [...state.playerItems, Object.assign({}, action.payload)]
+    handleAddMusic: (state, action) => {
+      state.playerItems = [...state.playerItems, Object.assign({}, action.payload)]
     },
-    // 플레이어에서 삭제하는 함수
-    remove: (state, action) => {
-      state.playerItems = state.playerItems.filter((item) => item.video_id !== action.payload)
+
+    // 플레이어에서 삭제하는 함수 
+    // playItems도 업데이트 되어야함
+    // playingItem도 업데이트 되어야함
+    handleRemoveMusic: (state, action) => {
+      state.playerItems = state.playerItems.filter((item) => item.video_title !== action.payload)
+      state.playing.music = ''
+      state.playing.isplaying = false
+    },
+    handleShuffleMusic: (state, action) => {
+      state.playerItems = action.payload
+    },
+
+    handlePlayMusic: (state, action) => {
+      state.playing.music = action.payload
+    },
+    // 사용자가 다음음악을 선택할시 , 현재 음악 다음 인덱스를 찾아서 선택후 state.playing.music 
+    handleNextMusic: (state, action) => {
+
+      state.playing.music = action.payload
+    },
+    handlePrevMusic: (state, action) => {
+      state.playing.music = action.payload
+    },
+    handleRepeatMusic: (state, action) => {
+      state.playing.isrepeat = action.payload
+    },
+    handlePlayerState: (state, action) => {
+      state.playing.isplaying = action.payload
+    },
+    handleVolumeState: (state, action) => {
+      state.playing.volume = action.payload
     }
 
   },
 
 })
 export default musicPlayerSlice;
-export const { add, remove } = musicPlayerSlice.actions
+export const { handleAddMusic, handleRemoveMusic, handlePlayMusic, handleNextMusic, handlePrevMusic, handleShuffleMusic, handleRepeatMusic, handlePlayerState, handleVolumeState } = musicPlayerSlice.actions

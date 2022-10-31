@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Items from './components/Header/Items';
 import Genre from './components/Genre';
-import Title from 'components/items/Title';
+import Title from 'components/Common/Title';
 import PlayList from './components/PlayList';
 import Player from './components/Player';
 
@@ -9,12 +9,9 @@ const Layout = styled.div`
 display: flex;
 flex-direction: column;
 background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
-
 `
 const Header = styled.header`
      display: flex;
-     position: sticky;
-     top: 0px;
      justify-content: space-between;
      align-items: center;
      padding: 0px 30px;
@@ -67,10 +64,7 @@ const FooterTitle = styled.h3`
 font-size: 13px;
 `
 
-// 1. MusicPage에서 Nav에 대한 Json파일을 뿌려준다. /api/music/music_title
-
 const MusicPage = () => {
-
   return <Layout>
     <Header>
       <HeaderTitle>Moon Player</HeaderTitle>
