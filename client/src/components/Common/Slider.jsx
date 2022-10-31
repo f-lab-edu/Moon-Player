@@ -15,10 +15,8 @@ cursor: pointer;
   width: 100%;
   height: 13px;
   cursor: pointer;
-  background: #FA7CD7;
 }
 &::-webkit-slider-thumb {
-
   -webkit-appearance: none;
   height: 21px;
   width: 30px;
@@ -27,6 +25,5 @@ cursor: pointer;
   cursor: pointer;
   margin-top: -3.5px;
 }
-
 `
 export default Slider

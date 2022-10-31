@@ -52,14 +52,7 @@ export const HeaderList = () => {
           </Link>
         </Wrapper>
       </Box>
-      <Box>
-        <Wrapper>
-          <Link to='/search'><FontAwesomeIcon icon={faMagnifyingGlass} /></Link>
-        </Wrapper>
-        <Wrapper>
-          <Link to='/search'>검색</Link>
-        </Wrapper>
-      </Box>
+
       <Box>
         <Wrapper><Link to='/user'><FontAwesomeIcon icon={faUser} /></Link></Wrapper>
         <Wrapper>

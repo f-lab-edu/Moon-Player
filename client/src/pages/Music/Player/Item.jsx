@@ -4,7 +4,7 @@ import useMoveDownScroll from 'hooks/useMoveDownScroll';
 import usePrevious from 'hooks/usePrevious';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { handleRemoveMusic, handlePlayMusic } from 'store/feature/music/PlayerSlice';
+import { handleRemoveMusic, handleAddMusic } from 'store/feature/music/PlayerSlice';
 import OverFlowText from 'components/Common/OverFlowText';
 
 import { useEffect } from 'react';
@@ -55,7 +55,7 @@ export const Item = (({ title, image, order }) => {
 
   const dispatch = useDispatch()
   const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
-  const isSelectedMusic = useSelector(state => state.musicReducer.musicPlayer.playing.music).video_title === title
+  const isSelectedMusic = useSelector(state => state.musicReducer.musicPlayer.playmusic).video_title === title
   const playerItemslength = playerItems.length
   const prevPlayerItemslength = usePrevious(playerItemslength)
   const { element, handleScrollElement } = useMoveDownScroll()
@@ -72,17 +72,16 @@ export const Item = (({ title, image, order }) => {
   }
 
   // 재생할 음악을 눌렀을떄
-  const handleClickPlayMusic = () => {
+  const handleMusic = () => {
     const music = playerItems.find((item) => item.video_title === title)
-    dispatch(handlePlayMusic(music))
-
+    dispatch(handleAddMusic(music))
   }
 
   return (
     <Root ref={element} isSelected={isSelectedMusic} >
       <div>{order}</div>
-      <MusicImage onClick={handleClickPlayMusic} img={image} />
-      <MusicTitle onClick={handleClickPlayMusic}>{title}</MusicTitle>
+      <MusicImage onClick={handleMusic} img={image} />
+      <MusicTitle onClick={handleMusic}>{title}</MusicTitle>
 
       <IconButton>
         <FontAwesomeIcon onClick={handleClickRemove} icon={faTrash} size={'2x'} color={'#6633cc'} />

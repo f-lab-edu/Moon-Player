@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Image from 'components/Common/Image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
-import { handleAddMusic } from 'store/feature/music/PlayerSlice';
+import { handleAddPlayer } from 'store/feature/music/PlayerSlice';
 import IconButton from 'components/Common/IconButton';
 import OverFlowText from 'components/Common/OverFlowText';
 import { useDispatch, useSelector } from 'react-redux';
@@ -40,11 +40,10 @@ export const Item = ({ id, title, img }) => {
   const isInPlayer = playerItems.find((item) => item.video_title === title)
 
   // 아이디 값을 기반으로 musicList 스토어의 selected에 저장
-  const handleMusic = () => {
-    // 단일 return object
+  const handleAddMusic = () => {
     const selectedItem = playListItems.filter((item) => item.id === id)?.[0]
     // musicPlayer store에 playerItems 에 add한다.
-    dispatch(handleAddMusic(selectedItem))
+    dispatch(handleAddPlayer(selectedItem))
   }
 
   return (
@@ -56,7 +55,7 @@ export const Item = ({ id, title, img }) => {
       <OverFlowText>{title}</OverFlowText>
       <div>
         <IconButton disabled={isInPlayer}>
-          <FontAwesomeIcon onClick={handleMusic} icon={faCirclePlus} size={'3x'} />
+          <FontAwesomeIcon onClick={handleAddMusic} icon={faCirclePlus} size={'3x'} />
         </IconButton>
       </div>
     </Root>
