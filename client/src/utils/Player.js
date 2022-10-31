@@ -18,4 +18,18 @@ export const shuffleMusic = (playerItems) => {
   return newPlayerItems
 }
 
+export const timeFormat = (seconds) => {
+  if (isNaN(seconds)) {
+    return '00:00';
+  }
+  const date = new Date(seconds * 1000);
+  const hh = date.getUTCHours();
+  const mm = date.getUTCMinutes();
+  const ss = pad(date.getUTCSeconds());
+  if (hh) {
+    return `${hh}:${pad(mm)}:${ss}`;
+  }
+  return `${mm}:${ss}`;
+}
+const pad = (string) => ('0' + string).slice(-2);
 const swapArray = (newPlayerItems, index, randomIndex) => [newPlayerItems[index], newPlayerItems[randomIndex]] = [newPlayerItems[randomIndex], newPlayerItems[index]]

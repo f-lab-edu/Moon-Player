@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import ReactPlayer from 'react-player/lazy'
 
@@ -18,24 +18,27 @@ const DEFAULT_STATE = {
   duration: 0,       // 전체 시간
   music: '',
   isrepeat: false,
-  playingSecond: 0
+  currentTime: '00:00',
+  endTime: '00:00'
 }
 
 //  전역스토어에있는 값만가지고 음악을 재생시켜주는 훅
 export const usePlayerControl = (music, playerItems) => {
   const dispatch = useDispatch()
   const [playerState, setState] = useState(DEFAULT_STATE)
-
+  const playerRef = useRef()
+  const currentTime = playerRef && playerRef.current ? Math.floor(playerRef.current.getCurrentTime()) : '00:00'
+  const endTime = playerRef && playerRef.current ? Math.floor(playerRef.current.getDuration()) : '00:00'
   useEffect(() => {
-    setState({ ...playerState, playing: true, music: music })
+    setState({ ...playerState, playing: true, music: music, currentTime, endTime })
   }, [music])
 
   const handleRepeat = () => setState({ ...playerState, isrepeat: !playerState.isrepeat })
   const handlePlay = () => setState({ ...playerState, playing: !playerState.playing })
   const handleVolume = (e) => setState({ ...playerState, volume: +e.target.value })
   const handleEndedMusic = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, music)))
-  const handleOnProgress = (e) => setState({ ...playerState, playingSecond: e.playedSeconds })
-  const musicPlayer = <ReactPlayer
+  const handleOnProgress = () => setState({ ...playerState, currentTime, endTime })
+  const musicPlayer = <ReactPlayer ref={playerRef}
     style={{ opacity: 0 }}
     width="1px"
     height="1px"

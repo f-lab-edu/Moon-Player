@@ -7,9 +7,9 @@ import Image from 'components/Common/Image';
 import IconButton from 'components/Common/IconButton';
 import { usePlayerControl } from 'hooks/usePlayerControl';
 import Slider from 'components/Common/Slider';
-import { Line } from 'rc-progress';
 import { handleShuffleMusics, handlePrevMusic, handleNextMusic } from 'store/feature/music/PlayerSlice';
 import { shuffleMusic, prevPlayMusic, nextPlayMusic } from 'utils/Player';
+import { Progress } from './Progress';
 
 const IconBox = styled.div`
     display: flex;
@@ -54,7 +54,6 @@ export const Footer = () => {
   const dispatch = useDispatch()
   const playItem = useSelector(state => state.musicReducer.musicPlayer.playmusic)
   const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
-
   const { musicPlayer, playerState, handleRepeat, handlePlay, handleVolume } = usePlayerControl(playItem, playerItems)
   const PlayButton = <IconButton onClick={handlePlay} > <FontAwesomeIcon icon={faPlayCircle} size={'3x'} /></IconButton >
   const PauseButton = <IconButton onClick={handlePlay}><FontAwesomeIcon icon={faCirclePause} size={'3x'} /></IconButton>
@@ -88,13 +87,11 @@ export const Footer = () => {
         </IconBox>
       </div>
       <div>
-
         <VolumeBox>
           <FontAwesomeIcon icon={faVolumeHigh} size={'2x'} />
           <Slider onChange={handleVolume} volume={playerState.volume} />
         </VolumeBox>
-        {/* <Line percent={playingItem.playingSecond} strokeWidth={2} strokeColor="#6633cc" /> */}
-
+        <Progress time={{ 'currentTime': playerState.currentTime, 'endTime': playerState.endTime }} />
       </div>
     </div>
 
