@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import Title from 'components/Common/Title';
-import Avatar from 'components/Common/Avatar';
-import Form from './components/Form';
+import Form from './Form';
 
 const Layout = styled.div`
   display: flex;
@@ -34,6 +33,20 @@ const Main = styled.main`
   }
 `;
 
+const Avatar = styled.img.attrs({
+  src: 'images/Loginlogo.png'
+})`
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  object-fit:fill;
+  margin: 30px 0 40px 0;
+  transform:scale(1.2);
+`;
+
 // 한개의 페이지에 여러 커스텀 훅 사용
 const LoginPage = () => {
 
@@ -46,7 +59,7 @@ const LoginPage = () => {
         <Avatar />
         <Form />
       </Main>
-    </Layout>
+    </Layout >
   )
 }
 

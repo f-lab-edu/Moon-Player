@@ -1,12 +1,11 @@
 import styled from 'styled-components'
-import Title from 'components/Common/Title';
-import Item from './PlayList/Item';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
+import { Item } from './Item';
 
-const Layout = styled.div`
+const Root = styled.div`
     display: flex;
     flex-direction: column;
     width:60vw;
@@ -31,16 +30,17 @@ const Layout = styled.div`
   
 `
 
-const PlayListTitle = styled(Title)`
-  font-size:20px;
-  color: white;
-
-`
 const Box = styled.div`
   padding: 10px 20px;
+  >:first-child{
+    color:white;
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px 2px gray;
+  }
 `
 
-const PlayList = () => {
+export const PlayList = () => {
   const dispatch = useDispatch()
 
   const playListItems = useSelector((state) => state.musicReducer.musicPlayList.musicList)
@@ -54,12 +54,11 @@ const PlayList = () => {
   }, [])
 
   return (
-    <Layout>
+    <Root>
       <Box>
-        <PlayListTitle>{playListItems.title}</PlayListTitle>
+        <h3>{playListItems.title}</h3>
         {items}
       </Box>
-    </Layout>
+    </Root>
   )
 }
-export default PlayList

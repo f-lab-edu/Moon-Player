@@ -4,13 +4,10 @@ import Title from 'components/Common/Title';
 import { faShuffle, faBackwardStep, faPlayCircle, faForwardStep, faCirclePause, faRepeat, faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
 import Progressbar from 'components/Common/Progressbar';
 import Image from 'components/Common/Image';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import IconButton from 'components/Common/IconButton';
-import usePlayer from 'hooks/usePlayer';
+import { usePlayerControl } from 'hooks/usePlayerControl';
 
-import { prevPlayMusic, nextPlayMusic, shuffleMusic } from 'utils/Player';
-
-import { handleNextMusic, handlePrevMusic, handleShuffleMusic, handleRepeatMusic, handlePlayerState, handleVolumeState } from 'store/feature/music/PlayerSlice';
 import Slider from 'components/Common/Slider';
 
 const IconBox = styled.div`
@@ -53,43 +50,32 @@ padding: 20px;
 
 `
 
-const Footer = () => {
-  const dispatch = useDispatch()
+export const Footer = () => {
   const playingItems = useSelector(state => state.musicReducer.musicPlayer.playing)
-  const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
-  const { musicPlayer } = usePlayer()
-
-  const handleClickPrevButton = () => dispatch(handlePrevMusic(prevPlayMusic(playerItems, playingItems.music)))
-  const handleClickNextButton = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, playingItems.music)))
-  const handleShuffleButton = () => dispatch(handleShuffleMusic(shuffleMusic(playerItems)))
-  const handleRepeatButton = () => dispatch(handleRepeatMusic(!playingItems.isrepeat))
-  const handleClickPlayButton = () => { dispatch(handlePlayerState(!playingItems.isplaying)) }
-  const handleChangeVolume = (event) => { dispatch(handleVolumeState(+event.target.value)) }
-
-  const PlayButton = <IconButton onClick={handleClickPlayButton} > <FontAwesomeIcon icon={faPlayCircle} size={'3x'} /></IconButton >
-  const PauseButton = <IconButton onClick={handleClickPlayButton}><FontAwesomeIcon icon={faCirclePause} size={'3x'} /></IconButton>
+  const { musicPlayer, handlePrev, handleNext, handleShuffle, handleRepeat, handlePlay, handleVolume } = usePlayerControl()
+  const PlayButton = <IconButton onClick={handlePlay} > <FontAwesomeIcon icon={faPlayCircle} size={'3x'} /></IconButton >
+  const PauseButton = <IconButton onClick={handlePlay}><FontAwesomeIcon icon={faCirclePause} size={'3x'} /></IconButton>
 
   return (
-    <footer>
+    <div>
       <ImageBox>
         {playingItems.music && <MusicImage img={playingItems.music.video_img} />}
       </ImageBox>
-
       {playingItems.music && <MusicTitle>{playingItems.music.video_title}</MusicTitle>}
       <div>
         {playingItems.music && musicPlayer}
         <IconBox>
-          <IconButton repeat={playingItems.isrepeat} onClick={handleRepeatButton}><FontAwesomeIcon icon={faRepeat} size={'2x'} /> </IconButton>
+          <IconButton isActive={playingItems.isrepeat} onClick={handleRepeat}><FontAwesomeIcon icon={faRepeat} size={'2x'} /> </IconButton>
           <div>
-            <IconButton onClick={handleClickPrevButton}>
+            <IconButton onClick={handlePrev}>
               <FontAwesomeIcon icon={faBackwardStep} size={'3x'} />
             </IconButton>
             {playingItems.isplaying ? PauseButton : PlayButton}
-            <IconButton onClick={handleClickNextButton}>
+            <IconButton onClick={handleNext}>
               <FontAwesomeIcon icon={faForwardStep} size={'3x'} />
             </IconButton>
           </div>
-          <IconButton onClick={handleShuffleButton}>
+          <IconButton onClick={handleShuffle}>
             <FontAwesomeIcon icon={faShuffle} size={'2x'} />
           </IconButton>
         </IconBox>
@@ -97,14 +83,11 @@ const Footer = () => {
       <div>
         <VolumeBox>
           <FontAwesomeIcon icon={faVolumeHigh} size={'2x'} />
-          <Slider onChange={handleChangeVolume} volume={playingItems.volume} />
+          <Slider onChange={handleVolume} volume={playingItems.volume} />
         </VolumeBox>
-
         <Progressbar />
       </div>
-    </footer>
+    </div>
 
   )
 }
-
-export default Footer

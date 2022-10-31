@@ -1,9 +1,9 @@
 
 import ReactPlayer from 'react-player/lazy'
 import { useDispatch, useSelector } from 'react-redux';
-import { handleNextMusic } from 'store/feature/music/PlayerSlice';
+import { handleNextMusic, handlePrevMusic, handleShuffleMusic, handleRepeatMusic, handlePlayerState, handleVolumeState } from 'store/feature/music/PlayerSlice';
 
-import { nextPlayMusic } from 'utils/Player';
+import { nextPlayMusic, prevPlayMusic, shuffleMusic } from 'utils/Player';
 
 // const DEFAULT_STATE = {
 //   playing: false,     // 재생중인지
@@ -17,12 +17,17 @@ import { nextPlayMusic } from 'utils/Player';
 // }
 
 //  전역스토어에있는 값만가지고 음악을 재생시켜주는 훅
-const usePlayer = () => {
+export const usePlayerControl = () => {
+  const dispatch = useDispatch()
   const playingItems = useSelector(state => state.musicReducer.musicPlayer.playing)
   const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
 
-  const dispatch = useDispatch()
-
+  const handlePrev = () => dispatch(handlePrevMusic(prevPlayMusic(playerItems, playingItems.music)))
+  const handleNext = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, playingItems.music)))
+  const handleShuffle = () => dispatch(handleShuffleMusic(shuffleMusic(playerItems)))
+  const handleRepeat = () => dispatch(handleRepeatMusic(!playingItems.isrepeat))
+  const handlePlay = () => dispatch(handlePlayerState(!playingItems.isplaying))
+  const handleVolume = (event) => dispatch(handleVolumeState(+event.target.value))
   const handleEndedMusic = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, playingItems.music)))
 
   const musicPlayer = <ReactPlayer
@@ -38,7 +43,6 @@ const usePlayer = () => {
     onEnded={handleEndedMusic}
 
   ></ReactPlayer>
-  return { musicPlayer }
+  return { musicPlayer, handlePrev, handleNext, handleShuffle, handleRepeat, handlePlay, handleVolume }
 }
 
-export default usePlayer

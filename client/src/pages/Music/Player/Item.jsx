@@ -1,16 +1,16 @@
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import useMoveDownScroll from 'hooks/useMoveDownScroll';
+import usePrevious from 'hooks/usePrevious';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { handleRemoveMusic, handlePlayMusic } from 'store/feature/music/PlayerSlice';
-import Text from 'components/Common/Text';
-import useMoveDownScroll from 'hooks/useMoveDownScroll';
-import usePrevious from 'hooks/usePrevious';
+import OverFlowText from 'components/Common/OverFlowText';
 
 import { useEffect } from 'react';
 import IconButton from 'components/Common/IconButton';
 
-const Layout = styled.div(({ isSelected }) => `
+const Root = styled.div(({ isSelected }) => `
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -31,7 +31,7 @@ text-align: center;
 
 `)
 
-const MusicTitle = styled(Text)`
+const MusicTitle = styled(OverFlowText)`
   font-size: 15px;
   width:300px; 
   cursor: pointer;
@@ -51,7 +51,7 @@ background-position: center;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `)
 
-const Item = (({ title, image, order }) => {
+export const Item = (({ title, image, order }) => {
 
   const dispatch = useDispatch()
   const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
@@ -79,7 +79,7 @@ const Item = (({ title, image, order }) => {
   }
 
   return (
-    <Layout ref={element} isSelected={isSelectedMusic} >
+    <Root ref={element} isSelected={isSelectedMusic} >
       <div>{order}</div>
       <MusicImage onClick={handleClickPlayMusic} img={image} />
       <MusicTitle onClick={handleClickPlayMusic}>{title}</MusicTitle>
@@ -87,9 +87,6 @@ const Item = (({ title, image, order }) => {
       <IconButton>
         <FontAwesomeIcon onClick={handleClickRemove} icon={faTrash} size={'2x'} color={'#6633cc'} />
       </IconButton>
-
-    </Layout >
+    </Root >
   )
 });
-
-export default Item

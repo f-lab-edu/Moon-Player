@@ -5,15 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
-import Item from './Genre/Item';
+import { Item } from './Item';
 
-const Layout = styled.div`
+const FlexCenter = styled.div`
   display:flex;
-
   justify-content: center;
   align-items: center;
-
-
 `
 
 const Grid = styled.div`
@@ -40,13 +37,13 @@ const Grid = styled.div`
     }  
   
 `
-const IconBox = styled.div`
+const IconWrapper = styled.div`
     @media screen and (max-width:900px){
       padding: 0px 15px;
     }
 `
 
-const Genre = () => {
+export const Genre = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -55,16 +52,15 @@ const Genre = () => {
 
   const genres = useSelector(state => state.musicReducer.musicGenre.musicList)
 
-  const items = genres.length > 0 ? genres.map(({ genre_img, genre_id }) => <Item img={genre_img} key={genre_id} id={genre_id}></Item>) : <h3>장르가 비어있습니다.</h3>
+  const genreItems = genres.length > 0 ? genres.map(({ genre_img, genre_id }) => <Item img={genre_img} key={genre_id} id={genre_id}></Item>) : <h3>장르가 비어있습니다.</h3>
   return (
-    <Layout>
+    <FlexCenter>
       <Grid>
-        {items}
+        {genreItems}
       </Grid >
-      <IconBox>
+      <IconWrapper>
         <FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'#6633cc'} />
-      </IconBox>
-    </Layout>
+      </IconWrapper>
+    </FlexCenter>
   )
 }
-export default Genre

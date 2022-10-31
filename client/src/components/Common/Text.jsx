@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 
-const Text = styled.div`
-       width:60%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap; 
-      font-weight: 900;
-
-`
-
-export default Text
+export const Text = styled.span(({ error, primary, info }) => `
+  color: ${error && 'red'};
+  color: ${primary && 'black'};
+`)

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import Items from './components/Header/Items';
-import Genre from './components/Genre';
 import Title from 'components/Common/Title';
-import PlayList from './components/PlayList';
-import Player from './components/Player';
+import { Genre } from './Genre/Genre';
+import { Player } from './Player/Player';
+import { PlayList } from './PlayList/PlayList';
+import { HeaderList } from './Header/HeaderList';
 
 const Layout = styled.div`
 display: flex;
@@ -33,7 +33,7 @@ const GenreTitle = styled(Title)`
  text-shadow: 1px 1px 1px gray;
  font-weight: 900;
  text-align: center;
- font-size :30px;
+ font-size :40px;
 
 `
 const Main = styled.main`
@@ -68,7 +68,7 @@ const MusicPage = () => {
   return <Layout>
     <Header>
       <HeaderTitle>Moon Player</HeaderTitle>
-      <Items />
+      <HeaderList />
     </Header>
     <Nav>
       <GenreTitle>인기 음악</GenreTitle>
