@@ -7,10 +7,9 @@ import LoginPage from 'pages/Login/index.jsx';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<LoginPage />}></Route>;
-      <Route path="/music" element={<MusicPage />}></Route>;
+      <Route path="/" element={<LoginPage />}></Route>;<Route path="/music" element={<MusicPage />}></Route>;
       <Route path="/user" element={<UserPage />}></Route>;
-    </Routes >
+    </Routes>
   );
 }
 

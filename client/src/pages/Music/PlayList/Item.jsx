@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import Image from 'components/Common/Image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
@@ -8,61 +8,56 @@ import OverFlowText from 'components/Common/OverFlowText';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Root = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid rgba(0,0,0,0.1);
-    color: #6633cc;
-    font-weight: 900;
-    border-left:none;
-    border-right:none;
-    border-bottom: none;
-    gap:30px;
-    @media screen and (max-width:1200px){
-      width: 100%;
-    }
-    >:first-child{
-    width:1px;
-    
-    }
-`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #6633cc;
+  font-weight: 900;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  gap: 30px;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+  > :first-child {
+    width: 1px;
+  }
+`;
 const MusicTitle = styled(OverFlowText)`
   width: 50%;
-  font-size:15px;
-  @media screen and (max-width:1000px){
-  width: 100%; 
+  font-size: 15px;
+  @media screen and (max-width: 1000px) {
+    width: 100%;
   }
-
-`
+`;
 const MusicImage = styled(Image)`
-width:100px;
-height:50px;
-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-`
+  width: 100px;
+  height: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+`;
 const Button = styled(IconButton)`
-
-&:hover{
-  transform:scale(1.2);
-  color: white;
-}
-`
+  &:hover {
+    transform: scale(1.2);
+    color: white;
+  }
+`;
 
 export const Item = ({ id, title, img }) => {
-  const dispatch = useDispatch()
-  const playListItems = useSelector(state => state.musicReducer.musicPlayList.musicList.musics)
-  const playerItems = useSelector(state => state.musicReducer.musicPlayer.playerItems)
-  const isInPlayer = playerItems.find((item) => item.video_title === title)
+  const dispatch = useDispatch();
+  const playListItems = useSelector((state) => state.musicReducer.musicPlayList.musicList.musics);
+  const playerItems = useSelector((state) => state.musicReducer.musicPlayer.playerItems);
+  const isInPlayer = playerItems.find((item) => item.video_title === title);
 
   // 아이디 값을 기반으로 musicList 스토어의 selected에 저장
   const handleAddMusic = () => {
-    const selectedItem = playListItems.filter((item) => item.id === id)?.[0]
-    // musicPlayer store에 playerItems 에 add한다.
-    dispatch(handleAddPlayer(selectedItem))
-  }
+    const selectedItem = playListItems.filter((item) => item.id === id)?.[0];
+    dispatch(handleAddPlayer(selectedItem));
+  };
 
   return (
     <Root>
-
       <div>{id}</div>
       <MusicImage img={img} />
       <MusicTitle>{title}</MusicTitle>
@@ -71,5 +66,5 @@ export const Item = ({ id, title, img }) => {
         <FontAwesomeIcon onClick={handleAddMusic} icon={faCirclePlus} size={'2x'} />
       </Button>
     </Root>
-  )
-}
+  );
+};
