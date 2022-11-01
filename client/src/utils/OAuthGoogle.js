@@ -17,6 +17,6 @@ export const requestGoogleLogin = async () => {
   }
 };
 
-export const requestGoogleToken = () => {
+export const fetchGoogleToken = () => {
   window.location.assign(oAuthURL);
 };

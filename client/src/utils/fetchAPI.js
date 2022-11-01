@@ -5,12 +5,14 @@ export const fetchData = async (url) => {
   return await (await fetch(url)).json();
 };
 export const sendtoToken = async (url, accessToken) => {
-  const response = await fetch(url, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `token ${accessToken}`,
-    },
-  });
+  const response = await (
+    await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `token ${accessToken}`,
+      },
+    })
+  ).json();
   return response;
 };

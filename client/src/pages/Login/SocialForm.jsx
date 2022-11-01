@@ -1,7 +1,11 @@
 import { Text } from 'components/Common/Text';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { fetchUserInfo } from 'store/feature/auth/UserSlice';
 
 import styled from 'styled-components';
-import { requestGoogleToken } from 'utils/OAuthGoogle';
+import { fetchGoogleToken } from 'utils/OAuthGoogle';
 const Root = styled.div`
   display: flex;
   flex-direction: column;
@@ -52,10 +56,16 @@ const Icon = styled.img.attrs((props) => ({
 `;
 
 export const SocialForm = () => {
-  const handleGoogleLogin = () => {
-    requestGoogleToken();
-  };
+  const dispatch = useDispatch();
+  const tmp = useSelector((state) => console.log(state));
+  console.log(tmp);
 
+  useEffect(() => {
+    dispatch(fetchUserInfo());
+  }, []);
+  const handleGoogleLogin = () => {
+    fetchGoogleToken();
+  };
   return (
     <Root>
       <Button color="#5c79f1" onClick={handleGoogleLogin}>
