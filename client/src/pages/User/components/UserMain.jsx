@@ -1,9 +1,7 @@
 // import { styled } from "styled-components";
 
 const UserMain = () => {
-  return <div>
-    asdfsdf
-  </div>
-}
+  return <div>asdfsdf</div>;
+};
 
-export default UserMain
+export default UserMain;

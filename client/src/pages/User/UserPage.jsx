@@ -7,7 +7,7 @@ const UserPageLayout = styled.div`
   display: flex;
   flex-direction: row;
   height: 100vh;
-`
+`;
 
 const UserPage = () => {
   return (
@@ -15,7 +15,6 @@ const UserPage = () => {
       <UserNav />
       <UserMain />
     </UserPageLayout>
-  )
-
-}
-export default UserPage
+  );
+};
+export default UserPage;

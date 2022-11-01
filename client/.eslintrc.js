@@ -19,6 +19,8 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'max-len': ['error', { code: 120 }],
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
+    'no-useless-escape': 'off',
   },
   settings: {
     react: { version: 'detect' },
