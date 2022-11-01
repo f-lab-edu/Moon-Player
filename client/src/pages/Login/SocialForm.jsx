@@ -1,5 +1,7 @@
 import { Text } from 'components/Common/Text';
+
 import styled from 'styled-components';
+import { requestGoogleToken } from 'utils/OAuthGoogle';
 const Root = styled.div`
   display: flex;
   flex-direction: column;
@@ -50,9 +52,13 @@ const Icon = styled.img.attrs((props) => ({
 `;
 
 export const SocialForm = () => {
+  const handleGoogleLogin = () => {
+    requestGoogleToken();
+  };
+
   return (
     <Root>
-      <Button color="#5c79f1">
+      <Button color="#5c79f1" onClick={handleGoogleLogin}>
         <Icon google />
         <Text color="white">Google 로그인</Text>
       </Button>

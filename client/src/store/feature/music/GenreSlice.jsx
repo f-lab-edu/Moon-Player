@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchData } from 'utils/API';
+import { fetchData } from 'utils/fetchAPI';
 
 // 액션 생성
 const fetchmusicGenre = createAsyncThunk('musicGenre', async () => {
   try {
-    const response = await fetchData();
+    const response = await fetchData('http://localhost:4000/api/music/genre/');
     return response.music;
   } catch (error) {
     console.log(error);
