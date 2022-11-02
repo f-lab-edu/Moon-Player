@@ -1,9 +1,10 @@
 import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
-import { requestGoogleLogin } from 'utils/OAuthGoogle';
+import { sendToken } from 'utils/fetchAPI';
+import { getToken } from 'utils/webAPI';
 
-const fetchUserInfo = createAsyncThunk('userInfo', async () => {
+const fetchUserInfo = createAsyncThunk('user', async () => {
   try {
-    const response = await requestGoogleLogin();
+    const response = await sendToken(getToken());
     return response;
   } catch (error) {
     console.log(error);
@@ -14,9 +15,14 @@ const fetchUserInfo = createAsyncThunk('userInfo', async () => {
 export const UserSlice = createSlice({
   name: 'user',
 
-  // 가져온 유저정보
+  // 가져온 유저 토큰
   initialState: {
-    info: [],
+    info: {},
+  },
+  reducers: {
+    handleRemoveUserinfo: (state, action) => {
+      state.info = {};
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUserInfo.pending, (state, action) => {
@@ -35,3 +41,4 @@ export const UserSlice = createSlice({
 });
 export default UserSlice;
 export { fetchUserInfo };
+export const { handleRemoveUserinfo } = UserSlice.actions;

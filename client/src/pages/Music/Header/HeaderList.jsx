@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faMagnifyingGlass, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-import useAuthenticator from 'hooks/useAuthenticator';
+import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { useAuthenticator } from 'hooks/useAuthenticator';
 
 const Layout = styled.div`
   display: flex;

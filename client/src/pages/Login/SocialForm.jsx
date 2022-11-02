@@ -2,10 +2,10 @@ import { Text } from 'components/Common/Text';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchUserInfo } from 'store/feature/auth/UserSlice';
-
 import styled from 'styled-components';
-import { fetchGoogleToken } from 'utils/OAuthGoogle';
+import { assignURL } from 'utils/webAPI';
+import { useAuthenticator } from 'hooks/useAuthenticator';
+import { fetchUserInfo } from 'store/feature/auth/UserSlice';
 const Root = styled.div`
   display: flex;
   flex-direction: column;
@@ -56,16 +56,15 @@ const Icon = styled.img.attrs((props) => ({
 `;
 
 export const SocialForm = () => {
+  const { signIn, isSignedIn } = useAuthenticator();
   const dispatch = useDispatch();
-  const tmp = useSelector((state) => console.log(state));
-  console.log(tmp);
 
+  // 리다이렉션시 처리
   useEffect(() => {
     dispatch(fetchUserInfo());
-  }, []);
-  const handleGoogleLogin = () => {
-    fetchGoogleToken();
-  };
+    signIn();
+  }, [isSignedIn]);
+  const handleGoogleLogin = () => assignURL();
   return (
     <Root>
       <Button color="#5c79f1" onClick={handleGoogleLogin}>
