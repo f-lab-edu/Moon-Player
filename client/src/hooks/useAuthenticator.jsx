@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 // 인증 여부에 필요한 로직만 넣어라
@@ -8,26 +7,18 @@ export const useAuthenticator = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user.info);
   const isValid = user.verified_email ? true : false;
-
-  const [isSignedIn, setIsSignedIn] = useState(isValid);
-  useEffect(() => {
-    if (!isValid) return;
-    setIsSignedIn(true);
-  }, [user]);
-
   const signIn = () => {
     // 로그인
-    if (!isSignedIn) return;
+    if (!isValid) return;
     alert('로그인에 성공하였습니다 !');
     navigate('/music');
   };
 
   // 로그아웃
-  const signOut = () => {
-    alert('정상적으로 로그아웃 되었습니다.');
-    setIsSignedIn(false);
+  const signOut = async () => {
     navigate('/');
+    alert('로그아웃 하였습니다.');
   };
 
-  return { isSignedIn, signIn, signOut };
+  return { isValid, signIn, signOut };
 };

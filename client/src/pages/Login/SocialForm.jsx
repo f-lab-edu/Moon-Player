@@ -56,14 +56,14 @@ const Icon = styled.img.attrs((props) => ({
 `;
 
 export const SocialForm = () => {
-  const { signIn, isSignedIn } = useAuthenticator();
+  const { signIn, isValid } = useAuthenticator();
   const dispatch = useDispatch();
 
   // 리다이렉션시 처리
   useEffect(() => {
     dispatch(fetchUserInfo());
     signIn();
-  }, [isSignedIn]);
+  }, [isValid]);
   const handleGoogleLogin = () => assignURL();
   return (
     <Root>

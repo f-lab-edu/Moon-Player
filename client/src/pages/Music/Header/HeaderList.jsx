@@ -37,8 +37,8 @@ const Wrapper = styled.li`
 export const HeaderList = () => {
   const { signOut } = useAuthenticator();
   const handleLogout = async () => {
-    await persistor.purge();
     signOut();
+    persistor.purge();
   };
 
   return (

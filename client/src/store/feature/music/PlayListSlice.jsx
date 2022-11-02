@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
-
 import { fetchById } from 'utils/fetchAPI';
+import { PURGE } from 'redux-persist';
+
 const initialState = {
   musicList: [],
 };
@@ -36,6 +37,7 @@ export const musicPlayListSlice = createSlice({
     builder.addCase(fetchmusicList.rejected, (state, action) => {
       state.status = 'Fail';
     });
+    builder.addCase(PURGE, () => initialState);
   },
 });
 export default musicPlayListSlice;

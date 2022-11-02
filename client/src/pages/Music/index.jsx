@@ -4,7 +4,9 @@ import { Genre } from './Genre/Genre';
 import { Player } from './Player/Player';
 import { PlayList } from './PlayList/PlayList';
 import { HeaderList } from './Header/HeaderList';
-
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 const Layout = styled.div`
   display: flex;
   flex-direction: column;
@@ -45,6 +47,14 @@ const Main = styled.main`
 `;
 
 const MusicPage = () => {
+  const isValid = useSelector((state) => state.user.info).verified_email ? true : false;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isValid) return;
+    navigate('/');
+    alert('로그인이 필요합니다.');
+  }, [isValid]);
   return (
     <Layout>
       <Header>
