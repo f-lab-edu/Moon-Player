@@ -46,9 +46,7 @@ export const Genre = () => {
   useEffect(() => {
     dispatch(fetchmusicGenre());
   }, []);
-
-  const genres = useSelector((state) => state.musicReducer.musicGenre.musicList);
-
+  const genres = useSelector((state) => state.rootReducer.music.genre.musicList);
   const genreItems =
     genres.length > 0 ? (
       genres.map(({ genre_img, genre_id }) => <Item img={genre_img} key={genre_id} id={genre_id}></Item>)

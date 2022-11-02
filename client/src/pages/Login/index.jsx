@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Title from 'components/Common/Title';
-import Form from './Form';
+
 import { SocialForm } from './SocialForm';
 
 const Layout = styled.div`

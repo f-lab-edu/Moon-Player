@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { assignURL } from 'utils/webAPI';
 import { useAuthenticator } from 'hooks/useAuthenticator';
-import { fetchUserInfo } from 'store/feature/auth/UserSlice';
+import { fetchUserInfo } from 'store/feature/user/UserSlice';
 const Root = styled.div`
   display: flex;
   flex-direction: column;

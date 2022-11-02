@@ -30,10 +30,7 @@ const CardImage = styled(Image)`
 export const Item = ({ img, id }) => {
   const dispatch = useDispatch();
 
-  // PlayList가 변경이 되므로 PlayList데이터가지고 isInGerne로 만듬
-  const isInGenre = useSelector((state) => state.musicReducer.musicPlayList.musicList.id === id);
-  // 다른 genre Card 를 누를떄마다 musicList state값 변경
-  // genre Card를 누르면 현재 id 아이템을 제외하고 전부다 opactiy 작게 주기
+  const isInGenre = useSelector((state) => state.rootReducer.music.playList.musicList.id === id);
 
   const handleCard = ({ target }) => {
     const genre_id = target.id;

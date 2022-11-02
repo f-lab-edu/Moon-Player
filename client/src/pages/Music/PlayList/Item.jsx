@@ -46,8 +46,8 @@ const Button = styled(IconButton)`
 
 export const Item = ({ id, title, img }) => {
   const dispatch = useDispatch();
-  const playListItems = useSelector((state) => state.musicReducer.musicPlayList.musicList.musics);
-  const playerItems = useSelector((state) => state.musicReducer.musicPlayer.playerItems);
+  const playListItems = useSelector((state) => state.rootReducer.music.playList.musicList.musics);
+  const playerItems = useSelector((state) => state.rootReducer.music.player.playerItems);
   const isInPlayer = playerItems.find((item) => item.video_title === title);
 
   // 아이디 값을 기반으로 musicList 스토어의 selected에 저장

@@ -51,8 +51,8 @@ const MusicImage = styled(Image)`
 
 export const Item = ({ title, image, order }) => {
   const dispatch = useDispatch();
-  const playerItems = useSelector((state) => state.musicReducer.musicPlayer.playerItems);
-  const isSelectedMusic = useSelector((state) => state.musicReducer.musicPlayer.playmusic).video_title === title;
+  const playerItems = useSelector((state) => state.rootReducer.music.player.playerItems);
+  const isSelectedMusic = useSelector((state) => state.rootReducer.music.player.playmusic).video_title === title;
   const playerItemslength = playerItems.length;
   const prevPlayerItemslength = usePrevious(playerItemslength);
   const { element, handleScrollElement } = useMoveDownScroll();

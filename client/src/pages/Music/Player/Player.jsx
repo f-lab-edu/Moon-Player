@@ -50,7 +50,7 @@ const PlayerTitle = styled(Title)`
 
 // 플레이어 메인
 export const Player = () => {
-  const playerItems = useSelector((state) => state.musicReducer.musicPlayer.playerItems);
+  const playerItems = useSelector((state) => state.rootReducer.music.player.playerItems);
 
   const items =
     playerItems.length > 0 ? (

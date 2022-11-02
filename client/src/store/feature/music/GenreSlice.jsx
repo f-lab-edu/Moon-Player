@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchData } from 'utils/fetchAPI';
 
 // 액션 생성
-const fetchmusicGenre = createAsyncThunk('musicGenre', async () => {
+const fetchmusicGenre = createAsyncThunk('genre', async () => {
   try {
     const response = await fetchData('http://localhost:4000/api/music/genre/');
     return response.music;
@@ -14,7 +14,7 @@ const fetchmusicGenre = createAsyncThunk('musicGenre', async () => {
 
 // Reducer
 export const musicGenreSlice = createSlice({
-  name: 'Genre',
+  name: 'genre',
   initialState: {
     musicList: [],
   },
