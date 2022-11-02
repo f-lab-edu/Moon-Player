@@ -1,7 +1,10 @@
 import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
-import { fetchById } from 'utils/fetchAPI';
 
-// 액션 생성
+import { fetchById } from 'utils/fetchAPI';
+const initialState = {
+  musicList: [],
+};
+
 const fetchmusicList = createAsyncThunk('musicList', async (id) => {
   try {
     const response = await fetchById('http://localhost:4000/api/music/genre/', id);
@@ -17,9 +20,7 @@ export const musicPlayListSlice = createSlice({
   name: 'musicPlayList',
 
   // 가져온 음악리스트 들이 존재
-  initialState: {
-    musicList: [],
-  },
+  initialState,
   // 비동기적인 액션처리(action create 자동생성 불가능)
   extraReducers: (builder) => {
     builder.addCase(fetchmusicList.pending, (state, action) => {

@@ -1,6 +1,11 @@
 import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
+import { PURGE } from 'redux-persist';
 import { sendToken } from 'utils/fetchAPI';
 import { getToken } from 'utils/webAPI';
+
+const initialState = {
+  info: {},
+};
 
 const fetchUserInfo = createAsyncThunk('user', async () => {
   try {
@@ -14,16 +19,8 @@ const fetchUserInfo = createAsyncThunk('user', async () => {
 // Reducer
 export const UserSlice = createSlice({
   name: 'user',
-
   // 가져온 유저 토큰
-  initialState: {
-    info: {},
-  },
-  reducers: {
-    handleRemoveUserinfo: (state, action) => {
-      state.info = {};
-    },
-  },
+  initialState,
   extraReducers: (builder) => {
     builder.addCase(fetchUserInfo.pending, (state, action) => {
       state.status = 'Loading';
@@ -37,6 +34,8 @@ export const UserSlice = createSlice({
     builder.addCase(fetchUserInfo.rejected, (state, action) => {
       state.status = 'Fail';
     });
+    // 로그아웃시 발생
+    builder.addCase(PURGE, () => initialState);
   },
 });
 export default UserSlice;

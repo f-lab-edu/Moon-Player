@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { useAuthenticator } from 'hooks/useAuthenticator';
+import { persistor } from 'index';
 
 const Layout = styled.div`
   display: flex;
@@ -35,8 +36,8 @@ const Wrapper = styled.li`
 
 export const HeaderList = () => {
   const { signOut } = useAuthenticator();
-  const handleLogout = (e) => {
-    e.preventDefault();
+  const handleLogout = async () => {
+    await persistor.purge();
     signOut();
   };
 
