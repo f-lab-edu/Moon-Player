@@ -10,9 +10,7 @@ export const getToken = () => {
   const token = urlHash.split('=')[1].split('&')[0];
   return token;
 };
-const SetToken = (token) => {
-  localStorage.setItem('authToken', token);
-};
+
 export const assignURL = () => {
   window.location.assign(oAuthURL);
 };

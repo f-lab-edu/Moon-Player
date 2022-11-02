@@ -43,7 +43,7 @@ const Box = styled.div`
 export const PlayList = () => {
   const dispatch = useDispatch();
 
-  const playListItems = useSelector((state) => state.rootReducer.music.playList.musicList);
+  const playListItems = useSelector((state) => state.music.playList.musicList);
 
   const items =
     playListItems.musics &&

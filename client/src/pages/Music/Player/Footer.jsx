@@ -58,8 +58,8 @@ const VolumeBox = styled.div`
 
 export const Footer = () => {
   const dispatch = useDispatch();
-  const playItem = useSelector((state) => state.rootReducer.music.player.playmusic);
-  const playerItems = useSelector((state) => state.rootReducer.music.player.playerItems);
+  const playItem = useSelector((state) => state.music.player.playmusic);
+  const playerItems = useSelector((state) => state.music.player.playerItems);
   const { musicPlayer, playerState, handleRepeat, handlePlay, handleVolume } = usePlayerControl(playItem, playerItems);
   const PlayButton = (
     <IconButton onClick={handlePlay}>

@@ -8,7 +8,7 @@ import { handleRemoveUserinfo } from 'store/feature/user/UserSlice';
 export const useAuthenticator = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state) => state.rootReducer.user.info);
+  const user = useSelector((state) => state.user.info);
   const isValid = user.verified_email ? true : false;
 
   const [isSignedIn, setIsSignedIn] = useState(isValid);

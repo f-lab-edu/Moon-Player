@@ -30,7 +30,7 @@ const CardImage = styled(Image)`
 export const Item = ({ img, id }) => {
   const dispatch = useDispatch();
 
-  const isInGenre = useSelector((state) => state.rootReducer.music.playList.musicList.id === id);
+  const isInGenre = useSelector((state) => state.music.playList.musicList.id === id);
 
   const handleCard = ({ target }) => {
     const genre_id = target.id;
