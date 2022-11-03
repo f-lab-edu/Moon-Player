@@ -48,7 +48,7 @@ export const Container = () => {
   const items =
     playerItems.length > 0 ? (
       playerItems.map(({ video_title, video_img }, index) => (
-        <PlayerItem title={video_title} image={video_img} key={index} order={++index} />
+        <PlayerItem video_title={video_title} video_img={video_img} key={index} order={++index} />
       ))
     ) : (
       <h3 style={{ color: '#6633cc' }}>재생목록이 비어있습니다.</h3>

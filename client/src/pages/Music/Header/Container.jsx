@@ -8,7 +8,7 @@ import { FlexCenterRow } from 'components/Common/FlexCenterRow';
 import { FlexCenterColumn } from 'components/Common/FlexCenterColumn';
 import { Avatar } from 'components/Common/Avatar';
 import { Title } from 'components/Common/Title';
-
+import { removeStoreItems } from 'utils/app';
 const Root = styled(FlexCenterRow)`
   width: 100vw;
   justify-content: space-between;
@@ -28,7 +28,7 @@ export const Container = () => {
   const { signOut } = useAuthenticator();
   const handleLogout = async () => {
     signOut();
-    persistor.purge();
+    removeStoreItems();
   };
 
   return (

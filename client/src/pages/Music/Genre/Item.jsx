@@ -25,25 +25,22 @@ const CardImage = styled(Image)`
   }
 `;
 
-export const Item = ({ img, id }) => {
+export const Item = ({ genre_img, genre_id }) => {
   const dispatch = useDispatch();
 
-  const isInGenre = useSelector((state) => state.music.playList.musicList.id === id);
+  const isInGenre = useSelector((state) => state.music.playList.musicList.id === genre_id);
 
-  const handleCard = ({ target }) => {
-    const genre_id = target.id;
-    dispatch(fetchmusicList(genre_id));
-  };
+  const handleCard = ({ target }) => dispatch(fetchmusicList(target.id));
 
   return (
     <>
       <CardImage
         onClick={handleCard}
-        src={img}
+        src={genre_img}
         width={'200px'}
         height={'130px'}
-        id={id}
-        key={id}
+        id={genre_id}
+        key={genre_id}
         disabled={isInGenre}
       />
     </>

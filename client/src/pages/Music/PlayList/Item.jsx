@@ -6,7 +6,7 @@ import { handleAddPlayer } from 'store/feature/music/PlayerSlice';
 import IconButton from 'components/Common/IconButton';
 import OverFlowText from 'components/Common/OverFlowText';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { isInObject, findObjectInList } from 'utils/app';
 const Root = styled.div`
   display: flex;
   justify-content: space-between;
@@ -25,24 +25,23 @@ const Root = styled.div`
     width: 1px;
   }
 `;
-export const Item = ({ id, title, img }) => {
+export const Item = ({ id, video_title, video_img }) => {
   const dispatch = useDispatch();
   const playListItems = useSelector((state) => state.music.playList.musicList.musics);
   const playerItems = useSelector((state) => state.music.player.playerItems);
-  const isInPlayer = playerItems.find((item) => item.video_title === title);
+  const isInPlayer = isInObject(playerItems, 'video_title', video_title);
 
-  // 아이디 값을 기반으로 musicList 스토어의 selected에 저장
   const handleAddMusic = () => {
-    const selectedItem = playListItems.filter((item) => item.id === id)?.[0];
-    dispatch(handleAddPlayer(selectedItem));
+    const selectedMusic = !isInPlayer && findObjectInList(playListItems, 'id', id); // 플레이어에 없어야 저장
+    dispatch(handleAddPlayer(selectedMusic));
   };
 
   return (
     <Root>
       <div>{id}</div>
-      <Image src={img} width="100px" height="50px" />
+      <Image src={video_img} width="100px" height="50px" />
       <OverFlowText width="50%" fontSize="15px" style={{ cursor: 'default' }}>
-        {title}
+        {video_title}
       </OverFlowText>
 
       <IconButton disabled={isInPlayer}>

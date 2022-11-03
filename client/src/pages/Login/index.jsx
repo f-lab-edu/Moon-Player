@@ -3,6 +3,7 @@ import { Title } from 'components/Common/Title';
 import LoginForm from './Form';
 import FlexCenterColumn from 'components/Common/FlexCenterColumn';
 import Avatar from 'components/Common/Avatar';
+
 const Layout = styled(FlexCenterColumn)`
   background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
   height: 100vh;

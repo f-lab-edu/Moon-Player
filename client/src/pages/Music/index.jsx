@@ -6,6 +6,8 @@ import HeaderList from './Header/Container';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { removeStoreItems } from 'utils/app';
 const Layout = styled.div`
   display: flex;
   flex-direction: column;
@@ -48,6 +50,8 @@ const MusicPage = () => {
 
   useEffect(() => {
     if (isValid) return;
+
+    removeStoreItems(); // 리덕스 스토어 아이템 제거
     navigate('/');
     alert('로그인이 필요합니다.');
   }, [isValid]);

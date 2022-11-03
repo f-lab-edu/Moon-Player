@@ -10,6 +10,7 @@ import OverFlowText from 'components/Common/OverFlowText';
 import { useEffect } from 'react';
 import IconButton from 'components/Common/IconButton';
 import Image from 'components/Common/Image';
+import { findObjectInList } from 'utils/app';
 
 const Root = styled.div(
   ({ isSelected }) => `
@@ -33,28 +34,24 @@ gap:15px;
 `
 );
 
-export const Item = ({ title, image, order }) => {
+export const Item = ({ video_title, video_img, order }) => {
   const dispatch = useDispatch();
-  const playerItems = useSelector((state) => state.music.player.playerItems);
-  const isSelectedMusic = useSelector((state) => state.music.player.playmusic).video_title === title;
-  const playerItemslength = playerItems.length;
+  const playerState = useSelector((state) => state.music.player);
+  const isSelectedMusic = playerState.playmusic.video_title === video_title;
+  const playerItemslength = playerState.playerItems.length;
   const prevPlayerItemslength = usePrevious(playerItemslength);
   const { element, handleScrollElement } = useMoveDownScroll();
 
   useEffect(() => {
-    if (playerItemslength > prevPlayerItemslength) {
-      handleScrollElement();
-    }
+    if (prevPlayerItemslength > playerItemslength) return;
+    handleScrollElement();
   }, [playerItemslength]);
 
   // 플레이어 리스트에서 삭제함
-  const handleClickRemove = () => {
-    dispatch(handleRemoveMusic(title));
-  };
-
-  // 재생할 음악을 눌렀을떄
+  const handleClickRemove = () => dispatch(handleRemoveMusic(video_title));
   const handleMusic = () => {
-    const music = playerItems.find((item) => item.video_title === title);
+    // 재생할 음악을 눌렀을떄
+    const music = findObjectInList(playerState.playerItems, 'video_title', video_title);
     dispatch(handleAddMusic(music));
   };
 
@@ -63,13 +60,13 @@ export const Item = ({ title, image, order }) => {
       <div style={{ color: '#6633cc' }}>{order}</div>
       <Image
         onClick={handleMusic}
-        src={image}
+        src={video_img}
         width="100px"
         height="50px"
         style={{ cursor: 'pointer', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}
       />
       <OverFlowText width="50%" fontSize="15px" color="#6633cc" onClick={handleMusic}>
-        {title}
+        {video_title}
       </OverFlowText>
 
       <IconButton>

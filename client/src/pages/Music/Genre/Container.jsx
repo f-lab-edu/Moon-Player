@@ -36,14 +36,15 @@ const IconWrapper = styled.div`
 
 export const Container = () => {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(fetchmusicGenre());
   }, []);
   const genres = useSelector((state) => state.music.genre.musicList);
   const genreItems =
     genres.length > 0 ? (
-      genres.map(({ genre_img, genre_id }) => <GenreItem img={genre_img} key={genre_id} id={genre_id}></GenreItem>)
+      genres.map(({ genre_img, genre_id }) => (
+        <GenreItem genre_img={genre_img} key={genre_id} genre_id={genre_id}></GenreItem>
+      ))
     ) : (
       <h3>장르가 비어있습니다.</h3>
     );

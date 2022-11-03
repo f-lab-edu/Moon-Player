@@ -40,15 +40,13 @@ const Box = styled.div`
 
 export const Container = () => {
   const dispatch = useDispatch();
-
   const playListItems = useSelector((state) => state.music.playList.musicList);
 
   const items =
     playListItems.musics &&
     playListItems.musics.map(({ video_title, id, video_img }) => (
-      <Item key={video_title} id={id} title={video_title} img={video_img}></Item>
+      <Item key={video_title} id={id} video_title={video_title} video_img={video_img}></Item>
     ));
-
   // 초기 렌더링시에 musicList(1) 아이템을 요청
   useEffect(() => {
     dispatch(fetchmusicList(1));
