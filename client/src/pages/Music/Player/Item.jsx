@@ -13,7 +13,6 @@ import Image from 'components/Common/Image';
 
 const Root = styled.div(
   ({ isSelected }) => `
-
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -33,21 +32,6 @@ gap:15px;
 
 `
 );
-
-const MusicTitle = styled(OverFlowText)`
-  cursor: pointer;
-  width: 50%;
-  font-size: 15px;
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-  }
-`;
-const MusicImage = styled(Image)`
-  cursor: pointer;
-  width: 100px;
-  height: 50px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-`;
 
 export const Item = ({ title, image, order }) => {
   const dispatch = useDispatch();
@@ -76,9 +60,17 @@ export const Item = ({ title, image, order }) => {
 
   return (
     <Root ref={element} isSelected={isSelectedMusic}>
-      <div>{order}</div>
-      <MusicImage onClick={handleMusic} img={image} />
-      <MusicTitle onClick={handleMusic}>{title}</MusicTitle>
+      <div style={{ color: '#6633cc' }}>{order}</div>
+      <Image
+        onClick={handleMusic}
+        src={image}
+        width="100px"
+        height="50px"
+        style={{ cursor: 'pointer', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}
+      />
+      <OverFlowText width="50%" fontSize="15px" color="#6633cc" onClick={handleMusic}>
+        {title}
+      </OverFlowText>
 
       <IconButton>
         <FontAwesomeIcon onClick={handleClickRemove} icon={faTrash} size={'2x'} color={'#6633cc'} />
@@ -86,3 +78,5 @@ export const Item = ({ title, image, order }) => {
     </Root>
   );
 };
+
+export default Item;

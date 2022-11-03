@@ -1,9 +1,8 @@
 // import Layout from "components/items/Layout";
-import UserNav from './components/UserNav';
-import UserMain from './components/UserMain';
+import { Nav } from './components/Nav';
 import styled from 'styled-components';
 
-const UserPageLayout = styled.div`
+const Layout = styled.div`
   display: flex;
   flex-direction: row;
   height: 100vh;
@@ -11,10 +10,9 @@ const UserPageLayout = styled.div`
 
 const UserPage = () => {
   return (
-    <UserPageLayout>
-      <UserNav />
-      <UserMain />
-    </UserPageLayout>
+    <Layout>
+      <Nav />
+    </Layout>
   );
 };
 export default UserPage;

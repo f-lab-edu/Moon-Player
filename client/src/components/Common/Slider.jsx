@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Slider = styled.input.attrs(({ volume }) => ({
+export const Slider = styled.input.attrs(({ volume }) => ({
   type: 'range',
   min: '1',
   max: '100',

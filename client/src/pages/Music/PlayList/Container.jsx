@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import { Item } from './Item';
+import { Title } from 'components/Common/Title';
 
 const Root = styled.div`
   display: flex;
@@ -13,13 +14,10 @@ const Root = styled.div`
   overflow-y: scroll;
   border-radius: 7px;
   box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
-
   margin: 0px 40px;
-
   &::-webkit-scrollbar {
     width: 10px;
   }
-
   &::-webkit-scrollbar-thumb {
     height: 30%;
     background: purple;
@@ -40,7 +38,7 @@ const Box = styled.div`
   }
 `;
 
-export const PlayList = () => {
+export const Container = () => {
   const dispatch = useDispatch();
 
   const playListItems = useSelector((state) => state.music.playList.musicList);
@@ -59,9 +57,10 @@ export const PlayList = () => {
   return (
     <Root>
       <Box>
-        <h3>{playListItems.title}</h3>
+        <Title>{playListItems.title}</Title>
         {items}
       </Box>
     </Root>
   );
 };
+export default Container;

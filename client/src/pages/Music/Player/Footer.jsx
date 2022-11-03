@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Title from 'components/Common/Title';
+import { Title } from 'components/Common/Title';
 import {
   faShuffle,
   faBackwardStep,
@@ -17,7 +17,8 @@ import { usePlayerControl } from 'hooks/usePlayerControl';
 import Slider from 'components/Common/Slider';
 import { handleShuffleMusics, handlePrevMusic, handleNextMusic } from 'store/feature/music/PlayerSlice';
 import { shuffleMusic, prevPlayMusic, nextPlayMusic } from 'utils/Player';
-import { Progress } from './Progress';
+import { Progressbar } from './Progressbar';
+import { FlexCenterColumn } from 'components/Common/FlexCenterColumn';
 
 const IconBox = styled.div`
   display: flex;
@@ -29,22 +30,6 @@ const IconBox = styled.div`
     display: flex;
     gap: 20px;
   }
-`;
-const ImageBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 10px 0px;
-  align-items: center;
-`;
-const MusicTitle = styled(Title)`
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  font-weight: 900;
-`;
-const MusicImage = styled(Image)`
-  width: 400px;
-  height: auto;
 `;
 const VolumeBox = styled.div`
   display: flex;
@@ -79,14 +64,18 @@ export const Footer = () => {
 
   return (
     <div>
-      <ImageBox>
+      <FlexCenterColumn style={{ padding: '10px 0px' }}>
         {playerState && playerState.music ? (
-          <MusicImage img={playerState.music.video_img} />
+          <Image src={playerState.music.video_img} width="400px" />
         ) : (
-          <MusicImage img={'https://via.placeholder.com/400?text=No+Selected+Music'} />
+          <Image src={'https://via.placeholder.com/400?text=No+Selected+Music'} width="400px" />
         )}
-      </ImageBox>
-      {playerState.music && <MusicTitle>{playerState.music.video_title}</MusicTitle>}
+      </FlexCenterColumn>
+      {playerState.music && (
+        <Title size="20px" color="white" style={{ textAlign: 'center' }}>
+          {playerState.music.video_title}
+        </Title>
+      )}
       <div>
         {playerState.music && musicPlayer}
         <IconBox>
@@ -112,8 +101,10 @@ export const Footer = () => {
           <FontAwesomeIcon icon={faVolumeHigh} size={'2x'} />
           <Slider onChange={handleVolume} volume={playerState.volume} />
         </VolumeBox>
-        <Progress time={{ currentTime: playerState.currentTime, endTime: playerState.endTime }} />
+        <Progressbar time={{ currentTime: playerState.currentTime, endTime: playerState.endTime }} />
       </div>
     </div>
   );
 };
+
+export default Footer;

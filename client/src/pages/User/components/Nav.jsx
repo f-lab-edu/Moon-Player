@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const UserNavLayout = styled.nav`
+const Root = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,14 +12,12 @@ const UserNavLayout = styled.nav`
   gap: 30px;
 `;
 
-const UserNav = () => {
+export const Nav = () => {
   return (
-    <UserNavLayout>
+    <Root>
       <div>홈으로</div>
       <div>내정보</div>
-      <div>문의</div>
-      <div>회원탈퇴</div>
-    </UserNavLayout>
+      <div>버그 리포트</div>
+    </Root>
   );
 };
-export default UserNav;

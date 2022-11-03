@@ -25,25 +25,6 @@ const Root = styled.div`
     width: 1px;
   }
 `;
-const MusicTitle = styled(OverFlowText)`
-  width: 50%;
-  font-size: 15px;
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-  }
-`;
-const MusicImage = styled(Image)`
-  width: 100px;
-  height: 50px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-`;
-const Button = styled(IconButton)`
-  &:hover {
-    transform: scale(1.2);
-    color: white;
-  }
-`;
-
 export const Item = ({ id, title, img }) => {
   const dispatch = useDispatch();
   const playListItems = useSelector((state) => state.music.playList.musicList.musics);
@@ -59,12 +40,16 @@ export const Item = ({ id, title, img }) => {
   return (
     <Root>
       <div>{id}</div>
-      <MusicImage img={img} />
-      <MusicTitle>{title}</MusicTitle>
+      <Image src={img} width="100px" height="50px" />
+      <OverFlowText width="50%" fontSize="15px" style={{ cursor: 'default' }}>
+        {title}
+      </OverFlowText>
 
-      <Button disabled={isInPlayer}>
+      <IconButton disabled={isInPlayer}>
         <FontAwesomeIcon onClick={handleAddMusic} icon={faCirclePlus} size={'2x'} />
-      </Button>
+      </IconButton>
     </Root>
   );
 };
+
+export default Item;

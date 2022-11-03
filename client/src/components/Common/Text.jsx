@@ -5,3 +5,5 @@ export const Text = styled.span(
   color:${color};
 `
 );
+
+export default Text;

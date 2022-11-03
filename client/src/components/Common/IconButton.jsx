@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const IconButton = styled.button(
+export const IconButton = styled.button(
   ({ disabled, isActive }) => `
 background: none;
 border:0px;
@@ -12,7 +12,8 @@ opacity:${disabled ? 0.5 : 1};
 &:active{
   transform: translateY(4px);
 }
-&:hover{
+&:hover {
+  transform: scale(1.2);
   color: white;
 }
 `

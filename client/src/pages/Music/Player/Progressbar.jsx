@@ -12,7 +12,7 @@ const Root = styled.div`
   }
 `;
 
-export const Progress = ({ time }) => {
+export const Progressbar = ({ time }) => {
   const [currentTime, setCurrentTime] = useState();
   const [endTime, setEndTime] = useState();
   const [elapsedTime, setElapsedTime] = useState();
@@ -31,3 +31,5 @@ export const Progress = ({ time }) => {
     </Root>
   );
 };
+
+export default Progressbar;

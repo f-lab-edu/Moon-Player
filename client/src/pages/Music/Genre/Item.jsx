@@ -1,12 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Image from 'components/Common/Image';
 
 const CardImage = styled(Image)`
-  width: 190px;
-  height: 120px;
   border-radius: 7px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -39,7 +37,16 @@ export const Item = ({ img, id }) => {
 
   return (
     <>
-      <CardImage onClick={handleCard} img={img} id={id} key={id} disabled={isInGenre} />
+      <CardImage
+        onClick={handleCard}
+        src={img}
+        width={'200px'}
+        height={'130px'}
+        id={id}
+        key={id}
+        disabled={isInGenre}
+      />
     </>
   );
 };
+export default Item;
