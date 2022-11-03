@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { useEffect } from 'react';
+import styled, { ThemeContext } from 'styled-components';
+import { useContext, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { assignURL } from 'utils/locationAPI';
 import { useAuthenticator } from 'hooks/useAuthenticator';
@@ -13,6 +13,8 @@ const Root = styled(FlexCenterColumn)`
   width: 30vw;
 `;
 export const Form = () => {
+  const theme = useContext(ThemeContext);
+
   const { signIn, isValid } = useAuthenticator();
   const dispatch = useDispatch();
 
@@ -24,15 +26,15 @@ export const Form = () => {
   const handleGoogleLogin = () => assignURL();
   return (
     <Root>
-      <Button color="#5c79f1" fontSize="20px" fontColor="white" onClick={handleGoogleLogin}>
+      <Button color={theme.colors.lightBlue} fontColor={theme.colors.white} onClick={handleGoogleLogin}>
         <Icon name="Google" />
         Google 로그인
       </Button>
-      <Button fontSize="20px" color="#1cc802" fontColor="white">
+      <Button color={theme.colors.darkgreen} fontColor={theme.colors.white}>
         <Icon name="Naver" />
         네이버 로그인
       </Button>
-      <Button color="#ffeb3b" fontSize="20px" fontColor="black">
+      <Button color={theme.colors.lightyellow} fontColor={theme.colors.black}>
         <Icon name="Kakao" />
         카카오 로그인
       </Button>

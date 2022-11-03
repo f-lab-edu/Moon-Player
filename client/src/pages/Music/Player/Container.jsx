@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import PlayerFooter from './Footer';
 import PlayerItem from './Item';
+import Text from 'components/Common/Text';
 const Root = styled.div`
   width: 30%;
   box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
@@ -51,7 +52,7 @@ export const Container = () => {
         <PlayerItem video_title={video_title} video_img={video_img} key={index} order={++index} />
       ))
     ) : (
-      <h3 style={{ color: '#6633cc' }}>재생목록이 비어있습니다.</h3>
+      <Text>재생목록이 비어있습니다.</Text>
     );
   return (
     <Root>

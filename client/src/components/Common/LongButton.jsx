@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const LongButton = styled.button(
-  ({ color, fontSize, fontColor }) => `
+  ({ color, fontColor, theme }) => `
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   width: 100%;
   height: 60px;
-  font-size: ${fontSize};
+  font-size: ${theme.fontSizes.base};
   margin: 15px 0px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color:${color};

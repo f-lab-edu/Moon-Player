@@ -13,12 +13,12 @@ import Image from 'components/Common/Image';
 import { findObjectInList } from 'utils/app';
 
 const Root = styled.div(
-  ({ isSelected }) => `
+  ({ isSelected, theme }) => `
 display: flex;
 justify-content: space-between;
 align-items: center;
 border-bottom: 1px solid rgba(0,0,0,0.1);
-background:${isSelected && '#FA7CD7'};
+background:${isSelected && theme.colors.Magenta};
 opacity:${isSelected && '0.7'};
 gap:15px;
 >:first-child{

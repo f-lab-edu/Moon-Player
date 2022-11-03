@@ -31,7 +31,7 @@ const IconBox = styled.div`
 const VolumeBox = styled.div`
   display: flex;
   align-items: center;
-  color: #6633cc;
+  color: ${({ theme }) => theme.colors.blueMagent};
   padding: 20px;
   > :nth-child(1) {
     margin-right: 20px;

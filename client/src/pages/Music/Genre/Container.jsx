@@ -7,27 +7,29 @@ import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import GenreItem from './Item';
 import { FlexCenterRow } from 'components/Common/FlexCenterRow';
 
-const Grid = styled.div`
+const Grid = styled.div(
+  ({ theme }) => `
   display: grid;
   grid-template-columns: repeat(6, 15%);
   grid-template-rows: 1fr;
-  grid-gap: 20px;
-  padding-left: 20px;
+  grid-gap: ${theme.margins.lg};
+  padding-left: ${theme.margins.lg};
 
   @media screen and (max-width: 1000px) {
     display: grid;
     grid-template-columns: repeat(3, 30%);
     grid-template-rows: repeat(2, 1fr);
-    grid-gap: 30px;
+    grid-gap: ${theme.margins.xl};
   }
 
   @media screen and (max-width: 630px) {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: ${theme.margins.lg};
     grid-template-columns: repeat(1, 100%);
     grid-template-rows: repeat(6, 1fr);
   }
-`;
+`
+);
 const IconWrapper = styled.div`
   @media screen and (max-width: 900px) {
     padding: 0px 15px;

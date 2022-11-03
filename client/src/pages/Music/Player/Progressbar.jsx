@@ -2,16 +2,15 @@ import { Line } from 'rc-progress';
 import styled from 'styled-components';
 import { timeFormat } from 'utils/Player';
 import { useState, useEffect } from 'react';
+import Text from 'components/Common/Text';
 
-const Root = styled.div`
-  color: #6633cc;
-  font-weight: 900;
-  > :last-child {
-    text-align: center;
-    margin-top: 10px;
-  }
-`;
-
+const Root = styled.div(
+  ({ theme }) => `
+  color: ${theme.colors.blueMagent};
+  font-weight: ${theme.fontWeights.bold};
+  text-align:center;
+`
+);
 export const Progressbar = ({ time }) => {
   const [currentTime, setCurrentTime] = useState();
   const [endTime, setEndTime] = useState();
@@ -25,9 +24,9 @@ export const Progressbar = ({ time }) => {
   return (
     <Root>
       <Line strokeWidth={2} percent={elapsedTime} strokeColor={'#6633cc'} />
-      <div>
+      <Text>
         {currentTime} / {endTime}
-      </div>
+      </Text>
     </Root>
   );
 };

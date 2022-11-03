@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
+import { useContext } from 'react';
 import { Title } from 'components/Common/Title';
 import LoginForm from './Form';
 import FlexCenterColumn from 'components/Common/FlexCenterColumn';
@@ -9,7 +10,7 @@ const Layout = styled(FlexCenterColumn)`
   height: 100vh;
 `;
 const Box = styled(FlexCenterColumn)`
-  padding: 45px;
+  padding: 30px;
   box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.5);
@@ -19,14 +20,15 @@ const Header = styled(FlexCenterColumn)`
 `;
 // 한개의 페이지에 여러 커스텀 훅 사용
 const LoginPage = () => {
+  const theme = useContext(ThemeContext);
   return (
     <Layout>
       <Box>
         <Header>
-          <Title size="40px" color="#6633cc">
+          <Title size={theme.fontSizes.titleSize} color={theme.colors.blueMagent}>
             Moon Player
           </Title>
-          <Avatar src="images/Loginlogo.png" height="100px" width="100px" />
+          <Avatar src={theme.images.Logo} height="100px" width="100px" />
         </Header>
         <LoginForm />
       </Box>
