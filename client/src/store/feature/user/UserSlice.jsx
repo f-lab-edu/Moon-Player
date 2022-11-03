@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
 import { sendToken } from 'utils/fetchAPI';
-import { getToken } from 'utils/webAPI';
+import { getToken } from 'utils/locationAPI';
 
 const initialState = {
   info: {},

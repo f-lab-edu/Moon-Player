@@ -10,13 +10,10 @@ import {
   faRepeat,
   faVolumeHigh,
 } from '@fortawesome/free-solid-svg-icons';
-import { useSelector, useDispatch } from 'react-redux';
 import Image from 'components/Common/Image';
 import IconButton from 'components/Common/IconButton';
 import { usePlayerControl } from 'hooks/usePlayerControl';
 import Slider from 'components/Common/Slider';
-import { handleShuffleMusics, handlePrevMusic, handleNextMusic } from 'store/feature/music/PlayerSlice';
-import { shuffleMusic, prevPlayMusic, nextPlayMusic } from 'utils/Player';
 import { Progressbar } from './Progressbar';
 import { FlexCenterColumn } from 'components/Common/FlexCenterColumn';
 
@@ -42,25 +39,8 @@ const VolumeBox = styled.div`
 `;
 
 export const Footer = () => {
-  const dispatch = useDispatch();
-  const playItem = useSelector((state) => state.music.player.playmusic);
-  const playerItems = useSelector((state) => state.music.player.playerItems);
-  const { musicPlayer, playerState, handleRepeat, handlePlay, handleVolume } = usePlayerControl(playItem, playerItems);
-  const PlayButton = (
-    <IconButton onClick={handlePlay}>
-      {' '}
-      <FontAwesomeIcon icon={faPlayCircle} size={'3x'} />
-    </IconButton>
-  );
-  const PauseButton = (
-    <IconButton onClick={handlePlay}>
-      <FontAwesomeIcon icon={faCirclePause} size={'3x'} />
-    </IconButton>
-  );
-
-  const handleShuffle = () => dispatch(handleShuffleMusics(shuffleMusic(playerItems)));
-  const handlePrev = () => dispatch(handlePrevMusic(prevPlayMusic(playerItems, playItem)));
-  const handleNext = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, playItem)));
+  const { musicPlayer, playerState, handleRepeat, handlePlay, handleVolume, handleShuffle, handlePrev, handleNext } =
+    usePlayerControl();
 
   return (
     <div>
@@ -86,7 +66,16 @@ export const Footer = () => {
             <IconButton onClick={handlePrev}>
               <FontAwesomeIcon icon={faBackwardStep} size={'3x'} />
             </IconButton>
-            {playerState.playing ? PauseButton : PlayButton}
+            {playerState.playing ? (
+              <IconButton onClick={handlePlay}>
+                <FontAwesomeIcon icon={faCirclePause} size={'3x'} />
+              </IconButton>
+            ) : (
+              <IconButton onClick={handlePlay}>
+                {' '}
+                <FontAwesomeIcon icon={faPlayCircle} size={'3x'} />
+              </IconButton>
+            )}
             <IconButton onClick={handleNext}>
               <FontAwesomeIcon icon={faForwardStep} size={'3x'} />
             </IconButton>

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { assignURL } from 'utils/webAPI';
+import { assignURL } from 'utils/locationAPI';
 import { useAuthenticator } from 'hooks/useAuthenticator';
 import { fetchUserInfo } from 'store/feature/user/UserSlice';
 import FlexCenterColumn from 'components/Common/FlexCenterColumn';

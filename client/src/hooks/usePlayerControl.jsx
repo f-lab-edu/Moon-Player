@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 
 import ReactPlayer from 'react-player/lazy';
 
-import { nextPlayMusic } from 'utils/Player';
-import { useDispatch } from 'react-redux';
-import { handleNextMusic } from 'store/feature/music/PlayerSlice';
+import { nextPlayMusic, prevPlayMusic, shuffleMusic } from 'utils/Player';
+import { useDispatch, useSelector } from 'react-redux';
+import { handleNextMusic, handlePrevMusic, handleShuffleMusics } from 'store/feature/music/PlayerSlice';
 
 const DEFAULT_STATE = {
   playing: false, // 재생중인지
@@ -22,10 +22,15 @@ const DEFAULT_STATE = {
 };
 
 //  전역스토어에있는 값만가지고 음악을 재생시켜주는 훅
-export const usePlayerControl = (music, playerItems) => {
+export const usePlayerControl = () => {
   const dispatch = useDispatch();
-  const [playerState, setState] = useState(DEFAULT_STATE);
   const playerRef = useRef();
+
+  const music = useSelector((state) => state.music.player.playmusic);
+  const playerItems = useSelector((state) => state.music.player.playerItems);
+
+  const [playerState, setState] = useState(DEFAULT_STATE);
+
   const currentTime = playerRef && playerRef.current ? Math.floor(playerRef.current.getCurrentTime()) : '00:00';
   const endTime = playerRef && playerRef.current ? Math.floor(playerRef.current.getDuration()) : '00:00';
   useEffect(() => {
@@ -37,6 +42,9 @@ export const usePlayerControl = (music, playerItems) => {
   const handleVolume = (e) => setState({ ...playerState, volume: +e.target.value });
   const handleEndedMusic = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, music)));
   const handleOnProgress = () => setState({ ...playerState, currentTime, endTime });
+  const handleShuffle = () => dispatch(handleShuffleMusics(shuffleMusic(playerItems)));
+  const handlePrev = () => dispatch(handlePrevMusic(prevPlayMusic(playerItems, music)));
+  const handleNext = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, music)));
   const musicPlayer = (
     <ReactPlayer
       ref={playerRef}
@@ -52,5 +60,5 @@ export const usePlayerControl = (music, playerItems) => {
       onProgress={handleOnProgress}
     ></ReactPlayer>
   );
-  return { musicPlayer, playerState, handleRepeat, handlePlay, handleVolume };
+  return { musicPlayer, playerState, handleRepeat, handlePlay, handleVolume, handleShuffle, handlePrev, handleNext };
 };
