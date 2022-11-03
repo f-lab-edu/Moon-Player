@@ -10,29 +10,24 @@ import OverFlowText from 'components/Common/OverFlowText';
 import { useEffect } from 'react';
 import IconButton from 'components/Common/IconButton';
 import Image from 'components/Common/Image';
+import FlexBetweenRow from 'components/Common/FlexBetweenRow';
+
 import { findObjectInList } from 'utils/app';
+const Root = styled(FlexBetweenRow)`
+  border-bottom: ${({ theme }) => theme.border.thin};
+  background: ${({ isSelected, theme }) => isSelected && theme.colors.Magenta};
+  opacity: ${({ isSelected }) => isSelected && '0.7'};
+  gap: 15px;
+  > :first-child {
+    width: 1px;
+    padding-left: 10px;
+    font-weight: ${({ theme }) => theme.fontWeights.bold};
+  }
 
-const Root = styled.div(
-  ({ isSelected, theme }) => `
-display: flex;
-justify-content: space-between;
-align-items: center;
-border-bottom: 1px solid rgba(0,0,0,0.1);
-background:${isSelected && theme.colors.Magenta};
-opacity:${isSelected && '0.7'};
-gap:15px;
->:first-child{
-  width:1px;
-  padding-left:10px;
-  font-weight: 900;
-}
-
-@media screen and (max-width:1000px){
-  width: 100%; 
-}
-
-`
-);
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
+`;
 
 export const Item = ({ video_title, video_img, order }) => {
   const dispatch = useDispatch();

@@ -3,32 +3,21 @@ import { useSelector } from 'react-redux';
 import PlayerFooter from './Footer';
 import PlayerItem from './Item';
 import Text from 'components/Common/Text';
+import ScrollBox from 'components/Common/ScrollBox';
 const Root = styled.div`
   width: 30%;
-  box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: ${({ theme }) => theme.boxShadows.container};
   padding: 15px;
-  border-radius: 7px;
+  border-radius: ${({ theme }) => theme.borderRadius.xl};
 
   @media screen and (max-width: 1000px) {
     margin: 0px;
     width: 100%;
   }
 `;
-const ScrollBox = styled.div`
+const ItemBox = styled(ScrollBox)`
   height: 25vh;
-  overflow-y: scroll;
   padding-right: 10px;
-  &::-webkit-scrollbar {
-    width: 10px;
-  }
-  &::-webkit-scrollbar-thumb {
-    height: 5%;
-    background: purple;
-    border-radius: 7px;
-  }
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-  }
 `;
 const PlayerHeader = styled.div`
   height: 50px;
@@ -36,9 +25,9 @@ const PlayerHeader = styled.div`
 const PlayerTitle = styled.h3`
   position: sticky;
   top: 0px;
-  font-size: 20px;
-  font-weight: 900;
-  color: white;
+  font-size: ${({ theme }) => theme.fontSizes.base};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  color: ${({ theme }) => theme.colors.white};
   text-shadow: 2px 2px 2px gray;
 `;
 
@@ -59,9 +48,9 @@ export const Container = () => {
       <PlayerHeader>
         <PlayerTitle>재생 목록</PlayerTitle>
       </PlayerHeader>
-      <ScrollBox width={'10px'} height={'5%'} color={'#6633cc'}>
+      <ItemBox width={'10px'} height={'5%'} color={'#6633cc'}>
         {items}
-      </ScrollBox>
+      </ItemBox>
 
       <PlayerFooter />
     </Root>

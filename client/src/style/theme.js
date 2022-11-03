@@ -18,6 +18,7 @@ const colors = {
   black: 'black',
   darkgreen: '#1cc802',
   lightyellow: '#ffeb3b',
+  purple: 'purple',
 };
 
 const margins = {
@@ -65,6 +66,28 @@ const device = {
 const images = {
   Logo: 'images/Loginlogo.png',
 };
+const boxShadows = {
+  one: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+  two: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+  three: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;',
+  card: 'rgb(38, 57, 77) 0px 20px 30px -10px',
+  image: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
+  container: '2px 1px 10px 1px rgba(0, 0, 0, 0.3)',
+};
+
+const borderRadius = {
+  small: '2px',
+  base: '4px',
+  md: '5px',
+  large: '6px',
+  xl: '7px',
+};
+const border = {
+  thin: '1px solid rgba(0, 0, 0, 0.1)',
+  extralight: '1px solid rgba(0, 0, 0, 0.2)',
+  light: '1px solid rgba(0, 0, 0, 0.3)',
+};
+
 export const theme = {
   fontSizes,
   colors,
@@ -74,5 +97,8 @@ export const theme = {
   margins,
   paddings,
   fontWeights,
+  boxShadows,
+  borderRadius,
+  border,
 };
 export default theme;

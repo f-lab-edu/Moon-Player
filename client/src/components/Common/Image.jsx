@@ -3,10 +3,10 @@ const Image = styled.img.attrs(({ src }) => ({
   src: src,
 }))`
   object-fit: fill;
-  width: ${({ width }) => width}; //120
-  height: ${({ height }) => height}; //70
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   max-width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: ${({ theme }) => theme.image};
 `;
 
 export default Image;

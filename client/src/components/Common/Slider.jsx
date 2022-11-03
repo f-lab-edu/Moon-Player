@@ -27,5 +27,21 @@ export const Slider = styled.input.attrs(({ volume }) => ({
     cursor: pointer;
     margin-top: -3.5px;
   }
+
+  /* 파이어폭스 */
+  &::-moz-range-thumb {
+    height: 21px;
+    width: 30px;
+    border-radius: 7px;
+    background: #6633cc;
+    cursor: pointer;
+    margin-top: -3.5px;
+  }
+  &::-moz-range-track {
+    width: 100%;
+    height: 13px;
+    background: #fa7cd7;
+    cursor: pointer;
+  }
 `;
 export default Slider;

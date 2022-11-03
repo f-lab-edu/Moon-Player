@@ -10,9 +10,9 @@ const Layout = styled(FlexCenterColumn)`
   height: 100vh;
 `;
 const Box = styled(FlexCenterColumn)`
-  padding: 30px;
-  box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
+  padding: ${({ theme }) => theme.paddings.xl};
+  box-shadow: ${({ theme }) => theme.boxShadows.two};
+  border-radius: ${({ theme }) => theme.borderRadius.xl};
   background: rgba(255, 255, 255, 0.5);
 `;
 const Header = styled(FlexCenterColumn)`

@@ -5,9 +5,9 @@ import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Image from 'components/Common/Image';
 
 const CardImage = styled(Image)`
-  border-radius: 7px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: ${({ theme }) => theme.borderRadius.xl};
+  border: ${({ theme }) => theme.border.thin};
+  box-shadow: ${({ theme }) => theme.boxShadows.card};
   opacity: ${(props) => (!props.disabled ? '0.6' : '1')};
   transition-duration: 0.4s;
   &:active {

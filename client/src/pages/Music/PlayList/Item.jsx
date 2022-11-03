@@ -7,13 +7,11 @@ import IconButton from 'components/Common/IconButton';
 import OverFlowText from 'components/Common/OverFlowText';
 import { useDispatch, useSelector } from 'react-redux';
 import { isInObject, findObjectInList } from 'utils/app';
-const Root = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: #6633cc;
-  font-weight: 900;
+import { FlexBetweenRow } from 'components/Common/FlexBetweenRow';
+const Root = styled(FlexBetweenRow)`
+  border: ${({ theme }) => theme.border.thin};
+  color: ${({ theme }) => theme.colors.blueMagent};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
   border-left: none;
   border-right: none;
   border-bottom: none;

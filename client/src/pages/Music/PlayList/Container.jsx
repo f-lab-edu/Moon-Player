@@ -5,37 +5,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import { Item } from './Item';
 import { Title } from 'components/Common/Title';
-
-const Root = styled.div`
-  display: flex;
-  flex-direction: column;
+import { ScrollBox } from 'components/Common/ScrollBox';
+const Root = styled(ScrollBox)`
   width: 70%;
   height: 100vh;
-  overflow-y: scroll;
-  border-radius: 7px;
-  box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: ${({ theme }) => theme.boxShadows.container};
   margin: 0px 40px;
-  &::-webkit-scrollbar {
-    width: 10px;
-  }
-  &::-webkit-scrollbar-thumb {
-    height: 30%;
-    background: purple;
-    border-radius: 7px;
-  }
-  @media screen and (max-width: 1200px) {
-    width: 100%;
-  }
 `;
 
 const Box = styled.div`
   padding: 10px 20px;
-  > :first-child {
-    color: white;
-    font-size: 20px;
-    color: white;
-    text-shadow: 2px 2px 2px gray;
-  }
 `;
 
 export const Container = () => {
@@ -55,7 +34,7 @@ export const Container = () => {
   return (
     <Root>
       <Box>
-        <Title>{playListItems.title}</Title>
+        <Title color="white">{playListItems.title}</Title>
         {items}
       </Box>
     </Root>

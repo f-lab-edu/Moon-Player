@@ -16,12 +16,10 @@ import { usePlayerControl } from 'hooks/usePlayerControl';
 import Slider from 'components/Common/Slider';
 import { Progressbar } from './Progressbar';
 import { FlexCenterColumn } from 'components/Common/FlexCenterColumn';
+import { FlexBetweenRow } from 'components/Common/FlexBetweenRow';
 
-const IconBox = styled.div`
-  display: flex;
+const IconBox = styled(FlexBetweenRow)`
   padding: 20px;
-  justify-content: space-between;
-  align-items: center;
   cursor: pointer;
   > :nth-child(2) {
     display: flex;
