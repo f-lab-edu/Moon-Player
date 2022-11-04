@@ -11,7 +11,7 @@ import { removeStoreItems } from 'utils/app';
 const Layout = styled.div`
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  background-image: linear-gradient(90deg, #000000 0%, #434343 100%);
 `;
 const Header = styled.header`
   display: flex;

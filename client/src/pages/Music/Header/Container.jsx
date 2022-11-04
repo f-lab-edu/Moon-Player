@@ -38,14 +38,14 @@ export const Container = () => {
     <Root>
       <FlexCenterRow>
         <Avatar src={theme.images.Logo} width="50px" height="50px" style={{ margin: theme.margins.lg }} />
-        <Title size={theme.fontSizes.xxxl} color={theme.colors.blueMagent}>
+        <Title size={theme.fontSizes.xxxl} color={theme.colors.white}>
           Moon Player
         </Title>
       </FlexCenterRow>
       <FlexCenterRow style={{ fontWeight: theme.fontWeights.bold, textShadow: '1px 1px 1px gray' }}>
         <IconWrapper>
           <Link to="#" onClick={handleLogout}>
-            <FontAwesomeIcon icon={faRightFromBracket} color={theme.colors.blueMagent} />
+            <FontAwesomeIcon icon={faRightFromBracket} color={theme.colors.gray} />
           </Link>
           <Link to="#" onClick={handleLogout}>
             로그아웃
@@ -53,7 +53,7 @@ export const Container = () => {
         </IconWrapper>
         <IconWrapper>
           <Link to="/user">
-            <FontAwesomeIcon icon={faUser} color={theme.colors.blueMagent} />
+            <FontAwesomeIcon icon={faUser} color={theme.colors.gray} />
           </Link>
           <Link to="/user"> 내정보</Link>
         </IconWrapper>

@@ -10,7 +10,7 @@ const Root = styled(ScrollBox)`
   width: 70%;
   height: 100vh;
   border-radius: ${({ theme }) => theme.borderRadius.xl};
-  box-shadow: ${({ theme }) => theme.boxShadows.container};
+  border: 1px solid white;
   margin: 0px 40px;
   @media screen and (max-width: 1200px) {
     width: 100%;

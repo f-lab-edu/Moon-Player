@@ -30,11 +30,6 @@ const Grid = styled.div(
   }
 `
 );
-const IconWrapper = styled.div`
-  @media screen and (max-width: 900px) {
-    padding: 0px 15px;
-  }
-`;
 
 export const Container = () => {
   const dispatch = useDispatch();
@@ -53,9 +48,9 @@ export const Container = () => {
   return (
     <FlexCenterRow>
       <Grid>{genreItems}</Grid>
-      <IconWrapper>
-        <FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'#6633cc'} />
-      </IconWrapper>
+      <div>
+        <FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'white'} />
+      </div>
     </FlexCenterRow>
   );
 };

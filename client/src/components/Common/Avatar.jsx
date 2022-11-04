@@ -5,6 +5,7 @@ export const Avatar = styled.img.attrs(({ src }) => ({
 }))`
   height: ${({ height }) => height};
   width: ${({ width }) => width};
+
   border-radius: 50%;
   display: inline-flex;
   justify-content: center;

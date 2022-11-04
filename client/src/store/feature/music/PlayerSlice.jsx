@@ -23,7 +23,6 @@ export const musicPlayerSlice = createSlice({
     // playingItem도 업데이트 되어야함
     handleRemoveMusic: (state, action) => {
       state.playerItems = state.playerItems.filter((item) => item.video_title !== action.payload);
-      // state.playmusic = '';
     },
     handleAddMusic: (state, action) => {
       state.playmusic = action.payload;

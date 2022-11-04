@@ -14,8 +14,8 @@ import FlexBetweenRow from 'components/Common/FlexBetweenRow';
 
 import { findObjectInList } from 'utils/app';
 const Root = styled(FlexBetweenRow)`
-  border-bottom: ${({ theme }) => theme.border.thin};
-  background: ${({ isSelected, theme }) => isSelected && theme.colors.Magenta};
+  border-bottom: ${({ theme }) => theme.border.white};
+  background: ${({ isSelected, theme }) => isSelected && theme.colors.gray};
   opacity: ${({ isSelected }) => isSelected && '0.7'};
   gap: 15px;
   > :first-child {
@@ -55,14 +55,14 @@ export const Item = ({ video_title, video_img, order }) => {
 
   return (
     <Root ref={element} isSelected={isplayingMusic}>
-      <div style={{ color: '#6633cc' }}>{order}</div>
+      <div style={{ color: 'white' }}>{order}</div>
       <Image onClick={handleMusic} src={video_img} width="100px" height="50px" />
-      <OverFlowText width="60%" fontSize="15px" color="#6633cc" onClick={handleMusic} style={{ textAlign: 'center' }}>
+      <OverFlowText width="60%" fontSize="15px" color="white" onClick={handleMusic} style={{ textAlign: 'center' }}>
         {video_title}
       </OverFlowText>
 
       <IconButton>
-        <FontAwesomeIcon onClick={handleClickRemove} icon={faTrash} size={'2x'} color={'#6633cc'} />
+        <FontAwesomeIcon onClick={handleClickRemove} icon={faTrash} size={'2x'} />
       </IconButton>
     </Root>
   );

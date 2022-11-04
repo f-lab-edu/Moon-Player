@@ -20,6 +20,7 @@ import { FlexBetweenRow } from 'components/Common/FlexBetweenRow';
 
 const IconBox = styled(FlexBetweenRow)`
   padding: 20px;
+  color: gray;
   cursor: pointer;
   > :nth-child(2) {
     display: flex;
@@ -29,7 +30,7 @@ const IconBox = styled(FlexBetweenRow)`
 const VolumeBox = styled.div`
   display: flex;
   align-items: center;
-  color: ${({ theme }) => theme.colors.blueMagent};
+  color: ${({ theme }) => theme.colors.gray};
   padding: 10px 20px 20px 20px;
 
   > :nth-child(1) {
@@ -40,7 +41,6 @@ const VolumeBox = styled.div`
 export const Footer = () => {
   const { musicPlayer, playerState, handleRepeat, handlePlay, handleVolume, handleShuffle, handlePrev, handleNext } =
     usePlayerControl();
-
   return (
     <div>
       <FlexCenterColumn style={{ padding: '10px 0px' }}>
@@ -58,9 +58,16 @@ export const Footer = () => {
       <div>
         {playerState.music && musicPlayer}
         <IconBox>
-          <IconButton isActive={playerState.isrepeat} onClick={handleRepeat}>
-            <FontAwesomeIcon icon={faRepeat} size={'2x'} />{' '}
-          </IconButton>
+          {playerState.isrepeat ? (
+            <IconButton onClick={handleRepeat}>
+              <FontAwesomeIcon icon={faRepeat} size={'2x'} color={'white'} />
+            </IconButton>
+          ) : (
+            <IconButton onClick={handleRepeat}>
+              <FontAwesomeIcon icon={faRepeat} size={'2x'} color={'gray'} />
+            </IconButton>
+          )}
+
           <div>
             <IconButton onClick={handlePrev}>
               <FontAwesomeIcon icon={faBackwardStep} size={'3x'} />
@@ -72,7 +79,7 @@ export const Footer = () => {
             ) : (
               <IconButton onClick={handlePlay}>
                 {' '}
-                <FontAwesomeIcon icon={faPlayCircle} size={'3x'} />
+                <FontAwesomeIcon icon={faPlayCircle} size={'3x'} color={'gray'} />
               </IconButton>
             )}
             <IconButton onClick={handleNext}>
@@ -80,14 +87,14 @@ export const Footer = () => {
             </IconButton>
           </div>
           <IconButton onClick={handleShuffle}>
-            <FontAwesomeIcon icon={faShuffle} size={'2x'} />
+            <FontAwesomeIcon icon={faShuffle} size={'2x'} color={'white'} />
           </IconButton>
         </IconBox>
       </div>
 
       <div>
         <VolumeBox>
-          <FontAwesomeIcon icon={faVolumeHigh} size={'2x'} />
+          <FontAwesomeIcon icon={faVolumeHigh} size={'2x'} color={'white'} />
           <Slider onChange={handleVolume} volume={playerState.volume} />
         </VolumeBox>
         <Progressbar time={{ currentTime: playerState.currentTime, endTime: playerState.endTime }} />

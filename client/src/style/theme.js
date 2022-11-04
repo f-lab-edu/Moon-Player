@@ -19,6 +19,8 @@ const colors = {
   darkgreen: '#1cc802',
   lightyellow: '#ffeb3b',
   purple: 'purple',
+  dodgerBlue: '#1797f3',
+  gray: 'gray',
 };
 
 const margins = {
@@ -86,6 +88,8 @@ const border = {
   thin: '1px solid rgba(0, 0, 0, 0.1)',
   extralight: '1px solid rgba(0, 0, 0, 0.2)',
   light: '1px solid rgba(0, 0, 0, 0.3)',
+  blueMagent: '1px solid #6633cc',
+  white: '1px solid white',
 };
 
 export const theme = {

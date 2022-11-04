@@ -6,7 +6,7 @@ import Text from 'components/Common/Text';
 
 const Root = styled.div(
   ({ theme }) => `
-  color: ${theme.colors.blueMagent};
+  color: ${theme.colors.white};
   font-weight: ${theme.fontWeights.bold};
   text-align:center;
 `
@@ -23,7 +23,7 @@ export const Progressbar = ({ time }) => {
 
   return (
     <Root>
-      <Line strokeWidth={2} percent={elapsedTime} strokeColor={'#6633cc'} />
+      <Line strokeWidth={3} percent={elapsedTime} strokeColor={'white'} />
       <Text>
         {currentTime} / {endTime}
       </Text>

@@ -15,7 +15,7 @@ export const Slider = styled.input.attrs(({ volume }) => ({
   &::-webkit-slider-runnable-track {
     width: 100%;
     height: 13px;
-    background: #fa7cd7;
+    background: gray;
     cursor: pointer;
   }
   &::-webkit-slider-thumb {
@@ -23,7 +23,7 @@ export const Slider = styled.input.attrs(({ volume }) => ({
     height: 21px;
     width: 30px;
     border-radius: 7px;
-    background: #6633cc;
+    background: white;
     cursor: pointer;
     margin-top: -3.5px;
   }
@@ -33,14 +33,14 @@ export const Slider = styled.input.attrs(({ volume }) => ({
     height: 21px;
     width: 30px;
     border-radius: 7px;
-    background: #6633cc;
+    background: white;
     cursor: pointer;
     margin-top: -3.5px;
   }
   &::-moz-range-track {
     width: 100%;
     height: 13px;
-    background: #fa7cd7;
+    background: gray;
     cursor: pointer;
   }
 `;

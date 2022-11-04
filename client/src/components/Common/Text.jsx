@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Text = styled.span(
-  ({ theme }) => `
-  color:${theme.colors.blueMagent};
-  font-size:${theme.fontSizes.base};
-  font-weight:${theme.fontWeights.bold};
+  ({ color, fontSize, weight }) => `
+  color:${color};
+  font-size:${fontSize};
+  font-weight:${weight};
 `
 );
 

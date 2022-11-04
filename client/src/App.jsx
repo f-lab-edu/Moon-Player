@@ -5,7 +5,7 @@ import LoginPage from 'pages/Login/index';
 import UserPage from 'pages/User/index';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'style/theme';
-import UserReportPage from 'pages/User/components/Report';
+import UserReportPage from 'pages/User/Report';
 
 function App() {
   return (

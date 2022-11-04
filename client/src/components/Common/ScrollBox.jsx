@@ -8,13 +8,13 @@ export const ScrollBox = styled.div(
   }
   &::-webkit-scrollbar-thumb {
     height: 5%;
-    background: ${theme.colors.purple};
+    background: ${theme.colors.white};
     border-radius: ${theme.borderRadius.xl};
   }
 
   // 파이어폭스
   scrollbar-width:thin;
-  scrollbar-color:${theme.colors.purple};
+  scrollbar-color:${theme.colors.white};
 
   
 

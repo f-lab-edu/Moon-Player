@@ -6,7 +6,7 @@ import Text from 'components/Common/Text';
 import ScrollBox from 'components/Common/ScrollBox';
 const Root = styled.div`
   width: 30%;
-  box-shadow: ${({ theme }) => theme.boxShadows.container};
+  border: 1px solid white;
   padding: 15px;
   border-radius: ${({ theme }) => theme.borderRadius.xl};
 

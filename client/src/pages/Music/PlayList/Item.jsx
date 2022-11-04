@@ -9,8 +9,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { isInObject, findObjectInList } from 'utils/app';
 import { FlexBetweenRow } from 'components/Common/FlexBetweenRow';
 const Root = styled(FlexBetweenRow)`
-  border: ${({ theme }) => theme.border.thin};
-  color: ${({ theme }) => theme.colors.blueMagent};
+  border: ${({ theme }) => theme.border.white};
+  color: ${({ theme }) => theme.colors.white};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   border-left: none;
   border-right: none;

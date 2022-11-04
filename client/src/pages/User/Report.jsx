@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Text from 'components/Common/Text';
 import FlexCenterColumn from 'components/Common/FlexCenterColumn';
-import { LongButton } from 'components/Common/LongButton';
+import Button from 'components/Common/Button';
 import { useRef } from 'react';
 import { Nav } from './Nav';
 const Root = styled.div`
@@ -51,7 +51,7 @@ export const Report = () => {
           <ContentText> 여러분의 쾌적한 이용을 위해 오류 개선에 최선을 다하겠습니다. </ContentText>
         </Flex>
         <TextArea ref={text} placeholder="500자 이내로 적어주세요" maxLength={500}></TextArea>
-        <LongButton onClick={handleSubmit}>제출</LongButton>
+        <Button onClick={handleSubmit}>제출</Button>
       </Box>
     </Root>
   );
