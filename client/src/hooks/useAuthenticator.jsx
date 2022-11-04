@@ -15,7 +15,7 @@ export const useAuthenticator = () => {
   };
 
   // 로그아웃
-  const signOut = async () => {
+  const signOut = () => {
     navigate('/');
     alert('로그아웃 하였습니다.');
   };

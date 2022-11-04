@@ -28,9 +28,10 @@ const IconWrapper = styled(FlexCenterColumn)`
 export const Container = () => {
   const theme = useContext(ThemeContext);
   const { signOut } = useAuthenticator();
-  const handleLogout = async () => {
-    signOut();
+  const handleLogout = () => {
     removeStoreItems();
+
+    signOut();
   };
 
   return (
