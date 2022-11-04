@@ -30,7 +30,8 @@ const VolumeBox = styled.div`
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.colors.blueMagent};
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
+
   > :nth-child(1) {
     margin-right: 20px;
   }
@@ -83,6 +84,7 @@ export const Footer = () => {
           </IconButton>
         </IconBox>
       </div>
+
       <div>
         <VolumeBox>
           <FontAwesomeIcon icon={faVolumeHigh} size={'2x'} />

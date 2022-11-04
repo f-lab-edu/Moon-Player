@@ -25,9 +25,7 @@ const LoginPage = () => {
     <Layout>
       <Box>
         <Header>
-          <Title size={theme.fontSizes.titleSize} color={theme.colors.blueMagent}>
-            Moon Player
-          </Title>
+          <Title size={theme.fontSizes.titleSize}>Moon Player</Title>
           <Avatar src={theme.images.Logo} height="100px" width="100px" />
         </Header>
         <LoginForm />

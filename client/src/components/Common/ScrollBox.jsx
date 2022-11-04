@@ -17,9 +17,7 @@ export const ScrollBox = styled.div(
   scrollbar-color:${theme.colors.purple};
 
   
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-  }
+
 `
 );
 

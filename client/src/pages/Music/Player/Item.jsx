@@ -19,8 +19,7 @@ const Root = styled(FlexBetweenRow)`
   opacity: ${({ isSelected }) => isSelected && '0.7'};
   gap: 15px;
   > :first-child {
-    width: 1px;
-    padding-left: 10px;
+    width: 5px;
     font-weight: ${({ theme }) => theme.fontWeights.bold};
   }
 
@@ -53,14 +52,8 @@ export const Item = ({ video_title, video_img, order }) => {
   return (
     <Root ref={element} isSelected={isSelectedMusic}>
       <div style={{ color: '#6633cc' }}>{order}</div>
-      <Image
-        onClick={handleMusic}
-        src={video_img}
-        width="100px"
-        height="50px"
-        style={{ cursor: 'pointer', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}
-      />
-      <OverFlowText width="50%" fontSize="15px" color="#6633cc" onClick={handleMusic}>
+      <Image onClick={handleMusic} src={video_img} width="100px" height="50px" />
+      <OverFlowText width="60%" fontSize="15px" color="#6633cc" onClick={handleMusic} style={{ textAlign: 'center' }}>
         {video_title}
       </OverFlowText>
 

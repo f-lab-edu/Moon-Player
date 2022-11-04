@@ -1,10 +1,6 @@
 import styled from 'styled-components';
-
-const Root = styled.nav`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+import { FlexCenterColumn } from 'components/Common/FlexCenterColumn';
+const Root = styled(FlexCenterColumn)`
   background-color: black;
   width: 30vw;
   color: white;
@@ -16,8 +12,9 @@ export const Nav = () => {
   return (
     <Root>
       <div>홈으로</div>
-      <div>내정보</div>
       <div>버그 리포트</div>
     </Root>
   );
 };
+
+export default Nav;

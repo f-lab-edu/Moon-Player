@@ -3,9 +3,10 @@ const Image = styled.img.attrs(({ src }) => ({
   src: src,
 }))`
   object-fit: fill;
+  max-width: 100%;
   width: ${({ width }) => width};
   height: ${({ height }) => height};
-  max-width: 100%;
+
   box-shadow: ${({ theme }) => theme.image};
 `;
 

@@ -16,8 +16,11 @@ const Root = styled.div`
   }
 `;
 const ItemBox = styled(ScrollBox)`
-  height: 25vh;
+  height: 30vh;
   padding-right: 10px;
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 const PlayerHeader = styled.div`
   height: 50px;
@@ -48,7 +51,7 @@ export const Container = () => {
       <PlayerHeader>
         <PlayerTitle>재생 목록</PlayerTitle>
       </PlayerHeader>
-      <ItemBox width={'10px'} height={'5%'} color={'#6633cc'}>
+      <ItemBox width={'10px'} height={'5%'}>
         {items}
       </ItemBox>
 
