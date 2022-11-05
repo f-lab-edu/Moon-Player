@@ -18,10 +18,6 @@ const Root = styled(FlexBetweenRow)`
   background: ${({ isSelected, theme }) => isSelected && theme.colors.gray};
   opacity: ${({ isSelected }) => isSelected && '0.7'};
   gap: 15px;
-  > :first-child {
-    width: 5px;
-    font-weight: ${({ theme }) => theme.fontWeights.bold};
-  }
 
   @media screen and (max-width: 1000px) {
     width: 100%;
@@ -31,7 +27,7 @@ const Root = styled(FlexBetweenRow)`
 export const Item = ({ video_title, video_img, order }) => {
   const dispatch = useDispatch();
   const playerState = useSelector((state) => state.music.player);
-  const isplayingMusic = playerState.playmusic.video_title === video_title;
+  const isSelectedMusic = playerState.playmusic.video_title === video_title;
   const playerItemslength = playerState.playerItems.length;
   const prevPlayerItemslength = usePrevious(playerItemslength);
   const { element, handleScrollElement } = useMoveDownScroll();
@@ -44,7 +40,7 @@ export const Item = ({ video_title, video_img, order }) => {
   // 플레이어 리스트에서 삭제할시 현재 재생중인거는 삭제 못하게막음
 
   const handleClickRemove = () => {
-    !isplayingMusic ? dispatch(handleRemoveMusic(video_title)) : alert('현재 재생중인 음악은 삭제할수없습니다');
+    return isSelectedMusic ? alert('현재 선택중인 음악은 삭제할수없습니다.') : dispatch(handleRemoveMusic(video_title));
   };
 
   const handleMusic = () => {
@@ -54,8 +50,8 @@ export const Item = ({ video_title, video_img, order }) => {
   };
 
   return (
-    <Root ref={element} isSelected={isplayingMusic}>
-      <div style={{ color: 'white' }}>{order}</div>
+    <Root ref={element} isSelected={isSelectedMusic}>
+      <div style={{ color: 'white', width: '5px' }}>{order}</div>
       <Image onClick={handleMusic} src={video_img} width="100px" height="50px" />
       <OverFlowText width="60%" fontSize="15px" color="white" onClick={handleMusic} style={{ textAlign: 'center' }}>
         {video_title}
