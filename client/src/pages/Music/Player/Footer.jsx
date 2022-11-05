@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Title } from 'components/Common/Title';
+
 import {
   faShuffle,
   faBackwardStep,
@@ -17,6 +18,7 @@ import Slider from 'components/Common/Slider';
 import { Progressbar } from './Progressbar';
 import { FlexCenterColumn } from 'components/Common/FlexCenterColumn';
 import { FlexBetweenRow } from 'components/Common/FlexBetweenRow';
+import { formatTime } from 'utils/Player';
 
 const IconBox = styled(FlexBetweenRow)`
   padding: 20px;
@@ -97,7 +99,13 @@ export const Footer = () => {
           <FontAwesomeIcon icon={faVolumeHigh} size={'2x'} color={'white'} />
           <Slider onChange={handleVolume} volume={playerState.volume} />
         </VolumeBox>
-        <Progressbar time={{ currentTime: playerState.currentTime, endTime: playerState.endTime }} />
+        <Progressbar
+          time={{
+            currentTime: formatTime(playerState.currentTime),
+            endTime: formatTime(playerState.endTime),
+            elapsedTime: Math.floor((playerState.currentTime / playerState.endTime) * 100),
+          }}
+        />
       </div>
     </div>
   );
