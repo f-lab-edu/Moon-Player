@@ -21,7 +21,7 @@ const Box = styled.div`
   padding: 10px 20px;
 `;
 
-export const Container = () => {
+export const PlayList = () => {
   const dispatch = useDispatch();
   const playListItems = useSelector((state) => state.music.playList.musicList);
 
@@ -44,4 +44,4 @@ export const Container = () => {
     </Root>
   );
 };
-export default Container;
+export default PlayList;

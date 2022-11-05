@@ -1,6 +1,6 @@
 import { Line } from 'rc-progress';
 import styled from 'styled-components';
-import { timeFormat } from 'utils/Player';
+import { formatTime } from 'utils/Player';
 import { useState, useEffect } from 'react';
 import Text from 'components/Common/Text';
 
@@ -16,8 +16,8 @@ export const Progressbar = ({ time }) => {
   const [endTime, setEndTime] = useState();
   const [elapsedTime, setElapsedTime] = useState();
   useEffect(() => {
-    setCurrentTime(timeFormat(time.currentTime));
-    setEndTime(timeFormat(time.endTime));
+    setCurrentTime(formatTime(time.currentTime));
+    setEndTime(formatTime(time.endTime));
     setElapsedTime(Math.floor((time.currentTime / time.endTime) * 100));
   }, [time]);
 

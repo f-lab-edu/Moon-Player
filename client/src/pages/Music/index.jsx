@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import Genre from './Genre/Container';
-import Player from './Player/Container';
-import PlayList from './PlayList/Container';
-import HeaderList from './Header/Container';
+import Genre from './Genre';
+import Player from './Player';
+import PlayList from './PlayList';
+import HeaderList from './Header';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';

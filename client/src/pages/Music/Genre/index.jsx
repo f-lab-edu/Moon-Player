@@ -31,7 +31,7 @@ const Grid = styled.div(
 `
 );
 
-export const Container = () => {
+export const Genre = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchmusicGenre());
@@ -55,4 +55,4 @@ export const Container = () => {
   );
 };
 
-export default Container;
+export default Genre;

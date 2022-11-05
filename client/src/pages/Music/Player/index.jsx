@@ -35,7 +35,7 @@ const PlayerTitle = styled.h3`
 `;
 
 // 플레이어 메인
-export const Container = () => {
+export const Player = () => {
   const playerItems = useSelector((state) => state.music.player.playerItems);
 
   const items =
@@ -59,4 +59,4 @@ export const Container = () => {
     </Root>
   );
 };
-export default Container;
+export default Player;

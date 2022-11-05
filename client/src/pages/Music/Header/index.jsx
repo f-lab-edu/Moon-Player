@@ -25,7 +25,7 @@ const IconWrapper = styled(FlexCenterColumn)`
   margin: ${({ theme }) => theme.margins.base};
 `;
 
-export const Container = () => {
+export const Header = () => {
   const theme = useContext(ThemeContext);
   const { signOut } = useAuthenticator();
   const handleLogout = () => {
@@ -61,4 +61,4 @@ export const Container = () => {
     </Root>
   );
 };
-export default Container;
+export default Header;
