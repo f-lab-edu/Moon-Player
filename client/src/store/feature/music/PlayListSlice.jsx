@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
-import { fetchById } from 'utils/fetchAPI';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { fetchById } from 'utils/fetch';
 import { PURGE } from 'redux-persist';
 
 const initialState = {

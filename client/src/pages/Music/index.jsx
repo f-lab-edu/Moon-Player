@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { removeStoreItems } from 'utils/app';
+import { removeStoreItems } from 'utils/persist';
 const Layout = styled.div`
   display: flex;
   flex-direction: column;

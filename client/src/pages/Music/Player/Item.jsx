@@ -12,7 +12,7 @@ import IconButton from 'components/Common/IconButton';
 import Image from 'components/Common/Image';
 import FlexBetweenRow from 'components/Common/FlexBetweenRow';
 
-import { findObjectInList } from 'utils/app';
+import { findObjectInList } from 'utils/persist';
 const Root = styled(FlexBetweenRow)`
   border-bottom: ${({ theme }) => theme.border.white};
   background: ${({ isSelected, theme }) => isSelected && theme.colors.gray};
@@ -45,7 +45,7 @@ export const Item = ({ video_title, video_img, order }) => {
 
   const handleMusic = () => {
     // 재생할 음악을 눌렀을떄
-    const music = findObjectInList(playerState.playerItems, 'video_title', video_title);
+    const music = playerState.playerItems.find((item) => item.video_title === video_title);
     dispatch(handleAddMusic(music));
   };
 

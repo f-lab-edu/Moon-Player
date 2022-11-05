@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchData } from 'utils/fetchAPI';
+import { fetchData } from 'utils/fetch';
 import { PURGE } from 'redux-persist';
 const initialState = {
   musicList: [],

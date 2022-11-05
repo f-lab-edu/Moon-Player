@@ -9,7 +9,7 @@ import { FlexCenterRow } from 'components/Common/FlexCenterRow';
 import { FlexCenterColumn } from 'components/Common/FlexCenterColumn';
 import { Avatar } from 'components/Common/Avatar';
 import { Title } from 'components/Common/Title';
-import { removeStoreItems } from 'utils/app';
+import { removeStoreItems } from 'utils/persist';
 import FlexBetweenRow from 'components/Common/FlexBetweenRow';
 
 const Root = styled(FlexBetweenRow)`

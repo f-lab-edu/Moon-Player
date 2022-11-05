@@ -1,14 +1,16 @@
 import styled, { ThemeContext } from 'styled-components';
 import { useContext, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { assignURL } from 'utils/locationAPI';
+
 import { useAuthenticator } from 'hooks/useAuthenticator';
 import { fetchUserInfo } from 'store/feature/user/UserSlice';
 import FlexCenterColumn from 'components/Common/FlexCenterColumn';
-
 import { Icon } from 'components/Common/Icon';
 import Button from 'components/Common/Button';
 import Text from 'components/Common/Text';
+
+import { assignURL } from 'utils/oAuth';
+
 const Root = styled(FlexCenterColumn)`
   width: 30vw;
 `;
