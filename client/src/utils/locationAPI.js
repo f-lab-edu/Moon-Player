@@ -1,4 +1,4 @@
-const Google_ID = process.env.REACT_APP_ClientID;
+const Google_ID = process.env.REACT_APP_CLIENT_ID;
 const oAuthURL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${Google_ID}&
 response_type=token&
 redirect_uri=http://localhost:3000&
