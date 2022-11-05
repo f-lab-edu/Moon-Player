@@ -3,8 +3,9 @@ import { useState, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player/lazy';
 
 import { nextPlayMusic, prevPlayMusic, shuffleMusic } from 'utils/Player';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { handleNextMusic, handlePrevMusic, handleShuffleMusics } from 'store/feature/music/PlayerSlice';
+import { useMusicSelector } from './useMusicSelector';
 
 const DEFAULT_STATE = {
   playing: false, // 재생중인지
@@ -25,26 +26,28 @@ const DEFAULT_STATE = {
 export const usePlayerControl = () => {
   const dispatch = useDispatch();
   const playerRef = useRef();
-
-  const music = useSelector((state) => state.music.player.playmusic);
-  const playerItems = useSelector((state) => state.music.player.playerItems);
-
+  const [, , playerSelector] = useMusicSelector();
   const [playerState, setState] = useState(DEFAULT_STATE);
 
   const currentTime = playerRef && playerRef.current ? Math.floor(playerRef.current.getCurrentTime()) : '00:00';
   const endTime = playerRef && playerRef.current ? Math.floor(playerRef.current.getDuration()) : '00:00';
   useEffect(() => {
-    setState({ ...playerState, playing: true, music: music, currentTime, endTime });
-  }, [music]);
+    setState({ ...playerState, playing: true, music: playerSelector.playmusic, currentTime, endTime });
+  }, [playerSelector]);
 
   const handleRepeat = () => setState({ ...playerState, isrepeat: !playerState.isrepeat });
   const handlePlay = () => setState({ ...playerState, playing: !playerState.playing });
   const handleVolume = (e) => setState({ ...playerState, volume: +e.target.value });
-  const handleEndedMusic = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, music)));
   const handleOnProgress = () => setState({ ...playerState, currentTime, endTime });
-  const handleShuffle = () => dispatch(handleShuffleMusics(shuffleMusic(playerItems)));
-  const handlePrev = () => dispatch(handlePrevMusic(prevPlayMusic(playerItems, music)));
-  const handleNext = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, music)));
+
+  // 전역 state와 의존성있는 기능 분리 시켜야됨
+  const handleEndedMusic = () =>
+    dispatch(handleNextMusic(nextPlayMusic(playerSelector.playerItems, playerSelector.playmusic)));
+  const handleShuffle = () => dispatch(handleShuffleMusics(shuffleMusic(playerSelector.playerItems)));
+  const handlePrev = () =>
+    dispatch(handlePrevMusic(prevPlayMusic(playerSelector.playerItems, playerSelector.playmusic)));
+  const handleNext = () =>
+    dispatch(handleNextMusic(nextPlayMusic(playerSelector.playerItems, playerSelector.playmusic)));
   const musicPlayer = (
     <ReactPlayer
       ref={playerRef}

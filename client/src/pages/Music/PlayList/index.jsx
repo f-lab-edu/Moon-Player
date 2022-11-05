@@ -6,6 +6,7 @@ import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import { Item } from './Item';
 import { Title } from 'components/Common/Title';
 import { ScrollBox } from 'components/Common/ScrollBox';
+import { useMusicSelector } from 'hooks/useMusicSelector';
 const Root = styled(ScrollBox)`
   width: 70%;
   height: 100vh;
@@ -23,14 +24,13 @@ const Box = styled.div`
 
 export const PlayList = () => {
   const dispatch = useDispatch();
-  const playListItems = useSelector((state) => state.music.playList.musicList);
-
+  const [, playList] = useMusicSelector();
   const items =
-    playListItems.musics &&
-    playListItems.musics.map(({ video_title, id, video_img }) => (
+    playList.musicList.musics &&
+    playList.musicList.musics.map(({ video_title, id, video_img }) => (
       <Item key={video_title} id={id} video_title={video_title} video_img={video_img}></Item>
     ));
-  // 초기 렌더링시에 musicList(1) 아이템을 요청
+
   useEffect(() => {
     dispatch(fetchmusicList(1));
   }, []);
@@ -38,7 +38,7 @@ export const PlayList = () => {
   return (
     <Root>
       <Box>
-        <Title color="white">{playListItems.title}</Title>
+        <Title color="white">{playList.musicList.title}</Title>
         {items}
       </Box>
     </Root>

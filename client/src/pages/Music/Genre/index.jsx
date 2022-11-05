@@ -6,6 +6,7 @@ import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import GenreItem from './Item';
 import { FlexCenterRow } from 'components/Common/FlexCenterRow';
+import { useMusicSelector } from 'hooks/useMusicSelector';
 
 const Grid = styled.div(
   ({ theme }) => `
@@ -33,13 +34,13 @@ const Grid = styled.div(
 
 export const Genre = () => {
   const dispatch = useDispatch();
+  const [genreSelector] = useMusicSelector();
   useEffect(() => {
     dispatch(fetchmusicGenre());
   }, []);
-  const genres = useSelector((state) => state.music.genre.musicList);
   const genreItems =
-    genres.length > 0 ? (
-      genres.map(({ genre_img, genre_id }) => (
+    genreSelector.musicList.length > 0 ? (
+      genreSelector.musicList.map(({ genre_img, genre_id }) => (
         <GenreItem genre_img={genre_img} key={genre_id} genre_id={genre_id}></GenreItem>
       ))
     ) : (

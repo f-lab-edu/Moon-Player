@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Image from 'components/Common/Image';
+import { useMusicSelector } from 'hooks/useMusicSelector';
 
 const CardImage = styled(Image)`
   border-radius: ${({ theme }) => theme.borderRadius.xl};
@@ -27,9 +28,9 @@ const CardImage = styled(Image)`
 
 export const Item = ({ genre_img, genre_id }) => {
   const dispatch = useDispatch();
+  const [, playListSelector] = useMusicSelector();
 
-  const isInGenre = useSelector((state) => state.music.playList.musicList.id === genre_id);
-
+  const isInGenre = playListSelector.musicList.id === genre_id ? true : false;
   const handleCard = ({ target }) => dispatch(fetchmusicList(target.id));
 
   return (

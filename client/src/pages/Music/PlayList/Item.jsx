@@ -8,6 +8,7 @@ import OverFlowText from 'components/Common/OverFlowText';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { FlexBetweenRow } from 'components/Common/FlexBetweenRow';
+import { useMusicSelector } from 'hooks/useMusicSelector';
 const Root = styled(FlexBetweenRow)`
   border: ${({ theme }) => theme.border.white};
   color: ${({ theme }) => theme.colors.white};
@@ -25,12 +26,12 @@ const Root = styled(FlexBetweenRow)`
 `;
 export const Item = ({ id, video_title, video_img }) => {
   const dispatch = useDispatch();
-  const playListItems = useSelector((state) => state.music.playList.musicList.musics);
-  const playerItems = useSelector((state) => state.music.player.playerItems);
-  const isInPlayer = playerItems.find((item) => item.video_title === video_title) ? true : false;
+
+  const [, playListSelector, playerSelector] = useMusicSelector();
+  const isInPlayer = playerSelector.playerItems.find((item) => item.video_title === video_title) ? true : false;
 
   const handleAddMusic = () => {
-    const selectedMusic = !isInPlayer && playListItems.find((item) => item.id === id); // 플레이어에 없어야 저장
+    const selectedMusic = !isInPlayer && playListSelector.musicList.musics.find((item) => item.id === id);
     dispatch(handleAddPlayer(selectedMusic));
   };
 

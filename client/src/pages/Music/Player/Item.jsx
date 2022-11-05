@@ -13,6 +13,7 @@ import Image from 'components/Common/Image';
 import FlexBetweenRow from 'components/Common/FlexBetweenRow';
 
 import { findObjectInList } from 'utils/persist';
+import { useMusicSelector } from 'hooks/useMusicSelector';
 const Root = styled(FlexBetweenRow)`
   border-bottom: ${({ theme }) => theme.border.white};
   background: ${({ isSelected, theme }) => isSelected && theme.colors.gray};
@@ -26,7 +27,7 @@ const Root = styled(FlexBetweenRow)`
 
 export const Item = ({ video_title, video_img, order }) => {
   const dispatch = useDispatch();
-  const playerState = useSelector((state) => state.music.player);
+  const [, , playerState] = useMusicSelector();
   const isSelectedMusic = playerState.playmusic.video_title === video_title;
   const playerItemslength = playerState.playerItems.length;
   const prevPlayerItemslength = usePrevious(playerItemslength);

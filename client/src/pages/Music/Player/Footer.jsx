@@ -69,7 +69,6 @@ export const Footer = () => {
               <FontAwesomeIcon icon={faRepeat} size={'2x'} color={'gray'} />
             </IconButton>
           )}
-
           <div>
             <IconButton onClick={handlePrev}>
               <FontAwesomeIcon icon={faBackwardStep} size={'3x'} />
@@ -93,7 +92,6 @@ export const Footer = () => {
           </IconButton>
         </IconBox>
       </div>
-
       <div>
         <VolumeBox>
           <FontAwesomeIcon icon={faVolumeHigh} size={'2x'} color={'white'} />

@@ -4,6 +4,7 @@ import PlayerFooter from './Footer';
 import PlayerItem from './Item';
 import Text from 'components/Common/Text';
 import ScrollBox from 'components/Common/ScrollBox';
+import { useMusicSelector } from 'hooks/useMusicSelector';
 const Root = styled.div`
   width: 30%;
   border: 1px solid white;
@@ -36,11 +37,10 @@ const PlayerTitle = styled.h3`
 
 // 플레이어 메인
 export const Player = () => {
-  const playerItems = useSelector((state) => state.music.player.playerItems);
-
+  const [, , playerList] = useMusicSelector();
   const items =
-    playerItems.length > 0 ? (
-      playerItems.map(({ video_title, video_img }, index) => (
+    playerList.playerItems.length > 0 ? (
+      playerList.playerItems.map(({ video_title, video_img }, index) => (
         <PlayerItem video_title={video_title} video_img={video_img} key={index} order={++index} />
       ))
     ) : (
