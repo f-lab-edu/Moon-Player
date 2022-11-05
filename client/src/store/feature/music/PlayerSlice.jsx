@@ -1,64 +1,51 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+import { PURGE } from 'redux-persist';
 
+const initialState = {
+  playerItems: [],
+  playmusic: '',
+};
 // Reducer
 export const musicPlayerSlice = createSlice({
   name: 'musicPlayer',
-
-  // playerItems 이랑 , playingItem이랑 따로 관리
-  initialState: {
-    playerItems: [],
-
-    playing: {
-      music: '',
-      isrepeat: false,
-      isplaying: false,
-      volume: 50,
-    }
-
-  },
-
+  initialState,
   // 동기적인 액션 처리
   reducers: {
     // 플레이어에 add 해주는 함수
-    handleAddMusic: (state, action) => {
-      state.playerItems = [...state.playerItems, Object.assign({}, action.payload)]
+    handleAddPlayer: (state, action) => {
+      state.playerItems = [...state.playerItems, Object.assign({}, action.payload)];
     },
-
-    // 플레이어에서 삭제하는 함수 
+    handleShuffleMusics: (state, action) => {
+      state.playerItems = action.payload;
+    },
+    // 플레이어에서 삭제하는 함수
     // playItems도 업데이트 되어야함
     // playingItem도 업데이트 되어야함
     handleRemoveMusic: (state, action) => {
-      state.playerItems = state.playerItems.filter((item) => item.video_title !== action.payload)
-      state.playing.music = ''
-      state.playing.isplaying = false
+      state.playerItems = state.playerItems.filter((item) => item.video_title !== action.payload);
     },
-    handleShuffleMusic: (state, action) => {
-      state.playerItems = action.payload
-    },
-
-    handlePlayMusic: (state, action) => {
-      state.playing.music = action.payload
-    },
-    // 사용자가 다음음악을 선택할시 , 현재 음악 다음 인덱스를 찾아서 선택후 state.playing.music 
-    handleNextMusic: (state, action) => {
-
-      state.playing.music = action.payload
+    handleAddMusic: (state, action) => {
+      state.playmusic = action.payload;
     },
     handlePrevMusic: (state, action) => {
-      state.playing.music = action.payload
+      state.playmusic = action.payload;
     },
-    handleRepeatMusic: (state, action) => {
-      state.playing.isrepeat = action.payload
+    handleNextMusic: (state, action) => {
+      state.playmusic = action.payload;
     },
-    handlePlayerState: (state, action) => {
-      state.playing.isplaying = action.payload
-    },
-    handleVolumeState: (state, action) => {
-      state.playing.volume = action.payload
-    }
-
   },
 
-})
+  // 로그아웃시 발생하는 액션
+  extraReducers: (builder) => {
+    builder.addCase(PURGE, () => initialState);
+  },
+});
 export default musicPlayerSlice;
-export const { handleAddMusic, handleRemoveMusic, handlePlayMusic, handleNextMusic, handlePrevMusic, handleShuffleMusic, handleRepeatMusic, handlePlayerState, handleVolumeState } = musicPlayerSlice.actions
+export const {
+  handleAddPlayer,
+  handleAddMusic,
+  handleRemoveMusic,
+  handleShuffleMusics,
+  handlePrevMusic,
+  handleNextMusic,
+} = musicPlayerSlice.actions;

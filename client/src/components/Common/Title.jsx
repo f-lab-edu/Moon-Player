@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
-const Title = styled.h3`
-  font-size: 35px;
-  color: #6633cc;
+export const Title = styled.h3(
+  ({ size, color }) => `
+  font-size: ${size};
+  color: ${color};  
   text-shadow: 2px 2px 2px gray;
-`;
-
+`
+);
 export default Title;

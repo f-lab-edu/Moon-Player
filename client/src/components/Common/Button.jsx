@@ -1,31 +1,21 @@
 import styled from 'styled-components';
-const Button = styled.button`
-  width: 100%;
-  height: 60px;
-  font-size: 20px;
-  margin: 10px 0px;
+
+export const Button = styled.button(
+  ({ color, fontColor, theme, width, height }) => `
+  width: ${width};
+  height: ${height};
+  font-size: ${theme.fontSizes.base};
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #6633cc;
-  box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-  color:white;
-
-  &:hover{
+  background-color:${color};
+  font-weight: ${theme.fontWeights.bold};
+  box-shadow: ${theme.boxShadows.one};
+  border-radius: ${theme.borderRadius.base};
+  color: ${fontColor};
+  &:hover {
     cursor: pointer;
-    background: pink;
+    opacity:0.7;
   }
-  &:active{
-    box-shadow: 1px 1px 0 rgb(0,0,0,0.5);
-  }
+`
+);
 
-  &:disabled{
-    box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
-    cursor: default;
-    opacity: 0.5;
-    background: #6633cc;
-  }
-
-  font-weight: bold;
-
-`;
 export default Button;

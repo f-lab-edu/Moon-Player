@@ -5,10 +5,9 @@ const useMoveDownScroll = () => {
 
   const handleScrollElement = () => {
     element.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
+  };
 
-  return { element, handleScrollElement }
+  return { element, handleScrollElement };
+};
 
-}
-
-export default useMoveDownScroll
+export default useMoveDownScroll;
