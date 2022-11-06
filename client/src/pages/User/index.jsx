@@ -2,15 +2,14 @@
 import Nav from './Nav';
 import styled from 'styled-components';
 import Info from './Info';
+import Flex from 'components/Common/Flex';
 
-const Layout = styled.div`
-  display: flex;
-  flex-direction: row;
+const Layout = styled(Flex)`
   height: 100vh;
 `;
 const UserPage = () => {
   return (
-    <Layout>
+    <Layout flex-direction="row">
       <Nav></Nav>
       <Info></Info>
     </Layout>

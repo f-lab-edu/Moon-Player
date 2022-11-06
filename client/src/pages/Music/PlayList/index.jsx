@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import { Item } from './Item';
@@ -38,7 +38,7 @@ export const PlayList = () => {
   return (
     <Root>
       <Box>
-        <Title color="white">{playListSelector.musicList.title}</Title>
+        <Title>{playListSelector.musicList.title}</Title>
         {playListMusics}
       </Box>
     </Root>

@@ -16,4 +16,10 @@ export const OverFlowText = styled.div(
 `
 );
 
+OverFlowText.propTypes = {
+  width: '50%',
+  fontSize: '15px',
+  color: 'white',
+};
+
 export default OverFlowText;

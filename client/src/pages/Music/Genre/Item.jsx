@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Image from 'components/Common/Image';
 import { useMusicSelector } from 'hooks/useMusicSelector';

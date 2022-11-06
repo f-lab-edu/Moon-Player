@@ -4,18 +4,14 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { useAuthenticator } from 'hooks/useAuthenticator';
-
-import { FlexCenterRow } from 'components/Common/FlexCenterRow';
-import { FlexCenterColumn } from 'components/Common/FlexCenterColumn';
 import { Avatar } from 'components/Common/Avatar';
 import { Title } from 'components/Common/Title';
 import { removeStoreItems } from 'utils/persist';
-import FlexBetweenRow from 'components/Common/FlexBetweenRow';
-
-const Root = styled(FlexBetweenRow)`
+import Flex from 'components/Common/Flex';
+const Root = styled(Flex)`
   width: 100vw;
 `;
-const IconWrapper = styled(FlexCenterColumn)`
+const IconWrapper = styled(Flex)`
   font-size: ${({ theme }) => theme.fontSizes.base};
   gap: 5px;
   > a {
@@ -35,15 +31,20 @@ export const Header = () => {
   };
 
   return (
-    <Root>
-      <FlexCenterRow>
+    <Root direction="row" justifyContent="space-between" alignItems="center">
+      <Flex direction="row" justifyContent="space-between" alignItems="center">
         <Avatar src={theme.images.Logo} width="50px" height="50px" style={{ margin: theme.margins.lg }} />
         <Title size={theme.fontSizes.xxxl} color={theme.colors.white}>
           Moon Player
         </Title>
-      </FlexCenterRow>
-      <FlexCenterRow style={{ fontWeight: theme.fontWeights.bold, textShadow: '1px 1px 1px gray' }}>
-        <IconWrapper>
+      </Flex>
+      <Flex
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        style={{ fontWeight: theme.fontWeights.bold, textShadow: '1px 1px 1px gray' }}
+      >
+        <IconWrapper direction="column" justifyContent="center" alignItems="center">
           <Link to="#" onClick={handleLogout}>
             <FontAwesomeIcon icon={faRightFromBracket} color={theme.colors.gray} />
           </Link>
@@ -51,13 +52,13 @@ export const Header = () => {
             로그아웃
           </Link>
         </IconWrapper>
-        <IconWrapper>
+        <IconWrapper direction="column" justifyContent="center" alignItems="center">
           <Link to="/user">
             <FontAwesomeIcon icon={faUser} color={theme.colors.gray} />
           </Link>
           <Link to="/user"> 내정보</Link>
         </IconWrapper>
-      </FlexCenterRow>
+      </Flex>
     </Root>
   );
 };

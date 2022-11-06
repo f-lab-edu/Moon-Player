@@ -7,5 +7,10 @@ export const Text = styled.span(
   font-weight:${weight};
 `
 );
+Text.defaultProps = {
+  color: 'white',
+  fontSize: '30px',
+  weight: '700',
+};
 
 export default Text;

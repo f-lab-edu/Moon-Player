@@ -16,11 +16,9 @@ import IconButton from 'components/Common/IconButton';
 import { usePlayerControl } from 'hooks/usePlayerControl';
 import Slider from 'components/Common/Slider';
 import { Progressbar } from './Progressbar';
-import { FlexCenterColumn } from 'components/Common/FlexCenterColumn';
-import { FlexBetweenRow } from 'components/Common/FlexBetweenRow';
 import { formatTime } from 'utils/Player';
-
-const IconBox = styled(FlexBetweenRow)`
+import Flex from 'components/Common/Flex';
+const IconBox = styled(Flex)`
   padding: 20px;
   color: gray;
   cursor: pointer;
@@ -45,21 +43,21 @@ export const Footer = () => {
     usePlayerControl();
   return (
     <div>
-      <FlexCenterColumn style={{ padding: '10px 0px' }}>
+      <Flex direction="column" justifyContent="center" alignItems="center" style={{ padding: '10px 0px' }}>
         {playerState && playerState.music ? (
-          <Image src={playerState.music.video_img} width="400px" />
+          <Image src={playerState.music.video_img} />
         ) : (
-          <Image src={'https://via.placeholder.com/400?text=No+Selected+Music'} width="400px" />
+          <Image src={'https://via.placeholder.com/400?text=No+Selected+Music'} width="400px" height="auto" />
         )}
-      </FlexCenterColumn>
+      </Flex>
       {playerState.music && (
-        <Title size="20px" color="white" style={{ textAlign: 'center' }}>
+        <Title size="20px" style={{ textAlign: 'center' }}>
           {playerState.music.video_title}
         </Title>
       )}
       <div>
         {playerState.music && musicPlayer}
-        <IconBox>
+        <IconBox direction="row" justifyContent="space-between" alignItems="center">
           {playerState.isrepeat ? (
             <IconButton onClick={handleRepeat}>
               <FontAwesomeIcon icon={faRepeat} size={'2x'} color={'white'} />

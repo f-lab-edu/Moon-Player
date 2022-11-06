@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import GenreItem from './Item';
-import { FlexCenterRow } from 'components/Common/FlexCenterRow';
 import { useMusicSelector } from 'hooks/useMusicSelector';
-
+import Root from 'components/Common/Flex';
 const Grid = styled.div(
   ({ theme }) => `
   display: grid;
@@ -47,12 +46,12 @@ export const Genre = () => {
       <h3>장르가 비어있습니다.</h3>
     );
   return (
-    <FlexCenterRow>
+    <Root direction="row" justifyContent="center" alignItems="center">
       <Grid>{genreItems}</Grid>
       <div>
         <FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'white'} />
       </div>
-    </FlexCenterRow>
+    </Root>
   );
 };
 

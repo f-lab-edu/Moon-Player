@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
 import PlayerFooter from './Footer';
 import PlayerItem from './Item';
 import Text from 'components/Common/Text';

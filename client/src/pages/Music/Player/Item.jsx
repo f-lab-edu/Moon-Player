@@ -3,18 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useMoveDownScroll from 'hooks/useMoveDownScroll';
 import usePrevious from 'hooks/usePrevious';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { handleRemoveMusic, handleAddMusic } from 'store/feature/music/PlayerSlice';
 import OverFlowText from 'components/Common/OverFlowText';
-
 import { useEffect } from 'react';
 import IconButton from 'components/Common/IconButton';
 import Image from 'components/Common/Image';
-import FlexBetweenRow from 'components/Common/FlexBetweenRow';
-
-import { findObjectInList } from 'utils/persist';
+import Flex from 'components/Common/Flex';
 import { useMusicSelector } from 'hooks/useMusicSelector';
-const Root = styled(FlexBetweenRow)`
+const Root = styled(Flex)`
   border-bottom: ${({ theme }) => theme.border.white};
   background: ${({ isSelected, theme }) => isSelected && theme.colors.gray};
   opacity: ${({ isSelected }) => isSelected && '0.7'};
@@ -51,7 +48,7 @@ export const Item = ({ video_title, video_img, order }) => {
   };
 
   return (
-    <Root ref={element} isSelected={isSelectedMusic}>
+    <Root ref={element} isSelected={isSelectedMusic} direction="row" justifyContent="space-between" alignItems="center">
       <div style={{ color: 'white', width: '5px' }}>{order}</div>
       <Image onClick={handleMusic} src={video_img} width="100px" height="50px" />
       <OverFlowText width="60%" fontSize="15px" color="white" onClick={handleMusic} style={{ textAlign: 'center' }}>

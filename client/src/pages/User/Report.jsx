@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 import Text from 'components/Common/Text';
-import FlexCenterColumn from 'components/Common/FlexCenterColumn';
 import Button from 'components/Common/Button';
 import { useRef } from 'react';
 import { Nav } from './Nav';
-const Root = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
+import Flex from 'components/Common/Flex';
+const Root = styled(Flex)``;
 const Box = styled.div`
   margin: 0 auto;
 `;
@@ -20,10 +17,6 @@ const Title = styled(Text)`
 const ContentText = styled(Text)`
   color: ${({ theme }) => theme.colors.black};
   margin-top: 10px;
-`;
-
-const Flex = styled(FlexCenterColumn)`
-  margin: 30px;
 `;
 
 const TextArea = styled.textarea`
@@ -41,10 +34,10 @@ export const Report = () => {
   };
 
   return (
-    <Root>
+    <Root direction="row">
       <Nav></Nav>
       <Box>
-        <Flex>
+        <Flex direction="column" justifyContent="center">
           <Title>버그리포트</Title>
           <ContentText> 이용중에 발견하신 기능상의 오류 혹은 불편한점들 </ContentText>
           <ContentText> 추가적으로 필요한 기능들을 500자 이내로 입력해주세요. </ContentText>
