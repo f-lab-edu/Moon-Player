@@ -3,17 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useMoveDownScroll from 'hooks/useMoveDownScroll';
 import usePrevious from 'hooks/usePrevious';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { handleRemoveMusic, handleAddMusic } from 'store/feature/music/PlayerSlice';
 import OverFlowText from 'components/Common/OverFlowText';
-
 import { useEffect } from 'react';
 import IconButton from 'components/Common/IconButton';
 import Image from 'components/Common/Image';
-import FlexBetweenRow from 'components/Common/FlexBetweenRow';
+import Flex from 'components/Common/Flex';
+import { useMusicSelector } from 'hooks/useMusicSelector';
+import Text from 'components/Common/Text';
 
-import { findObjectInList } from 'utils/app';
-const Root = styled(FlexBetweenRow)`
+const Root = styled(Flex)`
   border-bottom: ${({ theme }) => theme.border.white};
   background: ${({ isSelected, theme }) => isSelected && theme.colors.gray};
   opacity: ${({ isSelected }) => isSelected && '0.7'};
@@ -23,12 +23,11 @@ const Root = styled(FlexBetweenRow)`
     width: 100%;
   }
 `;
-
 export const Item = ({ video_title, video_img, order }) => {
   const dispatch = useDispatch();
-  const playerState = useSelector((state) => state.music.player);
-  const isSelectedMusic = playerState.playmusic.video_title === video_title;
-  const playerItemslength = playerState.playerItems.length;
+  const [, , playerSelector] = useMusicSelector();
+  const isSelectedMusic = playerSelector.playmusic.video_title === video_title;
+  const playerItemslength = playerSelector.playerItems.length;
   const prevPlayerItemslength = usePrevious(playerItemslength);
   const { element, handleScrollElement } = useMoveDownScroll();
 
@@ -45,15 +44,25 @@ export const Item = ({ video_title, video_img, order }) => {
 
   const handleMusic = () => {
     // 재생할 음악을 눌렀을떄
-    const music = findObjectInList(playerState.playerItems, 'video_title', video_title);
+    const music = playerSelector.playerItems.find((item) => item.video_title === video_title);
     dispatch(handleAddMusic(music));
   };
 
   return (
-    <Root ref={element} isSelected={isSelectedMusic}>
-      <div style={{ color: 'white', width: '5px' }}>{order}</div>
+    <Root ref={element} isSelected={isSelectedMusic} direction="row" justifyContent="space-between" alignItems="center">
+      <Text shadow="0" fontSize="15px">
+        {order}
+      </Text>
       <Image onClick={handleMusic} src={video_img} width="100px" height="50px" />
-      <OverFlowText width="60%" fontSize="15px" color="white" onClick={handleMusic} style={{ textAlign: 'center' }}>
+      <OverFlowText
+        width="60%"
+        fontSize="15px"
+        color="white"
+        align="center"
+        weight="700"
+        cursor="pointer"
+        onClick={handleMusic}
+      >
         {video_title}
       </OverFlowText>
 

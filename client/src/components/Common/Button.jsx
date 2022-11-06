@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const Button = styled.button(
-  ({ color, fontColor, theme, width, height }) => `
+  ({ color, fontColor, fontSize, width, height, shadow, fontWeight, border }) => `
   width: ${width};
   height: ${height};
-  font-size: ${theme.fontSizes.base};
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: ${fontSize};
+  border:${border};
   background-color:${color};
-  font-weight: ${theme.fontWeights.bold};
-  box-shadow: ${theme.boxShadows.one};
-  border-radius: ${theme.borderRadius.base};
+  font-weight: ${fontWeight};
+  box-shadow: ${shadow};
+  border-radius: ${border};
   color: ${fontColor};
   &:hover {
     cursor: pointer;
@@ -17,5 +17,15 @@ export const Button = styled.button(
   }
 `
 );
+Button.defaultProps = {
+  width: '50px',
+  height: '50px',
+  color: 'white',
+  fontColor: 'black',
+  shadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+  fontSize: '16px',
+  border: '1px solid rgba(0, 0, 0, 0.1)',
+  fontWeight: '700',
+};
 
 export default Button;

@@ -1,9 +1,12 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import { user } from './user';
-import { music } from './music';
+import { UserSlice } from 'store/feature/user/UserSlice';
 
+import { music } from './music';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+
+const user = UserSlice.reducer;
+
 const persistConfig = {
   key: 'root',
   storage,

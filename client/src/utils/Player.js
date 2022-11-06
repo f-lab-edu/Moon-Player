@@ -18,7 +18,7 @@ export const shuffleMusic = (playerItems) => {
   return newPlayerItems;
 };
 
-export const timeFormat = (seconds) => {
+export const formatTime = (seconds) => {
   if (isNaN(seconds)) {
     return '00:00';
   }

@@ -15,7 +15,7 @@ export const Slider = styled.input.attrs(({ volume }) => ({
   &::-webkit-slider-runnable-track {
     width: 100%;
     height: 13px;
-    background: gray;
+    background: ${({ trackColor }) => trackColor};
     cursor: pointer;
   }
   &::-webkit-slider-thumb {
@@ -23,25 +23,32 @@ export const Slider = styled.input.attrs(({ volume }) => ({
     height: 21px;
     width: 30px;
     border-radius: 7px;
-    background: white;
+    background: ${({ thumbColor }) => thumbColor};
     cursor: pointer;
     margin-top: -3.5px;
   }
 
   /* 파이어폭스 */
+  &::-moz-range-track {
+    width: 100%;
+    height: 13px;
+    background: ${({ trackColor }) => trackColor};
+    cursor: pointer;
+  }
+
   &::-moz-range-thumb {
     height: 21px;
     width: 30px;
     border-radius: 7px;
-    background: white;
+    background: ${({ thumbColor }) => thumbColor};
     cursor: pointer;
     margin-top: -3.5px;
   }
-  &::-moz-range-track {
-    width: 100%;
-    height: 13px;
-    background: gray;
-    cursor: pointer;
-  }
 `;
+
+Slider.defaultProps = {
+  thumbColor: 'white',
+  trackColor: 'gray',
+};
+
 export default Slider;

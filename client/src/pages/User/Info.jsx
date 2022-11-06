@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Text from 'components/Common/Text';
-import FlexCenterColumn from 'components/Common/FlexCenterColumn';
+import Flex from 'components/Common/Flex';
 const Root = styled.div`
   margin: 0 auto;
 `;
@@ -14,14 +14,10 @@ const ContentText = styled(Text)`
   color: ${({ theme }) => theme.colors.black};
   margin-top: 10px;
 `;
-
-const Flex = styled(FlexCenterColumn)`
-  margin: 30px;
-`;
 export const Info = () => {
   return (
     <Root>
-      <Flex>
+      <Flex direction="column" justifyContent="center" alignItems="center">
         <Title>Moon Player</Title>
         <ContentText> 사용자에게 무료로 유튜브 음악을 들려주는 서비스입니다.</ContentText>
         <ContentText>

@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import { Item } from './Item';
-import { Title } from 'components/Common/Title';
 import { ScrollBox } from 'components/Common/ScrollBox';
+import { useMusicSelector } from 'hooks/useMusicSelector';
+import { Text } from 'components/Common/Text';
+
 const Root = styled(ScrollBox)`
-  width: 70%;
+  width: 916px;
   height: 100vh;
   border-radius: ${({ theme }) => theme.borderRadius.xl};
   border: 1px solid white;
@@ -21,16 +23,15 @@ const Box = styled.div`
   padding: 10px 20px;
 `;
 
-export const Container = () => {
+export const PlayList = () => {
   const dispatch = useDispatch();
-  const playListItems = useSelector((state) => state.music.playList.musicList);
-
-  const items =
-    playListItems.musics &&
-    playListItems.musics.map(({ video_title, id, video_img }) => (
+  const [, playListSelector] = useMusicSelector();
+  const playListMusics =
+    playListSelector.musicList.musics &&
+    playListSelector.musicList.musics.map(({ video_title, id, video_img }) => (
       <Item key={video_title} id={id} video_title={video_title} video_img={video_img}></Item>
     ));
-  // 초기 렌더링시에 musicList(1) 아이템을 요청
+
   useEffect(() => {
     dispatch(fetchmusicList(1));
   }, []);
@@ -38,10 +39,10 @@ export const Container = () => {
   return (
     <Root>
       <Box>
-        <Title color="white">{playListItems.title}</Title>
-        {items}
+        <Text>{playListSelector.musicList.title}</Text>
+        {playListMusics}
       </Box>
     </Root>
   );
 };
-export default Container;
+export default PlayList;

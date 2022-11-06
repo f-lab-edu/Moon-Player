@@ -2,9 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 
 import ReactPlayer from 'react-player/lazy';
 
-import { nextPlayMusic, prevPlayMusic, shuffleMusic } from 'utils/Player';
-import { useDispatch, useSelector } from 'react-redux';
-import { handleNextMusic, handlePrevMusic, handleShuffleMusics } from 'store/feature/music/PlayerSlice';
+import { useMusicSelector } from './useMusicSelector';
+import { usePlayerSelectMusic } from './usePlayerSelectMusic';
 
 const DEFAULT_STATE = {
   playing: false, // 재생중인지
@@ -23,28 +22,29 @@ const DEFAULT_STATE = {
 
 //  전역스토어에있는 값만가지고 음악을 재생시켜주는 훅
 export const usePlayerControl = () => {
-  const dispatch = useDispatch();
   const playerRef = useRef();
-
-  const music = useSelector((state) => state.music.player.playmusic);
-  const playerItems = useSelector((state) => state.music.player.playerItems);
-
+  const [, , playerSelector] = useMusicSelector();
+  const { onPrevMusic, onNextMusic, onShuffleMusic } = usePlayerSelectMusic(); //음악을 고르는 훅
   const [playerState, setState] = useState(DEFAULT_STATE);
 
   const currentTime = playerRef && playerRef.current ? Math.floor(playerRef.current.getCurrentTime()) : '00:00';
   const endTime = playerRef && playerRef.current ? Math.floor(playerRef.current.getDuration()) : '00:00';
   useEffect(() => {
-    setState({ ...playerState, playing: true, music: music, currentTime, endTime });
-  }, [music]);
+    if (!playerSelector.playmusic.id) return;
+    setState({ ...playerState, playing: true, music: playerSelector.playmusic, currentTime, endTime });
+  }, [playerSelector]);
 
   const handleRepeat = () => setState({ ...playerState, isrepeat: !playerState.isrepeat });
   const handlePlay = () => setState({ ...playerState, playing: !playerState.playing });
   const handleVolume = (e) => setState({ ...playerState, volume: +e.target.value });
-  const handleEndedMusic = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, music)));
   const handleOnProgress = () => setState({ ...playerState, currentTime, endTime });
-  const handleShuffle = () => dispatch(handleShuffleMusics(shuffleMusic(playerItems)));
-  const handlePrev = () => dispatch(handlePrevMusic(prevPlayMusic(playerItems, music)));
-  const handleNext = () => dispatch(handleNextMusic(nextPlayMusic(playerItems, music)));
+
+  // useMusicSelector에 의존적이긴함.. 구조바꾸지않는이상
+  const handleEndedMusic = () => onNextMusic();
+  const handleShuffleMusic = () => onShuffleMusic();
+  const handlePrevMusic = () => onPrevMusic();
+  const handleNextMusic = () => onNextMusic();
+
   const musicPlayer = (
     <ReactPlayer
       ref={playerRef}
@@ -60,5 +60,14 @@ export const usePlayerControl = () => {
       onProgress={handleOnProgress}
     ></ReactPlayer>
   );
-  return { musicPlayer, playerState, handleRepeat, handlePlay, handleVolume, handleShuffle, handlePrev, handleNext };
+  return {
+    musicPlayer,
+    playerState,
+    handleRepeat,
+    handlePlay,
+    handleVolume,
+    handleShuffleMusic,
+    handlePrevMusic,
+    handleNextMusic,
+  };
 };

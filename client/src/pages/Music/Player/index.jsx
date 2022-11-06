@@ -1,13 +1,14 @@
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
 import PlayerFooter from './Footer';
 import PlayerItem from './Item';
 import Text from 'components/Common/Text';
 import ScrollBox from 'components/Common/ScrollBox';
+import { useMusicSelector } from 'hooks/useMusicSelector';
 const Root = styled.div`
-  width: 30%;
-  border: 1px solid white;
+  width: 400px;
   padding: 15px;
+  border: 1px solid white;
+
   border-radius: ${({ theme }) => theme.borderRadius.xl};
 
   @media screen and (max-width: 1000px) {
@@ -35,12 +36,11 @@ const PlayerTitle = styled.h3`
 `;
 
 // 플레이어 메인
-export const Container = () => {
-  const playerItems = useSelector((state) => state.music.player.playerItems);
-
-  const items =
-    playerItems.length > 0 ? (
-      playerItems.map(({ video_title, video_img }, index) => (
+export const Player = () => {
+  const [, , playerSelector] = useMusicSelector();
+  const playerMusic =
+    playerSelector.playerItems.length > 0 ? (
+      playerSelector.playerItems.map(({ video_title, video_img }, index) => (
         <PlayerItem video_title={video_title} video_img={video_img} key={index} order={++index} />
       ))
     ) : (
@@ -52,11 +52,11 @@ export const Container = () => {
         <PlayerTitle>재생 목록</PlayerTitle>
       </PlayerHeader>
       <ItemBox width={'10px'} height={'5%'}>
-        {items}
+        {playerMusic}
       </ItemBox>
 
       <PlayerFooter />
     </Root>
   );
 };
-export default Container;
+export default Player;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Title } from 'components/Common/Title';
+
 import {
   faShuffle,
   faBackwardStep,
@@ -15,10 +15,10 @@ import IconButton from 'components/Common/IconButton';
 import { usePlayerControl } from 'hooks/usePlayerControl';
 import Slider from 'components/Common/Slider';
 import { Progressbar } from './Progressbar';
-import { FlexCenterColumn } from 'components/Common/FlexCenterColumn';
-import { FlexBetweenRow } from 'components/Common/FlexBetweenRow';
-
-const IconBox = styled(FlexBetweenRow)`
+import { formatTime } from 'utils/Player';
+import Flex from 'components/Common/Flex';
+import Text from 'components/Common/Text';
+const IconBox = styled(Flex)`
   padding: 20px;
   color: gray;
   cursor: pointer;
@@ -39,25 +39,33 @@ const VolumeBox = styled.div`
 `;
 
 export const Footer = () => {
-  const { musicPlayer, playerState, handleRepeat, handlePlay, handleVolume, handleShuffle, handlePrev, handleNext } =
-    usePlayerControl();
+  const {
+    musicPlayer,
+    playerState,
+    handleRepeat,
+    handlePlay,
+    handleVolume,
+    handleShuffleMusic,
+    handlePrevMusic,
+    handleNextMusic,
+  } = usePlayerControl();
   return (
     <div>
-      <FlexCenterColumn style={{ padding: '10px 0px' }}>
+      <Flex direction="column" justifyContent="center" alignItems="center">
         {playerState && playerState.music ? (
-          <Image src={playerState.music.video_img} width="400px" />
+          <Image src={playerState.music.video_img} width="400px" height="auto" />
         ) : (
-          <Image src={'https://via.placeholder.com/400?text=No+Selected+Music'} width="400px" />
+          <Image src={'https://via.placeholder.com/400?text=No+Selected+Music'} width="400px" height="auto" />
         )}
-      </FlexCenterColumn>
+      </Flex>
       {playerState.music && (
-        <Title size="20px" color="white" style={{ textAlign: 'center' }}>
+        <Text fontSize="20px" align="center">
           {playerState.music.video_title}
-        </Title>
+        </Text>
       )}
       <div>
         {playerState.music && musicPlayer}
-        <IconBox>
+        <IconBox direction="row" justifyContent="space-between" alignItems="center">
           {playerState.isrepeat ? (
             <IconButton onClick={handleRepeat}>
               <FontAwesomeIcon icon={faRepeat} size={'2x'} color={'white'} />
@@ -67,9 +75,8 @@ export const Footer = () => {
               <FontAwesomeIcon icon={faRepeat} size={'2x'} color={'gray'} />
             </IconButton>
           )}
-
           <div>
-            <IconButton onClick={handlePrev}>
+            <IconButton onClick={handlePrevMusic}>
               <FontAwesomeIcon icon={faBackwardStep} size={'3x'} />
             </IconButton>
             {playerState.playing ? (
@@ -82,22 +89,27 @@ export const Footer = () => {
                 <FontAwesomeIcon icon={faPlayCircle} size={'3x'} color={'gray'} />
               </IconButton>
             )}
-            <IconButton onClick={handleNext}>
+            <IconButton onClick={handleNextMusic}>
               <FontAwesomeIcon icon={faForwardStep} size={'3x'} />
             </IconButton>
           </div>
-          <IconButton onClick={handleShuffle}>
+          <IconButton onClick={handleShuffleMusic}>
             <FontAwesomeIcon icon={faShuffle} size={'2x'} color={'white'} />
           </IconButton>
         </IconBox>
       </div>
-
       <div>
         <VolumeBox>
           <FontAwesomeIcon icon={faVolumeHigh} size={'2x'} color={'white'} />
           <Slider onChange={handleVolume} volume={playerState.volume} />
         </VolumeBox>
-        <Progressbar time={{ currentTime: playerState.currentTime, endTime: playerState.endTime }} />
+        <Progressbar
+          time={{
+            currentTime: formatTime(playerState.currentTime),
+            endTime: formatTime(playerState.endTime),
+            elapsedTime: Math.floor((playerState.currentTime / playerState.endTime) * 100),
+          }}
+        />
       </div>
     </div>
   );

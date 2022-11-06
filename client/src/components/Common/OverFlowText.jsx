@@ -1,19 +1,25 @@
 import styled from 'styled-components';
 
 export const OverFlowText = styled.div(
-  ({ width, fontSize, color }) => `
+  ({ width, fontSize, color, weight, align, cursor }) => `
   width: ${width};
   font-size:${fontSize};
   color:${color};
-  cursor: pointer;
+  font-weight: ${weight};
+  text-align:${align};
+  cursor: ${cursor};
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-weight: 900;
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-  }
 `
 );
+OverFlowText.propTypes = {
+  width: '50%',
+  fontSize: '15px',
+  color: 'white',
+  weight: '700',
+  align: 'start',
+  cursor: 'default',
+};
 
 export default OverFlowText;

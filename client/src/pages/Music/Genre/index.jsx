@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import GenreItem from './Item';
-import { FlexCenterRow } from 'components/Common/FlexCenterRow';
-
+import { useMusicSelector } from 'hooks/useMusicSelector';
+import Root from 'components/Common/Flex';
+import Text from 'components/Common/Text';
 const Grid = styled.div(
   ({ theme }) => `
   display: grid;
@@ -31,28 +32,28 @@ const Grid = styled.div(
 `
 );
 
-export const Container = () => {
+export const Genre = () => {
   const dispatch = useDispatch();
+  const [genreSelector] = useMusicSelector();
   useEffect(() => {
     dispatch(fetchmusicGenre());
   }, []);
-  const genres = useSelector((state) => state.music.genre.musicList);
   const genreItems =
-    genres.length > 0 ? (
-      genres.map(({ genre_img, genre_id }) => (
+    genreSelector.musicList.length > 0 ? (
+      genreSelector.musicList.map(({ genre_img, genre_id }) => (
         <GenreItem genre_img={genre_img} key={genre_id} genre_id={genre_id}></GenreItem>
       ))
     ) : (
-      <h3>장르가 비어있습니다.</h3>
+      <Text>장르가 비어있습니다.</Text>
     );
   return (
-    <FlexCenterRow>
+    <Root direction="row" justifyContent="center" alignItems="center">
       <Grid>{genreItems}</Grid>
       <div>
         <FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'white'} />
       </div>
-    </FlexCenterRow>
+    </Root>
   );
 };
 
-export default Container;
+export default Genre;

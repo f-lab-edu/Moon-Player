@@ -1,17 +1,21 @@
 import styled from 'styled-components';
 
 export const IconButton = styled.button(
-  ({ disabled, theme }) => `
+  ({ active, color }) => `
 background: none;
 border:0;
 cursor:pointer;
-color: ${theme.colors.white};
-pointer-events:${disabled ? 'none' : 'auto'};
-opacity:${disabled ? 0.5 : 1};
+color: ${color};
+pointer-events:${active ? 'none' : 'auto'};
+opacity:${active ? 0.5 : 1};
 &:hover {
   transform: scale(1.3);
 }
 `
 );
 
+IconButton.defaultProps = {
+  active: false,
+  color: 'white',
+};
 export default IconButton;

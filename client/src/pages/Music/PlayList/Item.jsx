@@ -5,10 +5,10 @@ import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { handleAddPlayer } from 'store/feature/music/PlayerSlice';
 import IconButton from 'components/Common/IconButton';
 import OverFlowText from 'components/Common/OverFlowText';
-import { useDispatch, useSelector } from 'react-redux';
-import { isInObject, findObjectInList } from 'utils/app';
-import { FlexBetweenRow } from 'components/Common/FlexBetweenRow';
-const Root = styled(FlexBetweenRow)`
+import { useDispatch } from 'react-redux';
+import Flex from 'components/Common/Flex';
+import { useMusicSelector } from 'hooks/useMusicSelector';
+const Root = styled(Flex)`
   border: ${({ theme }) => theme.border.white};
   color: ${({ theme }) => theme.colors.white};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
@@ -25,24 +25,21 @@ const Root = styled(FlexBetweenRow)`
 `;
 export const Item = ({ id, video_title, video_img }) => {
   const dispatch = useDispatch();
-  const playListItems = useSelector((state) => state.music.playList.musicList.musics);
-  const playerItems = useSelector((state) => state.music.player.playerItems);
-  const isInPlayer = isInObject(playerItems, 'video_title', video_title);
+  const [, playListSelector, playerSelector] = useMusicSelector();
+  const isInPlayer = playerSelector.playerItems.find((item) => item.video_title === video_title) ? true : false;
 
   const handleAddMusic = () => {
-    const selectedMusic = !isInPlayer && findObjectInList(playListItems, 'id', id); // 플레이어에 없어야 저장
+    const selectedMusic = !isInPlayer && playListSelector.musicList.musics.find((item) => item.id === id);
     dispatch(handleAddPlayer(selectedMusic));
   };
 
   return (
-    <Root>
+    <Root direction="row" justifyContent="space-between" alignItems="center">
       <div>{id}</div>
       <Image src={video_img} width="100px" height="50px" />
-      <OverFlowText width="50%" fontSize="15px" style={{ cursor: 'default' }}>
-        {video_title}
-      </OverFlowText>
+      <OverFlowText width="50%">{video_title}</OverFlowText>
 
-      <IconButton disabled={isInPlayer}>
+      <IconButton active={isInPlayer}>
         <FontAwesomeIcon onClick={handleAddMusic} icon={faCirclePlus} size={'2x'} />
       </IconButton>
     </Root>
