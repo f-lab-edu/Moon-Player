@@ -24,10 +24,10 @@ const Box = styled.div`
 
 export const PlayList = () => {
   const dispatch = useDispatch();
-  const [, playList] = useMusicSelector();
-  const items =
-    playList.musicList.musics &&
-    playList.musicList.musics.map(({ video_title, id, video_img }) => (
+  const [, playListSelector] = useMusicSelector();
+  const playListMusics =
+    playListSelector.musicList.musics &&
+    playListSelector.musicList.musics.map(({ video_title, id, video_img }) => (
       <Item key={video_title} id={id} video_title={video_title} video_img={video_img}></Item>
     ));
 
@@ -38,8 +38,8 @@ export const PlayList = () => {
   return (
     <Root>
       <Box>
-        <Title color="white">{playList.musicList.title}</Title>
-        {items}
+        <Title color="white">{playListSelector.musicList.title}</Title>
+        {playListMusics}
       </Box>
     </Root>
   );

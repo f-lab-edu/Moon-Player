@@ -37,10 +37,10 @@ const PlayerTitle = styled.h3`
 
 // 플레이어 메인
 export const Player = () => {
-  const [, , playerList] = useMusicSelector();
-  const items =
-    playerList.playerItems.length > 0 ? (
-      playerList.playerItems.map(({ video_title, video_img }, index) => (
+  const [, , playerSelector] = useMusicSelector();
+  const playerMusic =
+    playerSelector.playerItems.length > 0 ? (
+      playerSelector.playerItems.map(({ video_title, video_img }, index) => (
         <PlayerItem video_title={video_title} video_img={video_img} key={index} order={++index} />
       ))
     ) : (
@@ -52,7 +52,7 @@ export const Player = () => {
         <PlayerTitle>재생 목록</PlayerTitle>
       </PlayerHeader>
       <ItemBox width={'10px'} height={'5%'}>
-        {items}
+        {playerMusic}
       </ItemBox>
 
       <PlayerFooter />

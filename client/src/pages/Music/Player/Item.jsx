@@ -27,9 +27,9 @@ const Root = styled(FlexBetweenRow)`
 
 export const Item = ({ video_title, video_img, order }) => {
   const dispatch = useDispatch();
-  const [, , playerState] = useMusicSelector();
-  const isSelectedMusic = playerState.playmusic.video_title === video_title;
-  const playerItemslength = playerState.playerItems.length;
+  const [, , playerSelector] = useMusicSelector();
+  const isSelectedMusic = playerSelector.playmusic.video_title === video_title;
+  const playerItemslength = playerSelector.playerItems.length;
   const prevPlayerItemslength = usePrevious(playerItemslength);
   const { element, handleScrollElement } = useMoveDownScroll();
 
@@ -46,7 +46,7 @@ export const Item = ({ video_title, video_img, order }) => {
 
   const handleMusic = () => {
     // 재생할 음악을 눌렀을떄
-    const music = playerState.playerItems.find((item) => item.video_title === video_title);
+    const music = playerSelector.playerItems.find((item) => item.video_title === video_title);
     dispatch(handleAddMusic(music));
   };
 
