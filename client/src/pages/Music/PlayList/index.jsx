@@ -9,7 +9,7 @@ import { useMusicSelector } from 'hooks/useMusicSelector';
 import { Text } from 'components/Common/Text';
 
 const Root = styled(ScrollBox)`
-  width: 70%;
+  width: 916px;
   height: 100vh;
   border-radius: ${({ theme }) => theme.borderRadius.xl};
   border: 1px solid white;

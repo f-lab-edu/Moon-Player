@@ -11,14 +11,17 @@ import Text from 'components/Common/Text';
 const Root = styled(Flex)`
   width: 100vw;
 `;
-const IconWrapper = styled(Flex)`
-  font-size: ${({ theme }) => theme.fontSizes.base};
-  gap: 5px;
-  > a {
-    color: white;
-    text-decoration: none;
-  }
-  margin: ${({ theme }) => theme.margins.base};
+
+const StyledLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  margin: 5px;
+`;
+
+const LinkText = styled(Text)`
+  text-align: center;
+  margin: 10px;
 `;
 
 export const Header = () => {
@@ -39,20 +42,14 @@ export const Header = () => {
         </Text>
       </Flex>
       <Flex direction="row" justifyContent="center" alignItems="center">
-        <IconWrapper direction="column" justifyContent="center" alignItems="center">
-          <Link to="#" onClick={handleLogout}>
-            <FontAwesomeIcon icon={faRightFromBracket} color={theme.colors.gray} />
-          </Link>
-          <Link to="#" onClick={handleLogout}>
-            로그아웃
-          </Link>
-        </IconWrapper>
-        <IconWrapper direction="column" justifyContent="center" alignItems="center">
-          <Link to="/user">
-            <FontAwesomeIcon icon={faUser} color={theme.colors.gray} />
-          </Link>
-          <Link to="/user"> 내정보</Link>
-        </IconWrapper>
+        <StyledLink to="#" onClick={handleLogout}>
+          <FontAwesomeIcon icon={faRightFromBracket} color={theme.colors.gray} />
+          <LinkText>로그아웃</LinkText>
+        </StyledLink>
+        <StyledLink to="/user">
+          <FontAwesomeIcon icon={faUser} color={theme.colors.gray} />
+          <LinkText>내정보</LinkText>
+        </StyledLink>
       </Flex>
     </Root>
   );

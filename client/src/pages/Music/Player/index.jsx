@@ -5,9 +5,10 @@ import Text from 'components/Common/Text';
 import ScrollBox from 'components/Common/ScrollBox';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 const Root = styled.div`
-  width: 30%;
-  border: 1px solid white;
+  width: 400px;
   padding: 15px;
+  border: 1px solid white;
+
   border-radius: ${({ theme }) => theme.borderRadius.xl};
 
   @media screen and (max-width: 1000px) {
