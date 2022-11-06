@@ -8,6 +8,8 @@ import GenreItem from './Item';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import Root from 'components/Common/Flex';
 import Text from 'components/Common/Text';
+import Image from 'components/Common/Image';
+
 const Grid = styled.div(
   ({ theme }) => `
   display: grid;

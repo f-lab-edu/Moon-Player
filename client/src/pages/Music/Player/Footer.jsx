@@ -14,10 +14,10 @@ import Image from 'components/Common/Image';
 import IconButton from 'components/Common/IconButton';
 import { usePlayerControl } from 'hooks/usePlayerControl';
 import Slider from 'components/Common/Slider';
-import { Progressbar } from './Progressbar';
 import { formatTime } from 'utils/Player';
 import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
+import { Line } from 'rc-progress';
 const IconBox = styled(Flex)`
   padding: 20px;
   color: gray;
@@ -38,6 +38,14 @@ const VolumeBox = styled.div`
   }
 `;
 
+const ProgressBarBox = styled.div(
+  ({ theme }) => `
+  color: ${theme.colors.white};
+  font-weight: ${theme.fontWeights.bold};
+  text-align:center;
+`
+);
+
 export const Footer = () => {
   const {
     musicPlayer,
@@ -49,6 +57,10 @@ export const Footer = () => {
     handlePrevMusic,
     handleNextMusic,
   } = usePlayerControl();
+  const currentTime = formatTime(playerState.currentTime);
+  const endTime = formatTime(playerState.endTime);
+  const elapsedTime = Math.floor((playerState.currentTime / playerState.endTime) * 100);
+
   return (
     <div>
       <Flex direction="column" justifyContent="center" alignItems="center">
@@ -103,13 +115,12 @@ export const Footer = () => {
           <FontAwesomeIcon icon={faVolumeHigh} size={'2x'} color={'white'} />
           <Slider onChange={handleVolume} volume={playerState.volume} />
         </VolumeBox>
-        <Progressbar
-          time={{
-            currentTime: formatTime(playerState.currentTime),
-            endTime: formatTime(playerState.endTime),
-            elapsedTime: Math.floor((playerState.currentTime / playerState.endTime) * 100),
-          }}
-        />
+        <ProgressBarBox>
+          <Line strokeWidth={3} percent={elapsedTime} strokeColor={'white'} />
+          <Text fontSize="20px" align="center">
+            {currentTime} / {endTime}
+          </Text>
+        </ProgressBarBox>
       </div>
     </div>
   );
