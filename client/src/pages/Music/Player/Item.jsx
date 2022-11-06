@@ -11,6 +11,8 @@ import IconButton from 'components/Common/IconButton';
 import Image from 'components/Common/Image';
 import Flex from 'components/Common/Flex';
 import { useMusicSelector } from 'hooks/useMusicSelector';
+import Text from 'components/Common/Text';
+
 const Root = styled(Flex)`
   border-bottom: ${({ theme }) => theme.border.white};
   background: ${({ isSelected, theme }) => isSelected && theme.colors.gray};
@@ -21,7 +23,6 @@ const Root = styled(Flex)`
     width: 100%;
   }
 `;
-
 export const Item = ({ video_title, video_img, order }) => {
   const dispatch = useDispatch();
   const [, , playerSelector] = useMusicSelector();
@@ -49,9 +50,19 @@ export const Item = ({ video_title, video_img, order }) => {
 
   return (
     <Root ref={element} isSelected={isSelectedMusic} direction="row" justifyContent="space-between" alignItems="center">
-      <div style={{ color: 'white', width: '5px' }}>{order}</div>
+      <Text shadow="0" fontSize="15px">
+        {order}
+      </Text>
       <Image onClick={handleMusic} src={video_img} width="100px" height="50px" />
-      <OverFlowText width="60%" fontSize="15px" color="white" onClick={handleMusic} style={{ textAlign: 'center' }}>
+      <OverFlowText
+        width="60%"
+        fontSize="15px"
+        color="white"
+        align="center"
+        weight="700"
+        cursor="pointer"
+        onClick={handleMusic}
+      >
         {video_title}
       </OverFlowText>
 

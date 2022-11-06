@@ -15,7 +15,7 @@ opacity:${active ? 0.5 : 1};
 );
 
 IconButton.defaultProps = {
-  active: true,
+  active: false,
   color: 'white',
 };
 export default IconButton;

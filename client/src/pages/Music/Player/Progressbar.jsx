@@ -19,7 +19,7 @@ export const Progressbar = ({ time }) => {
   return (
     <Root>
       <Line strokeWidth={3} percent={timeState.elapsedTime} strokeColor={'white'} />
-      <Text fontSize="20px">
+      <Text fontSize="20px" align="center">
         {timeState.currentTime} / {timeState.endTime}
       </Text>
     </Root>

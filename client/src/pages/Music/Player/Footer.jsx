@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Title } from 'components/Common/Title';
 
 import {
   faShuffle,
@@ -18,6 +17,7 @@ import Slider from 'components/Common/Slider';
 import { Progressbar } from './Progressbar';
 import { formatTime } from 'utils/Player';
 import Flex from 'components/Common/Flex';
+import Text from 'components/Common/Text';
 const IconBox = styled(Flex)`
   padding: 20px;
   color: gray;
@@ -43,17 +43,17 @@ export const Footer = () => {
     usePlayerControl();
   return (
     <div>
-      <Flex direction="column" justifyContent="center" alignItems="center" style={{ padding: '10px 0px' }}>
+      <Flex direction="column" justifyContent="center" alignItems="center">
         {playerState && playerState.music ? (
-          <Image src={playerState.music.video_img} />
+          <Image src={playerState.music.video_img} width="400px" height="auto" />
         ) : (
           <Image src={'https://via.placeholder.com/400?text=No+Selected+Music'} width="400px" height="auto" />
         )}
       </Flex>
       {playerState.music && (
-        <Title size="20px" style={{ textAlign: 'center' }}>
+        <Text fontSize="20px" align="center">
           {playerState.music.video_title}
-        </Title>
+        </Text>
       )}
       <div>
         {playerState.music && musicPlayer}

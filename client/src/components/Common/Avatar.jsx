@@ -6,6 +6,7 @@ export const Avatar = styled.img.attrs(({ src }) => ({
   /* default 설정 */
   height: ${({ height }) => height};
   width: ${({ width }) => width};
+  margin: ${({ margin }) => margin};
 
   /* 공통 속성 */
   border-radius: 50%;
@@ -13,7 +14,6 @@ export const Avatar = styled.img.attrs(({ src }) => ({
   justify-content: center;
   align-items: center;
   object-fit: fill;
-  margin: 30px 0 40px 0;
   transform: scale(1.2);
 `;
 

@@ -38,8 +38,8 @@ export const Item = ({ genre_img, genre_id }) => {
       <CardImage
         onClick={handleCard}
         src={genre_img}
-        width={'200px'}
-        height={'130px'}
+        width="200px"
+        height="130px"
         id={genre_id}
         key={genre_id}
         disabled={isInGenre}

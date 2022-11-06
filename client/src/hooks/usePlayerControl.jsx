@@ -32,6 +32,7 @@ export const usePlayerControl = () => {
   const currentTime = playerRef && playerRef.current ? Math.floor(playerRef.current.getCurrentTime()) : '00:00';
   const endTime = playerRef && playerRef.current ? Math.floor(playerRef.current.getDuration()) : '00:00';
   useEffect(() => {
+    if (!playerSelector.playmusic.id) return;
     setState({ ...playerState, playing: true, music: playerSelector.playmusic, currentTime, endTime });
   }, [playerSelector]);
 

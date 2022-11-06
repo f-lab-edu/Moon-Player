@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { useAuthenticator } from 'hooks/useAuthenticator';
 import { Avatar } from 'components/Common/Avatar';
-import { Title } from 'components/Common/Title';
 import { removeStoreItems } from 'utils/persist';
 import Flex from 'components/Common/Flex';
+import Text from 'components/Common/Text';
 const Root = styled(Flex)`
   width: 100vw;
 `;
@@ -33,17 +33,12 @@ export const Header = () => {
   return (
     <Root direction="row" justifyContent="space-between" alignItems="center">
       <Flex direction="row" justifyContent="space-between" alignItems="center">
-        <Avatar src={theme.images.Logo} width="50px" height="50px" style={{ margin: theme.margins.lg }} />
-        <Title size={theme.fontSizes.xxxl} color={theme.colors.white}>
+        <Avatar src={theme.images.Logo} width="50px" height="50px" margin={theme.margins.lg} />
+        <Text fontSize={theme.fontSizes.xxxl} color={theme.colors.white}>
           Moon Player
-        </Title>
+        </Text>
       </Flex>
-      <Flex
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-        style={{ fontWeight: theme.fontWeights.bold, textShadow: '1px 1px 1px gray' }}
-      >
+      <Flex direction="row" justifyContent="center" alignItems="center">
         <IconWrapper direction="column" justifyContent="center" alignItems="center">
           <Link to="#" onClick={handleLogout}>
             <FontAwesomeIcon icon={faRightFromBracket} color={theme.colors.gray} />

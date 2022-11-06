@@ -7,6 +7,7 @@ import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import GenreItem from './Item';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import Root from 'components/Common/Flex';
+import Text from 'components/Common/Text';
 const Grid = styled.div(
   ({ theme }) => `
   display: grid;
@@ -43,7 +44,7 @@ export const Genre = () => {
         <GenreItem genre_img={genre_img} key={genre_id} genre_id={genre_id}></GenreItem>
       ))
     ) : (
-      <h3>장르가 비어있습니다.</h3>
+      <Text>장르가 비어있습니다.</Text>
     );
   return (
     <Root direction="row" justifyContent="center" alignItems="center">

@@ -4,9 +4,10 @@ import { useDispatch } from 'react-redux';
 
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import { Item } from './Item';
-import { Title } from 'components/Common/Title';
 import { ScrollBox } from 'components/Common/ScrollBox';
 import { useMusicSelector } from 'hooks/useMusicSelector';
+import { Text } from 'components/Common/Text';
+
 const Root = styled(ScrollBox)`
   width: 70%;
   height: 100vh;
@@ -38,7 +39,7 @@ export const PlayList = () => {
   return (
     <Root>
       <Box>
-        <Title>{playListSelector.musicList.title}</Title>
+        <Text>{playListSelector.musicList.title}</Text>
         {playListMusics}
       </Box>
     </Root>

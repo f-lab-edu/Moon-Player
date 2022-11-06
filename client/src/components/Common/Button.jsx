@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// theme.borderRadius.base
+
 export const Button = styled.button(
   ({ color, fontColor, fontSize, width, height, shadow, fontWeight, border }) => `
   width: ${width};

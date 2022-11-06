@@ -37,9 +37,7 @@ export const Item = ({ id, video_title, video_img }) => {
     <Root direction="row" justifyContent="space-between" alignItems="center">
       <div>{id}</div>
       <Image src={video_img} width="100px" height="50px" />
-      <OverFlowText width="50%" style={{ cursor: 'default' }}>
-        {video_title}
-      </OverFlowText>
+      <OverFlowText width="50%">{video_title}</OverFlowText>
 
       <IconButton active={isInPlayer}>
         <FontAwesomeIcon onClick={handleAddMusic} icon={faCirclePlus} size={'2x'} />
