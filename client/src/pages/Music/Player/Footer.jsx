@@ -39,8 +39,16 @@ const VolumeBox = styled.div`
 `;
 
 export const Footer = () => {
-  const { musicPlayer, playerState, handleRepeat, handlePlay, handleVolume, handleShuffle, handlePrev, handleNext } =
-    usePlayerControl();
+  const {
+    musicPlayer,
+    playerState,
+    handleRepeat,
+    handlePlay,
+    handleVolume,
+    handleShuffleMusic,
+    handlePrevMusic,
+    handleNextMusic,
+  } = usePlayerControl();
   return (
     <div>
       <Flex direction="column" justifyContent="center" alignItems="center">
@@ -68,7 +76,7 @@ export const Footer = () => {
             </IconButton>
           )}
           <div>
-            <IconButton onClick={handlePrev}>
+            <IconButton onClick={handlePrevMusic}>
               <FontAwesomeIcon icon={faBackwardStep} size={'3x'} />
             </IconButton>
             {playerState.playing ? (
@@ -81,11 +89,11 @@ export const Footer = () => {
                 <FontAwesomeIcon icon={faPlayCircle} size={'3x'} color={'gray'} />
               </IconButton>
             )}
-            <IconButton onClick={handleNext}>
+            <IconButton onClick={handleNextMusic}>
               <FontAwesomeIcon icon={faForwardStep} size={'3x'} />
             </IconButton>
           </div>
-          <IconButton onClick={handleShuffle}>
+          <IconButton onClick={handleShuffleMusic}>
             <FontAwesomeIcon icon={faShuffle} size={'2x'} color={'white'} />
           </IconButton>
         </IconBox>
