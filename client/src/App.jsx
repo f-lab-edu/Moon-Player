@@ -1,17 +1,34 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import MusicPage from 'pages/Music/index';
-import LoginPage from 'pages/Login/index';
-import UserPage from 'pages/User/index';
+
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'style/theme';
+import { Route, Routes } from 'react-router-dom';
+import MusicPage from 'pages/Music/index';
+import UserPage from './pages/User/index';
+import LoginPage from 'pages/Login/index';
+import ProtectedRoute from 'route/ProtectedRoute';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <Routes>
-        <Route path="/" element={<LoginPage />}></Route>;<Route path="/music" element={<MusicPage />}></Route>;
-        <Route path="/user" element={<UserPage />}></Route>;
+        <Route
+          element={
+            <ProtectedRoute>
+              <MusicPage />
+            </ProtectedRoute>
+          }
+          path="/music"
+        ></Route>
+        <Route
+          element={
+            <ProtectedRoute>
+              <UserPage />
+            </ProtectedRoute>
+          }
+          path="/user"
+        ></Route>
+        <Route element={<LoginPage />} path="/"></Route>;
       </Routes>
     </ThemeProvider>
   );

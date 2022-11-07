@@ -6,6 +6,7 @@ scope=https://www.googleapis.com/auth/userinfo.email`;
 
 export const getToken = () => {
   const urlHash = new URL(window.location.href).hash;
+  console.log(urlHash);
   if (!urlHash) return;
   const token = urlHash.split('=')[1].split('&')[0];
   return token;

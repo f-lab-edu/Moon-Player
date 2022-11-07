@@ -1,11 +1,11 @@
 import styled, { ThemeContext } from 'styled-components';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { useAuthenticator } from 'hooks/useAuthenticator';
 import { Avatar } from 'components/Common/Avatar';
-import { removeStoreItems } from 'utils/persist';
+
 import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
 const Root = styled(Flex)`
@@ -33,8 +33,6 @@ export const Header = () => {
   const theme = useContext(ThemeContext);
   const { signOut } = useAuthenticator();
   const handleLogout = () => {
-    removeStoreItems();
-
     signOut();
   };
 

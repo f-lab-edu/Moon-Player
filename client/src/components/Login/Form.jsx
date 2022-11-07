@@ -1,14 +1,15 @@
 import styled, { ThemeContext } from 'styled-components';
 import { useContext, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { useAuthenticator } from 'hooks/useAuthenticator';
-import { fetchUserInfo } from 'store/feature/user/UserSlice';
 import { Icon } from 'components/Common/Icon';
 import Button from 'components/Common/Button';
 import Text from 'components/Common/Text';
 
 import { assignURL } from 'utils/oAuth';
 import Flex from 'components/Common/Flex';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useAuthenticator } from 'hooks/useAuthenticator';
+import { fetchUserInfo } from 'store/feature/user/UserSlice';
 
 const Root = styled(Flex)`
   width: 30vw;
@@ -27,16 +28,19 @@ const LongButton = styled(Button)`
 
 export const Form = () => {
   const theme = useContext(ThemeContext);
-
-  const { signIn, isValid } = useAuthenticator();
+  const navigate = useNavigate();
+  const { signIn, isAuthenticated } = useAuthenticator();
   const dispatch = useDispatch();
 
-  // 리다이렉션시 처리
   useEffect(() => {
     dispatch(fetchUserInfo());
+    if (!isAuthenticated) return;
+    navigate('/music');
     signIn();
-  }, [isValid]);
+  }, [isAuthenticated]);
+
   const handleGoogleLogin = () => assignURL();
+
   return (
     <Root direction="column" justifyContent="center" alignItems="center">
       <LongButton

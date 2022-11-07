@@ -1,24 +1,28 @@
-import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-// 인증 여부에 필요한 로직만 넣어라
-// 커스텀 훅에 매개변수 전달해서 사용하는 방법 적절한가? , useSelector를 써도되나
-
+import { useState, useEffect } from 'react';
+import { removeStoreItems } from 'utils/persist';
 export const useAuthenticator = () => {
-  const navigate = useNavigate();
   const user = useSelector((state) => state.user.info);
-  const isValid = user.verified_email ? true : false;
+  const isVerified = user.verified_email ? true : false;
+  const [isAuthenticated, setAuthenticated] = useState(isVerified);
+
+  useEffect(() => {
+    if (!isVerified) return;
+    setAuthenticated(true);
+  }, [isVerified]);
+
   const signIn = () => {
-    // 로그인
-    if (!isValid) return;
+    setAuthenticated(true);
     alert('로그인에 성공하였습니다 !');
-    navigate('/music');
   };
 
   // 로그아웃
   const signOut = () => {
-    navigate('/');
+    setAuthenticated(false);
     alert('로그아웃 하였습니다.');
+    removeStoreItems();
   };
 
-  return { isValid, signIn, signOut };
+  return { isAuthenticated, signIn, signOut };
 };
+export default useAuthenticator;

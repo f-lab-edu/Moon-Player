@@ -21,6 +21,7 @@ const Header = styled(Flex)`
 
 const LoginPage = () => {
   const theme = useContext(ThemeContext);
+
   return (
     <Layout direction="column" justifyContent="center" alignItems="center">
       <FlexBox direction="column" justifyContent="center" alignItems="center">
