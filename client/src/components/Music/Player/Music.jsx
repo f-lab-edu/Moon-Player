@@ -33,6 +33,7 @@ export const Music = ({ video_title, video_img, order }) => {
 
   useEffect(() => {
     if (prevPlayerItemslength > playerItemslength) return;
+    console.log('스크롤 실행');
     handleScrollElement();
   }, [playerItemslength]);
 
