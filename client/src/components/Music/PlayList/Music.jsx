@@ -23,7 +23,7 @@ const Root = styled(Flex)`
     width: 1px;
   }
 `;
-export const Item = ({ id, video_title, video_img }) => {
+export const Music = ({ id, video_title, video_img }) => {
   const dispatch = useDispatch();
   const [, playListSelector, playerSelector] = useMusicSelector();
   const isInPlayer = playerSelector.playerItems.find((item) => item.video_title === video_title) ? true : false;
@@ -46,4 +46,4 @@ export const Item = ({ id, video_title, video_img }) => {
   );
 };
 
-export default Item;
+export default Music;

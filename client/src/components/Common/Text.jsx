@@ -14,7 +14,6 @@ Text.defaultProps = {
   fontSize: '20px',
   weight: '700',
   align: 'start',
-  shadow: '2px 2px 2px gray',
 };
 
 export default Text;

@@ -23,7 +23,7 @@ const Root = styled(Flex)`
     width: 100%;
   }
 `;
-export const Item = ({ video_title, video_img, order }) => {
+export const Music = ({ video_title, video_img, order }) => {
   const dispatch = useDispatch();
   const [, , playerSelector] = useMusicSelector();
   const isSelectedMusic = playerSelector.playmusic.video_title === video_title;
@@ -43,7 +43,6 @@ export const Item = ({ video_title, video_img, order }) => {
   };
 
   const handleMusic = () => {
-    // 재생할 음악을 눌렀을떄
     const music = playerSelector.playerItems.find((item) => item.video_title === video_title);
     dispatch(handleAddMusic(music));
   };
@@ -73,4 +72,4 @@ export const Item = ({ video_title, video_img, order }) => {
   );
 };
 
-export default Item;
+export default Music;

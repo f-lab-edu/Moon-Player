@@ -1,26 +1,18 @@
 import styled from 'styled-components';
-import Genre from './Genre';
-import Player from './Player';
-import PlayList from './PlayList';
-import HeaderList from './Header';
+
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { removeStoreItems } from 'utils/persist';
 import Flex from 'components/Common/Flex';
-const Layout = styled(Flex)`
+import Header from './Header/index';
+import Genre from './Genre/index';
+import Player from './Player/index';
+import PlayList from './PlayList/index';
+
+const Layout = styled.div`
+  overflow-x: hidden;
   background-image: linear-gradient(90deg, #000000 0%, #434343 100%);
-`;
-const Header = styled(Flex)`
-  padding: 0px 20px;
-  margin-bottom: 10px;
-  @media screen and (max-width: 1000px) {
-    position: relative;
-  }
-`;
-const Nav = styled(Flex)`
-  margin: 20px;
 `;
 
 const Main = styled(Flex)`
@@ -34,7 +26,6 @@ const Main = styled(Flex)`
     gap: 20px;
   }
 `;
-
 const MusicPage = () => {
   const isValid = useSelector((state) => state.user.info).verified_email ? true : false;
   const navigate = useNavigate();
@@ -47,14 +38,10 @@ const MusicPage = () => {
     alert('로그인이 필요합니다.');
   }, [isValid]);
   return (
-    <Layout direction="column">
-      <Header direction="row" justifyContent="space-between" alignItems="center">
-        <HeaderList />
-      </Header>
-      <Nav direction="column" justifyContent="center" alignItems="center">
-        <Genre />
-      </Nav>
-      <Main direction="row">
+    <Layout>
+      <Header direction="row" justifyContent="space-between" alignItems="center"></Header>
+      <Genre />
+      <Main>
         <PlayList />
         <Player />
       </Main>

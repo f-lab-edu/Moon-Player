@@ -26,7 +26,7 @@ const CardImage = styled(Image)`
   }
 `;
 
-export const Item = ({ genre_img, genre_id }) => {
+export const Card = ({ genre_img, genre_id }) => {
   const dispatch = useDispatch();
   const [, playListSelector] = useMusicSelector();
 
@@ -34,17 +34,15 @@ export const Item = ({ genre_img, genre_id }) => {
   const handleCard = ({ target }) => dispatch(fetchmusicList(target.id));
 
   return (
-    <>
-      <CardImage
-        onClick={handleCard}
-        src={genre_img}
-        width="200px"
-        height="130px"
-        id={genre_id}
-        key={genre_id}
-        disabled={isInGenre}
-      />
-    </>
+    <CardImage
+      onClick={handleCard}
+      src={genre_img}
+      width="200px"
+      height="130px"
+      id={genre_id}
+      key={genre_id}
+      disabled={isInGenre}
+    />
   );
 };
-export default Item;
+export default Card;

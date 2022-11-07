@@ -4,11 +4,10 @@ import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
-import GenreItem from './Item';
+import GenreCard from 'components/Music/Genre/Card';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import Root from 'components/Common/Flex';
 import Text from 'components/Common/Text';
-import Image from 'components/Common/Image';
 
 const Grid = styled.div(
   ({ theme }) => `
@@ -43,7 +42,7 @@ export const Genre = () => {
   const genreItems =
     genreSelector.musicList.length > 0 ? (
       genreSelector.musicList.map(({ genre_img, genre_id }) => (
-        <GenreItem genre_img={genre_img} key={genre_id} genre_id={genre_id}></GenreItem>
+        <GenreCard genre_img={genre_img} key={genre_id} genre_id={genre_id}></GenreCard>
       ))
     ) : (
       <Text>장르가 비어있습니다.</Text>
@@ -51,9 +50,7 @@ export const Genre = () => {
   return (
     <Root direction="row" justifyContent="center" alignItems="center">
       <Grid>{genreItems}</Grid>
-      <div>
-        <FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'white'} />
-      </div>
+      <FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'white'} />
     </Root>
   );
 };

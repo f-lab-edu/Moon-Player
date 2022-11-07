@@ -10,6 +10,11 @@ import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
 const Root = styled(Flex)`
   width: 100vw;
+  padding: 0px 20px;
+  margin-bottom: 10px;
+  @media screen and (max-width: 1000px) {
+    position: relative;
+  }
 `;
 
 const StyledLink = styled(Link)`

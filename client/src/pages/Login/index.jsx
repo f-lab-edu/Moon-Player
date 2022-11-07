@@ -1,6 +1,6 @@
 import styled, { ThemeContext } from 'styled-components';
 import { useContext } from 'react';
-import LoginForm from './Form';
+import LoginForm from 'components/Login/Form';
 import Avatar from 'components/Common/Avatar';
 import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';

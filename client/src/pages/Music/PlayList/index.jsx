@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
-import { Item } from './Item';
+import PlayListMusic from 'components/Music/PlayList/Music';
 import { ScrollBox } from 'components/Common/ScrollBox';
 import { useMusicSelector } from 'hooks/useMusicSelector';
-import { Text } from 'components/Common/Text';
+import PlayListTitle from 'components/Common/Text';
 
 const Root = styled(ScrollBox)`
   width: 916px;
@@ -14,13 +13,10 @@ const Root = styled(ScrollBox)`
   border-radius: ${({ theme }) => theme.borderRadius.xl};
   border: 1px solid white;
   margin: 0px 40px;
+  padding: 10px 20px;
   @media screen and (max-width: 1200px) {
     width: 100%;
   }
-`;
-
-const Box = styled.div`
-  padding: 10px 20px;
 `;
 
 export const PlayList = () => {
@@ -29,7 +25,7 @@ export const PlayList = () => {
   const playListMusics =
     playListSelector.musicList.musics &&
     playListSelector.musicList.musics.map(({ video_title, id, video_img }) => (
-      <Item key={video_title} id={id} video_title={video_title} video_img={video_img}></Item>
+      <PlayListMusic key={video_title} id={id} video_title={video_title} video_img={video_img}></PlayListMusic>
     ));
 
   useEffect(() => {
@@ -38,10 +34,8 @@ export const PlayList = () => {
 
   return (
     <Root>
-      <Box>
-        <Text>{playListSelector.musicList.title}</Text>
-        {playListMusics}
-      </Box>
+      <PlayListTitle>{playListSelector.musicList.title}</PlayListTitle>
+      {playListMusics}
     </Root>
   );
 };
