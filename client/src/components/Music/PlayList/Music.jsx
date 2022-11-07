@@ -8,21 +8,7 @@ import OverFlowText from 'components/Common/OverFlowText';
 import { useDispatch } from 'react-redux';
 import Flex from 'components/Common/Flex';
 import { useMusicSelector } from 'hooks/useMusicSelector';
-const Root = styled(Flex)`
-  border: ${({ theme }) => theme.border.white};
-  color: ${({ theme }) => theme.colors.white};
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
-  gap: 30px;
-  @media screen and (max-width: 1200px) {
-    width: 100%;
-  }
-  > :first-child {
-    width: 1px;
-  }
-`;
+
 export const Music = ({ id, video_title, video_img }) => {
   const dispatch = useDispatch();
   const [, playListSelector, playerSelector] = useMusicSelector();
@@ -46,4 +32,19 @@ export const Music = ({ id, video_title, video_img }) => {
   );
 };
 
+const Root = styled(Flex)`
+  border: ${({ theme }) => theme.border.white};
+  color: ${({ theme }) => theme.colors.white};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  gap: 30px;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+  > :first-child {
+    width: 1px;
+  }
+`;
 export default Music;

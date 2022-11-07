@@ -5,6 +5,26 @@ import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Image from 'components/Common/Image';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 
+export const Card = ({ genre_img, genre_id }) => {
+  const dispatch = useDispatch();
+  const [, playListSelector] = useMusicSelector();
+
+  const isInGenre = playListSelector.musicList.id === genre_id ? true : false;
+  const handleCard = ({ target }) => dispatch(fetchmusicList(target.id));
+
+  return (
+    <CardImage
+      onClick={handleCard}
+      src={genre_img}
+      width="200px"
+      height="130px"
+      id={genre_id}
+      key={genre_id}
+      disabled={isInGenre}
+    />
+  );
+};
+
 const CardImage = styled(Image)`
   border-radius: ${({ theme }) => theme.borderRadius.xl};
 
@@ -25,24 +45,4 @@ const CardImage = styled(Image)`
     height: 200px;
   }
 `;
-
-export const Card = ({ genre_img, genre_id }) => {
-  const dispatch = useDispatch();
-  const [, playListSelector] = useMusicSelector();
-
-  const isInGenre = playListSelector.musicList.id === genre_id ? true : false;
-  const handleCard = ({ target }) => dispatch(fetchmusicList(target.id));
-
-  return (
-    <CardImage
-      onClick={handleCard}
-      src={genre_img}
-      width="200px"
-      height="130px"
-      id={genre_id}
-      key={genre_id}
-      disabled={isInGenre}
-    />
-  );
-};
 export default Card;

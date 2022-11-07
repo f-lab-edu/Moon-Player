@@ -6,19 +6,6 @@ import PlayListMusic from 'components/Music/PlayList/Music';
 import { ScrollBox } from 'components/Common/ScrollBox';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import PlayListTitle from 'components/Common/Text';
-
-const Root = styled(ScrollBox)`
-  width: 916px;
-  height: 100vh;
-  border-radius: ${({ theme }) => theme.borderRadius.xl};
-  border: 1px solid white;
-  margin: 0px 40px;
-  padding: 10px 20px;
-  @media screen and (max-width: 1200px) {
-    width: 100%;
-  }
-`;
-
 export const PlayList = () => {
   const dispatch = useDispatch();
   const [, playListSelector] = useMusicSelector();
@@ -39,4 +26,17 @@ export const PlayList = () => {
     </Root>
   );
 };
+
+const Root = styled(ScrollBox)`
+  width: 916px;
+  height: 100vh;
+  border-radius: ${({ theme }) => theme.borderRadius.xl};
+  border: 1px solid white;
+  margin: 0px 40px;
+  padding: 10px 20px;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+`;
+
 export default PlayList;

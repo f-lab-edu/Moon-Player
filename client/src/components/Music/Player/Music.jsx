@@ -12,17 +12,6 @@ import Image from 'components/Common/Image';
 import Flex from 'components/Common/Flex';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import Text from 'components/Common/Text';
-
-const Root = styled(Flex)`
-  border-bottom: ${({ theme }) => theme.border.white};
-  background: ${({ isSelected, theme }) => isSelected && theme.colors.gray};
-  opacity: ${({ isSelected }) => isSelected && '0.7'};
-  gap: 15px;
-
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-  }
-`;
 export const Music = ({ video_title, video_img, order }) => {
   const dispatch = useDispatch();
   const [, , playerSelector] = useMusicSelector();
@@ -72,5 +61,14 @@ export const Music = ({ video_title, video_img, order }) => {
     </Root>
   );
 };
+const Root = styled(Flex)`
+  border-bottom: ${({ theme }) => theme.border.white};
+  background: ${({ isSelected, theme }) => isSelected && theme.colors.gray};
+  opacity: ${({ isSelected }) => isSelected && '0.7'};
+  gap: 15px;
 
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
+`;
 export default Music;

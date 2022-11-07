@@ -19,33 +19,6 @@ import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
 import { Line } from 'rc-progress';
 
-const ImageBox = styled(Flex)`
-  gap: '10px';
-`;
-
-const IconBox = styled(Flex)`
-  padding: 20px;
-  color: gray;
-  cursor: pointer;
-`;
-const VolumeBox = styled.div`
-  display: flex;
-  align-items: center;
-  color: ${({ theme }) => theme.colors.gray};
-  padding: 10px 20px 20px 20px;
-
-  > :nth-child(1) {
-    margin-right: 20px;
-  }
-`;
-const ProgressBarBox = styled.div(
-  ({ theme }) => `
-  color: ${theme.colors.white};
-  font-weight: ${theme.fontWeights.bold};
-  text-align:center;
-`
-);
-
 export const Footer = () => {
   const {
     musicPlayer,
@@ -119,5 +92,30 @@ export const Footer = () => {
     </>
   );
 };
+const ImageBox = styled(Flex)`
+  gap: '10px';
+`;
 
+const IconBox = styled(Flex)`
+  padding: 20px;
+  color: gray;
+  cursor: pointer;
+`;
+const VolumeBox = styled.div`
+  display: flex;
+  align-items: center;
+  color: ${({ theme }) => theme.colors.gray};
+  padding: 10px 20px 20px 20px;
+
+  > :nth-child(1) {
+    margin-right: 20px;
+  }
+`;
+const ProgressBarBox = styled.div(
+  ({ theme }) => `
+  color: ${theme.colors.white};
+  font-weight: ${theme.fontWeights.bold};
+  text-align:center;
+`
+);
 export default Footer;

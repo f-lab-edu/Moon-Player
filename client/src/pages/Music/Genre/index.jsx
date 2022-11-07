@@ -8,7 +8,27 @@ import GenreCard from 'components/Music/Genre/Card';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import Root from 'components/Common/Flex';
 import Text from 'components/Common/Text';
-
+export const Genre = () => {
+  const dispatch = useDispatch();
+  const [genreSelector] = useMusicSelector();
+  useEffect(() => {
+    dispatch(fetchmusicGenre());
+  }, []);
+  const genreItems =
+    genreSelector.musicList.length > 0 ? (
+      genreSelector.musicList.map(({ genre_img, genre_id }) => (
+        <GenreCard genre_img={genre_img} key={genre_id} genre_id={genre_id}></GenreCard>
+      ))
+    ) : (
+      <Text>장르가 비어있습니다.</Text>
+    );
+  return (
+    <Root direction="row" justifyContent="center" alignItems="center">
+      <Grid>{genreItems}</Grid>
+      <FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'white'} />
+    </Root>
+  );
+};
 const Grid = styled.div(
   ({ theme }) => `
   display: grid;
@@ -32,27 +52,5 @@ const Grid = styled.div(
   }
 `
 );
-
-export const Genre = () => {
-  const dispatch = useDispatch();
-  const [genreSelector] = useMusicSelector();
-  useEffect(() => {
-    dispatch(fetchmusicGenre());
-  }, []);
-  const genreItems =
-    genreSelector.musicList.length > 0 ? (
-      genreSelector.musicList.map(({ genre_img, genre_id }) => (
-        <GenreCard genre_img={genre_img} key={genre_id} genre_id={genre_id}></GenreCard>
-      ))
-    ) : (
-      <Text>장르가 비어있습니다.</Text>
-    );
-  return (
-    <Root direction="row" justifyContent="center" alignItems="center">
-      <Grid>{genreItems}</Grid>
-      <FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'white'} />
-    </Root>
-  );
-};
 
 export default Genre;

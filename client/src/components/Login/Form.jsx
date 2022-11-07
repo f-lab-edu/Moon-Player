@@ -11,21 +11,6 @@ import { useDispatch } from 'react-redux';
 import { useAuthenticator } from 'hooks/useAuthenticator';
 import { fetchUserInfo } from 'store/feature/user/UserSlice';
 
-const Root = styled(Flex)`
-  width: 30vw;
-`;
-
-const LongButton = styled(Button)`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 60px;
-  margin-top: 20px;
-  > :nth-child(2) {
-    margin: 0 auto;
-  }
-`;
-
 export const Form = () => {
   const theme = useContext(ThemeContext);
   const navigate = useNavigate();
@@ -74,5 +59,20 @@ export const Form = () => {
     </Root>
   );
 };
+
+const Root = styled(Flex)`
+  width: 30vw;
+`;
+
+const LongButton = styled(Button)`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  margin-top: 20px;
+  > :nth-child(2) {
+    margin: 0 auto;
+  }
+`;
 
 export default Form;
