@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 export const Button = styled.button(
-  ({ color, fontColor, fontSize, width, height, shadow, fontWeight, border, margin }) => `
+  ({ color, fontColor, fontSize, width, height, shadow, fontWeight, radius, margin }) => `
   width: ${width};
   height: ${height};
   font-size: ${fontSize};
-  border:${border};
   background-color:${color};
   font-weight: ${fontWeight};
   box-shadow: ${shadow};
-  border-radius: ${border};
+  border-radius: ${radius};
   color: ${fontColor};
   margin:${margin};
   &:hover {
