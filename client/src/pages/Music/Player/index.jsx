@@ -8,13 +8,10 @@ import { useMusicSelector } from 'hooks/useMusicSelector';
 export const Player = () => {
   const [, , playerSelector] = useMusicSelector();
   const playerMusics =
-    playerSelector.playerItems.length > 0 ? (
-      playerSelector.playerItems.map(({ video_title, video_img }, index) => (
-        <PlayerMusic video_title={video_title} video_img={video_img} key={index} order={++index} />
-      ))
-    ) : (
-      <Text>재생목록이 비어있습니다.</Text>
-    );
+    playerSelector.playerItems &&
+    playerSelector.playerItems.map(({ video_title, video_img }, index) => (
+      <PlayerMusic video_title={video_title} video_img={video_img} key={index} order={++index} />
+    ));
   return (
     <Root>
       <PlayerTitle>재생 목록</PlayerTitle>

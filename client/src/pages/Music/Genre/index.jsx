@@ -7,7 +7,6 @@ import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import GenreCard from 'components/Music/Genre/Card';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import Root from 'components/Common/Flex';
-import Text from 'components/Common/Text';
 export const Genre = () => {
   const dispatch = useDispatch();
   const [genreSelector] = useMusicSelector();
@@ -15,13 +14,10 @@ export const Genre = () => {
     dispatch(fetchmusicGenre());
   }, []);
   const genreItems =
-    genreSelector.musicList.length > 0 ? (
-      genreSelector.musicList.map(({ genre_img, genre_id }) => (
-        <GenreCard genre_img={genre_img} key={genre_id} genre_id={genre_id}></GenreCard>
-      ))
-    ) : (
-      <Text>장르가 비어있습니다.</Text>
-    );
+    genreSelector.musicList &&
+    genreSelector.musicList.map(({ genre_img, genre_id }) => (
+      <GenreCard genre_img={genre_img} key={genre_id} genre_id={genre_id}></GenreCard>
+    ));
   return (
     <Root direction="row" justifyContent="center" alignItems="center">
       <Grid>{genreItems}</Grid>
