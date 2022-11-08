@@ -25,6 +25,7 @@ Button.defaultProps = {
   shadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
   fontSize: '16px',
   border: '1px solid rgba(0, 0, 0, 0.1)',
+  radius: '0px',
   fontWeight: '700',
 };
 

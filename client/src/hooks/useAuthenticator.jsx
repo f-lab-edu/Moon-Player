@@ -1,9 +1,12 @@
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { removeStoreItems } from 'utils/persist';
+import { useNavigate } from 'react-router-dom';
 export const useAuthenticator = () => {
+  const navigate = useNavigate();
   const user = useSelector((state) => state.user.info);
   const isVerified = user.verified_email ? true : false;
+
   const [isAuthenticated, setAuthenticated] = useState(isVerified);
 
   useEffect(() => {
@@ -13,13 +16,12 @@ export const useAuthenticator = () => {
 
   const signIn = () => {
     setAuthenticated(true);
-    alert('로그인에 성공하였습니다 !');
+    navigate('/music');
   };
 
   // 로그아웃
   const signOut = () => {
     setAuthenticated(false);
-    alert('로그아웃 하였습니다.');
     removeStoreItems();
   };
 

@@ -4,7 +4,6 @@ import LoginForm from 'components/Login/Form';
 import Avatar from 'components/Common/Avatar';
 import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
-import Modal from 'components/Common/Modal';
 
 const LoginPage = () => {
   const theme = useContext(ThemeContext);
@@ -19,7 +18,6 @@ const LoginPage = () => {
         </Header>
         <LoginForm />
       </FlexBox>
-      <Modal></Modal>
     </Layout>
   );
 };

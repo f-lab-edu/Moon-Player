@@ -6,6 +6,7 @@ const Image = styled.img.attrs(({ src }) => ({
   max-width: 100%;
   width: ${({ width }) => width};
   height: ${({ height }) => height};
+
   box-shadow: ${({ shadow }) => shadow};
 `;
 

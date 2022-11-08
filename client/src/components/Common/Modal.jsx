@@ -3,28 +3,34 @@ import ContentBox from 'components/Common/Flex';
 import styled from 'styled-components';
 import { Text } from 'components/Common/Text';
 import Avatar from 'components/Common/Avatar';
-export const Modal = ({ onClose }) => {
+import { createPortal } from 'react-dom';
+export const Modal = ({ onClose, text }) => {
   const handleClose = () => {
     onClose();
   };
 
   return (
     <Root>
-      <ModalBox>
-        <ContentBox direction="column" justifyContent="center" alignItems="center">
-          <Avatar src="images/Loginlogo.png" margin="50px"></Avatar>
-          <Text fontSize="25px" color="white">
-            로그인 하였습니다.
-          </Text>
-          <ContentButton onClick={handleClose} width="50%" fontSize="25px" fontColor="white">
-            확인
-          </ContentButton>
-        </ContentBox>
-      </ModalBox>
+      <Overlay>
+        <ModalBox>
+          <ContentBox direction="column" justifyContent="center" alignItems="center">
+            <Avatar src="images/Loginlogo.png" margin="50px"></Avatar>
+            <Text fontSize="25px" color="white">
+              {text}
+            </Text>
+            <ContentButton onClick={handleClose} width="50%" fontSize="25px" fontColor="white">
+              확인
+            </ContentButton>
+          </ContentBox>
+        </ModalBox>
+      </Overlay>
     </Root>
   );
 };
-const Root = styled.div`
+const Root = ({ children }) => {
+  return createPortal(<>{children}</>, document.getElementById('modal'));
+};
+const Overlay = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
