@@ -18,8 +18,10 @@ import { formatTime } from 'utils/Player';
 import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
 import { Line } from 'rc-progress';
+import { useMusicSelector } from 'hooks/useMusicSelector';
 
 export const Footer = () => {
+  const [, , playerSelector] = useMusicSelector();
   const {
     musicPlayer,
     playerState,
@@ -29,7 +31,7 @@ export const Footer = () => {
     handleShuffleMusic,
     handlePrevMusic,
     handleNextMusic,
-  } = usePlayerControl();
+  } = usePlayerControl(playerSelector);
   const currentTime = formatTime(playerState.currentTime);
   const endTime = formatTime(playerState.endTime);
   const elapsedTime = Math.floor((playerState.currentTime / playerState.endTime) * 100);
