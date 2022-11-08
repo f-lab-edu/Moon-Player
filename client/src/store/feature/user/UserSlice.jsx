@@ -4,7 +4,9 @@ import { sendToken } from 'utils/oAuth';
 import { getToken } from 'utils/oAuth';
 
 const initialState = {
-  info: {},
+  GoogleUserinfo: {},
+  NaverUserInfo: {},
+  KaKaoUserInfo: {},
 };
 
 const fetchUserInfo = createAsyncThunk('user', async () => {
@@ -28,7 +30,7 @@ export const UserSlice = createSlice({
 
     builder.addCase(fetchUserInfo.fulfilled, (state, action) => {
       state.status = 'Complete';
-      state.info = action.payload;
+      state.GoogleUserinfo = action.payload;
     });
 
     builder.addCase(fetchUserInfo.rejected, (state, action) => {

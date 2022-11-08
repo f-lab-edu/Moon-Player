@@ -4,7 +4,7 @@ import { removeStoreItems } from 'utils/persist';
 import { useNavigate } from 'react-router-dom';
 export const useAuthenticator = () => {
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user.info);
+  const user = useSelector((state) => state.user.GoogleUserinfo);
   const isVerified = user.verified_email ? true : false;
 
   const [isAuthenticated, setAuthenticated] = useState(isVerified);

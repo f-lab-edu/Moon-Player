@@ -4,7 +4,7 @@ import { handleModal } from 'store/feature/layout/LayoutSlice';
 
 export const ProtectedRoute = ({ children }) => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.info);
+  const user = useSelector((state) => state.user.GoogleUserinfo);
 
   const isVerified = user.verified_email ? true : false;
 
