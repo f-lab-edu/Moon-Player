@@ -1,9 +1,9 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { handleModal } from 'store/feature/layout/LayoutSlice';
-
-export const useModal = () => {
-  const modal = useSelector((state) => state.layout.modal);
-
+import { useState, useEffect } from 'react';
+export const useModal = (state) => {
+  const [modal, setModal] = useState(state);
+  useEffect(() => {
+    setModal(state);
+  }, [state]);
   const isOpen = modal.isOpen;
   const text = modal.text;
   return { isOpen, text };

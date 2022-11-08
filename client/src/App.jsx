@@ -9,9 +9,11 @@ import LoginPage from 'pages/Login/index';
 import ProtectedRoute from 'route/ProtectedRoute';
 import { Modal } from 'components/Common/Modal';
 import useModal from 'hooks/useModal';
+import { useSelector } from 'react-redux';
 
 function App() {
-  const { isOpen, text } = useModal();
+  const modal = useSelector((state) => state.layout.modal);
+  const { isOpen, text } = useModal(modal);
   return (
     <ThemeProvider theme={theme}>
       {isOpen ? <Modal text={text} /> : <></>}
