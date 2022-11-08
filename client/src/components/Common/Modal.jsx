@@ -4,9 +4,14 @@ import styled from 'styled-components';
 import { Text } from 'components/Common/Text';
 import Avatar from 'components/Common/Avatar';
 import { createPortal } from 'react-dom';
-export const Modal = ({ onClose, text }) => {
+import { useDispatch } from 'react-redux';
+import { handleModal } from 'store/feature/layout/LayoutSlice';
+
+export const Modal = ({ text }) => {
+  const dispatch = useDispatch();
+
   const handleClose = () => {
-    onClose();
+    dispatch(handleModal({ isOpen: false, text: '' }));
   };
 
   return (

@@ -1,11 +1,12 @@
-import { useState } from 'react';
-export const useModal = () => {
-  const [isOpen, setIsOpen] = useState(false);
+import { useSelector, useDispatch } from 'react-redux';
+import { handleModal } from 'store/feature/layout/LayoutSlice';
 
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
-  return { toggle, isOpen };
+export const useModal = () => {
+  const modal = useSelector((state) => state.layout.modal);
+
+  const isOpen = modal.isOpen;
+  const text = modal.text;
+  return { isOpen, text };
 };
 
 export default useModal;
