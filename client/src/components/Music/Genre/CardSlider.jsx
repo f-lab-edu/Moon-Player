@@ -17,13 +17,12 @@ const params = {
   breakpoints: {
     320: {
       slidesPerView: 2,
-      slidesPerGroup: 6,
+      slidesPerGroup: 2,
     },
     // when window width is >= 630px
     630: {
       slidesPerView: 3,
-      spaceBetween: 30,
-      slidesPerGroup: 6,
+      slidesPerGroup: 3,
     },
     // when window width is >= 1000
     1000: {

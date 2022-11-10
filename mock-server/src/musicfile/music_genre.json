@@ -28,5 +28,21 @@
     "genre": "Illenium 플레이 리스트",
     "genre_img": "https:\/\/i.ytimg.com\/vi\/ZCu2gwLj9ok\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCWkB9RAt2vODEZ6o_BOfmbQReASg",
     "genre_id": 6
+  },
+  {
+    "genre": "윤하 플레이 리스트",
+    "genre_img": "https:\/\/i.ytimg.com\/vi\/58IEh6YkuzQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLADvOlohZEVGAYN9Y0Tr4WQxkhnWQ",
+    "genre_id": 7
+  },
+  {
+    "genre": "트와이스 플레이 리스트",
+    "genre_img": "https:\/\/i.ytimg.com\/vi\/0rtV5esQT6I\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA0h64191yWHSUjPv0BdPOaM42GqA",
+    "genre_id":8
+  },
+  {
+    "genre": "BTS 플레이 리스트",
+    "genre_img": "https:\/\/i.ytimg.com\/vi\/XsX3ATc3FbA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBqTxIwItxaOhWhHf_t07AGhfEswA",
+    "genre_id":9
   }
+
 ]
