@@ -6,6 +6,7 @@ import { useMusicSelector } from 'hooks/useMusicSelector';
 import Root from 'components/Common/Flex';
 import CardSlider from 'components/Music/Genre/CardSlider';
 import { SwiperSlide } from 'swiper/react';
+import { FontAweSomeButton } from 'components/Common/FontAweSomeButton';
 export const Genre = () => {
   const dispatch = useDispatch();
   const [genreSelector] = useMusicSelector();
@@ -22,6 +23,7 @@ export const Genre = () => {
   return (
     <Root direction="row" justifyContent="center" alignItems="center">
       <CardSlider>{genreItems}</CardSlider>
+      <FontAweSomeButton className="swiper-btn-next" icon="arrowRight" size="3x" padding="10px"></FontAweSomeButton>
     </Root>
   );
 };

@@ -1,22 +1,22 @@
-import { Pagination, Navigation } from 'swiper';
+import { Navigation } from 'swiper';
 import { Swiper } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { FontAweSomeButton } from 'components/Common/FontAweSomeButton';
-import styled from 'styled-components';
 
 const params = {
-  navigation: {},
+  modules: [Navigation],
+  navigation: {
+    nextEl: '.swiper-btn-next',
+  },
   slidesPerView: 6,
   spaceBetween: 30,
   slidesPerGroup: 6,
+  allowTouchMove: false,
   loop: true,
-  loopFillGroupWithBlank: true,
-  pagination: { clickable: true },
   breakpoints: {
     320: {
-      slidesPerView: 1,
+      slidesPerView: 2,
       slidesPerGroup: 6,
     },
     // when window width is >= 630px
@@ -32,16 +32,9 @@ const params = {
       slidesPerGroup: 6,
     },
   },
-  renderPrevButton: () => (
-    <FontAweSomeButton className="swiper-Prev-btn" icon="arrowLeft" size="2x"></FontAweSomeButton>
-  ),
-  renderNextButton: () => (
-    <FontAweSomeButton className="swiper-Next-btn" icon="arrowRight" size="2x"></FontAweSomeButton>
-  ),
 };
 export const CardSlider = ({ children }) => {
-  return <StyledSwiper {...params}>{children}</StyledSwiper>;
+  return <Swiper {...params}>{children}</Swiper>;
 };
-const StyledSwiper = styled(Swiper)``;
 
 export default CardSlider;

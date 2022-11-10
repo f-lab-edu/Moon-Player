@@ -14,20 +14,21 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const FontAweSomeButton = ({ event, icon, size, color, active }) => {
+export const FontAweSomeButton = ({ className, event, icon, size, color, active, padding }) => {
   return (
-    <IconButton onClick={event} color={color} active={active}>
+    <IconButton className={className} onClick={event} color={color} active={active} padding={padding}>
       <FontAwesomeIcon icon={ICON_NAME[icon]} size={size} color={color}></FontAwesomeIcon>
     </IconButton>
   );
 };
 
 const IconButton = styled.button(
-  ({ active, color }) => `
+  ({ active, color, padding }) => `
 background: none;
 border:0;
 cursor:pointer;
 color: ${color};
+padding:${padding};
 pointer-events:${active ? 'none' : 'auto'};
 opacity:${active ? 0.5 : 1};
 &:hover {
