@@ -18,10 +18,9 @@ export const Player = () => {
   return (
     <Root>
       <PlayerTitle>재생 목록</PlayerTitle>
-      <PlayerBox width="10px" height="5%">
+      <PlayerScrollBox width="10px" height="5%">
         {playerMusics}
-      </PlayerBox>
-
+      </PlayerScrollBox>
       <PlayerFooter />
     </Root>
   );
@@ -39,7 +38,7 @@ const Root = styled.div`
     width: 100%;
   }
 `;
-const PlayerBox = styled(ScrollBox)`
+const PlayerScrollBox = styled(ScrollBox)`
   height: 30vh;
   padding-right: 10px;
   @media screen and (max-width: 1000px) {

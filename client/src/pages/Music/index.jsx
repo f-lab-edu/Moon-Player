@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import Flex from 'components/Common/Flex';
-import Header from './Header/index';
+import Header from 'components/Music/Header/Header';
 import Genre from './Genre/index';
 import Player from './Player/index';
 import PlayList from './PlayList/index';
 const MusicPage = () => {
   return (
     <Layout>
-      <Header direction="row" justifyContent="space-between" alignItems="center"></Header>
+      <Header></Header>
       <Genre />
       <Main>
         <PlayList />

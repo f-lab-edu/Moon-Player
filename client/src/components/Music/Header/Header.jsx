@@ -12,25 +12,24 @@ import Text from 'components/Common/Text';
 export const Header = () => {
   const theme = useContext(ThemeContext);
   const { signOut } = useAuthenticator();
-  const handleLogout = () => {
-    signOut();
-  };
+  const handleLogout = () => signOut();
+
   return (
     <Root direction="row" justifyContent="space-between" alignItems="center">
-      <Flex direction="row" justifyContent="space-between" alignItems="center">
+      <Flex direction="row" alignItems="center">
         <Avatar src={theme.images.Logo} width="50px" height="50px" margin={theme.margins.lg} />
         <Text fontSize={theme.fontSizes.xxxl} color={theme.colors.white}>
           Moon Player
         </Text>
       </Flex>
-      <Flex direction="row" justifyContent="center" alignItems="center">
+      <Flex direction="row" alignItems="center">
         <StyledLink to="#" onClick={handleLogout}>
           <FontAwesomeIcon icon={faRightFromBracket} color={theme.colors.gray} />
-          <LinkText>로그아웃</LinkText>
+          <StyledText>로그아웃</StyledText>
         </StyledLink>
         <StyledLink to="/user">
           <FontAwesomeIcon icon={faUser} color={theme.colors.gray} />
-          <LinkText>내정보</LinkText>
+          <StyledText>내정보</StyledText>
         </StyledLink>
       </Flex>
     </Root>
@@ -41,19 +40,16 @@ const Root = styled(Flex)`
   width: 100vw;
   padding: 0px 20px;
   margin-bottom: 10px;
-  @media screen and (max-width: 1000px) {
-    position: relative;
-  }
 `;
 
 const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-decoration: none;
   margin: 5px;
 `;
-
-const LinkText = styled(Text)`
+const StyledText = styled(Text)`
   text-align: center;
   margin: 10px;
 `;
