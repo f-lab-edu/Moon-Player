@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import Image from 'components/Common/Image';
 import { usePlayerControl } from 'hooks/usePlayerControl';
 import Slider from 'components/Common/Slider';

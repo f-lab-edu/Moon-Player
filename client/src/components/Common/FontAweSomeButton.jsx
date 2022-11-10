@@ -9,6 +9,8 @@ import {
   faVolumeHigh,
   faCirclePlus,
   faTrash,
+  faArrowRight,
+  faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -49,6 +51,8 @@ const ICON_NAME = {
   volume: faVolumeHigh,
   plus: faCirclePlus,
   trash: faTrash,
+  arrowRight: faArrowRight,
+  arrowLeft: faArrowLeft,
 };
 
 export default FontAweSomeButton;
