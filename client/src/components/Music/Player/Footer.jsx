@@ -1,17 +1,6 @@
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import {
-  faShuffle,
-  faBackwardStep,
-  faPlayCircle,
-  faForwardStep,
-  faCirclePause,
-  faRepeat,
-  faVolumeHigh,
-} from '@fortawesome/free-solid-svg-icons';
 import Image from 'components/Common/Image';
-import IconButton from 'components/Common/IconButton';
 import { usePlayerControl } from 'hooks/usePlayerControl';
 import Slider from 'components/Common/Slider';
 import { formatTime } from 'utils/Player';
@@ -19,7 +8,7 @@ import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
 import { Line } from 'rc-progress';
 import { useMusicSelector } from 'hooks/useMusicSelector';
-
+import FontAweSomeButton from 'components/Common/FontAweSomeButton';
 export const Footer = () => {
   const [, , playerSelector] = useMusicSelector();
   const {
@@ -53,38 +42,26 @@ export const Footer = () => {
       {playerState.music && musicPlayer}
       <IconBox direction="row" justifyContent="space-between" alignItems="center">
         {playerState.isrepeat ? (
-          <IconButton onClick={handleRepeat}>
-            <FontAwesomeIcon icon={faRepeat} size={'2x'} color={'white'} />
-          </IconButton>
+          <FontAweSomeButton event={handleRepeat} icon="repeat" size="2x" color="white"></FontAweSomeButton>
         ) : (
-          <IconButton onClick={handleRepeat}>
-            <FontAwesomeIcon icon={faRepeat} size={'2x'} color={'gray'} />
-          </IconButton>
+          <FontAweSomeButton event={handleRepeat} icon="repeat" size="2x" color="gray"></FontAweSomeButton>
         )}
-        <IconButton onClick={handlePrevMusic}>
-          <FontAwesomeIcon icon={faBackwardStep} size={'3x'} />
-        </IconButton>
+
+        <FontAweSomeButton event={handlePrevMusic} icon="backward" size="3x" color="white"></FontAweSomeButton>
         {playerState.playing ? (
-          <IconButton onClick={handlePlay}>
-            <FontAwesomeIcon icon={faCirclePause} size={'3x'} />
-          </IconButton>
+          <FontAweSomeButton event={handlePlay} icon="pause" size="3x" color="white"></FontAweSomeButton>
         ) : (
-          <IconButton onClick={handlePlay}>
-            {' '}
-            <FontAwesomeIcon icon={faPlayCircle} size={'3x'} color={'gray'} />
-          </IconButton>
+          <FontAweSomeButton event={handlePlay} icon="play" size="3x" color="gray"></FontAweSomeButton>
         )}
-        <IconButton onClick={handleNextMusic}>
-          <FontAwesomeIcon icon={faForwardStep} size={'3x'} />
-        </IconButton>
-        <IconButton onClick={handleShuffleMusic}>
-          <FontAwesomeIcon icon={faShuffle} size={'2x'} color={'white'} />
-        </IconButton>
+        <FontAweSomeButton event={handleNextMusic} icon="forward" size="3x" color="white"></FontAweSomeButton>
+        <FontAweSomeButton event={handleShuffleMusic} icon="shuffle" size="2x" color="white"></FontAweSomeButton>
       </IconBox>
+
       <VolumeBox>
-        <FontAwesomeIcon icon={faVolumeHigh} size={'2x'} color={'white'} />
+        <FontAweSomeButton icon="volume" size="2x" color="white"></FontAweSomeButton>
         <Slider onChange={handleVolume} volume={playerState.volume} />
       </VolumeBox>
+
       <ProgressBarBox>
         <Line strokeWidth={3} percent={elapsedTime} strokeColor={'white'} />
         <Text fontSize="20px" align="center">

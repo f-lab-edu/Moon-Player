@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import Image from 'components/Common/Image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { handleAddPlayer } from 'store/feature/music/PlayerSlice';
-import IconButton from 'components/Common/IconButton';
 import OverFlowText from 'components/Common/OverFlowText';
 import { useDispatch } from 'react-redux';
 import Flex from 'components/Common/Flex';
 import { useMusicSelector } from 'hooks/useMusicSelector';
+import { FontAweSomeButton } from 'components/Common/FontAweSomeButton';
 
 export const Music = ({ id, video_title, video_img }) => {
   const dispatch = useDispatch();
@@ -24,10 +22,7 @@ export const Music = ({ id, video_title, video_img }) => {
       <div>{id}</div>
       <Image src={video_img} width="100px" height="50px" />
       <OverFlowText width="50%">{video_title}</OverFlowText>
-
-      <IconButton active={isInPlayer}>
-        <FontAwesomeIcon onClick={handleAddMusic} icon={faCirclePlus} size={'2x'} />
-      </IconButton>
+      <FontAweSomeButton active={isInPlayer} event={handleAddMusic} icon="plus" size="2x"></FontAweSomeButton>
     </Root>
   );
 };

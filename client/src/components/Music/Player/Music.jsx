@@ -1,17 +1,15 @@
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useMoveDownScroll from 'hooks/useMoveDownScroll';
 import usePrevious from 'hooks/usePrevious';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux';
 import { handleRemoveMusic, handleAddMusic } from 'store/feature/music/PlayerSlice';
 import OverFlowText from 'components/Common/OverFlowText';
 import { useEffect } from 'react';
-import IconButton from 'components/Common/IconButton';
 import Image from 'components/Common/Image';
 import Flex from 'components/Common/Flex';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import Text from 'components/Common/Text';
+import { FontAweSomeButton } from 'components/Common/FontAweSomeButton';
 export const Music = ({ video_title, video_img, order }) => {
   const dispatch = useDispatch();
   const [, , playerSelector] = useMusicSelector();
@@ -54,10 +52,7 @@ export const Music = ({ video_title, video_img, order }) => {
       >
         {video_title}
       </OverFlowText>
-
-      <IconButton>
-        <FontAwesomeIcon onClick={handleClickRemove} icon={faTrash} size={'2x'} />
-      </IconButton>
+      <FontAweSomeButton event={handleClickRemove} size="2x" icon="trash"></FontAweSomeButton>
     </Root>
   );
 };

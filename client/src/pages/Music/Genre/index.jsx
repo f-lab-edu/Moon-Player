@@ -8,8 +8,7 @@ import Card from 'components/Music/Genre/Card';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import Root from 'components/Common/Flex';
 import CardSlider from 'components/Music/Genre/CardSlider';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper';
+import { SwiperSlide } from 'swiper/react';
 export const Genre = () => {
   const dispatch = useDispatch();
   const [genreSelector] = useMusicSelector();

@@ -34,6 +34,7 @@ export const usePlayerControl = (player) => {
   }, [player]);
 
   const handleRepeat = () => setState({ ...playerState, isrepeat: !playerState.isrepeat });
+
   const handlePlay = () => setState({ ...playerState, playing: !playerState.playing });
   const handleVolume = (e) => setState({ ...playerState, volume: +e.target.value });
   const handleOnProgress = () => setState({ ...playerState, currentTime, endTime });
