@@ -4,9 +4,12 @@ import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
-import GenreCard from 'components/Music/Genre/Card';
+import Card from 'components/Music/Genre/Card';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import Root from 'components/Common/Flex';
+import CardSlider from 'components/Music/Genre/CardSlider';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper';
 export const Genre = () => {
   const dispatch = useDispatch();
   const [genreSelector] = useMusicSelector();
@@ -16,12 +19,14 @@ export const Genre = () => {
   const genreItems =
     genreSelector.musicList &&
     genreSelector.musicList.map(({ genre_img, genre_id }) => (
-      <GenreCard genre_img={genre_img} key={genre_id} genre_id={genre_id}></GenreCard>
+      <SwiperSlide key={genre_id}>
+        <Card genre_img={genre_img} key={genre_id} genre_id={genre_id}></Card>
+      </SwiperSlide>
     ));
   return (
     <Root direction="row" justifyContent="center" alignItems="center">
-      <Grid>{genreItems}</Grid>
-      <FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'white'} />
+      <CardSlider>{genreItems}</CardSlider>
+      <FontAwesomeIcon icon={faCircleArrowRight} size={'2x'} color={'white'} style={{ padding: '10px' }} />
     </Root>
   );
 };

@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Image from 'components/Common/Image';
 import { useMusicSelector } from 'hooks/useMusicSelector';
-
 export const Card = ({ genre_img, genre_id }) => {
   const dispatch = useDispatch();
   const [, playListSelector] = useMusicSelector();
@@ -13,23 +12,25 @@ export const Card = ({ genre_img, genre_id }) => {
   const handleCard = ({ target }) => dispatch(fetchmusicList(target.id));
 
   return (
-    <CardImage
-      onClick={handleCard}
-      src={genre_img}
-      width="200px"
-      height="130px"
-      id={genre_id}
-      key={genre_id}
-      disabled={isInGenre}
-    />
+    <>
+      <CardImage
+        onClick={handleCard}
+        src={genre_img}
+        width="200px"
+        height="120px"
+        id={genre_id}
+        key={genre_id}
+        disabled={isInGenre}
+      />
+    </>
   );
 };
 
 const CardImage = styled(Image)`
   border-radius: ${({ theme }) => theme.borderRadius.xl};
-
   box-shadow: ${({ theme }) => theme.boxShadows.card};
   opacity: ${(props) => (!props.disabled ? '0.2' : '1')};
+  margin: 10px 15px;
   transition-duration: 0.4s;
   &:active {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
@@ -45,4 +46,5 @@ const CardImage = styled(Image)`
     height: 200px;
   }
 `;
+
 export default Card;
