@@ -49,7 +49,7 @@ const ModalBox = styled.div`
   position: relative;
   width: 300px;
   height: fit-content;
-  border-radius: 15px;
+  padding: 30px;
   background-image: linear-gradient(90deg, #000000 0%, #434343 100%);
   top: 50%;
   left: 50%;
