@@ -10,6 +10,7 @@ import Flex from 'components/Common/Flex';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import Text from 'components/Common/Text';
 import { FontAweSomeButton } from 'components/Common/FontAweSomeButton';
+import { handleModal } from 'store/feature/layout/LayoutSlice';
 export const Music = ({ video_title, video_img, order }) => {
   const dispatch = useDispatch();
   const [, , playerSelector] = useMusicSelector();
@@ -20,14 +21,13 @@ export const Music = ({ video_title, video_img, order }) => {
 
   useEffect(() => {
     if (prevPlayerItemslength > playerItemslength) return;
-    console.log('스크롤 실행');
     handleScrollElement();
   }, [playerItemslength]);
 
-  // 플레이어 리스트에서 삭제할시 현재 재생중인거는 삭제 못하게막음
-
   const handleClickRemove = () => {
-    return isSelectedMusic ? alert('현재 선택중인 음악은 삭제할수없습니다.') : dispatch(handleRemoveMusic(video_title));
+    return isSelectedMusic
+      ? dispatch(handleModal({ isOpen: true, text: '현재 선택중인 음악은 삭제할수없습니다.' }))
+      : dispatch(handleRemoveMusic(video_title));
   };
 
   const handleMusic = () => {

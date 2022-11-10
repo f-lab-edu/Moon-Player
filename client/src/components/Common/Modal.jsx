@@ -20,7 +20,7 @@ export const Modal = ({ text }) => {
         <ModalBox>
           <ContentBox direction="column" justifyContent="center" alignItems="center">
             <Avatar src="images/Loginlogo.png" margin="50px"></Avatar>
-            <Text fontSize="25px" color="white">
+            <Text fontSize="25px" color="white" align="center">
               {text}
             </Text>
             <ContentButton onClick={handleClose} width="50%" fontSize="25px" fontColor="white">
