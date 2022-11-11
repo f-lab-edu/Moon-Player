@@ -4,9 +4,10 @@ import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import Card from 'components/Music/Genre/Card';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import Root from 'components/Common/Flex';
-import CardSlider from 'components/Music/Genre/CardSlider';
+import SwiperContainer from 'components/Music/Genre/SwiperContainer';
 import { SwiperSlide } from 'swiper/react';
 import { FontAweSomeButton } from 'components/Common/FontAweSomeButton';
+
 export const Genre = () => {
   const dispatch = useDispatch();
   const [genreSelector] = useMusicSelector();
@@ -21,10 +22,14 @@ export const Genre = () => {
       </SwiperSlide>
     ));
   return (
-    <Root direction="row" justifyContent="center" alignItems="center">
-      <CardSlider>{genreItems}</CardSlider>
-      <FontAweSomeButton className="swiper-btn-next" icon="arrowRight" size="3x" padding="10px"></FontAweSomeButton>
-    </Root>
+    <>
+      <Root direction="row" justifyContent="center" alignItems="center">
+        <FontAweSomeButton className="swiper-btn-prev" icon="arrowLeft" size="3x" padding="10px"></FontAweSomeButton>
+        <SwiperContainer>{genreItems}</SwiperContainer>
+        <FontAweSomeButton className="swiper-btn-next" icon="arrowRight" size="3x" padding="10px"></FontAweSomeButton>
+      </Root>
+      <div className="pagination"></div>
+    </>
   );
 };
 export default Genre;

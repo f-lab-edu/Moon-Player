@@ -10,12 +10,14 @@ import ProtectedRoute from 'route/ProtectedRoute';
 import { Modal } from 'components/Common/Modal';
 import useModal from 'hooks/useModal';
 import { useSelector } from 'react-redux';
+import GlobalStyle from 'style/GlobalStyle';
 
 function App() {
   const modal = useSelector((state) => state.layout.modal);
   const { isOpen, text } = useModal(modal);
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       {isOpen ? <Modal text={text} /> : <></>}
       <Routes>
         <Route

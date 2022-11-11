@@ -1,19 +1,25 @@
-import { Navigation } from 'swiper';
+import { Navigation, Pagination } from 'swiper';
 import { Swiper } from 'swiper/react';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
 const params = {
-  modules: [Navigation],
+  modules: [Navigation, Pagination],
   navigation: {
     nextEl: '.swiper-btn-next',
+    prevEl: '.swiper-btn-prev',
+  },
+  pagination: {
+    el: '.pagination',
+    type: 'bullets',
   },
   slidesPerView: 6,
   spaceBetween: 30,
   slidesPerGroup: 6,
   allowTouchMove: false,
   loop: true,
+
   breakpoints: {
     320: {
       slidesPerView: 2,
