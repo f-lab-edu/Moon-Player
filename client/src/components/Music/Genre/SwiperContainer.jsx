@@ -38,8 +38,8 @@ const params = {
     },
   },
 };
-export const CardSlider = ({ children }) => {
+export const SwiperContainer = ({ children }) => {
   return <Swiper {...params}>{children}</Swiper>;
 };
 
-export default CardSlider;
+export default SwiperContainer;

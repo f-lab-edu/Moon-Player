@@ -1,5 +1,5 @@
 import Button from 'components/Common/Button';
-import ContentBox from 'components/Common/Flex';
+import Flex from 'components/Common/Flex';
 import styled from 'styled-components';
 import { Text } from 'components/Common/Text';
 import Avatar from 'components/Common/Avatar';
@@ -17,16 +17,14 @@ export const Modal = ({ text }) => {
   return (
     <Root>
       <Overlay>
-        <ModalBox>
-          <ContentBox direction="column" justifyContent="center" alignItems="center">
-            <Avatar src="images/Loginlogo.png" margin="50px"></Avatar>
-            <Text fontSize="25px" color="white" align="center">
-              {text}
-            </Text>
-            <ContentButton onClick={handleClose} width="50%" fontSize="25px" fontColor="white">
-              확인
-            </ContentButton>
-          </ContentBox>
+        <ModalBox direction="column" justifyContent="center" alignItems="center">
+          <Avatar src="images/Loginlogo.png" margin="50px"></Avatar>
+          <Text fontSize="25px" color="white" align="center">
+            {text}
+          </Text>
+          <ContentButton onClick={handleClose} width="50%" fontSize="25px" fontColor="white">
+            확인
+          </ContentButton>
         </ModalBox>
       </Overlay>
     </Root>
@@ -45,7 +43,7 @@ const Overlay = styled.div`
   z-index: 9999;
 `;
 
-const ModalBox = styled.div`
+const ModalBox = styled(Flex)`
   position: relative;
   width: 300px;
   height: fit-content;
