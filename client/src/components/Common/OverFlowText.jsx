@@ -13,7 +13,7 @@ export const OverFlowText = styled.div(
   white-space: nowrap;
 `
 );
-OverFlowText.propTypes = {
+OverFlowText.defaultProps = {
   width: '50%',
   fontSize: '15px',
   color: 'white',
