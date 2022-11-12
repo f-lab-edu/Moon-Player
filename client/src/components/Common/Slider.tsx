@@ -1,11 +1,12 @@
+/* eslint-disable */
 import styled from 'styled-components';
 
-export const Slider = styled.input.attrs(({ volume }) => ({
+export const Slider = styled.input.attrs<{ volume: string; }>(({ volume }) => ({
   type: 'range',
   min: '1',
   max: '100',
   value: volume,
-}))`
+}))<{ trackColor: string; thumbColor: string; }>`
   border-radius: 7px;
   cursor: pointer;
   -webkit-appearance: none;

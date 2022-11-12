@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from 'components/Common/Image';
 import { usePlayerControl } from 'hooks/usePlayerControl';
-import Slider from 'components/Common/Slider';
+import Slider from 'components/Common/Slider.tsx';
 import { formatTime } from 'utils/Player';
 import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
