@@ -9,7 +9,7 @@ import Flex from 'components/Common/Flex';
 import { useDispatch } from 'react-redux';
 import { useAuthenticator } from 'hooks/useAuthenticator';
 import { fetchUserInfo } from 'store/feature/user/UserSlice';
-import { handleModal } from 'store/feature/layout/LayoutSlice';
+import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 
 export const Form = () => {
   const theme = useContext(ThemeContext);
@@ -20,7 +20,7 @@ export const Form = () => {
   useEffect(() => {
     dispatch(fetchUserInfo());
     if (!isAuthenticated) return;
-    dispatch(handleModal({ isOpen: true, text: '로그인 되었습니다.' }));
+    dispatch(handleAlarm({ isOpen: true, text: '로그인 되었습니다.' }));
     signIn();
   }, [isAuthenticated]);
   const handleGoogleLogin = () => {

@@ -7,18 +7,16 @@ import MusicPage from 'pages/Music/index';
 import UserPage from './pages/User/index';
 import LoginPage from 'pages/Login/index';
 import ProtectedRoute from 'route/ProtectedRoute';
-import { Modal } from 'components/Common/Modal';
-import useModal from 'hooks/useModal';
-import { useSelector } from 'react-redux';
+import Alarm from 'components/Common/Alarm';
+import useAlarm from 'hooks/useAlarm';
 import GlobalStyle from 'style/GlobalStyle';
 
 function App() {
-  const modal = useSelector((state) => state.layout.modal);
-  const { isOpen, text } = useModal(modal);
+  const { isOpen, text } = useAlarm();
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      {isOpen ? <Modal text={text} /> : <></>}
+      {isOpen ? <Alarm text={text} /> : <></>}
       <Routes>
         <Route
           element={

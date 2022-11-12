@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
 
 const initialState = {
-  modal: {
+  alarm: {
     isOpen: false,
     text: '',
   },
@@ -12,12 +12,12 @@ export const LayoutSlice = createSlice({
   name: 'layout',
   initialState,
   reducers: {
-    handleModal: (state, action) => {
-      state.modal = action.payload;
+    handleAlarm: (state, action) => {
+      state.alarm = action.payload;
     },
   },
   extraReducers: (builder) => {
     builder.addCase(PURGE, () => initialState);
   },
 });
-export const { handleModal } = LayoutSlice.actions;
+export const { handleAlarm } = LayoutSlice.actions;

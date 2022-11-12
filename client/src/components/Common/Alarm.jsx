@@ -5,19 +5,19 @@ import { Text } from 'components/Common/Text';
 import Avatar from 'components/Common/Avatar';
 import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
-import { handleModal } from 'store/feature/layout/LayoutSlice';
+import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 
-export const Modal = ({ text }) => {
+export const Alarm = ({ text }) => {
   const dispatch = useDispatch();
 
   const handleClose = () => {
-    dispatch(handleModal({ isOpen: false, text: '' }));
+    dispatch(handleAlarm({ isOpen: false, text: '' }));
   };
 
   return (
     <Root>
       <Overlay>
-        <ModalBox direction="column" justifyContent="center" alignItems="center">
+        <Box direction="column" justifyContent="center" alignItems="center">
           <Avatar src="images/Loginlogo.png" margin="50px"></Avatar>
           <Text fontSize="25px" color="white" align="center">
             {text}
@@ -25,7 +25,7 @@ export const Modal = ({ text }) => {
           <ContentButton onClick={handleClose} width="50%" fontSize="25px" fontColor="white">
             확인
           </ContentButton>
-        </ModalBox>
+        </Box>
       </Overlay>
     </Root>
   );
@@ -43,7 +43,7 @@ const Overlay = styled.div`
   z-index: 9999;
 `;
 
-const ModalBox = styled(Flex)`
+const Box = styled(Flex)`
   position: relative;
   width: 300px;
   height: fit-content;
@@ -58,4 +58,4 @@ const ContentButton = styled(Button)`
   margin: 10px;
   background-image: linear-gradient(90deg, #000000 0%, #434343 100%);
 `;
-export default Modal;
+export default Alarm;

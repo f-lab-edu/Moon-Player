@@ -10,7 +10,7 @@ import Flex from 'components/Common/Flex';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import Text from 'components/Common/Text';
 import { FontAweSomeButton } from 'components/Common/FontAweSomeButton';
-import { handleModal } from 'store/feature/layout/LayoutSlice';
+import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 export const Music = ({ video_title, video_img, order }) => {
   const dispatch = useDispatch();
   const [, , playerSelector] = useMusicSelector();
@@ -26,7 +26,7 @@ export const Music = ({ video_title, video_img, order }) => {
 
   const handleClickRemove = () => {
     return isSelectedMusic
-      ? dispatch(handleModal({ isOpen: true, text: '현재 선택중인 음악은 삭제할수없습니다.' }))
+      ? dispatch(handleAlarm({ isOpen: true, text: '현재 선택중인 음악은 삭제할수없습니다.' }))
       : dispatch(handleRemoveMusic(video_title));
   };
 
