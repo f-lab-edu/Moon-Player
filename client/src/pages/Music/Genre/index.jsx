@@ -6,7 +6,7 @@ import { useMusicSelector } from 'hooks/useMusicSelector';
 import Root from 'components/Common/Flex';
 import SwiperContainer from 'components/Music/Genre/SwiperContainer';
 import { SwiperSlide } from 'swiper/react';
-import { FontAweSomeButton } from 'components/Common/FontAweSomeButton';
+import { IconButton } from 'components/Common/IconButton';
 
 export const Genre = () => {
   const dispatch = useDispatch();
@@ -24,9 +24,9 @@ export const Genre = () => {
   return (
     <>
       <Root direction="row" justifyContent="center" alignItems="center">
-        <FontAweSomeButton className="swiper-btn-prev" icon="arrowLeft" size="3x" padding="10px"></FontAweSomeButton>
+        <IconButton className="swiper-btn-prev" icon="arrowLeft" size="3x" padding="10px"></IconButton>
         <SwiperContainer>{genreItems}</SwiperContainer>
-        <FontAweSomeButton className="swiper-btn-next" icon="arrowRight" size="3x" padding="10px"></FontAweSomeButton>
+        <IconButton className="swiper-btn-next" icon="arrowRight" size="3x" padding="10px"></IconButton>
       </Root>
       <div className="pagination"></div>
     </>

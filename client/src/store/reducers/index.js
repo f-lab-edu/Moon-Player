@@ -10,7 +10,7 @@ const layout = LayoutSlice.reducer;
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['user', 'music', 'layout'],
+  blacklist: [''],
 };
 
 export const rootReducer = combineReducers({

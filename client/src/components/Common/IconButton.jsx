@@ -14,15 +14,15 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const FontAweSomeButton = ({ className, event, icon, size, color, active, padding }) => {
+export const IconButton = ({ className, event, icon, size, color, active, padding }) => {
   return (
-    <IconButton className={className} onClick={event} color={color} active={active} padding={padding}>
+    <Button className={className} onClick={event} color={color} active={active} padding={padding}>
       <FontAwesomeIcon icon={ICON_NAME[icon]} size={size} color={color}></FontAwesomeIcon>
-    </IconButton>
+    </Button>
   );
 };
 
-const IconButton = styled.button(
+const Button = styled.button(
   ({ active, color, padding }) => `
 background: none;
 border:0;
@@ -37,7 +37,7 @@ opacity:${active ? 0.5 : 1};
 `
 );
 
-IconButton.defaultProps = {
+Button.defaultProps = {
   active: false,
   color: 'white',
 };
@@ -56,4 +56,4 @@ const ICON_NAME = {
   arrowLeft: faCircleArrowLeft,
 };
 
-export default FontAweSomeButton;
+export default IconButton;

@@ -5,7 +5,7 @@ import OverFlowText from 'components/Common/OverFlowText';
 import { useDispatch } from 'react-redux';
 import Flex from 'components/Common/Flex';
 import { useMusicSelector } from 'hooks/useMusicSelector';
-import { FontAweSomeButton } from 'components/Common/FontAweSomeButton';
+import { IconButton } from 'components/Common/IconButton';
 
 export const Music = ({ id, video_title, video_img }) => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export const Music = ({ id, video_title, video_img }) => {
       <div>{id}</div>
       <Image src={video_img} width="100px" height="50px" />
       <OverFlowText width="50%">{video_title}</OverFlowText>
-      <FontAweSomeButton active={isInPlayer} event={handleAddMusic} icon="plus" size="2x"></FontAweSomeButton>
+      <IconButton active={isInPlayer} event={handleAddMusic} icon="plus" size="2x"></IconButton>
     </Root>
   );
 };

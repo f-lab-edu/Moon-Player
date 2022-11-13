@@ -9,7 +9,7 @@ import Image from 'components/Common/Image';
 import Flex from 'components/Common/Flex';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import Text from 'components/Common/Text';
-import { FontAweSomeButton } from 'components/Common/FontAweSomeButton';
+import { IconButton } from 'components/Common/IconButton';
 import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 export const Music = ({ video_title, video_img, order }) => {
   const dispatch = useDispatch();
@@ -52,7 +52,7 @@ export const Music = ({ video_title, video_img, order }) => {
       >
         {video_title}
       </OverFlowText>
-      <FontAweSomeButton event={handleClickRemove} size="2x" icon="trash"></FontAweSomeButton>
+      <IconButton event={handleClickRemove} size="2x" icon="trash"></IconButton>
     </Root>
   );
 };

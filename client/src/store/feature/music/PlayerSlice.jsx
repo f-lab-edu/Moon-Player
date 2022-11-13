@@ -3,7 +3,7 @@ import { PURGE } from 'redux-persist';
 
 const initialState = {
   playerItems: [],
-  playmusic: '',
+  playmusic: {},
 };
 // Reducer
 export const musicPlayerSlice = createSlice({
