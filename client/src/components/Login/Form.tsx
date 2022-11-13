@@ -35,20 +35,20 @@ export const Form = () => {
         fontColor={theme.colors.white}
         onClick={handleGoogleLogin}
       >
-        <Icon name="Google" />
-        <Text color={theme.colors.white} shadow="0px">
+        <Icon name="Google" width="30px" height="30px" />
+        <Text fontSize="20px" color={theme.colors.white}>
           Google 로그인
         </Text>
       </LongButton>
       <LongButton fontSize={theme.fontSizes.base} color={theme.colors.darkgreen} fontColor={theme.colors.white}>
-        <Icon name="Naver" />
-        <Text shadow="0" color={theme.colors.white}>
+        <Icon name="Google" width="30px" height="30px" />
+        <Text fontSize="20px" color={theme.colors.white}>
           네이버 로그인
         </Text>
       </LongButton>
       <LongButton fontSize={theme.fontSizes.base} color={theme.colors.lightyellow} fontColor={theme.colors.black}>
-        <Icon name="Kakao" />
-        <Text shadow="0" color={theme.colors.black}>
+        <Icon name="Google" width="30px" height="30px" />
+        <Text fontSize="20px" color={theme.colors.black}>
           카카오 로그인
         </Text>
       </LongButton>
@@ -63,7 +63,6 @@ const Root = styled(Flex)`
 const LongButton = styled(Button)`
   display: flex;
   align-items: center;
-  width: 100%;
   height: 60px;
   border: none;
   margin-top: 20px;

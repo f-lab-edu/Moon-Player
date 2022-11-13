@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-export const ScrollBox = styled.div(
+type ScrollBoxProps = {
+  color: string;
+  radius: string;
+};
+
+export const ScrollBox = styled.div<ScrollBoxProps>(
   ({ color, radius }) => `
   overflow-y: scroll;
   &::-webkit-scrollbar {
@@ -17,9 +22,9 @@ export const ScrollBox = styled.div(
   scrollbar-color:${color};
 `
 );
-ScrollBox.defaultProps = {
-  color: 'white',
-  radius: '7px',
-};
+// ScrollBox.defaultProps = {
+//   color: 'white',
+//   radius: '7px',
+// };
 
 export default ScrollBox;

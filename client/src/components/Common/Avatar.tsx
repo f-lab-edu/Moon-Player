@@ -1,8 +1,14 @@
 import styled from 'styled-components';
 
-export const Avatar = styled.img.attrs(({ src }) => ({
+type AvatarProps = {
+  src: string;
+  height: string;
+  width: string;
+  margin?: string;
+};
+export const Avatar = styled.img.attrs<AvatarProps>(({ src }) => ({
   src: src,
-}))`
+}))<AvatarProps>`
   /* default 설정 */
   height: ${({ height }) => height};
   width: ${({ width }) => width};
@@ -16,10 +22,4 @@ export const Avatar = styled.img.attrs(({ src }) => ({
   object-fit: fill;
   transform: scale(1.2);
 `;
-
-Avatar.defaultProps = {
-  height: '100px',
-  width: '100px',
-};
-
 export default Avatar;

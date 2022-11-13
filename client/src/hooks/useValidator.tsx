@@ -10,12 +10,12 @@ const useValidator = () => {
   //  setErrors 상태도 결정
 
   // 전달된 input value
-  const validate = (obj) => {
-    const newErrors = {};
+  const validate = (obj: object) => {
+    const newErrors: object = {};
 
     Object.entries(obj).forEach(([key, { value, funcs }]) => {
       // 에러 검증함수들 확인
-      funcs.forEach((fun) => {
+      funcs.forEach((fun: object) => {
         const result = fun(value);
         // 값이 존재 하면 에러메시지 있음
         if (result !== '') {
