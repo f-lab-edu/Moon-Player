@@ -13,7 +13,6 @@ import GlobalStyle from 'style/GlobalStyle';
 
 function App() {
   const { isOpen, text } = useAlarm();
-
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
