@@ -1,21 +1,22 @@
 import styled, { ThemeContext } from 'styled-components';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { Icon } from 'components/Common/Icon';
 import Button from 'components/Common/Button';
 import Text from 'components/Common/Text';
 
 import { assignURL } from 'utils/oAuth';
 import Flex from 'components/Common/Flex';
-import { useDispatch } from 'react-redux';
+
 import { useAuthenticator } from 'hooks/useAuthenticator';
 import { fetchUserInfo } from 'store/feature/user/UserSlice';
 import { handleAlarm } from 'store/feature/layout/LayoutSlice';
+import { useAppDispatch } from 'hooks/useAppDispatch';
 
 export const Form = () => {
   const theme = useContext(ThemeContext);
   const { signIn, isAuthenticated } = useAuthenticator();
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchUserInfo());
