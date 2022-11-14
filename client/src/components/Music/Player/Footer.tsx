@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from 'components/Common/Image';
 import { usePlayerControl } from 'hooks/usePlayerControl';
-import Slider from 'components/Common/Slider.tsx';
+import Slider from 'components/Common/Slider';
 import { formatTime } from 'utils/Player';
 import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
@@ -18,9 +18,9 @@ export const Footer = () => {
     handlePrevMusic,
     handleNextMusic,
   } = usePlayerControl();
-  const currentTime = formatTime(playerState.currentTime);
-  const endTime = formatTime(playerState.endTime);
-  const elapsedTime = Math.floor((playerState.currentTime / playerState.endTime) * 100);
+  const currentTime = formatTime(+playerState.currentTime);
+  const endTime = formatTime(+playerState.endTime);
+  const elapsedTime = Math.floor((+playerState.currentTime / +playerState.endTime) * 100);
 
   return (
     <>
@@ -32,7 +32,7 @@ export const Footer = () => {
         )}
       </ImageBox>
       {playerState.music && (
-        <Text fontSize="20px" align="center">
+        <Text fontSize="20px" align="center" color="white">
           {playerState.music.video_title}
         </Text>
       )}
@@ -56,12 +56,12 @@ export const Footer = () => {
 
       <VolumeBox>
         <FontAweSomeButton icon="volume" size="2x" color="white"></FontAweSomeButton>
-        <Slider onChange={handleVolume} volume={playerState.volume} />
+        <Slider onChange={handleVolume} volume={playerState.volume.toString()} trackColor="gray" thumbColor="white" />
       </VolumeBox>
 
       <ProgressBarBox>
         <Line strokeWidth={3} percent={elapsedTime} strokeColor={'white'} />
-        <Text fontSize="20px" align="center">
+        <Text fontSize="20px" align="center" color="white">
           {currentTime} / {endTime}
         </Text>
       </ProgressBarBox>

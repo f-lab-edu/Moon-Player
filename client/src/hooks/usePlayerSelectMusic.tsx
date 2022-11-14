@@ -1,9 +1,9 @@
-import { useDispatch } from 'react-redux';
 import { handleNextMusic, handlePrevMusic, handleShuffleMusics } from 'store/feature/music/PlayerSlice';
 import { nextPlayMusic, prevPlayMusic, shuffleMusic } from 'utils/Player';
 import { useMusicSelector } from './useMusicSelector';
+import { useAppDispatch } from 'hooks/useAppDispatch';
 export const usePlayerSelectMusic = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [, , playerSelector] = useMusicSelector();
   const onPrevMusic = () =>
     dispatch(handlePrevMusic(prevPlayMusic(playerSelector.playerItems, playerSelector.playmusic)));

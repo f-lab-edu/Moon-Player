@@ -25,11 +25,15 @@ export const Header = () => {
       <Flex direction="row" alignItems="center">
         <StyledLink to="#" onClick={handleLogout}>
           <FontAwesomeIcon icon={faRightFromBracket} color={theme.colors.gray} />
-          <StyledText>로그아웃</StyledText>
+          <Text align="center" margin="10px" color="white" fontSize="16px">
+            로그아웃
+          </Text>
         </StyledLink>
         <StyledLink to="/user">
           <FontAwesomeIcon icon={faUser} color={theme.colors.gray} />
-          <StyledText>내정보</StyledText>
+          <Text align="center" margin="10px" color="white" fontSize="16px">
+            내정보
+          </Text>
         </StyledLink>
       </Flex>
     </Root>
@@ -49,9 +53,4 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   margin: 5px;
 `;
-const StyledText = styled(Text)`
-  text-align: center;
-  margin: 10px;
-`;
-
 export default Header;

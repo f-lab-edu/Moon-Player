@@ -24,7 +24,7 @@ export const shuffleMusic = (playerItems: Music[]): Music[] => {
   return newPlayerItems;
 };
 // 리팩토링필요
-export const formatTime = (seconds: number) => {
+export const formatTime = (seconds: number): string => {
   if (isNaN(seconds)) {
     return '00:00';
   }

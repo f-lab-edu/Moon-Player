@@ -15,8 +15,8 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type IconButtonProps = {
-  className: string;
-  event: React.MouseEventHandler<HTMLButtonElement>;
+  className?: string;
+  event?: React.MouseEventHandler<HTMLButtonElement>;
   icon: string;
   size: any; // 이거 좀 봐야할듯
   color: string;

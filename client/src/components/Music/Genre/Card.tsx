@@ -13,7 +13,7 @@ export const Card = ({ genre_img, genre_id }: CardProps) => {
   const [, playListSelector] = useMusicSelector();
 
   const isInGenre: boolean = playListSelector.musicList.id === genre_id ? true : false;
-  const handleCard = ({ target }: any) => dispatch(fetchmusicList(target.id));
+  const handleCard = (event: React.MouseEvent<HTMLImageElement>) => dispatch(fetchmusicList(event.currentTarget.id));
 
   return (
     <CardImage
