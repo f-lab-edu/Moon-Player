@@ -1,5 +1,5 @@
-import styled, { ThemeContext } from 'styled-components';
-import { useContext, useEffect } from 'react';
+import styled from 'styled-components';
+import { useEffect } from 'react';
 import { Icon } from 'components/Common/Icon';
 import Button from 'components/Common/Button';
 import Text from 'components/Common/Text';
@@ -13,7 +13,6 @@ import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 import { useAppDispatch } from 'hooks/useAppDispatch';
 
 export const Form = () => {
-  const theme = useContext(ThemeContext);
   const { signIn, isAuthenticated } = useAuthenticator();
 
   const dispatch = useAppDispatch();
@@ -30,26 +29,21 @@ export const Form = () => {
 
   return (
     <Root direction="column" justifyContent="center" alignItems="center">
-      <LongButton
-        fontSize={theme.fontSizes.base}
-        color={theme.colors.lightBlue}
-        fontColor={theme.colors.white}
-        onClick={handleGoogleLogin}
-      >
+      <LongButton fontSize="16px" color="#5c79f1" fontColor="white" onClick={handleGoogleLogin}>
         <Icon name="Google" width="30px" height="30px" />
-        <Text fontSize="20px" color={theme.colors.white}>
+        <Text fontSize="20px" color="white">
           Google 로그인
         </Text>
       </LongButton>
-      <LongButton fontSize={theme.fontSizes.base} color={theme.colors.darkgreen} fontColor={theme.colors.white}>
+      <LongButton fontSize="16px" color="#1cc802" fontColor="white">
         <Icon name="Google" width="30px" height="30px" />
-        <Text fontSize="20px" color={theme.colors.white}>
+        <Text fontSize="20px" color="white">
           네이버 로그인
         </Text>
       </LongButton>
-      <LongButton fontSize={theme.fontSizes.base} color={theme.colors.lightyellow} fontColor={theme.colors.black}>
+      <LongButton fontSize="16px" color="#ffeb3b" fontColor="black">
         <Icon name="Google" width="30px" height="30px" />
-        <Text fontSize="20px" color={theme.colors.black}>
+        <Text fontSize="20px" color="black">
           카카오 로그인
         </Text>
       </LongButton>
