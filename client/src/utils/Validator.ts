@@ -9,13 +9,13 @@ const emailPattern =
 const passwordPattern = /^[a-zA-Z0-9]{8,15}$/;
 
 // 빈값반환 하면 검증 통과
-export const checkEmail = (str) => {
+export const checkEmail = (str: string): string => {
   return emailPattern.test(str) ? '' : '이메일 양식에 맞춰 입력해주세요';
 };
 
-export const checkRequired = (str) => {
+export const checkRequired = (str: string): string => {
   return str !== '' ? '' : '필수 항목입니다. ';
 };
-export const checkPassword = (str) => {
+export const checkPassword = (str: string): string => {
   return passwordPattern.test(str) ? '' : '숫자 영문조합 (8-15개이하)';
 };

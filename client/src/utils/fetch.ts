@@ -1,6 +1,6 @@
-export const fetchById = async (url, id) => {
+export const fetchById = async (url: string, id: string): Promise<object[]> => {
   return await (await fetch(`${url}${id}`)).json();
 };
-export const fetchData = async (url) => {
+export const fetchData = async (url: string): Promise<object[]> => {
   return await (await fetch(url)).json();
 };
