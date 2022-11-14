@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 
-import { useDispatch } from 'react-redux';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Image from 'components/Common/Image';
 import { useMusicSelector } from 'hooks/useMusicSelector';
-export const Card = ({ genre_img, genre_id }) => {
-  const dispatch = useDispatch();
+import { useAppDispatch } from 'hooks/useAppDispatch';
+type CardProps = {
+  genre_img: string;
+  genre_id: string;
+};
+export const Card = ({ genre_img, genre_id }: CardProps) => {
+  const dispatch = useAppDispatch();
   const [, playListSelector] = useMusicSelector();
 
-  const isInGenre = playListSelector.musicList.id === genre_id ? true : false;
-  const handleCard = ({ target }) => dispatch(fetchmusicList(target.id));
+  const isInGenre: boolean = playListSelector.musicList.id === genre_id ? true : false;
+  const handleCard = ({ target }: any) => dispatch(fetchmusicList(target.id));
 
   return (
     <CardImage
@@ -24,7 +28,12 @@ export const Card = ({ genre_img, genre_id }) => {
   );
 };
 
-const CardImage = styled(Image)`
+type CardImageProps = {
+  theme: any;
+  disabled: boolean;
+};
+
+const CardImage = styled(Image)<CardImageProps>`
   border-radius: ${({ theme }) => theme.borderRadius.xxl};
   box-shadow: ${({ theme }) => theme.boxShadows.card};
   opacity: ${(props) => (!props.disabled ? '0.2' : '1')};
