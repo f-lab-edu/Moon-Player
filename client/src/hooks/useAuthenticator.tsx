@@ -1,10 +1,11 @@
-import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { removeStoreItems } from 'utils/persist';
 import { useNavigate } from 'react-router-dom';
+import { useAppSelector } from './useAppDispatch';
+
 export const useAuthenticator = () => {
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user.GoogleUserinfo);
+  const user = useAppSelector((state) => state.user.GoogleUserinfo);
   const isVerified = user.verified_email ? true : false;
 
   const [isAuthenticated, setAuthenticated] = useState(isVerified);

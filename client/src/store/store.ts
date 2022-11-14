@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './reducers/index';
 import { PERSIST, PURGE } from 'redux-persist';
+
 export const store = configureStore({
   reducer: rootReducer,
 
@@ -8,7 +9,7 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoreActions: [PERSIST, PURGE],
+        ignoreActions: [PERSIST, PURGE] as any,
       },
     }),
 });

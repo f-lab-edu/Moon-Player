@@ -1,7 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
 
-const initialState = {
+type PlayerState = {
+  playerItems: Music[];
+  playmusic: object;
+};
+
+type Music = {
+  video_link: string;
+  video_title: string;
+  video_img: string;
+  id: number;
+};
+const initialState: PlayerState = {
   playerItems: [],
   playmusic: {},
 };
@@ -12,7 +23,7 @@ export const musicPlayerSlice = createSlice({
   // 동기적인 액션 처리
   reducers: {
     // 플레이어에 add 해주는 함수
-    handleAddPlayer: (state, action) => {
+    handleAddPlayer: (state: PlayerState, action: PayloadAction<Music>) => {
       state.playerItems = [...state.playerItems, Object.assign({}, action.payload)];
     },
     handleShuffleMusics: (state, action) => {
@@ -22,7 +33,7 @@ export const musicPlayerSlice = createSlice({
     // playItems도 업데이트 되어야함
     // playingItem도 업데이트 되어야함
     handleRemoveMusic: (state, action) => {
-      state.playerItems = state.playerItems.filter((item) => item.video_title !== action.payload);
+      state.playerItems = state.playerItems.filter((music: Music) => music.video_title !== action.payload);
     },
     handleAddMusic: (state, action) => {
       state.playmusic = action.payload;
