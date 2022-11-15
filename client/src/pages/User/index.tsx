@@ -20,9 +20,8 @@ const TextArea = styled.textarea`
   resize: none;
 `;
 const UserPage = () => {
-  const text = useRef();
+  const text = useRef<HTMLTextAreaElement>(null);
   const handleSubmit = () => {
-    console.log(text.current.value);
     // 내 이메일로 전송하는 코드 입력
   };
   return (
@@ -32,9 +31,15 @@ const UserPage = () => {
         <Text color="red" fontSize="40px">
           버그리포트
         </Text>
-        <Text color="black"> 이용중에 발견하신 기능상의 오류 혹은 불편한점들 </Text>
-        <Text color="black"> 추가적으로 필요한 기능들을 500자 이내로 입력해주세요. </Text>
-        <Text color="black"> 여러분의 쾌적한 이용을 위해 오류 개선에 최선을 다하겠습니다. </Text>
+        <Text fontSize="20px" color="black">
+          이용중에 발견하신 기능상의 오류 혹은 불편한점들
+        </Text>
+        <Text fontSize="20px" color="black">
+          추가적으로 필요한 기능들을 500자 이내로 입력해주세요.
+        </Text>
+        <Text fontSize="20px" color="black">
+          여러분의 쾌적한 이용을 위해 오류 개선에 최선을 다하겠습니다
+        </Text>
         <TextArea ref={text} placeholder="500자 이내로 적어주세요" maxLength={500}></TextArea>
         <Button
           onClick={handleSubmit}

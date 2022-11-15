@@ -10,18 +10,21 @@ import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
 import { IconButton } from 'components/Common/IconButton';
 import { handleAlarm } from 'store/feature/layout/LayoutSlice';
-import { useMusicSelector } from 'hooks/useMusicSelector';
-type Music = {
+import { useAppSelector } from 'hooks/useAppDispatch';
+import { MusicDataType } from 'types/store';
+type ItemProps = {
   video_title: string;
   video_img: string;
   order: number;
 };
-export const Item = ({ video_title, video_img, order }: Music) => {
+
+export const Item = ({ video_title, video_img, order }: ItemProps) => {
   const dispatch = useDispatch();
-  const [, , playerSelector] = useMusicSelector();
-  const isSelectedMusic = playerSelector.playmusic.video_title === video_title;
+
+  const playerSelector = useAppSelector((state) => state.music.player);
+  const isInMusic = playerSelector.playmusic.video_title === video_title ? true : false;
   const playerItemslength = playerSelector.playerItems.length;
-  const prevPlayerItemslength = usePrevious(playerItemslength);
+  const prevPlayerItemslength = usePrevious(playerItemslength) as number;
   const { element, handleScrollElement } = useMoveDownScroll();
 
   useEffect(() => {
@@ -30,18 +33,21 @@ export const Item = ({ video_title, video_img, order }: Music) => {
   }, [playerItemslength]);
 
   const handleClickRemove = () => {
-    return isSelectedMusic
+    return isInMusic
       ? dispatch(handleAlarm({ isOpen: true, text: '현재 선택중인 음악은 삭제할수없습니다.' }))
       : dispatch(handleRemoveMusic(video_title));
   };
 
   const handleMusic = () => {
-    const music = playerSelector.playerItems.find((music: any) => music.video_title === video_title);
-    dispatch(handleAddMusic(music));
+    if (!isInMusic) return;
+    const selectedmusic = playerSelector.playerItems.find(
+      (music: MusicDataType) => music.video_title === video_title
+    ) as MusicDataType;
+    dispatch(handleAddMusic(selectedmusic));
   };
 
   return (
-    <Root ref={element} isSelected={isSelectedMusic} direction="row" justifyContent="space-between" alignItems="center">
+    <Root ref={element} isSelected={isInMusic} direction="row" justifyContent="space-between" alignItems="center">
       <Text color="white" fontSize="15px">
         {order}
       </Text>

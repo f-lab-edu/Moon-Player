@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 type ScrollBoxProps = {
   color: string;
-  radius: string;
+  radius?: string;
 };
 
 export const ScrollBox = styled.div<ScrollBoxProps>(

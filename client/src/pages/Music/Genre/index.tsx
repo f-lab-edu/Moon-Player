@@ -1,25 +1,22 @@
 import { useEffect } from 'react';
 import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import Card from 'components/Music/Genre/Card';
-import { useMusicSelector } from 'hooks/useMusicSelector';
+
 import Root from 'components/Common/Flex';
 import { IconButton } from 'components/Common/IconButton';
-import { useAppDispatch } from 'hooks/useAppDispatch';
-
-type GenreProps = {
-  genre_img: string;
-  genre_id: string;
-};
+import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
+import { GenreDataType } from 'types/store';
 
 export const Genre = () => {
   const dispatch = useAppDispatch();
-  const [genreSelector] = useMusicSelector();
+  const genreSelector = useAppSelector((state) => state.music.genre);
+
   useEffect(() => {
-    dispatch(fetchmusicGenre());
+    dispatch(fetchmusicGenre('http://localhost:4000/api/music/genre/'));
   }, []);
   const genreItems =
     genreSelector.musicList &&
-    genreSelector.musicList.map(({ genre_img, genre_id }: GenreProps) => (
+    genreSelector.musicList.map(({ genre_img, genre_id }: GenreDataType) => (
       <Card genre_img={genre_img} key={genre_id} genre_id={genre_id}></Card>
     ));
   return (
@@ -29,7 +26,6 @@ export const Genre = () => {
         {genreItems}
         <IconButton className="swiper-btn-next" icon="arrowRight" size="3x" padding="10px" color="white"></IconButton>
       </Root>
-      <div className="pagination"></div>
     </>
   );
 };

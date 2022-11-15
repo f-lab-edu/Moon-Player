@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchData } from 'utils/fetch';
 import { PURGE } from 'redux-persist';
-import { GenreState } from 'types/store';
+import { GenreState, GenreDataType } from 'types/store';
 
 const initialState: GenreState = {
   musicList: [],
@@ -9,14 +9,12 @@ const initialState: GenreState = {
 };
 
 // 액션 생성
-const fetchmusicGenre = createAsyncThunk('genre', async () => {
+const fetchmusicGenre = createAsyncThunk('genre', async (url: string, thunkApi: any) => {
   try {
-    const response = await fetchData('http://localhost:4000/api/music/genre/');
-
-    return response.music;
-  } catch (error) {
-    console.log(error);
-    //  Alert Store 생성해서 오류 발생시 addAlert() action 호출하는 방식으로 UI 노출 가능
+    const response = await fetchData(url);
+    return response.music as GenreDataType;
+  } catch (error: any) {
+    return thunkApi.rejectWithValue(error.message); //  Alert Store 생성해서 오류 발생시 addAlert() action 호출하는 방식으로 UI 노출 가능
   }
 });
 // Reducer
@@ -25,13 +23,10 @@ export const musicGenreSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchmusicGenre.pending, (state) => {
+    builder.addCase(fetchmusicGenre.pending, (state: GenreState) => {
       state.status = 'Loading';
     });
-
-    // 비동기는 타입안달아줘도 될거같음
-
-    builder.addCase(fetchmusicGenre.fulfilled, (state, action) => {
+    builder.addCase(fetchmusicGenre.fulfilled, (state: GenreState, action: PayloadAction<GenreDataType[]>) => {
       state.status = 'Complete';
       state.musicList = action.payload;
     });

@@ -1,10 +1,15 @@
 import { Navigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 import { handleAlarm } from 'store/feature/layout/LayoutSlice';
+import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
+import { ReactElement } from 'react';
 
-export const ProtectedRoute = ({ children }) => {
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.GoogleUserinfo);
+type ProtectedRouteProps = {
+  children: ReactElement;
+};
+
+export const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
+  const dispatch = useAppDispatch();
+  const user = useAppSelector((state) => state.user.GoogleUserinfo);
 
   const isVerified = user.verified_email ? true : false;
 

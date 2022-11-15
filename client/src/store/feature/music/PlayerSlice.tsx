@@ -3,7 +3,7 @@ import { PURGE } from 'redux-persist';
 import { MusicDataType, PlayerState } from 'types/store';
 const initialState: PlayerState = {
   playerItems: [],
-  playmusic: '',
+  playmusic: {},
 };
 
 // Reducer
@@ -19,19 +19,17 @@ export const musicPlayerSlice = createSlice({
     handleShuffleMusics: (state: PlayerState, action: PayloadAction<MusicDataType[]>) => {
       state.playerItems = action.payload;
     },
-    // 플레이어에서 삭제하는 함수
-    // playItems도 업데이트 되어야함
-    // playingItem도 업데이트 되어야함
+    // string바꿔야할듯
     handleRemoveMusic: (state: PlayerState, action: PayloadAction<string>) => {
       state.playerItems = state.playerItems.filter((music) => music.video_title !== action.payload);
     },
-    handleAddMusic: (state, action: PayloadAction<MusicDataType>) => {
+    handleAddMusic: (state: PlayerState, action: PayloadAction<MusicDataType>) => {
       state.playmusic = action.payload;
     },
-    handlePrevMusic: (state, action: PayloadAction<MusicDataType>) => {
+    handlePrevMusic: (state: PlayerState, action: PayloadAction<MusicDataType>) => {
       state.playmusic = action.payload;
     },
-    handleNextMusic: (state, action: PayloadAction<MusicDataType>) => {
+    handleNextMusic: (state: PlayerState, action: PayloadAction<MusicDataType>) => {
       state.playmusic = action.payload;
     },
   },

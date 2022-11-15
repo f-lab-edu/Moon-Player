@@ -18,11 +18,11 @@ export const Text = styled.h3<TextProps>(
   margin:${margin};
 `
 );
-// Text.defaultProps = {
-//   color: 'white',
-//   fontSize: '20px',
-//   weight: '700',
-//   align: 'start',
-// };
+Text.defaultProps = {
+  color: 'white',
+  fontSize: '20px',
+  weight: '700',
+  align: 'start',
+};
 
 export default Text;

@@ -1,10 +1,10 @@
 import { handleNextMusic, handlePrevMusic, handleShuffleMusics } from 'store/feature/music/PlayerSlice';
 import { nextPlayMusic, prevPlayMusic, shuffleMusic } from 'utils/Player';
-import { useMusicSelector } from './useMusicSelector';
-import { useAppDispatch } from 'hooks/useAppDispatch';
+
+import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 export const usePlayerSelectMusic = () => {
   const dispatch = useAppDispatch();
-  const [, , playerSelector] = useMusicSelector();
+  const playerSelector = useAppSelector((state) => state.music.player);
   const onPrevMusic = () =>
     dispatch(handlePrevMusic(prevPlayMusic(playerSelector.playerItems, playerSelector.playmusic)));
 

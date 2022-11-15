@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 
 import ReactPlayer from 'react-player/lazy';
-
-import { useMusicSelector } from './useMusicSelector';
 import { usePlayerSelectMusic } from './usePlayerSelectMusic';
+import { useAppSelector } from 'hooks/useAppDispatch';
 
 type Music = {
   video_link: string;
@@ -43,7 +42,8 @@ const DEFAULT_STATE: PlayerControl = {
 //  전역스토어에있는 값만가지고 음악을 재생시켜주는 훅
 export const usePlayerControl = () => {
   const playerRef = useRef<ReactPlayer>(null);
-  const [, , playerSelector] = useMusicSelector();
+  const playerSelector = useAppSelector((state) => state.music.player);
+
   const { onPrevMusic, onNextMusic, onShuffleMusic } = usePlayerSelectMusic(); //음악을 고르는 훅
   const [playerState, setState] = useState(DEFAULT_STATE);
   const currentTime =

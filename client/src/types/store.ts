@@ -1,18 +1,30 @@
 type PlayerState = {
-  playerItems: MusicDataType[];
-  playmusic: MusicDataType | string;
+  playerItems: Array<MusicDataType>;
+  playmusic: MusicDataType | object;
 };
 
 //  비동기 데이터
 type GenreState = {
-  musicList?: object[];
+  musicList: Array<GenreDataType>;
   status: string;
 };
+type GenreDataType = {
+  genre: string;
+  genre_img: string;
+  genre_id: number;
+};
+
 // 비동기 데이터
 type PlayListState = {
-  musicList?: object[];
+  musicList: PlayListDataType;
   status: string;
 };
+type PlayListDataType = {
+  title: string;
+  id: number;
+  musics: Array<MusicDataType>;
+};
+
 type LayoutState = {
   alarm: alarmDataType;
 };
@@ -29,14 +41,13 @@ type MusicDataType = {
   id: number;
 };
 
-// 아직 사용 안함
-// type GenreDataType = { genre: string; genre_img: string; genre_id: number };
-// type PlayListDataType = {
-//   musicList: {
-//     title: string;
-//     id: number;
-//   };
-//   musics?: MusicDataType[];
-// };
-
-export type { MusicDataType, GenreState, PlayerState, PlayListState, LayoutState, alarmDataType };
+export type {
+  MusicDataType,
+  GenreDataType,
+  GenreState,
+  PlayerState,
+  PlayListState,
+  LayoutState,
+  alarmDataType,
+  PlayListDataType,
+};

@@ -3,24 +3,28 @@ import PlayerFooter from 'components/Music/Player/Footer';
 import PlayerMusic from 'components/Music/Player/Item';
 import Text from 'components/Common/Text';
 import ScrollBox from 'components/Common/ScrollBox';
-import { useMusicSelector } from 'hooks/useMusicSelector';
+import { useAppSelector } from 'hooks/useAppDispatch';
+
 // 플레이어 메인
 export const Player = () => {
-  const [, , playerSelector] = useMusicSelector();
+  const playerSelector = useAppSelector((state) => state.music.player);
+
   const playerMusics =
     playerSelector.playerItems.length > 0 ? (
       playerSelector.playerItems.map(({ video_title, video_img }, index) => (
         <PlayerMusic video_title={video_title} video_img={video_img} key={index} order={++index} />
       ))
     ) : (
-      <Text>재생 목록이 비어있습니다.</Text>
+      <Text color="white" fontSize="14px">
+        재생 목록이 비어있습니다.
+      </Text>
     );
   return (
     <Root>
-      <PlayerTitle>재생 목록</PlayerTitle>
-      <PlayerScrollBox width="10px" height="5%">
-        {playerMusics}
-      </PlayerScrollBox>
+      <Text fontSize="16px" weight="700" color="white">
+        재생 목록
+      </Text>
+      <PlayerScrollBox color="white">{playerMusics}</PlayerScrollBox>
       <PlayerFooter />
     </Root>
   );
@@ -30,8 +34,7 @@ const Root = styled.div`
   width: 400px;
   padding: 15px;
   border: 1px solid white;
-
-  border-radius: ${({ theme }) => theme.borderRadius.xl};
+  border-radius: '7px';
 
   @media screen and (max-width: 1000px) {
     margin: 0px;
@@ -41,14 +44,10 @@ const Root = styled.div`
 const PlayerScrollBox = styled(ScrollBox)`
   height: 30vh;
   padding-right: 10px;
+
   @media screen and (max-width: 1000px) {
     width: 100%;
   }
 `;
 
-const PlayerTitle = styled(Text)`
-  font-size: ${({ theme }) => theme.fontSizes.base};
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
-  color: ${({ theme }) => theme.colors.white};
-`;
 export default Player;

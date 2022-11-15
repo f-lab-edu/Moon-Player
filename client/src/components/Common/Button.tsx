@@ -11,7 +11,6 @@ type ButtonProps = {
   radius?: string;
   margin?: string;
   border?: string;
-  // onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 export const Button = styled.button<ButtonProps>(
@@ -25,7 +24,7 @@ export const Button = styled.button<ButtonProps>(
   border-radius: ${radius};
   color: ${fontColor};
   margin:${margin};
-  border: ${border}
+  border: ${border};
 
   &:hover {
     cursor: pointer;
@@ -33,14 +32,13 @@ export const Button = styled.button<ButtonProps>(
   }
 `
 );
-// '1px solid rgba(0, 0, 0, 0.1)'
-// Button.defaultProps = {
-//   width: '50px',
-//   height: '50px',
-//   color: 'white',
-//   // shadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
-//   // fontSize: '16px',
-//   // fontWeight: '700',
-// };
+Button.defaultProps = {
+  width: '50px',
+  height: '50px',
+  color: 'white',
+  shadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+  fontSize: '16px',
+  fontWeight: '700',
+};
 
 export default Button;

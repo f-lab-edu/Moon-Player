@@ -2,40 +2,29 @@ import styled from 'styled-components';
 
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Image from 'components/Common/Image';
-import { useMusicSelector } from 'hooks/useMusicSelector';
-import { useAppDispatch } from 'hooks/useAppDispatch';
+import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 type CardProps = {
   genre_img: string;
-  genre_id: string;
+  genre_id: number;
 };
 export const Card = ({ genre_img, genre_id }: CardProps) => {
   const dispatch = useAppDispatch();
-  const [, playListSelector] = useMusicSelector();
-
+  const playListSelector = useAppSelector((state) => state.music.playList);
   const isInGenre: boolean = playListSelector.musicList.id === genre_id ? true : false;
   const handleCard = (event: React.MouseEvent<HTMLImageElement>) => dispatch(fetchmusicList(event.currentTarget.id));
 
   return (
-    <CardImage
-      onClick={handleCard}
-      src={genre_img}
-      width="200px"
-      height="120px"
-      id={genre_id}
-      key={genre_id}
-      disabled={isInGenre}
-    />
+    <CardImage onClick={handleCard} src={genre_img} width="200px" height="120px" key={genre_id} disabled={isInGenre} />
   );
 };
 
 type CardImageProps = {
-  theme: any;
   disabled: boolean;
 };
 
 const CardImage = styled(Image)<CardImageProps>`
-  border-radius: ${({ theme }) => theme.borderRadius.xxl};
-  box-shadow: ${({ theme }) => theme.boxShadows.card};
+  border-radius: '7px';
+  box-shadow: 'rgb(38, 57, 77) 0px 20px 30px -10px';
   opacity: ${(props) => (!props.disabled ? '0.2' : '1')};
   margin-left: 15px;
   transition-duration: 0.4s;

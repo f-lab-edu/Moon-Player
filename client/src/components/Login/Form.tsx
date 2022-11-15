@@ -29,20 +29,20 @@ export const Form = () => {
 
   return (
     <Root direction="column" justifyContent="center" alignItems="center">
-      <LongButton fontSize="16px" color="#5c79f1" fontColor="white" onClick={handleGoogleLogin}>
+      <LongButton fontSize="20px" color="#5c79f1" fontColor="white" onClick={handleGoogleLogin}>
         <Icon name="Google" width="30px" height="30px" />
         <Text fontSize="20px" color="white">
           Google 로그인
         </Text>
       </LongButton>
-      <LongButton fontSize="16px" color="#1cc802" fontColor="white">
-        <Icon name="Google" width="30px" height="30px" />
+      <LongButton fontSize="20px" color="#1cc802" fontColor="white">
+        <Icon name="Naver" width="30px" height="30px" />
         <Text fontSize="20px" color="white">
           네이버 로그인
         </Text>
       </LongButton>
-      <LongButton fontSize="16px" color="#ffeb3b" fontColor="black">
-        <Icon name="Google" width="30px" height="30px" />
+      <LongButton fontSize="20px" color="#ffeb3b" fontColor="black">
+        <Icon name="Kakao" width="30px" height="30px" />
         <Text fontSize="20px" color="black">
           카카오 로그인
         </Text>
@@ -57,9 +57,12 @@ const Root = styled(Flex)`
 
 const LongButton = styled(Button)`
   display: flex;
+  width: 100%;
   align-items: center;
   height: 60px;
   border: none;
+  width: 100%;
+
   margin-top: 20px;
   > :nth-child(2) {
     margin: 0 auto;

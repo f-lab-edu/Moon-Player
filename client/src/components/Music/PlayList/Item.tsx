@@ -4,18 +4,27 @@ import { handleAddPlayer } from 'store/feature/music/PlayerSlice';
 import OverFlowText from 'components/Common/OverFlowText';
 
 import Flex from 'components/Common/Flex';
-import { useMusicSelector } from 'hooks/useMusicSelector';
 import { IconButton } from 'components/Common/IconButton';
-import { Music } from 'types/store';
-import { useAppDispatch } from 'hooks/useAppDispatch';
-
-export const Item = ({ id, video_title, video_img }: Music) => {
+import { MusicDataType } from 'types/store';
+import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
+type ItemProps = {
+  video_title: string;
+  id: number;
+  video_img: string;
+};
+export const Item = ({ id, video_title, video_img }: ItemProps) => {
   const dispatch = useAppDispatch();
-  const [, playListSelector, playerSelector] = useMusicSelector();
-  const isInPlayer = playerSelector.playerItems.find((music) => music.video_title === video_title) ? true : false;
+  const playerSelector = useAppSelector((state) => state.music.player);
+  const playListSelector = useAppSelector((state) => state.music.playList);
+  const isInPlayer = playerSelector.playerItems.find((music: MusicDataType) => music.video_title === video_title)
+    ? true
+    : false;
 
   const handleAddMusic = () => {
-    const selectedMusic = !isInPlayer && playListSelector.musicList.musics.find((music) => music.id === id);
+    if (isInPlayer) return;
+    const selectedMusic = playListSelector.musicList.musics.find(
+      (music: MusicDataType) => music.id === id
+    ) as MusicDataType;
     dispatch(handleAddPlayer(selectedMusic));
   };
 

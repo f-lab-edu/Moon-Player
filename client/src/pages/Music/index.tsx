@@ -9,7 +9,7 @@ const MusicPage = () => {
     <Layout>
       <Header></Header>
       <Genre />
-      <Main>
+      <Main direction="row">
         <PlayList />
         <Player />
       </Main>
