@@ -1,20 +1,9 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchById } from 'utils/fetch';
 import { PURGE } from 'redux-persist';
+import { PlayListState } from 'types/store';
 
-type PlayerListState = {
-  musicList: Music[];
-  status: string;
-};
-
-type Music = {
-  video_link: string;
-  video_title: string;
-  video_img: string;
-  id: number;
-};
-
-const initialState: PlayerListState = {
+const initialState: PlayListState = {
   musicList: [],
   status: '',
 };
@@ -35,17 +24,17 @@ export const musicPlayListSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchmusicList.pending, (state: PlayerListState) => {
+    builder.addCase(fetchmusicList.pending, (state: PlayListState) => {
       state.status = 'Loading';
     });
 
     // 비동기로 가져올떄 PlayList에 렌더링 할 아이템 속성 변경
-    builder.addCase(fetchmusicList.fulfilled, (state: PlayerListState, action: PayloadAction<Music[]>) => {
+    builder.addCase(fetchmusicList.fulfilled, (state: PlayListState, action) => {
       state.status = 'Complete';
       state.musicList = action.payload;
     });
 
-    builder.addCase(fetchmusicList.rejected, (state: PlayerListState) => {
+    builder.addCase(fetchmusicList.rejected, (state: PlayListState) => {
       state.status = 'Fail';
     });
     builder.addCase(PURGE, () => initialState);

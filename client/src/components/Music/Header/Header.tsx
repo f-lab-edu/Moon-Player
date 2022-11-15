@@ -1,5 +1,4 @@
-import styled, { ThemeContext } from 'styled-components';
-import { useContext } from 'react';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
@@ -10,27 +9,26 @@ import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
 
 export const Header = () => {
-  const theme = useContext(ThemeContext);
   const { signOut } = useAuthenticator();
   const handleLogout = () => signOut();
 
   return (
     <Root direction="row" justifyContent="space-between" alignItems="center">
       <Flex direction="row" alignItems="center">
-        <Avatar src={theme.images.Logo} width="50px" height="50px" margin={theme.margins.lg} />
-        <Text fontSize={theme.fontSizes.xxxl} color={theme.colors.white}>
+        <Avatar src="images/Loginlogo.png" width="50px" height="50px" />
+        <Text fontSize="30px" color="white">
           Moon Player
         </Text>
       </Flex>
       <Flex direction="row" alignItems="center">
         <StyledLink to="#" onClick={handleLogout}>
-          <FontAwesomeIcon icon={faRightFromBracket} color={theme.colors.gray} />
+          <FontAwesomeIcon icon={faRightFromBracket} color="gray" />
           <Text align="center" margin="10px" color="white" fontSize="16px">
             로그아웃
           </Text>
         </StyledLink>
         <StyledLink to="/user">
-          <FontAwesomeIcon icon={faUser} color={theme.colors.gray} />
+          <FontAwesomeIcon icon={faUser} color="gray" />
           <Text align="center" margin="10px" color="white" fontSize="16px">
             내정보
           </Text>

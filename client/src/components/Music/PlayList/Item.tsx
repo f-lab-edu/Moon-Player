@@ -2,18 +2,20 @@ import styled from 'styled-components';
 import Image from 'components/Common/Image';
 import { handleAddPlayer } from 'store/feature/music/PlayerSlice';
 import OverFlowText from 'components/Common/OverFlowText';
-import { useDispatch } from 'react-redux';
+
 import Flex from 'components/Common/Flex';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import { IconButton } from 'components/Common/IconButton';
+import { Music } from 'types/store';
+import { useAppDispatch } from 'hooks/useAppDispatch';
 
-export const Music = ({ id, video_title, video_img }) => {
-  const dispatch = useDispatch();
+export const Item = ({ id, video_title, video_img }: Music) => {
+  const dispatch = useAppDispatch();
   const [, playListSelector, playerSelector] = useMusicSelector();
-  const isInPlayer = playerSelector.playerItems.find((item) => item.video_title === video_title) ? true : false;
+  const isInPlayer = playerSelector.playerItems.find((music) => music.video_title === video_title) ? true : false;
 
   const handleAddMusic = () => {
-    const selectedMusic = !isInPlayer && playListSelector.musicList.musics.find((item) => item.id === id);
+    const selectedMusic = !isInPlayer && playListSelector.musicList.musics.find((music) => music.id === id);
     dispatch(handleAddPlayer(selectedMusic));
   };
 
@@ -21,16 +23,18 @@ export const Music = ({ id, video_title, video_img }) => {
     <Root direction="row" justifyContent="space-between" alignItems="center">
       <div>{id}</div>
       <Image src={video_img} width="100px" height="50px" />
-      <OverFlowText width="50%">{video_title}</OverFlowText>
-      <IconButton active={isInPlayer} event={handleAddMusic} icon="plus" size="2x"></IconButton>
+      <OverFlowText fontSize="16px" width="50%">
+        {video_title}
+      </OverFlowText>
+      <IconButton color="white" active={isInPlayer} event={handleAddMusic} icon="plus" size="2x"></IconButton>
     </Root>
   );
 };
 
 const Root = styled(Flex)`
-  border: ${({ theme }) => theme.border.white};
-  color: ${({ theme }) => theme.colors.white};
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  border: 'white';
+  color: 'white';
+  font-weight: 700;
   border-left: none;
   border-right: none;
   border-bottom: none;
@@ -42,4 +46,4 @@ const Root = styled(Flex)`
     width: 1px;
   }
 `;
-export default Music;
+export default Item;

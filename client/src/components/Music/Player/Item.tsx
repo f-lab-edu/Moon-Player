@@ -7,11 +7,16 @@ import OverFlowText from 'components/Common/OverFlowText';
 import { useEffect } from 'react';
 import Image from 'components/Common/Image';
 import Flex from 'components/Common/Flex';
-import { useMusicSelector } from 'hooks/useMusicSelector';
 import Text from 'components/Common/Text';
 import { IconButton } from 'components/Common/IconButton';
 import { handleAlarm } from 'store/feature/layout/LayoutSlice';
-export const Music = ({ video_title, video_img, order }) => {
+import { useMusicSelector } from 'hooks/useMusicSelector';
+type Music = {
+  video_title: string;
+  video_img: string;
+  order: number;
+};
+export const Item = ({ video_title, video_img, order }: Music) => {
   const dispatch = useDispatch();
   const [, , playerSelector] = useMusicSelector();
   const isSelectedMusic = playerSelector.playmusic.video_title === video_title;
@@ -31,13 +36,13 @@ export const Music = ({ video_title, video_img, order }) => {
   };
 
   const handleMusic = () => {
-    const music = playerSelector.playerItems.find((item) => item.video_title === video_title);
+    const music = playerSelector.playerItems.find((music: any) => music.video_title === video_title);
     dispatch(handleAddMusic(music));
   };
 
   return (
     <Root ref={element} isSelected={isSelectedMusic} direction="row" justifyContent="space-between" alignItems="center">
-      <Text shadow="0" fontSize="15px">
+      <Text color="white" fontSize="15px">
         {order}
       </Text>
       <Image onClick={handleMusic} src={video_img} width="100px" height="50px" />
@@ -52,13 +57,16 @@ export const Music = ({ video_title, video_img, order }) => {
       >
         {video_title}
       </OverFlowText>
-      <IconButton event={handleClickRemove} size="2x" icon="trash"></IconButton>
+      <IconButton color="white" event={handleClickRemove} size="2x" icon="trash"></IconButton>
     </Root>
   );
 };
-const Root = styled(Flex)`
-  border-bottom: ${({ theme }) => theme.border.white};
-  background: ${({ isSelected, theme }) => isSelected && theme.colors.gray};
+type RootProps = {
+  isSelected: boolean;
+};
+const Root = styled(Flex)<RootProps>`
+  border-bottom: 'white';
+  background: ${({ isSelected }) => isSelected && 'gray'};
   opacity: ${({ isSelected }) => isSelected && '0.7'};
   gap: 15px;
 
@@ -66,4 +74,4 @@ const Root = styled(Flex)`
     width: 100%;
   }
 `;
-export default Music;
+export default Item;

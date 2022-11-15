@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
-import PlayListMusic from 'components/Music/PlayList/Music';
+import PlayListMusic from 'components/Music/PlayList/Item';
 import { ScrollBox } from 'components/Common/ScrollBox';
 import { useMusicSelector } from 'hooks/useMusicSelector';
 import PlayListTitle from 'components/Common/Text';

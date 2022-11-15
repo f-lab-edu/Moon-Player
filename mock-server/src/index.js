@@ -19,7 +19,7 @@ app.proxy = true
 app.use(cors(corsOptions))
 app.use(router.routes()).use(router.allowedMethods())
 
-const PORT = 4000
+const PORT = 4001
 app.listen(PORT, () => {
-  console.log('server is listening to port 4000');
+  console.log('server is listening to port 4001');
 });

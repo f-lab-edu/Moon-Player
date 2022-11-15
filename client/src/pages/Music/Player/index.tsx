@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PlayerFooter from 'components/Music/Player/Footer';
-import PlayerMusic from 'components/Music/Player/Music';
+import PlayerMusic from 'components/Music/Player/Item';
 import Text from 'components/Common/Text';
 import ScrollBox from 'components/Common/ScrollBox';
 import { useMusicSelector } from 'hooks/useMusicSelector';
