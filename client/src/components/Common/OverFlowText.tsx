@@ -20,13 +20,13 @@ export const OverFlowText = styled.div<OverFlowTextProps>(
   white-space: nowrap;
 `
 );
-// OverFlowText.defaultProps = {
-//   // width: '50%',
-//   // fontSize: '15px',
-//   color: 'white',
-//   weight: '700',
-//   align: 'start',
-//   cursor: 'default',
-// };
+OverFlowText.defaultProps = {
+  width: '50%',
+  fontSize: '15px',
+  color: 'white',
+  weight: '700',
+  align: 'start',
+  cursor: 'default',
+};
 
 export default OverFlowText;

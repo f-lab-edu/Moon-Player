@@ -14,22 +14,22 @@ export const Header = () => {
 
   return (
     <Root direction="row" justifyContent="space-between" alignItems="center">
-      <Flex direction="row" alignItems="center">
+      <Flex direction="row" alignItems="center" margin="15px">
         <Avatar src="images/Loginlogo.png" width="50px" height="50px" />
-        <Text fontSize="30px" color="white">
+        <Text fontSize="30px" color="white" margin="20px">
           Moon Player
         </Text>
       </Flex>
       <Flex direction="row" alignItems="center">
         <StyledLink to="#" onClick={handleLogout}>
           <FontAwesomeIcon icon={faRightFromBracket} color="gray" />
-          <Text align="center" margin="10px" color="white" fontSize="16px">
+          <Text align="center" margin="10px" color="white" fontSize="18px">
             로그아웃
           </Text>
         </StyledLink>
         <StyledLink to="/user">
           <FontAwesomeIcon icon={faUser} color="gray" />
-          <Text align="center" margin="10px" color="white" fontSize="16px">
+          <Text align="center" margin="10px" color="white" fontSize="18px">
             내정보
           </Text>
         </StyledLink>
@@ -49,6 +49,5 @@ const StyledLink = styled(Link)`
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  margin: 5px;
 `;
 export default Header;

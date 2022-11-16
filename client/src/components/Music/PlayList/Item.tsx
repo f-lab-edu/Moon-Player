@@ -13,6 +13,7 @@ type ItemProps = {
   video_img: string;
 };
 export const Item = ({ id, video_title, video_img }: ItemProps) => {
+  console.log(id);
   const dispatch = useAppDispatch();
   const playerSelector = useAppSelector((state) => state.music.player);
   const playListSelector = useAppSelector((state) => state.music.playList);
@@ -41,12 +42,12 @@ export const Item = ({ id, video_title, video_img }: ItemProps) => {
 };
 
 const Root = styled(Flex)`
-  border: 'white';
-  color: 'white';
-  font-weight: 700;
+  border: 1px solid white;
   border-left: none;
   border-right: none;
   border-bottom: none;
+  color: white;
+  font-weight: 700;
   gap: 30px;
   @media screen and (max-width: 1200px) {
     width: 100%;

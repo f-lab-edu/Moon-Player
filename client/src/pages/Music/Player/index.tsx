@@ -15,13 +15,13 @@ export const Player = () => {
         <PlayerMusic video_title={video_title} video_img={video_img} key={index} order={++index} />
       ))
     ) : (
-      <Text color="white" fontSize="14px">
+      <Text color="white" fontSize="20px">
         재생 목록이 비어있습니다.
       </Text>
     );
   return (
     <Root>
-      <Text fontSize="16px" weight="700" color="white">
+      <Text fontSize="20px" weight="700" color="white">
         재생 목록
       </Text>
       <PlayerScrollBox color="white">{playerMusics}</PlayerScrollBox>
@@ -34,7 +34,7 @@ const Root = styled.div`
   width: 400px;
   padding: 15px;
   border: 1px solid white;
-  border-radius: '7px';
+  border-radius: 7px;
 
   @media screen and (max-width: 1000px) {
     margin: 0px;

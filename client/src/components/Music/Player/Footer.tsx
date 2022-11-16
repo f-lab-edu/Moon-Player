@@ -21,14 +21,13 @@ export const Footer = () => {
   const currentTime = formatTime(+playerState.currentTime);
   const endTime = formatTime(+playerState.endTime);
   const elapsedTime = Math.floor((+playerState.currentTime / +playerState.endTime) * 100);
-
   return (
     <>
       <ImageBox direction="column" justifyContent="center" alignItems="center">
-        {playerState && playerState.music ? (
+        {playerState.music.video_title.length > 0 ? (
           <Image src={playerState.music.video_img} width="400px" height="auto" />
         ) : (
-          <Image src={'https://via.placeholder.com/400?text=No+Selected+Music'} width="auto" height="auto" />
+          <Image src="https://via.placeholder.com/400?text=No+Selected+Music" width="auto" height="auto" />
         )}
       </ImageBox>
       {playerState.music && (
@@ -80,18 +79,16 @@ const IconBox = styled(Flex)`
 const VolumeBox = styled.div`
   display: flex;
   align-items: center;
-  color: ${({ theme }) => theme.colors.gray};
+  color: gray;
   padding: 10px 20px 20px 20px;
 
   > :nth-child(1) {
     margin-right: 20px;
   }
 `;
-const ProgressBarBox = styled.div(
-  ({ theme }) => `
-  color: ${theme.colors.white};
-  font-weight: ${theme.fontWeights.bold};
-  text-align:center;
-`
-);
+const ProgressBarBox = styled.div`
+  color: white;
+  font-weight: 700;
+  text-align: center;
+`;
 export default Footer;

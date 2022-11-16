@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import useMoveDownScroll from 'hooks/useMoveDownScroll';
 import usePrevious from 'hooks/usePrevious';
-import { useDispatch } from 'react-redux';
 import { handleRemoveMusic, handleAddMusic } from 'store/feature/music/PlayerSlice';
 import OverFlowText from 'components/Common/OverFlowText';
 import { useEffect } from 'react';
@@ -10,7 +9,7 @@ import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
 import { IconButton } from 'components/Common/IconButton';
 import { handleAlarm } from 'store/feature/layout/LayoutSlice';
-import { useAppSelector } from 'hooks/useAppDispatch';
+import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import { MusicDataType } from 'types/store';
 type ItemProps = {
   video_title: string;
@@ -19,10 +18,10 @@ type ItemProps = {
 };
 
 export const Item = ({ video_title, video_img, order }: ItemProps) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const playerSelector = useAppSelector((state) => state.music.player);
-  const isInMusic = playerSelector.playmusic.video_title === video_title ? true : false;
+  const isCurrentMusic = playerSelector.playmusic.video_title === video_title ? true : false;
   const playerItemslength = playerSelector.playerItems.length;
   const prevPlayerItemslength = usePrevious(playerItemslength) as number;
   const { element, handleScrollElement } = useMoveDownScroll();
@@ -33,13 +32,12 @@ export const Item = ({ video_title, video_img, order }: ItemProps) => {
   }, [playerItemslength]);
 
   const handleClickRemove = () => {
-    return isInMusic
+    return isCurrentMusic
       ? dispatch(handleAlarm({ isOpen: true, text: '현재 선택중인 음악은 삭제할수없습니다.' }))
       : dispatch(handleRemoveMusic(video_title));
   };
 
-  const handleMusic = () => {
-    if (!isInMusic) return;
+  const handlePlayMusic = () => {
     const selectedmusic = playerSelector.playerItems.find(
       (music: MusicDataType) => music.video_title === video_title
     ) as MusicDataType;
@@ -47,11 +45,11 @@ export const Item = ({ video_title, video_img, order }: ItemProps) => {
   };
 
   return (
-    <Root ref={element} isSelected={isInMusic} direction="row" justifyContent="space-between" alignItems="center">
+    <Root ref={element} isSelected={isCurrentMusic} direction="row" justifyContent="space-between" alignItems="center">
       <Text color="white" fontSize="15px">
         {order}
       </Text>
-      <Image onClick={handleMusic} src={video_img} width="100px" height="50px" />
+      <Image onClick={handlePlayMusic} src={video_img} width="100px" height="50px" />
       <OverFlowText
         width="60%"
         fontSize="15px"
@@ -59,7 +57,7 @@ export const Item = ({ video_title, video_img, order }: ItemProps) => {
         align="center"
         weight="700"
         cursor="pointer"
-        onClick={handleMusic}
+        onClick={handlePlayMusic}
       >
         {video_title}
       </OverFlowText>
@@ -71,7 +69,7 @@ type RootProps = {
   isSelected: boolean;
 };
 const Root = styled(Flex)<RootProps>`
-  border-bottom: 'white';
+  border-bottom: 1px solid white;
   background: ${({ isSelected }) => isSelected && 'gray'};
   opacity: ${({ isSelected }) => isSelected && '0.7'};
   gap: 15px;

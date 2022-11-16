@@ -8,10 +8,11 @@ type CardProps = {
   genre_id: number;
 };
 export const Card = ({ genre_img, genre_id }: CardProps) => {
+  console.log(genre_id);
   const dispatch = useAppDispatch();
   const playListSelector = useAppSelector((state) => state.music.playList);
   const isInGenre: boolean = playListSelector.musicList.id === genre_id ? true : false;
-  const handleCard = (event: React.MouseEvent<HTMLImageElement>) => dispatch(fetchmusicList(event.currentTarget.id));
+  const handleCard = () => dispatch(fetchmusicList(`http://localhost:4000/api/music/genre/${genre_id}`));
 
   return (
     <CardImage onClick={handleCard} src={genre_img} width="200px" height="120px" key={genre_id} disabled={isInGenre} />

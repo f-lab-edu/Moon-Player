@@ -4,7 +4,7 @@ import { Icon } from 'components/Common/Icon';
 import Button from 'components/Common/Button';
 import Text from 'components/Common/Text';
 
-import { assignURL } from 'utils/oAuth';
+import { assignURL, getToken } from 'utils/oAuth';
 import Flex from 'components/Common/Flex';
 
 import { useAuthenticator } from 'hooks/useAuthenticator';
@@ -18,7 +18,9 @@ export const Form = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchUserInfo());
+    const token = getToken();
+    if (!token) return;
+    dispatch(fetchUserInfo(token));
     if (!isAuthenticated) return;
     dispatch(handleAlarm({ isOpen: true, text: '로그인 되었습니다.' }));
     signIn();

@@ -1,9 +1,9 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, current, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
 import { MusicDataType, PlayerState } from 'types/store';
 const initialState: PlayerState = {
   playerItems: [],
-  playmusic: {},
+  playmusic: { video_link: '', video_title: '', video_img: '', id: 0 },
 };
 
 // Reducer

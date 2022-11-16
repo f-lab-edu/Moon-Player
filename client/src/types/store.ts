@@ -1,6 +1,6 @@
 type PlayerState = {
   playerItems: Array<MusicDataType>;
-  playmusic: MusicDataType | object;
+  playmusic: MusicDataType;
 };
 
 //  비동기 데이터
@@ -14,7 +14,6 @@ type GenreDataType = {
   genre_id: number;
 };
 
-// 비동기 데이터
 type PlayListState = {
   musicList: PlayListDataType;
   status: string;
@@ -40,7 +39,17 @@ type MusicDataType = {
   video_img: string;
   id: number;
 };
+type UserState = {
+  status: string;
+  GoogleUserinfo: GoogleUser;
+};
 
+type GoogleUser = {
+  email: string;
+  id: number;
+  picture: string;
+  verified_email: boolean;
+};
 export type {
   MusicDataType,
   GenreDataType,
@@ -50,4 +59,6 @@ export type {
   LayoutState,
   alarmDataType,
   PlayListDataType,
+  UserState,
+  GoogleUser,
 };

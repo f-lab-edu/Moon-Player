@@ -53,9 +53,9 @@ export const Slider = styled.input.attrs<SliderProps>(({ volume }) => ({
   }
 `;
 
-// Slider.defaultProps = {
-//   thumbColor: 'white',
-//   trackColor: 'gray',
-// };
+Slider.defaultProps = {
+  thumbColor: 'white',
+  trackColor: 'gray',
+};
 
 export default Slider;

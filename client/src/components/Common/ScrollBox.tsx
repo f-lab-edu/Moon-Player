@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 type ScrollBoxProps = {
-  color: string;
+  color?: string;
   radius?: string;
 };
 
@@ -22,9 +22,9 @@ export const ScrollBox = styled.div<ScrollBoxProps>(
   scrollbar-color:${color};
 `
 );
-// ScrollBox.defaultProps = {
-//   color: 'white',
-//   radius: '7px',
-// };
+ScrollBox.defaultProps = {
+  color: 'white',
+  radius: '7px',
+};
 
 export default ScrollBox;

@@ -3,7 +3,7 @@ import { fetchData } from 'utils/fetch';
 import { PURGE } from 'redux-persist';
 import { PlayListState, PlayListDataType } from 'types/store';
 const initialState: PlayListState = {
-  musicList: [],
+  musicList: { title: '', id: 0, musics: [] },
   status: '',
 };
 

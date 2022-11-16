@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useEffect } from 'react';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
-import PlayListMusic from 'components/Music/PlayList/Item';
+import Music from 'components/Music/PlayList/Item';
 import { ScrollBox } from 'components/Common/ScrollBox';
 import PlayListTitle from 'components/Common/Text';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
@@ -17,7 +17,7 @@ export const PlayList = () => {
   const playListMusics =
     playListSelector.musicList.musics &&
     playListSelector.musicList.musics.map(({ video_title, id, video_img }: ItemProps) => (
-      <PlayListMusic key={video_title} id={id} video_title={video_title} video_img={video_img}></PlayListMusic>
+      <Music key={id} id={id} video_title={video_title} video_img={video_img}></Music>
     ));
 
   useEffect(() => {
@@ -25,8 +25,8 @@ export const PlayList = () => {
   }, []);
 
   return (
-    <Root color="white">
-      <PlayListTitle color="white" fontSize="16px">
+    <Root>
+      <PlayListTitle color="white" fontSize="20px">
         {playListSelector.musicList.title}
       </PlayListTitle>
       {playListMusics}
@@ -37,10 +37,10 @@ export const PlayList = () => {
 const Root = styled(ScrollBox)`
   width: 916px;
   height: 100vh;
-  border-radius: '7px';
+  border-radius: 7px;
   border: 1px solid white;
   margin: 0px 40px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   @media screen and (max-width: 1200px) {
     width: 100%;
   }
