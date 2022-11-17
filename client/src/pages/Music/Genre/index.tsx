@@ -4,7 +4,8 @@ import Card from 'components/Music/Genre/Card';
 
 import Root from 'components/Common/Flex';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
-import { GenreDataType } from 'types/store';
+
+import Slider from 'components/Music/Genre/Slider';
 
 export const Genre = () => {
   const dispatch = useAppDispatch();
@@ -13,16 +14,12 @@ export const Genre = () => {
   useEffect(() => {
     dispatch(fetchmusicGenre('http://localhost:4000/api/music/genre/'));
   }, []);
-  const genreItems =
-    genreSelector.musicList &&
-    genreSelector.musicList.map(({ genre_img, genre_id }: GenreDataType) => (
-      <Card genre_img={genre_img} key={genre_id} genre_id={genre_id}></Card>
-    ));
+
+  const genreItems = genreSelector.musicList;
+
   return (
     <>
-      <Root direction="row" justifyContent="center" alignItems="center">
-        {genreItems}
-      </Root>
+      <Slider>{genreItems}</Slider>
     </>
   );
 };

@@ -61,7 +61,7 @@ export const Item = ({ video_title, video_img, order }: ItemProps) => {
       >
         {video_title}
       </OverFlowText>
-      <IconButton color="white" event={handleClickRemove} size="2x" icon="trash"></IconButton>
+      <IconButton color="white" onClick={handleClickRemove} size="2x" icon="trash"></IconButton>
     </Root>
   );
 };

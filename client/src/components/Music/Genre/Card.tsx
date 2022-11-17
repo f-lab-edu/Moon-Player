@@ -8,14 +8,13 @@ type CardProps = {
   genre_id: number;
 };
 export const Card = ({ genre_img, genre_id }: CardProps) => {
-  console.log(genre_id);
   const dispatch = useAppDispatch();
   const playListSelector = useAppSelector((state) => state.music.playList);
   const isInGenre: boolean = playListSelector.musicList.id === genre_id ? true : false;
   const handleCard = () => dispatch(fetchmusicList(`http://localhost:4000/api/music/genre/${genre_id}`));
 
   return (
-    <CardImage onClick={handleCard} src={genre_img} width="200px" height="120px" key={genre_id} disabled={isInGenre} />
+    <CardImage onClick={handleCard} src={genre_img} width="200px" height="150px" key={genre_id} disabled={isInGenre} />
   );
 };
 
@@ -24,8 +23,8 @@ type CardImageProps = {
 };
 
 const CardImage = styled(Image)<CardImageProps>`
-  border-radius: '7px';
-  box-shadow: 'rgb(38, 57, 77) 0px 20px 30px -10px';
+  border-radius: 7px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   opacity: ${(props) => (!props.disabled ? '0.2' : '1')};
   margin-left: 15px;
   transition-duration: 0.4s;

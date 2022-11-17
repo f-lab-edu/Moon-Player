@@ -6,7 +6,7 @@ import { formatTime } from 'utils/Player';
 import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
 import { Line } from 'rc-progress';
-import FontAweSomeButton from 'components/Common/IconButton';
+import IconButton from 'components/Common/IconButton';
 export const Footer = () => {
   const {
     musicPlayer,
@@ -38,23 +38,23 @@ export const Footer = () => {
       {playerState.music && musicPlayer}
       <IconBox direction="row" justifyContent="space-between" alignItems="center">
         {playerState.isrepeat ? (
-          <FontAweSomeButton event={handleRepeat} icon="repeat" size="2x" color="white"></FontAweSomeButton>
+          <IconButton onClick={handleRepeat} icon="repeat" size="2x" color="white"></IconButton>
         ) : (
-          <FontAweSomeButton event={handleRepeat} icon="repeat" size="2x" color="gray"></FontAweSomeButton>
+          <IconButton onClick={handleRepeat} icon="repeat" size="2x" color="gray"></IconButton>
         )}
 
-        <FontAweSomeButton event={handlePrevMusic} icon="backward" size="3x" color="white"></FontAweSomeButton>
+        <IconButton onClick={handlePrevMusic} icon="backward" size="3x" color="white"></IconButton>
         {playerState.playing ? (
-          <FontAweSomeButton event={handlePlay} icon="pause" size="3x" color="white"></FontAweSomeButton>
+          <IconButton onClick={handlePlay} icon="pause" size="3x" color="white"></IconButton>
         ) : (
-          <FontAweSomeButton event={handlePlay} icon="play" size="3x" color="gray"></FontAweSomeButton>
+          <IconButton onClick={handlePlay} icon="play" size="3x" color="gray"></IconButton>
         )}
-        <FontAweSomeButton event={handleNextMusic} icon="forward" size="3x" color="white"></FontAweSomeButton>
-        <FontAweSomeButton event={handleShuffleMusic} icon="shuffle" size="2x" color="white"></FontAweSomeButton>
+        <IconButton onClick={handleNextMusic} icon="forward" size="3x" color="white"></IconButton>
+        <IconButton onClick={handleShuffleMusic} icon="shuffle" size="2x" color="white"></IconButton>
       </IconBox>
 
       <VolumeBox>
-        <FontAweSomeButton icon="volume" size="2x" color="white"></FontAweSomeButton>
+        <IconButton icon="volume" size="2x" color="white"></IconButton>
         <Slider onChange={handleVolume} volume={playerState.volume.toString()} trackColor="gray" thumbColor="white" />
       </VolumeBox>
 

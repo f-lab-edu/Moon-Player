@@ -13,7 +13,6 @@ type ItemProps = {
   video_img: string;
 };
 export const Item = ({ id, video_title, video_img }: ItemProps) => {
-  console.log(id);
   const dispatch = useAppDispatch();
   const playerSelector = useAppSelector((state) => state.music.player);
   const playListSelector = useAppSelector((state) => state.music.playList);
@@ -36,7 +35,7 @@ export const Item = ({ id, video_title, video_img }: ItemProps) => {
       <OverFlowText fontSize="16px" width="50%">
         {video_title}
       </OverFlowText>
-      <IconButton color="white" active={isInPlayer} event={handleAddMusic} icon="plus" size="2x"></IconButton>
+      <IconButton color="white" active={isInPlayer} onClick={handleAddMusic} icon="plus" size="2x"></IconButton>
     </Root>
   );
 };
