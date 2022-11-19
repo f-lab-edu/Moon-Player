@@ -8,16 +8,18 @@ type GenreState = {
   musicList: Array<GenreDataType>;
   status: string;
 };
+
+type PlayListState = {
+  musicList: PlayListDataType;
+  status: string;
+};
+
 type GenreDataType = {
   genre: string;
   genre_img: string;
   genre_id: number;
 };
 
-type PlayListState = {
-  musicList: PlayListDataType;
-  status: string;
-};
 type PlayListDataType = {
   title: string;
   id: number;

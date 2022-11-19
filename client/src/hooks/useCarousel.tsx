@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
+
+// 반응형적용?
 export const useCarousel = () => {
   const TOTAL_SLIDES = 1;
   const [currentSlide, setCurrentSlide] = useState<number>(0);
