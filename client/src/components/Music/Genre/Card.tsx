@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Image from 'components/Common/Image';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
-type CardProps = {
-  genre_img: string;
-  genre_id: number;
-};
+import { Genre } from 'types/store';
+
+type CardProps = Pick<Genre, 'genre_img' | 'genre_id'>;
+
 export const Card = ({ genre_img, genre_id }: CardProps) => {
   const dispatch = useAppDispatch();
   const playListSelector = useAppSelector((state) => state.music.playList);

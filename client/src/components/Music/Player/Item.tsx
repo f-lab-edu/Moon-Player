@@ -10,7 +10,7 @@ import Text from 'components/Common/Text';
 import { IconButton } from 'components/Common/IconButton';
 import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
-import { MusicDataType } from 'types/store';
+import { Music } from 'types/store';
 type ItemProps = {
   video_title: string;
   video_img: string;
@@ -38,10 +38,8 @@ export const Item = ({ video_title, video_img, order }: ItemProps) => {
   };
 
   const handlePlayMusic = () => {
-    const selectedmusic = playerSelector.playerItems.find(
-      (music: MusicDataType) => music.video_title === video_title
-    ) as MusicDataType;
-    dispatch(handleAddMusic(selectedmusic));
+    const selectedMusic = playerSelector.playerItems.find((music: Music) => music.video_title === video_title);
+    if (selectedMusic) dispatch(handleAddMusic(selectedMusic));
   };
 
   return (

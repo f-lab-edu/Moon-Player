@@ -12,12 +12,28 @@ import {
   faCircleArrowRight,
   faCircleArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
+
+const ICON_NAME = {
+  shuffle: faShuffle,
+  backward: faBackwardStep,
+  play: faPlayCircle,
+  forward: faForwardStep,
+  pause: faCirclePause,
+  repeat: faRepeat,
+  volume: faVolumeHigh,
+  plus: faCirclePlus,
+  trash: faTrash,
+  arrowRight: faCircleArrowRight,
+  arrowLeft: faCircleArrowLeft,
+};
+
+type IconName = keyof typeof ICON_NAME;
 
 type IconButtonProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  icon: string;
-  size: any; // 이거 좀 봐야할듯
+  icon: IconName;
+  size: FontAwesomeIconProps['size']; // 이거 좀 봐야할듯
   color: string;
   active?: boolean;
   padding?: string;
@@ -57,20 +73,6 @@ opacity:${active ? 0.5 : 1};
 
 Button.defaultProps = {
   active: false,
-};
-
-const ICON_NAME: { [key: string]: any } = {
-  shuffle: faShuffle,
-  backward: faBackwardStep,
-  play: faPlayCircle,
-  forward: faForwardStep,
-  pause: faCirclePause,
-  repeat: faRepeat,
-  volume: faVolumeHigh,
-  plus: faCirclePlus,
-  trash: faTrash,
-  arrowRight: faCircleArrowRight,
-  arrowLeft: faCircleArrowLeft,
 };
 
 export default IconButton;

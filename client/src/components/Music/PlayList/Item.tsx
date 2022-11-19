@@ -5,7 +5,7 @@ import OverFlowText from 'components/Common/OverFlowText';
 
 import Flex from 'components/Common/Flex';
 import { IconButton } from 'components/Common/IconButton';
-import { MusicDataType } from 'types/store';
+import { Music } from 'types/store';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 type ItemProps = {
   video_title: string;
@@ -16,16 +16,15 @@ export const Item = ({ id, video_title, video_img }: ItemProps) => {
   const dispatch = useAppDispatch();
   const playerSelector = useAppSelector((state) => state.music.player);
   const playListSelector = useAppSelector((state) => state.music.playList);
-  const isInPlayer = playerSelector.playerItems.find((music: MusicDataType) => music.video_title === video_title)
+  const isInPlayer = playerSelector.playerItems.find((music: Music) => music.video_title === video_title)
     ? true
     : false;
 
   const handleAddMusic = () => {
     if (isInPlayer) return;
-    const selectedMusic = playListSelector.musicList.musics.find(
-      (music: MusicDataType) => music.id === id
-    ) as MusicDataType;
-    dispatch(handleAddPlayer(selectedMusic));
+    const selectedMusic = playListSelector.musicList.musics.find((music: Music) => music.id === id);
+
+    if (selectedMusic) dispatch(handleAddPlayer(selectedMusic));
   };
 
   return (

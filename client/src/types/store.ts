@@ -1,66 +1,54 @@
-type PlayerState = {
-  playerItems: Array<MusicDataType>;
-  playmusic: MusicDataType;
+export type PlayerState = {
+  playerItems: Array<Music>;
+  playmusic: Music;
 };
 
 //  비동기 데이터
-type GenreState = {
-  musicList: Array<GenreDataType>;
+export type GenreState = {
+  musicList: Array<Genre>;
   status: string;
 };
 
-type PlayListState = {
-  musicList: PlayListDataType;
+export type PlayListState = {
+  musicList: PlayList;
   status: string;
 };
 
-type GenreDataType = {
+export type Genre = {
   genre: string;
   genre_img: string;
   genre_id: number;
 };
 
-type PlayListDataType = {
+export type PlayList = {
   title: string;
   id: number;
-  musics: Array<MusicDataType>;
+  musics: Array<Music>;
 };
 
-type LayoutState = {
-  alarm: alarmDataType;
+export type LayoutState = {
+  alarm: Alarm;
 };
 
-type alarmDataType = {
+export type Alarm = {
   isOpen: boolean;
   text: string;
 };
 
-type MusicDataType = {
+export type Music = {
   video_link: string;
   video_title: string;
   video_img: string;
   id: number;
 };
-type UserState = {
+export type UserState = {
   status: string;
   GoogleUserinfo: GoogleUser;
 };
 
-type GoogleUser = {
+export type GoogleUser = {
   email: string;
   id: number;
   picture: string;
   verified_email: boolean;
-};
-export type {
-  MusicDataType,
-  GenreDataType,
-  GenreState,
-  PlayerState,
-  PlayListState,
-  LayoutState,
-  alarmDataType,
-  PlayListDataType,
-  UserState,
-  GoogleUser,
 };
