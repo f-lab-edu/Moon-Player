@@ -1,11 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 
 // 반응형적용?
-export const useCarousel = () => {
+export const useCarousel = <RefType extends HTMLElement>() => {
   const TOTAL_SLIDES = 1;
   const [currentSlide, setCurrentSlide] = useState<number>(0);
-  const slideRef = useRef<any>(null);
+  const slideRef = useRef<RefType | null>(null);
   useEffect(() => {
+    if (!slideRef.current) return;
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
     slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
   }, [currentSlide]);

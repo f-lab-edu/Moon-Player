@@ -1,10 +1,10 @@
 /* eslint-disable */
 import styled from 'styled-components';
 
-type SliderProps={
-  volume:string;
-  trackColor:string;
-  thumbColor:string;
+interface SliderProps {
+  volume: string;
+  trackColor: string;
+  thumbColor: string;
 }
 
 export const Slider = styled.input.attrs<SliderProps>(({ volume }) => ({

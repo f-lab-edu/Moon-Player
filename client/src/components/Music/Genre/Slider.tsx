@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 import Flex from 'components/Common/Flex';
 import { IconButton } from 'components/Common/IconButton';
-import { useState, useEffect } from 'react';
-import { GenreDataType } from 'types/store';
+import { Genre } from 'types/store';
 import { Card } from 'components/Music/Genre/Card';
 import { useCarousel } from 'hooks/useCarousel';
+
 type SliderProps = {
-  children: GenreDataType[];
+  children: Genre[];
 };
 
 export const Slider = ({ children }: SliderProps) => {
-  const { handleNextSlide, handlePrevSlide, slideRef } = useCarousel();
+  const { handleNextSlide, handlePrevSlide, slideRef } = useCarousel<HTMLDivElement>();
 
-  const genreCards = children.map(({ genre_img, genre_id }: GenreDataType) => (
+  const genreCards = children.map(({ genre_img, genre_id }: Genre) => (
     <Card genre_img={genre_img} key={genre_id} genre_id={genre_id}></Card>
   ));
   return (

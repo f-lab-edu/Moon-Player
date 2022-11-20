@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
-import { LayoutState, alarmDataType } from 'types/store';
+import { LayoutState, Alarm } from 'types/store';
 
 const initialState: LayoutState = {
   alarm: {
@@ -13,7 +13,7 @@ export const LayoutSlice = createSlice({
   name: 'layout',
   initialState,
   reducers: {
-    handleAlarm: (state: LayoutState, action: PayloadAction<alarmDataType>) => {
+    handleAlarm: (state: LayoutState, action: PayloadAction<Alarm>) => {
       state.alarm = action.payload;
     },
   },
