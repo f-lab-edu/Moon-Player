@@ -1,32 +1,30 @@
 import styled from 'styled-components';
 
-import { useDispatch } from 'react-redux';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Image from 'components/Common/Image';
-import { useMusicSelector } from 'hooks/useMusicSelector';
-export const Card = ({ genre_img, genre_id }) => {
-  const dispatch = useDispatch();
-  const [, playListSelector] = useMusicSelector();
-
-  const isInGenre = playListSelector.musicList.id === genre_id ? true : false;
-  const handleCard = ({ target }) => dispatch(fetchmusicList(target.id));
+import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
+type CardProps = {
+  genre_img: string;
+  genre_id: number;
+};
+export const Card = ({ genre_img, genre_id }: CardProps) => {
+  const dispatch = useAppDispatch();
+  const playListSelector = useAppSelector((state) => state.music.playList);
+  const isInGenre: boolean = playListSelector.musicList.id === genre_id ? true : false;
+  const handleCard = () => dispatch(fetchmusicList(`http://localhost:4000/api/music/genre/${genre_id}`));
 
   return (
-    <CardImage
-      onClick={handleCard}
-      src={genre_img}
-      width="200px"
-      height="120px"
-      id={genre_id}
-      key={genre_id}
-      disabled={isInGenre}
-    />
+    <CardImage onClick={handleCard} src={genre_img} width="200px" height="150px" key={genre_id} disabled={isInGenre} />
   );
 };
 
-const CardImage = styled(Image)`
-  border-radius: ${({ theme }) => theme.borderRadius.xxl};
-  box-shadow: ${({ theme }) => theme.boxShadows.card};
+type CardImageProps = {
+  disabled: boolean;
+};
+
+const CardImage = styled(Image)<CardImageProps>`
+  border-radius: 7px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   opacity: ${(props) => (!props.disabled ? '0.2' : '1')};
   margin-left: 15px;
   transition-duration: 0.4s;

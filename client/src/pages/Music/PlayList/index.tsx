@@ -1,27 +1,34 @@
 import styled from 'styled-components';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
-import PlayListMusic from 'components/Music/PlayList/Music';
+import Music from 'components/Music/PlayList/Item';
 import { ScrollBox } from 'components/Common/ScrollBox';
-import { useMusicSelector } from 'hooks/useMusicSelector';
 import PlayListTitle from 'components/Common/Text';
+import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
+
+type ItemProps = {
+  video_title: string;
+  id: number;
+  video_img: string;
+};
 export const PlayList = () => {
-  const dispatch = useDispatch();
-  const [, playListSelector] = useMusicSelector();
+  const dispatch = useAppDispatch();
+  const playListSelector = useAppSelector((state) => state.music.playList);
   const playListMusics =
     playListSelector.musicList.musics &&
-    playListSelector.musicList.musics.map(({ video_title, id, video_img }) => (
-      <PlayListMusic key={video_title} id={id} video_title={video_title} video_img={video_img}></PlayListMusic>
+    playListSelector.musicList.musics.map(({ video_title, id, video_img }: ItemProps) => (
+      <Music key={id} id={id} video_title={video_title} video_img={video_img}></Music>
     ));
 
   useEffect(() => {
-    dispatch(fetchmusicList(1));
+    dispatch(fetchmusicList('http://localhost:4000/api/music/genre/1'));
   }, []);
 
   return (
     <Root>
-      <PlayListTitle>{playListSelector.musicList.title}</PlayListTitle>
+      <PlayListTitle color="white" fontSize="20px">
+        {playListSelector.musicList.title}
+      </PlayListTitle>
       {playListMusics}
     </Root>
   );
@@ -30,10 +37,10 @@ export const PlayList = () => {
 const Root = styled(ScrollBox)`
   width: 916px;
   height: 100vh;
-  border-radius: ${({ theme }) => theme.borderRadius.xl};
+  border-radius: 7px;
   border: 1px solid white;
   margin: 0px 40px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   @media screen and (max-width: 1200px) {
     width: 100%;
   }

@@ -20,11 +20,15 @@ export const Nav = () => {
   return (
     <Root direction="column" justifyContent="center" alignItems="center">
       <Navigation onClick={() => navigate('/music')}>
-        <Text fontSize="25px">홈으로</Text>
+        <Text fontSize="25px" color="white">
+          홈으로
+        </Text>
       </Navigation>
 
       <Navigation onClick={() => navigate('/user')}>
-        <Text fontSize="25px">버그 리포트</Text>
+        <Text fontSize="25px" color="white">
+          버그 리포트
+        </Text>
       </Navigation>
     </Root>
   );

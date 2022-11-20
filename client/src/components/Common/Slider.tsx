@@ -1,12 +1,18 @@
 /* eslint-disable */
 import styled from 'styled-components';
 
-export const Slider = styled.input.attrs<{ volume: string; }>(({ volume }) => ({
+type SliderProps={
+  volume:string;
+  trackColor:string;
+  thumbColor:string;
+}
+
+export const Slider = styled.input.attrs<SliderProps>(({ volume }) => ({
   type: 'range',
   min: '1',
   max: '100',
   value: volume,
-}))<{ trackColor: string; thumbColor: string; }>`
+}))<SliderProps>`
   border-radius: 7px;
   cursor: pointer;
   -webkit-appearance: none;

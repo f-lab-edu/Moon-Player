@@ -14,21 +14,39 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const IconButton = ({ className, event, icon, size, color, active, padding }) => {
+type IconButtonProps = {
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  icon: string;
+  size: any; // 이거 좀 봐야할듯
+  color: string;
+  active?: boolean;
+  padding?: string;
+  margin?: string;
+};
+
+type ButtonProps = {
+  color: string;
+  active?: boolean;
+  padding?: string;
+  margin?: string;
+};
+
+export const IconButton = ({ onClick, icon, size, color, active, padding, margin }: IconButtonProps) => {
   return (
-    <Button className={className} onClick={event} color={color} active={active} padding={padding}>
+    <Button onClick={onClick} color={color} active={active} padding={padding} margin={margin}>
       <FontAwesomeIcon icon={ICON_NAME[icon]} size={size} color={color}></FontAwesomeIcon>
     </Button>
   );
 };
 
-const Button = styled.button(
-  ({ active, color, padding }) => `
+const Button = styled.button<ButtonProps>(
+  ({ active, color, padding, margin }) => `
 background: none;
 border:0;
 cursor:pointer;
 color: ${color};
 padding:${padding};
+margin:${margin};
 pointer-events:${active ? 'none' : 'auto'};
 opacity:${active ? 0.5 : 1};
 &:hover {
@@ -39,10 +57,9 @@ opacity:${active ? 0.5 : 1};
 
 Button.defaultProps = {
   active: false,
-  color: 'white',
 };
 
-const ICON_NAME = {
+const ICON_NAME: { [key: string]: any } = {
   shuffle: faShuffle,
   backward: faBackwardStep,
   play: faPlayCircle,

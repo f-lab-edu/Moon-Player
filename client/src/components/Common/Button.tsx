@@ -1,7 +1,20 @@
 import styled from 'styled-components';
 
-export const Button = styled.button(
-  ({ color, fontColor, fontSize, width, height, shadow, fontWeight, radius, margin }) => `
+type ButtonProps = {
+  color: string;
+  fontSize: string;
+  fontColor: string;
+  width?: string;
+  height?: string;
+  shadow?: string;
+  fontWeight?: string;
+  radius?: string;
+  margin?: string;
+  border?: string;
+};
+
+export const Button = styled.button<ButtonProps>(
+  ({ color, fontSize, width, height, shadow, fontWeight, radius, margin, fontColor, border }) => `
   width: ${width};
   height: ${height};
   font-size: ${fontSize};
@@ -11,6 +24,8 @@ export const Button = styled.button(
   border-radius: ${radius};
   color: ${fontColor};
   margin:${margin};
+  border: ${border};
+
   &:hover {
     cursor: pointer;
     opacity:0.7;
@@ -21,11 +36,8 @@ Button.defaultProps = {
   width: '50px',
   height: '50px',
   color: 'white',
-  fontColor: 'black',
   shadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
   fontSize: '16px',
-  border: '1px solid rgba(0, 0, 0, 0.1)',
-  radius: '0px',
   fontWeight: '700',
 };
 

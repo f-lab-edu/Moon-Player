@@ -1,20 +1,18 @@
-import styled, { ThemeContext } from 'styled-components';
-import { useContext } from 'react';
+import styled from 'styled-components';
 import LoginForm from 'components/Login/Form';
 import Avatar from 'components/Common/Avatar';
 import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
 
 const LoginPage = () => {
-  const theme = useContext(ThemeContext);
   return (
     <Layout direction="column" justifyContent="center" alignItems="center">
       <FlexBox direction="column" justifyContent="center" alignItems="center">
         <Header direction="column" justifyContent="center" alignItems="center">
-          <Text fontSize={theme.fontSizes.titleSize} color={theme.colors.white}>
+          <Text fontSize="40px" color="white">
             Moon Player
           </Text>
-          <Avatar src={theme.images.Logo} height="100px" width="100px" />
+          <Avatar src="images/Loginlogo.png" height="100px" width="100px" />
         </Header>
         <LoginForm />
       </FlexBox>
@@ -26,9 +24,9 @@ const Layout = styled(Flex)`
   height: 100vh;
 `;
 const FlexBox = styled(Flex)`
-  padding: ${({ theme }) => theme.paddings.xl};
-  box-shadow: ${({ theme }) => theme.boxShadows.two};
-  border-radius: ${({ theme }) => theme.borderRadius.xl};
+  padding: 27px;
+  box-shadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px';
+  border-radius: 7px;
   background: rgba(255, 255, 255, 0.5);
 `;
 const Header = styled(Flex)`

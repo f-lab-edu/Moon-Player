@@ -4,9 +4,9 @@ response_type=token&
 redirect_uri=http://localhost:3000&
 scope=https://www.googleapis.com/auth/userinfo.email`;
 
-export const getToken = () => {
+export const getToken = (): string => {
   const urlHash = new URL(window.location.href).hash;
-  if (!urlHash) return;
+  if (!urlHash) return '';
   const token = urlHash.split('=')[1].split('&')[0];
   return token;
 };
@@ -14,7 +14,7 @@ export const getToken = () => {
 export const assignURL = () => {
   window.location.assign(oAuthURL);
 };
-export const sendToken = async (accessToken) => {
+export const sendToken = async (accessToken: string) => {
   const url = `https://www.googleapis.com/oauth2/v2/userinfo?access_token=${accessToken}`;
   try {
     const response = await (

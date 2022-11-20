@@ -1,20 +1,19 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
 import { sendToken } from 'utils/oAuth';
-import { getToken } from 'utils/oAuth';
+import { UserState, GoogleUser } from 'types/store';
 
-const initialState = {
-  GoogleUserinfo: {},
-  NaverUserInfo: {},
-  KaKaoUserInfo: {},
+const initialState: UserState = {
+  GoogleUserinfo: { email: '', id: 0, picture: '', verified_email: false },
+  status: 'idle',
 };
 
-const fetchUserInfo = createAsyncThunk('user', async () => {
+const fetchUserInfo = createAsyncThunk('user', async (token: string, thunkApi: any) => {
   try {
-    const response = await sendToken(getToken());
+    const response = await sendToken(token);
     return response;
-  } catch (error) {
-    console.log(error);
+  } catch (error: any) {
+    return thunkApi.rejectWithValue(error.message);
   }
 });
 
@@ -23,17 +22,18 @@ export const UserSlice = createSlice({
   name: 'user',
   // 가져온 유저 토큰
   initialState,
+  reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchUserInfo.pending, (state, action) => {
+    builder.addCase(fetchUserInfo.pending, (state: UserState) => {
       state.status = 'Loading';
     });
 
-    builder.addCase(fetchUserInfo.fulfilled, (state, action) => {
+    builder.addCase(fetchUserInfo.fulfilled, (state: UserState, action: PayloadAction<GoogleUser>) => {
       state.status = 'Complete';
       state.GoogleUserinfo = action.payload;
     });
 
-    builder.addCase(fetchUserInfo.rejected, (state, action) => {
+    builder.addCase(fetchUserInfo.rejected, (state: UserState) => {
       state.status = 'Fail';
     });
     // 로그아웃시 발생
@@ -42,4 +42,3 @@ export const UserSlice = createSlice({
 });
 export default UserSlice;
 export { fetchUserInfo };
-export const { handleRemoveUserinfo } = UserSlice.actions;

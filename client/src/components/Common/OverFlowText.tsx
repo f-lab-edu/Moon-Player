@@ -1,6 +1,13 @@
 import styled from 'styled-components';
-
-export const OverFlowText = styled.div(
+type OverFlowTextProps = {
+  width: string;
+  fontSize: string;
+  color?: string;
+  weight?: string;
+  align?: string;
+  cursor?: string;
+};
+export const OverFlowText = styled.div<OverFlowTextProps>(
   ({ width, fontSize, color, weight, align, cursor }) => `
   width: ${width};
   font-size:${fontSize};

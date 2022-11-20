@@ -1,36 +1,37 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchData } from 'utils/fetch';
 import { PURGE } from 'redux-persist';
-const initialState = {
+import { GenreState, GenreDataType } from 'types/store';
+
+const initialState: GenreState = {
   musicList: [],
+  status: '',
 };
+
 // 액션 생성
-const fetchmusicGenre = createAsyncThunk('genre', async () => {
+const fetchmusicGenre = createAsyncThunk('genre', async (url: string, thunkApi: any) => {
   try {
-    const response = await fetchData('http://localhost:4000/api/music/genre/');
-    return response.music;
-  } catch (error) {
-    console.log(error);
-    //  Alert Store 생성해서 오류 발생시 addAlert() action 호출하는 방식으로 UI 노출 가능
+    const response = await fetchData(url);
+    return response.music as GenreDataType;
+  } catch (error: any) {
+    return thunkApi.rejectWithValue(error.message); //  Alert Store 생성해서 오류 발생시 addAlert() action 호출하는 방식으로 UI 노출 가능
   }
 });
 // Reducer
 export const musicGenreSlice = createSlice({
   name: 'genre',
   initialState,
-  // 비동기적인 액션처리(action create 자동생성 불가능)
+  reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchmusicGenre.pending, (state, action) => {
+    builder.addCase(fetchmusicGenre.pending, (state: GenreState) => {
       state.status = 'Loading';
     });
-
-    // action 후 미들웨어 실행
-    builder.addCase(fetchmusicGenre.fulfilled, (state, action) => {
+    builder.addCase(fetchmusicGenre.fulfilled, (state: GenreState, action: PayloadAction<GenreDataType[]>) => {
       state.status = 'Complete';
       state.musicList = action.payload;
     });
 
-    builder.addCase(fetchmusicGenre.rejected, (state, action) => {
+    builder.addCase(fetchmusicGenre.rejected, (state) => {
       state.status = 'Fail';
     });
     builder.addCase(PURGE, () => initialState);

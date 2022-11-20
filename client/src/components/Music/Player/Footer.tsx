@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import Image from 'components/Common/Image';
 import { usePlayerControl } from 'hooks/usePlayerControl';
-import Slider from 'components/Common/Slider.tsx';
+import Slider from 'components/Common/Slider';
 import { formatTime } from 'utils/Player';
 import Flex from 'components/Common/Flex';
 import Text from 'components/Common/Text';
 import { Line } from 'rc-progress';
-import FontAweSomeButton from 'components/Common/IconButton';
+import IconButton from 'components/Common/IconButton';
 export const Footer = () => {
   const {
     musicPlayer,
@@ -18,50 +18,49 @@ export const Footer = () => {
     handlePrevMusic,
     handleNextMusic,
   } = usePlayerControl();
-  const currentTime = formatTime(playerState.currentTime);
-  const endTime = formatTime(playerState.endTime);
-  const elapsedTime = Math.floor((playerState.currentTime / playerState.endTime) * 100);
-
+  const currentTime = formatTime(+playerState.currentTime);
+  const endTime = formatTime(+playerState.endTime);
+  const elapsedTime = Math.floor((+playerState.currentTime / +playerState.endTime) * 100);
   return (
     <>
       <ImageBox direction="column" justifyContent="center" alignItems="center">
-        {playerState && playerState.music ? (
+        {playerState.music.video_title.length > 0 ? (
           <Image src={playerState.music.video_img} width="400px" height="auto" />
         ) : (
-          <Image src={'https://via.placeholder.com/400?text=No+Selected+Music'} width="auto" height="auto" />
+          <Image src="https://via.placeholder.com/400?text=No+Selected+Music" width="auto" height="auto" />
         )}
       </ImageBox>
       {playerState.music && (
-        <Text fontSize="20px" align="center">
+        <Text fontSize="20px" align="center" color="white">
           {playerState.music.video_title}
         </Text>
       )}
       {playerState.music && musicPlayer}
       <IconBox direction="row" justifyContent="space-between" alignItems="center">
         {playerState.isrepeat ? (
-          <FontAweSomeButton event={handleRepeat} icon="repeat" size="2x" color="white"></FontAweSomeButton>
+          <IconButton onClick={handleRepeat} icon="repeat" size="2x" color="white"></IconButton>
         ) : (
-          <FontAweSomeButton event={handleRepeat} icon="repeat" size="2x" color="gray"></FontAweSomeButton>
+          <IconButton onClick={handleRepeat} icon="repeat" size="2x" color="gray"></IconButton>
         )}
 
-        <FontAweSomeButton event={handlePrevMusic} icon="backward" size="3x" color="white"></FontAweSomeButton>
+        <IconButton onClick={handlePrevMusic} icon="backward" size="3x" color="white"></IconButton>
         {playerState.playing ? (
-          <FontAweSomeButton event={handlePlay} icon="pause" size="3x" color="white"></FontAweSomeButton>
+          <IconButton onClick={handlePlay} icon="pause" size="3x" color="white"></IconButton>
         ) : (
-          <FontAweSomeButton event={handlePlay} icon="play" size="3x" color="gray"></FontAweSomeButton>
+          <IconButton onClick={handlePlay} icon="play" size="3x" color="gray"></IconButton>
         )}
-        <FontAweSomeButton event={handleNextMusic} icon="forward" size="3x" color="white"></FontAweSomeButton>
-        <FontAweSomeButton event={handleShuffleMusic} icon="shuffle" size="2x" color="white"></FontAweSomeButton>
+        <IconButton onClick={handleNextMusic} icon="forward" size="3x" color="white"></IconButton>
+        <IconButton onClick={handleShuffleMusic} icon="shuffle" size="2x" color="white"></IconButton>
       </IconBox>
 
       <VolumeBox>
-        <FontAweSomeButton icon="volume" size="2x" color="white"></FontAweSomeButton>
-        <Slider onChange={handleVolume} volume={playerState.volume} />
+        <IconButton icon="volume" size="2x" color="white"></IconButton>
+        <Slider onChange={handleVolume} volume={playerState.volume.toString()} trackColor="gray" thumbColor="white" />
       </VolumeBox>
 
       <ProgressBarBox>
         <Line strokeWidth={3} percent={elapsedTime} strokeColor={'white'} />
-        <Text fontSize="20px" align="center">
+        <Text fontSize="20px" align="center" color="white">
           {currentTime} / {endTime}
         </Text>
       </ProgressBarBox>
@@ -80,18 +79,16 @@ const IconBox = styled(Flex)`
 const VolumeBox = styled.div`
   display: flex;
   align-items: center;
-  color: ${({ theme }) => theme.colors.gray};
+  color: gray;
   padding: 10px 20px 20px 20px;
 
   > :nth-child(1) {
     margin-right: 20px;
   }
 `;
-const ProgressBarBox = styled.div(
-  ({ theme }) => `
-  color: ${theme.colors.white};
-  font-weight: ${theme.fontWeights.bold};
-  text-align:center;
-`
-);
+const ProgressBarBox = styled.div`
+  color: white;
+  font-weight: 700;
+  text-align: center;
+`;
 export default Footer;

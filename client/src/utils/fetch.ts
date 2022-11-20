@@ -1,6 +1,3 @@
-export const fetchById = async (url, id) => {
-  return await (await fetch(`${url}${id}`)).json();
-};
-export const fetchData = async (url) => {
+export const fetchData = async (url: string) => {
   return await (await fetch(url)).json();
 };

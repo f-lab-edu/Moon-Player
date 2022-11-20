@@ -1,7 +1,4 @@
 import React from 'react';
-
-import { ThemeProvider } from 'styled-components';
-import { theme } from 'style/theme';
 import { Route, Routes } from 'react-router-dom';
 import MusicPage from 'pages/Music/index';
 import UserPage from './pages/User/index';
@@ -14,7 +11,8 @@ import GlobalStyle from 'style/GlobalStyle';
 function App() {
   const { isOpen, text } = useAlarm();
   return (
-    <ThemeProvider theme={theme}>
+    <>
+      {' '}
       <GlobalStyle />
       {isOpen ? <Alarm text={text} /> : <></>}
       <Routes>
@@ -36,7 +34,7 @@ function App() {
         ></Route>
         <Route element={<LoginPage />} path="/"></Route>;
       </Routes>
-    </ThemeProvider>
+    </>
   );
 }
 

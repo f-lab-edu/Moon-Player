@@ -1,7 +1,6 @@
-import { useSelector } from 'react-redux';
-
+import { useAppSelector } from 'hooks/useAppDispatch';
 export const useAlarm = () => {
-  const alarm = useSelector((state) => state.layout.alarm);
+  const alarm = useAppSelector((state) => state.layout.alarm);
 
   const isOpen = alarm.isOpen;
   const text = alarm.text;
