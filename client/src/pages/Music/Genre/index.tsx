@@ -1,11 +1,8 @@
 import { useEffect } from 'react';
 import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
-import Card from 'components/Music/Genre/Card';
 
-import Root from 'components/Common/Flex';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
-
-import Slider from 'components/Music/Genre/Slider';
+import CarouselSlider from 'components/Music/Genre/Carousel';
 
 export const Genre = () => {
   const dispatch = useAppDispatch();
@@ -19,7 +16,7 @@ export const Genre = () => {
 
   return (
     <>
-      <Slider>{genreItems}</Slider>
+      <CarouselSlider>{genreItems}</CarouselSlider>
     </>
   );
 };

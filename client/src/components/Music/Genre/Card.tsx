@@ -1,28 +1,27 @@
 import styled from 'styled-components';
 
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
-import Image from 'components/Common/Image';
+import Image from 'components/Common/UI/Image';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 import { Genre } from 'types/store';
 
 type CardProps = Pick<Genre, 'genre_img' | 'genre_id'>;
-
 export const Card = ({ genre_img, genre_id }: CardProps) => {
   const dispatch = useAppDispatch();
   const playListSelector = useAppSelector((state) => state.music.playList);
   const isInGenre: boolean = playListSelector.musicList.id === genre_id ? true : false;
   const handleCard = () => dispatch(fetchmusicList(`http://localhost:4000/api/music/genre/${genre_id}`));
 
-  return (
-    <CardImage onClick={handleCard} src={genre_img} width="200px" height="150px" key={genre_id} disabled={isInGenre} />
-  );
+  return <CardImage onClick={handleCard} img={genre_img} key={genre_id} disabled={isInGenre} />;
 };
 
-type CardImageProps = {
+interface CardImageProps {
   disabled: boolean;
-};
+}
 
 const CardImage = styled(Image)<CardImageProps>`
+  width: 200px;
+  height: 150px;
   border-radius: 7px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   opacity: ${(props) => (!props.disabled ? '0.2' : '1')};

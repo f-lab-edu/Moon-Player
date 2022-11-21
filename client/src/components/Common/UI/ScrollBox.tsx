@@ -1,10 +1,9 @@
 import styled from 'styled-components';
+import { StyledProps } from 'types/app';
 
-type ScrollBoxProps = {
-  color?: string;
+interface ScrollBoxProps extends StyledProps {
   radius?: string;
-};
-
+}
 export const ScrollBox = styled.div<ScrollBoxProps>(
   ({ color, radius }) => `
   overflow-y: scroll;

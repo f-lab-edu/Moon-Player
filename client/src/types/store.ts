@@ -1,54 +1,54 @@
-export type PlayerState = {
+export interface PlayerState {
   playerItems: Array<Music>;
   playmusic: Music;
-};
+}
 
 //  비동기 데이터
-export type GenreState = {
+export interface GenreState {
   musicList: Array<Genre>;
   status: string;
-};
+}
 
-export type PlayListState = {
+export interface PlayListState {
   musicList: PlayList;
   status: string;
-};
+}
 
-export type Genre = {
+export interface Genre {
   genre: string;
   genre_img: string;
   genre_id: number;
-};
+}
 
-export type PlayList = {
+export interface PlayList {
   title: string;
   id: number;
   musics: Array<Music>;
-};
+}
 
-export type LayoutState = {
+export interface LayoutState {
   alarm: Alarm;
-};
+}
 
-export type Alarm = {
+export interface Alarm {
   isOpen: boolean;
   text: string;
-};
+}
 
-export type Music = {
+export interface Music {
   video_link: string;
   video_title: string;
   video_img: string;
   id: number;
-};
-export type UserState = {
+}
+export interface UserState {
   status: string;
   GoogleUserinfo: GoogleUser;
-};
+}
 
-export type GoogleUser = {
+export interface GoogleUser {
   email: string;
   id: number;
   picture: string;
   verified_email: boolean;
-};
+}

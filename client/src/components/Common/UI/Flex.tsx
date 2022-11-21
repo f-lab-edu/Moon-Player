@@ -1,20 +1,22 @@
 import styled from 'styled-components';
-type FlexProps = {
+
+// CSS Object랑 매칭 x
+interface FlexProps {
   direction: string;
   justifyContent?: string;
   alignItems?: string;
-  padding?: string;
-  margin?: string;
-};
+}
 
 export const Flex = styled.div<FlexProps>(
-  ({ direction, justifyContent, alignItems, padding, margin }) => `
+  ({ direction, justifyContent, alignItems }) => `
   display: flex;
   flex-direction:${direction};
   justify-content: ${justifyContent};
   align-items: ${alignItems};
-  padding:${padding};
-  margin:${margin}
 `
 );
+Flex.defaultProps = {
+  direction: 'row',
+};
+
 export default Flex;

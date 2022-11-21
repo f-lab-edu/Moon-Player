@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { useAuthenticator } from 'hooks/useAuthenticator';
-import { Avatar } from 'components/Common/Avatar';
+import { Avatar } from 'components/Common/UI/Avatar';
 
-import Flex from 'components/Common/Flex';
-import Text from 'components/Common/Text';
+import Flex from 'components/Common/UI/Flex';
+import Text from 'components/Common/UI/Text';
 
 export const Header = () => {
   const { signOut } = useAuthenticator();
@@ -14,24 +14,18 @@ export const Header = () => {
 
   return (
     <Root direction="row" justifyContent="space-between" alignItems="center">
-      <Flex direction="row" alignItems="center" margin="15px">
-        <Avatar src="images/Loginlogo.png" width="50px" height="50px" />
-        <Text fontSize="30px" color="white" margin="20px">
-          Moon Player
-        </Text>
+      <Flex direction="row" alignItems="center">
+        <AvatarHeader img="logo" />
+        <Title>Moon Player</Title>
       </Flex>
       <Flex direction="row" alignItems="center">
         <StyledLink to="#" onClick={handleLogout}>
           <FontAwesomeIcon icon={faRightFromBracket} color="gray" />
-          <Text align="center" margin="10px" color="white" fontSize="18px">
-            로그아웃
-          </Text>
+          <StyledText>로그아웃</StyledText>
         </StyledLink>
         <StyledLink to="/user">
           <FontAwesomeIcon icon={faUser} color="gray" />
-          <Text align="center" margin="10px" color="white" fontSize="18px">
-            내정보
-          </Text>
+          <StyledText>내정보</StyledText>
         </StyledLink>
       </Flex>
     </Root>
@@ -40,8 +34,12 @@ export const Header = () => {
 
 const Root = styled(Flex)`
   width: 100vw;
-  padding: 0px 20px;
-  margin-bottom: 10px;
+  padding: 30px;
+`;
+
+const AvatarHeader = styled(Avatar)`
+  width: 50px;
+  height: 50px;
 `;
 
 const StyledLink = styled(Link)`
@@ -50,4 +48,17 @@ const StyledLink = styled(Link)`
   align-items: center;
   text-decoration: none;
 `;
+const Title = styled(Text)`
+  font-size: ${({ theme }) => theme.fontSize.xl};
+  color: ${({ theme }) => theme.colors.white};
+  margin: 20px;
+`;
+
+const StyledText = styled(Text)`
+  margin: 10px;
+  color: ${({ theme }) => theme.colors.white};
+  font-size: ${({ theme }) => theme.fontSize.m};
+  align-items: center;
+`;
+
 export default Header;

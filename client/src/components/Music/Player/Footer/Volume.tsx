@@ -1,18 +1,42 @@
-/* eslint-disable */
+import IconButton from 'components/Common/UI/IconButton';
 import styled from 'styled-components';
 
-interface SliderProps {
+interface VolumeProps {
+  onVolume: React.ChangeEventHandler<HTMLInputElement>;
+  volume: string;
+}
+export const Volume = ({ onVolume, volume }: VolumeProps) => {
+  return (
+    <Root>
+      <IconButton icon="volume" size="2x" color="white"></IconButton>
+      <VolumeSlider onChange={onVolume} volume={volume} trackColor="gray" thumbColor="white" />
+    </Root>
+  );
+};
+export default Volume;
+
+const Root = styled.div`
+  display: flex;
+  align-items: center;
+  color: gray;
+  padding: 10px 20px 20px 20px;
+
+  > :nth-child(1) {
+    margin-right: 20px;
+  }
+`;
+interface VolumeSliderProps {
   volume: string;
   trackColor: string;
   thumbColor: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
 }
-
-export const Slider = styled.input.attrs<SliderProps>(({ volume }) => ({
+const VolumeSlider = styled.input.attrs<VolumeSliderProps>(({ volume }) => ({
   type: 'range',
   min: '1',
   max: '100',
   value: volume,
-}))<SliderProps>`
+}))<VolumeSliderProps>`
   border-radius: 7px;
   cursor: pointer;
   -webkit-appearance: none;
@@ -53,9 +77,7 @@ export const Slider = styled.input.attrs<SliderProps>(({ volume }) => ({
   }
 `;
 
-Slider.defaultProps = {
+VolumeSlider.defaultProps = {
   thumbColor: 'white',
   trackColor: 'gray',
 };
-
-export default Slider;

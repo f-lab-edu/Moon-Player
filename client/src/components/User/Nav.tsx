@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import Flex from 'components/Common/Flex';
-import { Text } from 'components/Common/Text';
+import Flex from 'components/Common/UI/Flex';
+import { Text } from 'components/Common/UI/Text';
 
 const Root = styled(Flex)`
   background-color: black;
@@ -20,18 +20,16 @@ export const Nav = () => {
   return (
     <Root direction="column" justifyContent="center" alignItems="center">
       <Navigation onClick={() => navigate('/music')}>
-        <Text fontSize="25px" color="white">
-          홈으로
-        </Text>
+        <Menu>홈으로</Menu>
       </Navigation>
-
       <Navigation onClick={() => navigate('/user')}>
-        <Text fontSize="25px" color="white">
-          버그 리포트
-        </Text>
+        <Menu>버그 리포트</Menu>
       </Navigation>
     </Root>
   );
 };
-
+const Menu = styled(Text)`
+  font-size: ${({ theme }) => theme.fontSize.l};
+  color: white;
+`;
 export default Nav;

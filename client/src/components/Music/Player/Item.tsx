@@ -2,20 +2,20 @@ import styled from 'styled-components';
 import useMoveDownScroll from 'hooks/useMoveDownScroll';
 import usePrevious from 'hooks/usePrevious';
 import { handleRemoveMusic, handleAddMusic } from 'store/feature/music/PlayerSlice';
-import OverFlowText from 'components/Common/OverFlowText';
+import OverFlowText from 'components/Common/UI/OverFlowText';
 import { useEffect } from 'react';
-import Image from 'components/Common/Image';
-import Flex from 'components/Common/Flex';
-import Text from 'components/Common/Text';
-import { IconButton } from 'components/Common/IconButton';
+import Image from 'components/Common/UI/Image';
+import Flex from 'components/Common/UI/Flex';
+import Text from 'components/Common/UI/Text';
+import { IconButton } from 'components/Common/UI/IconButton';
 import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import { Music } from 'types/store';
-type ItemProps = {
+interface ItemProps {
   video_title: string;
   video_img: string;
-  order: number;
-};
+  order: number | string;
+}
 
 export const Item = ({ video_title, video_img, order }: ItemProps) => {
   const dispatch = useAppDispatch();
@@ -44,28 +44,16 @@ export const Item = ({ video_title, video_img, order }: ItemProps) => {
 
   return (
     <Root ref={element} isSelected={isCurrentMusic} direction="row" justifyContent="space-between" alignItems="center">
-      <Text color="white" fontSize="15px">
-        {order}
-      </Text>
-      <Image onClick={handlePlayMusic} src={video_img} width="100px" height="50px" />
-      <OverFlowText
-        width="60%"
-        fontSize="15px"
-        color="white"
-        align="center"
-        weight="700"
-        cursor="pointer"
-        onClick={handlePlayMusic}
-      >
-        {video_title}
-      </OverFlowText>
+      <OrderText>{order}</OrderText>
+      <MusicImage onClick={handlePlayMusic} img={video_img} />
+      <MusicTitle onClick={handlePlayMusic}>{video_title}</MusicTitle>
       <IconButton color="white" onClick={handleClickRemove} size="2x" icon="trash"></IconButton>
     </Root>
   );
 };
-type RootProps = {
+interface RootProps {
   isSelected: boolean;
-};
+}
 const Root = styled(Flex)<RootProps>`
   border-bottom: 1px solid white;
   background: ${({ isSelected }) => isSelected && 'gray'};
@@ -76,4 +64,21 @@ const Root = styled(Flex)<RootProps>`
     width: 100%;
   }
 `;
+
+const OrderText = styled(Text)`
+  color: white;
+  font-size: ${({ theme }) => theme.fontSize.s};
+`;
+const MusicTitle = styled(OverFlowText)`
+  width: 60%;
+  font-size: ${({ theme }) => theme.fontSize.s};
+  color: white;
+  text-align: center;
+  cursor: pointer;
+`;
+const MusicImage = styled(Image)`
+  width: 100px;
+  height: 50px;
+`;
+
 export default Item;
