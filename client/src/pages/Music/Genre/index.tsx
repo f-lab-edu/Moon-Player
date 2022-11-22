@@ -1,21 +1,27 @@
 import styled from 'styled-components';
 
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 import { useCarousel } from 'hooks/useCarousel';
 import Item from 'components/Music/Genre/Item';
 import { Flex } from 'components/Common/UI/Flex';
 import { IconButton } from 'components/Common/UI/IconButton';
+import { ResolutionContext } from 'context/ResolutionContext';
 
 export const Genre = () => {
+  const { name } = useContext(ResolutionContext);
+
   const dispatch = useAppDispatch();
   const genreSelector = useAppSelector((state) => state.music.genre);
-  const { handleNextSlide, handlePrevSlide, slideRef } = useCarousel<HTMLDivElement>();
+  const { setTotalSlide, handleNextSlide, handlePrevSlide, slideRef } = useCarousel<HTMLDivElement>();
   const genreCards = genreSelector.musicList.map(({ genre_img, genre_id }) => (
     <Item genre_img={genre_img} key={genre_id} genre_id={genre_id}></Item>
   ));
 
+  useEffect(() => {
+    return name === 'TABLET' ? setTotalSlide(2) : name === 'MOBILE' ? setTotalSlide(3) : setTotalSlide(1);
+  }, [name]);
   useEffect(() => {
     dispatch(fetchmusicGenre('http://localhost:4000/api/music/genre/'));
   }, []);
