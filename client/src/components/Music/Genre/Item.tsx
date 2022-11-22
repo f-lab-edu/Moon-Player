@@ -5,8 +5,9 @@ import Image from 'components/Common/UI/Image';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 import { Genre } from 'types/store';
 
-type CardProps = Pick<Genre, 'genre_img' | 'genre_id'>;
-export const Card = ({ genre_img, genre_id }: CardProps) => {
+type ItemProps = Pick<Genre, 'genre_img' | 'genre_id'>;
+
+export const Item = ({ genre_img, genre_id }: ItemProps) => {
   const dispatch = useAppDispatch();
   const playListSelector = useAppSelector((state) => state.music.playList);
   const isInGenre: boolean = playListSelector.musicList.id === genre_id ? true : false;
@@ -38,4 +39,4 @@ const CardImage = styled(Image)<CardImageProps>`
   }
 `;
 
-export default Card;
+export default Item;

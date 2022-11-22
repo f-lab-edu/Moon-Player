@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PlayerFooter from 'components/Music/Player/Footer';
-import PlayerMusic from 'components/Music/Player/Item';
+import PlayerMusic from 'components/Music/Player/Content/Item';
 import Text from 'components/Common/UI/Text';
 import ScrollBox from 'components/Common/UI/ScrollBox';
 import { useAppSelector } from 'hooks/useAppDispatch';
@@ -8,7 +8,6 @@ import { useAppSelector } from 'hooks/useAppDispatch';
 // 플레이어 메인
 export const Player = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
-
   const playerMusics =
     playerSelector.playerItems.length > 0 ? (
       playerSelector.playerItems.map(({ video_title, video_img }, index) => (
@@ -22,7 +21,7 @@ export const Player = () => {
   return (
     <Root>
       <PlayerTitle>재생 목록</PlayerTitle>
-      <PlayerScrollBox>{playerMusics}</PlayerScrollBox>
+      <PlayerContent>{playerMusics}</PlayerContent>
       <PlayerFooter />
     </Root>
   );
@@ -39,7 +38,7 @@ const Root = styled.div`
     width: 100%;
   }
 `;
-const PlayerScrollBox = styled(ScrollBox)`
+const PlayerContent = styled(ScrollBox)`
   height: 30vh;
   padding-right: 10px;
 

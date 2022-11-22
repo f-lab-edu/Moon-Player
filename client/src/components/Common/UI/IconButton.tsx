@@ -29,7 +29,6 @@ const ICON_NAME = {
 };
 
 type IconName = keyof typeof ICON_NAME;
-
 interface IconButtonProps extends StyledProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   icon: IconName;
@@ -44,7 +43,6 @@ export const IconButton = ({ onClick, icon, size, color, active }: IconButtonPro
     </Button>
   );
 };
-
 interface ButtonProps extends StyledProps {
   active?: boolean;
 }
