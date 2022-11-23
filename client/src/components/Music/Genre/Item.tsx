@@ -4,7 +4,6 @@ import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Image from 'components/Common/UI/Image';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 import { Genre } from 'types/store';
-import { SwiperSlide } from 'swiper/react';
 
 type ItemProps = Pick<Genre, 'genre_img' | 'genre_id'>;
 

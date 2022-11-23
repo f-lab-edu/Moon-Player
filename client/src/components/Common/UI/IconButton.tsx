@@ -12,8 +12,10 @@ import {
   faCircleArrowRight,
   faCircleArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';
+
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 import { StyledProps } from 'types/app';
+import { forwardRef } from 'react';
 const ICON_NAME = {
   shuffle: faShuffle,
   backward: faBackwardStep,
@@ -35,15 +37,18 @@ interface IconButtonProps extends StyledProps {
   size: FontAwesomeIconProps['size'];
   active?: boolean;
   className?: string;
+  ref?: HTMLButtonElement;
 }
 
-export const IconButton = ({ onClick, icon, size, color, active, className }: IconButtonProps) => {
-  return (
-    <Button className={className} onClick={onClick} color={color} active={active}>
-      <FontAwesomeIcon icon={ICON_NAME[icon]} size={size} color={color}></FontAwesomeIcon>
-    </Button>
-  );
-};
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
+  ({ onClick, icon, size, color, active, className }, ref) => {
+    return (
+      <Button ref={ref} className={className} onClick={onClick} color={color} active={active}>
+        <FontAwesomeIcon icon={ICON_NAME[icon]} size={size} color={color}></FontAwesomeIcon>
+      </Button>
+    );
+  }
+);
 interface ButtonProps extends StyledProps {
   active?: boolean;
 }
