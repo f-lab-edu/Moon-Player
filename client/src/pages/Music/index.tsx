@@ -23,10 +23,11 @@ const Root = styled.div`
 
 const Main = styled(Flex)`
   height: auto;
-  padding: 15px;
-  margin-top: 50px;
+  padding: 50px;
+  justify-content: center;
+  gap: 20px;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
     gap: 20px;

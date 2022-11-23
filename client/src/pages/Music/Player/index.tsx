@@ -28,23 +28,19 @@ export const Player = () => {
 };
 
 const Root = styled.div`
-  width: 400px;
+  width: 30%;
   padding: 15px;
   border: 1px solid white;
   border-radius: 7px;
 
-  @media screen and (max-width: 1000px) {
-    margin: 0px;
+  @media screen and (max-width: 1024px) {
     width: 100%;
+    margin: 50px;
   }
 `;
 const PlayerContent = styled(ScrollBox)`
   height: 30vh;
   padding-right: 10px;
-
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-  }
 `;
 
 const PlayerTitle = styled(Text)`

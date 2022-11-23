@@ -7,11 +7,11 @@ export const useResolution = () => {
   const [resolution, setResolution] = useState<'MOBILE' | 'TABLET' | 'DESKTOP'>('DESKTOP');
   useEffect(() => {
     const ev = () => {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 480) {
         return setResolution('MOBILE');
-      } else if (window.innerWidth <= 1024) {
+      } else if (window.innerWidth <= 768) {
         return setResolution('TABLET');
-      } else if (window.innerWidth > 1024) {
+      } else if (window.innerWidth >= 1024) {
         return setResolution('DESKTOP');
       }
     };

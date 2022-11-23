@@ -28,13 +28,13 @@ export const PlayList = () => {
 };
 
 const Root = styled(ScrollBox)`
-  width: 916px;
+  width: 70%;
   height: 100vh;
   border-radius: 7px;
   border: 1px solid white;
   margin: 0px 40px;
   padding: 10px 15px;
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
 `;

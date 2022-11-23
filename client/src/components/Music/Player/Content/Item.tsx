@@ -59,10 +59,6 @@ const Root = styled(Flex)<RootProps>`
   background: ${({ isSelected }) => isSelected && 'gray'};
   opacity: ${({ isSelected }) => isSelected && '0.7'};
   gap: 15px;
-
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-  }
 `;
 
 const OrderText = styled(Text)`

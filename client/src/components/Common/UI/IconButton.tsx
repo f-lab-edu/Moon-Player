@@ -34,11 +34,12 @@ interface IconButtonProps extends StyledProps {
   icon: IconName;
   size: FontAwesomeIconProps['size'];
   active?: boolean;
+  className?: string;
 }
 
-export const IconButton = ({ onClick, icon, size, color, active }: IconButtonProps) => {
+export const IconButton = ({ onClick, icon, size, color, active, className }: IconButtonProps) => {
   return (
-    <Button onClick={onClick} color={color} active={active}>
+    <Button className={className} onClick={onClick} color={color} active={active}>
       <FontAwesomeIcon icon={ICON_NAME[icon]} size={size} color={color}></FontAwesomeIcon>
     </Button>
   );
