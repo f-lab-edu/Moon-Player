@@ -6,37 +6,38 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { useEffect, useState } from 'react';
 import SwiperCore from 'swiper';
+//sliderstate는 swiper Module에 의존적인 부분이 많아서 따로 분리를 시킬필요가없을거같다
 export const useSlider = () => {
-  const [swiper, setSwiper] = useState<SwiperCore>();
-  const [swiperSetting, setSwiperSetting] = useState<SwiperProps>(setting);
-  const [swiperState, setSwiperState] = useState(SwiperDefaultState);
+  const [swiperModule, setSwiperModule] = useState<SwiperCore>();
+  const [swiperState, setSwiperState] = useState<SwiperProps>(DEFAULT_SETTING);
+
+  //  sliderState는 slider를 관리
+  const [sliderState, setSliderState] = useState(DEFAULT_SLIDER_SETTING);
 
   useEffect(() => {
-    setPaginationState();
-  }, [swiper]);
-
+    // swiper 모듈이 없으면 실행불가
+    if (!swiperModule) return;
+    setSliderState({ ...sliderState, isBegining: true, isEnd: false });
+  }, [swiperModule]);
   const handleSlideChange = () => {
-    if (!swiper) return;
-    setPaginationState();
-  };
-  const handleNextSlide = () => swiper?.slideNext();
-  const handlePrevSlide = () => swiper?.slidePrev();
-
-  const setPaginationState = () => {
-    if (!swiper) return;
-    setSwiperState({ ...swiperState, isBegining: swiper.isBeginning, isEnd: swiper.isEnd });
+    if (!swiperModule) return;
+    setSliderState({ ...sliderState, isBegining: swiperModule.isBeginning, isEnd: swiperModule.isEnd });
   };
 
-  return { swiperState, setSwiper, swiperSetting, handleNextSlide, handlePrevSlide, handleSlideChange };
+  // 스와이퍼 모듈로 넘길수있음
+  const handleNextSlide = () => swiperModule?.slideNext();
+  const handlePrevSlide = () => swiperModule?.slidePrev();
+  return { sliderState, setSwiperModule, swiperState, handleNextSlide, handlePrevSlide, handleSlideChange };
 };
 export default useSlider;
 
-const SwiperDefaultState = {
+const DEFAULT_SLIDER_SETTING = {
   isBegining: false,
   isEnd: false,
 };
 
-const setting: SwiperProps = {
+// 스와이퍼 관련된 라이브러리 셋팅 만들어올수있음
+const DEFAULT_SETTING: SwiperProps = {
   modules: [Pagination],
   pagination: {
     el: '.pagination',
