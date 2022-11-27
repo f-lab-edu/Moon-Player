@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
-import { StyledProps } from 'types/app';
-
-interface AvatarProps extends StyledProps {
-  img: string;
+type AvatarIconNames = 'logo';
+type AvatarIcons = {
+  [key in AvatarIconNames]: string | undefined;
+};
+interface AvatarProps {
+  img: AvatarIconNames;
 }
 
 export const Avatar = styled.img.attrs<AvatarProps>(({ img }) => ({
-  src: AvatarImage[img],
+  src: AvatarIcons[img],
 }))<AvatarProps>`
   /* default 설정 */
   height: ${({ height }) => height};
@@ -20,10 +22,8 @@ export const Avatar = styled.img.attrs<AvatarProps>(({ img }) => ({
   object-fit: fill;
   transform: scale(1.2);
 `;
-interface Image {
-  [key: string]: string;
-}
-const AvatarImage: Image = {
+
+const AvatarIcons: AvatarIcons = {
   logo: 'images/Loginlogo.png',
 };
 export default Avatar;

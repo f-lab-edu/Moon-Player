@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-
-import { StyledProps } from 'types/app';
-
-interface ImageProps extends StyledProps {
+interface ImageProps {
   img: string;
 }
 
