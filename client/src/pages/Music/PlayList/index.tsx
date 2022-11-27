@@ -40,7 +40,7 @@ const Root = styled(ScrollBox)`
 `;
 
 const PlayListTitle = styled(Text)`
-  font-size: ${({ theme }) => theme.fontSize.m};
+  font-size: 20px;
 `;
 
 export default PlayList;

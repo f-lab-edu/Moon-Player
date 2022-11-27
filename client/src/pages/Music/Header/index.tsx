@@ -49,15 +49,15 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 const Title = styled(Text)`
-  font-size: ${({ theme }) => theme.fontSize.xl};
-  color: ${({ theme }) => theme.colors.white};
+  font-size: 36px;
+  color: white;
   margin: 20px;
 `;
 
 const StyledText = styled(Text)`
   margin: 10px;
-  color: ${({ theme }) => theme.colors.white};
-  font-size: ${({ theme }) => theme.fontSize.m};
+  color: white;
+  font-size: 20px;
   align-items: center;
 `;
 

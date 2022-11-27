@@ -8,15 +8,12 @@ interface FlexProps {
 }
 
 export const Flex = styled.div<FlexProps>(
-  ({ direction, justifyContent, alignItems }) => `
+  ({ direction = 'row', justifyContent, alignItems }) => `
   display: flex;
   flex-direction:${direction};
   justify-content: ${justifyContent};
   align-items: ${alignItems};
 `
 );
-Flex.defaultProps = {
-  direction: 'row',
-};
 
 export default Flex;

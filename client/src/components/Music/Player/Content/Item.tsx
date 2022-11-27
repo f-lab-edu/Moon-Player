@@ -63,11 +63,11 @@ const Root = styled(Flex)<RootProps>`
 
 const OrderText = styled(Text)`
   color: white;
-  font-size: ${({ theme }) => theme.fontSize.s};
+  font-size: 16px;
 `;
 const MusicTitle = styled(OverFlowText)`
   width: 60%;
-  font-size: ${({ theme }) => theme.fontSize.s};
+  font-size: 16px;
   color: white;
   text-align: center;
   cursor: pointer;

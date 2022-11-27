@@ -61,7 +61,7 @@ const MusicImage = styled(Image)`
 
 const MusicTitle = styled(OverFlowText)`
   width: 50%;
-  font-size: ${({ theme }) => theme.fontSize.s};
+  font-size: 16px;
 `;
 
 export default Item;

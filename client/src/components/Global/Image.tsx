@@ -11,13 +11,9 @@ const Image = styled.img.attrs(({ img }: ImageProps) => ({
 }))<ImageProps>`
   object-fit: fill;
   max-width: 100%;
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
+  width: ${({ width = '100px' }) => width};
+  height: ${({ height = '100px' }) => height};
   box-shadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px';
 `;
-Image.defaultProps = {
-  width: '100px',
-  height: '100px',
-};
 
 export default Image;

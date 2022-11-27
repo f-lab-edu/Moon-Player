@@ -53,7 +53,7 @@ interface ButtonProps extends StyledProps {
   active?: boolean;
 }
 const Button = styled.button<ButtonProps>(
-  ({ active, color }) => `
+  ({ active = false, color }) => `
 background: none;
 border:0;
 cursor:pointer;
@@ -65,9 +65,4 @@ opacity:${active ? 0.5 : 1};
 }
 `
 );
-
-Button.defaultProps = {
-  active: false,
-};
-
 export default IconButton;

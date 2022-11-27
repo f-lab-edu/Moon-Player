@@ -44,7 +44,7 @@ const PlayerContent = styled(ScrollBox)`
 `;
 
 const PlayerTitle = styled(Text)`
-  font-size: ${({ theme }) => theme.fontSize.m};
+  font-size: 20px;
   color: white;
 `;
 
