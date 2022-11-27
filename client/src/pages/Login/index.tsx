@@ -37,7 +37,7 @@ const LoginAvatar = styled(Avatar)`
 `;
 
 const LoginTitle = styled(Text)`
-  font-size: ${({ theme }) => theme.fontSize.title};
-  color: ${({ theme }) => theme.colors.white};
+  font-size: 40px;
+  color: white;
 `;
 export default LoginPage;

@@ -1,11 +1,10 @@
-import styled, { ThemeContext } from 'styled-components';
-import { useEffect, useContext } from 'react';
+import styled from 'styled-components';
+import { useEffect } from 'react';
 
 import Icon from 'components/Global/Icon';
 import Button from 'components/Global/Button';
 import Text from 'components/Global/Text';
 import Flex from 'components/Global/Flex';
-
 import { assignURL, getToken } from 'utils/oAuth';
 
 import { useAuthenticator } from 'hooks/useAuthenticator';
@@ -15,8 +14,6 @@ import { useAppDispatch } from 'hooks/useAppDispatch';
 
 export const Form = () => {
   const { signIn, isAuthenticated } = useAuthenticator();
-  const theme = useContext(ThemeContext);
-
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -33,17 +30,17 @@ export const Form = () => {
 
   return (
     <Root direction="column" justifyContent="center" alignItems="center">
-      <StyledButton color={theme.colors.lightBlue} fontColor={theme.colors.white} onClick={handleGoogleLogin}>
+      <StyledButton color="#5c79f1" fontColor="white" onClick={handleGoogleLogin}>
         <StyledIcon name="Google" />
-        <StyledText color={theme.colors.white}>Google 로그인</StyledText>
+        <StyledText color="white">Google 로그인</StyledText>
       </StyledButton>
-      <StyledButton color={theme.colors.darkgreen} fontColor={theme.colors.white}>
+      <StyledButton color="#1cc802" fontColor="white">
         <StyledIcon name="Naver" />
-        <StyledText color={theme.colors.white}>네이버 로그인</StyledText>
+        <StyledText color="white">네이버 로그인</StyledText>
       </StyledButton>
-      <StyledButton color={theme.colors.lightyellow} fontColor={theme.colors.black}>
+      <StyledButton color="#ffeb3b" fontColor="black">
         <StyledIcon name="Kakao" />
-        <StyledText color={theme.colors.black}>카카오 로그인</StyledText>
+        <StyledText color="black">카카오 로그인</StyledText>
       </StyledButton>
     </Root>
   );
@@ -58,7 +55,7 @@ const StyledIcon = styled(Icon)`
   height: 30px;
 `;
 const StyledButton = styled(Button)`
-  font-size: ${({ theme }) => theme.fontSize.m};
+  font-size: 20px;
   display: flex;
   width: 100%;
   align-items: center;
@@ -72,7 +69,7 @@ const StyledButton = styled(Button)`
   }
 `;
 const StyledText = styled(Text)`
-  font-size: ${({ theme }) => theme.fontSize.l};
+  font-size: 24px;
 `;
 
 export default Form;

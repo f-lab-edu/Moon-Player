@@ -7,13 +7,11 @@ import ProtectedRoute from 'route/ProtectedRoute';
 import Alarm from 'components/Global/Alarm';
 import useAlarm from 'hooks/useAlarm';
 import GlobalStyle from 'styles/GlobalStyle';
-import { ThemeProvider } from 'styled-components';
-import theme from 'styles/theme';
 
 function App() {
   const { isOpen, text } = useAlarm();
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <GlobalStyle />
       {isOpen ? <Alarm text={text} /> : <></>}
       <Routes>
@@ -35,7 +33,7 @@ function App() {
         ></Route>
         <Route element={<LoginPage />} path="/"></Route>;
       </Routes>
-    </ThemeProvider>
+    </>
   );
 }
 
