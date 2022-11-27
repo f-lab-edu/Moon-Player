@@ -4,15 +4,16 @@ import MusicPage from 'pages/Music/index';
 import UserPage from './pages/User/index';
 import LoginPage from 'pages/Login/index';
 import ProtectedRoute from 'route/ProtectedRoute';
-import Alarm from 'components/Common/Alarm';
+import Alarm from 'components/Common/App/Alarm';
 import useAlarm from 'hooks/useAlarm';
-import GlobalStyle from 'style/GlobalStyle';
+import GlobalStyle from 'styles/GlobalStyle';
+import { ThemeProvider } from 'styled-components';
+import theme from 'styles/theme';
 
 function App() {
   const { isOpen, text } = useAlarm();
   return (
-    <>
-      {' '}
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       {isOpen ? <Alarm text={text} /> : <></>}
       <Routes>
@@ -34,7 +35,7 @@ function App() {
         ></Route>
         <Route element={<LoginPage />} path="/"></Route>;
       </Routes>
-    </>
+    </ThemeProvider>
   );
 }
 

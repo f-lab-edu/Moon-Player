@@ -1,17 +1,18 @@
 import styled from 'styled-components';
-import Image from 'components/Common/Image';
+import Image from 'components/Common/UI/Image';
 import { handleAddPlayer } from 'store/feature/music/PlayerSlice';
-import OverFlowText from 'components/Common/OverFlowText';
+import OverFlowText from 'components/Common/UI/OverFlowText';
 
-import Flex from 'components/Common/Flex';
-import { IconButton } from 'components/Common/IconButton';
+import Flex from 'components/Common/UI/Flex';
+import { IconButton } from 'components/Common/UI/IconButton';
 import { Music } from 'types/store';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
-type ItemProps = {
+interface ItemProps {
   video_title: string;
-  id: number;
+  id: number | string;
   video_img: string;
-};
+}
+
 export const Item = ({ id, video_title, video_img }: ItemProps) => {
   const dispatch = useAppDispatch();
   const playerSelector = useAppSelector((state) => state.music.player);
@@ -30,10 +31,8 @@ export const Item = ({ id, video_title, video_img }: ItemProps) => {
   return (
     <Root direction="row" justifyContent="space-between" alignItems="center">
       <div>{id}</div>
-      <Image src={video_img} width="100px" height="50px" />
-      <OverFlowText fontSize="16px" width="50%">
-        {video_title}
-      </OverFlowText>
+      <MusicImage img={video_img} />
+      <MusicTitle>{video_title}</MusicTitle>
       <IconButton color="white" active={isInPlayer} onClick={handleAddMusic} icon="plus" size="2x"></IconButton>
     </Root>
   );
@@ -54,4 +53,15 @@ const Root = styled(Flex)`
     width: 1px;
   }
 `;
+
+const MusicImage = styled(Image)`
+  width: 100px;
+  height: 50px;
+`;
+
+const MusicTitle = styled(OverFlowText)`
+  width: 50%;
+  font-size: ${({ theme }) => theme.fontSize.s};
+`;
+
 export default Item;

@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 import PlayerFooter from 'components/Music/Player/Footer';
-import PlayerMusic from 'components/Music/Player/Item';
-import Text from 'components/Common/Text';
-import ScrollBox from 'components/Common/ScrollBox';
+import PlayerMusic from 'components/Music/Player/Content/Item';
+import Text from 'components/Common/UI/Text';
+import ScrollBox from 'components/Common/UI/ScrollBox';
 import { useAppSelector } from 'hooks/useAppDispatch';
 
 // 플레이어 메인
 export const Player = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
-
   const playerMusics =
     playerSelector.playerItems.length > 0 ? (
       playerSelector.playerItems.map(({ video_title, video_img }, index) => (
@@ -21,33 +20,32 @@ export const Player = () => {
     );
   return (
     <Root>
-      <Text fontSize="20px" weight="700" color="white">
-        재생 목록
-      </Text>
-      <PlayerScrollBox color="white">{playerMusics}</PlayerScrollBox>
+      <PlayerTitle>재생 목록</PlayerTitle>
+      <PlayerContent>{playerMusics}</PlayerContent>
       <PlayerFooter />
     </Root>
   );
 };
 
 const Root = styled.div`
-  width: 400px;
+  width: 30%;
   padding: 15px;
   border: 1px solid white;
   border-radius: 7px;
 
-  @media screen and (max-width: 1000px) {
-    margin: 0px;
+  @media screen and (max-width: 1024px) {
     width: 100%;
+    margin: 50px;
   }
 `;
-const PlayerScrollBox = styled(ScrollBox)`
+const PlayerContent = styled(ScrollBox)`
   height: 30vh;
   padding-right: 10px;
+`;
 
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-  }
+const PlayerTitle = styled(Text)`
+  font-size: ${({ theme }) => theme.fontSize.m};
+  color: white;
 `;
 
 export default Player;

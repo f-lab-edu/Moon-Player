@@ -1,32 +1,33 @@
 import styled from 'styled-components';
-import Flex from 'components/Common/Flex';
-import Header from 'components/Music/Header/Header';
+import Flex from 'components/Common/UI/Flex';
+import Header from 'pages/Music/Header';
 import Genre from './Genre/index';
 import Player from './Player/index';
 import PlayList from './PlayList/index';
 const MusicPage = () => {
   return (
-    <Layout>
+    <Root>
       <Header></Header>
       <Genre />
       <Main direction="row">
         <PlayList />
         <Player />
       </Main>
-    </Layout>
+    </Root>
   );
 };
-const Layout = styled.div`
+const Root = styled.div`
   overflow-x: hidden;
   background-image: linear-gradient(90deg, #000000 0%, #434343 100%);
 `;
 
 const Main = styled(Flex)`
   height: auto;
-  padding: 15px;
-  margin-top: 50px;
+  padding: 50px;
+  justify-content: center;
+  gap: 20px;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
     gap: 20px;

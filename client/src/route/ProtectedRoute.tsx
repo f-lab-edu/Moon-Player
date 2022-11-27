@@ -3,9 +3,9 @@ import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import { ReactElement } from 'react';
 
-type ProtectedRouteProps = {
+interface ProtectedRouteProps {
   children: ReactElement;
-};
+}
 
 export const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   const dispatch = useAppDispatch();

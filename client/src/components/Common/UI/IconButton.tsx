@@ -12,8 +12,10 @@ import {
   faCircleArrowRight,
   faCircleArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 
+import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
+import { StyledProps } from 'types/app';
+import { forwardRef } from 'react';
 const ICON_NAME = {
   shuffle: faShuffle,
   backward: faBackwardStep,
@@ -29,40 +31,33 @@ const ICON_NAME = {
 };
 
 type IconName = keyof typeof ICON_NAME;
-
-type IconButtonProps = {
+interface IconButtonProps extends StyledProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   icon: IconName;
-  size: FontAwesomeIconProps['size']; // 이거 좀 봐야할듯
-  color: string;
+  size: FontAwesomeIconProps['size'];
   active?: boolean;
-  padding?: string;
-  margin?: string;
-};
+  className?: string;
+  ref?: HTMLButtonElement;
+}
 
-type ButtonProps = {
-  color: string;
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
+  ({ onClick, icon, size, color, active, className }, ref) => {
+    return (
+      <Button ref={ref} className={className} onClick={onClick} color={color} active={active}>
+        <FontAwesomeIcon icon={ICON_NAME[icon]} size={size} color={color}></FontAwesomeIcon>
+      </Button>
+    );
+  }
+);
+interface ButtonProps extends StyledProps {
   active?: boolean;
-  padding?: string;
-  margin?: string;
-};
-
-export const IconButton = ({ onClick, icon, size, color, active, padding, margin }: IconButtonProps) => {
-  return (
-    <Button onClick={onClick} color={color} active={active} padding={padding} margin={margin}>
-      <FontAwesomeIcon icon={ICON_NAME[icon]} size={size} color={color}></FontAwesomeIcon>
-    </Button>
-  );
-};
-
+}
 const Button = styled.button<ButtonProps>(
-  ({ active, color, padding, margin }) => `
+  ({ active, color }) => `
 background: none;
 border:0;
 cursor:pointer;
 color: ${color};
-padding:${padding};
-margin:${margin};
 pointer-events:${active ? 'none' : 'auto'};
 opacity:${active ? 0.5 : 1};
 &:hover {

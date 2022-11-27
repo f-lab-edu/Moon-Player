@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { useEffect } from 'react';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import PlaylistItem from 'components/Music/PlayList/Item';
-import { ScrollBox } from 'components/Common/ScrollBox';
-import PlayListTitle from 'components/Common/Text';
+import { ScrollBox } from 'components/Common/UI/ScrollBox';
+import Text from 'components/Common/UI/Text';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 
 export const PlayList = () => {
@@ -21,24 +21,26 @@ export const PlayList = () => {
 
   return (
     <Root>
-      <PlayListTitle color="white" fontSize="20px">
-        {title}
-      </PlayListTitle>
+      <PlayListTitle>{title}</PlayListTitle>
       {playListMusics}
     </Root>
   );
 };
 
 const Root = styled(ScrollBox)`
-  width: 916px;
+  width: 70%;
   height: 100vh;
   border-radius: 7px;
   border: 1px solid white;
   margin: 0px 40px;
   padding: 10px 15px;
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
+`;
+
+const PlayListTitle = styled(Text)`
+  font-size: ${({ theme }) => theme.fontSize.m};
 `;
 
 export default PlayList;

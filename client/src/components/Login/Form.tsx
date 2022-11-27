@@ -1,11 +1,12 @@
-import styled from 'styled-components';
-import { useEffect } from 'react';
-import { Icon } from 'components/Common/Icon';
-import Button from 'components/Common/Button';
-import Text from 'components/Common/Text';
+import styled, { ThemeContext } from 'styled-components';
+import { useEffect, useContext } from 'react';
+
+import { Icon } from 'components/Common/UI/Icon';
+import Button from 'components/Common/UI/Button';
+import Text from 'components/Common/UI/Text';
 
 import { assignURL, getToken } from 'utils/oAuth';
-import Flex from 'components/Common/Flex';
+import Flex from 'components/Common/UI/Flex';
 
 import { useAuthenticator } from 'hooks/useAuthenticator';
 import { fetchUserInfo } from 'store/feature/user/UserSlice';
@@ -14,6 +15,7 @@ import { useAppDispatch } from 'hooks/useAppDispatch';
 
 export const Form = () => {
   const { signIn, isAuthenticated } = useAuthenticator();
+  const theme = useContext(ThemeContext);
 
   const dispatch = useAppDispatch();
 
@@ -31,24 +33,18 @@ export const Form = () => {
 
   return (
     <Root direction="column" justifyContent="center" alignItems="center">
-      <LongButton fontSize="20px" color="#5c79f1" fontColor="white" onClick={handleGoogleLogin}>
-        <Icon name="Google" width="30px" height="30px" />
-        <Text fontSize="20px" color="white">
-          Google 로그인
-        </Text>
-      </LongButton>
-      <LongButton fontSize="20px" color="#1cc802" fontColor="white">
-        <Icon name="Naver" width="30px" height="30px" />
-        <Text fontSize="20px" color="white">
-          네이버 로그인
-        </Text>
-      </LongButton>
-      <LongButton fontSize="20px" color="#ffeb3b" fontColor="black">
-        <Icon name="Kakao" width="30px" height="30px" />
-        <Text fontSize="20px" color="black">
-          카카오 로그인
-        </Text>
-      </LongButton>
+      <StyledButton color={theme.colors.lightBlue} fontColor={theme.colors.white} onClick={handleGoogleLogin}>
+        <StyledIcon name="Google" />
+        <StyledText color={theme.colors.white}>Google 로그인</StyledText>
+      </StyledButton>
+      <StyledButton color={theme.colors.darkgreen} fontColor={theme.colors.white}>
+        <StyledIcon name="Naver" />
+        <StyledText color={theme.colors.white}>네이버 로그인</StyledText>
+      </StyledButton>
+      <StyledButton color={theme.colors.lightyellow} fontColor={theme.colors.black}>
+        <StyledIcon name="Kakao" />
+        <StyledText color={theme.colors.black}>카카오 로그인</StyledText>
+      </StyledButton>
     </Root>
   );
 };
@@ -57,7 +53,12 @@ const Root = styled(Flex)`
   width: 30vw;
 `;
 
-const LongButton = styled(Button)`
+const StyledIcon = styled(Icon)`
+  width: 30px;
+  height: 30px;
+`;
+const StyledButton = styled(Button)`
+  font-size: ${({ theme }) => theme.fontSize.m};
   display: flex;
   width: 100%;
   align-items: center;
@@ -69,6 +70,9 @@ const LongButton = styled(Button)`
   > :nth-child(2) {
     margin: 0 auto;
   }
+`;
+const StyledText = styled(Text)`
+  font-size: ${({ theme }) => theme.fontSize.l};
 `;
 
 export default Form;
