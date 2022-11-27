@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Flex from 'components/Common/UI/Flex';
+import Flex from 'components/Global/Flex';
 import Header from 'pages/Music/Header';
 import Genre from './Genre/index';
 import Player from './Player/index';

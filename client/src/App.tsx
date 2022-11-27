@@ -4,7 +4,7 @@ import MusicPage from 'pages/Music/index';
 import UserPage from './pages/User/index';
 import LoginPage from 'pages/Login/index';
 import ProtectedRoute from 'route/ProtectedRoute';
-import Alarm from 'components/Common/App/Alarm';
+import Alarm from 'components/Global/Alarm';
 import useAlarm from 'hooks/useAlarm';
 import GlobalStyle from 'styles/GlobalStyle';
 import { ThemeProvider } from 'styled-components';

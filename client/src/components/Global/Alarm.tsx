@@ -1,19 +1,19 @@
-import Button from 'components/Common/UI/Button';
-import Flex from 'components/Common/UI/Flex';
 import styled from 'styled-components';
-import { Text } from 'components/Common/UI/Text';
-import Avatar from 'components/Common/UI/Avatar';
 import { createPortal } from 'react-dom';
-import { useDispatch } from 'react-redux';
 import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 import { ReactNode } from 'react';
+import { Flex } from './Flex';
+import { Button } from './Button';
+import { Text } from './Text';
+import { Avatar } from './Avatar';
+import { useAppDispatch } from 'hooks/useAppDispatch';
 
 interface AlarmProps {
   text: string;
 }
 
 export const Alarm = ({ text }: AlarmProps) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleClose = () => {
     dispatch(handleAlarm({ isOpen: false, text: '' }));

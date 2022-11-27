@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Flex } from 'components/Common/UI/Flex';
-import Image from 'components/Common/UI/Image';
-import { Text } from 'components/Common/UI/Text';
+import Flex from 'components/Global/Flex';
+import Image from 'components/Global/Image';
+import Text from 'components/Global/Text';
 
 import { PlayerControl } from 'types/app';
 

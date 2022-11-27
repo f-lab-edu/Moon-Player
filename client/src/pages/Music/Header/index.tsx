@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { useAuthenticator } from 'hooks/useAuthenticator';
-import { Avatar } from 'components/Common/UI/Avatar';
+import { Avatar } from 'components/Global/Avatar';
 
-import Flex from 'components/Common/UI/Flex';
-import Text from 'components/Common/UI/Text';
+import Flex from 'components/Global/Flex';
+import Text from 'components/Global/Text';
 
 export const Header = () => {
   const { signOut } = useAuthenticator();

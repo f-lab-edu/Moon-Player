@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Line } from 'rc-progress';
-import { Text } from 'components/Common/UI/Text';
 interface ProgressBarProps {
   currentTime: string;
   endTime: string;

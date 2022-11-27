@@ -1,9 +1,9 @@
 import { usePlayerControl } from 'hooks/usePlayerControl';
 import { formatTime } from 'utils/Player';
 
-import { ProgressBar } from './ProgressBar';
-import { Volume } from './Volume';
-import { Controller } from './Controller';
+import ProgressBar from './ProgressBar';
+import Volume from './Volume';
+import Controller from './Controller';
 import Info from './Info';
 
 export const Footer = () => {

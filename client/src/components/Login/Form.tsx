@@ -1,12 +1,12 @@
 import styled, { ThemeContext } from 'styled-components';
 import { useEffect, useContext } from 'react';
 
-import { Icon } from 'components/Common/UI/Icon';
-import Button from 'components/Common/UI/Button';
-import Text from 'components/Common/UI/Text';
+import Icon from 'components/Global/Icon';
+import Button from 'components/Global/Button';
+import Text from 'components/Global/Text';
+import Flex from 'components/Global/Flex';
 
 import { assignURL, getToken } from 'utils/oAuth';
-import Flex from 'components/Common/UI/Flex';
 
 import { useAuthenticator } from 'hooks/useAuthenticator';
 import { fetchUserInfo } from 'store/feature/user/UserSlice';
