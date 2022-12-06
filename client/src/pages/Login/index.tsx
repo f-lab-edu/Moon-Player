@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import LoginForm from 'components/Login/Form';
-import Avatar from 'components/Common/UI/Avatar';
-import Flex from 'components/Common/UI/Flex';
-import Text from 'components/Common/UI/Text';
+import Avatar from 'components/Global/Avatar';
+import Flex from 'components/Global/Flex';
+import Text from 'components/Global/Text';
 
 const LoginPage = () => {
   return (
@@ -37,7 +37,7 @@ const LoginAvatar = styled(Avatar)`
 `;
 
 const LoginTitle = styled(Text)`
-  font-size: ${({ theme }) => theme.fontSize.title};
-  color: ${({ theme }) => theme.colors.white};
+  font-size: 40px;
+  color: white;
 `;
 export default LoginPage;

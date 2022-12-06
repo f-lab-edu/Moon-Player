@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import useMoveDownScroll from 'hooks/useMoveDownScroll';
 import usePrevious from 'hooks/usePrevious';
 import { handleRemoveMusic, handleAddMusic } from 'store/feature/music/PlayerSlice';
-import OverFlowText from 'components/Common/UI/OverFlowText';
+import OverFlowText from 'components/Global/OverFlowText';
 import { useEffect } from 'react';
-import Image from 'components/Common/UI/Image';
-import Flex from 'components/Common/UI/Flex';
-import Text from 'components/Common/UI/Text';
-import { IconButton } from 'components/Common/UI/IconButton';
+import Image from 'components/Global/Image';
+import Flex from 'components/Global/Flex';
+import Text from 'components/Global/Text';
+import IconButton from 'components/Global/IconButton';
 import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import { Music } from 'types/store';
@@ -63,11 +63,11 @@ const Root = styled(Flex)<RootProps>`
 
 const OrderText = styled(Text)`
   color: white;
-  font-size: ${({ theme }) => theme.fontSize.s};
+  font-size: 16px;
 `;
 const MusicTitle = styled(OverFlowText)`
   width: 60%;
-  font-size: ${({ theme }) => theme.fontSize.s};
+  font-size: 16px;
   color: white;
   text-align: center;
   cursor: pointer;

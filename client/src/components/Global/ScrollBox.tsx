@@ -5,7 +5,7 @@ interface ScrollBoxProps extends StyledProps {
   radius?: string;
 }
 export const ScrollBox = styled.div<ScrollBoxProps>(
-  ({ color, radius }) => `
+  ({ color = 'white', radius = '7px' }) => `
   overflow-y: scroll;
   &::-webkit-scrollbar {
     width: 10px;
@@ -21,9 +21,4 @@ export const ScrollBox = styled.div<ScrollBoxProps>(
   scrollbar-color:${color};
 `
 );
-ScrollBox.defaultProps = {
-  color: 'white',
-  radius: '7px',
-};
-
 export default ScrollBox;

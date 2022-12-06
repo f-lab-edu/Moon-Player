@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
-import Image from 'components/Common/UI/Image';
+import Image from 'components/Global/Image';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 import { Genre } from 'types/store';
 

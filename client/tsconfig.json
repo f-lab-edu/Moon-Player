@@ -8,7 +8,8 @@
     ],
     "types": ["react/next", "react-dom/next","node", "lodash"],
     "allowJs": false,
-    "skipLibCheck": true,
+    "noImplicitAny": false, // any 못하게
+    "skipLibCheck": true, //컴파일 시간을 줄여줌
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -23,10 +24,7 @@
     "incremental": true,
     "baseUrl": "src"
   },
-  "include": [
-    "src",
-    ".eslintrc.js"
-  ],
+  "include": ["src/**/*"], // src디렉터리와 src하위 디렉토리 포함 컴파일
   "exclude": [
     "node_modules",
     "build",

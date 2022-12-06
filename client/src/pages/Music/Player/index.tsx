@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import PlayerFooter from 'components/Music/Player/Footer';
 import PlayerMusic from 'components/Music/Player/Content/Item';
-import Text from 'components/Common/UI/Text';
-import ScrollBox from 'components/Common/UI/ScrollBox';
+import Text from 'components/Global/Text';
+import ScrollBox from 'components/Global/ScrollBox';
 import { useAppSelector } from 'hooks/useAppDispatch';
 
 // 플레이어 메인
@@ -44,7 +44,7 @@ const PlayerContent = styled(ScrollBox)`
 `;
 
 const PlayerTitle = styled(Text)`
-  font-size: ${({ theme }) => theme.fontSize.m};
+  font-size: 20px;
   color: white;
 `;
 

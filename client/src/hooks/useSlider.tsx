@@ -6,37 +6,24 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { useEffect, useState } from 'react';
 import SwiperCore from 'swiper';
+//slider state는 swiper Module에 의존적인 부분이 많아서 따로 분리를 시킬필요가없을거같다
 export const useSlider = () => {
-  const [swiper, setSwiper] = useState<SwiperCore>();
-  const [swiperSetting, setSwiperSetting] = useState<SwiperProps>(setting);
-  const [swiperState, setSwiperState] = useState(SwiperDefaultState);
+  const [swiperModule, setSwiperModule] = useState<SwiperCore>();
+  const [swiperState, setSwiperState] = useState<SwiperProps>(DEFAULT_SETTING);
 
   useEffect(() => {
-    setPaginationState();
-  }, [swiper]);
+    // swiper 모듈이 없으면 실행불가
+    if (!swiperModule) return;
+  }, [swiperModule]);
 
-  const handleSlideChange = () => {
-    if (!swiper) return;
-    setPaginationState();
-  };
-  const handleNextSlide = () => swiper?.slideNext();
-  const handlePrevSlide = () => swiper?.slidePrev();
-
-  const setPaginationState = () => {
-    if (!swiper) return;
-    setSwiperState({ ...swiperState, isBegining: swiper.isBeginning, isEnd: swiper.isEnd });
-  };
-
-  return { swiperState, setSwiper, swiperSetting, handleNextSlide, handlePrevSlide, handleSlideChange };
+  // 스와이퍼 모듈로 넘길수있음
+  const handleNextSlide = () => swiperModule?.slideNext(1000);
+  const handlePrevSlide = () => swiperModule?.slidePrev(1000);
+  return { setSwiperModule, swiperState, handleNextSlide, handlePrevSlide };
 };
 export default useSlider;
-
-const SwiperDefaultState = {
-  isBegining: false,
-  isEnd: false,
-};
-
-const setting: SwiperProps = {
+// 스와이퍼 관련된 라이브러리 셋팅 만들어올수있음
+const DEFAULT_SETTING: SwiperProps = {
   modules: [Pagination],
   pagination: {
     el: '.pagination',
@@ -45,21 +32,19 @@ const setting: SwiperProps = {
   slidesPerView: 6,
   slidesPerGroup: 6,
   allowTouchMove: false,
-
+  loopPreventsSlide: false,
   breakpoints: {
     480: {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 30,
     },
-    // when window width is >= 630px
     768: {
       slidesPerView: 3,
       slidesPerGroup: 3,
 
       spaceBetween: 15,
     },
-    // when window width is >= 1000
     1024: {
       slidesPerView: 6,
       slidesPerGroup: 6,

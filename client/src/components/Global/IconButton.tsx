@@ -16,7 +16,8 @@ import {
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 import { StyledProps } from 'types/app';
 import { forwardRef } from 'react';
-const ICON_NAME = {
+
+const FontAwesomeIcons = {
   shuffle: faShuffle,
   backward: faBackwardStep,
   play: faPlayCircle,
@@ -30,10 +31,10 @@ const ICON_NAME = {
   arrowLeft: faCircleArrowLeft,
 };
 
-type IconName = keyof typeof ICON_NAME;
+type FontAweSomeIcon = keyof typeof FontAwesomeIcons;
 interface IconButtonProps extends StyledProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  icon: IconName;
+  icon: FontAweSomeIcon;
   size: FontAwesomeIconProps['size'];
   active?: boolean;
   className?: string;
@@ -44,7 +45,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ onClick, icon, size, color, active, className }, ref) => {
     return (
       <Button ref={ref} className={className} onClick={onClick} color={color} active={active}>
-        <FontAwesomeIcon icon={ICON_NAME[icon]} size={size} color={color}></FontAwesomeIcon>
+        <FontAwesomeIcon icon={FontAwesomeIcons[icon]} size={size} color={color}></FontAwesomeIcon>
       </Button>
     );
   }
@@ -53,7 +54,7 @@ interface ButtonProps extends StyledProps {
   active?: boolean;
 }
 const Button = styled.button<ButtonProps>(
-  ({ active, color }) => `
+  ({ active = false, color }) => `
 background: none;
 border:0;
 cursor:pointer;
@@ -65,9 +66,4 @@ opacity:${active ? 0.5 : 1};
 }
 `
 );
-
-Button.defaultProps = {
-  active: false,
-};
-
 export default IconButton;

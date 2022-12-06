@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Flex } from 'components/Common/UI/Flex';
-import Image from 'components/Common/UI/Image';
-import { Text } from 'components/Common/UI/Text';
+import Root from 'components/Global/Flex';
+import Image from 'components/Global/Image';
+import Text from 'components/Global/Text';
 
 import { PlayerControl } from 'types/app';
 
@@ -26,10 +26,8 @@ export const Info = ({ player }: InfoProps) => {
   );
 };
 
-const Root = styled(Flex)``;
-
 const MusicTitle = styled(Text)`
-  font-size: ${({ theme }) => theme.fontSize.m};
+  font-size: 20px;
   text-align: center;
   color: white;
 `;

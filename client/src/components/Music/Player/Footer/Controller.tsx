@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Flex } from 'components/Common/UI/Flex';
-import { IconButton } from 'components/Common/UI/IconButton';
+import Flex from 'components/Global/Flex';
+import IconButton from 'components/Global/IconButton';
 import { PlayerControl } from 'types/app';
 
 interface ControllerProps {

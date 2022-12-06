@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { StyledProps } from 'types/app';
 
 export const OverFlowText = styled.div<StyledProps>(
-  ({ width, fontSize, color, textAlign, cursor }) => `
+  ({ width = '50%', fontSize = '16px', color = 'white', textAlign = 'start', cursor = 'default' }) => `
   width: ${width};
   font-size:${fontSize};
   color:${color};
@@ -14,12 +14,5 @@ export const OverFlowText = styled.div<StyledProps>(
   white-space: nowrap;
 `
 );
-OverFlowText.defaultProps = {
-  width: '50%',
-  fontSize: '15px',
-  color: 'white',
-  textAlign: 'start',
-  cursor: 'default',
-};
 
 export default OverFlowText;

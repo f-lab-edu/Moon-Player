@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Line } from 'rc-progress';
-import { Text } from 'components/Common/UI/Text';
 interface ProgressBarProps {
   currentTime: string;
   endTime: string;
@@ -26,7 +25,7 @@ const Root = styled.div`
   text-align: center;
 `;
 const ProgressBarText = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.m};
+  font-size: 20px;
   margin-top: 10px;
   text-align: center;
   color: white;

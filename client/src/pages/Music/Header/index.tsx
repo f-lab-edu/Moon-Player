@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { useAuthenticator } from 'hooks/useAuthenticator';
-import { Avatar } from 'components/Common/UI/Avatar';
+import { Avatar } from 'components/Global/Avatar';
 
-import Flex from 'components/Common/UI/Flex';
-import Text from 'components/Common/UI/Text';
+import Flex from 'components/Global/Flex';
+import Text from 'components/Global/Text';
 
 export const Header = () => {
   const { signOut } = useAuthenticator();
@@ -49,15 +49,15 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 const Title = styled(Text)`
-  font-size: ${({ theme }) => theme.fontSize.xl};
-  color: ${({ theme }) => theme.colors.white};
+  font-size: 36px;
+  color: white;
   margin: 20px;
 `;
 
 const StyledText = styled(Text)`
   margin: 10px;
-  color: ${({ theme }) => theme.colors.white};
-  font-size: ${({ theme }) => theme.fontSize.m};
+  color: white;
+  font-size: 20px;
   align-items: center;
 `;
 
