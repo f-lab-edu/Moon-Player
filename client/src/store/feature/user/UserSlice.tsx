@@ -1,16 +1,27 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
-import { sendToken } from 'utils/oAuth';
-import { UserState, GoogleUser } from 'types/store';
+import { getGoogleToken } from 'utils/GoogleLogin';
+import { UserState } from 'types/store';
+import { getKaKaoToken } from 'utils/KaKaoLogin';
 
 const initialState: UserState = {
-  GoogleUserinfo: { email: '', id: 0, picture: '', verified_email: false },
+  accesstoken: '',
   status: 'idle',
 };
 
-const fetchUserInfo = createAsyncThunk('user', async (token: string, thunkApi: any) => {
+const fetchGoogleUserInfo = createAsyncThunk('user', async (token: string, thunkApi: any) => {
   try {
-    const response = await sendToken(token);
+    const response = await getGoogleToken(token);
+    console.log(response);
+    return response;
+  } catch (error: any) {
+    return thunkApi.rejectWithValue(error.message);
+  }
+});
+
+const fetchKakaoUserInfo = createAsyncThunk('user', async (token: string, thunkApi: any) => {
+  try {
+    const response = await getKaKaoToken(token);
     return response;
   } catch (error: any) {
     return thunkApi.rejectWithValue(error.message);
@@ -24,21 +35,22 @@ export const UserSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchUserInfo.pending, (state: UserState) => {
-      state.status = 'Loading';
-    });
+    // builder.addCase(fetchGoogleUserInfo.pending, (state: UserState) => {
+    //   state.status = 'Loading';
+    // });
 
-    builder.addCase(fetchUserInfo.fulfilled, (state: UserState, action: PayloadAction<GoogleUser>) => {
+    builder.addCase(fetchGoogleUserInfo.fulfilled, (state: UserState, action: PayloadAction<string>) => {
       state.status = 'Complete';
-      state.GoogleUserinfo = action.payload;
+      state.accesstoken = action.payload;
     });
 
-    builder.addCase(fetchUserInfo.rejected, (state: UserState) => {
-      state.status = 'Fail';
-    });
+    // builder.addCase(fetchGoogleUserInfo.rejected, (state: UserState) => {
+    //   state.status = 'Fail';
+    // });
+
     // 로그아웃시 발생
     builder.addCase(PURGE, () => initialState);
   },
 });
 export default UserSlice;
-export { fetchUserInfo };
+export { fetchGoogleUserInfo, fetchKakaoUserInfo };

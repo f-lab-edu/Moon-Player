@@ -5,8 +5,8 @@ import { useAppSelector } from './useAppDispatch';
 
 export const useAuthenticator = () => {
   const navigate = useNavigate();
-  const user = useAppSelector((state) => state.user.GoogleUserinfo);
-  const isVerified = user.verified_email ? true : false;
+  const token = useAppSelector((state) => state.user.accesstoken);
+  const isVerified = token ? true : false;
 
   const [isAuthenticated, setAuthenticated] = useState(isVerified);
 

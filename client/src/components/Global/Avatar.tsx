@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 type AvatarIconNames = 'logo';
-type AvatarIcons = {
-  [key in AvatarIconNames]: string | undefined;
+type AvatarIconsType = {
+  [key in AvatarIconNames]: string;
 };
 interface AvatarProps {
   img: AvatarIconNames;
@@ -23,7 +23,7 @@ export const Avatar = styled.img.attrs<AvatarProps>(({ img }) => ({
   transform: scale(1.2);
 `;
 
-const AvatarIcons: AvatarIcons = {
+const AvatarIcons: AvatarIconsType = {
   logo: 'images/Loginlogo.png',
 };
 export default Avatar;

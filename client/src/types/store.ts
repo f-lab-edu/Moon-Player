@@ -43,7 +43,7 @@ export interface Music {
 }
 export interface UserState {
   status: string;
-  GoogleUserinfo: GoogleUser;
+  accesstoken: string;
 }
 
 export interface GoogleUser {

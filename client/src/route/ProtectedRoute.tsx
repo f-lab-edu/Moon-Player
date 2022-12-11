@@ -9,9 +9,8 @@ interface ProtectedRouteProps {
 
 export const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   const dispatch = useAppDispatch();
-  const user = useAppSelector((state) => state.user.GoogleUserinfo);
-
-  const isVerified = user.verified_email ? true : false;
+  const token = useAppSelector((state) => state.user.accesstoken);
+  const isVerified = token ? true : false;
 
   if (!isVerified) {
     dispatch(handleAlarm({ isOpen: true, text: '로그아웃 되었습니다.' }));

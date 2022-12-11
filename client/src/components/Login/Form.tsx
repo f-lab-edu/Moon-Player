@@ -1,31 +1,42 @@
 import styled from 'styled-components';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import Icon from 'components/Global/Icon';
 import Button from 'components/Global/Button';
 import Text from 'components/Global/Text';
 import Flex from 'components/Global/Flex';
-import { assignURL, getToken } from 'utils/oAuth';
+import { assignGoogleAuthURL, getGoogleCode } from 'utils/GoogleLogin';
 
 import { useAuthenticator } from 'hooks/useAuthenticator';
-import { fetchUserInfo } from 'store/feature/user/UserSlice';
+import { fetchGoogleUserInfo } from 'store/feature/user/UserSlice';
 import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 import { useAppDispatch } from 'hooks/useAppDispatch';
+import { assignKaKaoAuthURL } from 'utils/KaKaoLogin';
 
 export const Form = () => {
   const { signIn, isAuthenticated } = useAuthenticator();
+  const [LoginInfo, setLoginInfo] = useState('');
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const token = getToken();
+    // 로그인이 구글에대한것이면 구글로 요청 , 카카오면 카카오로 요청
+    const token = getGoogleCode();
     if (!token) return;
-    dispatch(fetchUserInfo(token));
+    dispatch(fetchGoogleUserInfo(token));
     if (!isAuthenticated) return;
     dispatch(handleAlarm({ isOpen: true, text: '로그인 되었습니다.' }));
     signIn();
-  }, [isAuthenticated]);
+  }, []);
+
   const handleGoogleLogin = () => {
-    assignURL();
+    setLoginInfo('Google');
+    assignGoogleAuthURL();
+  };
+
+  const handleKaKaoLogin = () => {
+    setLoginInfo('KAKAO');
+    assignKaKaoAuthURL();
   };
 
   return (
@@ -38,7 +49,7 @@ export const Form = () => {
         <StyledIcon name="Naver" />
         <StyledText color="white">네이버 로그인</StyledText>
       </StyledButton>
-      <StyledButton color="#ffeb3b" fontColor="black">
+      <StyledButton color="#ffeb3b" fontColor="black" onClick={handleKaKaoLogin}>
         <StyledIcon name="Kakao" />
         <StyledText color="black">카카오 로그인</StyledText>
       </StyledButton>

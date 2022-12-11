@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 type SocialIconNames = 'Google' | 'Kakao' | 'Naver';
-type SocialIcons = {
-  [key in SocialIconNames]: string | undefined;
+type SocialIconsType = {
+  [key in SocialIconNames]: string;
 };
 
 interface IconProps {
@@ -14,7 +14,7 @@ export const Icon = styled.img.attrs<IconProps>(({ name }: IconProps) => ({
   object-fit: fill;
 `;
 
-const Icons: SocialIcons = {
+const Icons: SocialIconsType = {
   Google: 'images/googleLogo.svg',
   Kakao: 'images/kakaoLogo.svg',
   Naver: 'images/NaverLogo.png',
