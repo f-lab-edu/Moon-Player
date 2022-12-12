@@ -1,16 +1,24 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
-import { getToken } from 'utils/oauth';
+import { getToken } from 'utils/auth';
 import { UserState } from 'types/store';
+
+interface LoginInfo {
+  code: string;
+  loginInfo: string;
+}
 
 const initialState: UserState = {
   accesstoken: '',
+  info: '',
   status: 'idle',
 };
 
-const fetchUserToken = createAsyncThunk('user', async (token: string, thunkApi: any) => {
+const fetchUserToken = createAsyncThunk('user', async (info: LoginInfo, thunkApi: any) => {
   try {
-    const response = await getToken(token, 'Google');
+    const { code, loginInfo } = info;
+    const response = await getToken(code, loginInfo);
+    //response에 토큰정보가 담겨있는데 나머지 옵션은 언제사용하는지?
     return response.access_token;
   } catch (error: any) {
     return thunkApi.rejectWithValue(error.message);
@@ -22,7 +30,11 @@ export const UserSlice = createSlice({
   name: 'user',
   // 가져온 유저 토큰
   initialState,
-  reducers: {},
+  reducers: {
+    handleLoginInfo: (state: UserState, action: PayloadAction<string>) => {
+      state.info = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchUserToken.pending, (state: UserState) => {
       state.status = 'Loading';
@@ -43,3 +55,4 @@ export const UserSlice = createSlice({
 });
 export default UserSlice;
 export { fetchUserToken };
+export const { handleLoginInfo } = UserSlice.actions;

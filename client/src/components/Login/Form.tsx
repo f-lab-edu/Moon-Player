@@ -5,31 +5,33 @@ import Icon from 'components/Global/Icon';
 import Button from 'components/Global/Button';
 import Text from 'components/Global/Text';
 import Flex from 'components/Global/Flex';
-import { assignAuthURL, getCode } from 'utils/oauth';
+import { assignAuthURL, getCode } from 'utils/auth';
 import { useAuthenticator } from 'hooks/useAuthenticator';
-import { fetchUserToken } from 'store/feature/user/UserSlice';
-import { useAppDispatch } from 'hooks/useAppDispatch';
+import { fetchUserToken, handleLoginInfo } from 'store/feature/user/UserSlice';
+import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 
 export const Form = () => {
-  const { signIn, isAuthenticated } = useAuthenticator();
-  const [loginInfo, setLoginInfo] = useState('');
+  const { signIn } = useAuthenticator();
 
   const dispatch = useAppDispatch();
+  const loginInfo = useAppSelector((state) => state.user.info);
 
   useEffect(() => {
-    const token = getCode();
-    if (!token) return;
-    dispatch(fetchUserToken(token));
+    const code = getCode();
+    const info = { code, loginInfo };
+    if (!code) return;
+    dispatch(fetchUserToken(info));
     signIn();
   }, []);
 
   const handleGoogleLogin = () => {
-    setLoginInfo('Google');
+    dispatch(handleLoginInfo('Google'));
     assignAuthURL('Google');
   };
 
   const handleKaKaoLogin = () => {
-    setLoginInfo('KAKAO');
+    dispatch(handleLoginInfo('KAKAO'));
+    assignAuthURL('KAKAO');
   };
 
   return (

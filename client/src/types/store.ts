@@ -43,6 +43,7 @@ export interface Music {
 }
 export interface UserState {
   status: string;
+  info: string;
   accesstoken: string;
 }
 
