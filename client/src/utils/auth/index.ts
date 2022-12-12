@@ -1,5 +1,7 @@
+/* eslint-disable indent */
 import { Google_oAuth_URL, Google_REQUEST_BODY, Google_REQUEST_URI } from './google';
 import { KAKAO_REQUEST_URL, KAKAO_REQUEST_BODY, KAKAO_oAuth_URL } from './kakao';
+import { Naver_REQUEST_URL, Naver_REQUEST_BODY, Naver_oAuth_URL } from './naver';
 
 export const getCode = (): string => {
   const url = new URL(window.location.href).searchParams;
@@ -9,12 +11,17 @@ export const getCode = (): string => {
 };
 
 export const assignAuthURL = (name: string) => {
-  const oAuthURL = name === 'Google' ? Google_oAuth_URL : KAKAO_oAuth_URL;
+  const oAuthURL = name === 'Google' ? Google_oAuth_URL : name === 'Kakao' ? KAKAO_oAuth_URL : Naver_oAuth_URL;
   window.location.assign(oAuthURL);
 };
 export const getToken = async (code: string, name: string) => {
-  const REQUEST_URI = name === 'Google' ? `${Google_REQUEST_URI}` : `${KAKAO_REQUEST_URL}`;
-  const REQUEST_BODY = name === 'Google' ? `${Google_REQUEST_BODY}&code=${code}` : `${KAKAO_REQUEST_BODY}&code=${code}`;
+  const REQUEST_URI = name === 'Google' ? Google_REQUEST_URI : name === 'Kakao' ? KAKAO_REQUEST_URL : Naver_REQUEST_URL;
+  const REQUEST_BODY =
+    name === 'Google'
+      ? `${Google_REQUEST_BODY}&code=${code}`
+      : name === 'Kakao'
+      ? `${KAKAO_REQUEST_BODY}&code=${code}`
+      : `${Naver_REQUEST_BODY}&code${code}`;
 
   try {
     const response = await (

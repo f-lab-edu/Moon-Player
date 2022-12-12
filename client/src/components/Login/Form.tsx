@@ -30,8 +30,12 @@ export const Form = () => {
   };
 
   const handleKaKaoLogin = () => {
-    dispatch(handleLoginInfo('KAKAO'));
-    assignAuthURL('KAKAO');
+    dispatch(handleLoginInfo('Kakao'));
+    assignAuthURL('Kakao');
+  };
+  const handleNaverLogin = () => {
+    dispatch(handleLoginInfo('Naver'));
+    assignAuthURL('Naver');
   };
 
   return (
@@ -40,7 +44,7 @@ export const Form = () => {
         <StyledIcon name="Google" />
         <StyledText color="white">Google 로그인</StyledText>
       </StyledButton>
-      <StyledButton color="#1cc802" fontColor="white">
+      <StyledButton color="#1cc802" fontColor="white" onClick={handleNaverLogin}>
         <StyledIcon name="Naver" />
         <StyledText color="white">네이버 로그인</StyledText>
       </StyledButton>
