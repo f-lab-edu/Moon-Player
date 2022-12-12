@@ -5,38 +5,31 @@ import Icon from 'components/Global/Icon';
 import Button from 'components/Global/Button';
 import Text from 'components/Global/Text';
 import Flex from 'components/Global/Flex';
-import { assignGoogleAuthURL, getGoogleCode } from 'utils/GoogleLogin';
-
+import { assignAuthURL, getCode } from 'utils/oauth';
 import { useAuthenticator } from 'hooks/useAuthenticator';
-import { fetchGoogleUserInfo } from 'store/feature/user/UserSlice';
-import { handleAlarm } from 'store/feature/layout/LayoutSlice';
+import { fetchUserToken } from 'store/feature/user/UserSlice';
 import { useAppDispatch } from 'hooks/useAppDispatch';
-import { assignKaKaoAuthURL } from 'utils/KaKaoLogin';
 
 export const Form = () => {
   const { signIn, isAuthenticated } = useAuthenticator();
-  const [LoginInfo, setLoginInfo] = useState('');
+  const [loginInfo, setLoginInfo] = useState('');
 
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    // 로그인이 구글에대한것이면 구글로 요청 , 카카오면 카카오로 요청
-    const token = getGoogleCode();
+    const token = getCode();
     if (!token) return;
-    dispatch(fetchGoogleUserInfo(token));
-    if (!isAuthenticated) return;
-    dispatch(handleAlarm({ isOpen: true, text: '로그인 되었습니다.' }));
+    dispatch(fetchUserToken(token));
     signIn();
   }, []);
 
   const handleGoogleLogin = () => {
     setLoginInfo('Google');
-    assignGoogleAuthURL();
+    assignAuthURL('Google');
   };
 
   const handleKaKaoLogin = () => {
     setLoginInfo('KAKAO');
-    assignKaKaoAuthURL();
   };
 
   return (

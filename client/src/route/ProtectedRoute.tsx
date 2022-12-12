@@ -1,19 +1,13 @@
-import { Navigate } from 'react-router-dom';
-import { handleAlarm } from 'store/feature/layout/LayoutSlice';
-import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import { ReactElement } from 'react';
-
+import { useAuthenticator } from 'hooks/useAuthenticator';
+import { Navigate } from 'react-router-dom';
 interface ProtectedRouteProps {
   children: ReactElement;
 }
 
 export const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
-  const dispatch = useAppDispatch();
-  const token = useAppSelector((state) => state.user.accesstoken);
-  const isVerified = token ? true : false;
-
-  if (!isVerified) {
-    dispatch(handleAlarm({ isOpen: true, text: '로그아웃 되었습니다.' }));
+  const { isAuthenticated } = useAuthenticator();
+  if (!isAuthenticated) {
     return <Navigate to="/" replace></Navigate>;
   }
   return children;

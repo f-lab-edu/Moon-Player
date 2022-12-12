@@ -1,9 +1,5 @@
-const KAKAO_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;
-const REDIRECT_URI = `http://localhost:3000`;
-const KAKAO_oAuth_URL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${KAKAO_ID}&
-redirect_uri=${REDIRECT_URI}&
-response_type=code
-`;
+import { KAKAO_oAuth_URL, KAKAO_ID, REDIRECT_URI } from './auth';
+
 export const assignKaKaoAuthURL = () => {
   window.location.assign(KAKAO_oAuth_URL);
 };
