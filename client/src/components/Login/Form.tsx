@@ -1,31 +1,41 @@
 import styled from 'styled-components';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import Icon from 'components/Global/Icon';
 import Button from 'components/Global/Button';
 import Text from 'components/Global/Text';
 import Flex from 'components/Global/Flex';
-import { assignURL, getToken } from 'utils/oAuth';
-
+import { assignAuthURL, getCode } from 'utils/auth';
 import { useAuthenticator } from 'hooks/useAuthenticator';
-import { fetchUserInfo } from 'store/feature/user/UserSlice';
-import { handleAlarm } from 'store/feature/layout/LayoutSlice';
-import { useAppDispatch } from 'hooks/useAppDispatch';
+import { fetchUserToken, handleLoginInfo } from 'store/feature/user/UserSlice';
+import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 
 export const Form = () => {
-  const { signIn, isAuthenticated } = useAuthenticator();
+  const { signIn } = useAuthenticator();
+
   const dispatch = useAppDispatch();
+  const loginInfo = useAppSelector((state) => state.user.info);
 
   useEffect(() => {
-    const token = getToken();
-    if (!token) return;
-    dispatch(fetchUserInfo(token));
-    if (!isAuthenticated) return;
-    dispatch(handleAlarm({ isOpen: true, text: '로그인 되었습니다.' }));
+    const code = getCode();
+    const info = { code, loginInfo };
+    if (!code) return;
+    dispatch(fetchUserToken(info));
     signIn();
-  }, [isAuthenticated]);
+  }, []);
+
   const handleGoogleLogin = () => {
-    assignURL();
+    dispatch(handleLoginInfo('Google'));
+    assignAuthURL('Google');
+  };
+
+  const handleKaKaoLogin = () => {
+    dispatch(handleLoginInfo('Kakao'));
+    assignAuthURL('Kakao');
+  };
+  const handleNaverLogin = () => {
+    dispatch(handleLoginInfo('Naver'));
+    assignAuthURL('Naver');
   };
 
   return (
@@ -34,11 +44,11 @@ export const Form = () => {
         <StyledIcon name="Google" />
         <StyledText color="white">Google 로그인</StyledText>
       </StyledButton>
-      <StyledButton color="#1cc802" fontColor="white">
+      <StyledButton color="#1cc802" fontColor="white" onClick={handleNaverLogin}>
         <StyledIcon name="Naver" />
         <StyledText color="white">네이버 로그인</StyledText>
       </StyledButton>
-      <StyledButton color="#ffeb3b" fontColor="black">
+      <StyledButton color="#ffeb3b" fontColor="black" onClick={handleKaKaoLogin}>
         <StyledIcon name="Kakao" />
         <StyledText color="black">카카오 로그인</StyledText>
       </StyledButton>

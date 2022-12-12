@@ -31,10 +31,10 @@ const FontAwesomeIcons = {
   arrowLeft: faCircleArrowLeft,
 };
 
-type FontAweSomeIcon = keyof typeof FontAwesomeIcons;
+type FontAweSomeIconType = keyof typeof FontAwesomeIcons;
 interface IconButtonProps extends StyledProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  icon: FontAweSomeIcon;
+  icon: FontAweSomeIconType;
   size: FontAwesomeIconProps['size'];
   active?: boolean;
   className?: string;
@@ -50,6 +50,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     );
   }
 );
+IconButton.displayName = 'IconButton';
 interface ButtonProps extends StyledProps {
   active?: boolean;
 }

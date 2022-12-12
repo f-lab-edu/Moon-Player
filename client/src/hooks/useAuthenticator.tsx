@@ -1,29 +1,30 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { removeStoreItems } from 'utils/persist';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from './useAppDispatch';
+import { useAppDispatch } from 'hooks/useAppDispatch';
+import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 
 export const useAuthenticator = () => {
   const navigate = useNavigate();
-  const user = useAppSelector((state) => state.user.GoogleUserinfo);
-  const isVerified = user.verified_email ? true : false;
+  const isAuthenticated = useAppSelector((state) => state.user.accesstoken) ? true : false;
 
-  const [isAuthenticated, setAuthenticated] = useState(isVerified);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (!isVerified) return;
-    setAuthenticated(true);
-  }, [isVerified]);
+    if (!isAuthenticated) return;
+    signIn();
+  }, [isAuthenticated]);
 
   const signIn = () => {
-    setAuthenticated(true);
+    dispatch(handleAlarm({ isOpen: true, text: '로그인 하였습니다.' }));
     navigate('/music');
   };
 
   // 로그아웃
   const signOut = () => {
-    setAuthenticated(false);
     removeStoreItems();
+    dispatch(handleAlarm({ isOpen: true, text: '로그아웃 하였습니다.' }));
   };
 
   return { isAuthenticated, signIn, signOut };

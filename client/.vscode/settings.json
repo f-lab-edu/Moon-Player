@@ -7,7 +7,6 @@
     "source.fixAll": true
   },
   "eslint.autoFixOnSave": true,
-  "eslint.alwaysShowStatus": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true
 }
