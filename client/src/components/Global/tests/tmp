@@ -1,0 +1,14 @@
+import { render } from '@testing-library/react';
+
+import React from 'react';
+import userEvent from '@testing-library/user-event';
+
+import IconButton from '../IconButton';
+test('버튼의 색깔은 하얀색이어야한다.', () => {
+  // const user = userEvent.setup();
+  const onClick = jest.fn();
+  const button = <IconButton color="white" active={false} onClick={onClick} icon="plus" size="2x" />;
+  render(button);
+
+  expect(button).toHaveSt();
+});

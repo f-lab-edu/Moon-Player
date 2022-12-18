@@ -1,12 +1,8 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "types": ["react/next", "react-dom/next","node", "lodash"],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["react/next", "react-dom/next", "node", "lodash", "jest-dom"],
     "allowJs": false,
     "noImplicitAny": false, // any 못하게
     "skipLibCheck": true, //컴파일 시간을 줄여줌
@@ -24,11 +20,6 @@
     "incremental": true,
     "baseUrl": "src"
   },
-  "include": ["src/**/*"], // src디렉터리와 src하위 디렉토리 포함 컴파일
-  "exclude": [
-    "node_modules",
-    "build",
-    "**/*.(spec|test).ts"
-  ],
-  
+  "include": ["src/**/*", "setupTest.ts"], // src디렉터리와 src하위 디렉토리 포함 컴파일
+  "exclude": ["node_modules", "build", "**/*.(spec|test).ts"]
 }
