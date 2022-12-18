@@ -4,13 +4,21 @@ module.exports = {
     es2021: true,
     commonjs: true,
   },
-  extends: ['plugin:prettier/recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended'],
+  extends: [
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:jest-dom/recommended',
+    'plugin:testing-library/react',
+    'react-app',
+    'react-app/jest',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: ['**/tsconfig.json'],
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier'],
+  plugins: ['react', 'prettier', 'testing-library', 'jest-dom'],
   rules: {
     indent: ['error', 2],
     'no-unused-vars': 'warn',
