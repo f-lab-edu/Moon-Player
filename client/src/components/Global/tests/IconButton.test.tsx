@@ -73,3 +73,15 @@ describe('올바른 아이콘인지 검증', () => {
     expect(pausebutton).toHaveAttribute('data-icon', 'circle-pause');
   });
 });
+
+describe('버튼 onClick 동작 유무', () => {
+  const onClick = jest.fn();
+  const user = userEvent.setup();
+
+  test('버튼을 누르면 onClick이 실행된다.', async () => {
+    render(<IconButton color="white" active={false} onClick={onClick} icon="pause" size="1x" />);
+    const button = screen.getByRole('button');
+    await user.click(button);
+    expect(onClick).toBeCalled();
+  });
+});
