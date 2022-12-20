@@ -1,8 +1,15 @@
 /* eslint-disable indent */
-import { Google_oAuth_URL, Google_REQUEST_BODY, Google_REQUEST_URI } from './google';
-import { KAKAO_REQUEST_URL, KAKAO_REQUEST_BODY, KAKAO_oAuth_URL } from './kakao';
-import { Naver_REQUEST_URL, Naver_REQUEST_BODY, Naver_oAuth_URL } from './naver';
-
+import {
+  Google_oAuth_URL,
+  Google_REQUEST_BODY,
+  Google_REQUEST_URI,
+  KAKAO_REQUEST_URL,
+  KAKAO_REQUEST_BODY,
+  KAKAO_oAuth_URL,
+  Naver_REQUEST_URL,
+  Naver_REQUEST_BODY,
+  Naver_oAuth_URL,
+} from '../../constants/index';
 export const getCode = (): string => {
   const url = new URL(window.location.href).searchParams;
   const code = url.get('code');

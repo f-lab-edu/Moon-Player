@@ -17,9 +17,9 @@ function App() {
       <Routes>
         <Route
           element={
-            // <ProtectedRoute>
-            <MusicPage />
-            // </ProtectedRoute>
+            <ProtectedRoute>
+              <MusicPage />
+            </ProtectedRoute>
           }
           path="/music"
         ></Route>

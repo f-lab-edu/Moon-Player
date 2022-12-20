@@ -20,7 +20,7 @@ export const Alarm = ({ text }: AlarmProps) => {
   };
 
   return (
-    <div>
+    <>
       <Overlay>
         <Box direction="column" justifyContent="center" alignItems="center">
           <AlarmAvatar img="logo"></AlarmAvatar>
@@ -32,17 +32,13 @@ export const Alarm = ({ text }: AlarmProps) => {
           </StyledButton>
         </Box>
       </Overlay>
-    </div>
+    </>
   );
 };
 
 interface RootProps {
   children: ReactNode;
 }
-const Root = ({ children }: RootProps) => {
-  return createPortal(<>{children}</>, document.getElementById('modal') as HTMLElement);
-};
-
 const Overlay = styled.div`
   position: fixed;
   width: 100%;
