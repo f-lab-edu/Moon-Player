@@ -20,7 +20,7 @@ export const Alarm = ({ text }: AlarmProps) => {
   };
 
   return (
-    <Root>
+    <div>
       <Overlay>
         <Box direction="column" justifyContent="center" alignItems="center">
           <AlarmAvatar img="logo"></AlarmAvatar>
@@ -32,7 +32,7 @@ export const Alarm = ({ text }: AlarmProps) => {
           </StyledButton>
         </Box>
       </Overlay>
-    </Root>
+    </div>
   );
 };
 
