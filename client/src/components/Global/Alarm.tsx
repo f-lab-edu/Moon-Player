@@ -14,7 +14,7 @@ export const Alarm = ({ text, onClose }: AlarmProps) => {
     <Overlay data-testid="overlay">
       <Box direction="column" justifyContent="center" alignItems="center">
         <AlarmAvatar img="logo"></AlarmAvatar>
-        <AlarmText color="white" textAlign="center" data-testid="text">
+        <AlarmText color="white" textAlign="center" data-testid="alarmText">
           {text}
         </AlarmText>
         <StyledButton fontColor="white" color="gray" onClick={onClose}>
