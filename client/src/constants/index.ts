@@ -23,3 +23,5 @@ export const Naver_oAuth_URL = `https://nid.naver.com/oauth2.0/authorize?&respon
 export const Naver_REQUEST_URL = `https://nid.naver.com/oauth2.0/token`;
 // eslint-disable-next-line max-len
 export const Naver_REQUEST_BODY = `grant_type=authorization_code&client_id=${Naver_ID}&client_secret=${Naver_Secret_ID}`;
+
+// 네이버 로그인 cors 백앤드서버 따로 만들어서 해줘야함.. 하

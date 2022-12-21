@@ -9,6 +9,7 @@ describe('Alarm 컴포넌트 기능 테스트', () => {
   test('확인 버튼을 누르면 Alarm 창이 닫힌다.', async () => {
     render(<Alarm text="hello" onClose={onClose}></Alarm>);
     const button = screen.getByRole('button', { name: '확인' });
+
     await user.click(button);
     expect(onClose).toBeCalled();
   });
