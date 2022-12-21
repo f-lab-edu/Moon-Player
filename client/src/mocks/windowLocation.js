@@ -16,9 +16,4 @@ export const mockWindowLocation = () => {
       }
     );
   });
-
-  afterAll(() => {
-    // restore location
-    window.location = oldWindowLocation;
-  });
 };
