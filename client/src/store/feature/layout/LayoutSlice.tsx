@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
 import { LayoutState, Alarm } from 'types/store';
 
-const initialState: LayoutState = {
+export const initialState: LayoutState = {
   alarm: {
     isOpen: false,
     text: '',
