@@ -1,12 +1,19 @@
 module.exports = {
-  testEnvironment: 'jsdom', // jsdom으로 수정
-  testPathIgnorePatterns: [ '<rootDir>/node_modules/'],
-  setupFilesAfterEnv: ['<rootDir>/setupTest.ts'], // setupTest를 이용하여 환경 설정
-
-  // import 모듈 못읽어서 babel-jest사용
+  roots: ['<rootDir>/src'],
+  collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts'],
+  setupFilesAfterEnv: ['<rootDir>/setupTest.ts'],
+  setupFiles: ['react-app-polyfill/jsdom'],
+  testMatch: ['<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}', '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}'],
+  testEnvironment: 'jsdom',
   transform: {
-    '^.+\\.(ts|tsx)?$': 'ts-jest',
-    '^.+\\.(js|jsx)?$': 'babel-jest'
+    '^.+\\.(js|jsx|mjs|cjs|ts|tsx)$': 'react-scripts/config/jest/babelTransform.js',
+    '^.+\\.(css|scss|sass|less)$': 'jest-preview/transforms/css',
+    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': 'jest-preview/transforms/file',
   },
-  modulePaths: ["<rootDir>/src/"]
+  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$','^.+\\.module\\.(css|sass|scss)$'],
+  moduleNameMapper: {'^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy'},
+  modulePaths: ["<rootDir>/src/"],
+  moduleFileExtensions: ['web.js', 'js', 'web.ts', 'ts', 'web.tsx', 'tsx', 'json', 'web.jsx', 'jsx', 'node'],
+  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
+  resetMocks: true,
 };

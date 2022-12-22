@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
     commonjs: true,
-    jest:true
+    jest: true,
   },
   extends: [
     'plugin:prettier/recommended',
@@ -29,6 +29,16 @@ module.exports = {
     'react/prop-types': 'off',
     'max-len': ['error', { code: 120 }],
     'no-useless-escape': 'off',
+    'testing-library/no-debugging-utils': [
+      'error',
+      {
+        utilsToCheckFor: {
+          debug: false,
+          logRoles: true,
+          logDOM: true,
+        },
+      },
+    ],
   },
   settings: {
     react: { version: 'detect' },

@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/f-lab-edu/Moon-Player#readme",
   "devDependencies": {
-    "concurrently": "^7.4.0"
+    "concurrently": "^7.4.0",
+    "jest-preview": "^0.3.1"
   },
   "dependencies": {
     "http-proxy-middleware": "^2.0.6"
