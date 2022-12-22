@@ -10,6 +10,7 @@ import GlobalStyle from 'styles/GlobalStyle';
 
 function App() {
   const { isOpen, text, handleClose } = useAlarm();
+
   return (
     <>
       <GlobalStyle />
