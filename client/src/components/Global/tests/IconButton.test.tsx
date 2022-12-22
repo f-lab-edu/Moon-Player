@@ -2,21 +2,16 @@ import { waitFor, render, screen } from '@testing-library/react';
 import preview from 'jest-preview';
 import userEvent from '@testing-library/user-event';
 import IconButton from '../IconButton';
+
+// 이거 스케일 감지안됨 css속성도 변경안되는데 어케해야될지..
 describe('IconButton 기능 테스트', () => {
-  test('버튼에 hover 했을때 커진다.', async () => {
-    const user = userEvent.setup();
+  test('버튼에 hover를하면 커진다.', async () => {
     const onClick = jest.fn();
     render(<IconButton color="red" active={false} onClick={onClick} icon="plus" size="2x" />);
     const button = screen.getByRole('button');
-    await user.hover(button);
-
-    await waitFor(() => {
-      expect(button).toHaveStyle('transform: scale(1.3)');
-    });
-    preview.debug();
+    expect(button).toHaveStyleRule('transform', 'scale(1.3)', { modifier: ':hover' });
   });
 });
-// 이거 스케일 감지안됨 css속성도 변경안되는데 어케해야될지..
 
 describe('IconButton 스타일 속성 검증', () => {
   test('버튼 active가 true이면 pointer 감지가 안되고 opacity는 0.5가 된다.', () => {

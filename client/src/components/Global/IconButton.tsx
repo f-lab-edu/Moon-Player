@@ -58,8 +58,8 @@ const Button = styled.button<ButtonProps>(
   ({ active = false, color }) => `
 background: none;
 border:0;
-cursor:pointer;
 color: ${color};
+cursor:pointer;
 pointer-events:${active ? 'none' : 'auto'};
 opacity:${active ? 0.5 : 1};
 &:hover {
