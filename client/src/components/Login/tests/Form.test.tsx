@@ -1,9 +1,9 @@
 import { render, screen, waitFor } from '../../../test-utils/index';
 import { Form } from '../Form';
 import userEvent from '@testing-library/user-event';
-import { mockWindowLocation } from '../../../mocks/windowLocation';
+import { mockAssignUrl } from '../../../mocks/assinurl';
 
-mockWindowLocation();
+mockAssignUrl();
 
 describe('Form 컴포넌트 기능 테스트', () => {
   const user = userEvent.setup();

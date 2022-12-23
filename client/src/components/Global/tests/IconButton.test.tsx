@@ -1,15 +1,23 @@
-import { waitFor, render, screen } from '@testing-library/react';
-import preview from 'jest-preview';
+import { render, screen } from '@testing-library/react';
+
 import userEvent from '@testing-library/user-event';
 import IconButton from '../IconButton';
 
-// 이거 스케일 감지안됨 css속성도 변경안되는데 어케해야될지..
 describe('IconButton 기능 테스트', () => {
+  const user = userEvent.setup();
+  const onClick = jest.fn();
+
   test('버튼에 hover를하면 커진다.', async () => {
     const onClick = jest.fn();
     render(<IconButton color="red" active={false} onClick={onClick} icon="plus" size="2x" />);
     const button = screen.getByRole('button');
     expect(button).toHaveStyleRule('transform', 'scale(1.3)', { modifier: ':hover' });
+  });
+  test('버튼을 누르면 onClick이 실행된다.', async () => {
+    render(<IconButton color="white" active={false} onClick={onClick} icon="pause" size="1x" />);
+    const button = screen.getByRole('button');
+    await user.click(button);
+    expect(onClick).toBeCalled();
   });
 });
 
@@ -70,17 +78,5 @@ describe('올바른 아이콘인지 검증', () => {
     render(<IconButton color="white" active={false} onClick={onClick} icon="pause" size="1x" />);
     const pausebutton = screen.getByRole('img', { hidden: true });
     expect(pausebutton).toHaveAttribute('data-icon', 'circle-pause');
-  });
-});
-
-describe('버튼 onClick 동작 유무', () => {
-  const onClick = jest.fn();
-  const user = userEvent.setup();
-
-  test('버튼을 누르면 onClick이 실행된다.', async () => {
-    render(<IconButton color="white" active={false} onClick={onClick} icon="pause" size="1x" />);
-    const button = screen.getByRole('button');
-    await user.click(button);
-    expect(onClick).toBeCalled();
   });
 });

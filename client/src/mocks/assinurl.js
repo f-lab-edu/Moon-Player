@@ -1,8 +1,5 @@
-export const mockWindowLocation = () => {
-  const mockWinAssign = jest.fn();
-
-  const oldWindowLocation = window.location;
-
+const oldWindowLocation = window.location;
+export const mockAssignUrl = () => {
   beforeAll(() => {
     delete window.location;
     window.location = Object.defineProperties(
@@ -11,9 +8,16 @@ export const mockWindowLocation = () => {
         ...Object.getOwnPropertyDescriptors(oldWindowLocation),
         assign: {
           configurable: true,
-          value: mockWinAssign,
+          value: jest.fn(),
         },
       }
     );
+  });
+  beforeEach(() => {
+    window.location.assign.mockReset();
+  });
+
+  afterAll(() => {
+    window.location = oldWindowLocation;
   });
 };
