@@ -44,9 +44,18 @@ export interface Music {
 export interface UserState {
   status: string;
   info: string;
-  accesstoken: string;
+  data: Token;
 }
 
+export interface Token {
+  access_token: string;
+  expires_in: number;
+  id_token: string;
+  scope: string;
+  token_type: string;
+  refresh_token?: string;
+  refresh_token_expires_in?: string;
+}
 export interface GoogleUser {
   email: string;
   id: number;

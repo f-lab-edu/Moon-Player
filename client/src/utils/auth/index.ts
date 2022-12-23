@@ -21,7 +21,7 @@ export const assignAuthURL = (name: string) => {
   const oAuthURL = name === 'Google' ? Google_oAuth_URL : name === 'Kakao' ? KAKAO_oAuth_URL : Naver_oAuth_URL;
   window.location.assign(oAuthURL);
 };
-export const getToken = async (code: string, name: string) => {
+export const getRequestForOauth = (code: string, name: string) => {
   const REQUEST_URI = name === 'Google' ? Google_REQUEST_URI : name === 'Kakao' ? KAKAO_REQUEST_URL : Naver_REQUEST_URL;
   const REQUEST_BODY =
     name === 'Google'
@@ -30,16 +30,5 @@ export const getToken = async (code: string, name: string) => {
       ? `${KAKAO_REQUEST_BODY}&code=${code}`
       : `${Naver_REQUEST_BODY}&code${code}`;
 
-  try {
-    const response = await (
-      await fetch(REQUEST_URI, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: REQUEST_BODY,
-      })
-    ).json();
-    return response;
-  } catch (error) {
-    console.log(error);
-  }
+  return { REQUEST_URI, REQUEST_BODY };
 };

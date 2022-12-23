@@ -1,4 +1,4 @@
-import { renderWithProvider, screen, waitFor } from '../../../test-utils/index';
+import { renderWithProvider, screen } from '../../../test-utils/index';
 import { Form } from '../Form';
 
 import userEvent from '@testing-library/user-event';
@@ -22,9 +22,8 @@ describe('Form 컴포넌트 기능 테스트', () => {
     expect(window.location.assign).toBeCalled();
   });
 });
-//  원래 페이지는 oauth url 할당후 다른페이지로 리다이렉션되는데 가상돔에서는 다른 페이지 리다이렉션 감지가 안됨.. 이거 잘모르겠다
-// 1. oauth url 할당후
-
-// 아래 부분은 API 모킹 해야할듯
-// 2. 토큰 날라오면
-// 3. 토큰이 정상적이면 musicpage로 이동함 (토큰은 그냥 )
+// 테스트시나리오 => 아래부분은 근데 소셜서버에 요청을 해야하는 부분인데 모킹서버에서 가능할까?
+// 1. 구글 버튼 누르면 oauth url 할당
+// 2. 페이지 새로고침후에 getCode 호출해서 oauth url에 있는 일부값을 가져옴
+// 3. logininfo와 getCode를 기반으로 fetchUserToken을 하여 소셜로그인 서버에 필요한 정보에대해 전달해주고 소셜로그인서버는 토큰을 사용자에게 준다.
+// 4. musicpage로 이동

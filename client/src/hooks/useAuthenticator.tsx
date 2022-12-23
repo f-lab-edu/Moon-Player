@@ -7,7 +7,7 @@ import useAlarm from './useAlarm';
 export const useAuthenticator = () => {
   const navigate = useNavigate();
   const { handleOpen } = useAlarm();
-  const isAuthenticated = useAppSelector((state) => state.user.accesstoken) ? true : false;
+  const isAuthenticated = useAppSelector((state) => state.user.data.access_token) ? true : false;
 
   useEffect(() => {
     if (!isAuthenticated) return;
