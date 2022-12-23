@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { fetchData } from 'utils/fetch';
+import { fetchData } from 'utils/axios';
 import { PURGE } from 'redux-persist';
 import { PlayListState, PlayList } from 'types/store';
 export const initialState: PlayListState = {
