@@ -1,10 +1,10 @@
-import { render as rtlRender } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import { rootReducer } from '../store/reducers/index';
 
-function render(
+export function renderWithProvider(
   ui,
   {
     preloadedState = {},
@@ -22,8 +22,7 @@ function render(
       </Provider>
     );
   }
-  return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
+  return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
 }
 
 export * from '@testing-library/react';
-export { render };

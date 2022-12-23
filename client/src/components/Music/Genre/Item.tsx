@@ -9,6 +9,7 @@ type ItemProps = Pick<Genre, 'genre_img' | 'genre_id'>;
 
 export const Item = ({ genre_img, genre_id }: ItemProps) => {
   const dispatch = useAppDispatch();
+
   const playListSelector = useAppSelector((state) => state.music.playList);
   const isInGenre = playListSelector.musicList.id === genre_id ? true : false;
   const handleCard = () => {

@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '../../../test-utils/index';
+import { renderWithProvider, screen, waitFor } from '../../../test-utils/index';
 import { Form } from '../Form';
 
 import userEvent from '@testing-library/user-event';
@@ -8,14 +8,14 @@ describe('Form 컴포넌트 기능 테스트', () => {
   mockAssignUrl();
   const user = userEvent.setup();
   test('구글 로그인 버튼을 누르면 Oauth url이 할당이 된다.', async () => {
-    render(<Form />);
+    renderWithProvider(<Form />);
 
     const googlebutton = screen.getByRole('button', { name: 'Google 로그인' });
     await user.click(googlebutton);
     expect(window.location.assign).toBeCalled();
   });
   test('카카오 로그인 버튼을 누르면 Oauth url이 할당이 된다.', async () => {
-    render(<Form />);
+    renderWithProvider(<Form />);
 
     const kakaoButton = screen.getByRole('button', { name: '카카오 로그인' });
     await user.click(kakaoButton);
