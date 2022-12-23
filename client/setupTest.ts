@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import '../client/src/styles/GlobalStyle';
-import { server } from './src/mocks-server/server.js';
+import { server } from './src/mocks/server/server.js';
 
 dotenv.config({ path: '.env' });
 // Establish API mocking before all tests.
