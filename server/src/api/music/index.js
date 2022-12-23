@@ -2,7 +2,7 @@ const fs = require('fs')
 const Router = require('koa-router');
 const path = require('path');
 
-const musicGenre = fs.readFileSync(path.join(process.cwd(), "mock-server/src/musicfile/music_genre.json"), 'utf-8')
+const musicGenre = fs.readFileSync(path.join(process.cwd(), "server/src/musicfile/music_genre.json"), 'utf-8')
 const musicGenreData = JSON.parse(musicGenre);
 
 
@@ -19,7 +19,7 @@ musics.get('/genre', ctx => {
 })
 musics.get('/genre/:genre_id', ctx => {
   const genre_id = ctx.request.params.genre_id
-  let genreData = fs.readFileSync(path.join(process.cwd(), `mock-server/src/musicfile/${genre_id}.json`), 'utf-8')
+  let genreData = fs.readFileSync(path.join(process.cwd(), `server/src/musicfile/${genre_id}.json`), 'utf-8')
   genreData = JSON.parse(genreData)
   ctx.body =
   {

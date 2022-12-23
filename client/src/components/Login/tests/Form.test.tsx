@@ -1,11 +1,11 @@
 import { render, screen, waitFor } from '../../../test-utils/index';
 import { Form } from '../Form';
-import userEvent from '@testing-library/user-event';
-import { mockAssignUrl } from '../../../mocks/assinurl';
 
-mockAssignUrl();
+import userEvent from '@testing-library/user-event';
+import { mockAssignUrl } from '../../../mocksFunction/assignurl.js';
 
 describe('Form 컴포넌트 기능 테스트', () => {
+  mockAssignUrl();
   const user = userEvent.setup();
   test('구글 로그인 버튼을 누르면 Oauth url이 할당이 된다.', async () => {
     render(<Form />);
