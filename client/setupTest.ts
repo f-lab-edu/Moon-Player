@@ -1,8 +1,13 @@
 import dotenv from 'dotenv';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
-import '../client/src/styles/GlobalStyle';
+import 'jest-transform-css';
+import '@testing-library/jest-dom/extend-expect';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import { server } from './src/mocks/server/server.js';
+import './src/styles/GlobalStyle';
 
 dotenv.config({ path: '.env' });
 // Establish API mocking before all tests.

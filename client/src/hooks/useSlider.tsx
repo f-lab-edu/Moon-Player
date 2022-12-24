@@ -1,6 +1,5 @@
-import { SwiperProps } from 'swiper/react';
 import { Pagination } from 'swiper';
-
+import { SwiperProps } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';

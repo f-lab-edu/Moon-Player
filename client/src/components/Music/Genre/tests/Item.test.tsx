@@ -1,6 +1,7 @@
 import { renderWithProvider, screen, waitFor } from '../../../../test-utils/index';
 import Item from '../Item';
 import userEvent from '@testing-library/user-event';
+// msw 덕분에 해결
 
 describe('Genre Item 컴포넌트 기능 테스트', () => {
   const user = userEvent.setup();

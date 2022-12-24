@@ -1,8 +1,6 @@
-import styled from 'styled-components';
 import { useEffect } from 'react';
 import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
-import Flex from 'components/Global/Flex';
 import Slider from 'components/Music/Genre/Slider';
 
 export const Genre = () => {
@@ -16,17 +14,11 @@ export const Genre = () => {
 
   return (
     <>
-      <SliderContainer direction="row">
-        <Slider>{genreItems}</Slider>
-      </SliderContainer>
+      <Slider>{genreItems}</Slider>
       <SliderPagination></SliderPagination>
     </>
   );
 };
-
-const SliderContainer = styled(Flex)`
-  padding: 0px 30px 0px 40px;
-`;
 
 const SliderPagination = () => {
   return <div className="pagination"></div>;
