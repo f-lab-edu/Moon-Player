@@ -1,25 +1,34 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
-import { getToken } from 'utils/auth';
-import { UserState } from 'types/store';
+import { getRequestForOauth } from 'utils/auth';
+import { Token } from 'types/store';
 
+import { UserState } from 'types/store';
+import { getToken } from 'utils/axios';
 interface LoginInfo {
   code: string;
   loginInfo: string;
 }
-
 const initialState: UserState = {
-  accesstoken: '',
+  data: {
+    access_token: '',
+    expires_in: 0,
+    id_token: '',
+    scope: '',
+    token_type: '',
+  },
   info: '',
   status: 'idle',
 };
-
 const fetchUserToken = createAsyncThunk('user', async (info: LoginInfo, thunkApi: any) => {
   try {
     const { code, loginInfo } = info;
-    const response = await getToken(code, loginInfo);
-    //response에 토큰정보가 담겨있는데 나머지 옵션은 언제사용하는지?
-    return response.access_token;
+    const { REQUEST_URI, REQUEST_BODY } = getRequestForOauth(code, loginInfo);
+    const response = await getToken(REQUEST_URI, REQUEST_BODY);
+    if (response) {
+      return response.data;
+    }
+    throw Error;
   } catch (error: any) {
     return thunkApi.rejectWithValue(error.message);
   }
@@ -40,9 +49,9 @@ export const UserSlice = createSlice({
       state.status = 'Loading';
     });
 
-    builder.addCase(fetchUserToken.fulfilled, (state: UserState, action: PayloadAction<string>) => {
+    builder.addCase(fetchUserToken.fulfilled, (state: UserState, action: PayloadAction<Token>) => {
       state.status = 'Complete';
-      state.accesstoken = action.payload;
+      state.data = action.payload;
     });
 
     builder.addCase(fetchUserToken.rejected, (state: UserState) => {

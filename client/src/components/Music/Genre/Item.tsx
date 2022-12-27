@@ -9,9 +9,12 @@ type ItemProps = Pick<Genre, 'genre_img' | 'genre_id'>;
 
 export const Item = ({ genre_img, genre_id }: ItemProps) => {
   const dispatch = useAppDispatch();
+
   const playListSelector = useAppSelector((state) => state.music.playList);
-  const isInGenre: boolean = playListSelector.musicList.id === genre_id ? true : false;
-  const handleCard = () => dispatch(fetchmusicList(`http://localhost:4000/api/music/genre/${genre_id}`));
+  const isInGenre = playListSelector.musicList.id === genre_id ? true : false;
+  const handleCard = () => {
+    dispatch(fetchmusicList(`http://localhost:4000/api/music/genre/${genre_id}`));
+  };
 
   return <CardImage onClick={handleCard} img={genre_img} key={genre_id} disabled={isInGenre} />;
 };

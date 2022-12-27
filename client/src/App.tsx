@@ -7,13 +7,13 @@ import ProtectedRoute from 'route/ProtectedRoute';
 import Alarm from 'components/Global/Alarm';
 import useAlarm from 'hooks/useAlarm';
 import GlobalStyle from 'styles/GlobalStyle';
-
 function App() {
-  const { isOpen, text } = useAlarm();
+  const { isOpen, text, handleClose } = useAlarm();
+
   return (
     <>
       <GlobalStyle />
-      {isOpen ? <Alarm text={text} /> : <></>}
+      {isOpen ? <Alarm text={text} onClose={handleClose} /> : <></>}
       <Routes>
         <Route
           element={

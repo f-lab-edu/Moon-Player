@@ -1,48 +1,29 @@
 import styled from 'styled-components';
-import { createPortal } from 'react-dom';
-import { handleAlarm } from 'store/feature/layout/LayoutSlice';
-import { ReactNode } from 'react';
 import { Flex } from './Flex';
 import { Button } from './Button';
 import { Text } from './Text';
 import { Avatar } from './Avatar';
-import { useAppDispatch } from 'hooks/useAppDispatch';
 
 interface AlarmProps {
   text: string;
+  onClose: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export const Alarm = ({ text }: AlarmProps) => {
-  const dispatch = useAppDispatch();
-
-  const handleClose = () => {
-    dispatch(handleAlarm({ isOpen: false, text: '' }));
-  };
-
+export const Alarm = ({ text, onClose }: AlarmProps) => {
   return (
-    <Root>
-      <Overlay>
-        <Box direction="column" justifyContent="center" alignItems="center">
-          <AlarmAvatar img="logo"></AlarmAvatar>
-          <AlarmText color="white" textAlign="center">
-            {text}
-          </AlarmText>
-          <StyledButton fontColor="white" color="gray" onClick={handleClose}>
-            확인
-          </StyledButton>
-        </Box>
-      </Overlay>
-    </Root>
+    <Overlay data-testid="overlay">
+      <Box direction="column" justifyContent="center" alignItems="center">
+        <AlarmAvatar img="logo"></AlarmAvatar>
+        <AlarmText color="white" textAlign="center" data-testid="alarmText">
+          {text}
+        </AlarmText>
+        <StyledButton fontColor="white" color="gray" onClick={onClose}>
+          확인
+        </StyledButton>
+      </Box>
+    </Overlay>
   );
 };
-
-interface RootProps {
-  children: ReactNode;
-}
-const Root = ({ children }: RootProps) => {
-  return createPortal(<>{children}</>, document.getElementById('modal') as HTMLElement);
-};
-
 const Overlay = styled.div`
   position: fixed;
   width: 100%;
