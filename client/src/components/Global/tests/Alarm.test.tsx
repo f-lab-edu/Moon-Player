@@ -1,54 +1,38 @@
 import Alarm from '../Alarm';
 import userEvent from '@testing-library/user-event';
-import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { renderWithProvider, screen, renderHook, waitFor } from '../../../test-utils/index';
+import { useAlarm } from 'hooks/useAlarm';
+function getWrapper(store) {
+  // eslint-disable-next-line react/display-name
+  return ({ children }) => <Provider store={store}>{children}</Provider>;
+}
+
 describe('Alarm 컴포넌트 기능 테스트', () => {
-  const user = userEvent.setup();
-  const onClose = jest.fn();
-  test('Alarm 컴포넌트가 올바르게 렌더링 된다', () => {
-    const onClose = jest.fn();
-    render(<Alarm text="안녕하세요" onClose={onClose}></Alarm>);
-    const alarm = screen.getByTestId('overlay');
+  test('handleOpen이 호출되면 전달된 텍스트에 맞는 Alarm컴포넌트가 보여진다. .', async () => {
+    const { store } = renderWithProvider(<Alarm></Alarm>);
+    const wrapper = getWrapper(store);
+    const { result } = renderHook(() => useAlarm(), {
+      wrapper,
+    });
+    // alarm 호출
+    await waitFor(() => result.current.handleOpen('안녕하세요'));
+    expect(result.current.text).toEqual('안녕하세요');
+    const alarm = await screen.findByTestId('overlay');
     expect(alarm).toBeInTheDocument();
   });
 
-  test('확인 버튼을 누르면 onClose가 실행된다.', async () => {
-    render(<Alarm text="hello" onClose={onClose}></Alarm>);
+  test('Alarm 컴포넌트의 확인 버튼을 누르면 Alarm 컴포넌트가 사라진다.', async () => {
+    const user = userEvent.setup();
+    const { store } = renderWithProvider(<Alarm></Alarm>);
+    const wrapper = getWrapper(store);
+    const { result } = renderHook(() => useAlarm(), {
+      wrapper,
+    });
+    await waitFor(() => result.current.handleOpen('안녕하세요'));
     const button = screen.getByRole('button', { name: '확인' });
+    const alarm = await screen.findByTestId('overlay');
     await user.click(button);
-    expect(onClose).toBeCalled();
+    expect(alarm).not.toBeInTheDocument();
   });
 });
-
-describe('Alarm 컴포넌트 스타일 검증 테스트', () => {
-  const onClose = jest.fn();
-  test('올바른 Alarm text가 존재한다.', () => {
-    render(<Alarm text="안녕하세요" onClose={onClose}></Alarm>);
-    const text = screen.getByText('안녕하세요');
-    expect(text).toBeInTheDocument();
-  });
-  test('Alarm 확인 버튼이 존재한다', () => {
-    render(<Alarm text="안녕하세요" onClose={onClose}></Alarm>);
-    const button = screen.getByRole('button', { name: '확인' });
-    expect(button).toBeInTheDocument();
-  });
-  test('Alarm text가 가운데로 정렬되어있다', () => {
-    render(<Alarm text="안녕하세요" onClose={onClose}></Alarm>);
-    const alarmtext = screen.getByTestId('alarmText');
-    expect(alarmtext).toHaveStyleRule('text-align', 'center');
-  });
-});
-
-//  위에 같이 수정하니까 alarm view모델만 남고 오히려 코드도 깔끔해짐 ? 리팩토링 덤으로
-// 이렇게 하면 돔에서 이상하게 감지못해서 함수 호출유무로 판단해야되는거같음..
-
-// 여기서 테스팅 불가
-// test('확인 버튼을 누르면 Alarm 창이 닫힌다.', async () => {
-//   const onClose = jest.fn();
-//   const user = userEvent.setup();
-//   render(<Alarm text="hello" onClose={onClose}></Alarm>);
-
-//   const alarm = screen.getByTestId('overlay');
-//   const button = screen.getByRole('button', { name: '확인' });
-//   await user.click(button);
-//   expect(alarm).not.toBeInTheDocument();
-// });

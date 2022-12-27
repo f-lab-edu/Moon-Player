@@ -5,15 +5,12 @@ import UserPage from './pages/User/index';
 import LoginPage from 'pages/Login/index';
 import ProtectedRoute from 'route/ProtectedRoute';
 import Alarm from 'components/Global/Alarm';
-import useAlarm from 'hooks/useAlarm';
 import GlobalStyle from 'styles/GlobalStyle';
 function App() {
-  const { isOpen, text, handleClose } = useAlarm();
-
   return (
     <>
       <GlobalStyle />
-      {isOpen ? <Alarm text={text} onClose={handleClose} /> : <></>}
+      <Alarm></Alarm>
       <Routes>
         <Route
           element={

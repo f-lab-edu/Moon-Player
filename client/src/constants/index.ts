@@ -13,7 +13,7 @@ export const KAKAO_REQUEST_URL = `https://kauth.kakao.com/oauth/token`;
 export const GOOGLE_OAUTH_URL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_Client_ID}&
 response_type=code&
 redirect_uri=http://localhost:3000&
-scope=https://www.googleapis.com/auth/userinfo.email`
+scope=https://www.googleapis.com/auth/userinfo.email`;
 // eslint-disable-next-line max-len
 export const GOOGLE_REQUEST_BODY = `grant_type=authorization_code&client_id=${GOOGLE_Client_ID}&redirect_uri=${REDIRECT_URI}&client_secret=${GOOGLE_SECRET_ID}`;
 export const GOOGLE_REQUEST_URI = `https://www.googleapis.com/oauth2/v4/token`;

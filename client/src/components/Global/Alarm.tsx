@@ -3,25 +3,24 @@ import { Flex } from './Flex';
 import { Button } from './Button';
 import { Text } from './Text';
 import { Avatar } from './Avatar';
+import useAlarm from 'hooks/useAlarm';
 
-interface AlarmProps {
-  text: string;
-  onClose: React.MouseEventHandler<HTMLButtonElement>;
-}
-
-export const Alarm = ({ text, onClose }: AlarmProps) => {
-  return (
+export const Alarm = () => {
+  const { isOpen, text, handleClose } = useAlarm();
+  return isOpen ? (
     <Overlay data-testid="overlay">
       <Box direction="column" justifyContent="center" alignItems="center">
         <AlarmAvatar img="logo"></AlarmAvatar>
         <AlarmText color="white" textAlign="center" data-testid="alarmText">
           {text}
         </AlarmText>
-        <StyledButton fontColor="white" color="gray" onClick={onClose}>
+        <StyledButton fontColor="white" color="gray" onClick={handleClose}>
           확인
         </StyledButton>
       </Box>
     </Overlay>
+  ) : (
+    <></>
   );
 };
 const Overlay = styled.div`
