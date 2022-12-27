@@ -1,7 +1,7 @@
-import Alarm from '../Alarm';
+import Alarm from '../../components/Global/Alarm';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
-import { renderWithProvider, screen, renderHook, waitFor } from '../../../test-utils/index';
+import { renderWithProvider, screen, renderHook, waitFor } from '../../test-utils/index';
 import { useAlarm } from 'hooks/useAlarm';
 function getWrapper(store) {
   // eslint-disable-next-line react/display-name

@@ -1,6 +1,6 @@
-import { renderWithProvider, screen, waitFor } from '../../../../test-utils/index';
+import { renderWithProvider, screen, waitFor } from '../../../test-utils/index';
 
-import Slider from '../Slider';
+import Slider from '../../../components/Music/Genre/Slider';
 import userEvent from '@testing-library/user-event';
 
 // import preview from 'jest-preview';

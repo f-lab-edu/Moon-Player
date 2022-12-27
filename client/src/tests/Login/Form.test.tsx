@@ -1,8 +1,8 @@
-import { renderWithProvider, screen } from '../../../test-utils/index';
-import { Form } from '../Form';
+import { renderWithProvider, screen } from '../../test-utils/index';
+import { Form } from '../../components/Login/Form';
 
 import userEvent from '@testing-library/user-event';
-import { mockAssignUrl } from '../../../mocksFunction/assignurl.js';
+import { mockAssignUrl } from '../../mocksFunction/assignurl.js';
 
 describe('Form 컴포넌트 기능 테스트', () => {
   mockAssignUrl();
