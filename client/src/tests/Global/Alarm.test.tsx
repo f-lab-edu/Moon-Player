@@ -1,12 +1,9 @@
 import Alarm from '../../components/Global/Alarm';
 import userEvent from '@testing-library/user-event';
-import { Provider } from 'react-redux';
 import { renderWithProvider, screen, renderHook, waitFor } from '../../test-utils/index';
 import { useAlarm } from 'hooks/useAlarm';
-function getWrapper(store) {
-  // eslint-disable-next-line react/display-name
-  return ({ children }) => <Provider store={store}>{children}</Provider>;
-}
+import { getWrapper } from '../../test-utils/wrapper';
+import preview from 'jest-preview';
 
 describe('Alarm 컴포넌트 기능 테스트', () => {
   test('handleOpen이 호출되면 전달된 텍스트에 맞는 Alarm컴포넌트가 보여진다. .', async () => {

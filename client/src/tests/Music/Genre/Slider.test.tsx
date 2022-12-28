@@ -1,9 +1,12 @@
-import { renderWithProvider, screen, waitFor } from '../../../test-utils/index';
+import { renderWithProvider, screen, waitFor, renderHook } from '../../../test-utils/index';
 
 import Slider from '../../../components/Music/Genre/Slider';
 import userEvent from '@testing-library/user-event';
+import preview from 'jest-preview';
+import useSlider from 'hooks/useSwiper';
 
-// import preview from 'jest-preview';
+// jest-preview로 디버깅하니까 스와이퍼 모듈이 제대로 import 되지않는거같은데.. 테스팅 가상돔에서는 어떨지모르겟네..
+// 스와이퍼 모듈이 제대로 import 되지않아서 기능이 제대로 실행안되는듯..
 
 const mockData = [
   {
@@ -61,40 +64,35 @@ const mockData = [
     genre_id: 9,
   },
 ];
-// 작성중..
 
-// jest-preview로 디버깅하니까 스와이퍼 모듈이 제대로 import 되지않는거같은데.. 테스팅 가상돔에서는 어떨지모르겟네..
-// 스와이퍼 모듈이 제대로 import 되지않아서 기능이 제대로 실행안되는듯..
+// describe('Slider 컴포넌트 기능 테스트', () => {
+//   const user = userEvent.setup();
+//   test('Genre Item들이 올바르게 렌더링되었다.', async () => {
+//     renderWithProvider(<Slider>{mockData}</Slider>);
+//     const { result } = renderHook(() => useSlider());
+//     const images = screen.getAllByRole('img');
 
-describe('Slider 컴포넌트 기능 테스트', () => {
-  const user = userEvent.setup();
-  test('Genre Item들이 올바르게 렌더링되었다.', () => {
-    renderWithProvider(<Slider>{mockData}</Slider>);
-    const images = screen.getAllByRole('img');
-    expect(images).toHaveLength(9);
-    // preview.debug();
-  });
-  test('next 버튼을 누르면 다음슬라이드로 이동한다.', async () => {
-    renderWithProvider(<Slider>{mockData}</Slider>);
-    const images = screen.getAllByRole('img');
-    const firstImage = images[0];
-    const buttons = screen.getAllByRole('button');
-    const prevButton = buttons[0];
-    const nextButton = buttons[1];
-    expect(firstImage).toBeInTheDocument();
-    await user.click(nextButton);
-    await waitFor(() => {
-      expect(firstImage).not.toBeInTheDocument();
-    });
-  });
-  test('이전 슬라이드 없을떄 prev 버튼을 누르면 현재 슬라이드를 유지한다.', () => {
-    renderWithProvider(<Slider>{mockData}</Slider>);
-    // const images = screen.getAllByRole('img');
-    // expect(images).toHaveLength(9);
-  });
-  test('마지막 슬라이드 일떄 next를 누르면 현재 슬라이드를 유지한다.', () => {
-    renderWithProvider(<Slider>{mockData}</Slider>);
-    // const images = screen.getAllByRole('img');
-    // expect(images).toHaveLength(9);
-  });
-});
+//     expect(images).toHaveLength(9);
+//     result.current?.handleNextSlide();
+
+//     preview.debug();
+//     // expect(result.all).toBe({});
+
+//     expect(result).toBe({});
+
+//     preview.debug();
+//   });
+// test('next 버튼을 누르면 다음슬라이드로 이동한다.', async () => {
+//   renderSlider();
+// });
+// test('이전 슬라이드 없을떄 prev 버튼을 누르면 현재 슬라이드를 유지한다.', () => {
+//   renderWithProvider(<Slider>{mockData}</Slider>);
+//   // const images = screen.getAllByRole('img');
+//   // expect(images).toHaveLength(9);
+// });
+// test('마지막 슬라이드 일떄 next를 누르면 현재 슬라이드를 유지한다.', () => {
+//   renderWithProvider(<Slider>{mockData}</Slider>);
+//   // const images = screen.getAllByRole('img');
+//   // expect(images).toHaveLength(9);
+// });
+// });

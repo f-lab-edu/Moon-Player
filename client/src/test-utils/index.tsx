@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import { rootReducer } from '../store/reducers/index';
@@ -18,7 +18,7 @@ export function renderWithProvider(
   function Wrapper({ children }) {
     return (
       <Provider store={store}>
-        <BrowserRouter> {children}</BrowserRouter>
+        <MemoryRouter> {children}</MemoryRouter>
       </Provider>
     );
   }

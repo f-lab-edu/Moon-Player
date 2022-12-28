@@ -1,33 +1,40 @@
 import { Pagination } from 'swiper';
-import { SwiperProps } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SwiperCore from 'swiper';
-//slider state는 swiper Module에 의존적인 부분이 많아서 따로 분리를 시킬필요가없을거같다
-export const useSlider = () => {
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Item from 'components/Music/Genre/Item';
+
+export const useSwiper = (items) => {
   const [swiperModule, setSwiperModule] = useState<SwiperCore>();
-  const [swiperState, setSwiperState] = useState<SwiperProps>(DEFAULT_SETTING);
-
-  useEffect(() => {
-    // swiper 모듈이 없으면 실행불가
-    if (!swiperModule) return;
-  }, [swiperModule]);
-
   // 스와이퍼 모듈로 넘길수있음
   const handleNextSlide = () => swiperModule?.slideNext(1000);
   const handlePrevSlide = () => swiperModule?.slidePrev(1000);
-  return { setSwiperModule, swiperState, handleNextSlide, handlePrevSlide };
+
+  const genreCards = items.map(({ genre_img, genre_id }) => (
+    <SwiperSlide key={genre_id}>
+      <Item genre_img={genre_img} key={genre_id} genre_id={genre_id}></Item>
+    </SwiperSlide>
+  ));
+
+  const swiper = (
+    <Swiper {...DEFAULT_SETTING} onSwiper={setSwiperModule}>
+      {genreCards}
+    </Swiper>
+  );
+
+  return { swiper, handleNextSlide, handlePrevSlide };
 };
-export default useSlider;
+export default useSwiper;
 // 스와이퍼 관련된 라이브러리 셋팅 만들어올수있음
-const DEFAULT_SETTING: SwiperProps = {
+const DEFAULT_SETTING = {
   modules: [Pagination],
-  pagination: {
-    el: '.pagination',
-    type: 'bullets',
-  },
+  // pagination: {
+  //   el: '.pagination',
+  //   type: 'bullets',
+  // },
   slidesPerView: 6,
   slidesPerGroup: 6,
   allowTouchMove: false,
