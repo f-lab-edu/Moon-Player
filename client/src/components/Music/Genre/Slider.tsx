@@ -1,15 +1,10 @@
 import useSwiper from 'hooks/useSwiper';
 import IconButton from 'components/Global/IconButton';
 import styled from 'styled-components';
-import { Genre } from 'types/store';
 import Flex from 'components/Global/Flex';
-
-interface SliderProps {
-  children: Genre[];
-}
-
-export const Slider = ({ children }: SliderProps) => {
-  const { swiper, handleNextSlide, handlePrevSlide } = useSwiper(children);
+export const Slider = ({ data }) => {
+  const { swiper, handleNextSlide, handlePrevSlide, swiperModule } = useSwiper(data);
+  console.log(swiperModule?.activeIndex);
 
   return (
     <SliderContainer direction="row">

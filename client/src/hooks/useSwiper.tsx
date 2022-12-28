@@ -15,7 +15,7 @@ export const useSwiper = (items) => {
 
   const genreCards = items.map(({ genre_img, genre_id }) => (
     <SwiperSlide key={genre_id}>
-      <Item genre_img={genre_img} key={genre_id} genre_id={genre_id}></Item>
+      <Item genre_img={genre_img} genre_id={genre_id}></Item>
     </SwiperSlide>
   ));
 
@@ -24,8 +24,7 @@ export const useSwiper = (items) => {
       {genreCards}
     </Swiper>
   );
-
-  return { swiper, handleNextSlide, handlePrevSlide };
+  return { swiperModule, swiper, handleNextSlide, handlePrevSlide };
 };
 export default useSwiper;
 // 스와이퍼 관련된 라이브러리 셋팅 만들어올수있음

@@ -5,16 +5,14 @@ import Slider from 'components/Music/Genre/Slider';
 
 export const Genre = () => {
   const dispatch = useAppDispatch();
-  const genreSelector = useAppSelector((state) => state.music.genre);
-  const genreItems = genreSelector.musicList;
+  const genreItems = useAppSelector((state) => state.music.genre.musicList);
 
   useEffect(() => {
     dispatch(fetchmusicGenre('http://localhost:4000/api/music/genre/'));
   }, []);
-
   return (
     <>
-      <Slider>{genreItems}</Slider>
+      <Slider data={genreItems}></Slider>
       <SliderPagination></SliderPagination>
     </>
   );

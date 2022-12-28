@@ -3,11 +3,10 @@ import { renderWithProvider, screen, waitFor, renderHook } from '../../../test-u
 import Slider from '../../../components/Music/Genre/Slider';
 import userEvent from '@testing-library/user-event';
 import preview from 'jest-preview';
-import useSlider from 'hooks/useSwiper';
+import useSwiper from 'hooks/useSwiper';
 
 // jest-preview로 디버깅하니까 스와이퍼 모듈이 제대로 import 되지않는거같은데.. 테스팅 가상돔에서는 어떨지모르겟네..
 // 스와이퍼 모듈이 제대로 import 되지않아서 기능이 제대로 실행안되는듯..
-
 const mockData = [
   {
     genre: '멜론 TOP 100',
@@ -65,23 +64,21 @@ const mockData = [
   },
 ];
 
-// describe('Slider 컴포넌트 기능 테스트', () => {
-//   const user = userEvent.setup();
-//   test('Genre Item들이 올바르게 렌더링되었다.', async () => {
-//     renderWithProvider(<Slider>{mockData}</Slider>);
-//     const { result } = renderHook(() => useSlider());
-//     const images = screen.getAllByRole('img');
+describe('Slider 컴포넌트 기능 테스트', () => {
+  const user = userEvent.setup();
 
-//     expect(images).toHaveLength(9);
-//     result.current?.handleNextSlide();
+  test('Genre Item들이 올바르게 렌더링되었다.', async () => {
+    renderWithProvider(<Slider data={mockData}></Slider>);
 
-//     preview.debug();
-//     // expect(result.all).toBe({});
+    const { result } = renderHook(() => useSwiper(mockData));
 
-//     expect(result).toBe({});
+    const images = await screen.findAllByRole('img');
+    expect(images).toHaveLength(9);
 
-//     preview.debug();
-//   });
+    await waitFor(() => result.current.swiperModule);
+    expect(result.current.swiperModule).toBeDefined();
+  });
+});
 // test('next 버튼을 누르면 다음슬라이드로 이동한다.', async () => {
 //   renderSlider();
 // });
