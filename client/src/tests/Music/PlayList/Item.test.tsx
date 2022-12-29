@@ -30,7 +30,7 @@ describe('PlayList Item 컴포넌트 기능 테스트', () => {
     expect(playerItemStore).toEqual(expetctedData);
   });
 
-  test('Player에 추가된 음악은 추가할수없다.', async () => {
+  test('Player에 추가된 음악의 버튼은 비활성화가 된다.', async () => {
     const { store } = renderWithProvider(<Item id={1} video_title={video_title} video_img={video_img}></Item>);
     await waitFor(() => store.dispatch(fetchmusicList('http://localhost:4000/api/music/genre/1')));
     const addButton = screen.getByRole('button');
