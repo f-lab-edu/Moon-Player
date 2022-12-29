@@ -3,9 +3,7 @@ import IconButton from 'components/Global/IconButton';
 import styled from 'styled-components';
 import Flex from 'components/Global/Flex';
 export const Slider = ({ data }) => {
-  const { swiper, handleNextSlide, handlePrevSlide, swiperModule } = useSwiper(data);
-  console.log(swiperModule?.activeIndex);
-
+  const { swiper, handleNextSlide, handlePrevSlide } = useSwiper(data);
   return (
     <SliderContainer direction="row">
       <StyledIconButton icon="arrowLeft" size="3x" color="red" onClick={handlePrevSlide}></StyledIconButton>

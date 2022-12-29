@@ -24,7 +24,7 @@ export const useSwiper = (items) => {
       {genreCards}
     </Swiper>
   );
-  return { swiperModule, swiper, handleNextSlide, handlePrevSlide };
+  return { swiper, handleNextSlide, handlePrevSlide, swiperModule };
 };
 export default useSwiper;
 // 스와이퍼 관련된 라이브러리 셋팅 만들어올수있음
