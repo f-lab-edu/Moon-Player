@@ -14,7 +14,6 @@ const connectDB=async ()=>{
         // find code goes here
         const cursor = coll.find();
         // iterate code goes here
-        await cursor.forEach(console.log);
       } finally {
         // Ensures that the client will close when you finish/error
         await client.close();

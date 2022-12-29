@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
-import Slider from 'components/Music/Genre/Slider';
+import Slider from 'components/Music/Genre/Carousel';
 
 export const Genre = () => {
   const dispatch = useAppDispatch();

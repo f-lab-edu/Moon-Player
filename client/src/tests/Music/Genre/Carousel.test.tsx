@@ -1,10 +1,8 @@
 import { renderWithProvider, screen, waitFor, renderHook } from '../../../test-utils/index';
 
-import Slider from '../../../components/Music/Genre/Slider';
+import Slider from '../../../components/Music/Genre/Carousel';
 import userEvent from '@testing-library/user-event';
 import preview from 'jest-preview';
-import useSwiper from 'hooks/useSwiper';
-
 const mockData = [
   {
     genre: '멜론 TOP 100',
