@@ -13,12 +13,7 @@ export const Genre = () => {
   return (
     <>
       <Slider data={genreItems}></Slider>
-      <SliderPagination></SliderPagination>
     </>
   );
-};
-
-const SliderPagination = () => {
-  return <div className="pagination"></div>;
 };
 export default Genre;

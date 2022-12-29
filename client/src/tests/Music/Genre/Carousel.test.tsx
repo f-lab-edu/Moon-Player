@@ -1,4 +1,4 @@
-import { renderWithProvider, screen, waitFor, renderHook } from '../../../test-utils/index';
+import { renderWithProvider, screen, waitFor, within } from '../../../test-utils/index';
 
 import Slider from '../../../components/Music/Genre/Carousel';
 import userEvent from '@testing-library/user-event';
@@ -59,27 +59,23 @@ const mockData = [
     genre_id: 9,
   },
 ];
-// describe('Slider 컴포넌트 기능 테스트', () => {
-//   const user = userEvent.setup();
-//   test('Genre Item들이 올바르게 렌더링되었다.', async () => {
-//     renderWithProvider(<Slider data={mockData}></Slider>);
-//     const { result } = renderHook(() => useSwiper(mockData));
-//     const images = await screen.findAllByRole('img');
-//     expect(images).toHaveLength(9);
-//     expect(result.current.swiperModule).toBe({});
-//   });
-// });
-// test('next 버튼을 누르면 다음슬라이드로 이동한다.', async () => {
-//   renderSlider();
-// });
-// test('이전 슬라이드 없을떄 prev 버튼을 누르면 현재 슬라이드를 유지한다.', () => {
-//   renderWithProvider(<Slider>{mockData}</Slider>);
-//   // const images = screen.getAllByRole('img');
-//   // expect(images).toHaveLength(9);
-// });
-// test('마지막 슬라이드 일떄 next를 누르면 현재 슬라이드를 유지한다.', () => {
-//   renderWithProvider(<Slider>{mockData}</Slider>);
-//   // const images = screen.getAllByRole('img');
-//   // expect(images).toHaveLength(9);
-// });
-// });
+describe('Carousel 컴포넌트 기능 테스트', () => {
+  const user = userEvent.setup();
+  test('Carousel 컴포넌트의 첫 슬라이드 아이템은 6개 다.', async () => {
+    renderWithProvider(<Slider data={mockData}></Slider>);
+    const images = await screen.findAllByRole('img');
+
+    expect(images).toHaveLength(6);
+  });
+
+  test('페이지네이션 버튼을 누르면 페이지네이션 버튼에 맞는 슬라이드가 활성화된다.', async () => {
+    renderWithProvider(<Slider data={mockData}></Slider>);
+    const Paginations = await screen.findAllByRole('button');
+    const slickSlides = screen.getAllByRole('listitem');
+    const [slideOne, slideTwo] = [slickSlides[0], slickSlides[1]];
+    const [PaginationOne, PaginationTwo] = [Paginations[0], Paginations[1]];
+    expect(slideOne).toHaveClass('slick-active');
+    await user.click(PaginationTwo);
+    expect(slideTwo).toHaveClass('slick-active');
+  });
+});

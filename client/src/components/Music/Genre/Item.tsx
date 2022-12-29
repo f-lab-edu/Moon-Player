@@ -16,11 +16,7 @@ export const Item = ({ genre_img, genre_id }: ItemProps) => {
     dispatch(fetchmusicList(`http://localhost:4000/api/music/genre/${genre_id}`));
   };
 
-  return (
-    <div>
-      <CardImage onClick={handleCard} img={genre_img} key={genre_id} disabled={isInGenre} />
-    </div>
-  );
+  return <CardImage onClick={handleCard} img={genre_img} key={genre_id} disabled={isInGenre} />;
 };
 
 interface CardImageProps {

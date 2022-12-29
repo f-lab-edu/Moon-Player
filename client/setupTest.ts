@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
+
 import { server } from './src/mocks/server/server.js';
 import './src/styles/GlobalStyle';
 dotenv.config({ path: '.env' });
@@ -12,3 +13,12 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 // Clean up after the tests are finished.
 afterAll(() => server.close());
+window.matchMedia =
+  window.matchMedia ||
+  function () {
+    return {
+      matches: false,
+      addListener: function () {},
+      removeListener: function () {},
+    };
+  };

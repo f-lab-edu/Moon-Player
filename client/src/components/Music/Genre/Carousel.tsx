@@ -17,6 +17,7 @@ export const Carousel = ({ data }) => {
 };
 const settings = {
   dots: true,
+  arrows: false,
   slidesToShow: 6,
   slidesToScroll: 6,
   dotsClass: 'dots_custom',
@@ -65,11 +66,6 @@ const StyledSlider = styled(Slider)`
   }
   .slick-slide > div {
     padding: 0 10px;
-  }
-  .slick-prev::before,
-  .slick-next::before {
-    opacity: 0;
-    display: none;
   }
 
   .dots_custom li {
