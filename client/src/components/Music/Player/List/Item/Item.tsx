@@ -14,22 +14,20 @@ import { Music } from 'types/store';
 interface ItemProps {
   video_title: string;
   video_img: string;
-  order: number | string;
+  number: number;
 }
 
-export const Item = ({ video_title, video_img, order }: ItemProps) => {
+export const Item = ({ video_title, video_img, number }: ItemProps) => {
+  const { element, handleScrollElement } = useMoveDownScroll();
   const dispatch = useAppDispatch();
-
   const playerSelector = useAppSelector((state) => state.music.player);
   const isCurrentMusic = playerSelector.playmusic.video_title === video_title ? true : false;
-  const playerItemslength = playerSelector.playerItems.length;
-  const prevPlayerItemslength = usePrevious(playerItemslength) as number;
-  const { element, handleScrollElement } = useMoveDownScroll();
-
+  const currentPlayerItemslength = playerSelector.playerItems.length;
+  const prevPlayerItemslength = usePrevious(currentPlayerItemslength) as number;
   useEffect(() => {
-    if (prevPlayerItemslength > playerItemslength) return;
+    if (prevPlayerItemslength > currentPlayerItemslength) return;
     handleScrollElement();
-  }, [playerItemslength]);
+  }, [currentPlayerItemslength]);
 
   const handleClickRemove = () => {
     return isCurrentMusic
@@ -39,12 +37,13 @@ export const Item = ({ video_title, video_img, order }: ItemProps) => {
 
   const handlePlayMusic = () => {
     const selectedMusic = playerSelector.playerItems.find((music: Music) => music.video_title === video_title);
-    if (selectedMusic) dispatch(handleAddMusic(selectedMusic));
+    if (!selectedMusic) return;
+    dispatch(handleAddMusic(selectedMusic));
   };
 
   return (
-    <Root ref={element} isSelected={isCurrentMusic} direction="row" justifyContent="space-between" alignItems="center">
-      <OrderText>{order}</OrderText>
+    <Root ref={element} isActive={isCurrentMusic} direction="row" justifyContent="space-between" alignItems="center">
+      <MusicNumber>{number}</MusicNumber>
       <MusicImage onClick={handlePlayMusic} img={video_img} />
       <MusicTitle onClick={handlePlayMusic}>{video_title}</MusicTitle>
       <IconButton color="white" onClick={handleClickRemove} size="2x" icon="trash"></IconButton>
@@ -52,16 +51,16 @@ export const Item = ({ video_title, video_img, order }: ItemProps) => {
   );
 };
 interface RootProps {
-  isSelected: boolean;
+  isActive: boolean;
 }
 const Root = styled(Flex)<RootProps>`
   border-bottom: 1px solid white;
-  background: ${({ isSelected }) => isSelected && 'gray'};
-  opacity: ${({ isSelected }) => isSelected && '0.7'};
+  background: ${({ isActive }) => isActive && 'gray'};
+  opacity: ${({ isActive }) => isActive && '0.7'};
   gap: 15px;
 `;
 
-const OrderText = styled(Text)`
+const MusicNumber = styled(Text)`
   color: white;
   font-size: 16px;
 `;

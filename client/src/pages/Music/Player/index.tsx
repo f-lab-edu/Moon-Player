@@ -11,12 +11,10 @@ export const Player = () => {
   const playerMusics =
     playerSelector.playerItems.length > 0 ? (
       playerSelector.playerItems.map(({ video_title, video_img }, index) => (
-        <PlayerMusic video_title={video_title} video_img={video_img} key={index} order={++index} />
+        <PlayerMusic video_title={video_title} video_img={video_img} key={index} number={++index} />
       ))
     ) : (
-      <Text color="white" fontSize="20px">
-        재생 목록이 비어있습니다.
-      </Text>
+      <PlayerEmptyText>재생 목록이 비어있습니다.</PlayerEmptyText>
     );
   return (
     <Root>
@@ -47,5 +45,8 @@ const PlayerTitle = styled(Text)`
   font-size: 20px;
   color: white;
 `;
-
+const PlayerEmptyText = styled(Text)`
+  color: white;
+  font-size: 20px;
+`;
 export default Player;
