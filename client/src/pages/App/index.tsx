@@ -4,7 +4,7 @@ import MusicPage from 'pages/Music/index';
 import UserPage from 'pages/User/index';
 import LoginPage from 'pages/Login/index';
 import ProtectedRoute from 'components/Route/ProtectedRoute';
-import Alarm from 'components/Global/UI/Alarm';
+import Alarm from 'components/Global/UI/Alarm/Alarm';
 import GlobalStyle from 'styles/GlobalStyle';
 function App() {
   return (

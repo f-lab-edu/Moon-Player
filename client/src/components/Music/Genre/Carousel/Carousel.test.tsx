@@ -1,6 +1,6 @@
-import { renderWithProvider, screen } from '../../../test-utils/index';
+import { renderWithProvider, screen } from 'test-utils/rtkProvider';
 
-import Slider from '../../../components/Music/Genre/Carousel';
+import Slider from './Carousel';
 import userEvent from '@testing-library/user-event';
 const mockData = [
   {

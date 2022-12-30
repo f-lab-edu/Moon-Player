@@ -1,5 +1,5 @@
-import { renderWithProvider, screen, waitFor } from '../../../test-utils/index';
-import Item from '../../../components/Music/Genre/Item';
+import { renderWithProvider, screen, waitFor } from 'test-utils/rtkProvider';
+import Item from './Item';
 import userEvent from '@testing-library/user-event';
 
 import { faker } from '@faker-js/faker';

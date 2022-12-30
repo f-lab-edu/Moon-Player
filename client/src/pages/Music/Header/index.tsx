@@ -7,16 +7,10 @@ import { Avatar } from 'components/Global/style/Avatar';
 
 import Flex from 'components/Global/style/Flex';
 import Text from 'components/Global/style/Text';
-import { useAppDispatch } from 'hooks/useAppDispatch';
-import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 
 export const Header = () => {
   const { signOut } = useAuthenticator();
-  const dispatch = useAppDispatch();
 
-  const handleLogout = () => {
-    signOut();
-  };
   return (
     <Root direction="row" justifyContent="space-between" alignItems="center">
       <Flex direction="row" alignItems="center">
@@ -24,7 +18,7 @@ export const Header = () => {
         <Title>Moon Player</Title>
       </Flex>
       <Flex direction="row" alignItems="center">
-        <StyledLink to="#" onClick={handleLogout}>
+        <StyledLink to="#" onClick={signOut}>
           <FontAwesomeIcon icon={faRightFromBracket} color="gray" />
           <StyledText>로그아웃</StyledText>
         </StyledLink>

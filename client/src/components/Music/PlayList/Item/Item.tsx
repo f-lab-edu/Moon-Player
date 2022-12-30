@@ -4,7 +4,7 @@ import { handleAddPlayer } from 'store/feature/music/PlayerSlice';
 import OverFlowText from 'components/Global/style/OverFlowText';
 
 import Flex from 'components/Global/style/Flex';
-import IconButton from 'components/Global/UI/IconButton';
+import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { Music } from 'types/store';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 interface ItemProps {

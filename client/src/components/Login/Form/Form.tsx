@@ -2,53 +2,35 @@ import styled from 'styled-components';
 import { useEffect } from 'react';
 
 import Icon from 'components/Global/style/Icon';
-import Button from 'components/Global/style/Button';
+import Button from 'components/Global/style/Button/Button';
 import Text from 'components/Global/style/Text';
 import Flex from 'components/Global/style/Flex';
-import { assignAuthURL, getCode } from 'utils/auth';
+import { getCode } from 'utils/auth';
 import { useAuthenticator } from 'hooks/useAuthenticator';
-import { fetchUserToken, handleLoginInfo } from 'store/feature/user/UserSlice';
-import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
+import { useLogin } from 'hooks/useLogin';
 
 export const Form = () => {
   const { signIn } = useAuthenticator();
-
-  const dispatch = useAppDispatch();
-  const loginInfo = useAppSelector((state) => state.user.info);
+  const { socialName, getUserToken, handleLogin } = useLogin();
 
   useEffect(() => {
     const code = getCode();
-    const info = { code, loginInfo };
     if (!code) return;
-    dispatch(fetchUserToken(info));
+    getUserToken({ code, socialName });
     signIn();
   }, []);
 
-  const handleGoogleLogin = () => {
-    dispatch(handleLoginInfo('Google'));
-    assignAuthURL('Google');
-  };
-
-  const handleKaKaoLogin = () => {
-    dispatch(handleLoginInfo('Kakao'));
-    assignAuthURL('Kakao');
-  };
-  const handleNaverLogin = () => {
-    dispatch(handleLoginInfo('Naver'));
-    assignAuthURL('Naver');
-  };
-
   return (
     <Root direction="column" justifyContent="center" alignItems="center">
-      <StyledButton color="#5c79f1" fontColor="white" onClick={handleGoogleLogin}>
+      <StyledButton color="#5c79f1" fontColor="white" onClick={handleLogin} data-name="Google">
         <StyledIcon name="Google" />
         <StyledText color="white">Google 로그인</StyledText>
       </StyledButton>
-      <StyledButton color="#1cc802" fontColor="white" onClick={handleNaverLogin}>
+      <StyledButton color="#1cc802" fontColor="white" onClick={handleLogin} data-name="Naver">
         <StyledIcon name="Naver" />
         <StyledText color="white">네이버 로그인</StyledText>
       </StyledButton>
-      <StyledButton color="#ffeb3b" fontColor="black" onClick={handleKaKaoLogin}>
+      <StyledButton color="#ffeb3b" fontColor="black" onClick={handleLogin} data-name="Kakao">
         <StyledIcon name="Kakao" />
         <StyledText color="black">카카오 로그인</StyledText>
       </StyledButton>

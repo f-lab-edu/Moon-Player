@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Button from '../../../components/Global/style/Button';
+import Button from './Button';
 
 // Global컴포넌트는 styledComponent여서 스타일 검증밖에 없음
 //  컴포넌트 props 테스트?

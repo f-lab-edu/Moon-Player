@@ -3,7 +3,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import Slider from 'react-slick';
-import { Item } from 'components/Music/Genre/Item';
+import { Item } from 'components/Music/Genre/Item/Item';
 
 export const Carousel = ({ data }) => {
   const genreItems = data.map(({ genre_img, genre_id }) => (

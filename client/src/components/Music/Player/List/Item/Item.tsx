@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import Image from 'components/Global/style/Image';
 import Flex from 'components/Global/style/Flex';
 import Text from 'components/Global/style/Text';
-import IconButton from 'components/Global/UI/IconButton';
+import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import { Music } from 'types/store';

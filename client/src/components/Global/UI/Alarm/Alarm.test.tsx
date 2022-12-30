@@ -1,9 +1,8 @@
-import Alarm from '../../../components/Global/UI/Alarm';
+import Alarm from './Alarm';
 import userEvent from '@testing-library/user-event';
-import { renderWithProvider, screen, renderHook, waitFor } from '../../../test-utils/index';
+import { renderWithProvider, screen, renderHook, waitFor } from 'test-utils/rtkProvider';
 import { useAlarm } from 'hooks/useAlarm';
-import { getWrapper } from '../../../test-utils/wrapper';
-import preview from 'jest-preview';
+import { getWrapper } from 'test-utils/wrapper';
 
 describe('Alarm 컴포넌트 기능 테스트', () => {
   test('handleOpen이 호출되면 전달된 텍스트에 맞는 Alarm컴포넌트가 보여진다. .', async () => {
