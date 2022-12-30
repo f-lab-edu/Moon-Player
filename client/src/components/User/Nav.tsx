@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import Flex from 'components/Global/Flex';
-import { Text } from 'components/Global/Text';
+import Flex from 'components/Global/style/Flex';
+import { Text } from 'components/Global/style/Text';
 
 const Root = styled(Flex)`
   background-color: black;

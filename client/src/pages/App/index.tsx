@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import MusicPage from 'pages/Music/index';
-import UserPage from './pages/User/index';
+import UserPage from 'pages/User/index';
 import LoginPage from 'pages/Login/index';
-import ProtectedRoute from 'route/ProtectedRoute';
-import Alarm from 'components/Global/Alarm';
+import ProtectedRoute from 'components/Route/ProtectedRoute';
+import Alarm from 'components/Global/UI/Alarm';
 import GlobalStyle from 'styles/GlobalStyle';
 function App() {
   return (

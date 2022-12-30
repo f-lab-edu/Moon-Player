@@ -4,7 +4,7 @@ import { getRequestForOauth } from 'utils/auth';
 import { Token } from 'types/store';
 
 import { UserState } from 'types/store';
-import { getToken } from 'utils/axios';
+import { getToken } from 'utils/auth';
 interface LoginInfo {
   code: string;
   loginInfo: string;

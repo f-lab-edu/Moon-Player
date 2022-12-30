@@ -1,5 +1,5 @@
 import { usePlayerControl } from 'hooks/usePlayerControl';
-import { formatTime } from 'utils/Player';
+import { formatTime } from 'utils/app/Player';
 
 import ProgressBar from './ProgressBar';
 import Volume from './Volume';

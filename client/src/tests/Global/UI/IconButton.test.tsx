@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import userEvent from '@testing-library/user-event';
-import IconButton from '../../components/Global/IconButton';
+import IconButton from '../../../components/Global/UI/IconButton';
 
 describe('IconButton 기능 테스트', () => {
   const user = userEvent.setup();

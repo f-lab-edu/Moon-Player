@@ -10,25 +10,9 @@ body,html {
   -moz-osx-font-smoothing: grayscale;
 
 }
-
-
 *{
   box-sizing: border-box;
 
-}
-
-
-.pagination{
-  width: 10px;
-  height: 10px;
-  text-align: center;
-  margin:10px;
-
-}
-
-
-.swiper-pagination-bullet{
-    background-color:white;
 }
 `;
 export default GlobalStyle;

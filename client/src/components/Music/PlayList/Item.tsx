@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import Image from 'components/Global/Image';
+import Image from 'components/Global/style/Image';
 import { handleAddPlayer } from 'store/feature/music/PlayerSlice';
-import OverFlowText from 'components/Global/OverFlowText';
+import OverFlowText from 'components/Global/style/OverFlowText';
 
-import Flex from 'components/Global/Flex';
-import IconButton from 'components/Global/IconButton';
+import Flex from 'components/Global/style/Flex';
+import IconButton from 'components/Global/UI/IconButton';
 import { Music } from 'types/store';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 interface ItemProps {

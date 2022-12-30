@@ -1,8 +1,7 @@
-import { renderWithProvider, screen, waitFor, within } from '../../../test-utils/index';
+import { renderWithProvider, screen } from '../../../test-utils/index';
 
 import Slider from '../../../components/Music/Genre/Carousel';
 import userEvent from '@testing-library/user-event';
-import preview from 'jest-preview';
 const mockData = [
   {
     genre: '멜론 TOP 100',
@@ -70,12 +69,13 @@ describe('Carousel 컴포넌트 기능 테스트', () => {
 
   test('페이지네이션 버튼을 누르면 페이지네이션 버튼에 맞는 슬라이드가 활성화된다.', async () => {
     renderWithProvider(<Slider data={mockData}></Slider>);
-    const Paginations = await screen.findAllByRole('button');
+    const PaginationButtons = await screen.findAllByRole('button');
     const slickSlides = screen.getAllByRole('listitem');
     const [slideOne, slideTwo] = [slickSlides[0], slickSlides[1]];
-    const [PaginationOne, PaginationTwo] = [Paginations[0], Paginations[1]];
+    const [PaginationOneButton, PaginationTwoButton] = [PaginationButtons[0], PaginationButtons[1]];
     expect(slideOne).toHaveClass('slick-active');
-    await user.click(PaginationTwo);
+    await user.click(PaginationTwoButton);
+    expect(slideOne).not.toHaveClass('slick-active');
     expect(slideTwo).toHaveClass('slick-active');
   });
 });

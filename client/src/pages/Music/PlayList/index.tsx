@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { useEffect } from 'react';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import PlaylistItem from 'components/Music/PlayList/Item';
-import ScrollBox from 'components/Global/ScrollBox';
-import Text from 'components/Global/Text';
+import ScrollBox from 'components/Global/style/ScrollBox';
+import Text from 'components/Global/style/Text';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 
 export const PlayList = () => {

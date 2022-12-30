@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { useAuthenticator } from 'hooks/useAuthenticator';
-import { Avatar } from 'components/Global/Avatar';
+import { Avatar } from 'components/Global/style/Avatar';
 
-import Flex from 'components/Global/Flex';
-import Text from 'components/Global/Text';
+import Flex from 'components/Global/style/Flex';
+import Text from 'components/Global/style/Text';
 import { useAppDispatch } from 'hooks/useAppDispatch';
 import { handleAlarm } from 'store/feature/layout/LayoutSlice';
 

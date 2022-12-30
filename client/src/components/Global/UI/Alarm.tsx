@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { Flex } from './Flex';
-import { Button } from './Button';
-import { Text } from './Text';
-import { Avatar } from './Avatar';
+import { Flex } from '../style/Flex';
+import { Button } from '../style/Button';
+import { Text } from '../style/Text';
+import { Avatar } from '../style/Avatar';
 import useAlarm from 'hooks/useAlarm';
 
 export const Alarm = () => {

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { fetchData } from 'utils/axios';
+import { fetchData } from 'utils/api';
 import { PURGE } from 'redux-persist';
 import { GenreState, Genre } from 'types/store';
 

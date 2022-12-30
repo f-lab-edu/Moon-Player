@@ -1,8 +1,8 @@
-import Alarm from '../../components/Global/Alarm';
+import Alarm from '../../../components/Global/UI/Alarm';
 import userEvent from '@testing-library/user-event';
-import { renderWithProvider, screen, renderHook, waitFor } from '../../test-utils/index';
+import { renderWithProvider, screen, renderHook, waitFor } from '../../../test-utils/index';
 import { useAlarm } from 'hooks/useAlarm';
-import { getWrapper } from '../../test-utils/wrapper';
+import { getWrapper } from '../../../test-utils/wrapper';
 import preview from 'jest-preview';
 
 describe('Alarm 컴포넌트 기능 테스트', () => {

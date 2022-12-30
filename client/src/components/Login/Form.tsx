@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { useEffect } from 'react';
 
-import Icon from 'components/Global/Icon';
-import Button from 'components/Global/Button';
-import Text from 'components/Global/Text';
-import Flex from 'components/Global/Flex';
+import Icon from 'components/Global/style/Icon';
+import Button from 'components/Global/style/Button';
+import Text from 'components/Global/style/Text';
+import Flex from 'components/Global/style/Flex';
 import { assignAuthURL, getCode } from 'utils/auth';
 import { useAuthenticator } from 'hooks/useAuthenticator';
 import { fetchUserToken, handleLoginInfo } from 'store/feature/user/UserSlice';

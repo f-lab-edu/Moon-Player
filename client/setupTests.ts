@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
-
 import { server } from './src/mocks/server/server.js';
 import './src/styles/GlobalStyle';
 dotenv.config({ path: '.env' });

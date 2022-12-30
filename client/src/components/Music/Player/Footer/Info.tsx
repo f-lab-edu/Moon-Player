@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Root from 'components/Global/Flex';
-import Image from 'components/Global/Image';
-import Text from 'components/Global/Text';
+import Root from 'components/Global/style/Flex';
+import Image from 'components/Global/style/Image';
+import Text from 'components/Global/style/Text';
 
 import { PlayerControl } from 'types/app';
 

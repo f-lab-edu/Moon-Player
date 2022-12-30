@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { removeStoreItems } from 'utils/persist';
+import { removeStoreItems } from 'utils/redux-persist';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from './useAppDispatch';
 import useAlarm from './useAlarm';

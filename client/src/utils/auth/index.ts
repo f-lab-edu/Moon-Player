@@ -1,4 +1,6 @@
 /* eslint-disable indent */
+import axios from 'axios';
+
 import {
   GOOGLE_OAUTH_URL,
   GOOGLE_REQUEST_BODY,
@@ -9,7 +11,7 @@ import {
   NAVER_REQUEST_URL,
   NAVER_REQUEST_BODY,
   NAVER_OAUTH_URL,
-} from '../../constants/index';
+} from '../../constants/auth';
 export const getCode = (): string => {
   const url = new URL(window.location.href).searchParams;
   const code = url.get('code');
@@ -31,4 +33,18 @@ export const getRequestForOauth = (code: string, name: string) => {
       : `${NAVER_REQUEST_BODY}&code${code}`;
 
   return { REQUEST_URI, REQUEST_BODY };
+};
+
+export const getToken = async (REQUEST_URI: string, REQUEST_BODY: string) => {
+  try {
+    const response = await axios({
+      method: 'post',
+      url: REQUEST_URI,
+      data: REQUEST_BODY,
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
 };

@@ -1,4 +1,4 @@
-import IconButton from 'components/Global/IconButton';
+import IconButton from 'components/Global/UI/IconButton';
 import styled from 'styled-components';
 
 interface VolumeProps {
