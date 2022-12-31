@@ -16,6 +16,7 @@ export const getCode = (): string => {
   const url = new URL(window.location.href).searchParams;
   const code = url.get('code');
   if (!code) return '';
+  console.log(code);
   return code;
 };
 

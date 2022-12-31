@@ -16,9 +16,10 @@ export const Form = () => {
   useEffect(() => {
     const code = getCode();
     if (!code) return;
+    if (!socialName) return;
     getUserToken({ code, socialName });
     signIn();
-  }, []);
+  }, [socialName]);
 
   return (
     <Root direction="column" justifyContent="center" alignItems="center">
