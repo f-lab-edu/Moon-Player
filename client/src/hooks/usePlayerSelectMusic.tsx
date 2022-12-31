@@ -1,5 +1,5 @@
 import { handleNextMusic, handlePrevMusic, handleShuffleMusics } from 'store/feature/music/PlayerSlice';
-import { nextPlayMusic, prevPlayMusic, shuffleMusic } from 'utils/Player';
+import { nextPlayMusic, prevPlayMusic, shuffleMusic } from 'utils/app/Player';
 
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 export const usePlayerSelectMusic = () => {

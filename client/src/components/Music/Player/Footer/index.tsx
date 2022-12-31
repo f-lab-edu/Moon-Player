@@ -1,10 +1,10 @@
 import { usePlayerControl } from 'hooks/usePlayerControl';
-import { formatTime } from 'utils/Player';
+import { formatTime } from 'utils/app/Player';
 
 import ProgressBar from './ProgressBar';
 import Volume from './Volume';
 import Controller from './Controller';
-import Info from './Info';
+import MusicInfo from './Music';
 
 export const Footer = () => {
   const {
@@ -24,7 +24,7 @@ export const Footer = () => {
 
   return (
     <>
-      <Info player={playerState}></Info>
+      <MusicInfo player={playerState}></MusicInfo>
       {playerState.music && musicPlayer}
       <Controller
         player={playerState}

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import LoginForm from 'components/Login/Form';
-import Avatar from 'components/Global/Avatar';
-import Flex from 'components/Global/Flex';
-import Text from 'components/Global/Text';
+import LoginForm from 'components/Login/Form/Form';
+import Avatar from 'components/Global/style/Avatar';
+import Flex from 'components/Global/style/Flex';
+import Text from 'components/Global/style/Text';
 
 const LoginPage = () => {
   return (

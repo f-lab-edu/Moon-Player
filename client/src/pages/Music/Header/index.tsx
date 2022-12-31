@@ -3,20 +3,14 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { useAuthenticator } from 'hooks/useAuthenticator';
-import { Avatar } from 'components/Global/Avatar';
+import { Avatar } from 'components/Global/style/Avatar';
 
-import Flex from 'components/Global/Flex';
-import Text from 'components/Global/Text';
-import { useAppDispatch } from 'hooks/useAppDispatch';
-import { handleAlarm } from 'store/feature/layout/LayoutSlice';
+import Flex from 'components/Global/style/Flex';
+import Text from 'components/Global/style/Text';
 
 export const Header = () => {
   const { signOut } = useAuthenticator();
-  const dispatch = useAppDispatch();
 
-  const handleLogout = () => {
-    signOut();
-  };
   return (
     <Root direction="row" justifyContent="space-between" alignItems="center">
       <Flex direction="row" alignItems="center">
@@ -24,7 +18,7 @@ export const Header = () => {
         <Title>Moon Player</Title>
       </Flex>
       <Flex direction="row" alignItems="center">
-        <StyledLink to="#" onClick={handleLogout}>
+        <StyledLink to="#" onClick={signOut}>
           <FontAwesomeIcon icon={faRightFromBracket} color="gray" />
           <StyledText>로그아웃</StyledText>
         </StyledLink>

@@ -19,4 +19,10 @@ export const handlers = [
   rest.get('http://localhost:4000/api/music/genre/3', (req, res, ctx) => {
     return res(ctx.json(music_three));
   }),
+  rest.post('http://localhost/auth', (req, res, ctx) => {
+    const token = {
+      access_token: 'google',
+    };
+    return res(ctx.json(token));
+  }),
 ];

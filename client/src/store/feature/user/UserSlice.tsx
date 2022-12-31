@@ -4,10 +4,10 @@ import { getRequestForOauth } from 'utils/auth';
 import { Token } from 'types/store';
 
 import { UserState } from 'types/store';
-import { getToken } from 'utils/axios';
+import { getToken } from 'utils/auth';
 interface LoginInfo {
   code: string;
-  loginInfo: string;
+  socialName: string;
 }
 const initialState: UserState = {
   data: {
@@ -22,8 +22,8 @@ const initialState: UserState = {
 };
 const fetchUserToken = createAsyncThunk('user', async (info: LoginInfo, thunkApi: any) => {
   try {
-    const { code, loginInfo } = info;
-    const { REQUEST_URI, REQUEST_BODY } = getRequestForOauth(code, loginInfo);
+    const { code, socialName } = info;
+    const { REQUEST_URI, REQUEST_BODY } = getRequestForOauth(code, socialName);
     const response = await getToken(REQUEST_URI, REQUEST_BODY);
     if (response) {
       return response.data;

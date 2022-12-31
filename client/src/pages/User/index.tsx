@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import Flex from 'components/Global/Flex';
+import Flex from 'components/Global/style/Flex';
 import Nav from 'components/User/Nav';
-import Text from 'components/Global/Text';
-import Button from 'components/Global/Button';
+import Text from 'components/Global/style/Text';
+import Button from 'components/Global/style/Button/Button';
 import { useRef } from 'react';
 const UserPage = () => {
   const text = useRef<HTMLTextAreaElement>(null);
