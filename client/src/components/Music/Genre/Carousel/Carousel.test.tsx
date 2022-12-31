@@ -60,7 +60,7 @@ const mockData = [
 ];
 describe('Carousel 컴포넌트 기능 테스트', () => {
   const user = userEvent.setup();
-  test('Carousel 컴포넌트의 첫 슬라이드 아이템은 6개 다.', async () => {
+  test('Carousel 컴포넌트의 첫 슬라이드 아이템은 6개여야 한다.', async () => {
     renderWithProvider(<Slider data={mockData}></Slider>);
     const images = await screen.findAllByRole('img');
 

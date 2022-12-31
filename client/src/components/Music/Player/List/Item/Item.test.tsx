@@ -13,26 +13,27 @@ describe('Player List Item 컴포넌트 기능 테스트', () => {
     'https://i.ytimg.com/vi/fCO7f0SmrDc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAHBg8LcdNOe_-2cDY5dcNQqjw70w';
   const video_link = 'https://www.youtube.com/watch?v=fCO7f0SmrDc';
 
-  test('음악 이미지를 누르면 재생할 음악을 Store에 저장한다.', async () => {
+  test('음악 이미지를 누르면 음악이미지에 대한 음악은 Player Store에 저장되어야한다.', async () => {
     const { store } = renderWithProvider(<Item video_img={video_img} video_title={video_title} number={1}></Item>);
     const music = { video_img, video_link, video_title, id: 1 };
+    // 미리 playerItems에 추가
     await waitFor(() => store.dispatch(handleAddPlayer(music)));
     const music_image = screen.getByRole('img');
     await user.click(music_image);
-    const storePlayMusic = store.getState().music.player.playmusic;
-    expect(storePlayMusic).toStrictEqual(music);
+    const playerplayMusicStore = store.getState().music.player.playmusic;
+    expect(playerplayMusicStore).toStrictEqual(music);
   });
-  test('음악 제목을 누르면 재생할 음악을 Store에 저장한다.', async () => {
+  test('음악 제목을 누르면 음악 제목에 대한 음악을 Player Store에 저장되어야한다.', async () => {
     const { store } = renderWithProvider(<Item video_img={video_img} video_title={video_title} number={1}></Item>);
     const music = { video_img, video_link, video_title, id: 1 };
     await waitFor(() => store.dispatch(handleAddPlayer(music)));
     const music_title = screen.getByText(video_title);
     await user.click(music_title);
-    const storePlayMusic = store.getState().music.player.playmusic;
-    expect(storePlayMusic).toStrictEqual(music);
+    const playerplayMusicStore = store.getState().music.player.playmusic;
+    expect(playerplayMusicStore).toStrictEqual(music);
   });
 
-  test('현재 선택된 음악은 삭제할수 없다', async () => {
+  test('현재 Player에 선택된 음악은 삭제할수 없다', async () => {
     const { store } = renderWithProvider(<Item video_img={video_img} video_title={video_title} number={1}></Item>);
     const remove_button = screen.getByRole('button');
     const music = { video_img, video_link, video_title, id: 1 };
@@ -40,9 +41,12 @@ describe('Player List Item 컴포넌트 기능 테스트', () => {
     const music_title = screen.getByText(video_title);
     await user.click(music_title);
     await user.click(remove_button);
+
+    // 단일 컴포넌트 테스팅이여서 alarm 컴포넌트 생김유무로 판단 x
     const alarm_text = store.getState().layout.alarm.text;
     expect(alarm_text).toBe('현재 선택중인 음악은 삭제할수없습니다.');
   });
+
   test('음악을 선택하면 스크롤이 움직여야한다. (이거는작성예정)', () => {});
 
   //   음악이 여러개니까 페이지 단위 테스팅 해야할거같다

@@ -19,7 +19,7 @@ describe('PlayList Item 컴포넌트 기능 테스트', () => {
     expect(image).toBeInTheDocument();
   });
 
-  test('추가 버튼을 누르면 Player에 저장이 된다.', async () => {
+  test('음악 추가 버튼을 누르면 Player에 저장이 된다.', async () => {
     const { store } = renderWithProvider(<Item id={1} video_title={video_title} video_img={video_img}></Item>);
     // 1. 장르에 대한 음악리스트 저장
     await waitFor(() => store.dispatch(fetchmusicList('http://localhost:4000/api/music/genre/1')));
@@ -30,7 +30,7 @@ describe('PlayList Item 컴포넌트 기능 테스트', () => {
     expect(playerItemStore).toEqual(expetctedData);
   });
 
-  test('Player에 추가된 음악의 버튼은 비활성화가 된다.', async () => {
+  test('Player에 추가된 음악의 추가 버튼은 비활성화가 된다.', async () => {
     const { store } = renderWithProvider(<Item id={1} video_title={video_title} video_img={video_img}></Item>);
     await waitFor(() => store.dispatch(fetchmusicList('http://localhost:4000/api/music/genre/1')));
     const addButton = screen.getByRole('button');
