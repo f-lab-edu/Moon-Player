@@ -8,8 +8,8 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import MusicPage from 'pages/Music';
 
 // 소셜로그인 서버에 대한 메소드 모킹
+mockAssignUrl();
 describe('Form 컴포넌트 기능 테스트', () => {
-  mockAssignUrl();
   test('구글 로그인 버튼을 클릭하면 MusicPage로 이동한다.', async () => {
     const user = userEvent.setup();
     const mockAssignAuthURL = jest.spyOn(auth, 'assignAuthURL');
