@@ -2,8 +2,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
 import { Music, PlayerState } from 'types/store';
 const initialState: PlayerState = {
-  playerItems: [],
-  playmusic: { video_link: '', video_title: '', video_img: '', id: 0 },
+  list: [],
+  music: { source_url: '', name: '', img_url: '', id: 0 },
 };
 
 // Reducer
@@ -14,23 +14,23 @@ export const musicPlayerSlice = createSlice({
   reducers: {
     // 플레이어에 add 해주는 함수
     handleAddPlayer: (state: PlayerState, action: PayloadAction<Music>) => {
-      state.playerItems = [...state.playerItems, Object.assign({}, action.payload)];
+      state.list = [...state.list, Object.assign({}, action.payload)];
     },
     handleShuffleMusics: (state: PlayerState, action: PayloadAction<Music[]>) => {
-      state.playerItems = action.payload;
+      state.list = action.payload;
     },
     // string바꿔야할듯
     handleRemoveMusic: (state: PlayerState, action: PayloadAction<string>) => {
-      state.playerItems = state.playerItems.filter((music) => music.video_title !== action.payload);
+      state.list = state.list.filter((music) => music.name !== action.payload);
     },
     handleAddMusic: (state: PlayerState, action: PayloadAction<Music>) => {
-      state.playmusic = action.payload;
+      state.music = action.payload;
     },
     handlePrevMusic: (state: PlayerState, action: PayloadAction<Music>) => {
-      state.playmusic = action.payload;
+      state.music = action.payload;
     },
     handleNextMusic: (state: PlayerState, action: PayloadAction<Music>) => {
-      state.playmusic = action.payload;
+      state.music = action.payload;
     },
   },
 

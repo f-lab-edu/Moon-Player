@@ -1,47 +1,47 @@
 [
   {
-    "genre": "멜론 TOP 100",
-    "genre_img": "https:\/\/i.ytimg.com\/vi\/fCO7f0SmrDc\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAHBg8LcdNOe_-2cDY5dcNQqjw70w",
+    "genre_name": "멜론 TOP 100",
+    "image_url": "https:\/\/i.ytimg.com\/vi\/fCO7f0SmrDc\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAHBg8LcdNOe_-2cDY5dcNQqjw70w",
     "genre_id": 1
   },
   {
-    "genre": "NCS Top 200 음악",
-    "genre_img": "https:\/\/i.ytimg.com\/vi\/K4DyBUG242c\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDL_rZFJCJ_xo0iKbc0KRhMYuUU7g",
+    "genre_name": "NCS Top 200 음악",
+    "image_url": "https:\/\/i.ytimg.com\/vi\/K4DyBUG242c\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDL_rZFJCJ_xo0iKbc0KRhMYuUU7g",
     "genre_id": 2
   },
   {
-    "genre": "Mr sucide PlayList",
-    "genre_img": "https:\/\/i.ytimg.com\/vi\/uhA55hYnoHw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDb06XvGg2OtlQbh8Cr0Ko-ldDfHA",
+    "genre_name": "Mr sucide PlayList",
+    "image_url": "https:\/\/i.ytimg.com\/vi\/uhA55hYnoHw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDb06XvGg2OtlQbh8Cr0Ko-ldDfHA",
     "genre_id": 3
   },
   {
-    "genre": "NF 노래모음",
-    "genre_img": "https:\/\/i.ytimg.com\/vi\/fibYknUCIU4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAVtb7GbhzYnrQKhbFDc9GzjZdLcw",
+    "genre_name": "NF 노래모음",
+    "image_url": "https:\/\/i.ytimg.com\/vi\/fibYknUCIU4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAVtb7GbhzYnrQKhbFDc9GzjZdLcw",
     "genre_id": 4
   },
   {
-    "genre": "아이유 노래 모음",
-    "genre_img": "https:\/\/i.ytimg.com\/vi\/m7mvpe1fVa4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDuDeCnL6i6LjLSWQ97QU8iVUac_w",
+    "genre_name": "아이유 노래 모음",
+    "image_url": "https:\/\/i.ytimg.com\/vi\/m7mvpe1fVa4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDuDeCnL6i6LjLSWQ97QU8iVUac_w",
     "genre_id": 5
   },
   {
-    "genre": "Illenium 플레이 리스트",
-    "genre_img": "https:\/\/i.ytimg.com\/vi\/ZCu2gwLj9ok\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCWkB9RAt2vODEZ6o_BOfmbQReASg",
+    "genre_name": "Illenium 플레이 리스트",
+    "image_url": "https:\/\/i.ytimg.com\/vi\/ZCu2gwLj9ok\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCWkB9RAt2vODEZ6o_BOfmbQReASg",
     "genre_id": 6
   },
   {
-    "genre": "윤하 플레이 리스트",
-    "genre_img": "https:\/\/i.ytimg.com\/vi\/58IEh6YkuzQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLADvOlohZEVGAYN9Y0Tr4WQxkhnWQ",
+    "genre_name": "윤하 플레이 리스트",
+    "image_url": "https:\/\/i.ytimg.com\/vi\/58IEh6YkuzQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLADvOlohZEVGAYN9Y0Tr4WQxkhnWQ",
     "genre_id": 7
   },
   {
-    "genre": "트와이스 플레이 리스트",
-    "genre_img": "https:\/\/i.ytimg.com\/vi\/0rtV5esQT6I\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA0h64191yWHSUjPv0BdPOaM42GqA",
+    "genre_name": "트와이스 플레이 리스트",
+    "image_url": "https:\/\/i.ytimg.com\/vi\/0rtV5esQT6I\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA0h64191yWHSUjPv0BdPOaM42GqA",
     "genre_id":8
   },
   {
-    "genre": "BTS 플레이 리스트",
-    "genre_img": "https:\/\/i.ytimg.com\/vi\/XsX3ATc3FbA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBqTxIwItxaOhWhHf_t07AGhfEswA",
+    "name": "BTS 플레이 리스트",
+    "image_url": "https:\/\/i.ytimg.com\/vi\/XsX3ATc3FbA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBqTxIwItxaOhWhHf_t07AGhfEswA",
     "genre_id":9
   }
 

@@ -14,7 +14,7 @@ const DEFAULT_STATE: PlayerControl = {
   played: 0, // 재생의 정도 (value)
   seeking: false, // 재생바를 움직이고 있는지
   duration: 0, // 전체 시간
-  music: { video_link: '', video_title: '', video_img: '', id: 0 },
+  music: { source_url: '', name: '', img_url: '', id: 0 },
   isrepeat: false,
   currentTime: '00:00',
   endTime: '00:00',
@@ -33,9 +33,9 @@ export const usePlayerControl = () => {
   const volume = parseFloat((playerState.volume / 100).toString());
 
   useEffect(() => {
-    if (!playerSelector.playmusic.id) return;
-    setState({ ...playerState, playing: true, music: playerSelector.playmusic, currentTime, endTime });
-  }, [playerSelector.playmusic.id]);
+    if (!playerSelector.music.id) return;
+    setState({ ...playerState, playing: true, music: playerSelector.music, currentTime, endTime });
+  }, [playerSelector.music.id]);
 
   const handleRepeat = () => setState({ ...playerState, isrepeat: !playerState.isrepeat });
   const handlePlay = () => setState({ ...playerState, playing: !playerState.playing });
@@ -55,7 +55,7 @@ export const usePlayerControl = () => {
       width="1px"
       height="1px"
       volume={volume}
-      url={playerState.music && playerState.music.video_link}
+      url={playerState.music && playerState.music.source_url}
       playing={playerState.playing}
       loop={playerState.isrepeat}
       // 재생이 끝나면 다음 음악재생

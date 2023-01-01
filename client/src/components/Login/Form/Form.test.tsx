@@ -3,20 +3,20 @@ import * as auth from 'utils/auth';
 import { Form } from './Form';
 
 import userEvent from '@testing-library/user-event';
-import { mockAssignUrl } from 'mockFunction/assignurl.js';
+import { mockAssignUrl } from 'mockSetting/location/assign.js';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import MusicPage from 'pages/Music';
 
-// 모킹 하는방법을 대략적으로 알게된 테스트..
+// 소셜로그인 서버에 대한 메소드 모킹
+mockAssignUrl();
 describe('Form 컴포넌트 기능 테스트', () => {
-  mockAssignUrl();
   test('구글 로그인 버튼을 클릭하면 MusicPage로 이동한다.', async () => {
     const user = userEvent.setup();
-    const mock_assignAuthUrl = jest.spyOn(auth, 'assignAuthURL');
-    const mock_getCode = jest.spyOn(auth, 'getCode').mockReturnValue('Google');
-    const mock_getRequestForOauth = jest
+    const mockAssignAuthURL = jest.spyOn(auth, 'assignAuthURL');
+    const mockgetCode = jest.spyOn(auth, 'getCode').mockReturnValue('Google');
+    const mockgetRequestForOauth = jest
       .spyOn(auth, 'getRequestForOauth')
-      .mockReturnValue({ REQUEST_URI: 'auth', REQUEST_BODY: '123' });
+      .mockReturnValue({ REQUEST_URI: 'auth/google', REQUEST_BODY: '123' });
 
     const { store } = renderWithProvider(
       <MemoryRouter>
@@ -30,11 +30,39 @@ describe('Form 컴포넌트 기능 테스트', () => {
     await user.click(googlebutton);
     const token = store.getState().user.data.access_token;
 
-    expect(mock_assignAuthUrl).toBeCalled();
-    expect(mock_getRequestForOauth).toBeCalled();
-    expect(mock_getCode).toBeCalled();
+    expect(mockAssignAuthURL).toBeCalled();
+    expect(mockgetRequestForOauth).toBeCalled();
+    expect(mockgetCode).toBeCalled();
     expect(token).toBe('google');
     expect(googlebutton).not.toBeInTheDocument();
+    expect(store.getState().layout.alarm.text).toBe('로그인 하였습니다.');
+  });
+
+  test('카카오 로그인 버튼을 클릭하면 MusicPage로 이동한다.', async () => {
+    const user = userEvent.setup();
+    const mockAssignAuthURL = jest.spyOn(auth, 'assignAuthURL');
+    const mockgetCode = jest.spyOn(auth, 'getCode').mockReturnValue('KaKao');
+    const mockgetRequestForOauth = jest
+      .spyOn(auth, 'getRequestForOauth')
+      .mockReturnValue({ REQUEST_URI: 'auth/kakao', REQUEST_BODY: '123' });
+
+    const { store } = renderWithProvider(
+      <MemoryRouter>
+        <Routes>
+          <Route path={'/'} element={<Form />}></Route>
+          <Route path={'/music'} element={<MusicPage />}></Route>
+        </Routes>
+      </MemoryRouter>
+    );
+    const KaKaoButton = screen.getByRole('button', { name: '카카오 로그인' });
+    await user.click(KaKaoButton);
+    const token = store.getState().user.data.access_token;
+
+    expect(mockAssignAuthURL).toBeCalled();
+    expect(mockgetRequestForOauth).toBeCalled();
+    expect(mockgetCode).toBeCalled();
+    expect(token).toBe('Kakao');
+    expect(KaKaoButton).not.toBeInTheDocument();
     expect(store.getState().layout.alarm.text).toBe('로그인 하였습니다.');
   });
 });

@@ -3,7 +3,11 @@ import { fetchData } from 'utils/api';
 import { PURGE } from 'redux-persist';
 import { PlayListState, PlayList } from 'types/store';
 export const initialState: PlayListState = {
-  musicList: { title: '', id: 0, musics: [] },
+  genre: {
+    genre_title: '',
+    genre_id: 0,
+    music_list: [],
+  },
   status: '',
 };
 
@@ -29,7 +33,7 @@ export const musicPlayListSlice = createSlice({
     // 비동기로 가져올떄 PlayList에 렌더링 할 아이템 속성 변경
     builder.addCase(fetchmusicList.fulfilled, (state: PlayListState, action: PayloadAction<PlayList>) => {
       state.status = 'Complete';
-      state.musicList = action.payload;
+      state.genre = action.payload;
     });
 
     builder.addCase(fetchmusicList.rejected, (state: PlayListState) => {

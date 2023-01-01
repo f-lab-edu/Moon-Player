@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import PlayerFooter from 'components/Music/Player/Footer';
-import PlayerMusic from 'components/Music/Player/List/Item/Item';
+import Footer from 'components/Music/Player/Footer';
+import Music from 'components/Music/Player/List/Item/Item';
 import Text from 'components/Global/style/Text';
 import ScrollBox from 'components/Global/style/ScrollBox';
 import { useAppSelector } from 'hooks/useAppDispatch';
@@ -9,18 +9,18 @@ import { useAppSelector } from 'hooks/useAppDispatch';
 export const Player = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
   const playerMusics =
-    playerSelector.playerItems.length > 0 ? (
-      playerSelector.playerItems.map(({ video_title, video_img }, index) => (
-        <PlayerMusic video_title={video_title} video_img={video_img} key={index} number={++index} />
+    playerSelector.list.length > 0 ? (
+      playerSelector.list.map(({ name, img_url }, index) => (
+        <Music name={name} img_url={img_url} key={index} number={++index} />
       ))
     ) : (
-      <PlayerEmptyText>재생 목록이 비어있습니다.</PlayerEmptyText>
+      <EmptyText>재생 목록이 비어있습니다.</EmptyText>
     );
   return (
     <Root>
-      <PlayerTitle>재생 목록</PlayerTitle>
-      <PlayerContent>{playerMusics}</PlayerContent>
-      <PlayerFooter />
+      <Title>재생 목록</Title>
+      <List>{playerMusics}</List>
+      <Footer />
     </Root>
   );
 };
@@ -36,16 +36,16 @@ const Root = styled.div`
     margin: 50px;
   }
 `;
-const PlayerContent = styled(ScrollBox)`
+const List = styled(ScrollBox)`
   height: 30vh;
   padding-right: 10px;
 `;
 
-const PlayerTitle = styled(Text)`
+const Title = styled(Text)`
   font-size: 20px;
   color: white;
 `;
-const PlayerEmptyText = styled(Text)`
+const EmptyText = styled(Text)`
   color: white;
   font-size: 20px;
 `;
