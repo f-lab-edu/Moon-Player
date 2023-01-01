@@ -3,7 +3,7 @@ import * as auth from 'utils/auth';
 import { Form } from './Form';
 
 import userEvent from '@testing-library/user-event';
-import { mockAssignUrl } from 'mockSetting/location/assign.js';
+import { mockAssignUrl } from 'mocks/settings/location/assign.js';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import MusicPage from 'pages/Music';
 
