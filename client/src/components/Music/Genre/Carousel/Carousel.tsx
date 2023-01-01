@@ -6,8 +6,8 @@ import Slider from 'react-slick';
 import { Item } from 'components/Music/Genre/Item/Item';
 
 export const Carousel = ({ data }) => {
-  const genreItems = data.map(({ genre_img, genre_id }) => (
-    <Item genre_img={genre_img} genre_id={genre_id} key={genre_id}></Item>
+  const genreItems = data.map(({ image_url, genre_id }) => (
+    <Item genre_img={image_url} genre_id={genre_id} key={genre_id}></Item>
   ));
   return (
     <Root>

@@ -11,12 +11,12 @@ interface InfoProps {
 
 export const Music = ({ player }: InfoProps) => {
   const image =
-    player.music.video_title.length > 0 ? (
-      <MusicImage img={player.music.video_img} />
+    player.music.name.length > 0 ? (
+      <MusicImage img={player.music.img_url} />
     ) : (
       <MusicEmptyImage img="https://via.placeholder.com/400?text=No+Selected+Music" />
     );
-  const title = player.music && player.music.video_title;
+  const title = player.music && player.music.name;
 
   return (
     <Root direction="column" justifyContent="center" alignItems="center">

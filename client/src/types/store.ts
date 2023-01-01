@@ -1,29 +1,28 @@
 export interface PlayerState {
-  playerItems: Array<Music>;
-  playmusic: Music;
+  list: Array<Music>;
+  music: Music;
 }
 
 //  비동기 데이터
 export interface GenreState {
-  musicList: Array<Genre>;
+  list: Array<Genre>;
   status: string;
 }
 
 export interface PlayListState {
-  musicList: PlayList;
+  genre: PlayList;
   status: string;
+}
+export interface PlayList {
+  genre_title: string;
+  genre_id: number;
+  music_list: Array<Music>;
 }
 
 export interface Genre {
   genre: string;
   genre_img: string;
   genre_id: number;
-}
-
-export interface PlayList {
-  title: string;
-  id: number;
-  musics: Array<Music>;
 }
 
 export interface LayoutState {
@@ -36,9 +35,9 @@ export interface Alarm {
 }
 
 export interface Music {
-  video_link: string;
-  video_title: string;
-  video_img: string;
+  source_url: string;
+  name: string;
+  img_url: string;
   id: number;
 }
 export interface UserState {

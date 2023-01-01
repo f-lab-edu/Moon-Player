@@ -8,11 +8,11 @@ import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 
 export const PlayList = () => {
   const dispatch = useAppDispatch();
-  const { musics, title } = useAppSelector((state) => state.music.playList.musicList);
+  const { music_list, genre_title } = useAppSelector((state) => state.music.playList.genre);
   const playListMusics =
-    musics &&
-    musics.map(({ video_title, id, video_img }) => (
-      <PlaylistItem key={id} id={id} video_title={video_title} video_img={video_img}></PlaylistItem>
+    music_list &&
+    music_list.map(({ name, id, img_url }) => (
+      <PlaylistItem key={id} id={id} name={name} img_url={img_url}></PlaylistItem>
     ));
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const PlayList = () => {
 
   return (
     <Root>
-      <PlayListTitle>{title}</PlayListTitle>
+      <PlayListTitle>{genre_title}</PlayListTitle>
       {playListMusics}
     </Root>
   );

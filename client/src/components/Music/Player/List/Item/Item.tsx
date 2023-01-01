@@ -12,19 +12,19 @@ import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import { Music } from 'types/store';
 import { useAlarm } from 'hooks/useAlarm';
 interface ItemProps {
-  video_title: string;
-  video_img: string;
+  name: string;
+  img_url: string;
   number: number;
 }
 
-export const Item = ({ video_title, video_img, number }: ItemProps) => {
+export const Item = ({ name, img_url, number }: ItemProps) => {
   const { element, handleScrollElement } = useMoveDownScroll();
   const { handleOpen } = useAlarm();
 
   const dispatch = useAppDispatch();
   const playerSelector = useAppSelector((state) => state.music.player);
-  const isCurrentMusic = playerSelector.playmusic.video_title === video_title ? true : false;
-  const currentPlayerItemslength = playerSelector.playerItems.length;
+  const isCurrentMusic = playerSelector.music.name === name ? true : false;
+  const currentPlayerItemslength = playerSelector.list.length;
   const prevPlayerItemslength = usePrevious(currentPlayerItemslength) as number;
   useEffect(() => {
     if (prevPlayerItemslength > currentPlayerItemslength) return;
@@ -32,13 +32,11 @@ export const Item = ({ video_title, video_img, number }: ItemProps) => {
   }, [currentPlayerItemslength]);
 
   const handleRemove = () => {
-    return isCurrentMusic
-      ? handleOpen('현재 선택중인 음악은 삭제할수없습니다.')
-      : dispatch(handleRemoveMusic(video_title));
+    return isCurrentMusic ? handleOpen('현재 선택중인 음악은 삭제할수없습니다.') : dispatch(handleRemoveMusic(name));
   };
 
   const handlePlayMusic = () => {
-    const selectedMusic = playerSelector.playerItems.find((music: Music) => music.video_title === video_title);
+    const selectedMusic = playerSelector.list.find((music: Music) => music.name === name);
     if (!selectedMusic) return;
     dispatch(handleAddMusic(selectedMusic));
   };
@@ -46,8 +44,8 @@ export const Item = ({ video_title, video_img, number }: ItemProps) => {
   return (
     <Root ref={element} isActive={isCurrentMusic} direction="row" justifyContent="space-between" alignItems="center">
       <MusicNumber>{number}</MusicNumber>
-      <MusicImage onClick={handlePlayMusic} img={video_img} />
-      <MusicTitle onClick={handlePlayMusic}>{video_title}</MusicTitle>
+      <MusicImage onClick={handlePlayMusic} img={img_url} />
+      <MusicTitle onClick={handlePlayMusic}>{name}</MusicTitle>
       <IconButton color="white" onClick={handleRemove} size="2x" icon="trash"></IconButton>
     </Root>
   );

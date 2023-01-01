@@ -1,245 +1,245 @@
 {
-  "title": "트와이스 플레이 리스트",
-  "id": 8,
-  "musics": [
+  "genre_title": "트와이스 플레이 리스트",
+  "genre_id": 8,
+  "music_list": [
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=0rtV5esQT6I",
-     "video_title": "TWICE(트와이스) \"OOH-AHH하게\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/0rtV5esQT6I\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA0h64191yWHSUjPv0BdPOaM42GqA",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=0rtV5esQT6I",
+     "name": "TWICE(트와이스) \"OOH-AHH하게\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/0rtV5esQT6I\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA0h64191yWHSUjPv0BdPOaM42GqA",
      "id": 1
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=c7rCyll5AeY",
-     "video_title": "TWICE(트와이스) \"CHEER UP\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/c7rCyll5AeY\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBa-R4rzx0V8VVOhMRHCy4-ZquwSQ",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=c7rCyll5AeY",
+     "name": "TWICE(트와이스) \"CHEER UP\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/c7rCyll5AeY\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBa-R4rzx0V8VVOhMRHCy4-ZquwSQ",
      "id": 2
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=ePpPVE-GGJw",
-     "video_title": "TWICE(트와이스) \"TT(티티)\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/ePpPVE-GGJw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCSU5yjbK4BVUuHjST0Y96UgVK_g",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=ePpPVE-GGJw",
+     "name": "TWICE(트와이스) \"TT(티티)\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/ePpPVE-GGJw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCSU5yjbK4BVUuHjST0Y96UgVK_g",
      "id": 3
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=8A2t_tAjMz8",
-     "video_title": "TWICE(트와이스) \"KNOCK KNOCK\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/8A2t_tAjMz8\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAdXyAL2b4btF6bZyaTwWJDqZ-Z0w",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=8A2t_tAjMz8",
+     "name": "TWICE(트와이스) \"KNOCK KNOCK\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/8A2t_tAjMz8\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAdXyAL2b4btF6bZyaTwWJDqZ-Z0w",
      "id": 4
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=VQtonf1fv_s",
-     "video_title": "TWICE(트와이스) \"SIGNAL\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/VQtonf1fv_s\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB_2CwPvtOKnpTor69jF4M9nA5GMw",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=VQtonf1fv_s",
+     "name": "TWICE(트와이스) \"SIGNAL\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/VQtonf1fv_s\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB_2CwPvtOKnpTor69jF4M9nA5GMw",
      "id": 5
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=t35H2BVq490",
-     "video_title": "TWICE「TT -Japanese ver.-」Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/t35H2BVq490\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD1TqgyuhnQqdGQU9egNnKy6rbB9w",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=t35H2BVq490",
+     "name": "TWICE「TT -Japanese ver.-」Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/t35H2BVq490\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD1TqgyuhnQqdGQU9egNnKy6rbB9w",
      "id": 6
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=HuoOEry-Yc4",
-     "video_title": "TWICE「One More Time」Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/HuoOEry-Yc4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDK97QB5wrDgG8TSCrfngfpiH_5sg",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=HuoOEry-Yc4",
+     "name": "TWICE「One More Time」Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/HuoOEry-Yc4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDK97QB5wrDgG8TSCrfngfpiH_5sg",
      "id": 7
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=V2hlQkVJZhE",
-     "video_title": "TWICE(트와이스) \"LIKEY\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/V2hlQkVJZhE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB2rDZoBVDey9inqJyE2rPGwDZ0TA",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=V2hlQkVJZhE",
+     "name": "TWICE(트와이스) \"LIKEY\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/V2hlQkVJZhE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB2rDZoBVDey9inqJyE2rPGwDZ0TA",
      "id": 8
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=rRzxEiBLQCA",
-     "video_title": "TWICE(트와이스) \"Heart Shaker\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/rRzxEiBLQCA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBe6TVzeGSsGjXFCZPlXaz4ZO5ueg",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=rRzxEiBLQCA",
+     "name": "TWICE(트와이스) \"Heart Shaker\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/rRzxEiBLQCA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBe6TVzeGSsGjXFCZPlXaz4ZO5ueg",
      "id": 9
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=zi_6oaQyckM",
-     "video_title": "TWICE(트와이스) \"Merry & Happy\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/zi_6oaQyckM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCeckRGMG1h-GYdBeIAL45-zVt2JQ",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=zi_6oaQyckM",
+     "name": "TWICE(트와이스) \"Merry & Happy\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/zi_6oaQyckM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCeckRGMG1h-GYdBeIAL45-zVt2JQ",
      "id": 10
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=wQ_POfToaVY",
-     "video_title": "TWICE「Candy Pop」Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/wQ_POfToaVY\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBd73QtZ-2Ijqb8o0yxPWgZ1Hemrw",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=wQ_POfToaVY",
+     "name": "TWICE「Candy Pop」Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/wQ_POfToaVY\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBd73QtZ-2Ijqb8o0yxPWgZ1Hemrw",
      "id": 11
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=r1CMjQ0QJ1E",
-     "video_title": "TWICE「BRAND NEW GIRL」Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/r1CMjQ0QJ1E\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCd-R6PIgQbXEjXRyFi1HBJCEhPrg",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=r1CMjQ0QJ1E",
+     "name": "TWICE「BRAND NEW GIRL」Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/r1CMjQ0QJ1E\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCd-R6PIgQbXEjXRyFi1HBJCEhPrg",
      "id": 12
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=i0p1bmr0EmE",
-     "video_title": "TWICE(트와이스) \"What is Love?\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/i0p1bmr0EmE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB7MiPGnvTaGNT7EW3Y8GiX3EK-lw",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=i0p1bmr0EmE",
+     "name": "TWICE(트와이스) \"What is Love?\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/i0p1bmr0EmE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB7MiPGnvTaGNT7EW3Y8GiX3EK-lw",
      "id": 13
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=DdLYSziSXII",
-     "video_title": "TWICE「Wake Me Up」Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/DdLYSziSXII\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLACJwGCb01-OPzVBXhzz7-K6A5QZw",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=DdLYSziSXII",
+     "name": "TWICE「Wake Me Up」Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/DdLYSziSXII\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLACJwGCb01-OPzVBXhzz7-K6A5QZw",
      "id": 14
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=X3H-4crGD6k",
-     "video_title": "TWICE「I WANT YOU BACK」Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/X3H-4crGD6k\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCyS8jhfypHghSXa_5kkks0xTzoA",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=X3H-4crGD6k",
+     "name": "TWICE「I WANT YOU BACK」Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/X3H-4crGD6k\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBCyS8jhfypHghSXa_5kkks0xTzoA",
      "id": 15
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=Fm5iP0S1z9w",
-     "video_title": "TWICE(트와이스) \"Dance The Night Away\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/Fm5iP0S1z9w\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDKEzuXkAToyu6fKqcZCeUN2L7gFQ",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=Fm5iP0S1z9w",
+     "name": "TWICE(트와이스) \"Dance The Night Away\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/Fm5iP0S1z9w\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDKEzuXkAToyu6fKqcZCeUN2L7gFQ",
      "id": 16
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=CMNahhgR_ss",
-     "video_title": "TWICE「BDZ」Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/CMNahhgR_ss\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCccmAd6IKg5sQXdTO28yVTp7h5Bg",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=CMNahhgR_ss",
+     "name": "TWICE「BDZ」Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/CMNahhgR_ss\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCccmAd6IKg5sQXdTO28yVTp7h5Bg",
      "id": 17
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=mAKsZ26SabQ",
-     "video_title": "TWICE(트와이스) \"YES or YES\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/mAKsZ26SabQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA6pWVcQdo4mJd6XKsJVltmKANC-Q",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=mAKsZ26SabQ",
+     "name": "TWICE(트와이스) \"YES or YES\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/mAKsZ26SabQ\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA6pWVcQdo4mJd6XKsJVltmKANC-Q",
      "id": 18
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=CfUGjK6gGgs",
-     "video_title": "TWICE(트와이스) \"올해 제일 잘한 일\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/CfUGjK6gGgs\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBbLj7Lu-XFd_CuakhaQLfQ4OuVBg",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=CfUGjK6gGgs",
+     "name": "TWICE(트와이스) \"올해 제일 잘한 일\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/CfUGjK6gGgs\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBbLj7Lu-XFd_CuakhaQLfQ4OuVBg",
      "id": 19
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=N7MKlhS2ysU",
-     "video_title": "TWICE「LIKEY -Japanese ver.-」Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/N7MKlhS2ysU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAumuPg4W7_t8T2NFNarjdZeEKHHA",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=N7MKlhS2ysU",
+     "name": "TWICE「LIKEY -Japanese ver.-」Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/N7MKlhS2ysU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAumuPg4W7_t8T2NFNarjdZeEKHHA",
      "id": 20
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=3zQXMPbK5jU",
-     "video_title": "TWICE「What is Love? -Japanese ver.-」Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/3zQXMPbK5jU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAN5_kWxsXgoQt-uU83XaUyfL2leQ",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=3zQXMPbK5jU",
+     "name": "TWICE「What is Love? -Japanese ver.-」Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/3zQXMPbK5jU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAN5_kWxsXgoQt-uU83XaUyfL2leQ",
      "id": 21
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=kOHB85vDuow",
-     "video_title": "TWICE(트와이스) \"FANCY\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/kOHB85vDuow\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDBvzZcGVY5iZH9FdkC3Ks_FtHZSA",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=kOHB85vDuow",
+     "name": "TWICE(트와이스) \"FANCY\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/kOHB85vDuow\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDBvzZcGVY5iZH9FdkC3Ks_FtHZSA",
      "id": 22
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=3n9rDwpa6QA",
-     "video_title": "TWICE「HAPPY HAPPY」Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/3n9rDwpa6QA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDEBHa2TH6DaRwRHCa9tvvgy2xLkw",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=3n9rDwpa6QA",
+     "name": "TWICE「HAPPY HAPPY」Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/3n9rDwpa6QA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDEBHa2TH6DaRwRHCa9tvvgy2xLkw",
      "id": 23
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=ZdKYi5ekshM",
-     "video_title": "TWICE「Breakthrough」Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/ZdKYi5ekshM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDpR-ZlfKOTzfmPxziz7ua38Uzugg",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=ZdKYi5ekshM",
+     "name": "TWICE「Breakthrough」Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/ZdKYi5ekshM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDpR-ZlfKOTzfmPxziz7ua38Uzugg",
      "id": 24
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=3ymwOvzhwHs",
-     "video_title": "TWICE(트와이스) \"Feel Special\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/3ymwOvzhwHs\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAsMoM5dnLe480vr5CPVvWSF6fg8w",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=3ymwOvzhwHs",
+     "name": "TWICE(트와이스) \"Feel Special\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/3ymwOvzhwHs\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAsMoM5dnLe480vr5CPVvWSF6fg8w",
      "id": 25
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=zQELp93xxfo",
-     "video_title": "TWICE 「Fake & True」 Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/zQELp93xxfo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD3SIcL3tOAkmQFnbsSB7gO-sB0tA",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=zQELp93xxfo",
+     "name": "TWICE 「Fake & True」 Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/zQELp93xxfo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD3SIcL3tOAkmQFnbsSB7gO-sB0tA",
      "id": 26
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=mH0_XpSHkZo",
-     "video_title": "TWICE(트와이스) \"MORE & MORE\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/mH0_XpSHkZo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCSj0FWw50vVV42c19quxnLJJDg2w",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=mH0_XpSHkZo",
+     "name": "TWICE(트와이스) \"MORE & MORE\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/mH0_XpSHkZo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCSj0FWw50vVV42c19quxnLJJDg2w",
      "id": 27
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=kRT174IdxuM",
-     "video_title": "TWICE 「Fanfare」Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/kRT174IdxuM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC11UHrBEq9edXI1y6Z4-qww-f-wA",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=kRT174IdxuM",
+     "name": "TWICE 「Fanfare」Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/kRT174IdxuM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC11UHrBEq9edXI1y6Z4-qww-f-wA",
      "id": 28
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=CM4CkVFmTds",
-     "video_title": "TWICE(트와이스) \"I CAN'T STOP ME\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/CM4CkVFmTds\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBfd7QADIduQSR2ESLIp1k5gxxNDg",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=CM4CkVFmTds",
+     "name": "TWICE(트와이스) \"I CAN'T STOP ME\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/CM4CkVFmTds\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBfd7QADIduQSR2ESLIp1k5gxxNDg",
      "id": 29
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=sLmLwgxnPUE",
-     "video_title": "TWICE 「BETTER」 Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/sLmLwgxnPUE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBA0lq9NNhvjUhaGUz58bGp0rVrxw",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=sLmLwgxnPUE",
+     "name": "TWICE 「BETTER」 Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/sLmLwgxnPUE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBA0lq9NNhvjUhaGUz58bGp0rVrxw",
      "id": 30
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=BSS8Y-0hOlY",
-     "video_title": "TWICE 「Kura Kura」 Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/BSS8Y-0hOlY\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAqLNTm_lQ1yDpX30aAXKHbD0mgdA",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=BSS8Y-0hOlY",
+     "name": "TWICE 「Kura Kura」 Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/BSS8Y-0hOlY\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAqLNTm_lQ1yDpX30aAXKHbD0mgdA",
      "id": 31
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=XA2YEHn-A8Q",
-     "video_title": "TWICE(트와이스) \"Alcohol-Free\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/XA2YEHn-A8Q\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC6sOnK8AHb3cNlqnRdkRrUzUcKkg",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=XA2YEHn-A8Q",
+     "name": "TWICE(트와이스) \"Alcohol-Free\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/XA2YEHn-A8Q\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC6sOnK8AHb3cNlqnRdkRrUzUcKkg",
      "id": 32
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=fmOEKOjyDxU",
-     "video_title": "TWICE 「Perfect World」 Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/fmOEKOjyDxU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDLnUz0HhvePFbYOloIiJ9PwLoBiw",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=fmOEKOjyDxU",
+     "name": "TWICE 「Perfect World」 Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/fmOEKOjyDxU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDLnUz0HhvePFbYOloIiJ9PwLoBiw",
      "id": 33
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=f5_wn8mexmM",
-     "video_title": "TWICE(트와이스) \"The Feels\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/f5_wn8mexmM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC-tykU4D6qLBX-nq1pKpdhgUkOFw",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=f5_wn8mexmM",
+     "name": "TWICE(트와이스) \"The Feels\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/f5_wn8mexmM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC-tykU4D6qLBX-nq1pKpdhgUkOFw",
      "id": 34
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=vPwaXytZcgI",
-     "video_title": "TWICE(트와이스) “SCIENTIST” M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/vPwaXytZcgI\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC3CH5s5NH1GQxLShaHf0NSrc6W1g",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=vPwaXytZcgI",
+     "name": "TWICE(트와이스) “SCIENTIST” M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/vPwaXytZcgI\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC3CH5s5NH1GQxLShaHf0NSrc6W1g",
      "id": 35
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=VcOSUOpACq0",
-     "video_title": "TWICE 「Doughnut」 Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/VcOSUOpACq0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCHQoOgK9NvqNQ1chVCHZU-8yskbA",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=VcOSUOpACq0",
+     "name": "TWICE 「Doughnut」 Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/VcOSUOpACq0\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCHQoOgK9NvqNQ1chVCHZU-8yskbA",
      "id": 36
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=7MHlhHaLcTA",
-     "video_title": "TWICE「SCIENTIST -Japanese ver.-」Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/7MHlhHaLcTA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBvW6rt9CROxriu0_PNBv8VUPHCIg",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=7MHlhHaLcTA",
+     "name": "TWICE「SCIENTIST -Japanese ver.-」Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/7MHlhHaLcTA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBvW6rt9CROxriu0_PNBv8VUPHCIg",
      "id": 37
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=f6YDKF0LVWw",
-     "video_title": "NAYEON \"POP!\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/f6YDKF0LVWw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA3gPMQPRHFz0wCxj4zv4hGzPPD8w",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=f6YDKF0LVWw",
+     "name": "NAYEON \"POP!\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/f6YDKF0LVWw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA3gPMQPRHFz0wCxj4zv4hGzPPD8w",
      "id": 38
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=fMIn43MiwG8",
-     "video_title": "TWICE 「Celebrate」 Music Video",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/fMIn43MiwG8\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCBpmqmGyHCWNYa3rwo2nybgRNnXw",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=fMIn43MiwG8",
+     "name": "TWICE 「Celebrate」 Music Video",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/fMIn43MiwG8\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCBpmqmGyHCWNYa3rwo2nybgRNnXw",
      "id": 39
     },
     {
-     "video_link": "https:\/\/www.youtube.com\/watch?v=k6jqx9kZgPM",
-     "video_title": "TWICE \"Talk that Talk\" M\/V",
-     "video_img": "https:\/\/i.ytimg.com\/vi\/k6jqx9kZgPM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDz7s0jObXsoG14DZWRMsVoQ8XxLA",
+     "source_url": "https:\/\/www.youtube.com\/watch?v=k6jqx9kZgPM",
+     "name": "TWICE \"Talk that Talk\" M\/V",
+     "img_url": "https:\/\/i.ytimg.com\/vi\/k6jqx9kZgPM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDz7s0jObXsoG14DZWRMsVoQ8XxLA",
      "id": 40
     }
    ]
