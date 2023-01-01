@@ -11,8 +11,8 @@ describe('Genre Item 컴포넌트 기능 테스트', () => {
     const image = screen.getByRole('img');
     await user.click(image);
     await waitFor(() => {
-      const playListMusicid = store.getState().music.playList.musicList.id;
-      expect(playListMusicid).toEqual(1);
+      const playListGenre_id = store.getState().music.playList.genre.genre_id;
+      expect(playListGenre_id).toEqual(1);
     });
   });
   test('Genre Item에는 커서가 존재해야만하고 Default Opacity는 0.2이다. 클릭하면 Opacity는 1이 된다.', async () => {

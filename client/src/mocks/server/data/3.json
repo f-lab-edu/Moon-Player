@@ -1,222 +1,224 @@
 {
-  "title": "Mr sucide PlayList",
-  "id": 3,
-  "musics": [
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=uhA55hYnoHw",
-      "video_title": "Seven Lions x Illenium x Said The Sky - Rush Over Me (feat. HALIENE)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/uhA55hYnoHw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDb06XvGg2OtlQbh8Cr0Ko-ldDfHA",
-      "id": 1
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=PAvdqEsobaw",
-      "video_title": "Florence And The Machine - Cosmic Love (Seven Lions Remix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/PAvdqEsobaw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLD8FZRCbGtxYTO3i6aW2cpj3DQ7FA",
-      "id": 2
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=506NS0tDylw",
-      "video_title": "Above &amp; Beyond - You Got To Go (Seven Lions Dubstep Remix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/506NS0tDylw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBG2PLhWl-b_G3iCABzlrVWGIORWQ",
-      "id": 3
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=7-9DJX8NlHU",
-      "video_title": "Seven Lions - Freesol (feat. Skyler Stonestreet)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/7-9DJX8NlHU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDzlh9JO7iZHdvUUkPVOef8zpTghQ",
-      "id": 4
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=Qa4u4D32x4U",
-      "video_title": "Seven Lions - Where I Won't Be Found (feat. NÉONHÈART)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/Qa4u4D32x4U\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLA3Idj6tJ0Z3R6pqeGybCiatsleEw",
-      "id": 5
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=IWZ6g-xP9YM",
-      "video_title": "Seven Lions - Falling Away (feat. Lights) (MitiS Remix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/IWZ6g-xP9YM\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBfxu-Ag8lhEzkiso9eauwKf7kHGg",
-      "id": 6
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=jDplwu9kH9Y",
-      "video_title": "Velvetine - The Great Divide (Seven Lions Remix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/jDplwu9kH9Y\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAuppWMlIUUkajWEHe_eyAl0p4Pkg",
-      "id": 7
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=RwVoDh1FvDw",
-      "video_title": "Seven Lions - Keep It Close (feat. Kerli)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/RwVoDh1FvDw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDbtcCQw03Xq5Zl9s3fZbZeBxLrMA",
-      "id": 8
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=jgJ6AmhvmEU",
-      "video_title": "Seven Lions - Silent Skies (feat. Karra)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/jgJ6AmhvmEU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAp-mjWF2PLSIu6s51jOrH6V8emMg",
-      "id": 9
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=jS3FveGPGEo",
-      "video_title": "Seven Lions - She Was (feat. Birds Of Paradise)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/jS3FveGPGEo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDUcdxK5rn0eFnjfyBOwR-K9AXosA",
-      "id": 10
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=-N__dB1dbtY",
-      "video_title": "Seven Lions - Start Again (feat. Fiora)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/-N__dB1dbtY\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDZ3NPe8Uf2KJBhFvdgXPNwD3_iYQ",
-      "id": 11
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=ZItRY-14ZBA",
-      "video_title": "SUPERBUS - All Alone (Seven Lions Remix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/ZItRY-14ZBA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLA3DxsSxc1E-JUhzpgsGfodkCXmHQ",
-      "id": 12
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=hWWopjG9URo",
-      "video_title": "Oceanlab - Satellite (Seven Lions Remix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/hWWopjG9URo\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBATL34alf4PagqefEeOJXzeBQfCg",
-      "id": 13
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=XKMEARGmliA",
-      "video_title": "Röyksopp - Running To The Sea (feat. Susanne Sundfør) (Seven Lions Remix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/XKMEARGmliA\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDIP8wHBasT0cxDdXUTYSnoXl2giQ",
-      "id": 14
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=vIo14jKF9uI",
-      "video_title": "Seven Lions - Isis",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/vIo14jKF9uI\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBYOu5QZGON8qww5-GRxQ2KU1snNQ",
-      "id": 15
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=IuD9ic7j55I",
-      "video_title": "Above &amp; Beyond - On My Way To Heaven (feat. Richard Bedford) (Seven Lions Remix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/IuD9ic7j55I\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBiZMcX7s2QwsI0egytEZQuDRlbvA",
-      "id": 16
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=fZmZGMVIIIY",
-      "video_title": "Seven Lions - Days To Come (feat. Fiora)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/fZmZGMVIIIY\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDvcn7lHi9jsYHBqBLYunIJFh6LIg",
-      "id": 17
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=_rZENzVg_1A",
-      "video_title": "Seven Lions - Calling You Home (feat. RUNN)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/_rZENzVg_1A\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBrn2dwnWK21laMqxvf-JviyTAJNQ",
-      "id": 18
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=oYx8TmXfcPI",
-      "video_title": "Seven Lions - Freesol (Dabin Remix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/oYx8TmXfcPI\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLD7IE56pBD6W5XNXnkEaD4N5EXLQA",
-      "id": 19
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=GLTh-TSJSNE",
-      "video_title": "Seven Lions - Below Us (feat. Shaz Sparks)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/GLTh-TSJSNE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCGjgtajQA7gPOA9d0iarf28niabQ",
-      "id": 20
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=Qg9LZgzyNxc",
-      "video_title": "Seven Lions, Tritonal &amp; Kill The Noise - Horizon (feat. HALIENE)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/Qg9LZgzyNxc\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAdrARhO8wxZGEYvwOajEds6tICDg",
-      "id": 21
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=7JVBGftoSE8",
-      "video_title": "Seven Lions - Without You My Love (Trivecta Remix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/7JVBGftoSE8\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDVdQ7HbiDc7WdzNWQJ_JzA2qYI3g",
-      "id": 22
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=u5trpgQyM3s",
-      "video_title": "Seven Lions - Steps of Deep Slumber",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/u5trpgQyM3s\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLC0gJOyK43Q_n-2fWAvu5FERk7qNQ",
-      "id": 23
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=BrLjIhTrRMg",
-      "video_title": "Above &amp; Beyond - Sahara Love (feat. Zoë Johnston) (Seven Lions Remix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/BrLjIhTrRMg\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAYq8iBl12a-WxexiPYxgwPKAmKAQ",
-      "id": 24
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=s0-saiiP6iw",
-      "video_title": "Seven Lions - Fevers (feat. Minnesota &amp; Mimi Page)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/s0-saiiP6iw\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDqDcmSr4vYmEHyr-nsSij4DzNm7Q",
-      "id": 25
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=zZjGSpUqxEs",
-      "video_title": "Seven Lions - The Truth",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/zZjGSpUqxEs\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCK0aNIIYHDhBdbgozEO7_ZtCDgkA",
-      "id": 26
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=12RFVdBhUtk",
-      "video_title": "Seven Lions - Senseless (feat. Tyler Graves)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/12RFVdBhUtk\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCU7YFMaqxvFomlbCR5uFItzD7CRA",
-      "id": 27
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=k47v460w2w8",
-      "video_title": "Seven Lions - Isis (VIP Mix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/k47v460w2w8\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAljuNElmffyVp4dvMrQSZ4JS-gaA",
-      "id": 28
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=V5ISygdKaDk",
-      "video_title": "Seven Lions &amp; Jason Ross - Ocean (Feat. Jonathan Mendelsohn) (Grant Remix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/V5ISygdKaDk\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLB0Jw-x9oeplXdG1uDt1TyBQ5Wx5g",
-      "id": 29
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=WevHaO8nHho",
-      "video_title": "Seven Lions - Polarized (feat. Shaz Sparks) (Matrix &amp; Futurebound Remix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/WevHaO8nHho\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBohqwSzh50jkq-xU3iq-Vpx10uBA",
-      "id": 30
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=3S0VpGX6mjY",
-      "video_title": "Seven Lions &amp; HALIENE - What's Done Is Done (Delta Heavy Remix)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/3S0VpGX6mjY\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLC5UOIlA548Ps-KxhkZwGo-a9udJg",
-      "id": 31
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=leaN9R3Mac4",
-      "video_title": "Seven Lions - Only Now (feat. Tyler Graves)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/leaN9R3Mac4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAYZtMzoKAMlJY9xhhMpsxKZMbARw",
-      "id": 32
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=efzD8prCs-w",
-      "video_title": "Gryffin &amp; Seven Lions - Need Your Love (feat. Noah Kahan)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/efzD8prCs-w\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBA8O9ztt1XRzru7mbwIFl-BbP9MQ",
-      "id": 33
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=pB7J2OZqrEU",
-      "video_title": "Seven Lions &amp; Jason Ross - See You Again (feat. Fiora)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/pB7J2OZqrEU\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCPELesBd-t8NJ3BmjtYGm3pj1awg",
-      "id": 34
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=XgvHU3L51JE",
-      "video_title": "Seven Lions - Before You (feat. Dia Frampton)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/XgvHU3L51JE\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAz-HUot6rg-JynMOAsE8pXT9AKlA",
-      "id": 35
-    },
-    {
-      "video_link": "https:\/\/www.youtube.com\/watch?v=vBcgLvjzNR4",
-      "video_title": "Seven Lions - Between (feat. Eli Teplin)",
-      "video_img": "https:\/\/i.ytimg.com\/vi\/vBcgLvjzNR4\/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLALU5Dkei50TK9_U0xkZNJrnD2Xvg",
-      "id": 36
-    }
-  ]
+  "music": {
+    "genre_title": "Mr sucide PlayList",
+    "genre_id": 3,
+    "music_list": [
+      {
+        "source_url": "https://www.youtube.com/watch?v=uhA55hYnoHw",
+        "name": "Seven Lions x Illenium x Said The Sky - Rush Over Me (feat. HALIENE)",
+        "img_url": "https://i.ytimg.com/vi/uhA55hYnoHw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDb06XvGg2OtlQbh8Cr0Ko-ldDfHA",
+        "id": 1
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=PAvdqEsobaw",
+        "name": "Florence And The Machine - Cosmic Love (Seven Lions Remix)",
+        "img_url": "https://i.ytimg.com/vi/PAvdqEsobaw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLD8FZRCbGtxYTO3i6aW2cpj3DQ7FA",
+        "id": 2
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=506NS0tDylw",
+        "name": "Above &amp; Beyond - You Got To Go (Seven Lions Dubstep Remix)",
+        "img_url": "https://i.ytimg.com/vi/506NS0tDylw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBG2PLhWl-b_G3iCABzlrVWGIORWQ",
+        "id": 3
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=7-9DJX8NlHU",
+        "name": "Seven Lions - Freesol (feat. Skyler Stonestreet)",
+        "img_url": "https://i.ytimg.com/vi/7-9DJX8NlHU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDzlh9JO7iZHdvUUkPVOef8zpTghQ",
+        "id": 4
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=Qa4u4D32x4U",
+        "name": "Seven Lions - Where I Won't Be Found (feat. NÉONHÈART)",
+        "img_url": "https://i.ytimg.com/vi/Qa4u4D32x4U/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLA3Idj6tJ0Z3R6pqeGybCiatsleEw",
+        "id": 5
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=IWZ6g-xP9YM",
+        "name": "Seven Lions - Falling Away (feat. Lights) (MitiS Remix)",
+        "img_url": "https://i.ytimg.com/vi/IWZ6g-xP9YM/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBfxu-Ag8lhEzkiso9eauwKf7kHGg",
+        "id": 6
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=jDplwu9kH9Y",
+        "name": "Velvetine - The Great Divide (Seven Lions Remix)",
+        "img_url": "https://i.ytimg.com/vi/jDplwu9kH9Y/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAuppWMlIUUkajWEHe_eyAl0p4Pkg",
+        "id": 7
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=RwVoDh1FvDw",
+        "name": "Seven Lions - Keep It Close (feat. Kerli)",
+        "img_url": "https://i.ytimg.com/vi/RwVoDh1FvDw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDbtcCQw03Xq5Zl9s3fZbZeBxLrMA",
+        "id": 8
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=jgJ6AmhvmEU",
+        "name": "Seven Lions - Silent Skies (feat. Karra)",
+        "img_url": "https://i.ytimg.com/vi/jgJ6AmhvmEU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAp-mjWF2PLSIu6s51jOrH6V8emMg",
+        "id": 9
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=jS3FveGPGEo",
+        "name": "Seven Lions - She Was (feat. Birds Of Paradise)",
+        "img_url": "https://i.ytimg.com/vi/jS3FveGPGEo/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDUcdxK5rn0eFnjfyBOwR-K9AXosA",
+        "id": 10
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=-N__dB1dbtY",
+        "name": "Seven Lions - Start Again (feat. Fiora)",
+        "img_url": "https://i.ytimg.com/vi/-N__dB1dbtY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDZ3NPe8Uf2KJBhFvdgXPNwD3_iYQ",
+        "id": 11
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=ZItRY-14ZBA",
+        "name": "SUPERBUS - All Alone (Seven Lions Remix)",
+        "img_url": "https://i.ytimg.com/vi/ZItRY-14ZBA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLA3DxsSxc1E-JUhzpgsGfodkCXmHQ",
+        "id": 12
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=hWWopjG9URo",
+        "name": "Oceanlab - Satellite (Seven Lions Remix)",
+        "img_url": "https://i.ytimg.com/vi/hWWopjG9URo/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBATL34alf4PagqefEeOJXzeBQfCg",
+        "id": 13
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=XKMEARGmliA",
+        "name": "Röyksopp - Running To The Sea (feat. Susanne Sundfør) (Seven Lions Remix)",
+        "img_url": "https://i.ytimg.com/vi/XKMEARGmliA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDIP8wHBasT0cxDdXUTYSnoXl2giQ",
+        "id": 14
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=vIo14jKF9uI",
+        "name": "Seven Lions - Isis",
+        "img_url": "https://i.ytimg.com/vi/vIo14jKF9uI/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBYOu5QZGON8qww5-GRxQ2KU1snNQ",
+        "id": 15
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=IuD9ic7j55I",
+        "name": "Above &amp; Beyond - On My Way To Heaven (feat. Richard Bedford) (Seven Lions Remix)",
+        "img_url": "https://i.ytimg.com/vi/IuD9ic7j55I/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBiZMcX7s2QwsI0egytEZQuDRlbvA",
+        "id": 16
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=fZmZGMVIIIY",
+        "name": "Seven Lions - Days To Come (feat. Fiora)",
+        "img_url": "https://i.ytimg.com/vi/fZmZGMVIIIY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDvcn7lHi9jsYHBqBLYunIJFh6LIg",
+        "id": 17
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=_rZENzVg_1A",
+        "name": "Seven Lions - Calling You Home (feat. RUNN)",
+        "img_url": "https://i.ytimg.com/vi/_rZENzVg_1A/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBrn2dwnWK21laMqxvf-JviyTAJNQ",
+        "id": 18
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=oYx8TmXfcPI",
+        "name": "Seven Lions - Freesol (Dabin Remix)",
+        "img_url": "https://i.ytimg.com/vi/oYx8TmXfcPI/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLD7IE56pBD6W5XNXnkEaD4N5EXLQA",
+        "id": 19
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=GLTh-TSJSNE",
+        "name": "Seven Lions - Below Us (feat. Shaz Sparks)",
+        "img_url": "https://i.ytimg.com/vi/GLTh-TSJSNE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCGjgtajQA7gPOA9d0iarf28niabQ",
+        "id": 20
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=Qg9LZgzyNxc",
+        "name": "Seven Lions, Tritonal &amp; Kill The Noise - Horizon (feat. HALIENE)",
+        "img_url": "https://i.ytimg.com/vi/Qg9LZgzyNxc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAdrARhO8wxZGEYvwOajEds6tICDg",
+        "id": 21
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=7JVBGftoSE8",
+        "name": "Seven Lions - Without You My Love (Trivecta Remix)",
+        "img_url": "https://i.ytimg.com/vi/7JVBGftoSE8/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDVdQ7HbiDc7WdzNWQJ_JzA2qYI3g",
+        "id": 22
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=u5trpgQyM3s",
+        "name": "Seven Lions - Steps of Deep Slumber",
+        "img_url": "https://i.ytimg.com/vi/u5trpgQyM3s/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLC0gJOyK43Q_n-2fWAvu5FERk7qNQ",
+        "id": 23
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=BrLjIhTrRMg",
+        "name": "Above &amp; Beyond - Sahara Love (feat. Zoë Johnston) (Seven Lions Remix)",
+        "img_url": "https://i.ytimg.com/vi/BrLjIhTrRMg/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAYq8iBl12a-WxexiPYxgwPKAmKAQ",
+        "id": 24
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=s0-saiiP6iw",
+        "name": "Seven Lions - Fevers (feat. Minnesota &amp; Mimi Page)",
+        "img_url": "https://i.ytimg.com/vi/s0-saiiP6iw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDqDcmSr4vYmEHyr-nsSij4DzNm7Q",
+        "id": 25
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=zZjGSpUqxEs",
+        "name": "Seven Lions - The Truth",
+        "img_url": "https://i.ytimg.com/vi/zZjGSpUqxEs/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCK0aNIIYHDhBdbgozEO7_ZtCDgkA",
+        "id": 26
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=12RFVdBhUtk",
+        "name": "Seven Lions - Senseless (feat. Tyler Graves)",
+        "img_url": "https://i.ytimg.com/vi/12RFVdBhUtk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCU7YFMaqxvFomlbCR5uFItzD7CRA",
+        "id": 27
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=k47v460w2w8",
+        "name": "Seven Lions - Isis (VIP Mix)",
+        "img_url": "https://i.ytimg.com/vi/k47v460w2w8/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAljuNElmffyVp4dvMrQSZ4JS-gaA",
+        "id": 28
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=V5ISygdKaDk",
+        "name": "Seven Lions &amp; Jason Ross - Ocean (Feat. Jonathan Mendelsohn) (Grant Remix)",
+        "img_url": "https://i.ytimg.com/vi/V5ISygdKaDk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLB0Jw-x9oeplXdG1uDt1TyBQ5Wx5g",
+        "id": 29
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=WevHaO8nHho",
+        "name": "Seven Lions - Polarized (feat. Shaz Sparks) (Matrix &amp; Futurebound Remix)",
+        "img_url": "https://i.ytimg.com/vi/WevHaO8nHho/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBohqwSzh50jkq-xU3iq-Vpx10uBA",
+        "id": 30
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=3S0VpGX6mjY",
+        "name": "Seven Lions &amp; HALIENE - What's Done Is Done (Delta Heavy Remix)",
+        "img_url": "https://i.ytimg.com/vi/3S0VpGX6mjY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLC5UOIlA548Ps-KxhkZwGo-a9udJg",
+        "id": 31
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=leaN9R3Mac4",
+        "name": "Seven Lions - Only Now (feat. Tyler Graves)",
+        "img_url": "https://i.ytimg.com/vi/leaN9R3Mac4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAYZtMzoKAMlJY9xhhMpsxKZMbARw",
+        "id": 32
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=efzD8prCs-w",
+        "name": "Gryffin &amp; Seven Lions - Need Your Love (feat. Noah Kahan)",
+        "img_url": "https://i.ytimg.com/vi/efzD8prCs-w/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBA8O9ztt1XRzru7mbwIFl-BbP9MQ",
+        "id": 33
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=pB7J2OZqrEU",
+        "name": "Seven Lions &amp; Jason Ross - See You Again (feat. Fiora)",
+        "img_url": "https://i.ytimg.com/vi/pB7J2OZqrEU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCPELesBd-t8NJ3BmjtYGm3pj1awg",
+        "id": 34
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=XgvHU3L51JE",
+        "name": "Seven Lions - Before You (feat. Dia Frampton)",
+        "img_url": "https://i.ytimg.com/vi/XgvHU3L51JE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAz-HUot6rg-JynMOAsE8pXT9AKlA",
+        "id": 35
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=vBcgLvjzNR4",
+        "name": "Seven Lions - Between (feat. Eli Teplin)",
+        "img_url": "https://i.ytimg.com/vi/vBcgLvjzNR4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLALU5Dkei50TK9_U0xkZNJrnD2Xvg",
+        "id": 36
+      }
+    ]
+  }
 }

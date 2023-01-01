@@ -14,7 +14,6 @@ export const initialState: PlayListState = {
 const fetchmusicList = createAsyncThunk('musicList', async (url: string, thunkApi) => {
   try {
     const response = await fetchData(url);
-    console.log(response);
     return response.music as PlayList;
   } catch (error: any) {
     return thunkApi.rejectWithValue(error.message);

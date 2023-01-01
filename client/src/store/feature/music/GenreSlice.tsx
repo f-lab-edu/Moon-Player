@@ -12,7 +12,6 @@ const initialState: GenreState = {
 const fetchmusicGenre = createAsyncThunk('genre', async (url: string, thunkApi: any) => {
   try {
     const response = await fetchData(url);
-    console.log(response);
     return response.music as Genre;
   } catch (error: any) {
     return thunkApi.rejectWithValue(error.message); //  Alert Store 생성해서 오류 발생시 addAlert() action 호출하는 방식으로 UI 노출 가능
