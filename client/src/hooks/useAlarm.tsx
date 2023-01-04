@@ -4,16 +4,16 @@ export const useAlarm = () => {
   const alarm = useAppSelector((state) => state.layout.alarm);
   const dispatch = useAppDispatch();
 
-  const handleOpen = (text: string) => {
+  const handleAlarmOpen = (text: string) => {
     dispatch(handleAlarm({ isOpen: true, text }));
   };
-  const handleClose = () => {
+  const handleAlarmClose = () => {
     dispatch(handleAlarm({ isOpen: false, text: '' }));
   };
 
   const isOpen = alarm.isOpen;
   const text = alarm.text;
-  return { isOpen, text, handleClose, handleOpen };
+  return { isOpen, text, handleAlarmOpen, handleAlarmClose };
 };
 
 export default useAlarm;

@@ -6,7 +6,7 @@ import { Avatar } from '../../style/Avatar';
 import useAlarm from 'hooks/useAlarm';
 
 export const Alarm = () => {
-  const { isOpen, text, handleClose } = useAlarm();
+  const { isOpen, text, handleAlarmClose } = useAlarm();
   return isOpen ? (
     <Overlay data-testid="overlay">
       <Box direction="column" justifyContent="center" alignItems="center">
@@ -14,7 +14,7 @@ export const Alarm = () => {
         <AlarmText color="white" textAlign="center" data-testid="alarmText">
           {text}
         </AlarmText>
-        <StyledButton fontColor="white" color="gray" onClick={handleClose}>
+        <StyledButton fontColor="white" color="gray" onClick={handleAlarmClose}>
           확인
         </StyledButton>
       </Box>

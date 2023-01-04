@@ -10,8 +10,8 @@ export const Player = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
   const playerMusics =
     playerSelector.list.length > 0 ? (
-      playerSelector.list.map(({ name, img_url }, index) => (
-        <Music name={name} img_url={img_url} key={index} number={++index} />
+      playerSelector.list.map(({ name, img_url, source_url }, index) => (
+        <Music name={name} img_url={img_url} key={index} id={++index} source_url={source_url} />
       ))
     ) : (
       <EmptyText>재생 목록이 비어있습니다.</EmptyText>

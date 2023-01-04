@@ -11,17 +11,11 @@ import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import { Music } from 'types/store';
 import { useAlarm } from 'hooks/useAlarm';
-interface ItemProps {
-  name: string;
-  img_url: string;
-  number: number;
-}
 
-export const Item = ({ name, img_url, number }: ItemProps) => {
+export const Item = ({ name, img_url, id, source_url }: Music) => {
   const { element, handleScrollElement } = useMoveDownScroll();
-  const { handleOpen } = useAlarm();
-
   const dispatch = useAppDispatch();
+  const { handleAlarmOpen } = useAlarm();
   const playerSelector = useAppSelector((state) => state.music.player);
   const isCurrentMusic = playerSelector.music.name === name ? true : false;
   const currentPlayerItemslength = playerSelector.list.length;
@@ -32,18 +26,19 @@ export const Item = ({ name, img_url, number }: ItemProps) => {
   }, [currentPlayerItemslength]);
 
   const handleRemove = () => {
-    return isCurrentMusic ? handleOpen('현재 선택중인 음악은 삭제할수없습니다.') : dispatch(handleRemoveMusic(name));
+    return isCurrentMusic
+      ? handleAlarmOpen('현재 재생중인 음악은 삭제할수없습니다.')
+      : dispatch(handleRemoveMusic(name));
   };
 
   const handlePlayMusic = () => {
-    const selectedMusic = playerSelector.list.find((music: Music) => music.name === name);
-    if (!selectedMusic) return;
-    dispatch(handleAddMusic(selectedMusic));
+    const CurrentMusic = { name, img_url, id, source_url };
+    dispatch(handleAddMusic(CurrentMusic));
   };
 
   return (
     <Root ref={element} isActive={isCurrentMusic} direction="row" justifyContent="space-between" alignItems="center">
-      <MusicNumber>{number}</MusicNumber>
+      <MusicNumber>{id}</MusicNumber>
       <MusicImage onClick={handlePlayMusic} img={img_url} />
       <MusicTitle onClick={handlePlayMusic}>{name}</MusicTitle>
       <IconButton color="white" onClick={handleRemove} size="2x" icon="trash"></IconButton>
