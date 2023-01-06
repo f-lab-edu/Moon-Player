@@ -1,9 +1,12 @@
 import styled from 'styled-components';
-import Footer from 'components/Music/Player/Footer';
+import PlayerFooter from 'components/Music/Player/Footer';
 import Music from 'components/Music/Player/List/Item/Item';
 import Text from 'components/Global/style/Text';
 import ScrollBox from 'components/Global/style/ScrollBox';
 import { useAppSelector } from 'hooks/useAppDispatch';
+import { Flex } from 'components/Global/style/Flex';
+import { IconButton } from 'components/Global/UI/IconButton/IconButton';
+import { faMusic } from '@fortawesome/free-solid-svg-icons';
 
 // 플레이어 메인
 export const Root = () => {
@@ -16,11 +19,15 @@ export const Root = () => {
     ) : (
       <EmptyText>재생 목록이 비어있습니다.</EmptyText>
     );
+
   return (
     <Layout>
-      <Title>재생 목록</Title>
-      <List>{playerMusics}</List>
-      <Footer />
+      <PlayerHeader direction="row" justifyContent="space-between">
+        <Title>재생 목록</Title>
+        <IconButton icon="list" size="2x" color="white"></IconButton>
+      </PlayerHeader>
+      <PlayerList>{playerMusics}</PlayerList>
+      <PlayerFooter />
     </Layout>
   );
 };
@@ -36,13 +43,19 @@ const Layout = styled.div`
     margin: 50px;
   }
 `;
-const List = styled(ScrollBox)`
+
+const PlayerHeader = styled(Flex)`
+  margin-bottom: 10px;
+`;
+
+const PlayerList = styled(ScrollBox)`
   height: 30vh;
   padding-right: 10px;
 `;
 
 const Title = styled(Text)`
   font-size: 20px;
+  font-weight: 700;
   color: white;
 `;
 const EmptyText = styled(Text)`

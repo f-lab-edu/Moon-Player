@@ -60,7 +60,7 @@ const Title = styled(Text)`
 const StyledText = styled(Text)`
   color: white;
   margin-top: 15px;
-  font-size: 21px;
+  font-size: 20px;
 `;
 const Nav = styled(Flex)`
   gap: 20px;

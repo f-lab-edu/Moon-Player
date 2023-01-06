@@ -8,7 +8,7 @@ import useAlarm from 'hooks/useAlarm';
 export const Alarm = () => {
   const { isOpen, text, handleAlarmClose } = useAlarm();
   return isOpen ? (
-    <Overlay data-testid="overlay">
+    <Layout data-testid="overlay">
       <Box direction="column" justifyContent="center" alignItems="center">
         <AlarmAvatar img="logo"></AlarmAvatar>
         <AlarmText color="white" textAlign="center" data-testid="alarmText">
@@ -18,12 +18,12 @@ export const Alarm = () => {
           확인
         </StyledButton>
       </Box>
-    </Overlay>
+    </Layout>
   ) : (
     <></>
   );
 };
-const Overlay = styled.div`
+const Layout = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;

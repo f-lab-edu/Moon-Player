@@ -11,6 +11,9 @@ import {
   faTrash,
   faCircleArrowRight,
   faCircleArrowLeft,
+  faMusic,
+  faList,
+  faClose,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
@@ -27,8 +30,11 @@ const FontAwesomeIcons = {
   volume: faVolumeHigh,
   plus: faCirclePlus,
   trash: faTrash,
+  music: faMusic,
   arrowRight: faCircleArrowRight,
   arrowLeft: faCircleArrowLeft,
+  list: faList,
+  close: faClose,
 };
 
 type FontAweSomeIconType = keyof typeof FontAwesomeIcons;
