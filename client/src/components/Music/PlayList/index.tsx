@@ -11,8 +11,8 @@ export const PlayList = () => {
   const { music_list, genre_title } = useAppSelector((state) => state.music.playList.genre);
   const playListMusics =
     music_list &&
-    music_list.map(({ name, id, img_url }) => (
-      <PlaylistItem key={id} id={id} name={name} img_url={img_url}></PlaylistItem>
+    music_list.map(({ name, id, img_url, source_url }) => (
+      <PlaylistItem key={id} id={id} name={name} img_url={img_url} source_url={source_url}></PlaylistItem>
     ));
 
   useEffect(() => {

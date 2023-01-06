@@ -7,28 +7,21 @@ import Flex from 'components/Global/style/Flex';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { Music } from 'types/store';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
-interface ItemProps {
-  name: string;
-  id: number;
-  img_url: string;
-}
 
-export const Item = ({ id, name, img_url }: ItemProps) => {
+export const Item = ({ id, name, img_url, source_url }: Music) => {
   const dispatch = useAppDispatch();
   const playerSelector = useAppSelector((state) => state.music.player);
-  const playListSelector = useAppSelector((state) => state.music.playList);
   const isInPlayer = playerSelector.list.find((music: Music) => music.name === name) ? true : false;
 
   const handleAddMusic = () => {
     if (isInPlayer) return;
-    const selectedMusic = playListSelector.genre.music_list.find((music: Music) => music.id === id);
-
-    if (selectedMusic) dispatch(handleAddPlayer(selectedMusic));
+    const selectedMusic = { id, name, img_url, source_url };
+    dispatch(handleAddPlayer(selectedMusic));
   };
 
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
-      <div>{id}</div>
+      <MusicId>{id}</MusicId>
       <MusicImage img={img_url} />
       <MusicTitle>{name}</MusicTitle>
       <IconButton color="white" active={isInPlayer} onClick={handleAddMusic} name="plus" size="2x"></IconButton>
@@ -51,7 +44,7 @@ const Layout = styled(Flex)`
     width: 1px;
   }
 `;
-
+const MusicId = styled.div``;
 const MusicImage = styled(Image)`
   width: 100px;
   height: 50px;
