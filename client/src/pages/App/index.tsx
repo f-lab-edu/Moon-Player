@@ -6,11 +6,9 @@ import LoginPage from 'pages/Login/index';
 import ProtectedRoute from 'components/Route/ProtectedRoute';
 import Alarm from 'components/Global/UI/Alarm/Alarm';
 import GlobalStyle from 'styles/GlobalStyle';
-import CustomPlayList from 'components/Music/Player/CustomPlayList/Root';
 function App() {
   return (
     <>
-      <CustomPlayList />
       <GlobalStyle />
       <Alarm></Alarm>
       <Routes>

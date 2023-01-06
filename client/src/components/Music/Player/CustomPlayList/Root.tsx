@@ -2,15 +2,17 @@ import styled from 'styled-components';
 
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { Header } from './Header';
-export const Root = () => {
+import Table from './Table';
+export const Root = ({ onClose }) => {
   const handleClose = () => {
-    console.log('close');
+    onClose();
   };
   return (
     <Layout>
       <Box>
         <CloseButton onClick={handleClose} name="close" color="white" size="2x" />
         <Header />
+        <Table />
       </Box>
     </Layout>
   );

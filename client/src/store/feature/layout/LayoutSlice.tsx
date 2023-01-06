@@ -4,8 +4,8 @@ import { LayoutState, Alarm } from 'types/store';
 
 export const initialState: LayoutState = {
   alarm: {
-    isOpen: false,
     text: '',
+    isOpen: false,
   },
 };
 

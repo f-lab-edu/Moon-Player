@@ -20,11 +20,11 @@ export const Root = () => {
       </Header>
       <Nav direction="row">
         <StyledLink to="/user">
-          <Icon name="user" color="white" size="2x" />
+          <Icon name="user" color="white" size="1x" />
           <StyledText>내정보</StyledText>
         </StyledLink>
         <StyledLink to="#" onClick={signOut}>
-          <Icon name="bracket" color="white" size="2x" />
+          <Icon name="bracket" color="white" size="1x" />
           <StyledText>로그아웃</StyledText>
         </StyledLink>
       </Nav>
@@ -40,6 +40,7 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
+  padding-left: 10px;
 `;
 
 const AvatarImage = styled(Avatar)`

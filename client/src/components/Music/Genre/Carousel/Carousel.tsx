@@ -87,7 +87,7 @@ const StyledSlider = styled(Slider)`
     padding: 0;
   }
   .dots_custom li.slick-active button {
-    background-color: yellow;
+    background-color: black;
   }
 `;
 export default Carousel;

@@ -6,10 +6,16 @@ import ScrollBox from 'components/Global/style/ScrollBox';
 import { useAppSelector } from 'hooks/useAppDispatch';
 import { Flex } from 'components/Global/style/Flex';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
-import { faMusic } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+import CustomPlayList from 'components/Music/Player/CustomPlayList/Root';
 
 // 플레이어 메인
 export const Root = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenUI = () => {
+    setIsOpen(!isOpen);
+  };
   const playerSelector = useAppSelector((state) => state.music.player);
   const playerMusics =
     playerSelector.list.length > 0 ? (
@@ -22,9 +28,10 @@ export const Root = () => {
 
   return (
     <Layout>
+      {isOpen ? <CustomPlayList onClose={handleOpenUI} /> : <></>}
       <PlayerHeader direction="row" justifyContent="space-between">
         <Title>재생 목록</Title>
-        <IconButton name="list" size="2x" color="white"></IconButton>
+        <IconButton name="list" size="2x" color="white" onClick={handleOpenUI}></IconButton>
       </PlayerHeader>
       <PlayerList>{playerMusics}</PlayerList>
       <PlayerFooter />

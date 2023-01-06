@@ -15,7 +15,7 @@ import { useAlarm } from 'hooks/useAlarm';
 export const Item = ({ name, img_url, id, source_url }: Music) => {
   const { element, handleScrollElement } = useMoveDownScroll();
   const dispatch = useAppDispatch();
-  const { handleAlarmOpen } = useAlarm();
+  const { handleOpen } = useAlarm();
   const playerSelector = useAppSelector((state) => state.music.player);
   const isCurrentMusic = playerSelector.music.name === name ? true : false;
   const currentPlayerItemslength = playerSelector.list.length;
@@ -26,9 +26,7 @@ export const Item = ({ name, img_url, id, source_url }: Music) => {
   }, [currentPlayerItemslength]);
 
   const handleRemoveButton = () => {
-    return isCurrentMusic
-      ? handleAlarmOpen('현재 재생중인 음악은 삭제할수없습니다.')
-      : dispatch(handleRemoveMusic(name));
+    return isCurrentMusic ? handleOpen('현재 재생중인 음악은 삭제할수없습니다.') : dispatch(handleRemoveMusic(name));
   };
 
   const handlePlayMusic = () => {

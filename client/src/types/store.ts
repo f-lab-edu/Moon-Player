@@ -33,7 +33,6 @@ export interface Alarm {
   isOpen: boolean;
   text: string;
 }
-
 export interface Music {
   source_url: string;
   name: string;
