@@ -3,7 +3,7 @@ import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 import Layout from 'components/Music/Genre/Carousel/Carousel';
 
-export const Root = () => {
+export const Genre = () => {
   const dispatch = useAppDispatch();
   const genreItems = useAppSelector((state) => state.music.genre.list);
   useEffect(() => {
@@ -11,4 +11,4 @@ export const Root = () => {
   }, []);
   return <Layout data={genreItems}></Layout>;
 };
-export default Root;
+export default Genre;

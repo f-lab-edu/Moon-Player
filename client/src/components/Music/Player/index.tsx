@@ -7,10 +7,10 @@ import { useAppSelector } from 'hooks/useAppDispatch';
 import { Flex } from 'components/Global/style/Flex';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
 import { useState } from 'react';
-import CustomPlayList from 'components/Music/Player/CustomPlayList/Root';
+import CustomPlayList from 'components/Music/Player/CustomPlayList/index';
 
 // 플레이어 메인
-export const Root = () => {
+export const Player = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenUI = () => {
@@ -69,4 +69,4 @@ const EmptyText = styled(Text)`
   color: white;
   font-size: 20px;
 `;
-export default Root;
+export default Player;

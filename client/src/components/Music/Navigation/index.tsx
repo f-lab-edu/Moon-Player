@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { useAuthenticator } from 'hooks/useAuthenticator';
 import { Avatar } from 'components/Global/style/Avatar';
 
@@ -9,7 +7,7 @@ import Flex from 'components/Global/style/Flex';
 import Text from 'components/Global/style/Text';
 import Icon from 'components/Global/UI/Icon/Icon';
 
-export const Root = () => {
+export const Navigation = () => {
   const { signOut } = useAuthenticator();
 
   return (
@@ -70,4 +68,4 @@ const Nav = styled(Flex)`
   padding-right: 30px;
 `;
 
-export default Root;
+export default Navigation;

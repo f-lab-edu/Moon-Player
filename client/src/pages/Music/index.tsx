@@ -1,22 +1,22 @@
 import styled from 'styled-components';
 import Flex from 'components/Global/style/Flex';
-import Navigation from 'components/Music/Navigation/Root/Root';
-import Genre from 'components/Music/Genre/Root/Root';
-import Player from 'components/Music/Player/Root/Root';
-import PlayList from 'components/Music/PlayList/Root/Root';
+import Navigation from 'components/Music/Navigation/';
+import Genre from 'components/Music/Genre';
+import Player from 'components/Music/Player';
+import PlayList from 'components/Music/PlayList';
 const MusicPage = () => {
   return (
-    <Root>
+    <Layout>
       <Navigation />
       <Genre />
       <Main direction="row">
         <PlayList />
         <Player />
       </Main>
-    </Root>
+    </Layout>
   );
 };
-const Root = styled.div`
+const Layout = styled.div`
   overflow-x: hidden;
   background-image: linear-gradient(90deg, #000000 0%, #434343 100%);
 `;

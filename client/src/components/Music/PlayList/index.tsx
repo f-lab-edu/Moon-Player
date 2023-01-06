@@ -6,7 +6,7 @@ import ScrollBox from 'components/Global/style/ScrollBox';
 import Text from 'components/Global/style/Text';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 
-export const Root = () => {
+export const PlayList = () => {
   const dispatch = useAppDispatch();
   const { music_list, genre_title } = useAppSelector((state) => state.music.playList.genre);
   const playListMusics =
@@ -43,4 +43,4 @@ const PlayListTitle = styled(Text)`
   font-size: 20px;
 `;
 
-export default Root;
+export default PlayList;

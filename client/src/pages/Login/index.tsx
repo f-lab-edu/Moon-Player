@@ -6,7 +6,7 @@ import Text from 'components/Global/style/Text';
 
 const LoginPage = () => {
   return (
-    <Root direction="column" justifyContent="center" alignItems="center">
+    <Layout direction="column" justifyContent="center" alignItems="center">
       <Box direction="column" justifyContent="center" alignItems="center">
         <Header direction="column" justifyContent="center" alignItems="center">
           <LoginTitle>Moon Player</LoginTitle>
@@ -14,10 +14,10 @@ const LoginPage = () => {
         </Header>
         <LoginForm />
       </Box>
-    </Root>
+    </Layout>
   );
 };
-const Root = styled(Flex)`
+const Layout = styled(Flex)`
   background-image: linear-gradient(90deg, #000000 0%, #434343 100%);
   height: 100vh;
 `;
