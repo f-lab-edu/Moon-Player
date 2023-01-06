@@ -9,7 +9,7 @@ export const Root = () => {
   return (
     <Layout>
       <Box>
-        <CloseButton onClick={handleClose} icon="close" color="white" size="2x" />
+        <CloseButton onClick={handleClose} name="close" color="white" size="2x" />
         <Header />
       </Box>
     </Layout>

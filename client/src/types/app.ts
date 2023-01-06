@@ -1,5 +1,25 @@
 import { Music } from 'types/store';
 import styled, { CSSObject } from 'styled-components';
+import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
+
+import {
+  faShuffle,
+  faBackwardStep,
+  faPlayCircle,
+  faForwardStep,
+  faCirclePause,
+  faRepeat,
+  faVolumeHigh,
+  faCirclePlus,
+  faTrash,
+  faCircleArrowRight,
+  faCircleArrowLeft,
+  faMusic,
+  faList,
+  faClose,
+  faUser,
+  faRightFromBracket,
+} from '@fortawesome/free-solid-svg-icons';
 export interface PlayerControl {
   playing: boolean;
   ismuted: boolean; // 음소거인지
@@ -15,3 +35,28 @@ export interface PlayerControl {
   endTime: string;
 }
 export type StyledProps = Pick<CSSObject, 'height' | 'width' | 'color' | 'fontSize' | 'textAlign' | 'cursor'>;
+
+export const FontAwesomeIcons = {
+  shuffle: faShuffle,
+  backward: faBackwardStep,
+  play: faPlayCircle,
+  forward: faForwardStep,
+  pause: faCirclePause,
+  repeat: faRepeat,
+  volume: faVolumeHigh,
+  plus: faCirclePlus,
+  trash: faTrash,
+  music: faMusic,
+  arrowRight: faCircleArrowRight,
+  arrowLeft: faCircleArrowLeft,
+  list: faList,
+  close: faClose,
+  user: faUser,
+  bracket: faRightFromBracket,
+};
+type FontAweSomeIconType = keyof typeof FontAwesomeIcons;
+export interface IconType {
+  name: FontAweSomeIconType;
+  size: FontAwesomeIconProps['size'];
+  color: string;
+}

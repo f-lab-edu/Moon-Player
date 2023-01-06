@@ -24,7 +24,7 @@ export const Root = () => {
     <Layout>
       <PlayerHeader direction="row" justifyContent="space-between">
         <Title>재생 목록</Title>
-        <IconButton icon="list" size="2x" color="white"></IconButton>
+        <IconButton name="list" size="2x" color="white"></IconButton>
       </PlayerHeader>
       <PlayerList>{playerMusics}</PlayerList>
       <PlayerFooter />

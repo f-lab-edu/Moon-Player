@@ -7,7 +7,7 @@ type SocialIconsType = {
 interface IconProps {
   name: SocialIconNames;
 }
-export const Icon = styled.img.attrs<IconProps>(({ name }: IconProps) => ({
+export const ImageIcon = styled.img.attrs<IconProps>(({ name }: IconProps) => ({
   src: Icons[name],
 }))<IconProps>`
   max-width: 100%;
@@ -19,4 +19,4 @@ const Icons: SocialIconsType = {
   Kakao: 'images/kakaoLogo.svg',
   Naver: 'images/NaverLogo.png',
 };
-export default Icon;
+export default ImageIcon;

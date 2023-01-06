@@ -41,7 +41,7 @@ export const Item = ({ name, img_url, id, source_url }: Music) => {
       <MusicNumber>{id}</MusicNumber>
       <MusicImage onClick={handlePlayMusic} img={img_url} />
       <MusicTitle onClick={handlePlayMusic}>{name}</MusicTitle>
-      <IconButton color="white" onClick={handleRemoveButton} size="2x" icon="trash"></IconButton>
+      <IconButton color="white" onClick={handleRemoveButton} size="2x" name="trash"></IconButton>
     </Layout>
   );
 };

@@ -31,7 +31,7 @@ export const Item = ({ id, name, img_url }: ItemProps) => {
       <div>{id}</div>
       <MusicImage img={img_url} />
       <MusicTitle>{name}</MusicTitle>
-      <IconButton color="white" active={isInPlayer} onClick={handleAddMusic} icon="plus" size="2x"></IconButton>
+      <IconButton color="white" active={isInPlayer} onClick={handleAddMusic} name="plus" size="2x"></IconButton>
     </Layout>
   );
 };

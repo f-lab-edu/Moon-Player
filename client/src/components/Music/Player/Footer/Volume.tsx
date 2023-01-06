@@ -8,7 +8,7 @@ interface VolumeProps {
 export const Volume = ({ onVolume, volume }: VolumeProps) => {
   return (
     <Layout>
-      <IconButton icon="volume" size="2x" color="white"></IconButton>
+      <IconButton name="volume" size="2x" color="white"></IconButton>
       <VolumeSlider onChange={onVolume} volume={volume} trackColor="gray" thumbColor="white" />
     </Layout>
   );

@@ -7,6 +7,7 @@ import { Avatar } from 'components/Global/style/Avatar';
 
 import Flex from 'components/Global/style/Flex';
 import Text from 'components/Global/style/Text';
+import Icon from 'components/Global/UI/Icon/Icon';
 
 export const Root = () => {
   const { signOut } = useAuthenticator();
@@ -19,11 +20,11 @@ export const Root = () => {
       </Header>
       <Nav direction="row">
         <StyledLink to="/user">
-          <FontAwesomeIcon icon={faUser} color="white" />
+          <Icon name="user" color="white" size="2x" />
           <StyledText>내정보</StyledText>
         </StyledLink>
         <StyledLink to="#" onClick={signOut}>
-          <FontAwesomeIcon icon={faRightFromBracket} color="white" />
+          <Icon name="bracket" color="white" size="2x" />
           <StyledText>로그아웃</StyledText>
         </StyledLink>
       </Nav>
