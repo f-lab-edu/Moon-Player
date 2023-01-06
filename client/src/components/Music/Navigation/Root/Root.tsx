@@ -8,32 +8,37 @@ import { Avatar } from 'components/Global/style/Avatar';
 import Flex from 'components/Global/style/Flex';
 import Text from 'components/Global/style/Text';
 
-export const Header = () => {
+export const Root = () => {
   const { signOut } = useAuthenticator();
 
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
-      <Flex direction="row" alignItems="center">
+      <Header>
         <AvatarImage img="logo" />
         <Title>Moon Player</Title>
-      </Flex>
-      <Flex direction="row">
-        <StyledLink to="#" onClick={signOut}>
-          <FontAwesomeIcon icon={faRightFromBracket} color="gray" />
-          <StyledText>로그아웃</StyledText>
-        </StyledLink>
+      </Header>
+      <Nav direction="row">
         <StyledLink to="/user">
-          <FontAwesomeIcon icon={faUser} color="gray" />
+          <FontAwesomeIcon icon={faUser} color="white" />
           <StyledText>내정보</StyledText>
         </StyledLink>
-      </Flex>
+        <StyledLink to="#" onClick={signOut}>
+          <FontAwesomeIcon icon={faRightFromBracket} color="white" />
+          <StyledText>로그아웃</StyledText>
+        </StyledLink>
+      </Nav>
     </Layout>
   );
 };
 
 const Layout = styled(Flex)`
   width: 100vw;
-  padding: 30px;
+  padding: 10px 0px 10px 20px;
+`;
+const Header = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
 `;
 
 const AvatarImage = styled(Avatar)`
@@ -50,14 +55,17 @@ const StyledLink = styled(Link)`
 const Title = styled(Text)`
   font-size: 36px;
   color: white;
-  margin: 20px;
 `;
 
 const StyledText = styled(Text)`
-  margin: 10px;
   color: white;
-  font-size: 20px;
-  align-items: center;
+  margin-top: 15px;
+  font-size: 21px;
+`;
+const Nav = styled(Flex)`
+  gap: 20px;
+  margin-top: 15px;
+  padding-right: 30px;
 `;
 
-export default Header;
+export default Root;
