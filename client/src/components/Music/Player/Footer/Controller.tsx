@@ -17,7 +17,7 @@ export const Controller = ({ player, onRepeat, onPlay, onPrevMusic, onNextMusic,
   const isPlaying = player.playing;
 
   return (
-    <Root direction="row" justifyContent="space-between" alignItems="center">
+    <Layout direction="row" justifyContent="space-between" alignItems="center">
       {isRepeat ? (
         <IconButton onClick={onRepeat} icon="repeat" size="2x" color="white"></IconButton>
       ) : (
@@ -32,12 +32,12 @@ export const Controller = ({ player, onRepeat, onPlay, onPrevMusic, onNextMusic,
       )}
       <IconButton onClick={onNextMusic} icon="forward" size="3x" color="white"></IconButton>
       <IconButton onClick={onShuffleMusic} icon="shuffle" size="2x" color="white"></IconButton>
-    </Root>
+    </Layout>
   );
 };
 
 export default Controller;
-const Root = styled(Flex)`
+const Layout = styled(Flex)`
   padding: 20px;
   color: gray;
   cursor: pointer;

@@ -25,30 +25,30 @@ export const Item = ({ name, img_url, id, source_url }: Music) => {
     handleScrollElement();
   }, [currentPlayerItemslength]);
 
-  const handleRemove = () => {
+  const handleRemoveButton = () => {
     return isCurrentMusic
       ? handleAlarmOpen('현재 재생중인 음악은 삭제할수없습니다.')
       : dispatch(handleRemoveMusic(name));
   };
 
   const handlePlayMusic = () => {
-    const CurrentMusic = { name, img_url, id, source_url };
-    dispatch(handleAddMusic(CurrentMusic));
+    const currentMusic = { name, img_url, id, source_url };
+    dispatch(handleAddMusic(currentMusic));
   };
 
   return (
-    <Root ref={element} isActive={isCurrentMusic} direction="row" justifyContent="space-between" alignItems="center">
+    <Layout ref={element} isActive={isCurrentMusic} direction="row" justifyContent="space-between" alignItems="center">
       <MusicNumber>{id}</MusicNumber>
       <MusicImage onClick={handlePlayMusic} img={img_url} />
       <MusicTitle onClick={handlePlayMusic}>{name}</MusicTitle>
-      <IconButton color="white" onClick={handleRemove} size="2x" icon="trash"></IconButton>
-    </Root>
+      <IconButton color="white" onClick={handleRemoveButton} size="2x" icon="trash"></IconButton>
+    </Layout>
   );
 };
 interface RootProps {
   isActive: boolean;
 }
-const Root = styled(Flex)<RootProps>`
+const Layout = styled(Flex)<RootProps>`
   border-bottom: 1px solid white;
   background: ${({ isActive }) => isActive && 'gray'};
   opacity: ${({ isActive }) => isActive && '0.7'};

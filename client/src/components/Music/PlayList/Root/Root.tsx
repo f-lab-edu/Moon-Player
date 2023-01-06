@@ -6,7 +6,7 @@ import ScrollBox from 'components/Global/style/ScrollBox';
 import Text from 'components/Global/style/Text';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 
-export const PlayList = () => {
+export const Root = () => {
   const dispatch = useAppDispatch();
   const { music_list, genre_title } = useAppSelector((state) => state.music.playList.genre);
   const playListMusics =
@@ -20,14 +20,14 @@ export const PlayList = () => {
   }, []);
 
   return (
-    <Root>
+    <Layout>
       <PlayListTitle>{genre_title}</PlayListTitle>
       {playListMusics}
-    </Root>
+    </Layout>
   );
 };
 
-const Root = styled(ScrollBox)`
+const Layout = styled(ScrollBox)`
   width: 70%;
   height: 100vh;
   border-radius: 7px;
@@ -43,4 +43,4 @@ const PlayListTitle = styled(Text)`
   font-size: 20px;
 `;
 
-export default PlayList;
+export default Root;

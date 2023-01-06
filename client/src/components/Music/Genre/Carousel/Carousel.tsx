@@ -10,9 +10,9 @@ export const Carousel = ({ data }) => {
     <Item genre_img={image_url} genre_id={genre_id} key={genre_id}></Item>
   ));
   return (
-    <Root>
+    <Layout>
       <StyledSlider {...settings}>{genreItems}</StyledSlider>
-    </Root>
+    </Layout>
   );
 };
 const settings = {
@@ -57,7 +57,7 @@ const settings = {
   ],
 };
 
-const Root = styled.div`
+const Layout = styled.div`
   margin: 10px 50px;
 `;
 const StyledSlider = styled(Slider)`

@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import Flex from 'components/Global/style/Flex';
-import Header from 'pages/Music/Header';
-import Genre from './Genre/index';
-import Player from './Player/index';
-import PlayList from './PlayList/index';
+import Navigation from 'components/Music/Navigation/Root/Root';
+import Genre from 'components/Music/Genre/Root/Root';
+import Player from 'components/Music/Player/Root/Root';
+import PlayList from 'components/Music/PlayList/Root/Root';
 const MusicPage = () => {
   return (
     <Root>
-      <Header></Header>
+      <Navigation />
       <Genre />
       <Main direction="row">
         <PlayList />

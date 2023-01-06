@@ -6,7 +6,7 @@ import ScrollBox from 'components/Global/style/ScrollBox';
 import { useAppSelector } from 'hooks/useAppDispatch';
 
 // 플레이어 메인
-export const Player = () => {
+export const Root = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
   const playerMusics =
     playerSelector.list.length > 0 ? (
@@ -17,15 +17,15 @@ export const Player = () => {
       <EmptyText>재생 목록이 비어있습니다.</EmptyText>
     );
   return (
-    <Root>
+    <Layout>
       <Title>재생 목록</Title>
       <List>{playerMusics}</List>
       <Footer />
-    </Root>
+    </Layout>
   );
 };
 
-const Root = styled.div`
+const Layout = styled.div`
   width: 30%;
   padding: 15px;
   border: 1px solid white;
@@ -49,4 +49,4 @@ const EmptyText = styled(Text)`
   color: white;
   font-size: 20px;
 `;
-export default Player;
+export default Root;

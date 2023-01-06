@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Root from 'components/Global/style/Flex';
+import Layout from 'components/Global/style/Flex';
 import Image from 'components/Global/style/Image';
 import Text from 'components/Global/style/Text';
 
@@ -19,10 +19,10 @@ export const Music = ({ player }: InfoProps) => {
   const title = player.music && player.music.name;
 
   return (
-    <Root direction="column" justifyContent="center" alignItems="center">
+    <Layout direction="column" justifyContent="center" alignItems="center">
       {image}
       <MusicTitle>{title}</MusicTitle>
-    </Root>
+    </Layout>
   );
 };
 

@@ -7,15 +7,15 @@ interface VolumeProps {
 }
 export const Volume = ({ onVolume, volume }: VolumeProps) => {
   return (
-    <Root>
+    <Layout>
       <IconButton icon="volume" size="2x" color="white"></IconButton>
       <VolumeSlider onChange={onVolume} volume={volume} trackColor="gray" thumbColor="white" />
-    </Root>
+    </Layout>
   );
 };
 export default Volume;
 
-const Root = styled.div`
+const Layout = styled.div`
   display: flex;
   align-items: center;
   color: gray;

@@ -12,12 +12,12 @@ export const Header = () => {
   const { signOut } = useAuthenticator();
 
   return (
-    <Root direction="row" justifyContent="space-between" alignItems="center">
+    <Layout direction="row" justifyContent="space-between" alignItems="center">
       <Flex direction="row" alignItems="center">
-        <AvatarHeader img="logo" />
+        <AvatarImage img="logo" />
         <Title>Moon Player</Title>
       </Flex>
-      <Flex direction="row" alignItems="center">
+      <Flex direction="row">
         <StyledLink to="#" onClick={signOut}>
           <FontAwesomeIcon icon={faRightFromBracket} color="gray" />
           <StyledText>로그아웃</StyledText>
@@ -27,16 +27,16 @@ export const Header = () => {
           <StyledText>내정보</StyledText>
         </StyledLink>
       </Flex>
-    </Root>
+    </Layout>
   );
 };
 
-const Root = styled(Flex)`
+const Layout = styled(Flex)`
   width: 100vw;
   padding: 30px;
 `;
 
-const AvatarHeader = styled(Avatar)`
+const AvatarImage = styled(Avatar)`
   width: 50px;
   height: 50px;
 `;

@@ -10,7 +10,7 @@ export const Form = () => {
   const { handleLoginButton } = useLogin();
 
   return (
-    <Root direction="column" justifyContent="center" alignItems="center">
+    <Layout direction="column" justifyContent="center" alignItems="center">
       <StyledButton color="#5c79f1" fontColor="white" onClick={handleLoginButton} data-name="Google">
         <StyledIcon name="Google" />
         <StyledText color="white">Google 로그인</StyledText>
@@ -23,11 +23,11 @@ export const Form = () => {
         <StyledIcon name="Kakao" />
         <StyledText color="black">카카오 로그인</StyledText>
       </StyledButton>
-    </Root>
+    </Layout>
   );
 };
 
-const Root = styled(Flex)`
+const Layout = styled(Flex)`
   width: 30vw;
 `;
 

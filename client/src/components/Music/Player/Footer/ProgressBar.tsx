@@ -8,18 +8,18 @@ interface ProgressBarProps {
 
 export const ProgressBar = ({ currentTime, endTime, elapsedTime }: ProgressBarProps) => {
   return (
-    <Root>
+    <Layout>
       <Line strokeWidth={3} percent={elapsedTime} strokeColor={'white'} />
       <ProgressBarText>
         {currentTime} / {endTime}
       </ProgressBarText>
-    </Root>
+    </Layout>
   );
 };
 
 export default ProgressBar;
 
-const Root = styled.div`
+const Layout = styled.div`
   color: white;
   font-weight: 700;
   text-align: center;

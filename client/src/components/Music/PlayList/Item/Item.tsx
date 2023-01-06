@@ -27,16 +27,16 @@ export const Item = ({ id, name, img_url }: ItemProps) => {
   };
 
   return (
-    <Root direction="row" justifyContent="space-between" alignItems="center">
+    <Layout direction="row" justifyContent="space-between" alignItems="center">
       <div>{id}</div>
       <MusicImage img={img_url} />
       <MusicTitle>{name}</MusicTitle>
       <IconButton color="white" active={isInPlayer} onClick={handleAddMusic} icon="plus" size="2x"></IconButton>
-    </Root>
+    </Layout>
   );
 };
 
-const Root = styled(Flex)`
+const Layout = styled(Flex)`
   border: 1px solid white;
   border-left: none;
   border-right: none;

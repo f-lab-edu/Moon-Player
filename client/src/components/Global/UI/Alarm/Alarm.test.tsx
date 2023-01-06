@@ -12,7 +12,7 @@ describe('Alarm 컴포넌트 기능 테스트', () => {
       wrapper,
     });
     // alarm 호출
-    await waitFor(() => result.current.handleOpen('안녕하세요'));
+    await waitFor(() => result.current.handleAlarmOpen('안녕하세요'));
     expect(result.current.text).toEqual('안녕하세요');
     const alarm = await screen.findByTestId('overlay');
     expect(alarm).toBeInTheDocument();
@@ -25,7 +25,7 @@ describe('Alarm 컴포넌트 기능 테스트', () => {
     const { result } = renderHook(() => useAlarm(), {
       wrapper,
     });
-    await waitFor(() => result.current.handleOpen('안녕하세요'));
+    await waitFor(() => result.current.handleAlarmOpen('안녕하세요'));
     const button = screen.getByRole('button', { name: '확인' });
     const alarm = await screen.findByTestId('overlay');
     await user.click(button);
