@@ -47,9 +47,4 @@ describe('Player List Item 컴포넌트 기능 테스트', () => {
     const alarm_text = store.getState().layout.alarm.text;
     expect(alarm_text).toBe('현재 재생중인 음악은 삭제할수없습니다.');
   });
-
-  test('음악을 선택하면 스크롤이 움직여야한다. (이거는작성예정)', () => {});
-
-  //   음악이 여러개니까 페이지 단위 테스팅 해야할거같다
-  //   test('현재 선택되지 않은 음악은 삭제할수 있다', () => {});
 });

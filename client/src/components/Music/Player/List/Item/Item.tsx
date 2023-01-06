@@ -13,18 +13,10 @@ import { Music } from 'types/store';
 import { useAlarm } from 'hooks/useAlarm';
 
 export const Item = ({ name, img_url, id, source_url }: Music) => {
-  const { element, handleScrollElement } = useMoveDownScroll();
   const dispatch = useAppDispatch();
   const { handleOpen } = useAlarm();
   const playerSelector = useAppSelector((state) => state.music.player);
   const isCurrentMusic = playerSelector.music.name === name ? true : false;
-  const currentPlayerItemslength = playerSelector.list.length;
-  const prevPlayerItemslength = usePrevious(currentPlayerItemslength) as number;
-  useEffect(() => {
-    if (prevPlayerItemslength > currentPlayerItemslength) return;
-    handleScrollElement();
-  }, [currentPlayerItemslength]);
-
   const handleRemoveButton = () => {
     return isCurrentMusic ? handleOpen('현재 재생중인 음악은 삭제할수없습니다.') : dispatch(handleRemoveMusic(name));
   };
@@ -35,7 +27,7 @@ export const Item = ({ name, img_url, id, source_url }: Music) => {
   };
 
   return (
-    <Layout ref={element} isActive={isCurrentMusic} direction="row" justifyContent="space-between" alignItems="center">
+    <Layout isActive={isCurrentMusic} direction="row" justifyContent="space-between" alignItems="center">
       <MusicNumber>{id}</MusicNumber>
       <MusicImage onClick={handlePlayMusic} img={img_url} />
       <MusicTitle onClick={handlePlayMusic}>{name}</MusicTitle>
