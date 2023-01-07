@@ -28,7 +28,6 @@ export const Footer = () => {
     <Flex direction='row'>
       <MusicInfo player={playerState}></MusicInfo>
       {playerState.music && musicPlayer}
-      <div style={{ flex: 1 }}></div>
       <Volume onVolume={handleVolume} volume={playerVolume}></Volume>
       <Controller
         player={playerState}

@@ -27,11 +27,12 @@ export const Music = ({ player }: InfoProps) => {
 };
 
 const Root = styled(Flex)`
-  width: 320px;
+  flex: 1;
   margin-left: 48px;
 `;
 
 const MusicTitle = styled(Text)`
+  flex: 1;
   font-size: 16px;
   text-align: center;
   color: rgba(255,255,255, 0.64);

@@ -4,6 +4,7 @@ import Music from 'components/Music/Player/List/Item/Item';
 import Text from 'components/Global/style/Text';
 import ScrollBox from 'components/Global/style/ScrollBox';
 import { useAppSelector } from 'hooks/useAppDispatch';
+import Flex from 'components/Global/style/Flex';
 
 // 플레이어 메인
 export const Player = () => {
@@ -16,34 +17,34 @@ export const Player = () => {
     ) : (
       <EmptyText>재생 목록이 비어있습니다.</EmptyText>
     );
-  return (
-    <Root>
-      <Title>재생 목록</Title>
+  return (<Root direction='column'>
+    <Title>P L A Y L I S T</Title>
+    <ListRoot>
       <List>{playerMusics}</List>
-    </Root>
-  );
+    </ListRoot>
+  </Root>);
 };
 
-const Root = styled.div`
+const Root = styled(Flex)`
   width: 30%;
-  padding: 15px;
+`;
+
+const ListRoot = styled.div`
+  overflow: hidden;
   border: 1px solid rgba(255,255,255,0.16);
   background: linear-gradient(rgba(0,0,0,0.24), rgba(0,0,0,0.12));
   border-radius: 7px;
 
-  @media screen and (max-width: 1024px) {
-    width: 100%;
-    margin: 50px;
-  }
 `;
 const List = styled(ScrollBox)`
-  height: 30vh;
-  padding-right: 10px;
+  height: 100%;
 `;
 
 const Title = styled(Text)`
-  font-size: 20px;
+  font-size: 16px;
   color: rgba(255,255,255, 0.64);
+  margin: 8px 0;
+  font-weight: normal;
 `;
 const EmptyText = styled(Text)`
   color: rgba(255,255,255, 0.64);

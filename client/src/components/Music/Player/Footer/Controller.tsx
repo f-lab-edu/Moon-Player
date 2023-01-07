@@ -26,13 +26,15 @@ export const Controller = ({ player, onRepeat, onPlay, onPrevMusic, onNextMusic,
       <IconButton onClick={onShuffleMusic} icon="shuffle" size="2x" color="white" />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <IconButton onClick={onPrevMusic} icon="backward" size="2x" color="white" />
+      &nbsp;
       {isPlaying ? (
         <IconButton onClick={onPlay} icon="pause" size="2x" color="white" />
       ) : (
         <IconButton onClick={onPlay} icon="play" size="2x" color="gray" />
       )}
+      &nbsp;
       <IconButton onClick={onNextMusic} icon="forward" size="2x" color="white" />
-      
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </Root>
   );
 };

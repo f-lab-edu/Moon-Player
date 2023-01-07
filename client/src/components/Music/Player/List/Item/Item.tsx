@@ -42,11 +42,18 @@ export const Item = ({ name, img_url, number }: ItemProps) => {
   };
 
   return (
-    <Root ref={element} isActive={isCurrentMusic} direction="row" justifyContent="space-between" alignItems="center">
+    <Root
+      ref={element}
+      isActive={isCurrentMusic}
+      direction="row"
+      justifyContent="space-between"
+      alignItems="center"
+      onClick={handlePlayMusic}
+    >
       <MusicNumber>{number}</MusicNumber>
-      <MusicImage onClick={handlePlayMusic} img={img_url} />
-      <MusicTitle onClick={handlePlayMusic}>{name}</MusicTitle>
-      <IconButton color="rgba(255,255,255,0.64)" onClick={handleRemove} size="2x" icon="trash"></IconButton>
+      <MusicImage img={img_url} />
+      <MusicTitle>{name}</MusicTitle>
+      <IconButton color="rgba(255,255,255,0.64)" onClick={handleRemove} size="1x" icon="trash"></IconButton>
     </Root>
   );
 };
@@ -54,26 +61,39 @@ interface RootProps {
   isActive: boolean;
 }
 const Root = styled(Flex)<RootProps>`
-  border-bottom: 1px solid white;
-  background: ${({ isActive }) => isActive && 'gray'};
-  opacity: ${({ isActive }) => isActive && '0.7'};
-  gap: 15px;
+  padding: 0px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.16);
+  background-color: ${({ isActive }) => isActive ? 'rgba(0,0,0,0.64)' : 'none'};
+  gap: 16px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0,0,0,0.4);
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+  height: 84px;
+  overflow: hidden;
 `;
 
 const MusicNumber = styled(Text)`
   color: rgba(255,255,255, 0.64);
   font-size: 16px;
+  width: 16px;
 `;
-const MusicTitle = styled(OverFlowText)`
-  width: 60%;
-  font-size: 16px;
-  color: rgba(255,255,255, 0.64);
-  text-align: center;
+const MusicTitle = styled.div`
+  flex: 1;
+  font-size: 14px;
+  max-height: 48px;
+  color: rgba(255,255,255, 0.84);
+  font-weight: bold;
+  text-align: left;
   cursor: pointer;
+  overflow: hidden;
 `;
 const MusicImage = styled(Image)`
-  width: 100px;
-  height: 50px;
+  width: 64px;
+  height: 64px;
 `;
 
 export default Item;

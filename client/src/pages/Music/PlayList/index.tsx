@@ -34,10 +34,6 @@ const Root = styled(ScrollBox)`
   background: linear-gradient(rgba(0,0,0,0.24), rgba(0,0,0,0.12));
   margin-right: 24px;
   padding: 12px 24px;
-  @media screen and (max-width: 1024px) {
-    width: 100%;
-    margin-right: 0;
-  }
 `;
 
 const PlayListTitle = styled(Text)`

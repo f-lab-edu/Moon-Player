@@ -36,10 +36,5 @@ const Main = styled(Flex)`
   padding: 0 48px 24px; 48px;
   justify-content: center;
   overflow: hidden;
-
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
-    align-items: center;
-  }
 `;
 export default MusicPage;

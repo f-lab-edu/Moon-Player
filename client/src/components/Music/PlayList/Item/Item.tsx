@@ -28,7 +28,6 @@ export const Item = ({ id, name, img_url }: ItemProps) => {
 
   return (
     <Root direction="row" justifyContent="space-between" alignItems="center">
-      <div style={{ width: '16px'}}>{id}</div>
       <MusicImage img={img_url} />
       <MusicTitle color='rgba(255,255,255,0.84)'>{name}</MusicTitle>
       <IconButton
@@ -48,26 +47,19 @@ const Root = styled(Flex)`
   color: rgba(255,255,255, 0.64);
   font-weight: 700;
   gap: 30px;
-  @media screen and (max-width: 1200px) {
-    width: 100%;
-  }
-  > :first-child {
-    width: 1px;
-  }
   &:last-child {
     border-bottom: none;
   }
 `;
 
 const MusicImage = styled(Image)`
-  width: 76px;
-  height: 76px;
+  width: 128px;
+  height: 72px;
   object-fit: cover;
 `;
 
 const MusicTitle = styled(OverFlowText)`
   flex: 1;
-  width: 50%;
   font-size: 16px;
 `;
 
