@@ -20,7 +20,6 @@ export const Player = () => {
     <Root>
       <Title>재생 목록</Title>
       <List>{playerMusics}</List>
-      <Footer />
     </Root>
   );
 };
@@ -28,7 +27,8 @@ export const Player = () => {
 const Root = styled.div`
   width: 30%;
   padding: 15px;
-  border: 1px solid white;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: linear-gradient(rgba(0,0,0,0.24), rgba(0,0,0,0.12));
   border-radius: 7px;
 
   @media screen and (max-width: 1024px) {
@@ -43,10 +43,10 @@ const List = styled(ScrollBox)`
 
 const Title = styled(Text)`
   font-size: 20px;
-  color: white;
+  color: rgba(255,255,255, 0.64);
 `;
 const EmptyText = styled(Text)`
-  color: white;
+  color: rgba(255,255,255, 0.64);
   font-size: 20px;
 `;
 export default Player;

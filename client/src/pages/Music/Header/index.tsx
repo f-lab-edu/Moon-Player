@@ -15,16 +15,13 @@ export const Header = () => {
     <Root direction="row" justifyContent="space-between" alignItems="center">
       <Flex direction="row" alignItems="center">
         <AvatarHeader img="logo" />
-        <Title>Moon Player</Title>
       </Flex>
       <Flex direction="row" alignItems="center">
         <StyledLink to="#" onClick={signOut}>
-          <FontAwesomeIcon icon={faRightFromBracket} color="gray" />
-          <StyledText>로그아웃</StyledText>
+          <FontAwesomeIcon icon={faRightFromBracket} color="gray" style={{ height: '22px'}} />
         </StyledLink>
         <StyledLink to="/user">
-          <FontAwesomeIcon icon={faUser} color="gray" />
-          <StyledText>내정보</StyledText>
+          <FontAwesomeIcon icon={faUser} color="gray" style={{ height: '22px'}} />
         </StyledLink>
       </Flex>
     </Root>
@@ -33,7 +30,9 @@ export const Header = () => {
 
 const Root = styled(Flex)`
   width: 100vw;
-  padding: 30px;
+  padding: 24px 48px;
+  background: linear-gradient(rgba(0,0,0,0.64), transparent);
+  position: relative;
 `;
 
 const AvatarHeader = styled(Avatar)`
@@ -46,18 +45,7 @@ const StyledLink = styled(Link)`
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-`;
-const Title = styled(Text)`
-  font-size: 36px;
-  color: white;
-  margin: 20px;
-`;
-
-const StyledText = styled(Text)`
-  margin: 10px;
-  color: white;
-  font-size: 20px;
-  align-items: center;
+  margin: 0 8px;
 `;
 
 export default Header;

@@ -46,7 +46,7 @@ export const Item = ({ name, img_url, number }: ItemProps) => {
       <MusicNumber>{number}</MusicNumber>
       <MusicImage onClick={handlePlayMusic} img={img_url} />
       <MusicTitle onClick={handlePlayMusic}>{name}</MusicTitle>
-      <IconButton color="white" onClick={handleRemove} size="2x" icon="trash"></IconButton>
+      <IconButton color="rgba(255,255,255,0.64)" onClick={handleRemove} size="2x" icon="trash"></IconButton>
     </Root>
   );
 };
@@ -61,13 +61,13 @@ const Root = styled(Flex)<RootProps>`
 `;
 
 const MusicNumber = styled(Text)`
-  color: white;
+  color: rgba(255,255,255, 0.64);
   font-size: 16px;
 `;
 const MusicTitle = styled(OverFlowText)`
   width: 60%;
   font-size: 16px;
-  color: white;
+  color: rgba(255,255,255, 0.64);
   text-align: center;
   cursor: pointer;
 `;

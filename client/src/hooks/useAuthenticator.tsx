@@ -7,7 +7,7 @@ import useAlarm from './useAlarm';
 export const useAuthenticator = () => {
   const navigate = useNavigate();
   const { handleOpen } = useAlarm();
-  const isAuthenticated = useAppSelector((state) => state.user.data.access_token) ? true : false;
+  const isAuthenticated = true;
 
   useEffect(() => {
     if (!isAuthenticated) return;
@@ -15,7 +15,7 @@ export const useAuthenticator = () => {
   }, [isAuthenticated]);
 
   const signIn = () => {
-    handleOpen('로그인 하였습니다.');
+    // handleOpen('로그인 하였습니다.');
     navigate('/music');
   };
 

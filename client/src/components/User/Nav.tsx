@@ -30,6 +30,6 @@ export const Nav = () => {
 };
 const Menu = styled(Text)`
   font-size: ${({ theme }) => theme.fontSize.l};
-  color: white;
+  color: rgba(255,255,255, 0.64);
 `;
 export default Nav;

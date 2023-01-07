@@ -19,19 +19,20 @@ export const Controller = ({ player, onRepeat, onPlay, onPrevMusic, onNextMusic,
   return (
     <Root direction="row" justifyContent="space-between" alignItems="center">
       {isRepeat ? (
-        <IconButton onClick={onRepeat} icon="repeat" size="2x" color="white"></IconButton>
+        <IconButton onClick={onRepeat} icon="repeat" size="2x" color="white" />
       ) : (
-        <IconButton onClick={onRepeat} icon="repeat" size="2x" color="gray"></IconButton>
+        <IconButton onClick={onRepeat} icon="repeat" size="2x" color="gray" />
       )}
-
-      <IconButton onClick={onPrevMusic} icon="backward" size="3x" color="white"></IconButton>
+      <IconButton onClick={onShuffleMusic} icon="shuffle" size="2x" color="white" />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <IconButton onClick={onPrevMusic} icon="backward" size="2x" color="white" />
       {isPlaying ? (
-        <IconButton onClick={onPlay} icon="pause" size="3x" color="white"></IconButton>
+        <IconButton onClick={onPlay} icon="pause" size="2x" color="white" />
       ) : (
-        <IconButton onClick={onPlay} icon="play" size="3x" color="gray"></IconButton>
+        <IconButton onClick={onPlay} icon="play" size="2x" color="gray" />
       )}
-      <IconButton onClick={onNextMusic} icon="forward" size="3x" color="white"></IconButton>
-      <IconButton onClick={onShuffleMusic} icon="shuffle" size="2x" color="white"></IconButton>
+      <IconButton onClick={onNextMusic} icon="forward" size="2x" color="white" />
+      
     </Root>
   );
 };

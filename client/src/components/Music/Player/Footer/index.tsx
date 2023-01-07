@@ -1,6 +1,7 @@
 import { usePlayerControl } from 'hooks/usePlayerControl';
 import { formatTime } from 'utils/app/Player';
 
+import Flex from 'components/Global/style/Flex';
 import ProgressBar from './ProgressBar';
 import Volume from './Volume';
 import Controller from './Controller';
@@ -22,10 +23,13 @@ export const Footer = () => {
   const elapsedTime = Math.floor((+playerState.currentTime / +playerState.endTime) * 100);
   const playerVolume = playerState.volume.toString();
 
-  return (
-    <>
+  return (<>
+    <ProgressBar currentTime={currentTime} endTime={endTime} elapsedTime={elapsedTime} />
+    <Flex direction='row'>
       <MusicInfo player={playerState}></MusicInfo>
       {playerState.music && musicPlayer}
+      <div style={{ flex: 1 }}></div>
+      <Volume onVolume={handleVolume} volume={playerVolume}></Volume>
       <Controller
         player={playerState}
         onRepeat={handleRepeat}
@@ -34,9 +38,10 @@ export const Footer = () => {
         onNextMusic={handleNextMusic}
         onShuffleMusic={handleShuffleMusic}
       ></Controller>
-      <Volume onVolume={handleVolume} volume={playerVolume}></Volume>
-      <ProgressBar currentTime={currentTime} endTime={endTime} elapsedTime={elapsedTime} />
-    </>
+    </Flex>
+  </>
+
+
   );
 };
 

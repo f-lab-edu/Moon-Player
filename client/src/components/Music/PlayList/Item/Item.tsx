@@ -28,20 +28,24 @@ export const Item = ({ id, name, img_url }: ItemProps) => {
 
   return (
     <Root direction="row" justifyContent="space-between" alignItems="center">
-      <div>{id}</div>
+      <div style={{ width: '16px'}}>{id}</div>
       <MusicImage img={img_url} />
-      <MusicTitle>{name}</MusicTitle>
-      <IconButton color="white" active={isInPlayer} onClick={handleAddMusic} icon="plus" size="2x"></IconButton>
+      <MusicTitle color='rgba(255,255,255,0.84)'>{name}</MusicTitle>
+      <IconButton
+        color='rgba(255,255,255,0.76)'
+        active={isInPlayer}
+        onClick={handleAddMusic} icon="plus" size="2x"
+      />
     </Root>
   );
 };
 
 const Root = styled(Flex)`
-  border: 1px solid white;
+  border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: none;
-  color: white;
+  border-bottom: 1px solid rgba(255,255,255,0.16);
+  color: rgba(255,255,255, 0.64);
   font-weight: 700;
   gap: 30px;
   @media screen and (max-width: 1200px) {
@@ -50,14 +54,19 @@ const Root = styled(Flex)`
   > :first-child {
     width: 1px;
   }
+  &:last-child {
+    border-bottom: none;
+  }
 `;
 
 const MusicImage = styled(Image)`
-  width: 100px;
-  height: 50px;
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
 `;
 
 const MusicTitle = styled(OverFlowText)`
+  flex: 1;
   width: 50%;
   font-size: 16px;
 `;

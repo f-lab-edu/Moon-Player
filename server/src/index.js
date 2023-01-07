@@ -1,7 +1,7 @@
 const Koa = require('koa');
 const Router = require('koa-router')
 const cors = require('@koa/cors')
-const db=require('./db/index.js')
+// const db=require('./db/index.js')
 
 let corsOptions = {
   origin: process.env.CLIENT_HOST,
@@ -11,7 +11,7 @@ let corsOptions = {
 
 const router = new Router()
 const api = require('./api')
-db()
+// db()
 router.use('/api', api.routes())
 
 const app = new Koa();

@@ -22,6 +22,7 @@ module.exports = {
   plugins: ['react', 'prettier', 'testing-library', 'jest-dom'],
   rules: {
     indent: ['error', 2],
+    'prettier/prettier': 1,
     'no-unused-vars': 'warn',
     'no-var': 'error',
     'no-multiple-empty-lines': [1, { max: 1 }],

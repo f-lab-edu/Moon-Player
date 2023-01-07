@@ -9,7 +9,6 @@ const LoginPage = () => {
     <Root direction="column" justifyContent="center" alignItems="center">
       <Box direction="column" justifyContent="center" alignItems="center">
         <Header direction="column" justifyContent="center" alignItems="center">
-          <LoginTitle>Moon Player</LoginTitle>
           <LoginAvatar img="logo" />
         </Header>
         <LoginForm />
@@ -18,7 +17,7 @@ const LoginPage = () => {
   );
 };
 const Root = styled(Flex)`
-  background-image: linear-gradient(90deg, #000000 0%, #434343 100%);
+  background-image: linear-gradient(90deg, #434343 100%, #000000 0%);
   height: 100vh;
 `;
 const Box = styled(Flex)`
@@ -38,6 +37,6 @@ const LoginAvatar = styled(Avatar)`
 
 const LoginTitle = styled(Text)`
   font-size: 40px;
-  color: white;
+  color: rgba(255,255,255, 0.64);
 `;
 export default LoginPage;
