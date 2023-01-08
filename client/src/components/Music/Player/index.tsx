@@ -31,10 +31,9 @@ export const Player = () => {
       {isOpen ? <CustomPlayList onClose={handleOpenUI} /> : <></>}
       <PlayerHeader direction="row" justifyContent="space-between">
         <Title>재생 목록</Title>
-        <IconButton name="list" size="2x" color="white" onClick={handleOpenUI}></IconButton>
+        <IconButton name="list" size="2x" color="white" onClick={handleOpenUI} />
       </PlayerHeader>
       <PlayerList>{playerMusics}</PlayerList>
-      <PlayerFooter />
     </Layout>
   );
 };
@@ -42,8 +41,9 @@ export const Player = () => {
 const Layout = styled.div`
   width: 30%;
   padding: 15px;
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 7px;
+  background: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.12));
 
   @media screen and (max-width: 1024px) {
     width: 100%;
@@ -63,10 +63,11 @@ const PlayerList = styled(ScrollBox)`
 const Title = styled(Text)`
   font-size: 20px;
   font-weight: 700;
-  color: white;
+  color: rgba(255, 255, 255, 0.64);
 `;
 const EmptyText = styled(Text)`
-  color: white;
+  color: rgba(255, 255, 255, 0.64);
+
   font-size: 20px;
 `;
 export default Player;

@@ -11,7 +11,7 @@ let corsOptions = {
 
 const router = new Router()
 const api = require('./api')
-db()
+// db()
 router.use('/api', api.routes())
 
 const app = new Koa();

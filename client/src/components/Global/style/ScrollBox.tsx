@@ -5,10 +5,12 @@ interface ScrollBoxProps extends StyledProps {
   radius?: string;
 }
 export const ScrollBox = styled.div<ScrollBoxProps>(
-  ({ color = 'white', radius = '7px' }) => `
+  ({ color = 'rgba(255,255,255,0.24)', radius = '7px' }) => `
   overflow-y: scroll;
   &::-webkit-scrollbar {
     width: 10px;
+    opacity: 0;
+
   }
   &::-webkit-scrollbar-thumb {
     height: 5%;

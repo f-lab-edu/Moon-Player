@@ -38,7 +38,7 @@ const Box = styled(Flex)`
   width: 300px;
   height: fit-content;
   padding: 30px;
-  background-image: linear-gradient(90deg, #000000 0%, #434343 100%);
+  background-image: linear-gradient(90deg, #434343 100%, #000000 0%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

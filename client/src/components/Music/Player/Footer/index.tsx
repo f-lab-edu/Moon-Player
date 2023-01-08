@@ -5,6 +5,7 @@ import ProgressBar from './ProgressBar';
 import Volume from './Volume';
 import Controller from './Controller';
 import MusicInfo from './Music';
+import { Flex } from 'components/Global/style/Flex';
 
 export const Footer = () => {
   const {
@@ -24,18 +25,20 @@ export const Footer = () => {
 
   return (
     <>
-      <MusicInfo player={playerState}></MusicInfo>
-      {playerState.music && musicPlayer}
-      <Controller
-        player={playerState}
-        onRepeat={handleRepeat}
-        onPlay={handlePlay}
-        onPrevMusic={handlePrevMusic}
-        onNextMusic={handleNextMusic}
-        onShuffleMusic={handleShuffleMusic}
-      ></Controller>
-      <Volume onVolume={handleVolume} volume={playerVolume}></Volume>
       <ProgressBar currentTime={currentTime} endTime={endTime} elapsedTime={elapsedTime} />
+      <Flex direction="row">
+        <MusicInfo player={playerState}></MusicInfo>
+        {playerState.music && musicPlayer}
+        <Volume onVolume={handleVolume} volume={playerVolume} />
+        <Controller
+          player={playerState}
+          onRepeat={handleRepeat}
+          onPlay={handlePlay}
+          onPrevMusic={handlePrevMusic}
+          onNextMusic={handleNextMusic}
+          onShuffleMusic={handleShuffleMusic}
+        />
+      </Flex>
     </>
   );
 };

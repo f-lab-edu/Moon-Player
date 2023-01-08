@@ -19,28 +19,23 @@ export const PlayList = () => {
     dispatch(fetchmusicList('http://localhost:4000/api/music/genre/1'));
   }, []);
 
-  return (
-    <Layout>
-      <PlayListTitle>{genre_title}</PlayListTitle>
-      {playListMusics}
-    </Layout>
-  );
+  return <Layout>{playListMusics}</Layout>;
 };
 
 const Layout = styled(ScrollBox)`
   width: 70%;
-  height: 100vh;
   border-radius: 7px;
-  border: 1px solid white;
-  margin: 0px 40px;
-  padding: 10px 15px;
-  @media screen and (max-width: 1024px) {
-    width: 100%;
-  }
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.12));
+  margin-right: 24px;
+  padding: 12px 24px;
 `;
 
 const PlayListTitle = styled(Text)`
+  position: sticky;
+  top: 0px;
   font-size: 20px;
+  margin: 0;
 `;
 
 export default PlayList;

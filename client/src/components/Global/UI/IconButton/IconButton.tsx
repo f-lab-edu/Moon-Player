@@ -35,7 +35,7 @@ cursor:pointer;
 pointer-events:${active ? 'none' : 'auto'};
 opacity:${active ? 0.5 : 1};
 &:hover {
-  transform: scale(1.3);
+  transform: scale(1.16);
 }
 `
 );

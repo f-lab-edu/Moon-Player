@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Layout from 'components/Global/style/Flex';
+import Flex from 'components/Global/style/Flex';
 import Image from 'components/Global/style/Image';
 import Text from 'components/Global/style/Text';
 
@@ -14,31 +14,34 @@ export const Music = ({ player }: InfoProps) => {
     player.music.name.length > 0 ? (
       <MusicImage img={player.music.img_url} />
     ) : (
-      <MusicEmptyImage img="https://via.placeholder.com/400?text=No+Selected+Music" />
+      <MusicImage img="https://via.placeholder.com/400?text=No+Selected+Music" />
     );
   const title = player.music && player.music.name;
 
   return (
-    <Layout direction="column" justifyContent="center" alignItems="center">
+    <Layout direction="row" justifyContent="flex-start" alignItems="center">
       {image}
       <MusicTitle>{title}</MusicTitle>
     </Layout>
   );
 };
 
+const Layout = styled(Flex)`
+  flex: 1;
+  margin-left: 48px;
+`;
 const MusicTitle = styled(Text)`
-  font-size: 20px;
+  flex: 1;
+  font-size: 16px;
   text-align: center;
-  color: white;
+  color: rgba(255, 255, 255, 0.64);
+  margin: 0px 16px;
 `;
 
 const MusicImage = styled(Image)`
-  width: 400px;
-  height: auto;
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
 `;
 
-const MusicEmptyImage = styled(Image)`
-  width: 400px;
-  height: auto;
-`;
 export default Music;

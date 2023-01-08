@@ -58,14 +58,17 @@ const settings = {
 };
 
 const Layout = styled.div`
-  margin: 10px 50px;
+  margin-top: 10px;
 `;
 const StyledSlider = styled(Slider)`
+  .slick-slider {
+    overflow: hidden;
+  }
   .slick-list {
     margin: 0 -10px;
   }
   .slick-slide > div {
-    padding: 0 10px;
+    padding: 0 6px;
   }
 
   .dots_custom li {

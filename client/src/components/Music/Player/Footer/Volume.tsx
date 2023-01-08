@@ -8,7 +8,7 @@ interface VolumeProps {
 export const Volume = ({ onVolume, volume }: VolumeProps) => {
   return (
     <Layout>
-      <IconButton name="volume" size="2x" color="white"></IconButton>
+      <IconButton name="volume" size="1x" color="white" />
       <VolumeSlider onChange={onVolume} volume={volume} trackColor="gray" thumbColor="white" />
     </Layout>
   );
@@ -19,7 +19,6 @@ const Layout = styled.div`
   display: flex;
   align-items: center;
   color: gray;
-  padding: 10px 20px 20px 20px;
 
   > :nth-child(1) {
     margin-right: 20px;
@@ -45,35 +44,35 @@ const VolumeSlider = styled.input.attrs<VolumeSliderProps>(({ volume }) => ({
   }
   &::-webkit-slider-runnable-track {
     width: 100%;
-    height: 13px;
+    height: 4px;
     background: ${({ trackColor }) => trackColor};
     cursor: pointer;
   }
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
-    height: 21px;
+    height: 8px;
     width: 30px;
     border-radius: 7px;
     background: ${({ thumbColor }) => thumbColor};
     cursor: pointer;
-    margin-top: -3.5px;
+    margin-top: -1.5px;
   }
 
   /* 파이어폭스 */
   &::-moz-range-track {
     width: 100%;
-    height: 13px;
+    height: 4px;
     background: ${({ trackColor }) => trackColor};
     cursor: pointer;
   }
 
   &::-moz-range-thumb {
-    height: 21px;
+    height: 8px;
     width: 30px;
     border-radius: 7px;
     background: ${({ thumbColor }) => thumbColor};
     cursor: pointer;
-    margin-top: -3.5px;
+    margin-top: -1.5px;
   }
 `;
 

@@ -4,7 +4,6 @@ import { useAuthenticator } from 'hooks/useAuthenticator';
 import { Avatar } from 'components/Global/style/Avatar';
 
 import Flex from 'components/Global/style/Flex';
-import Text from 'components/Global/style/Text';
 import Icon from 'components/Global/UI/Icon/Icon';
 
 export const Navigation = () => {
@@ -14,16 +13,13 @@ export const Navigation = () => {
     <Layout direction="row" justifyContent="space-between" alignItems="center">
       <Header>
         <AvatarImage img="logo" />
-        <Title>Moon Player</Title>
       </Header>
       <Nav direction="row">
         <StyledLink to="/user">
-          <Icon name="user" color="white" size="1x" />
-          <StyledText>내정보</StyledText>
+          <StyledIcon name="user" color="white" size="1x" />
         </StyledLink>
         <StyledLink to="#" onClick={signOut}>
-          <Icon name="bracket" color="white" size="1x" />
-          <StyledText>로그아웃</StyledText>
+          <StyledIcon name="bracket" color="white" size="1x" />
         </StyledLink>
       </Nav>
     </Layout>
@@ -32,13 +28,16 @@ export const Navigation = () => {
 
 const Layout = styled(Flex)`
   width: 100vw;
-  padding: 10px 0px 10px 20px;
+  padding: 24px 48px;
+  background: linear-gradient(rgba(0, 0, 0, 0.64), transparent);
+  position: relative;
 `;
 const Header = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
-  padding-left: 10px;
+  text-decoration: none;
+  margin: 0 8px;
 `;
 
 const AvatarImage = styled(Avatar)`
@@ -52,15 +51,9 @@ const StyledLink = styled(Link)`
   align-items: center;
   text-decoration: none;
 `;
-const Title = styled(Text)`
-  font-size: 36px;
-  color: white;
-`;
 
-const StyledText = styled(Text)`
-  color: white;
-  margin-top: 15px;
-  font-size: 20px;
+const StyledIcon = styled(Icon)`
+  height: 22px;
 `;
 const Nav = styled(Flex)`
   gap: 20px;

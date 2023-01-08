@@ -24,7 +24,7 @@ interface CardImageProps {
 const CardImage = styled(Image)<CardImageProps>`
   border-radius: 7px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  opacity: ${(props) => (!props.disabled ? '0.2' : '1')};
+  opacity: ${(props) => (!props.disabled ? '0.54' : '1')};
   transition-duration: 0.4s;
   width: 200px;
   height: 150px;

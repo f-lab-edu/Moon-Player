@@ -24,37 +24,43 @@ export const Item = ({ id, name, img_url, source_url }: Music) => {
 
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
-      <MusicId>{id}</MusicId>
       <MusicImage img={img_url} />
-      <MusicTitle>{name}</MusicTitle>
-      <IconButton color="white" active={isInPlayer} onClick={handleAddMusic} name="plus" size="2x"></IconButton>
+      <MusicTitle color="rgba(255,255,255,0.84)">{name}</MusicTitle>
+      <IconButton
+        color="rgba(255,255,255,0.76)"
+        active={isInPlayer}
+        onClick={handleAddMusic}
+        name="plus"
+        size="2x"
+      ></IconButton>
     </Layout>
   );
 };
 
 const Layout = styled(Flex)`
-  border: 1px solid white;
+  border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: none;
-  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+
+  color: rgba(255, 255, 255, 0.64);
+
   font-weight: 700;
   gap: 30px;
-  @media screen and (max-width: 1200px) {
-    width: 100%;
-  }
-  > :first-child {
-    width: 1px;
+
+  &:last-child {
+    border-bottom: none;
   }
 `;
-const MusicId = styled.div``;
+
 const MusicImage = styled(Image)`
-  width: 100px;
-  height: 50px;
+  width: 128px;
+  height: 72px;
+  object-fit: cover;
 `;
 
 const MusicTitle = styled(OverFlowText)`
-  width: 50%;
+  flex: 1;
   font-size: 16px;
 `;
 

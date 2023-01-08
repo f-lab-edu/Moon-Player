@@ -18,20 +18,24 @@ export const Controller = ({ player, onRepeat, onPlay, onPrevMusic, onNextMusic,
 
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
-      {isRepeat ? (
-        <IconButton onClick={onRepeat} name="repeat" size="2x" color="white"></IconButton>
-      ) : (
-        <IconButton onClick={onRepeat} name="repeat" size="2x" color="gray"></IconButton>
-      )}
+      <IconButtonBox direction="row" gap="2px">
+        {isRepeat ? (
+          <IconButton onClick={onRepeat} name="repeat" size="2x" color="white" />
+        ) : (
+          <IconButton onClick={onRepeat} name="repeat" size="2x" color="gray" />
+        )}
 
-      <IconButton onClick={onPrevMusic} name="backward" size="3x" color="white"></IconButton>
-      {isPlaying ? (
-        <IconButton onClick={onPlay} name="pause" size="3x" color="white"></IconButton>
-      ) : (
-        <IconButton onClick={onPlay} name="play" size="3x" color="gray"></IconButton>
-      )}
-      <IconButton onClick={onNextMusic} name="forward" size="3x" color="white"></IconButton>
-      <IconButton onClick={onShuffleMusic} name="shuffle" size="2x" color="white"></IconButton>
+        <IconButton onClick={onShuffleMusic} name="shuffle" size="2x" color="white" />
+      </IconButtonBox>
+      <IconButtonBox direction="row" gap="3px">
+        <IconButton onClick={onPrevMusic} name="backward" size="2x" color="white" />
+        {isPlaying ? (
+          <IconButton onClick={onPlay} name="pause" size="2x" color="white" />
+        ) : (
+          <IconButton onClick={onPlay} name="play" size="2x" color="gray" />
+        )}
+        <IconButton onClick={onNextMusic} name="forward" size="2x" color="white" />
+      </IconButtonBox>
     </Layout>
   );
 };
@@ -41,4 +45,7 @@ const Layout = styled(Flex)`
   padding: 20px;
   color: gray;
   cursor: pointer;
+`;
+const IconButtonBox = styled(Flex)`
+  margin-left: 15px;
 `;
