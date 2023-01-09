@@ -6,7 +6,7 @@ import { Text } from 'components/Global/style/Text';
 export const Header = () => {
   return (
     <Layout direction="column" justifyContent="center" alignItems="center">
-      <Title>내 재생 목록</Title>
+      <Title>나만의 플레이리스트</Title>
       <Box direction="row" justifyContent="space-between" alignItems="center">
         <Flex direction="row" alignItems="center" gap="9px">
           <Name>이름</Name>

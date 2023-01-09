@@ -1,5 +1,6 @@
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import styled from 'styled-components';
+import { Flex } from 'components/Global/style/Flex';
 
 interface VolumeProps {
   onVolume: React.ChangeEventHandler<HTMLInputElement>;
@@ -7,7 +8,7 @@ interface VolumeProps {
 }
 export const Volume = ({ onVolume, volume }: VolumeProps) => {
   return (
-    <Layout>
+    <Layout direction="row" alignItems="center">
       <IconButton name="volume" size="1x" color="white" />
       <VolumeSlider onChange={onVolume} volume={volume} trackColor="gray" thumbColor="white" />
     </Layout>
@@ -15,11 +16,10 @@ export const Volume = ({ onVolume, volume }: VolumeProps) => {
 };
 export default Volume;
 
-const Layout = styled.div`
-  display: flex;
-  align-items: center;
+const Layout = styled(Flex)`
   color: gray;
-
+  justify-content: flex-end;
+  margin: 10px;
   > :nth-child(1) {
     margin-right: 20px;
   }

@@ -42,7 +42,7 @@ export const Controller = ({ player, onRepeat, onPlay, onPrevMusic, onNextMusic,
 
 export default Controller;
 const Layout = styled(Flex)`
-  padding: 20px;
+  padding: 0px 10px;
   color: gray;
   cursor: pointer;
 `;

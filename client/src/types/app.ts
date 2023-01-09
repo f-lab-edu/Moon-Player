@@ -19,6 +19,7 @@ import {
   faClose,
   faUser,
   faRightFromBracket,
+  faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 export interface PlayerControl {
   playing: boolean;
@@ -44,7 +45,7 @@ export const FontAwesomeIcons = {
   pause: faCirclePause,
   repeat: faRepeat,
   volume: faVolumeHigh,
-  plus: faCirclePlus,
+  circlePlus: faCirclePlus,
   trash: faTrash,
   music: faMusic,
   arrowRight: faCircleArrowRight,
@@ -53,6 +54,7 @@ export const FontAwesomeIcons = {
   close: faClose,
   user: faUser,
   bracket: faRightFromBracket,
+  plus: faPlus,
 };
 type FontAweSomeIconType = keyof typeof FontAwesomeIcons;
 export interface IconType {

@@ -22,17 +22,16 @@ body,html {
   object-fit: cover;
 }
 .swiper-pagination-bullet {
-  color: white;
+  background-color: grey;
   margin:2px;
   opacity: 1;
   width:10px;
   height: 10px;
-  background-color: white;
   margin-bottom: 10px;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: black;
+  background-color: white;
   
 }
 

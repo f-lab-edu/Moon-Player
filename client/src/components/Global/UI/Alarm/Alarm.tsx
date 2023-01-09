@@ -38,7 +38,13 @@ const Box = styled(Flex)`
   width: 300px;
   height: fit-content;
   padding: 30px;
-  background-image: linear-gradient(90deg, #434343 100%, #000000 0%);
+  background: linear-gradient(
+    333deg,
+    rgba(12, 12, 56, 1) 0%,
+    rgba(45, 34, 76, 1) 36%,
+    rgba(36, 18, 95, 1) 73%,
+    rgba(38, 64, 92, 1) 100%
+  );
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

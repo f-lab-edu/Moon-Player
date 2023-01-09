@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import PlayerFooter from 'components/Music/Footer';
 import Music from 'components/Music/Player/List/Item/Item';
 import Text from 'components/Global/style/Text';
 import ScrollBox from 'components/Global/style/ScrollBox';
@@ -31,7 +30,7 @@ export const Player = () => {
       {isOpen ? <CustomPlayList onClose={handleOpenUI} /> : <></>}
       <PlayerHeader direction="row" justifyContent="space-between">
         <Title>재생 목록</Title>
-        <IconButton name="list" size="2x" color="white" onClick={handleOpenUI} />
+        <IconButton name="plus" size="2x" color="white" onClick={handleOpenUI} />
       </PlayerHeader>
       <PlayerList>{playerMusics}</PlayerList>
     </Layout>

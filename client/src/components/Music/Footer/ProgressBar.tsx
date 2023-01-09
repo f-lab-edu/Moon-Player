@@ -27,4 +27,10 @@ const ProgressBarBox = styled.div`
   flex: 1;
   height: 5px;
   overflow: hidden;
+  @media screen and (max-width: 1024px) {
+    height: 10px;
+  }
+  @media screen and (max-width: 490px) {
+    height: 20px;
+  }
 `;

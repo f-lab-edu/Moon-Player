@@ -32,6 +32,7 @@ const Layout = styled(ScrollBox)`
   padding: 12px 24px;
   @media screen and (max-width: 1024px) {
     width: 100%;
+    margin: 0px;
   }
 `;
 export default PlayList;

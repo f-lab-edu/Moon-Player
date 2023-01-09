@@ -30,7 +30,7 @@ export const Item = ({ id, name, img_url, source_url }: Music) => {
         color="rgba(255,255,255,0.76)"
         active={isInPlayer}
         onClick={handleAddMusic}
-        name="plus"
+        name="circlePlus"
         size="2x"
       ></IconButton>
     </Layout>
