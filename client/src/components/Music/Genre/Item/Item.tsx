@@ -26,8 +26,7 @@ const CardImage = styled(Image)<CardImageProps>`
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   opacity: ${(props) => (!props.disabled ? '0.54' : '1')};
   transition-duration: 0.4s;
-  width: 200px;
-  height: 150px;
+
   &:active {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   }

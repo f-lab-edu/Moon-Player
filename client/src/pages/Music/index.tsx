@@ -4,7 +4,7 @@ import Navigation from 'components/Music/Navigation/';
 import Genre from 'components/Music/Genre';
 import Player from 'components/Music/Player';
 import PlayList from 'components/Music/PlayList';
-import PlayerFooter from 'components/Music/Player/Footer';
+import PlayerFooter from 'components/Music/Footer';
 const MusicPage = () => {
   return (
     <Layout>

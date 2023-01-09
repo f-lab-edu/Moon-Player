@@ -1,96 +1,21 @@
+import { useSwiper } from 'hooks/useSwiper';
 import styled from 'styled-components';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
-import Slider from 'react-slick';
-import { Item } from 'components/Music/Genre/Item/Item';
-
+import { IconButton } from 'components/Global/UI/IconButton/IconButton';
+import Flex from 'components/Global/style/Flex';
 export const Carousel = ({ data }) => {
-  const genreItems = data.map(({ image_url, genre_id }) => (
-    <Item genre_img={image_url} genre_id={genre_id} key={genre_id}></Item>
-  ));
+  const { swiper, handleNextSlide, handlePrevSlide } = useSwiper(data);
   return (
-    <Layout>
-      <StyledSlider {...settings}>{genreItems}</StyledSlider>
+    <Layout direction="row">
+      <StyledIconButton name="arrowLeft" size="2x" color="white" onClick={handlePrevSlide} />
+      {swiper}
+      <StyledIconButton name="arrowRight" size="2x" color="white" onClick={handleNextSlide} />
     </Layout>
   );
 };
-const settings = {
-  dots: true,
-  arrows: false,
-  slidesToShow: 6,
-  slidesToScroll: 6,
-  dotsClass: 'dots_custom',
-  appendDots: (dots: any) => (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <ul> {dots} </ul>
-    </div>
-  ),
-  responsive: [
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-      },
-    },
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 4,
-      },
-    },
-  ],
-};
-
-const Layout = styled.div`
+const Layout = styled(Flex)`
   margin-top: 10px;
 `;
-const StyledSlider = styled(Slider)`
-  .slick-slider {
-    overflow: hidden;
-  }
-  .slick-list {
-    margin: 0 -10px;
-  }
-  .slick-slide > div {
-    padding: 0 6px;
-  }
-
-  .dots_custom li {
-    list-style: none;
-    cursor: pointer;
-    display: inline-block;
-    margin: 0 6px;
-    padding: 0;
-  }
-  .dots_custom li button {
-    border: none;
-    background: #d1d1d1;
-    color: transparent;
-    cursor: pointer;
-    display: block;
-    height: 8px;
-    width: 8px;
-    border-radius: 100%;
-    padding: 0;
-  }
-  .dots_custom li.slick-active button {
-    background-color: black;
-  }
+const StyledIconButton = styled(IconButton)`
+  margin: 20px;
 `;
 export default Carousel;

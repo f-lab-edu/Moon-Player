@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import PlayerFooter from 'components/Music/Player/Footer';
+import PlayerFooter from 'components/Music/Footer';
 import Music from 'components/Music/Player/List/Item/Item';
 import Text from 'components/Global/style/Text';
 import ScrollBox from 'components/Global/style/ScrollBox';
@@ -47,7 +47,7 @@ const Layout = styled.div`
 
   @media screen and (max-width: 1024px) {
     width: 100%;
-    margin: 50px;
+    margin: 20px;
   }
 `;
 

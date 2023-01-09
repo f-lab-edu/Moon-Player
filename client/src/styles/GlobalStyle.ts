@@ -14,5 +14,28 @@ body,html {
   box-sizing: border-box;
 
 }
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.swiper-pagination-bullet {
+  color: white;
+  margin:2px;
+  opacity: 1;
+  width:10px;
+  height: 10px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: black;
+  
+}
+
+
 `;
 export default GlobalStyle;

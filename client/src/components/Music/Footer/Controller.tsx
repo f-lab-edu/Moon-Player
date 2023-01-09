@@ -47,5 +47,5 @@ const Layout = styled(Flex)`
   cursor: pointer;
 `;
 const IconButtonBox = styled(Flex)`
-  margin-left: 15px;
+  margin: 15px;
 `;

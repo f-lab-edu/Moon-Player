@@ -23,19 +23,15 @@ export const PlayList = () => {
 };
 
 const Layout = styled(ScrollBox)`
-  width: 70%;
+  width: 100%;
   border-radius: 7px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.12));
+
   margin-right: 24px;
   padding: 12px 24px;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
 `;
-
-const PlayListTitle = styled(Text)`
-  position: sticky;
-  top: 0px;
-  font-size: 20px;
-  margin: 0;
-`;
-
 export default PlayList;
