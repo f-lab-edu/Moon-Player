@@ -42,9 +42,15 @@ export const Player = () => {
         <Header direction="row" justifyContent="space-between" alignItems="center">
           <Title>{ui_name}</Title>
           <IconButtonBox direction="row" gap="5px">
-            <IconButton name="plus" size="2x" color="white" onClick={handleAdderUI} />
-            <IconButton name="music" size="2x" color="white" onClick={handleCustomPlayListUI} />
-            <IconButton name="list" size="2x" color="white" onClick={handlePlayListUI} />
+            <StyledIconButton name="plus" size="2x" color="white" onClick={handleAdderUI} active={isOpenAdder} />
+            <StyledIconButton
+              name="music"
+              size="2x"
+              color="white"
+              onClick={handleCustomPlayListUI}
+              active={isOpenCustomPlayList}
+            />
+            <StyledIconButton name="list" size="2x" color="white" onClick={handlePlayListUI} active={isOpenPlayList} />
           </IconButtonBox>
         </Header>
         {isOpenPlayList ? <Main /> : <></>}
@@ -54,7 +60,6 @@ export const Player = () => {
     </Overlay>
   );
 };
-
 const Overlay = styled.div`
   position: fixed;
   width: 100%;
@@ -94,6 +99,10 @@ const Title = styled(Text)`
 `;
 const IconButtonBox = styled(Flex)`
   margin: 10px;
+`;
+
+const StyledIconButton = styled(IconButton)`
+  opacity: ${(props) => (props.active ? 1 : 0.3)};
 `;
 const CloseButton = styled(IconButton)`
   position: absolute;
