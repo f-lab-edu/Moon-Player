@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-export const Table = () => {
+
+export const Item = () => {
   return <></>;
 };
 
-export default Table;
+export default Item;

@@ -28,7 +28,7 @@ export const Form = () => {
 };
 
 const Layout = styled(Flex)`
-  width: 30vw;
+  width: 400px;
 `;
 
 const SocialLoginIcon = styled(ImageIcon)`

@@ -1,51 +1,55 @@
 import styled from 'styled-components';
-import Music from 'components/Music/Player/Item/Item';
-import Text from 'components/Global/style/Text';
-import ScrollBox from 'components/Global/style/ScrollBox';
-import { useAppSelector } from 'hooks/useAppDispatch';
-import { Flex } from 'components/Global/style/Flex';
-import { IconButton } from 'components/Global/UI/IconButton/IconButton';
-
-import { useModal } from 'hooks/useModal';
-import CustomAdder from './Custom/Adder';
 import { useState } from 'react';
+import Adder from './Adder';
+import Main from './Main';
+import Flex from 'components/Global/style/Flex';
+import { IconButton } from 'components/Global/UI/IconButton/IconButton';
+import Text from 'components/Global/style/Text';
+import { useModal } from 'hooks/useModal';
+import { CustomPlayList } from './CustomPlayList/index';
 
 // 플레이어 메인
-export const Player = () => {
-  const { onUIClose } = useModal();
-  const [isOpenCustomAddr, setIsOpenCustomAdder] = useState(false);
 
-  const playerSelector = useAppSelector((state) => state.music.player);
-  const playerMusics =
-    playerSelector.list.length > 0 ? (
-      playerSelector.list.map(({ name, img_url, source_url }, index) => (
-        <Music name={name} img_url={img_url} key={index} id={++index} source_url={source_url} />
-      ))
-    ) : (
-      <EmptyText>재생 목록이 비어있습니다.</EmptyText>
-    );
+export const Player = () => {
+  const [isOpenPlayList, setIsOpenPlayList] = useState(true);
+  const [isOpenAdder, setIsOpenAdder] = useState(false);
+  const [isOpenCustomPlayList, setIsOpenCustomPlayList] = useState(false);
+
+  const ui_name = isOpenPlayList ? 'Play List' : isOpenCustomPlayList ? 'MY PlayList' : 'ADD PlayList';
+
+  const { onUIClose } = useModal();
+  // UI State 세개로 관리 , => 재생목록에 대한것 ,커스텀 Addr에 대한것, 나의 재생목록에 대한것
+  const handlePlayListUI = () => {
+    setIsOpenPlayList(true);
+    setIsOpenAdder(false);
+    setIsOpenCustomPlayList(false);
+  };
+  const handleAdderUI = () => {
+    setIsOpenAdder(true);
+    setIsOpenPlayList(false);
+    setIsOpenCustomPlayList(false);
+  };
+  const handleCustomPlayListUI = () => {
+    setIsOpenCustomPlayList(true);
+    setIsOpenPlayList(false);
+    setIsOpenAdder(false);
+  };
 
   return (
     <Overlay>
-      {isOpenCustomAddr ? <CustomAdder onClose={() => setIsOpenCustomAdder(false)} /> : <></>}
       <Layout direction="column">
         <CloseButton onClick={onUIClose} name="close" color="white" size="2x" />
-        <Header direction="row" justifyContent="space-between">
-          <Title>재생 목록</Title>
-          <Box>
-            {/* 페이지 전환 */}
-            <IconButton name="list" size="2x" color="white" />
-            <IconButton
-              name="plus"
-              size="2x"
-              color="white"
-              onClick={() => {
-                setIsOpenCustomAdder(!isOpenCustomAddr);
-              }}
-            />
-          </Box>
+        <Header direction="row" justifyContent="space-between" alignItems="center">
+          <Title>{ui_name}</Title>
+          <IconButtonBox direction="row" gap="5px">
+            <IconButton name="plus" size="2x" color="white" onClick={handleAdderUI} />
+            <IconButton name="music" size="2x" color="white" onClick={handleCustomPlayListUI} />
+            <IconButton name="list" size="2x" color="white" onClick={handlePlayListUI} />
+          </IconButtonBox>
         </Header>
-        <PlayerList>{playerMusics}</PlayerList>
+        {isOpenPlayList ? <Main /> : <></>}
+        {isOpenAdder ? <Adder /> : <></>}
+        {isOpenCustomPlayList ? <CustomPlayList /> : <></>}
       </Layout>
     </Overlay>
   );
@@ -83,26 +87,14 @@ const Layout = styled(Flex)`
 const Header = styled(Flex)`
   margin: 15px;
 `;
-
-const PlayerList = styled(ScrollBox)`
-  height: 30vh;
-  padding-right: 10px;
-`;
-
 const Title = styled(Text)`
   font-size: 20px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.64);
 `;
-const EmptyText = styled(Text)`
-  color: rgba(255, 255, 255, 0.64);
-
-  font-size: 20px;
+const IconButtonBox = styled(Flex)`
+  margin: 10px;
 `;
-const Box = styled.div`
-  padding-top: 10px;
-`;
-
 const CloseButton = styled(IconButton)`
   position: absolute;
   right: 0;

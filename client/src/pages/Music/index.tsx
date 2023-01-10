@@ -4,7 +4,7 @@ import Navigation from 'components/Music/Navigation/';
 import Genre from 'components/Music/Genre';
 import Player from 'components/Music/Player';
 import PlayList from 'components/Music/PlayList';
-import PlayerModule from 'components/Music/Player/Module';
+import PlayerModule from 'components/Music/Player/Main/Module';
 import useModal from 'hooks/useModal';
 const MusicPage = () => {
   const { isOpenUI } = useModal();
@@ -32,15 +32,15 @@ const Layout = styled.div`
   );
 `;
 
-const Main = styled(Flex)`
-  height: auto;
-  padding: 0 48px 24px 48px;
-  justify-content: center;
-  overflow: hidden;
+// const Main = styled(Flex)`
+//   height: auto;
+//   padding: 0 48px 24px 48px;
+//   justify-content: center;
+//   overflow: hidden;
 
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
+//   @media screen and (max-width: 1024px) {
+//     flex-direction: column;
+//     align-items: center;
+//   }
+// `;
 export default MusicPage;
