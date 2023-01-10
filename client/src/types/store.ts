@@ -27,6 +27,9 @@ export interface Genre {
 
 export interface LayoutState {
   alarm: Alarm;
+  ui: {
+    isOpen: boolean;
+  };
 }
 
 export interface Alarm {

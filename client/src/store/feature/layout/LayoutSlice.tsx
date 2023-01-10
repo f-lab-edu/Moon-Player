@@ -7,18 +7,24 @@ export const initialState: LayoutState = {
     text: '',
     isOpen: false,
   },
+  ui: {
+    isOpen: false,
+  },
 };
 
 export const LayoutSlice = createSlice({
   name: 'layout',
   initialState,
   reducers: {
-    handleAlarm: (state: LayoutState, action: PayloadAction<Alarm>) => {
+    handleOpenAlarm: (state: LayoutState, action: PayloadAction<Alarm>) => {
       state.alarm = action.payload;
+    },
+    handleOpenUI: (state: LayoutState, action: PayloadAction<boolean>) => {
+      state.ui.isOpen = action.payload;
     },
   },
   extraReducers: (builder) => {
     builder.addCase(PURGE, () => initialState);
   },
 });
-export const { handleAlarm } = LayoutSlice.actions;
+export const { handleOpenAlarm, handleOpenUI } = LayoutSlice.actions;

@@ -17,7 +17,7 @@ export const Controller = ({ player, onRepeat, onPlay, onPrevMusic, onNextMusic,
   const isPlaying = player.playing;
 
   return (
-    <Layout direction="row" justifyContent="space-between" alignItems="center">
+    <Layout direction="row">
       <IconButtonBox direction="row" gap="2px">
         {isRepeat ? (
           <IconButton onClick={onRepeat} name="repeat" size="2x" color="white" />
@@ -45,6 +45,9 @@ const Layout = styled(Flex)`
   padding: 0px 10px;
   color: gray;
   cursor: pointer;
+  > :nth-child(2) {
+    justify-content: center;
+  }
 `;
 const IconButtonBox = styled(Flex)`
   margin: 15px;

@@ -25,24 +25,31 @@ export const Footer = () => {
   const playerVolume = playerState.volume.toString();
 
   return (
-    <>
+    <Layout>
       <ProgressBar currentTime={currentTime} endTime={endTime} elapsedTime={elapsedTime} />
       <MusicInfoBox direction="row">
         <MusicInfo player={playerState}></MusicInfo>
         {playerState.music && musicPlayer}
       </MusicInfoBox>
-      <Controller
-        player={playerState}
-        onRepeat={handleRepeat}
-        onPlay={handlePlay}
-        onPrevMusic={handlePrevMusic}
-        onNextMusic={handleNextMusic}
-        onShuffleMusic={handleShuffleMusic}
-      />
-      <Volume onVolume={handleVolume} volume={playerVolume} />
-    </>
+
+      <Flex direction="row" justifyContent="space-between">
+        <Volume onVolume={handleVolume} volume={playerVolume} />
+        <Controller
+          player={playerState}
+          onRepeat={handleRepeat}
+          onPlay={handlePlay}
+          onPrevMusic={handlePrevMusic}
+          onNextMusic={handleNextMusic}
+          onShuffleMusic={handleShuffleMusic}
+        />
+      </Flex>
+    </Layout>
   );
 };
+const Layout = styled.div`
+  margin-top: 10px;
+  max-height: auto;
+`;
 const MusicInfoBox = styled(Flex)`
   margin-top: 5px;
 `;

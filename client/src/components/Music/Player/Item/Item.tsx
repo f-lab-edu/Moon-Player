@@ -1,24 +1,22 @@
 import styled from 'styled-components';
-import useMoveDownScroll from 'hooks/useMoveDownScroll';
-import usePrevious from 'hooks/usePrevious';
+
 import { handleRemoveMusic, handleAddMusic } from 'store/feature/music/PlayerSlice';
 import OverFlowText from 'components/Global/style/OverFlowText';
-import { useEffect } from 'react';
 import Image from 'components/Global/style/Image';
 import Flex from 'components/Global/style/Flex';
 import Text from 'components/Global/style/Text';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import { Music } from 'types/store';
-import { useAlarm } from 'hooks/useAlarm';
+import { useModal } from 'hooks/useModal';
 
 export const Item = ({ name, img_url, id, source_url }: Music) => {
   const dispatch = useAppDispatch();
-  const { handleOpen } = useAlarm();
+  const { onAlarmOpen } = useModal();
   const playerSelector = useAppSelector((state) => state.music.player);
   const isCurrentMusic = playerSelector.music.name === name ? true : false;
   const handleRemoveButton = () => {
-    return isCurrentMusic ? handleOpen('현재 재생중인 음악은 삭제할수없습니다.') : dispatch(handleRemoveMusic(name));
+    return isCurrentMusic ? onAlarmOpen('현재 재생중인 음악은 삭제할수없습니다.') : dispatch(handleRemoveMusic(name));
   };
 
   const handlePlayMusic = () => {
@@ -27,10 +25,16 @@ export const Item = ({ name, img_url, id, source_url }: Music) => {
   };
 
   return (
-    <Layout isActive={isCurrentMusic} direction="row" justifyContent="space-between" alignItems="center">
+    <Layout
+      onClick={handlePlayMusic}
+      isActive={isCurrentMusic}
+      direction="row"
+      justifyContent="space-between"
+      alignItems="center"
+    >
       <MusicNumber>{id}</MusicNumber>
-      <MusicImage onClick={handlePlayMusic} img={img_url} />
-      <MusicTitle onClick={handlePlayMusic}>{name}</MusicTitle>
+      <MusicImage img={img_url} />
+      <MusicTitle>{name}</MusicTitle>
       <IconButton color="rgba(255,255,255,0.64)" onClick={handleRemoveButton} size="1x" name="trash" />
     </Layout>
   );

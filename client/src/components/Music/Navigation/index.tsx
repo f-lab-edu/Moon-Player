@@ -1,31 +1,29 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { useAuthenticator } from 'hooks/useAuthenticator';
 import { Avatar } from 'components/Global/style/Avatar';
 
 import Flex from 'components/Global/style/Flex';
-import Icon from 'components/Global/UI/Icon/Icon';
+import IconButton from 'components/Global/UI/IconButton/IconButton';
+
+import useModal from 'hooks/useModal';
 
 export const Navigation = () => {
   const { signOut } = useAuthenticator();
 
+  const { onUIOpen } = useModal();
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
       <Header>
         <AvatarImage img="logo" />
       </Header>
       <Nav direction="row">
-        <StyledLink to="/user">
-          <StyledIcon name="user" color="white" size="1x" />
-        </StyledLink>
-        <StyledLink to="#" onClick={signOut}>
-          <StyledIcon name="bracket" color="white" size="1x" />
-        </StyledLink>
+        <IconButton name="user" color="white" size="1x" />
+        <IconButton name="music" color="white" size="1x" onClick={onUIOpen} />
+        <IconButton name="bracket" color="white" size="1x" onClick={signOut} />
       </Nav>
     </Layout>
   );
 };
-
 const Layout = styled(Flex)`
   width: 100vw;
   padding: 24px 48px;
@@ -43,17 +41,6 @@ const Header = styled.div`
 const AvatarImage = styled(Avatar)`
   width: 50px;
   height: 50px;
-`;
-
-const StyledLink = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-`;
-
-const StyledIcon = styled(Icon)`
-  height: 22px;
 `;
 const Nav = styled(Flex)`
   gap: 20px;

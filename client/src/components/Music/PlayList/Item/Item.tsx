@@ -7,18 +7,18 @@ import Flex from 'components/Global/style/Flex';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { Music } from 'types/store';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
-import useAlarm from 'hooks/useAlarm';
+import useModal from 'hooks/useModal';
 
 export const Item = ({ id, name, img_url, source_url }: Music) => {
   const dispatch = useAppDispatch();
   const playerSelector = useAppSelector((state) => state.music.player);
   const isInPlayer = playerSelector.list.find((music: Music) => music.name === name) ? true : false;
-  const { handleOpen } = useAlarm();
+  const { onAlarmOpen } = useModal();
 
   const handleAddMusic = () => {
     if (isInPlayer) return;
     const selectedMusic = { id, name, img_url, source_url };
-    handleOpen('음악이 추가되었습니다.');
+    onAlarmOpen('음악이 추가되었습니다.');
     dispatch(handleAddPlayer(selectedMusic));
   };
 

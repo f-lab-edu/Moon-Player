@@ -3,18 +3,18 @@ import { Flex } from '../../style/Flex';
 import { Button } from '../../style/Button/Button';
 import { Text } from '../../style/Text';
 import { Avatar } from '../../style/Avatar';
-import useAlarm from 'hooks/useAlarm';
+import useModal from 'hooks/useModal';
 
 export const Alarm = () => {
-  const { isOpen, text, handleClose } = useAlarm();
-  return isOpen ? (
+  const { isOpenAlarm, text, onAlarmClose } = useModal();
+  return isOpenAlarm ? (
     <Layout data-testid="overlay">
       <Box direction="column" justifyContent="center" alignItems="center">
         <AlarmAvatar img="logo"></AlarmAvatar>
         <AlarmText color="white" textAlign="center" data-testid="alarmText">
           {text}
         </AlarmText>
-        <StyledButton fontColor="white" color="gray" onClick={handleClose}>
+        <StyledButton fontColor="white" color="gray" onClick={onAlarmClose}>
           확인
         </StyledButton>
       </Box>

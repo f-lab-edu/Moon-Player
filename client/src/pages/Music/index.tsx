@@ -4,17 +4,17 @@ import Navigation from 'components/Music/Navigation/';
 import Genre from 'components/Music/Genre';
 import Player from 'components/Music/Player';
 import PlayList from 'components/Music/PlayList';
-import PlayerFooter from 'components/Music/Footer';
+import PlayerModule from 'components/Music/Player/Module';
+import useModal from 'hooks/useModal';
 const MusicPage = () => {
+  const { isOpenUI } = useModal();
   return (
     <Layout>
       <Navigation />
       <Genre />
-      <Main direction="row">
-        <PlayList />
-        <Player />
-      </Main>
-      <PlayerFooter />
+      <PlayList />
+      <PlayerModule />
+      {isOpenUI ? <Player /> : <></>}
     </Layout>
   );
 };

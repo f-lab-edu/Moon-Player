@@ -3,11 +3,11 @@ import { removeStoreItems } from 'utils/redux-persist';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from './useAppDispatch';
 
-import { useAlarm } from './useAlarm';
+import { useModal } from './useModal';
 
 export const useAuthenticator = () => {
   const navigate = useNavigate();
-  const { handleOpen } = useAlarm();
+  const { onAlarmOpen } = useModal();
   const isAuthenticated = useAppSelector((state) => state.user.data.access_token) ? true : false;
 
   useEffect(() => {
@@ -16,14 +16,14 @@ export const useAuthenticator = () => {
   }, [isAuthenticated]);
 
   const signIn = () => {
-    handleOpen('로그인 하였습니다.');
+    onAlarmOpen('로그인 하였습니다.');
     navigate('/music');
   };
 
   // 로그아웃
   const signOut = () => {
     removeStoreItems();
-    handleOpen('로그아웃 하였습니다.');
+    onAlarmOpen('로그아웃 하였습니다.');
   };
 
   return { isAuthenticated, signIn, signOut };
