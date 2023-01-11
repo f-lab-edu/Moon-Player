@@ -12,7 +12,6 @@ interface MusicItem {
   children?: ReactElement;
 }
 export const MusicItem = ({ name, img_url, id, children }: MusicItem) => {
-  console.log(id);
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
       <MusicNumber>{id}</MusicNumber>

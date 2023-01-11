@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Adder from './Adder';
 import Main from './Main';
 import Flex from 'components/Global/style/Flex';
@@ -11,14 +11,26 @@ import { CustomPlayList } from './CustomPlayList/index';
 // 플레이어 메인
 
 export const Player = () => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
   const [isOpenPlayList, setIsOpenPlayList] = useState(true);
   const [isOpenAdder, setIsOpenAdder] = useState(false);
   const [isOpenCustomPlayList, setIsOpenCustomPlayList] = useState(false);
-
   const ui_name = isOpenPlayList ? 'Play List' : isOpenCustomPlayList ? 'MY PlayList' : 'ADD PlayList';
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleModalOutSide);
+    return () => {
+      document.removeEventListener('mousedown', handleModalOutSide);
+    };
+  }, []);
 
   const { onUIClose } = useModal();
   // UI State 세개로 관리 , => 재생목록에 대한것 ,커스텀 Addr에 대한것, 나의 재생목록에 대한것
+  const handleModalOutSide = (e) => {
+    if (modalRef.current?.contains(e.target)) return;
+    onUIClose();
+  };
   const handlePlayListUI = () => {
     setIsOpenPlayList(true);
     setIsOpenAdder(false);
@@ -37,7 +49,7 @@ export const Player = () => {
 
   return (
     <Overlay>
-      <Layout direction="column">
+      <Layout direction="column" ref={modalRef}>
         <CloseButton onClick={onUIClose} name="close" color="white" size="2x" />
         <Header direction="row" justifyContent="space-between" alignItems="center">
           <Title>{ui_name}</Title>
