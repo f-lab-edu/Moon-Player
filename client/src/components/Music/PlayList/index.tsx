@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useEffect } from 'react';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
-import PlaylistItem from 'components/Music/PlayList/Item/Item';
+import Music from 'components/Music/PlayList/Item/Item';
 import ScrollBox from 'components/Global/style/ScrollBox';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 
@@ -11,7 +11,7 @@ export const PlayList = () => {
   const playListMusics =
     music_list &&
     music_list.map(({ name, id, img_url, source_url }) => (
-      <PlaylistItem key={id} id={id} name={name} img_url={img_url} source_url={source_url}></PlaylistItem>
+      <Music key={id} id={id} name={name} img_url={img_url} source_url={source_url}></Music>
     ));
 
   useEffect(() => {

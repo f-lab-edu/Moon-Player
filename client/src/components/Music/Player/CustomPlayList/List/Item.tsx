@@ -4,11 +4,12 @@ import Text from 'components/Global/style/Text';
 import { OverFlowText } from 'components/Global/style/OverFlowText';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
 
-export const Item = ({ title, id }) => {
+export const Item = ({ title, id, onhandleOpenUI }) => {
+  // PlayListTitle 누르면 플레이어 목록들이 나옴
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
       <PlayListNumber>{id}</PlayListNumber>
-      <PlayListTitle>{title}</PlayListTitle>
+      <PlayListTitle onClick={onhandleOpenUI}>{title}</PlayListTitle>
       <IconButton color="rgba(255,255,255,0.64)" size="1x" name="trash" />
     </Layout>
   );
@@ -27,7 +28,6 @@ const Layout = styled(Flex)`
   height: 84px;
   overflow: hidden;
 `;
-
 const PlayListNumber = styled(Text)`
   color: rgba(255, 255, 255, 0.64);
   font-size: 16px;

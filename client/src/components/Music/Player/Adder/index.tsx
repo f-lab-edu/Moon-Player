@@ -8,9 +8,8 @@ import { Text } from 'components/Global/style/Text';
 export const Adder = () => {
   return (
     <Layout direction="column" justifyContent="center" alignItems="center">
-      <Title>나만의 플레이리스트 저장</Title>
       <Flex direction="row" justifyContent="space-between" alignItems="center">
-        <Flex direction="row" alignItems="center" gap="9px">
+        <Flex direction="row" alignItems="center" gap="15px">
           <InputTitle>이름</InputTitle>
           <InputBox />
         </Flex>
@@ -22,13 +21,14 @@ export const Adder = () => {
 export default Adder;
 const Layout = styled(Flex)``;
 const SaveButton = styled(Button)`
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
   border: none;
   font-size: 16px;
   width: 50px;
   height: 30px;
   border-radius: 7px;
+  margin: 10px;
 `;
 const InputBox = styled.input`
   width: 230px;
@@ -38,9 +38,7 @@ const InputBox = styled.input`
   border-radius: 7px;
   padding: 5px;
 `;
-const Title = styled(Text)`
-  font-size: 25px;
-`;
+
 const InputTitle = styled(Text)`
   font-size: 17px;
   width: 40px;
