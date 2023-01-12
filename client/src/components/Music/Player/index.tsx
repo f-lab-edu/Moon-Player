@@ -63,7 +63,7 @@ const Overlay = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+  z-index: 9997;
   padding: 15px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 7px;
@@ -84,21 +84,6 @@ const Layout = styled(Flex)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-`;
-const Header = styled(Flex)`
-  margin: 15px;
-`;
-const Title = styled(Text)`
-  font-size: 20px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.64);
-`;
-const IconButtonBox = styled(Flex)`
-  margin: 10px;
-`;
-
-const StyledIconButton = styled(IconButton)`
-  opacity: ${(props) => (props.active ? 1 : 0.3)};
 `;
 const CloseButton = styled(IconButton)`
   position: absolute;

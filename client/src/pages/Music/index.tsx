@@ -8,6 +8,7 @@ import Footer from 'components/Music/Footer';
 import useModal from 'hooks/useModal';
 const MusicPage = () => {
   const { isOpenPlayerUI } = useModal();
+
   return (
     <Layout>
       <Navigation />

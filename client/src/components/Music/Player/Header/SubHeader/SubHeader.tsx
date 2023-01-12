@@ -4,8 +4,11 @@ import Text from 'components/Global/style/Text';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { useAppDispatch } from 'hooks/useAppDispatch';
 import { handlePlayerHeaderUI } from 'store/feature/layout/LayoutSlice';
+import LoadConfirm from 'components/Global/UI/Confirm/LoadConfirm/LoadConfirm';
+import useModal from 'hooks/useModal';
 export const SubHeader = ({ name }) => {
   // hoem 버튼을 누르면 이전 플레이리스트 목록으로 이동해짐
+  const { onOpenConfirmUI } = useModal();
 
   const dispatch = useAppDispatch();
   const handleHomeButton = () => {
@@ -16,6 +19,7 @@ export const SubHeader = ({ name }) => {
     dispatch(handlePlayerHeaderUI(header));
   };
   const handleSaveButton = () => {
+    onOpenConfirmUI();
     console.log('save button');
   };
 
@@ -26,6 +30,7 @@ export const SubHeader = ({ name }) => {
         <IconButton name="save" size="2x" color="white" onClick={handleSaveButton} />
         <IconButton name="home" size="2x" color="white" onClick={handleHomeButton} />
       </IconButtonBox>
+      <LoadConfirm />
     </Layout>
   );
 };

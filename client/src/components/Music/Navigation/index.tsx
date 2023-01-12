@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import { useAuthenticator } from 'hooks/useAuthenticator';
 import { Avatar } from 'components/Global/style/Avatar';
 
 import Flex from 'components/Global/style/Flex';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 
 import useModal from 'hooks/useModal';
-import LogOutConfirm from 'components/Global/UI/LogOutConfirm/LogOutConfirm';
+import LogOutConfirm from 'components/Global/UI/Confirm/LogOutConfirm/LogOutConfirm';
 
 export const Navigation = () => {
   const { onOpenPlayerUI, onOpenConfirmUI } = useModal();
