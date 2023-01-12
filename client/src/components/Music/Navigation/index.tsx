@@ -6,11 +6,10 @@ import Flex from 'components/Global/style/Flex';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 
 import useModal from 'hooks/useModal';
+import LogOutConfirm from 'components/Global/UI/LogOutConfirm/LogOutConfirm';
 
 export const Navigation = () => {
-  const { signOut } = useAuthenticator();
-
-  const { onOpenPlayerUI } = useModal();
+  const { onOpenPlayerUI, onOpenConfirmUI } = useModal();
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
       <Header>
@@ -19,8 +18,9 @@ export const Navigation = () => {
       <Nav direction="row">
         <IconButton name="user" color="white" size="1x" />
         <IconButton name="music" color="white" size="1x" onClick={onOpenPlayerUI} />
-        <IconButton name="bracket" color="white" size="1x" onClick={signOut} />
+        <IconButton name="bracket" color="white" size="1x" onClick={onOpenConfirmUI} />
       </Nav>
+      <LogOutConfirm />
     </Layout>
   );
 };

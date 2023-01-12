@@ -7,6 +7,9 @@ export const initialState: LayoutState = {
     text: '',
     isOpen: false,
   },
+  confirm: {
+    isOpen: false,
+  },
   player: {
     isOpen: false,
     ui: 'main',
@@ -33,9 +36,13 @@ export const LayoutSlice = createSlice({
     handlePlayerHeaderUI: (state: LayoutState, action: PayloadAction<LayoutPlayerHeaderState>) => {
       state.playerHeader = action.payload;
     },
+    handleOpenConfirmUI: (state: LayoutState, action: PayloadAction<boolean>) => {
+      state.confirm.isOpen = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(PURGE, () => initialState);
   },
 });
-export const { handleOpenAlarm, handleOpenPlayerUI, handlePlayerUI, handlePlayerHeaderUI } = LayoutSlice.actions;
+export const { handleOpenAlarm, handleOpenPlayerUI, handlePlayerUI, handlePlayerHeaderUI, handleOpenConfirmUI } =
+  LayoutSlice.actions;

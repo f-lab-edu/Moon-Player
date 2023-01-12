@@ -29,6 +29,9 @@ export interface LayoutState {
   alarm: Alarm;
   player: LayoutPlayerState;
   playerHeader: LayoutPlayerHeaderState;
+  confirm: {
+    isOpen: boolean;
+  };
 }
 
 export interface Alarm {

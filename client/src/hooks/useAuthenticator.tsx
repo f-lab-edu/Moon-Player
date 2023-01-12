@@ -16,14 +16,14 @@ export const useAuthenticator = () => {
   }, [isAuthenticated]);
 
   const signIn = () => {
-    onOpenAlarm('로그인 하였습니다.');
+    onOpenAlarm('로그인 되었습니다.');
     navigate('/music');
   };
 
   // 로그아웃
   const signOut = () => {
     removeStoreItems();
-    onOpenAlarm('로그아웃 하였습니다.');
+    onOpenAlarm('로그아웃 되었습니다.');
   };
 
   return { isAuthenticated, signIn, signOut };
