@@ -5,15 +5,15 @@ import { useModal } from 'hooks/useModal';
 import { getWrapper } from 'test-utils/wrapper';
 
 describe('Alarm 컴포넌트 기능 테스트', () => {
-  test('onAlarmOpen이 호출되면 전달된 텍스트에 맞는 Alarm컴포넌트가 보여진다. .', async () => {
+  test('onOpenAlarm이 호출되면 전달된 텍스트에 맞는 Alarm컴포넌트가 보여진다. .', async () => {
     const { store } = renderWithProvider(<Alarm></Alarm>);
     const wrapper = getWrapper(store);
     const { result } = renderHook(() => useModal(), {
       wrapper,
     });
     // alarm 호출
-    await waitFor(() => result.current.onAlarmOpen('안녕하세요'));
-    expect(result.current.text).toEqual('안녕하세요');
+    await waitFor(() => result.current.onOpenAlarm('안녕하세요'));
+    expect(result.current.alarmText).toEqual('안녕하세요');
     const alarm = await screen.findByTestId('overlay');
     expect(alarm).toBeInTheDocument();
   });
@@ -25,7 +25,7 @@ describe('Alarm 컴포넌트 기능 테스트', () => {
     const { result } = renderHook(() => useModal(), {
       wrapper,
     });
-    await waitFor(() => result.current.onAlarmOpen('안녕하세요'));
+    await waitFor(() => result.current.onOpenAlarm('안녕하세요'));
     const button = screen.getByRole('button', { name: '확인' });
     const alarm = await screen.findByTestId('overlay');
     await user.click(button);

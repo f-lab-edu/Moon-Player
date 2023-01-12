@@ -5,7 +5,7 @@ import Flex from 'components/Global/style/Flex';
 import Button from 'components/Global/style/Button/Button';
 import { Text } from 'components/Global/style/Text';
 
-export const Adder = () => {
+export const CustomAdder = () => {
   return (
     <Layout direction="column" justifyContent="center" alignItems="center">
       <Flex direction="row" justifyContent="space-between" alignItems="center">
@@ -18,7 +18,7 @@ export const Adder = () => {
     </Layout>
   );
 };
-export default Adder;
+export default CustomAdder;
 const Layout = styled(Flex)``;
 const SaveButton = styled(Button)`
   color: black;

@@ -27,9 +27,7 @@ export interface Genre {
 
 export interface LayoutState {
   alarm: Alarm;
-  ui: {
-    isOpen: boolean;
-  };
+  player: LayoutPlayerState;
 }
 
 export interface Alarm {
@@ -62,4 +60,10 @@ export interface GoogleUser {
   id: number;
   picture: string;
   verified_email: boolean;
+}
+export interface LayoutPlayerState {
+  isOpen: boolean;
+  title: string;
+  ui: string;
+  header: string;
 }

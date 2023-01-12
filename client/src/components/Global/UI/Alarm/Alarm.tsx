@@ -6,15 +6,15 @@ import { Avatar } from '../../style/Avatar';
 import useModal from 'hooks/useModal';
 
 export const Alarm = () => {
-  const { isOpenAlarm, text, onAlarmClose } = useModal();
+  const { isOpenAlarm, alarmText, onCloseAlarm } = useModal();
   return isOpenAlarm ? (
     <Layout data-testid="overlay">
       <Box direction="column" justifyContent="center" alignItems="center">
         <AlarmAvatar img="logo"></AlarmAvatar>
         <AlarmText color="white" textAlign="center" data-testid="alarmText">
-          {text}
+          {alarmText}
         </AlarmText>
-        <StyledButton fontColor="white" color="gray" onClick={onAlarmClose}>
+        <StyledButton fontColor="white" color="gray" onClick={onCloseAlarm}>
           확인
         </StyledButton>
       </Box>

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import ScrollBox from 'components/Global/style/ScrollBox';
 import { useState } from 'react';
 import styled from 'styled-components';
@@ -41,6 +42,7 @@ const playerDatas = [
     source_url: 'https://www.youtube.com/watch?v=0-q1KafFCLU',
     name: '[MV] IU(아이유) _ Celebrity',
     img_url:
+      // eslint-disable-next-line max-len
       'https://i.ytimg.com/vi/0-q1KafFCLU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD6XIEo8_GZamiAXdYO90c7fx7WTg',
     id: 104,
   },
@@ -74,6 +76,7 @@ export const CustomPlayList = () => {
     setisOpen(!isOpen);
   };
 
+  // 서버로부터 데이터를 받아서 렌더링
   const items = datas.map((data) => (
     <CustomPlayListItem title={data.title} key={data.id} id={data.id} onhandleOpenUI={handleOpenUI} />
   ));

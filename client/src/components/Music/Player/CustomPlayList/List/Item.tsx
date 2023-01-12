@@ -5,7 +5,7 @@ import { OverFlowText } from 'components/Global/style/OverFlowText';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
 
 export const Item = ({ title, id, onhandleOpenUI }) => {
-  // PlayListTitle 누르면 플레이어 목록들이 나옴
+  // PlayListTitle 누르면 플레이어 목록들이 나오게끔 구현 Player의 index.tsx가 바껴야함 UI타이틀
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
       <PlayListNumber>{id}</PlayListNumber>

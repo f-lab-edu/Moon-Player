@@ -10,7 +10,7 @@ import useModal from 'hooks/useModal';
 export const Navigation = () => {
   const { signOut } = useAuthenticator();
 
-  const { onUIOpen } = useModal();
+  const { onOpenPlayerUI } = useModal();
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
       <Header>
@@ -18,7 +18,7 @@ export const Navigation = () => {
       </Header>
       <Nav direction="row">
         <IconButton name="user" color="white" size="1x" />
-        <IconButton name="music" color="white" size="1x" onClick={onUIOpen} />
+        <IconButton name="music" color="white" size="1x" onClick={onOpenPlayerUI} />
         <IconButton name="bracket" color="white" size="1x" onClick={signOut} />
       </Nav>
     </Layout>

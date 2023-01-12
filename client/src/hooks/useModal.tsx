@@ -1,28 +1,27 @@
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
-import { handleOpenAlarm, handleOpenUI } from 'store/feature/layout/LayoutSlice';
+import { handleOpenAlarm, handleOpenPlayerUI } from 'store/feature/layout/LayoutSlice';
 export const useModal = () => {
   const alarm = useAppSelector((state) => state.layout.alarm);
+  const alarmText = alarm.text;
   const isOpenAlarm = alarm.isOpen;
-  const text = alarm.text;
-
-  const isOpenUI = useAppSelector((state) => state.layout.ui.isOpen);
+  const isOpenPlayerUI = useAppSelector((state) => state.layout.player.isOpen);
   const dispatch = useAppDispatch();
 
-  const onAlarmOpen = (text: string) => {
+  const onOpenAlarm = (text: string) => {
     dispatch(handleOpenAlarm({ isOpen: true, text }));
   };
 
-  const onAlarmClose = () => {
+  const onCloseAlarm = () => {
     dispatch(handleOpenAlarm({ isOpen: false, text: '' }));
   };
-  const onUIClose = () => {
-    dispatch(handleOpenUI(false));
+  const onOpenPlayerUI = () => {
+    dispatch(handleOpenPlayerUI(true));
   };
-  const onUIOpen = () => {
-    dispatch(handleOpenUI(true));
+  const onClosePlayerUI = () => {
+    dispatch(handleOpenPlayerUI(false));
   };
 
-  return { isOpenAlarm, isOpenUI, text, onAlarmClose, onAlarmOpen, onUIClose, onUIOpen };
+  return { isOpenAlarm, isOpenPlayerUI, alarmText, onOpenAlarm, onCloseAlarm, onOpenPlayerUI, onClosePlayerUI };
 };
 
 export default useModal;

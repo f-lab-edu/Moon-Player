@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import Music from 'components/Music/Player/Main/Item/Item';
+import Music from 'components/Music/Player/PlayerList/Item/Item';
 import Text from 'components/Global/style/Text';
 import ScrollBox from 'components/Global/style/ScrollBox';
 import { useAppSelector } from 'hooks/useAppDispatch';
 
 // 플레이어 메인
-export const Main = () => {
+export const PlayerList = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
   const playerMusics =
     playerSelector.list.length > 0 ? (
@@ -30,4 +30,4 @@ const EmptyText = styled(Text)`
   font-size: 20px;
 `;
 
-export default Main;
+export default PlayerList;

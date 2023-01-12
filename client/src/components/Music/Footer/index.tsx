@@ -1,13 +1,12 @@
 import { usePlayerControl } from 'hooks/usePlayerControl';
 import { formatTime } from 'utils/app/Player';
 
-import ProgressBar from './ProgressBar';
-import Volume from './Volume';
-import Controller from './Controller';
-import MusicInfo from './Music';
 import { Flex } from 'components/Global/style/Flex';
 import styled from 'styled-components';
-
+import ProgressBar from './ProgressBar/ProgressBar';
+import Volume from './Volume/Volume';
+import MusicInfo from './MusicInfo/MusicInfo';
+import Controller from './Controller/Controller';
 export const Footer = () => {
   const {
     musicPlayer,

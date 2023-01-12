@@ -10,12 +10,12 @@ import { MusicItem } from 'components/Global/UI/MusicItem/MusicItem';
 
 export const Item = ({ name, img_url, id, source_url }: Music) => {
   const dispatch = useAppDispatch();
-  const { onAlarmOpen } = useModal();
+  const { onOpenAlarm } = useModal();
   const playerSelector = useAppSelector((state) => state.music.player);
   const isCurrentMusic = playerSelector.music.name === name ? true : false;
 
   const handleRemoveButton = () => {
-    return isCurrentMusic ? onAlarmOpen('현재 재생중인 음악은 삭제할수없습니다.') : dispatch(handleRemoveMusic(name));
+    return isCurrentMusic ? onOpenAlarm('현재 재생중인 음악은 삭제할수없습니다.') : dispatch(handleRemoveMusic(name));
   };
 
   const handlePlayMusic = () => {

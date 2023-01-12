@@ -1,23 +1,32 @@
 import styled from 'styled-components';
 import { useEffect, useRef, useState } from 'react';
-import Adder from './Adder';
-import Main from './Main';
+import CustomAdder from './CustomAdder';
+import Main from './PlayerList';
 import Flex from 'components/Global/style/Flex';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
 import Text from 'components/Global/style/Text';
 import { useModal } from 'hooks/useModal';
 import { CustomPlayList } from './CustomPlayList/index';
+import { MainHeader } from './Header/MainHeader/MainHeader';
+import { useAppSelector } from 'hooks/useAppDispatch';
 
 // 플레이어 메인
 
 export const Player = () => {
   const modalRef = useRef<HTMLDivElement>(null);
+  const playerUI = useAppSelector((state) => state.layout.player);
+  const playerHeader =
+    playerUI.header === 'main-header' ? <MainHeader name={playerUI.ui} title={playerUI.title} /> : <></>;
+  const playerRenderUI =
+    playerUI.ui === 'custom-PlayList' ? (
+      <CustomPlayList />
+    ) : playerUI.ui === 'custom-Adder' ? (
+      <CustomAdder />
+    ) : (
+      <Main />
+    );
 
-  const [isOpenPlayList, setIsOpenPlayList] = useState(true);
-  const [isOpenAdder, setIsOpenAdder] = useState(false);
-  const [isOpenCustomPlayList, setIsOpenCustomPlayList] = useState(false);
-  const ui_name = isOpenPlayList ? 'Play List' : isOpenCustomPlayList ? 'MY PlayList' : 'ADD PlayList';
-
+  const { onClosePlayerUI } = useModal();
   useEffect(() => {
     document.addEventListener('mousedown', handleModalOutSide);
     return () => {
@@ -25,49 +34,17 @@ export const Player = () => {
     };
   }, []);
 
-  const { onUIClose } = useModal();
-  // UI State 세개로 관리 , => 재생목록에 대한것 ,커스텀 Addr에 대한것, 나의 재생목록에 대한것
   const handleModalOutSide = (e) => {
     if (modalRef.current?.contains(e.target)) return;
-    onUIClose();
-  };
-  const handlePlayListUI = () => {
-    setIsOpenPlayList(true);
-    setIsOpenAdder(false);
-    setIsOpenCustomPlayList(false);
-  };
-  const handleAdderUI = () => {
-    setIsOpenAdder(true);
-    setIsOpenPlayList(false);
-    setIsOpenCustomPlayList(false);
-  };
-  const handleCustomPlayListUI = () => {
-    setIsOpenCustomPlayList(true);
-    setIsOpenPlayList(false);
-    setIsOpenAdder(false);
+    onClosePlayerUI();
   };
 
   return (
     <Overlay>
       <Layout direction="column" ref={modalRef}>
-        <CloseButton onClick={onUIClose} name="close" color="white" size="2x" />
-        <Header direction="row" justifyContent="space-between" alignItems="center">
-          <Title>{ui_name}</Title>
-          <IconButtonBox direction="row" gap="5px">
-            <StyledIconButton name="plus" size="2x" color="white" onClick={handleAdderUI} active={isOpenAdder} />
-            <StyledIconButton
-              name="music"
-              size="2x"
-              color="white"
-              onClick={handleCustomPlayListUI}
-              active={isOpenCustomPlayList}
-            />
-            <StyledIconButton name="list" size="2x" color="white" onClick={handlePlayListUI} active={isOpenPlayList} />
-          </IconButtonBox>
-        </Header>
-        {isOpenPlayList ? <Main /> : <></>}
-        {isOpenAdder ? <Adder /> : <></>}
-        {isOpenCustomPlayList ? <CustomPlayList /> : <></>}
+        <CloseButton onClick={onClosePlayerUI} name="close" color="white" size="2x" />
+        {playerHeader}
+        {playerRenderUI}
       </Layout>
     </Overlay>
   );

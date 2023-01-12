@@ -7,7 +7,7 @@ import { useModal } from './useModal';
 
 export const useAuthenticator = () => {
   const navigate = useNavigate();
-  const { onAlarmOpen } = useModal();
+  const { onOpenAlarm } = useModal();
   const isAuthenticated = useAppSelector((state) => state.user.data.access_token) ? true : false;
 
   useEffect(() => {
@@ -16,14 +16,14 @@ export const useAuthenticator = () => {
   }, [isAuthenticated]);
 
   const signIn = () => {
-    onAlarmOpen('로그인 하였습니다.');
+    onOpenAlarm('로그인 하였습니다.');
     navigate('/music');
   };
 
   // 로그아웃
   const signOut = () => {
     removeStoreItems();
-    onAlarmOpen('로그아웃 하였습니다.');
+    onOpenAlarm('로그아웃 하였습니다.');
   };
 
   return { isAuthenticated, signIn, signOut };

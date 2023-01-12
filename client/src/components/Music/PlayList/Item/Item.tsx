@@ -14,12 +14,12 @@ export const Item = ({ id, name, img_url, source_url }: Music) => {
   const dispatch = useAppDispatch();
   const playerSelector = useAppSelector((state) => state.music.player);
   const isInPlayer = playerSelector.list.find((music: Music) => music.name === name) ? true : false;
-  const { onAlarmOpen } = useModal();
+  const { onOpenAlarm } = useModal();
 
   const handleAddMusic = () => {
     if (isInPlayer) return;
     const selectedMusic = { id, name, img_url, source_url };
-    onAlarmOpen('음악이 추가되었습니다.');
+    onOpenAlarm('음악이 추가되었습니다.');
     dispatch(handleAddPlayer(selectedMusic));
   };
 
