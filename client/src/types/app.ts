@@ -20,6 +20,8 @@ import {
   faUser,
   faRightFromBracket,
   faPlus,
+  faHome,
+  faSave,
 } from '@fortawesome/free-solid-svg-icons';
 export interface PlayerControl {
   playing: boolean;
@@ -38,7 +40,9 @@ export interface PlayerControl {
 export type StyledProps = Pick<CSSObject, 'height' | 'width' | 'color' | 'fontSize' | 'textAlign' | 'cursor'>;
 
 export const FontAwesomeIcons = {
+  save: faSave,
   shuffle: faShuffle,
+  home: faHome,
   backward: faBackwardStep,
   play: faPlayCircle,
   forward: faForwardStep,

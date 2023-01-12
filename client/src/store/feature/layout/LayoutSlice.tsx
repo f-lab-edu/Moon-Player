@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
-import { LayoutState, Alarm, LayoutPlayerState } from 'types/store';
+import { LayoutState, Alarm, LayoutPlayerHeaderState } from 'types/store';
 
 export const initialState: LayoutState = {
   alarm: {
@@ -9,9 +9,11 @@ export const initialState: LayoutState = {
   },
   player: {
     isOpen: false,
-    title: 'Play List',
     ui: 'main',
+  },
+  playerHeader: {
     header: 'main-header',
+    name: '현재 재생 목록',
   },
 };
 
@@ -25,12 +27,15 @@ export const LayoutSlice = createSlice({
     handleOpenPlayerUI: (state: LayoutState, action: PayloadAction<boolean>) => {
       state.player.isOpen = action.payload;
     },
-    handlePlayerUIState: (state: LayoutState, action: PayloadAction<LayoutPlayerState>) => {
-      state.player = action.payload;
+    handlePlayerUI: (state: LayoutState, action: PayloadAction<string>) => {
+      state.player.ui = action.payload;
+    },
+    handlePlayerHeaderUI: (state: LayoutState, action: PayloadAction<LayoutPlayerHeaderState>) => {
+      state.playerHeader = action.payload;
     },
   },
   extraReducers: (builder) => {
     builder.addCase(PURGE, () => initialState);
   },
 });
-export const { handleOpenAlarm, handleOpenPlayerUI, handlePlayerUIState } = LayoutSlice.actions;
+export const { handleOpenAlarm, handleOpenPlayerUI, handlePlayerUI, handlePlayerHeaderUI } = LayoutSlice.actions;

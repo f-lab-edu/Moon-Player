@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 import ScrollBox from 'components/Global/style/ScrollBox';
-import { useState } from 'react';
 import styled from 'styled-components';
 import CustomPlayListItem from './List/Item';
 import { MusicItem } from 'components/Global/UI/MusicItem/MusicItem';
+import { useAppSelector } from 'hooks/useAppDispatch';
 
 const datas = [
   { title: '안녕하세요', id: 1 },
@@ -70,22 +70,17 @@ const playerDatas = [
 ];
 
 export const CustomPlayList = () => {
-  const [isOpen, setisOpen] = useState(false);
+  const isSubHeader = useAppSelector((state) => state.layout.playerHeader.header) === 'sub-header' ? true : false;
 
-  const handleOpenUI = () => {
-    setisOpen(!isOpen);
-  };
-
-  // 서버로부터 데이터를 받아서 렌더링
-  const items = datas.map((data) => (
-    <CustomPlayListItem title={data.title} key={data.id} id={data.id} onhandleOpenUI={handleOpenUI} />
-  ));
-  // 클릭시 서버로부터 데이터 페칭해서 가져오고 렌더링
+  // 서버로부터 데이터리스트들을 받아서 렌더링
+  const items = datas.map((data) => <CustomPlayListItem title={data.title} key={data.id} id={data.id} />);
+  // 클릭시 서버로부터 데이터 페칭해서 가져오고 렌더링 현재는 mockdata
   const playerMusicItems = playerDatas.map((data) => (
     <MusicItem name={data.name} img_url={data.img_url} id={data.id} key={data.id} />
   ));
 
-  return <Layout>{!isOpen ? items : playerMusicItems}</Layout>;
+  // 서브헤더의 존재 유무로 렌더링할 요소 지정
+  return <Layout>{!isSubHeader ? items : playerMusicItems}</Layout>;
 };
 
 const Layout = styled(ScrollBox)`

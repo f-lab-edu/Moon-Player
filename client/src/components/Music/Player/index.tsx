@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import CustomAdder from './CustomAdder';
-import Main from './PlayerList';
+import PlayerList from './PlayerList';
 import Flex from 'components/Global/style/Flex';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
 import Text from 'components/Global/style/Text';
@@ -9,21 +9,28 @@ import { useModal } from 'hooks/useModal';
 import { CustomPlayList } from './CustomPlayList/index';
 import { MainHeader } from './Header/MainHeader/MainHeader';
 import { useAppSelector } from 'hooks/useAppDispatch';
+import SubHeader from './Header/SubHeader/SubHeader';
 
 // 플레이어 메인
 
 export const Player = () => {
   const modalRef = useRef<HTMLDivElement>(null);
+
   const playerUI = useAppSelector((state) => state.layout.player);
+  const playerHeaderUI = useAppSelector((state) => state.layout.playerHeader);
   const playerHeader =
-    playerUI.header === 'main-header' ? <MainHeader name={playerUI.ui} title={playerUI.title} /> : <></>;
+    playerHeaderUI.header === 'main-header' ? (
+      <MainHeader ui={playerUI.ui} name={playerHeaderUI.name} />
+    ) : (
+      <SubHeader name={playerHeaderUI.name} />
+    );
   const playerRenderUI =
     playerUI.ui === 'custom-PlayList' ? (
       <CustomPlayList />
     ) : playerUI.ui === 'custom-Adder' ? (
       <CustomAdder />
     ) : (
-      <Main />
+      <PlayerList />
     );
 
   const { onClosePlayerUI } = useModal();

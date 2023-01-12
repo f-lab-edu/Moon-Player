@@ -3,61 +3,59 @@ import IconButton from 'components/Global/UI/IconButton/IconButton';
 import Flex from 'components/Global/style/Flex';
 import styled from 'styled-components';
 import { useAppDispatch } from 'hooks/useAppDispatch';
-import { handlePlayerUIState } from 'store/feature/layout/LayoutSlice';
-export const MainHeader = ({ name, title }) => {
+import { handlePlayerUI, handlePlayerHeaderUI } from 'store/feature/layout/LayoutSlice';
+export const MainHeader = ({ ui, name }) => {
   const dispatch = useAppDispatch();
+
   const handleCustomPlayListUI = () => {
-    const ui = {
-      isOpen: true,
-      ui: 'custom-PlayList',
-      title: 'MY PlayList',
+    const header = {
       header: 'main-header',
+      name: '나만의 플레이리스트 ',
     };
-    dispatch(handlePlayerUIState(ui));
+    dispatch(handlePlayerUI('custom-PlayList'));
+    dispatch(handlePlayerHeaderUI(header));
   };
   const handleAdderUI = () => {
-    const ui = {
-      isOpen: true,
-      ui: 'custom-Adder',
-      title: 'ADD PlayList',
+    const header = {
       header: 'main-header',
+      name: '나만의 플레이리스트 추가',
     };
-    dispatch(handlePlayerUIState(ui));
+    dispatch(handlePlayerUI('custom-Adder'));
+    dispatch(handlePlayerHeaderUI(header));
   };
   const handlePlayListUI = () => {
-    const ui = {
-      isOpen: true,
-      ui: 'main',
-      title: 'PlayList',
+    const header = {
       header: 'main-header',
+      name: '현재 재생 목록',
     };
-    dispatch(handlePlayerUIState(ui));
+    dispatch(handlePlayerUI('main'));
+    dispatch(handlePlayerHeaderUI(header));
   };
 
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
-      <Title>{title}</Title>
+      <Title>{name}</Title>
       <IconButtonBox direction="row" gap="5px">
         <StyledIconButton
           name="plus"
           size="2x"
           color="white"
           onClick={handleAdderUI}
-          active={name === 'custom-Adder' ? true : false}
+          active={ui === 'custom-Adder' ? true : false}
         />
         <StyledIconButton
           name="music"
           size="2x"
           color="white"
           onClick={handleCustomPlayListUI}
-          active={name === 'custom-PlayList' ? true : false}
+          active={ui === 'custom-PlayList' ? true : false}
         />
         <StyledIconButton
           name="list"
           size="2x"
           color="white"
           onClick={handlePlayListUI}
-          active={name === 'main' ? true : false}
+          active={ui === 'main' ? true : false}
         />
       </IconButtonBox>
     </Layout>

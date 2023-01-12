@@ -28,6 +28,7 @@ export interface Genre {
 export interface LayoutState {
   alarm: Alarm;
   player: LayoutPlayerState;
+  playerHeader: LayoutPlayerHeaderState;
 }
 
 export interface Alarm {
@@ -63,7 +64,9 @@ export interface GoogleUser {
 }
 export interface LayoutPlayerState {
   isOpen: boolean;
-  title: string;
   ui: string;
+}
+export interface LayoutPlayerHeaderState {
   header: string;
+  name: string;
 }
