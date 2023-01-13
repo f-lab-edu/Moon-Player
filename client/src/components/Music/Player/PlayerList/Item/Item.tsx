@@ -6,7 +6,8 @@ import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import { Music } from 'types/store';
 import { useModal } from 'hooks/useModal';
-import { MusicItem } from 'components/Global/UI/MusicItem/MusicItem';
+import MusicItem from 'components/Global/UI/MusicItem/MusicItem';
+import { Flex } from 'components/Global/style/Flex';
 
 export const Item = ({ name, img_url, id, source_url }: Music) => {
   const dispatch = useAppDispatch();
@@ -36,6 +37,11 @@ interface RootProps {
 }
 const Layout = styled.div<RootProps>`
   background-color: ${({ isActive }) => (isActive ? 'rgba(0,0,0,0.64)' : 'none')};
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  img {
+    width: 100px;
+    height: 90px;
+  }
 `;
 
 export default Item;

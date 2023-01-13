@@ -22,6 +22,7 @@ import {
   faPlus,
   faHome,
   faSave,
+  faChevronDown,
 } from '@fortawesome/free-solid-svg-icons';
 export interface PlayerControl {
   playing: boolean;
@@ -59,6 +60,7 @@ export const FontAwesomeIcons = {
   user: faUser,
   bracket: faRightFromBracket,
   plus: faPlus,
+  down: faChevronDown,
 };
 type FontAweSomeIconType = keyof typeof FontAwesomeIcons;
 export interface IconType {

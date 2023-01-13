@@ -21,10 +21,10 @@ export const CustomAdder = () => {
   return (
     <Layout direction="column" justifyContent="center">
       <Flex direction="row" justifyContent="space-between" alignItems="center">
-        <Flex direction="row" alignItems="center" gap="15px">
+        <InputBox direction="row" alignItems="center" gap="15px">
           <InputTitle>이름</InputTitle>
-          <InputBox />
-        </Flex>
+          <Input />
+        </InputBox>
         <SaveButton>저장</SaveButton>
       </Flex>
       <MusicBox>{playerMusics}</MusicBox>
@@ -37,7 +37,15 @@ const MusicBox = styled(ScrollBox)`
   height: 30vh;
   padding-right: 10px;
 `;
-const Layout = styled(Flex)``;
+const Layout = styled(Flex)`
+  img {
+    width: 100px;
+    height: 90px;
+  }
+`;
+const InputBox = styled(Flex)`
+  margin-bottom: 10px;
+`;
 const SaveButton = styled(Button)`
   color: black;
   background-color: white;
@@ -48,7 +56,7 @@ const SaveButton = styled(Button)`
   border-radius: 7px;
   margin: 10px;
 `;
-const InputBox = styled.input`
+const Input = styled.input`
   width: 300px;
   font-size: 18px;
   outline: none;

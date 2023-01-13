@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Flex from 'components/Global/style/Flex';
 import Navigation from 'components/Music/Navigation/';
 import Genre from 'components/Music/Genre';
 import Player from 'components/Music/Player';
@@ -33,15 +32,4 @@ const Layout = styled.div`
   );
 `;
 
-// const Main = styled(Flex)`
-//   height: auto;
-//   padding: 0 48px 24px 48px;
-//   justify-content: center;
-//   overflow: hidden;
-
-//   @media screen and (max-width: 1024px) {
-//     flex-direction: column;
-//     align-items: center;
-//   }
-// `;
 export default MusicPage;

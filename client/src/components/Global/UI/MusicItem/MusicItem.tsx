@@ -53,8 +53,7 @@ const MusicTitle = styled(OverFlowText)`
   overflow: hidden;
 `;
 const MusicImage = styled(Image)`
-  width: 64px;
-  height: 64px;
+  width: 128px;
 `;
 
 export default MusicItem;

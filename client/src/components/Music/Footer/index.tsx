@@ -46,8 +46,7 @@ export const Footer = () => {
   );
 };
 const Layout = styled.div`
-  margin-top: 10px;
-  max-height: auto;
+  margin-top: 5px;
 `;
 const MusicInfoBox = styled(Flex)`
   margin-top: 5px;
