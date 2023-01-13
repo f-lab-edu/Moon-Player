@@ -5,15 +5,18 @@ import Player from 'components/Music/Player';
 import PlayList from 'components/Music/PlayList';
 import Footer from 'components/Music/Footer';
 import useModal from 'hooks/useModal';
+import { usePlayerControlModule } from 'hooks/usePlayerControlModule';
 const MusicPage = () => {
-  const { isOpenPlayerUI, isOpenFooterUI } = useModal();
+  const { isOpenPlayerUI } = useModal();
+  const { musicPlayer, playerModuleSelector } = usePlayerControlModule();
 
   return (
     <Layout>
       <Navigation />
       <Genre />
       <PlayList />
-      {isOpenFooterUI ? <Footer /> : <></>}
+      {playerModuleSelector.music && musicPlayer}
+      <Footer player={playerModuleSelector} />
       {isOpenPlayerUI ? <Player /> : <></>}
     </Layout>
   );

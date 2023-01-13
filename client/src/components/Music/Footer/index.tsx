@@ -1,4 +1,4 @@
-import { usePlayerControl } from 'hooks/usePlayerControl';
+import { usePlayerControlModule } from 'hooks/usePlayerControlModule';
 import { formatTime } from 'utils/app/Player';
 
 import { Flex } from 'components/Global/style/Flex';
@@ -7,44 +7,47 @@ import ProgressBar from './ProgressBar/ProgressBar';
 import Volume from './Volume/Volume';
 import MusicInfo from './MusicInfo/MusicInfo';
 import Controller from './Controller/Controller';
-export const Footer = () => {
+import useModal from 'hooks/useModal';
+export const Footer = ({ player }) => {
   const {
-    musicPlayer,
-    playerState,
-    handleRepeat,
-    handlePlay,
-    handleVolume,
+    handleRepeatMusic,
+    handlePlayMusic,
+    handleVolumeMusic,
     handleShuffleMusic,
-    handlePrevMusic,
-    handleNextMusic,
-  } = usePlayerControl();
-  const currentTime = formatTime(+playerState.currentTime);
-  const endTime = formatTime(+playerState.endTime);
-  const elapsedTime = Math.floor((+playerState.currentTime / +playerState.endTime) * 100);
-  const playerVolume = playerState.volume.toString();
-
-  return (
+    handlePrevPlayingMusic,
+    handleNextPlayingMusic,
+  } = usePlayerControlModule();
+  const { isOpenFooterUI } = useModal();
+  const currentTime = formatTime(+player.currentTime);
+  const endTime = formatTime(+player.endTime);
+  const elapsedTime = Math.floor((+player.currentTime / +player.endTime) * 100);
+  const playerVolume = player.volume.toString();
+  return isOpenFooterUI ? (
     <Layout>
       <ProgressBar currentTime={currentTime} endTime={endTime} elapsedTime={elapsedTime} />
       <MusicInfoBox direction="row">
-        <MusicInfo player={playerState}></MusicInfo>
-        {playerState.music && musicPlayer}
+        <MusicInfo player={player}></MusicInfo>
       </MusicInfoBox>
 
       <Flex direction="row" justifyContent="space-between">
-        <Volume onVolume={handleVolume} volume={playerVolume} />
+        <Volume onVolume={handleVolumeMusic} volume={playerVolume} />
         <Controller
-          player={playerState}
-          onRepeat={handleRepeat}
-          onPlay={handlePlay}
-          onPrevMusic={handlePrevMusic}
-          onNextMusic={handleNextMusic}
+          player={player}
+          onRepeat={handleRepeatMusic}
+          onPlay={handlePlayMusic}
+          onPrevMusic={handlePrevPlayingMusic}
+          onNextMusic={handleNextPlayingMusic}
           onShuffleMusic={handleShuffleMusic}
         />
       </Flex>
     </Layout>
+  ) : (
+    <>
+      <ProgressBar currentTime={currentTime} endTime={endTime} elapsedTime={elapsedTime} />
+    </>
   );
 };
+
 const Layout = styled.div`
   margin-top: 5px;
 `;

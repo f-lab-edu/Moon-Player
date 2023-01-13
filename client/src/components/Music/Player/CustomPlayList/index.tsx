@@ -90,7 +90,7 @@ const Layout = styled(ScrollBox)`
     margin-right: 10px;
   }
   div {
-    font-size: 18px;
+    font-size: 16px;
   }
   img {
     width: 64px;

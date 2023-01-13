@@ -30,8 +30,12 @@ export const useModal = () => {
   const onOpenConfirmUI = () => {
     dispatch(handleOpenConfirmUI(true));
   };
-  const onOpenFooterUI = () => {
+
+  const onhandleFooterUI = () => {
     dispatch(handleOpenFooterUI(!isOpenFooterUI));
+  };
+  const onOpenFooterUI = () => {
+    dispatch(handleOpenFooterUI(true));
   };
 
   const onCloseConfirmUI = () => {
@@ -49,6 +53,7 @@ export const useModal = () => {
     onOpenConfirmUI,
     onCloseConfirmUI,
     onOpenFooterUI,
+    onhandleFooterUI,
     isOpenConfirm,
     isOpenFooterUI,
   };

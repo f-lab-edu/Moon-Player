@@ -1,6 +1,8 @@
+import { PlayerControlModuleState } from './app/player/index';
 export interface PlayerState {
   list: Array<Music>;
-  music: Music;
+  playingMusic: Music;
+  playerControlModuleState: PlayerControlModuleState;
 }
 
 //  비동기 데이터

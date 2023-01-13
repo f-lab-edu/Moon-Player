@@ -24,8 +24,8 @@ export const CustomAdder = () => {
         <InputBox direction="row" alignItems="center" gap="15px">
           <InputTitle>이름</InputTitle>
           <Input />
+          <SaveButton>저장</SaveButton>
         </InputBox>
-        <SaveButton>저장</SaveButton>
       </Flex>
       <MusicBox>{playerMusics}</MusicBox>
     </Layout>
@@ -38,9 +38,16 @@ const MusicBox = styled(ScrollBox)`
   padding-right: 10px;
 `;
 const Layout = styled(Flex)`
+  h3 {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  div {
+    font-size: 16px;
+  }
   img {
-    width: 100px;
-    height: 90px;
+    width: 64px;
+    height: 64px;
   }
 `;
 const InputBox = styled(Flex)`

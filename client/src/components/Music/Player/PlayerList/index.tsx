@@ -21,7 +21,17 @@ export const PlayerList = () => {
 
 const Layout = styled(ScrollBox)`
   height: 30vh;
-  padding-right: 10px;
+  h3 {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  div {
+    font-size: 16px;
+  }
+  img {
+    width: 64px;
+    height: 64px;
+  }
 `;
 
 const EmptyText = styled(Text)`

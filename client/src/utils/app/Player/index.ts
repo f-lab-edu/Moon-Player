@@ -1,11 +1,11 @@
 import { cloneDeep } from 'lodash';
 import { Music } from 'types/store';
 
-export const prevPlayMusic = (playerItems: Music[], music: Music): Music => {
+export const prevSelctedMusic = (playerItems: Music[], music: Music): Music => {
   const prevMusicIndex = playerItems.findIndex((item) => music.name === item.name) - 1;
   return prevMusicIndex < 0 ? playerItems[playerItems.length - 1] : playerItems[prevMusicIndex];
 };
-export const nextPlayMusic = (playerItems: Music[], music: Music): Music => {
+export const nextSelctedMusic = (playerItems: Music[], music: Music): Music => {
   const nextMusicIndex = playerItems.findIndex((item) => music.name === item.name) + 1;
   return nextMusicIndex < playerItems.length ? playerItems[nextMusicIndex] : playerItems[0];
 };

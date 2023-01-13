@@ -23,7 +23,7 @@ describe('Player List Item 컴포넌트 기능 테스트', () => {
     await waitFor(() => store.dispatch(handleAddPlayer(music)));
     const music_image = screen.getByRole('img');
     await user.click(music_image);
-    const playerplayMusicStore = store.getState().music.player.music;
+    const playerplayMusicStore = store.getState().music.player.playingMusic;
     expect(playerplayMusicStore).toStrictEqual(music);
   });
   test('음악 제목을 누르면 음악 제목에 대한 음악을 Player Store에 저장되어야한다.', async () => {
@@ -31,7 +31,7 @@ describe('Player List Item 컴포넌트 기능 테스트', () => {
     await waitFor(() => store.dispatch(handleAddPlayer(music)));
     const music_title = screen.getByText(name);
     await user.click(music_title);
-    const playerplayMusicStore = store.getState().music.player.music;
+    const playerplayMusicStore = store.getState().music.player.playingMusic;
     expect(playerplayMusicStore).toStrictEqual(music);
   });
 
