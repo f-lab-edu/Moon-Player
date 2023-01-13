@@ -22,6 +22,7 @@ import {
   faHome,
   faSave,
   faArrowDown,
+  faArrowUp,
 } from '@fortawesome/free-solid-svg-icons';
 
 export type StyledProps = Pick<CSSObject, 'height' | 'width' | 'color' | 'fontSize' | 'textAlign' | 'cursor'>;
@@ -47,6 +48,7 @@ export const FontAwesomeIcons = {
   bracket: faRightFromBracket,
   plus: faPlus,
   down: faArrowDown,
+  up: faArrowUp,
 };
 type FontAweSomeIconType = keyof typeof FontAwesomeIcons;
 export interface IconType {
