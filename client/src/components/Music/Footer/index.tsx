@@ -8,6 +8,8 @@ import Volume from './Volume/Volume';
 import MusicInfo from './MusicInfo/MusicInfo';
 import Controller from './Controller/Controller';
 import useModal from 'hooks/useModal';
+
+// hide버튼 누를시 프로그레스바만 보이게 구현
 export const Footer = ({ player }) => {
   const {
     handleRepeatMusic,

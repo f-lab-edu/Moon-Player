@@ -6,23 +6,25 @@ import Text from 'components/Global/style/Text';
 import { useModal } from 'hooks/useModal';
 export const LoadConfirm = () => {
   const { isOpenConfirm, onCloseConfirmUI, onOpenAlarm } = useModal();
-  const handleButton = () => {
-    onCloseConfirmUI();
+  const handleYesButton = () => {
+    onCloseConfirmUI('Load');
     onOpenAlarm('재생목록을 가져왔습니다.');
   };
-
-  return isOpenConfirm ? (
+  const handleNoButton = () => {
+    onCloseConfirmUI('Load');
+  };
+  return isOpenConfirm.load.isOpen ? (
     <Layout data-testid="overlay">
       <Box direction="column" justifyContent="center" alignItems="center">
         <StyledAvatar img="logo"></StyledAvatar>
-        <LogOutText color="white" textAlign="center">
+        <StyledText color="white" textAlign="center">
           재생목록을 가져오시겠습니까?
-        </LogOutText>
+        </StyledText>
         <Flex direction="row" gap="50px">
-          <StyledButton fontColor="white" color="gray" onClick={handleButton}>
+          <StyledButton fontColor="white" color="gray" onClick={handleYesButton}>
             YES
           </StyledButton>
-          <StyledButton fontColor="white" color="gray" onClick={onCloseConfirmUI}>
+          <StyledButton fontColor="white" color="gray" onClick={handleNoButton}>
             NO
           </StyledButton>
         </Flex>
@@ -68,7 +70,7 @@ const StyledAvatar = styled(Avatar)`
   height: 100px;
   margin: 50px;
 `;
-const LogOutText = styled(Text)`
-  font-size: 20px;
+const StyledText = styled(Text)`
+  font-size: 23px;
 `;
 export default LoadConfirm;

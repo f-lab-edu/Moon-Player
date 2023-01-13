@@ -19,8 +19,8 @@ export const SubHeader = ({ name }) => {
     dispatch(handlePlayerHeaderUI(header));
   };
   const handleSaveButton = () => {
-    onOpenConfirmUI();
-    console.log('save button');
+    console.log('123');
+    onOpenConfirmUI('Load');
   };
 
   return (
@@ -30,7 +30,7 @@ export const SubHeader = ({ name }) => {
         <IconButton name="save" size="2x" color="white" onClick={handleSaveButton} />
         <IconButton name="home" size="2x" color="white" onClick={handleHomeButton} />
       </IconButtonBox>
-      <LoadConfirm />
+      <LoadConfirm></LoadConfirm>
     </Layout>
   );
 };

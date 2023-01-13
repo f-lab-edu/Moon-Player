@@ -64,7 +64,7 @@ const AlarmAvatar = styled(Avatar)`
 `;
 
 const AlarmText = styled(Text)`
-  font-size: 25px;
+  font-size: 23px;
 `;
 
 export default Alarm;

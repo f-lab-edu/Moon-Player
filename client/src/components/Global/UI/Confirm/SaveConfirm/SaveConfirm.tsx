@@ -1,29 +1,27 @@
-import Avatar from 'components/Global/style/Avatar';
-import Button from 'components/Global/style/Button/Button';
-import Flex from 'components/Global/style/Flex';
-import Text from 'components/Global/style/Text';
 import styled from 'styled-components';
-import useModal from 'hooks/useModal';
-import useAuthenticator from 'hooks/useAuthenticator';
+import { useModal } from 'hooks/useModal';
+import { Flex } from 'components/Global/style/Flex';
+import { Button } from 'components/Global/style/Button/Button';
+import Avatar from 'components/Global/style/Avatar';
+import Text from 'components/Global/style/Text';
 
-export const LogOutConfirm = () => {
-  const { isOpenConfirm, onCloseConfirmUI } = useModal();
-  const { signOut } = useAuthenticator();
-
+export const SaveConfirm = () => {
+  const { isOpenConfirm, onCloseConfirmUI, onOpenAlarm } = useModal();
   const handleYesButton = () => {
-    signOut();
-    onCloseConfirmUI('Logout');
+    onCloseConfirmUI('Save');
+    onOpenAlarm('재생목록을 저장했습니다.');
   };
   const handleNoButton = () => {
-    onCloseConfirmUI('Logout');
+    onCloseConfirmUI('Save');
   };
-  return isOpenConfirm.logout.isOpen ? (
+
+  return isOpenConfirm.save.isOpen ? (
     <Layout data-testid="overlay">
       <Box direction="column" justifyContent="center" alignItems="center">
         <StyledAvatar img="logo"></StyledAvatar>
-        <StyledText color="white" textAlign="center">
-          로그아웃 하시겠습니까?
-        </StyledText>
+        <Text color="white" textAlign="center">
+          저장하시겠습니까?
+        </Text>
         <Flex direction="row" gap="50px">
           <StyledButton fontColor="white" color="gray" onClick={handleYesButton}>
             YES
@@ -38,7 +36,6 @@ export const LogOutConfirm = () => {
     <></>
   );
 };
-
 const Layout = styled.div`
   position: fixed;
   width: 100%;
@@ -47,8 +44,10 @@ const Layout = styled.div`
   left: 0;
   right: 0;
   z-index: 9996;
+  h3 {
+    font-size: 20px;
+  }
 `;
-
 const Box = styled(Flex)`
   position: relative;
   width: 300px;
@@ -66,7 +65,7 @@ const Box = styled(Flex)`
   transform: translate(-50%, -50%);
 `;
 const StyledButton = styled(Button)`
-  font-size: 25px;
+  font-size: 20px;
   padding: 10px;
   border: none;
 `;
@@ -75,7 +74,4 @@ const StyledAvatar = styled(Avatar)`
   height: 100px;
   margin: 50px;
 `;
-const StyledText = styled(Text)`
-  font-size: 25px;
-`;
-export default LogOutConfirm;
+export default SaveConfirm;

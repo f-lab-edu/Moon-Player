@@ -1,4 +1,4 @@
-import { Music } from 'types/store';
+import { MusicType } from 'types/store';
 
 export interface PlayerControlModuleState {
   playing: boolean;
@@ -9,7 +9,7 @@ export interface PlayerControlModuleState {
   played: number; // 재생의 정도 (value)
   seeking: boolean; // 재생바를 움직이고 있는지
   duration: number; // 전체 시간
-  music: Music;
+  music: MusicType;
   isrepeat: boolean;
   currentTime: string;
   endTime: string;

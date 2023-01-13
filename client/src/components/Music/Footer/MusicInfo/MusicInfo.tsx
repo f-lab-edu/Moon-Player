@@ -12,16 +12,16 @@ interface InfoProps {
 export const MusicInfo = ({ player }: InfoProps) => {
   const image =
     player.music.name.length > 0 ? (
-      <MusicImage img={player.music.img_url} />
+      <StyledImage img={player.music.img_url} />
     ) : (
-      <MusicImage img="https://via.placeholder.com/400?text=No+Selected+Music" />
+      <StyledImage img="https://via.placeholder.com/400?text=No+Selected+Music" />
     );
   const title = player.music && player.music.name;
 
   return (
     <Layout direction="row" justifyContent="flex-start" alignItems="center">
       {image}
-      <MusicTitle>{title}</MusicTitle>
+      <Title>{title}</Title>
     </Layout>
   );
 };
@@ -30,7 +30,7 @@ const Layout = styled(Flex)`
   flex: 1;
   margin-left: 48px;
 `;
-const MusicTitle = styled(Text)`
+const Title = styled(Text)`
   flex: 1;
   font-size: 16px;
   text-align: center;
@@ -38,7 +38,7 @@ const MusicTitle = styled(Text)`
   margin: 0px 16px;
 `;
 
-const MusicImage = styled(Image)`
+const StyledImage = styled(Image)`
   width: 56px;
   height: 56px;
   object-fit: cover;

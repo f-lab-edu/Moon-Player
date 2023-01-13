@@ -2,18 +2,25 @@ import styled from 'styled-components';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 
 import Flex from 'components/Global/style/Flex';
-import Button from 'components/Global/style/Button/Button';
 import { Text } from 'components/Global/style/Text';
 import { useAppSelector } from 'hooks/useAppDispatch';
-import { MusicItem } from 'components/Global/UI/MusicItem/MusicItem';
-import { ScrollBox } from '../../../Global/style/ScrollBox';
+import Music from 'components/Global/UI/Music/Music';
+import { ScrollBox } from 'components/Global/style/ScrollBox';
+import useModal from 'hooks/useModal';
+import SaveConfirm from 'components/Global/UI/Confirm/SaveConfirm/SaveConfirm';
 
 export const CustomAdder = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
+  const { onOpenConfirmUI } = useModal();
+
+  const handleSaveButton = () => {
+    console.log('123');
+    onOpenConfirmUI('Save');
+  };
   const playerMusics =
     playerSelector.list.length > 0 ? (
       playerSelector.list.map(({ name, img_url }, index) => (
-        <MusicItem name={name} img_url={img_url} key={index} id={++index} />
+        <Music name={name} img_url={img_url} key={index} id={++index} />
       ))
     ) : (
       <EmptyText>재생 목록이 비어있습니다.</EmptyText>
@@ -22,12 +29,12 @@ export const CustomAdder = () => {
     <Layout direction="column" justifyContent="center">
       <Flex direction="row" justifyContent="space-between" alignItems="center">
         <InputBox direction="row" alignItems="center" gap="15px">
-          <InputTitle>이름</InputTitle>
-          <Input />
-          <SaveButton>저장</SaveButton>
+          <Input placeholder="최소 4자~10자이내" />
+          <IconButton name="save" size="2x" color="white" onClick={handleSaveButton}></IconButton>
         </InputBox>
       </Flex>
       <MusicBox>{playerMusics}</MusicBox>
+      <SaveConfirm />
     </Layout>
   );
 };
@@ -51,20 +58,11 @@ const Layout = styled(Flex)`
   }
 `;
 const InputBox = styled(Flex)`
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
-const SaveButton = styled(Button)`
-  color: black;
-  background-color: white;
-  border: none;
-  font-size: 16px;
-  width: 50px;
-  height: 30px;
-  border-radius: 7px;
-  margin: 10px;
-`;
+
 const Input = styled.input`
-  width: 300px;
+  width: 400px;
   font-size: 18px;
   outline: none;
   border: none;
@@ -75,9 +73,4 @@ const EmptyText = styled(Text)`
   color: rgba(255, 255, 255, 0.64);
 
   font-size: 20px;
-`;
-const InputTitle = styled(Text)`
-  font-size: 17px;
-  width: 40px;
-  padding: 5px;
 `;

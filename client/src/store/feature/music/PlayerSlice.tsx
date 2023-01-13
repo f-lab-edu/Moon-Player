@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
-import { Music, PlayerState } from 'types/store';
+import { MusicType, PlayerState } from 'types/store';
 import { PlayerControlModuleState } from 'types/app/player';
 
 const initialState: PlayerState = {
@@ -29,23 +29,23 @@ export const musicPlayerSlice = createSlice({
   // 동기적인 액션 처리
   reducers: {
     // 플레이어에 add 해주는 함수
-    handleAddPlayer: (state: PlayerState, action: PayloadAction<Music>) => {
+    handleAddPlayer: (state: PlayerState, action: PayloadAction<MusicType>) => {
       state.list = [...state.list, Object.assign({}, action.payload)];
     },
-    handleShuffleMusics: (state: PlayerState, action: PayloadAction<Music[]>) => {
+    handleShuffleMusics: (state: PlayerState, action: PayloadAction<MusicType[]>) => {
       state.list = action.payload;
     },
     // string바꿔야할듯
     handleRemoveMusic: (state: PlayerState, action: PayloadAction<string>) => {
       state.list = state.list.filter((music) => music.name !== action.payload);
     },
-    handleAddMusic: (state: PlayerState, action: PayloadAction<Music>) => {
+    handleAddMusic: (state: PlayerState, action: PayloadAction<MusicType>) => {
       state.playingMusic = action.payload;
     },
-    handlePrevPlayMusic: (state: PlayerState, action: PayloadAction<Music>) => {
+    handlePrevPlayMusic: (state: PlayerState, action: PayloadAction<MusicType>) => {
       state.playingMusic = action.payload;
     },
-    handleNextPlayMusic: (state: PlayerState, action: PayloadAction<Music>) => {
+    handleNextPlayMusic: (state: PlayerState, action: PayloadAction<MusicType>) => {
       state.playingMusic = action.payload;
     },
     handleRepeatMusicModule: (state: PlayerState, action: PayloadAction<PlayerControlModuleState>) => {

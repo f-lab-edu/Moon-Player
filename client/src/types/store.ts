@@ -1,7 +1,7 @@
 import { PlayerControlModuleState } from './app/player/index';
 export interface PlayerState {
-  list: Array<Music>;
-  playingMusic: Music;
+  list: Array<MusicType>;
+  playingMusic: MusicType;
   playerControlModuleState: PlayerControlModuleState;
 }
 
@@ -18,7 +18,7 @@ export interface PlayListState {
 export interface PlayList {
   genre_title: string;
   genre_id: number;
-  music_list: Array<Music>;
+  music_list: Array<MusicType>;
 }
 
 export interface Genre {
@@ -31,19 +31,28 @@ export interface LayoutState {
   alarm: Alarm;
   player: LayoutPlayerState;
   playerHeader: LayoutPlayerHeaderState;
-  confirm: {
-    isOpen: boolean;
-  };
+  confirm: ConfirmState;
   footer: {
     isOpen: boolean;
   };
 }
 
+export interface ConfirmState {
+  logout: {
+    isOpen: boolean;
+  };
+  save: {
+    isOpen: boolean;
+  };
+  load: {
+    isOpen: boolean;
+  };
+}
 export interface Alarm {
   isOpen: boolean;
   text: string;
 }
-export interface Music {
+export interface MusicType {
   source_url: string;
   name: string;
   img_url: string;

@@ -4,11 +4,11 @@ import { handleRemoveMusic, handleAddMusic } from 'store/feature/music/PlayerSli
 
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
-import { Music } from 'types/store';
+import { MusicType } from 'types/store';
 import { useModal } from 'hooks/useModal';
-import MusicItem from 'components/Global/UI/MusicItem/MusicItem';
+import MusicItem from 'components/Global/UI/Music/Music';
 
-export const Item = ({ name, img_url, id, source_url }: Music) => {
+export const Item = ({ name, img_url, id, source_url }: MusicType) => {
   const dispatch = useAppDispatch();
   const { onOpenAlarm, onOpenFooterUI } = useModal();
   const playerSelector = useAppSelector((state) => state.music.player);

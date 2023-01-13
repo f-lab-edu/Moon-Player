@@ -10,9 +10,9 @@ interface ProgressBarProps {
 export const ProgressBar = ({ currentTime, endTime, elapsedTime }: ProgressBarProps) => {
   return (
     <Layout direction="row" alignItems="center">
-      <ProgressBarBox>
+      <Box>
         <Line strokeWidth={1} strokeLinecap="square" percent={elapsedTime} strokeColor={'#bF2b3C'} />
-      </ProgressBarBox>
+      </Box>
     </Layout>
   );
 };
@@ -23,7 +23,7 @@ const Layout = styled(Flex)`
   font-weight: 700;
   text-align: center;
 `;
-const ProgressBarBox = styled.div`
+const Box = styled.div`
   flex: 1;
   height: 5px;
   overflow: hidden;

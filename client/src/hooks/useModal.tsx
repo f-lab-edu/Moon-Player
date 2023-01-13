@@ -1,16 +1,22 @@
+/* eslint-disable indent */
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import {
   handleOpenAlarm,
   handleOpenPlayerUI,
-  handleOpenConfirmUI,
+  handleOpenSaveConfirm,
+  handleOpenLoadConfirm,
+  handleOpenLogOutConfirm,
   handleOpenFooterUI,
 } from 'store/feature/layout/LayoutSlice';
+
+type ConfirmType = 'Logout' | 'Save' | 'Load';
+
 export const useModal = () => {
   const alarm = useAppSelector((state) => state.layout.alarm);
   const alarmText = alarm.text;
   const isOpenAlarm = alarm.isOpen;
   const isOpenPlayerUI = useAppSelector((state) => state.layout.player.isOpen);
-  const isOpenConfirm = useAppSelector((state) => state.layout.confirm.isOpen);
+  const isOpenConfirm = useAppSelector((state) => state.layout.confirm);
   const isOpenFooterUI = useAppSelector((state) => state.layout.footer.isOpen);
   const dispatch = useAppDispatch();
 
@@ -27,9 +33,6 @@ export const useModal = () => {
   const onClosePlayerUI = () => {
     dispatch(handleOpenPlayerUI(false));
   };
-  const onOpenConfirmUI = () => {
-    dispatch(handleOpenConfirmUI(true));
-  };
 
   const onhandleFooterUI = () => {
     dispatch(handleOpenFooterUI(!isOpenFooterUI));
@@ -37,9 +40,20 @@ export const useModal = () => {
   const onOpenFooterUI = () => {
     dispatch(handleOpenFooterUI(true));
   };
+  const onOpenConfirmUI = (type: ConfirmType) => {
+    type === 'Logout'
+      ? dispatch(handleOpenLogOutConfirm(true))
+      : type === 'Save'
+      ? dispatch(handleOpenSaveConfirm(true))
+      : dispatch(handleOpenLoadConfirm(true));
+  };
 
-  const onCloseConfirmUI = () => {
-    dispatch(handleOpenConfirmUI(false));
+  const onCloseConfirmUI = (type: ConfirmType) => {
+    type === 'Logout'
+      ? dispatch(handleOpenLogOutConfirm(false))
+      : type === 'Save'
+      ? dispatch(handleOpenSaveConfirm(false))
+      : dispatch(handleOpenLoadConfirm(false));
   };
 
   return {

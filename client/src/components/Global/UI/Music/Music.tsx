@@ -5,18 +5,18 @@ import Text from 'components/Global/style/Text';
 import styled from 'styled-components';
 import { ReactElement } from 'react';
 
-interface MusicItem {
+interface MusicProps {
   name: string;
   img_url: string;
   id: number;
   children?: ReactElement;
 }
-export const MusicItem = ({ name, img_url, id, children }: MusicItem) => {
+export const Music = ({ name, img_url, id, children }: MusicProps) => {
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
-      <MusicNumber>{id}</MusicNumber>
-      <MusicImage img={img_url} />
-      <MusicTitle>{name}</MusicTitle>
+      <Number>{id}</Number>
+      <StyledImage img={img_url} />
+      <Title>{name}</Title>
       {children}
     </Layout>
   );
@@ -36,13 +36,13 @@ const Layout = styled(Flex)`
   overflow: hidden;
 `;
 
-const MusicNumber = styled(Text)`
+const Number = styled(Text)`
   color: rgba(255, 255, 255, 0.64);
   font-size: 16px;
   width: 16px;
 `;
 
-const MusicTitle = styled(OverFlowText)`
+const Title = styled(OverFlowText)`
   flex: 1;
   font-size: 14px;
   max-height: 48px;
@@ -52,8 +52,8 @@ const MusicTitle = styled(OverFlowText)`
   cursor: pointer;
   overflow: hidden;
 `;
-const MusicImage = styled(Image)`
+const StyledImage = styled(Image)`
   width: 128px;
 `;
 
-export default MusicItem;
+export default Music;

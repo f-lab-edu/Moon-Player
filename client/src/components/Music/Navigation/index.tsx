@@ -14,16 +14,20 @@ export const Navigation = () => {
   ) : (
     <IconButton name="up" color="white" size="1x" onClick={onhandleFooterUI} />
   );
+  const handleLogoutButton = () => {
+    onOpenConfirmUI('Logout');
+  };
+
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
       <Header>
-        <AvatarImage img="logo" />
+        <StyledAvatar img="logo" />
       </Header>
       <Nav direction="row">
         {renderFooterButton}
         <IconButton name="user" color="white" size="1x" />
         <IconButton name="music" color="white" size="1x" onClick={onOpenPlayerUI} />
-        <IconButton name="bracket" color="white" size="1x" onClick={onOpenConfirmUI} />
+        <IconButton name="bracket" color="white" size="1x" onClick={handleLogoutButton} />
       </Nav>
       <LogOutConfirm />
     </Layout>
@@ -43,7 +47,7 @@ const Header = styled.div`
   margin: 0 8px;
 `;
 
-const AvatarImage = styled(Avatar)`
+const StyledAvatar = styled(Avatar)`
   width: 50px;
   height: 50px;
 `;
