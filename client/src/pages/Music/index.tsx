@@ -6,14 +6,14 @@ import PlayList from 'components/Music/PlayList';
 import Footer from 'components/Music/Footer';
 import useModal from 'hooks/useModal';
 const MusicPage = () => {
-  const { isOpenPlayerUI } = useModal();
+  const { isOpenPlayerUI, isOpenFooterUI } = useModal();
 
   return (
     <Layout>
       <Navigation />
       <Genre />
       <PlayList />
-      <Footer />
+      {isOpenFooterUI ? <Footer /> : <></>}
       {isOpenPlayerUI ? <Player /> : <></>}
     </Layout>
   );

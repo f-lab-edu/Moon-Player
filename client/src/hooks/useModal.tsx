@@ -1,11 +1,17 @@
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
-import { handleOpenAlarm, handleOpenPlayerUI, handleOpenConfirmUI } from 'store/feature/layout/LayoutSlice';
+import {
+  handleOpenAlarm,
+  handleOpenPlayerUI,
+  handleOpenConfirmUI,
+  handleOpenFooterUI,
+} from 'store/feature/layout/LayoutSlice';
 export const useModal = () => {
   const alarm = useAppSelector((state) => state.layout.alarm);
   const alarmText = alarm.text;
   const isOpenAlarm = alarm.isOpen;
   const isOpenPlayerUI = useAppSelector((state) => state.layout.player.isOpen);
   const isOpenConfirm = useAppSelector((state) => state.layout.confirm.isOpen);
+  const isOpenFooterUI = useAppSelector((state) => state.layout.footer.isOpen);
   const dispatch = useAppDispatch();
 
   const onOpenAlarm = (text: string) => {
@@ -24,6 +30,9 @@ export const useModal = () => {
   const onOpenConfirmUI = () => {
     dispatch(handleOpenConfirmUI(true));
   };
+  const onOpenFooterUI = () => {
+    dispatch(handleOpenFooterUI(!isOpenFooterUI));
+  };
 
   const onCloseConfirmUI = () => {
     dispatch(handleOpenConfirmUI(false));
@@ -39,7 +48,9 @@ export const useModal = () => {
     onClosePlayerUI,
     onOpenConfirmUI,
     onCloseConfirmUI,
+    onOpenFooterUI,
     isOpenConfirm,
+    isOpenFooterUI,
   };
 };
 

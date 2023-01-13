@@ -18,6 +18,9 @@ export const initialState: LayoutState = {
     header: 'main-header',
     name: '현재 재생 목록',
   },
+  footer: {
+    isOpen: false,
+  },
 };
 
 export const LayoutSlice = createSlice({
@@ -39,10 +42,19 @@ export const LayoutSlice = createSlice({
     handleOpenConfirmUI: (state: LayoutState, action: PayloadAction<boolean>) => {
       state.confirm.isOpen = action.payload;
     },
+    handleOpenFooterUI: (state: LayoutState, action: PayloadAction<boolean>) => {
+      state.footer.isOpen = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(PURGE, () => initialState);
   },
 });
-export const { handleOpenAlarm, handleOpenPlayerUI, handlePlayerUI, handlePlayerHeaderUI, handleOpenConfirmUI } =
-  LayoutSlice.actions;
+export const {
+  handleOpenAlarm,
+  handleOpenPlayerUI,
+  handlePlayerUI,
+  handlePlayerHeaderUI,
+  handleOpenConfirmUI,
+  handleOpenFooterUI,
+} = LayoutSlice.actions;

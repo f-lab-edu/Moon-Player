@@ -32,6 +32,9 @@ export interface LayoutState {
   confirm: {
     isOpen: boolean;
   };
+  footer: {
+    isOpen: boolean;
+  };
 }
 
 export interface Alarm {
