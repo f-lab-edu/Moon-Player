@@ -3,6 +3,7 @@ import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 import Layout from 'components/Music/Genre/Carousel/Carousel';
 import styled from 'styled-components';
+import { Text } from 'components/Global/style/Text';
 
 export const Genre = () => {
   const dispatch = useAppDispatch();
@@ -20,6 +21,7 @@ export const Genre = () => {
 
 const Pagination = styled.div`
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
+
 export default Genre;

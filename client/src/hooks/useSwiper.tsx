@@ -44,8 +44,8 @@ const DEFAULT_SETTING: SwiperProps = {
     el: '.pagination',
     type: 'bullets',
   },
-  slidesPerView: 6,
-  slidesPerGroup: 6,
+  slidesPerView: 5,
+  slidesPerGroup: 5,
   allowTouchMove: false,
   loopPreventsSlide: false,
   breakpoints: {
@@ -60,12 +60,12 @@ const DEFAULT_SETTING: SwiperProps = {
     768: {
       slidesPerView: 3,
       slidesPerGroup: 3,
-      spaceBetween: 10,
+      spaceBetween: 15,
     },
     1024: {
-      slidesPerView: 6,
-      slidesPerGroup: 6,
-      spaceBetween: 10,
+      slidesPerView: 5,
+      slidesPerGroup: 5,
+      spaceBetween: 15,
     },
   },
 };

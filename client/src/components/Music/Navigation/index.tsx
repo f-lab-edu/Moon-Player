@@ -8,12 +8,8 @@ import useModal from 'hooks/useModal';
 import LogOutConfirm from 'components/Global/UI/Confirm/LogOutConfirm/LogOutConfirm';
 
 export const Navigation = () => {
-  const { onOpenPlayerUI, onOpenConfirmUI, onhandleFooterUI, isOpenFooterUI } = useModal();
-  const renderFooterButton = isOpenFooterUI ? (
-    <IconButton name="down" color="white" size="1x" onClick={onhandleFooterUI} />
-  ) : (
-    <IconButton name="up" color="white" size="1x" onClick={onhandleFooterUI} />
-  );
+  const { onOpenPlayerUI, onOpenConfirmUI } = useModal();
+
   const handleLogoutButton = () => {
     onOpenConfirmUI('Logout');
   };
@@ -24,7 +20,6 @@ export const Navigation = () => {
         <StyledAvatar img="logo" />
       </Header>
       <Nav direction="row">
-        {renderFooterButton}
         <IconButton name="user" color="white" size="1x" />
         <IconButton name="music" color="white" size="1x" onClick={onOpenPlayerUI} />
         <IconButton name="bracket" color="white" size="1x" onClick={handleLogoutButton} />
