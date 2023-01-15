@@ -1,6 +1,8 @@
+import { PlayerControlModuleState } from './app/player/index';
 export interface PlayerState {
-  list: Array<Music>;
-  music: Music;
+  list: Array<MusicType>;
+  playingMusic: MusicType;
+  playerControlModuleState: PlayerControlModuleState;
 }
 
 //  비동기 데이터
@@ -16,7 +18,7 @@ export interface PlayListState {
 export interface PlayList {
   genre_title: string;
   genre_id: number;
-  music_list: Array<Music>;
+  music_list: Array<MusicType>;
 }
 
 export interface Genre {
@@ -27,14 +29,30 @@ export interface Genre {
 
 export interface LayoutState {
   alarm: Alarm;
+  player: LayoutPlayerState;
+  playerHeader: LayoutPlayerHeaderState;
+  confirm: ConfirmState;
+  footer: {
+    isOpen: boolean;
+  };
 }
 
+export interface ConfirmState {
+  logout: {
+    isOpen: boolean;
+  };
+  save: {
+    isOpen: boolean;
+  };
+  load: {
+    isOpen: boolean;
+  };
+}
 export interface Alarm {
   isOpen: boolean;
   text: string;
 }
-
-export interface Music {
+export interface MusicType {
   source_url: string;
   name: string;
   img_url: string;
@@ -60,4 +78,12 @@ export interface GoogleUser {
   id: number;
   picture: string;
   verified_email: boolean;
+}
+export interface LayoutPlayerState {
+  isOpen: boolean;
+  ui: string;
+}
+export interface LayoutPlayerHeaderState {
+  header: string;
+  name: string;
 }

@@ -1,5 +1,5 @@
 module.exports = {
-  setupFilesAfterEnv: ['<rootDir>/setupTests.ts','<rootDir>/src/mockSetting/matchMedia/index.js','<rootDir>/src/mockSetting/msw/index.js'],
+  setupFilesAfterEnv: ['<rootDir>/setupTests.ts','<rootDir>/src/mocks/settings/matchMedia/index.js','<rootDir>/src/mocks/settings/msw/index.js'],
   testMatch: ['<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}', '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}'],
   testEnvironment: 'jsdom',
   transform: {

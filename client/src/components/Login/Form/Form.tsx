@@ -1,49 +1,37 @@
 import styled from 'styled-components';
-import { useEffect } from 'react';
 
-import Icon from 'components/Global/style/Icon';
+import ImageIcon from 'components/Global/style/ImageIcon';
 import Button from 'components/Global/style/Button/Button';
 import Text from 'components/Global/style/Text';
 import Flex from 'components/Global/style/Flex';
-import { getCode } from 'utils/auth';
-import { useAuthenticator } from 'hooks/useAuthenticator';
 import { useLogin } from 'hooks/useLogin';
 
 export const Form = () => {
-  const { signIn } = useAuthenticator();
-  const { socialName, getUserToken, handleLogin } = useLogin();
-
-  useEffect(() => {
-    const code = getCode();
-    if (!code) return;
-    if (!socialName) return;
-    getUserToken({ code, socialName });
-    signIn();
-  }, [socialName]);
+  const { handleLoginButton } = useLogin();
 
   return (
-    <Root direction="column" justifyContent="center" alignItems="center">
-      <StyledButton color="#5c79f1" fontColor="white" onClick={handleLogin} data-name="Google">
-        <StyledIcon name="Google" />
+    <Layout direction="column" justifyContent="center" alignItems="center">
+      <StyledButton color="#5c79f1" fontColor="white" onClick={handleLoginButton} data-name="Google">
+        <SocialLoginIcon name="Google" />
         <StyledText color="white">Google 로그인</StyledText>
       </StyledButton>
-      <StyledButton color="#1cc802" fontColor="white" onClick={handleLogin} data-name="Naver">
-        <StyledIcon name="Naver" />
+      <StyledButton color="#1cc802" fontColor="white" onClick={handleLoginButton} data-name="Naver">
+        <SocialLoginIcon name="Naver" />
         <StyledText color="white">네이버 로그인</StyledText>
       </StyledButton>
-      <StyledButton color="#ffeb3b" fontColor="black" onClick={handleLogin} data-name="Kakao">
-        <StyledIcon name="Kakao" />
+      <StyledButton color="#ffeb3b" fontColor="black" onClick={handleLoginButton} data-name="Kakao">
+        <SocialLoginIcon name="Kakao" />
         <StyledText color="black">카카오 로그인</StyledText>
       </StyledButton>
-    </Root>
+    </Layout>
   );
 };
 
-const Root = styled(Flex)`
-  width: 30vw;
+const Layout = styled(Flex)`
+  width: 400px;
 `;
 
-const StyledIcon = styled(Icon)`
+const SocialLoginIcon = styled(ImageIcon)`
   width: 30px;
   height: 30px;
 `;

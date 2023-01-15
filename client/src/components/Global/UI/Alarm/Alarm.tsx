@@ -3,27 +3,27 @@ import { Flex } from '../../style/Flex';
 import { Button } from '../../style/Button/Button';
 import { Text } from '../../style/Text';
 import { Avatar } from '../../style/Avatar';
-import useAlarm from 'hooks/useAlarm';
+import useModal from 'hooks/useModal';
 
 export const Alarm = () => {
-  const { isOpen, text, handleClose } = useAlarm();
-  return isOpen ? (
-    <Overlay data-testid="overlay">
+  const { isOpenAlarm, alarmText, onCloseAlarm } = useModal();
+  return isOpenAlarm ? (
+    <Layout data-testid="overlay">
       <Box direction="column" justifyContent="center" alignItems="center">
         <AlarmAvatar img="logo"></AlarmAvatar>
         <AlarmText color="white" textAlign="center" data-testid="alarmText">
-          {text}
+          {alarmText}
         </AlarmText>
-        <StyledButton fontColor="white" color="gray" onClick={handleClose}>
+        <StyledButton fontColor="white" color="gray" onClick={onCloseAlarm}>
           확인
         </StyledButton>
       </Box>
-    </Overlay>
+    </Layout>
   ) : (
     <></>
   );
 };
-const Overlay = styled.div`
+const Layout = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
@@ -38,7 +38,13 @@ const Box = styled(Flex)`
   width: 300px;
   height: fit-content;
   padding: 30px;
-  background-image: linear-gradient(90deg, #000000 0%, #434343 100%);
+  background: linear-gradient(
+    333deg,
+    rgba(12, 12, 56, 1) 0%,
+    rgba(45, 34, 76, 1) 36%,
+    rgba(36, 18, 95, 1) 73%,
+    rgba(38, 64, 92, 1) 100%
+  );
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -58,7 +64,7 @@ const AlarmAvatar = styled(Avatar)`
 `;
 
 const AlarmText = styled(Text)`
-  font-size: 20px;
+  font-size: 23px;
 `;
 
 export default Alarm;
