@@ -33,7 +33,7 @@ const Layout = styled(ScrollBox)`
   margin-top: 15px;
   margin-right: 15px;
   padding: 15px;
-  height: 75vh;
+  height: 74vh;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.12));
   @media (max-width: 1024px) {

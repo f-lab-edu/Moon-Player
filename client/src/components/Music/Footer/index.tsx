@@ -20,7 +20,8 @@ export const Footer = ({ player }) => {
     handlePrevPlayingMusic,
     handleNextPlayingMusic,
   } = usePlayerControlModule();
-  const { isOpenFooterUI, onhandleFooterUI } = useModal();
+
+  const { isOpenFooterUI } = useModal();
   const currentTime = formatTime(+player.currentTime);
   const endTime = formatTime(+player.endTime);
   const elapsedTime = Math.floor((+player.currentTime / +player.endTime) * 100);
@@ -57,7 +58,6 @@ const Layout = styled.div<LayoutProps>(
   transform: ${active ? 'translateY(120px)' : ''};
   transition:'0.48s ease';
   margin-top:${active ? '-120px' : ''};
-
   `
 );
 const MusicInfoBox = styled(Flex)`

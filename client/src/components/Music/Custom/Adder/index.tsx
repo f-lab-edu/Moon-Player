@@ -66,7 +66,8 @@ const Input = styled.input`
   font-size: 18px;
   outline: none;
   border: none;
-  border-radius: 7px;
+  color: white;
+  background: transparent;
   padding: 5px;
 `;
 const EmptyText = styled(Text)`
