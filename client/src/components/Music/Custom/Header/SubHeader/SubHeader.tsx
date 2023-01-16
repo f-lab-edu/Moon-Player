@@ -18,7 +18,7 @@ export const SubHeader = ({ name }) => {
     };
     dispatch(handlePlayerHeaderUI(header));
   };
-  const handleSaveButton = () => {
+  const handleSpinnerButton = () => {
     console.log('123');
     onOpenConfirmUI('Load');
   };
@@ -27,7 +27,7 @@ export const SubHeader = ({ name }) => {
     <Layout direction="row" justifyContent="space-between" alignItems="center">
       <Title>{name}</Title>
       <IconButtonBox direction="row">
-        <IconButton name="save" size="2x" color="white" onClick={handleSaveButton} />
+        <IconButton name="spinner" size="2x" color="white" onClick={handleSpinnerButton} />
         <IconButton name="home" size="2x" color="white" onClick={handleHomeButton} />
       </IconButtonBox>
       <LoadConfirm></LoadConfirm>

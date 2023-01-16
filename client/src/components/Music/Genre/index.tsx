@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
-import Layout from 'components/Music/Genre/Carousel/Carousel';
+import Carousel from 'components/Music/Genre/Carousel/Carousel';
 import styled from 'styled-components';
-import { Text } from 'components/Global/style/Text';
 
 export const Genre = () => {
   const dispatch = useAppDispatch();
@@ -12,12 +11,13 @@ export const Genre = () => {
     dispatch(fetchmusicGenre('http://localhost:4000/api/music/genre/'));
   }, []);
   return (
-    <>
-      <Layout data={genreItems}></Layout>;
+    <Layout>
+      <Carousel data={genreItems}></Carousel>;
       <Pagination className="pagination" />
-    </>
+    </Layout>
   );
 };
+const Layout = styled.div``;
 
 const Pagination = styled.div`
   text-align: center;

@@ -28,9 +28,9 @@ const Box = styled.div`
   height: 5px;
   overflow: hidden;
   @media screen and (max-width: 1024px) {
-    height: 10px;
+    height: 15px;
   }
   @media screen and (max-width: 490px) {
-    height: 20px;
+    height: 30px;
   }
 `;

@@ -29,7 +29,6 @@ export const Navigation = () => {
   );
 };
 const Layout = styled(Flex)`
-  width: 100vw;
   padding: 24px 48px;
   background: linear-gradient(rgba(0, 0, 0, 0.64), transparent);
   position: relative;

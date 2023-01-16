@@ -27,8 +27,8 @@ export const Footer = ({ player }) => {
   const playerVolume = player.volume.toString();
   return (
     <Layout active={isOpenFooterUI}>
-      <ProgressBar currentTime={currentTime} endTime={endTime} elapsedTime={elapsedTime} />
       <Hide />
+      <ProgressBar currentTime={currentTime} endTime={endTime} elapsedTime={elapsedTime} />
 
       <MusicInfoBox direction="row">
         <MusicInfo player={player}></MusicInfo>
@@ -54,14 +54,12 @@ interface LayoutProps {
 }
 const Layout = styled.div<LayoutProps>(
   ({ active }) => `
-  
-  transform: ${active ? 'translateY(55px)' : ''};
+  transform: ${active ? 'translateY(120px)' : ''};
   transition:'0.48s ease';
-  margin-top:${active ? '-55px' : ''};
+  margin-top:${active ? '-120px' : ''};
 
-`
+  `
 );
-
 const MusicInfoBox = styled(Flex)`
   margin-top: 4px;
 `;

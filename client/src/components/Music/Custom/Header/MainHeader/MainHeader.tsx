@@ -23,15 +23,6 @@ export const MainHeader = ({ ui, name }) => {
     dispatch(handlePlayerUI('custom-Adder'));
     dispatch(handlePlayerHeaderUI(header));
   };
-  const handlePlayListUI = () => {
-    const header = {
-      header: 'main-header',
-      name: '현재 재생 목록',
-    };
-    dispatch(handlePlayerUI('main'));
-    dispatch(handlePlayerHeaderUI(header));
-  };
-
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
       <Title>{name}</Title>
@@ -49,13 +40,6 @@ export const MainHeader = ({ ui, name }) => {
           color="white"
           onClick={handleCustomPlayListUI}
           active={ui === 'custom-PlayList' ? true : false}
-        />
-        <StyledIconButton
-          name="list"
-          size="2x"
-          color="white"
-          onClick={handlePlayListUI}
-          active={ui === 'main' ? true : false}
         />
       </IconButtonBox>
     </Layout>

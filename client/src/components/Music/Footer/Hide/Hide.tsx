@@ -15,8 +15,7 @@ export const Hide = () => {
 const Layout = styled.div`
   position: absolute;
   right: 0px;
-  margin-top: 10px;
-  margin-right: 5px;
+  transform: translateY(-20px);
 `;
 
 export default Hide;

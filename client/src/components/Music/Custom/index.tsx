@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import { useEffect, useRef } from 'react';
-import CustomAdder from './CustomAdder';
-import PlayerList from './PlayerList';
+import CustomAdder from './Adder';
+import PlayerList from '../PlayerList';
 import Flex from 'components/Global/style/Flex';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
-import Text from 'components/Global/style/Text';
 import { useModal } from 'hooks/useModal';
-import { CustomPlayList } from './CustomPlayList/index';
+import { CustomPlayList } from './PlayList/index';
 import { MainHeader } from './Header/MainHeader/MainHeader';
 import { useAppSelector } from 'hooks/useAppDispatch';
 import SubHeader from './Header/SubHeader/SubHeader';
@@ -25,15 +24,9 @@ export const Player = () => {
       <SubHeader name={playerHeaderUI.name} />
     );
   const playerRenderUI =
-    playerUI.ui === 'custom-PlayList' ? (
-      <CustomPlayList />
-    ) : playerUI.ui === 'custom-Adder' ? (
-      <CustomAdder />
-    ) : (
-      <PlayerList />
-    );
-
+    playerUI.ui === 'custom-PlayList' ? <CustomPlayList /> : playerUI.ui === 'custom-Adder' ? <CustomAdder /> : <></>;
   const { onClosePlayerUI } = useModal();
+
   useEffect(() => {
     document.addEventListener('mousedown', handleModalOutSide);
     return () => {

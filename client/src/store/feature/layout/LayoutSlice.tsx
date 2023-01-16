@@ -20,11 +20,11 @@ export const initialState: LayoutState = {
   },
   player: {
     isOpen: false,
-    ui: 'main',
+    ui: 'custom-Adder',
   },
   playerHeader: {
     header: 'main-header',
-    name: '현재 재생 목록',
+    name: '나만의 플레이리스트 추가',
   },
   footer: {
     isOpen: false,
