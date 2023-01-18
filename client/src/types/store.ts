@@ -31,20 +31,7 @@ export interface LayoutState {
   alarm: Alarm;
   player: LayoutPlayerState;
   playerHeader: LayoutPlayerHeaderState;
-  confirm: ConfirmState;
   footer: {
-    isOpen: boolean;
-  };
-}
-
-export interface ConfirmState {
-  logout: {
-    isOpen: boolean;
-  };
-  save: {
-    isOpen: boolean;
-  };
-  load: {
     isOpen: boolean;
   };
 }

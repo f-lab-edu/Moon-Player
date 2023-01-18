@@ -1,32 +1,44 @@
 import styled from 'styled-components';
-import { useModal } from 'hooks/useModal';
 import { Flex } from 'components/Global/style/Flex';
 import { Button } from 'components/Global/style/Button/Button';
 import Avatar from 'components/Global/style/Avatar';
-import Text from 'components/Global/style/Text';
+import { Text } from 'components/Global/style/Text';
+import { useContext } from 'react';
+import { ConfirmContext } from 'provider/Confirm/ConfirmContext';
+import useAuthenticator from 'hooks/useAuthenticator';
+import useModal from 'hooks/useModal';
+import { ConfirmType } from 'types/app/Confirmdialog';
+export const ConfirmDialog = () => {
+  const confirmCtx = useContext(ConfirmContext);
+  const { signOut } = useAuthenticator();
 
-export const SaveConfirm = () => {
-  const { isOpenConfirm, onCloseConfirmUI, onOpenAlarm } = useModal();
+  const { onOpenAlarm } = useModal();
+
+  const load = () => {
+    onOpenAlarm('재생목록을 가져왔습니다.');
+    confirmCtx.closeConfirm();
+  };
+  const Save = () => {
+    onOpenAlarm('저장하였습니다.');
+    confirmCtx.closeConfirm();
+  };
+
   const handleYesButton = () => {
-    onCloseConfirmUI('Save');
-    onOpenAlarm('재생목록을 저장했습니다.');
+    const type = confirmCtx.state.type;
+    return type === 'Logout' ? signOut() : type === 'Load' ? load() : type === 'Save' ? Save() : alert('잘못된타입');
   };
-  const handleNoButton = () => {
-    onCloseConfirmUI('Save');
-  };
-
-  return isOpenConfirm.save.isOpen ? (
-    <Layout data-testid="overlay">
+  return confirmCtx.state.isOpen ? (
+    <Layout>
       <Box direction="column" justifyContent="center" alignItems="center">
         <StyledAvatar img="logo"></StyledAvatar>
-        <Text color="white" textAlign="center">
-          저장하시겠습니까?
-        </Text>
+        <StyledText color="white" textAlign="center">
+          {confirmCtx.state.message}
+        </StyledText>
         <Flex direction="row" gap="50px">
           <StyledButton fontColor="white" color="gray" onClick={handleYesButton}>
             YES
           </StyledButton>
-          <StyledButton fontColor="white" color="gray" onClick={handleNoButton}>
+          <StyledButton fontColor="white" color="gray" onClick={confirmCtx.closeConfirm}>
             NO
           </StyledButton>
         </Flex>
@@ -43,10 +55,7 @@ const Layout = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9996;
-  h3 {
-    font-size: 20px;
-  }
+  z-index: 9999;
 `;
 const Box = styled(Flex)`
   position: relative;
@@ -74,4 +83,7 @@ const StyledAvatar = styled(Avatar)`
   height: 100px;
   margin: 50px;
 `;
-export default SaveConfirm;
+const StyledText = styled(Text)`
+  font-size: 20px;
+`;
+export default ConfirmDialog;

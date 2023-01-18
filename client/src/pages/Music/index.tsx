@@ -8,23 +8,27 @@ import useModal from 'hooks/useModal';
 import { usePlayerControlModule } from 'hooks/usePlayerControlModule';
 import PlayerList from 'components/Music/PlayerList/index';
 import Flex from 'components/Global/style/Flex';
-import MusicInfoModal from 'components/Global/UI/MusicInfoModal/MusicInfoModal';
+import { ConfirmContextProvider } from 'provider/Confirm/ConfirmContext';
+import { ConfirmDialog } from 'components/Global/UI/Dialog/Confirm/ConfirmDialog';
+
 const MusicPage = () => {
   const { isOpenPlayerUI } = useModal();
   const { musicPlayer, playerModuleSelector } = usePlayerControlModule();
-
   return (
-    <Layout direction="column">
-      <Navigation />
-      <Genre />
-      <Main direction="row">
-        <PlayList />
-        <PlayerList />
-      </Main>
-      {playerModuleSelector.music && musicPlayer}
-      <Footer player={playerModuleSelector} />
-      {isOpenPlayerUI ? <Player /> : <></>}
-    </Layout>
+    <ConfirmContextProvider>
+      <ConfirmDialog />
+      <Layout direction="column">
+        <Navigation />
+        <Genre />
+        <Main direction="row">
+          <PlayList />
+          <PlayerList />
+        </Main>
+        {playerModuleSelector.music && musicPlayer}
+        <Footer player={playerModuleSelector} />
+        {isOpenPlayerUI ? <Player /> : <></>}
+      </Layout>
+    </ConfirmContextProvider>
   );
 };
 const Layout = styled(Flex)`

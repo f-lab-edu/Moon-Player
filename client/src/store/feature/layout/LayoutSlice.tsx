@@ -7,17 +7,6 @@ export const initialState: LayoutState = {
     text: '',
     isOpen: false,
   },
-  confirm: {
-    logout: {
-      isOpen: false,
-    },
-    save: {
-      isOpen: false,
-    },
-    load: {
-      isOpen: false,
-    },
-  },
   player: {
     isOpen: false,
     ui: 'custom-Adder',
@@ -47,15 +36,7 @@ export const LayoutSlice = createSlice({
     handlePlayerHeaderUI: (state: LayoutState, action: PayloadAction<LayoutPlayerHeaderState>) => {
       state.playerHeader = action.payload;
     },
-    handleOpenLogOutConfirm: (state: LayoutState, action: PayloadAction<boolean>) => {
-      state.confirm.logout.isOpen = action.payload;
-    },
-    handleOpenLoadConfirm: (state: LayoutState, action: PayloadAction<boolean>) => {
-      state.confirm.load.isOpen = action.payload;
-    },
-    handleOpenSaveConfirm: (state: LayoutState, action: PayloadAction<boolean>) => {
-      state.confirm.save.isOpen = action.payload;
-    },
+
     handleOpenFooterUI: (state: LayoutState, action: PayloadAction<boolean>) => {
       state.footer.isOpen = action.payload;
     },
@@ -64,13 +45,5 @@ export const LayoutSlice = createSlice({
     builder.addCase(PURGE, () => initialState);
   },
 });
-export const {
-  handleOpenAlarm,
-  handleOpenPlayerUI,
-  handlePlayerUI,
-  handlePlayerHeaderUI,
-  handleOpenSaveConfirm,
-  handleOpenLoadConfirm,
-  handleOpenLogOutConfirm,
-  handleOpenFooterUI,
-} = LayoutSlice.actions;
+export const { handleOpenAlarm, handleOpenPlayerUI, handlePlayerUI, handlePlayerHeaderUI, handleOpenFooterUI } =
+  LayoutSlice.actions;

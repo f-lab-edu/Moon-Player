@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { Flex } from '../../style/Flex';
-import { Button } from '../../style/Button/Button';
-import { Text } from '../../style/Text';
-import { Avatar } from '../../style/Avatar';
+import { Flex } from '../../../style/Flex';
+import { Button } from '../../../style/Button/Button';
+import { Text } from '../../../style/Text';
+import { Avatar } from '../../../style/Avatar';
 import useModal from 'hooks/useModal';
 
 export const Alarm = () => {

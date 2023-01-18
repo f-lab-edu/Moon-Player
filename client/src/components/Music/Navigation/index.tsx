@@ -5,13 +5,15 @@ import Flex from 'components/Global/style/Flex';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 
 import useModal from 'hooks/useModal';
-import LogOutConfirm from 'components/Global/UI/Confirm/LogOutConfirm/LogOutConfirm';
+import { ConfirmContext } from 'provider/Confirm/ConfirmContext';
+import { useContext } from 'react';
 
 export const Navigation = () => {
-  const { onOpenPlayerUI, onOpenConfirmUI } = useModal();
+  const { onOpenPlayerUI } = useModal();
+  const confirmCtx = useContext(ConfirmContext);
 
   const handleLogoutButton = () => {
-    onOpenConfirmUI('Logout');
+    confirmCtx.showConfirm('로그아웃 하시겠습니까?', 'Logout');
   };
 
   return (
@@ -24,7 +26,6 @@ export const Navigation = () => {
         <IconButton name="music" color="white" size="1x" onClick={onOpenPlayerUI} />
         <IconButton name="bracket" color="white" size="1x" onClick={handleLogoutButton} />
       </Nav>
-      <LogOutConfirm />
     </Layout>
   );
 };

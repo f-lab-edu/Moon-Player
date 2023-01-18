@@ -4,11 +4,11 @@ import Text from 'components/Global/style/Text';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { useAppDispatch } from 'hooks/useAppDispatch';
 import { handlePlayerHeaderUI } from 'store/feature/layout/LayoutSlice';
-import LoadConfirm from 'components/Global/UI/Confirm/LoadConfirm/LoadConfirm';
-import useModal from 'hooks/useModal';
+import { useContext } from 'react';
+import { ConfirmContext } from 'provider/Confirm/ConfirmContext';
 export const SubHeader = ({ name }) => {
   // hoem 버튼을 누르면 이전 플레이리스트 목록으로 이동해짐
-  const { onOpenConfirmUI } = useModal();
+  const confirmCtx = useContext(ConfirmContext);
 
   const dispatch = useAppDispatch();
   const handleHomeButton = () => {
@@ -19,8 +19,7 @@ export const SubHeader = ({ name }) => {
     dispatch(handlePlayerHeaderUI(header));
   };
   const handleSpinnerButton = () => {
-    console.log('123');
-    onOpenConfirmUI('Load');
+    confirmCtx.showConfirm('재생목록을 가져 오겠습니까?', 'Load');
   };
 
   return (
@@ -30,7 +29,6 @@ export const SubHeader = ({ name }) => {
         <IconButton name="spinner" size="2x" color="white" onClick={handleSpinnerButton} />
         <IconButton name="home" size="2x" color="white" onClick={handleHomeButton} />
       </IconButtonBox>
-      <LoadConfirm></LoadConfirm>
     </Layout>
   );
 };

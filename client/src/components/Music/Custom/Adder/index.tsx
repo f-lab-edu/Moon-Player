@@ -6,16 +6,15 @@ import { Text } from 'components/Global/style/Text';
 import { useAppSelector } from 'hooks/useAppDispatch';
 import Music from 'components/Global/UI/Music/Music';
 import { ScrollBox } from 'components/Global/style/ScrollBox';
-import useModal from 'hooks/useModal';
-import SaveConfirm from 'components/Global/UI/Confirm/SaveConfirm/SaveConfirm';
+import { useContext } from 'react';
+import { ConfirmContext } from 'provider/Confirm/ConfirmContext';
 
 export const CustomAdder = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
-  const { onOpenConfirmUI } = useModal();
+  const confirmCtx = useContext(ConfirmContext);
 
   const handleSaveButton = () => {
-    console.log('123');
-    onOpenConfirmUI('Save');
+    confirmCtx.showConfirm('현재 재생목록을 저장하시겠습니까?', 'Save');
   };
   const playerMusics =
     playerSelector.list.length > 0 ? (
@@ -34,7 +33,6 @@ export const CustomAdder = () => {
         </InputBox>
       </Flex>
       <MusicBox>{playerMusics}</MusicBox>
-      <SaveConfirm />
     </Layout>
   );
 };

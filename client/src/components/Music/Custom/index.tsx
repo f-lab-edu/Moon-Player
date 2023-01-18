@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import CustomAdder from './Adder';
-import PlayerList from '../PlayerList';
 import Flex from 'components/Global/style/Flex';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
 import { useModal } from 'hooks/useModal';
@@ -9,12 +8,8 @@ import { CustomPlayList } from './PlayList/index';
 import { MainHeader } from './Header/MainHeader/MainHeader';
 import { useAppSelector } from 'hooks/useAppDispatch';
 import SubHeader from './Header/SubHeader/SubHeader';
-
-// 플레이어 메인
-
 export const Player = () => {
   const modalRef = useRef<HTMLDivElement>(null);
-
   const playerUI = useAppSelector((state) => state.layout.player);
   const playerHeaderUI = useAppSelector((state) => state.layout.playerHeader);
   const playerHeader =
@@ -26,19 +21,6 @@ export const Player = () => {
   const playerRenderUI =
     playerUI.ui === 'custom-PlayList' ? <CustomPlayList /> : playerUI.ui === 'custom-Adder' ? <CustomAdder /> : <></>;
   const { onClosePlayerUI } = useModal();
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleModalOutSide);
-    return () => {
-      document.removeEventListener('mousedown', handleModalOutSide);
-    };
-  }, []);
-
-  const handleModalOutSide = (e) => {
-    if (modalRef.current?.contains(e.target)) return;
-    onClosePlayerUI();
-  };
-
   return (
     <Overlay>
       <Layout direction="column" ref={modalRef}>

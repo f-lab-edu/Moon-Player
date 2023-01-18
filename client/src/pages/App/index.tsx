@@ -5,7 +5,7 @@ import UserPage from 'pages/User/index';
 import LoginPage from 'pages/Login/index';
 import ProtectedRoute from 'components/Route/ProtectedRoute';
 import GlobalStyle from 'styles/GlobalStyle';
-import { Alarm } from 'components/Global/UI/Alarm/Alarm';
+import { Alarm } from 'components/Global/UI/Dialog/Alarm/Alarm';
 function App() {
   return (
     <>
