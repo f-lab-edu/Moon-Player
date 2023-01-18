@@ -24,6 +24,7 @@ import {
   faArrowDown,
   faArrowUp,
   faSpinner,
+  faCircleInfo,
 } from '@fortawesome/free-solid-svg-icons';
 
 export type StyledProps = Pick<CSSObject, 'height' | 'width' | 'color' | 'fontSize' | 'textAlign' | 'cursor'>;
@@ -51,6 +52,7 @@ export const FontAwesomeIcons = {
   down: faArrowDown,
   up: faArrowUp,
   spinner: faSpinner,
+  info: faCircleInfo,
 };
 type FontAweSomeIconType = keyof typeof FontAwesomeIcons;
 export interface IconType {

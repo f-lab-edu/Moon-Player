@@ -55,9 +55,9 @@ interface LayoutProps {
 }
 const Layout = styled.div<LayoutProps>(
   ({ active }) => `
-  transform: ${active ? 'translateY(120px)' : ''};
+  transform: ${!active ? 'translateY(120px)' : ''};
   transition:'0.48s ease';
-  margin-top:${active ? '-120px' : ''};
+  margin-top:${!active ? '-120px' : ''};
   `
 );
 const MusicInfoBox = styled(Flex)`

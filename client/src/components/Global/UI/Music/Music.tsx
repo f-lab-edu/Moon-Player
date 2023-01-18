@@ -10,13 +10,14 @@ interface MusicProps {
   img_url: string;
   id: number;
   children?: ReactElement;
+  onPlayMusic?: React.MouseEventHandler<HTMLElement>;
 }
-export const Music = ({ name, img_url, id, children }: MusicProps) => {
+export const Music = ({ name, img_url, id, children, onPlayMusic }: MusicProps) => {
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
       <Number>{id}</Number>
       <StyledImage img={img_url} />
-      <Title>{name}</Title>
+      <Title onClick={onPlayMusic}>{name}</Title>
       {children}
     </Layout>
   );

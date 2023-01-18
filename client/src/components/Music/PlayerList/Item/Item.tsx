@@ -26,8 +26,8 @@ export const Item = ({ name, img_url, id, source_url }: MusicType) => {
   };
 
   return (
-    <Layout onClick={handlePlayMusic} isActive={isCurrentMusic}>
-      <MusicItem id={id} img_url={img_url} name={name}>
+    <Layout isActive={isCurrentMusic}>
+      <MusicItem id={id} img_url={img_url} name={name} onPlayMusic={handlePlayMusic}>
         <IconButton color="rgba(255,255,255,0.64)" onClick={handleTrashButton} size="1x" name="trash" />
       </MusicItem>
     </Layout>
