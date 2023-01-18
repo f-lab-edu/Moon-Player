@@ -1,14 +1,15 @@
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import MusicPage from 'pages/Music/index';
 import UserPage from 'pages/User/index';
 import LoginPage from 'pages/Login/index';
 import ProtectedRoute from 'components/Route/ProtectedRoute';
 import GlobalStyle from 'styles/GlobalStyle';
-import { Alarm } from 'components/Global/UI/Dialog/Alarm/Alarm';
+import { Alarm } from 'components/Global/UI/Dialog/Alarm/AlarmDialog';
+
+import { AlarmContextProvider } from 'provider/Alarm';
 function App() {
   return (
-    <>
+    <AlarmContextProvider>
       <Alarm />
       <GlobalStyle />
       <Routes>
@@ -30,7 +31,7 @@ function App() {
         ></Route>
         <Route element={<LoginPage />} path="/"></Route>;
       </Routes>
-    </>
+    </AlarmContextProvider>
   );
 }
 

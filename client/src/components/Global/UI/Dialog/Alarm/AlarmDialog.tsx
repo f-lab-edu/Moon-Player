@@ -1,20 +1,23 @@
 import styled from 'styled-components';
-import { Flex } from '../../../style/Flex';
-import { Button } from '../../../style/Button/Button';
-import { Text } from '../../../style/Text';
-import { Avatar } from '../../../style/Avatar';
-import useUIControl from 'hooks/useUIControl';
+import { Flex } from 'components/Global/style/Flex';
+import { Button } from 'components/Global/style/Button/Button';
+import { Text } from 'components/Global/style/Text';
+
+import { useContext } from 'react';
+import { AlarmContext } from 'provider/Alarm';
+import Avatar from 'components/Global/style/Avatar';
 
 export const Alarm = () => {
-  const { isOpenAlarm, alarmText, onCloseAlarm } = useUIControl();
-  return isOpenAlarm ? (
+  const alarmCtx = useContext(AlarmContext);
+
+  return alarmCtx.state.isOpen ? (
     <Layout>
       <Box direction="column" justifyContent="center" alignItems="center">
         <AlarmAvatar img="logo"></AlarmAvatar>
         <AlarmText color="white" textAlign="center" data-testid="alarmText">
-          {alarmText}
+          {alarmCtx.state.text}
         </AlarmText>
-        <StyledButton fontColor="white" color="gray" onClick={onCloseAlarm}>
+        <StyledButton fontColor="white" color="gray" onClick={alarmCtx.closeAlarm}>
           확인
         </StyledButton>
       </Box>

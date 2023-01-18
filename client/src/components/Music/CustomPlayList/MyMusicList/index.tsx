@@ -12,7 +12,6 @@ const datas = [
   { title: '안녕하세요', id: 1 },
   { title: '안녕하세요', id: 2 },
   { title: '안녕sdfsdf', id: 3 },
-
   { title: '안녕sdfsdf', id: 4 },
   { title: '안녕sdfsdf', id: 5 },
   { title: '안녕sdfsdf', id: 6 },
@@ -94,8 +93,7 @@ export const CustomPlayList = () => {
 
 const Layout = styled(ScrollBox)`
   height: 45vh;
-  padding: 10px;
-  margin: 15px;
+  margin-top: 20px;
   h3 {
     font-size: 20px;
     margin-right: 10px;

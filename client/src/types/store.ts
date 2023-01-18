@@ -28,7 +28,6 @@ export interface Genre {
 }
 
 export interface LayoutState {
-  alarm: Alarm;
   music: {
     customPlayList: {
       isOpen: boolean;

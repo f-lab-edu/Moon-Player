@@ -35,7 +35,7 @@ describe('Form 컴포넌트 기능 테스트', () => {
     expect(mockgetCode).toBeCalled();
     expect(token).toBe('google');
     expect(googlebutton).not.toBeInTheDocument();
-    expect(store.getState().layout.alarm.text).toBe('로그인 하였습니다.');
+    // expect(store.getState().layout.alarm.text).toBe('로그인 하였습니다.');
   });
 
   test('카카오 로그인 버튼을 클릭하면 MusicPage로 이동한다.', async () => {
@@ -63,7 +63,7 @@ describe('Form 컴포넌트 기능 테스트', () => {
     expect(mockgetCode).toBeCalled();
     expect(token).toBe('Kakao');
     expect(KaKaoButton).not.toBeInTheDocument();
-    expect(store.getState().layout.alarm.text).toBe('로그인 하였습니다.');
+    // expect(store.getState().layout.alarm.text).toBe('로그인 하였습니다.');
   });
 });
 

@@ -1,12 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
-import { LayoutState, Alarm } from 'types/store';
+import { LayoutState } from 'types/store';
 
 export const initialState: LayoutState = {
-  alarm: {
-    text: '',
-    isOpen: false,
-  },
   music: {
     customPlayList: {
       isOpen: false,
@@ -27,9 +23,6 @@ export const LayoutSlice = createSlice({
   name: 'layout',
   initialState,
   reducers: {
-    handleOpenAlarm: (state: LayoutState, action: PayloadAction<Alarm>) => {
-      state.alarm = action.payload;
-    },
     handleAddMusicListUI: (state: LayoutState, action: PayloadAction<boolean>) => {
       state.music.customPlayList.addMusicList.isOpen = action.payload;
     },
@@ -48,10 +41,5 @@ export const LayoutSlice = createSlice({
     builder.addCase(PURGE, () => initialState);
   },
 });
-export const {
-  handleOpenAlarm,
-  handleAddMusicListUI,
-  handleMyMusicListUI,
-  handleOpenMusicFooterUI,
-  handleOpenCustomPlayListUI,
-} = LayoutSlice.actions;
+export const { handleAddMusicListUI, handleMyMusicListUI, handleOpenMusicFooterUI, handleOpenCustomPlayListUI } =
+  LayoutSlice.actions;

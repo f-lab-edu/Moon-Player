@@ -3,22 +3,22 @@ import { Flex } from 'components/Global/style/Flex';
 import { Button } from 'components/Global/style/Button/Button';
 import Avatar from 'components/Global/style/Avatar';
 import { Text } from 'components/Global/style/Text';
-import { useContext } from 'react';
-import { ConfirmContext } from 'provider/Confirm';
 import useAuthenticator from 'hooks/useAuthenticator';
-import useUIControl from 'hooks/useUIControl';
+import { useContext } from 'react';
+import { AlarmContext } from 'provider/Alarm';
+import { ConfirmContext } from 'provider/Confirm';
+
 export const ConfirmDialog = () => {
   const confirmCtx = useContext(ConfirmContext);
+  const alarmCtx = useContext(AlarmContext);
+
   const { signOut } = useAuthenticator();
-
-  const { onOpenAlarm } = useUIControl();
-
   const load = () => {
-    onOpenAlarm('재생목록을 가져왔습니다.');
+    alarmCtx.showAlarm('재생목록을 가져왔습니다.');
     confirmCtx.closeConfirm();
   };
   const Save = () => {
-    onOpenAlarm('저장하였습니다.');
+    alarmCtx.showAlarm('저장하였습니다.');
     confirmCtx.closeConfirm();
   };
 

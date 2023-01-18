@@ -8,10 +8,13 @@ import useUIControl from 'hooks/useUIControl';
 
 export const CustomPlayList = () => {
   const modalRef = useRef<HTMLDivElement>(null);
-  const { onhandleCustomPlayListUI, isOpenAddMusicListUI } = useUIControl();
+  const { onhandleCustomPlayListUI, isOpenAddMusicListUI, onhandleAddMusicListUI, onhandleMyMusicListUi } =
+    useUIControl();
 
   const handleCloseButton = () => {
     onhandleCustomPlayListUI(false);
+    onhandleAddMusicListUI(false);
+    onhandleMyMusicListUi(false);
   };
   return (
     <Overlay>

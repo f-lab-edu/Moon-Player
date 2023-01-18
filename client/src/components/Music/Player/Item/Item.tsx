@@ -7,15 +7,21 @@ import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import { MusicType } from 'types/store';
 import { useUIControl } from 'hooks/useUIControl';
 import MusicItem from 'components/Global/UI/Music/Music';
+import { useContext } from 'react';
+import { AlarmContext } from 'provider/Alarm';
 
 export const Item = ({ name, img_url, id, source_url }: MusicType) => {
   const dispatch = useAppDispatch();
-  const { onOpenAlarm, onhandleMusicFooterUI } = useUIControl();
+  const { onhandleMusicFooterUI } = useUIControl();
+  const alarmCtx = useContext(AlarmContext);
+
   const playerSelector = useAppSelector((state) => state.music.player);
   const isCurrentMusic = playerSelector.playingMusic.name === name ? true : false;
 
   const handleTrashButton = () => {
-    return isCurrentMusic ? onOpenAlarm('현재 재생중인 음악은 삭제할수없습니다.') : dispatch(handleRemoveMusic(name));
+    return isCurrentMusic
+      ? alarmCtx.showAlarm('현재 재생중인 음악은 삭제할수없습니다.')
+      : dispatch(handleRemoveMusic(name));
   };
 
   const handlePlayMusic = () => {
