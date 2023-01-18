@@ -1,16 +1,16 @@
-import { useModal } from 'hooks/useModal';
+import { useUIControl } from 'hooks/useUIControl';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import styled from 'styled-components';
 
 export const Hide = () => {
-  const { onhandleFooterUI, isOpenFooterUI } = useModal();
+  const { onhandleMusicFooterUI, isOpenMusicFooterUI } = useUIControl();
 
-  const renderHideButton = isOpenFooterUI ? (
+  const renderHideButton = isOpenMusicFooterUI ? (
     <IconButton name="up" color="white" size="1x" />
   ) : (
     <IconButton name="down" color="white" size="1x" />
   );
-  return <Layout onClick={onhandleFooterUI}>{renderHideButton}</Layout>;
+  return <Layout onClick={onhandleMusicFooterUI}>{renderHideButton}</Layout>;
 };
 const Layout = styled.div`
   position: absolute;

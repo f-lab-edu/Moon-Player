@@ -7,7 +7,7 @@ import ProgressBar from './ProgressBar/ProgressBar';
 import Volume from './Volume/Volume';
 import MusicInfo from './MusicInfo/MusicInfo';
 import Controller from './Controller/Controller';
-import useModal from 'hooks/useModal';
+import useUIControl from 'hooks/useUIControl';
 import { Hide } from './Hide/Hide';
 
 // hide버튼 누를시 프로그레스바만 보이게 구현
@@ -21,13 +21,13 @@ export const Footer = ({ player }) => {
     handleNextPlayingMusic,
   } = usePlayerControlModule();
 
-  const { isOpenFooterUI } = useModal();
+  const { isOpenMusicFooterUI } = useUIControl();
   const currentTime = formatTime(+player.currentTime);
   const endTime = formatTime(+player.endTime);
   const elapsedTime = Math.floor((+player.currentTime / +player.endTime) * 100);
   const playerVolume = player.volume.toString();
   return (
-    <Layout active={isOpenFooterUI}>
+    <Layout active={isOpenMusicFooterUI}>
       <Hide />
       <ProgressBar currentTime={currentTime} endTime={endTime} elapsedTime={elapsedTime} />
 

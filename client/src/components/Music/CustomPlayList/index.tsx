@@ -1,32 +1,23 @@
 import styled from 'styled-components';
 import { useRef } from 'react';
-import CustomAdder from './Adder';
+import AddMusicList from './AddMusicList';
 import Flex from 'components/Global/style/Flex';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
-import { useModal } from 'hooks/useModal';
-import { CustomPlayList } from './PlayList/index';
-import { MainHeader } from './Header/MainHeader/MainHeader';
-import { useAppSelector } from 'hooks/useAppDispatch';
-import SubHeader from './Header/SubHeader/SubHeader';
-export const Player = () => {
+import MyMusicList from './MyMusicList/index';
+import useUIControl from 'hooks/useUIControl';
+
+export const CustomPlayList = () => {
   const modalRef = useRef<HTMLDivElement>(null);
-  const playerUI = useAppSelector((state) => state.layout.player);
-  const playerHeaderUI = useAppSelector((state) => state.layout.playerHeader);
-  const playerHeader =
-    playerHeaderUI.header === 'main-header' ? (
-      <MainHeader ui={playerUI.ui} name={playerHeaderUI.name} />
-    ) : (
-      <SubHeader name={playerHeaderUI.name} />
-    );
-  const playerRenderUI =
-    playerUI.ui === 'custom-PlayList' ? <CustomPlayList /> : playerUI.ui === 'custom-Adder' ? <CustomAdder /> : <></>;
-  const { onClosePlayerUI } = useModal();
+  const { onhandleCustomPlayListUI, isOpenAddMusicListUI } = useUIControl();
+
+  const handleCloseButton = () => {
+    onhandleCustomPlayListUI(false);
+  };
   return (
     <Overlay>
       <Layout direction="column" ref={modalRef}>
-        <CloseButton onClick={onClosePlayerUI} name="close" color="white" size="2x" />
-        {playerHeader}
-        {playerRenderUI}
+        <CloseButton onClick={handleCloseButton} name="close" color="white" size="2x" />
+        {isOpenAddMusicListUI ? <AddMusicList /> : <MyMusicList />}
       </Layout>
     </Overlay>
   );
@@ -66,4 +57,4 @@ const CloseButton = styled(IconButton)`
   top: 0;
   margin: 10px;
 `;
-export default Player;
+export default CustomPlayList;

@@ -4,15 +4,14 @@ import { Button } from 'components/Global/style/Button/Button';
 import Avatar from 'components/Global/style/Avatar';
 import { Text } from 'components/Global/style/Text';
 import { useContext } from 'react';
-import { ConfirmContext } from 'provider/Confirm/ConfirmContext';
+import { ConfirmContext } from 'provider/Confirm';
 import useAuthenticator from 'hooks/useAuthenticator';
-import useModal from 'hooks/useModal';
-import { ConfirmType } from 'types/app/Confirmdialog';
+import useUIControl from 'hooks/useUIControl';
 export const ConfirmDialog = () => {
   const confirmCtx = useContext(ConfirmContext);
   const { signOut } = useAuthenticator();
 
-  const { onOpenAlarm } = useModal();
+  const { onOpenAlarm } = useUIControl();
 
   const load = () => {
     onOpenAlarm('재생목록을 가져왔습니다.');

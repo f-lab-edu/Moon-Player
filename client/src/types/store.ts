@@ -29,10 +29,19 @@ export interface Genre {
 
 export interface LayoutState {
   alarm: Alarm;
-  player: LayoutPlayerState;
-  playerHeader: LayoutPlayerHeaderState;
-  footer: {
-    isOpen: boolean;
+  music: {
+    customPlayList: {
+      isOpen: boolean;
+      addMusicList: {
+        isOpen: boolean;
+      };
+      myMusicList: {
+        isOpen: boolean;
+      };
+    };
+    footer: {
+      isOpen: boolean;
+    };
   };
 }
 export interface Alarm {
@@ -69,8 +78,4 @@ export interface GoogleUser {
 export interface LayoutPlayerState {
   isOpen: boolean;
   ui: string;
-}
-export interface LayoutPlayerHeaderState {
-  header: string;
-  name: string;
 }

@@ -1,14 +1,14 @@
 import Alarm from './Alarm';
 import userEvent from '@testing-library/user-event';
 import { renderWithProvider, screen, renderHook, waitFor } from 'test-utils/rtkProvider';
-import { useModal } from 'hooks/useModal';
+import { useUIControl } from 'hooks/useUIControl';
 import { getWrapper } from 'test-utils/wrapper';
 
 describe('Alarm 컴포넌트 기능 테스트', () => {
   test('onOpenAlarm이 호출되면 전달된 텍스트에 맞는 Alarm컴포넌트가 보여진다. .', async () => {
     const { store } = renderWithProvider(<Alarm></Alarm>);
     const wrapper = getWrapper(store);
-    const { result } = renderHook(() => useModal(), {
+    const { result } = renderHook(() => useUIControl(), {
       wrapper,
     });
     // alarm 호출
@@ -22,7 +22,7 @@ describe('Alarm 컴포넌트 기능 테스트', () => {
     const user = userEvent.setup();
     const { store } = renderWithProvider(<Alarm></Alarm>);
     const wrapper = getWrapper(store);
-    const { result } = renderHook(() => useModal(), {
+    const { result } = renderHook(() => useUIControl(), {
       wrapper,
     });
     await waitFor(() => result.current.onOpenAlarm('안녕하세요'));

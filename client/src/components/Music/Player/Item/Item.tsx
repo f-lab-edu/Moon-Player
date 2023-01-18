@@ -5,12 +5,12 @@ import { handleRemoveMusic, handleAddMusic } from 'store/feature/music/PlayerSli
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import { MusicType } from 'types/store';
-import { useModal } from 'hooks/useModal';
+import { useUIControl } from 'hooks/useUIControl';
 import MusicItem from 'components/Global/UI/Music/Music';
 
 export const Item = ({ name, img_url, id, source_url }: MusicType) => {
   const dispatch = useAppDispatch();
-  const { onOpenAlarm, onOpenFooterUI } = useModal();
+  const { onOpenAlarm, onhandleMusicFooterUI } = useUIControl();
   const playerSelector = useAppSelector((state) => state.music.player);
   const isCurrentMusic = playerSelector.playingMusic.name === name ? true : false;
 
@@ -22,7 +22,7 @@ export const Item = ({ name, img_url, id, source_url }: MusicType) => {
     const currentMusic = { name, img_url, id, source_url };
     dispatch(handleAddMusic(currentMusic));
     // 음악재생시 footer바가 자동으로 올라오게
-    onOpenFooterUI();
+    onhandleMusicFooterUI();
   };
 
   return (

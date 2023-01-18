@@ -1,22 +1,25 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
-import { LayoutState, Alarm, LayoutPlayerHeaderState } from 'types/store';
+import { LayoutState, Alarm } from 'types/store';
 
 export const initialState: LayoutState = {
   alarm: {
     text: '',
     isOpen: false,
   },
-  player: {
-    isOpen: false,
-    ui: 'custom-Adder',
-  },
-  playerHeader: {
-    header: 'main-header',
-    name: '나만의 플레이리스트 추가',
-  },
-  footer: {
-    isOpen: false,
+  music: {
+    customPlayList: {
+      isOpen: false,
+      addMusicList: {
+        isOpen: false,
+      },
+      myMusicList: {
+        isOpen: false,
+      },
+    },
+    footer: {
+      isOpen: false,
+    },
   },
 };
 
@@ -27,23 +30,28 @@ export const LayoutSlice = createSlice({
     handleOpenAlarm: (state: LayoutState, action: PayloadAction<Alarm>) => {
       state.alarm = action.payload;
     },
-    handleOpenPlayerUI: (state: LayoutState, action: PayloadAction<boolean>) => {
-      state.player.isOpen = action.payload;
+    handleAddMusicListUI: (state: LayoutState, action: PayloadAction<boolean>) => {
+      state.music.customPlayList.addMusicList.isOpen = action.payload;
     },
-    handlePlayerUI: (state: LayoutState, action: PayloadAction<string>) => {
-      state.player.ui = action.payload;
-    },
-    handlePlayerHeaderUI: (state: LayoutState, action: PayloadAction<LayoutPlayerHeaderState>) => {
-      state.playerHeader = action.payload;
+    handleMyMusicListUI: (state: LayoutState, action: PayloadAction<boolean>) => {
+      state.music.customPlayList.myMusicList.isOpen = action.payload;
     },
 
-    handleOpenFooterUI: (state: LayoutState, action: PayloadAction<boolean>) => {
-      state.footer.isOpen = action.payload;
+    handleOpenMusicFooterUI: (state: LayoutState, action: PayloadAction<boolean>) => {
+      state.music.footer.isOpen = action.payload;
+    },
+    handleOpenCustomPlayListUI: (state: LayoutState, action: PayloadAction<boolean>) => {
+      state.music.customPlayList.isOpen = action.payload;
     },
   },
   extraReducers: (builder) => {
     builder.addCase(PURGE, () => initialState);
   },
 });
-export const { handleOpenAlarm, handleOpenPlayerUI, handlePlayerUI, handlePlayerHeaderUI, handleOpenFooterUI } =
-  LayoutSlice.actions;
+export const {
+  handleOpenAlarm,
+  handleAddMusicListUI,
+  handleMyMusicListUI,
+  handleOpenMusicFooterUI,
+  handleOpenCustomPlayListUI,
+} = LayoutSlice.actions;

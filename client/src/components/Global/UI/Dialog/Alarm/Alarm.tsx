@@ -3,12 +3,12 @@ import { Flex } from '../../../style/Flex';
 import { Button } from '../../../style/Button/Button';
 import { Text } from '../../../style/Text';
 import { Avatar } from '../../../style/Avatar';
-import useModal from 'hooks/useModal';
+import useUIControl from 'hooks/useUIControl';
 
 export const Alarm = () => {
-  const { isOpenAlarm, alarmText, onCloseAlarm } = useModal();
+  const { isOpenAlarm, alarmText, onCloseAlarm } = useUIControl();
   return isOpenAlarm ? (
-    <Layout data-testid="overlay">
+    <Layout>
       <Box direction="column" justifyContent="center" alignItems="center">
         <AlarmAvatar img="logo"></AlarmAvatar>
         <AlarmText color="white" textAlign="center" data-testid="alarmText">

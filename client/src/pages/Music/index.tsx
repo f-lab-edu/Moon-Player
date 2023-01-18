@@ -1,19 +1,20 @@
 import styled from 'styled-components';
 import Navigation from 'components/Music/Navigation/';
 import Genre from 'components/Music/Genre';
-import Player from 'components/Music/Custom';
+import CustomPlayList from 'components/Music/CustomPlayList';
 import PlayList from 'components/Music/PlayList';
 import Footer from 'components/Music/Footer';
-import useModal from 'hooks/useModal';
 import { usePlayerControlModule } from 'hooks/usePlayerControlModule';
-import PlayerList from 'components/Music/PlayerList/index';
+import PlayerList from 'components/Music/Player/index';
 import Flex from 'components/Global/style/Flex';
-import { ConfirmContextProvider } from 'provider/Confirm/ConfirmContext';
+import { ConfirmContextProvider } from 'provider/Confirm';
 import { ConfirmDialog } from 'components/Global/UI/Dialog/Confirm/ConfirmDialog';
+import useUIControl from 'hooks/useUIControl';
 
 const MusicPage = () => {
-  const { isOpenPlayerUI } = useModal();
   const { musicPlayer, playerModuleSelector } = usePlayerControlModule();
+  const { isOpenCustomPlayListUI } = useUIControl();
+
   return (
     <ConfirmContextProvider>
       <ConfirmDialog />
@@ -26,7 +27,7 @@ const MusicPage = () => {
         </Main>
         {playerModuleSelector.music && musicPlayer}
         <Footer player={playerModuleSelector} />
-        {isOpenPlayerUI ? <Player /> : <></>}
+        {isOpenCustomPlayListUI ? <CustomPlayList /> : <></>}
       </Layout>
     </ConfirmContextProvider>
   );

@@ -21,7 +21,7 @@ export const ConfirmContextProvider = (props) => {
   };
 
   const closeConfirmHandler = () => {
-    setActiveConfirm({ isOpen: false, message: '', type: '' });
+    setActiveConfirm(DEFAULT_STATE);
   };
   const context = {
     state: activeConfirm,

@@ -7,8 +7,8 @@ import { useAppSelector } from 'hooks/useAppDispatch';
 import Music from 'components/Global/UI/Music/Music';
 import { ScrollBox } from 'components/Global/style/ScrollBox';
 import { useContext } from 'react';
-import { ConfirmContext } from 'provider/Confirm/ConfirmContext';
-
+import { ConfirmContext } from 'provider/Confirm';
+import MainHeader from '../Header/MainHeader/MainHeader';
 export const CustomAdder = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
   const confirmCtx = useContext(ConfirmContext);
@@ -16,6 +16,7 @@ export const CustomAdder = () => {
   const handleSaveButton = () => {
     confirmCtx.showConfirm('현재 재생목록을 저장하시겠습니까?', 'Save');
   };
+
   const playerMusics =
     playerSelector.list.length > 0 ? (
       playerSelector.list.map(({ name, img_url }, index) => (
@@ -24,16 +25,20 @@ export const CustomAdder = () => {
     ) : (
       <EmptyText>재생 목록이 비어있습니다.</EmptyText>
     );
+
   return (
-    <Layout direction="column" justifyContent="center">
-      <Flex direction="row" justifyContent="space-between" alignItems="center">
-        <InputBox direction="row" alignItems="center" gap="15px">
-          <Input placeholder="최소 4자~10자이내" />
-          <IconButton name="save" size="2x" color="white" onClick={handleSaveButton}></IconButton>
-        </InputBox>
-      </Flex>
-      <MusicBox>{playerMusics}</MusicBox>
-    </Layout>
+    <>
+      <MainHeader title="나만의 플레이리스트 추가" />
+      <Layout direction="column" justifyContent="center">
+        <Flex direction="row" justifyContent="space-between" alignItems="center">
+          <InputBox direction="row" alignItems="center" gap="15px">
+            <Input placeholder="최소 4자~10자이내" />
+            <IconButton name="save" size="2x" color="white" onClick={handleSaveButton}></IconButton>
+          </InputBox>
+        </Flex>
+        <MusicBox>{playerMusics}</MusicBox>
+      </Layout>
+    </>
   );
 };
 export default CustomAdder;

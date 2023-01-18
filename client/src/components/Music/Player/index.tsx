@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Music from 'components/Music/PlayerList/Item/Item';
+import Music from 'components/Music/Player/Item/Item';
 import Text from 'components/Global/style/Text';
 import ScrollBox from 'components/Global/style/ScrollBox';
 import { useAppSelector } from 'hooks/useAppDispatch';

@@ -3,11 +3,11 @@ import { removeStoreItems } from 'utils/redux-persist';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from './useAppDispatch';
 
-import { useModal } from './useModal';
+import { useUIControl } from './useUIControl';
 
 export const useAuthenticator = () => {
   const navigate = useNavigate();
-  const { onOpenAlarm } = useModal();
+  const { onOpenAlarm } = useUIControl();
   const isAuthenticated = useAppSelector((state) => state.user.data.access_token) ? true : false;
 
   useEffect(() => {
