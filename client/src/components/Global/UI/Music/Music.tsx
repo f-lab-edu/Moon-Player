@@ -12,12 +12,12 @@ interface MusicProps {
   children?: ReactElement;
   onPlayMusic?: React.MouseEventHandler<HTMLElement>;
 }
-export const Music = ({ name, img_url, id, children, onPlayMusic }: MusicProps) => {
+export const Music = ({ name, img_url, id, children }: MusicProps) => {
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
       <Number>{id}</Number>
       <StyledImage img={img_url} />
-      <Title onClick={onPlayMusic}>{name}</Title>
+      <Title>{name}</Title>
       {children}
     </Layout>
   );

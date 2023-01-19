@@ -5,7 +5,6 @@ import LoginPage from 'pages/Login/index';
 import ProtectedRoute from 'components/Route/ProtectedRoute';
 import GlobalStyle from 'styles/GlobalStyle';
 import { Alarm } from 'components/Global/UI/Dialog/Alarm/AlarmDialog';
-
 import { AlarmContextProvider } from 'provider/Alarm';
 function App() {
   return (

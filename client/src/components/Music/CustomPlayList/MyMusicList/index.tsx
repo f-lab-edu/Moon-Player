@@ -84,15 +84,19 @@ export const CustomPlayList = () => {
   ));
 
   return (
-    <Layout>
-      {!activeUI ? <MainHeader title="나만의 플레이리스트" /> : <SubHeader onUIhandle={() => setActiveUI(!activeUI)} />}
-      {!activeUI ? DataListitems : playerMusicItems}
-    </Layout>
+    <>
+      {!activeUI ? (
+        <MainHeader title="나만의 플레이리스트 목록" />
+      ) : (
+        <SubHeader onUIhandle={() => setActiveUI(!activeUI)} />
+      )}
+      <MusicList>{!activeUI ? DataListitems : playerMusicItems}</MusicList>
+    </>
   );
 };
 
-const Layout = styled(ScrollBox)`
-  height: 45vh;
+const MusicList = styled(ScrollBox)`
+  height: 42vh;
   margin-top: 20px;
   h3 {
     font-size: 20px;

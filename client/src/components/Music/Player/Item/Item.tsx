@@ -6,7 +6,7 @@ import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import { MusicType } from 'types/store';
 import { useUIControl } from 'hooks/useUIControl';
-import MusicItem from 'components/Global/UI/Music/Music';
+import Music from 'components/Global/UI/Music/Music';
 import { useContext } from 'react';
 import { AlarmContext } from 'provider/Alarm';
 
@@ -28,14 +28,17 @@ export const Item = ({ name, img_url, id, source_url }: MusicType) => {
     const currentMusic = { name, img_url, id, source_url };
     dispatch(handleAddMusic(currentMusic));
     // 음악재생시 footer바가 자동으로 올라오게
-    onhandleMusicFooterUI();
+    onhandleMusicFooterUI(true);
   };
 
   return (
-    <Layout isActive={isCurrentMusic}>
-      <MusicItem id={id} img_url={img_url} name={name} onPlayMusic={handlePlayMusic}>
-        <IconButton color="rgba(255,255,255,0.64)" onClick={handleTrashButton} size="1x" name="trash" />
-      </MusicItem>
+    <Layout isActive={isCurrentMusic} onClick={handlePlayMusic}>
+      <Music id={id} img_url={img_url} name={name}>
+        <div>
+          <IconButton color="rgba(255,255,255,0.64)" onClick={handleTrashButton} size="1x" name="info" />
+          <IconButton color="rgba(255,255,255,0.64)" onClick={handleTrashButton} size="1x" name="trash" />
+        </div>
+      </Music>
     </Layout>
   );
 };

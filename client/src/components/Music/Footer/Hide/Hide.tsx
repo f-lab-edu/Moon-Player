@@ -10,7 +10,7 @@ export const Hide = () => {
   ) : (
     <IconButton name="down" color="white" size="1x" />
   );
-  return <Layout onClick={onhandleMusicFooterUI}>{renderHideButton}</Layout>;
+  return <Layout onClick={() => onhandleMusicFooterUI(!isOpenMusicFooterUI)}>{renderHideButton}</Layout>;
 };
 const Layout = styled.div`
   position: absolute;

@@ -6,7 +6,6 @@ import { Text } from 'components/Global/style/Text';
 import { useContext } from 'react';
 import { AlarmContext } from 'provider/Alarm';
 import Avatar from 'components/Global/style/Avatar';
-
 export const Alarm = () => {
   const alarmCtx = useContext(AlarmContext);
 

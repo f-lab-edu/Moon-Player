@@ -4,7 +4,7 @@ import Image from 'components/Global/style/Image';
 import Text from 'components/Global/style/Text';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
 
-export const MusicInfoModal = ({ name, img_url }) => {
+export const MusicInfoDialog = ({ name, img_url }) => {
   return (
     <Layout>
       <Box direction="column" alignItems="center">
@@ -56,4 +56,4 @@ const CloseButton = styled(IconButton)`
   margin: 10px;
 `;
 
-export default MusicInfoModal;
+export default MusicInfoDialog;

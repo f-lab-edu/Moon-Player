@@ -30,7 +30,7 @@ const Layout = styled(Flex)`
   margin: 15px;
 `;
 const Title = styled(Text)`
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.64);
 `;

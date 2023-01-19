@@ -32,18 +32,19 @@ export const CustomAdder = () => {
       <Layout direction="column" justifyContent="center">
         <Flex direction="row" justifyContent="space-between" alignItems="center">
           <InputBox direction="row" alignItems="center" gap="15px">
-            <Input placeholder="최소 4자~10자이내" />
+            <Input placeholder="최소 4자~10자이내에 입력해주세요." />
             <IconButton name="save" size="2x" color="white" onClick={handleSaveButton}></IconButton>
           </InputBox>
         </Flex>
-        <MusicBox>{playerMusics}</MusicBox>
+        <Title>재생목록</Title>
+        <MusicList>{playerMusics}</MusicList>
       </Layout>
     </>
   );
 };
 export default CustomAdder;
 
-const MusicBox = styled(ScrollBox)`
+const MusicList = styled(ScrollBox)`
   height: 30vh;
   padding-right: 10px;
 `;
@@ -77,4 +78,7 @@ const EmptyText = styled(Text)`
   color: rgba(255, 255, 255, 0.64);
 
   font-size: 20px;
+`;
+const Title = styled(Text)`
+  font-size: 18px;
 `;

@@ -4,7 +4,6 @@ import { MusicType } from 'types/store';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 
 import Music from 'components/Global/UI/Music/Music';
-
 export const Item = ({ id, name, img_url, source_url }: MusicType) => {
   const dispatch = useAppDispatch();
   const playerSelector = useAppSelector((state) => state.music.player);
@@ -15,17 +14,25 @@ export const Item = ({ id, name, img_url, source_url }: MusicType) => {
 
     dispatch(handleAddPlayer(selectedMusic));
   };
+  const handleShowMusicInfo = () => {
+    // 음악에 대한 정보를 보여준다.
+    console.log('123');
+    return;
+  };
 
   return (
     <>
       <Music name={name} img_url={img_url} id={id}>
-        <IconButton
-          color="rgba(255,255,255,0.76)"
-          active={isInPlayer}
-          onClick={handleAddMusic}
-          name="circlePlus"
-          size="2x"
-        ></IconButton>
+        <div>
+          <IconButton color="rgba(255,255,255,0.76)" name="info" size="2x" onClick={handleShowMusicInfo} />
+          <IconButton
+            color="rgba(255,255,255,0.76)"
+            active={isInPlayer}
+            onClick={handleAddMusic}
+            name="circlePlus"
+            size="2x"
+          />
+        </div>
       </Music>
     </>
   );

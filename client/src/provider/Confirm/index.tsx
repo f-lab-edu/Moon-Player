@@ -2,6 +2,7 @@
 import { createContext, useState } from 'react';
 import { ConfirmType, ConfirmState } from 'types/app/Confirmdialog';
 
+//  Dialog로 관리 가능할거같다.
 const DEFAULT_STATE: ConfirmState = {
   isOpen: false,
   message: '',

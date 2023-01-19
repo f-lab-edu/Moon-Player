@@ -13,8 +13,8 @@ export const useUIControl = () => {
   const isOpenMyMusicListUI = useAppSelector((state) => state.layout.music.customPlayList.myMusicList.isOpen);
   const isOpenMusicFooterUI = useAppSelector((state) => state.layout.music.footer.isOpen);
   const dispatch = useAppDispatch();
-  const onhandleMusicFooterUI = () => {
-    dispatch(handleOpenMusicFooterUI(!isOpenMusicFooterUI));
+  const onhandleMusicFooterUI = (isActive: boolean) => {
+    dispatch(handleOpenMusicFooterUI(isActive));
   };
   const onhandleAddMusicListUI = (isActive: boolean) => {
     dispatch(handleAddMusicListUI(isActive));
