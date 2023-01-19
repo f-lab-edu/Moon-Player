@@ -9,7 +9,7 @@ import { ScrollBox } from 'components/Global/style/ScrollBox';
 import { useContext } from 'react';
 import { ConfirmContext } from 'provider/Confirm';
 import MainHeader from '../Header/MainHeader/MainHeader';
-export const CustomAdder = () => {
+export const AddPlayList = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
   const confirmCtx = useContext(ConfirmContext);
 
@@ -42,7 +42,7 @@ export const CustomAdder = () => {
     </>
   );
 };
-export default CustomAdder;
+export default AddPlayList;
 
 const MusicList = styled(ScrollBox)`
   height: 30vh;

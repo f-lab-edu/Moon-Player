@@ -5,10 +5,10 @@ import Music from 'components/Music/PlayList/Item/Item';
 import ScrollBox from 'components/Global/style/ScrollBox';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 import Text from 'components/Global/style/Text';
-
 export const PlayList = () => {
   const dispatch = useAppDispatch();
   const { music_list } = useAppSelector((state) => state.music.playList.genre);
+
   const playListMusics =
     music_list &&
     music_list.map(({ name, id, img_url, source_url }) => (

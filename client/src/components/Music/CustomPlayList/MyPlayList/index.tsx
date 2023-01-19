@@ -71,7 +71,7 @@ const playerDatas = [
   },
 ];
 
-export const CustomPlayList = () => {
+export const MyPlayList = () => {
   // 서버로부터 데이터리스트들을 받아서 렌더링
   const [activeUI, setActiveUI] = useState(false);
 
@@ -110,4 +110,4 @@ const MusicList = styled(ScrollBox)`
     height: 64px;
   }
 `;
-export default CustomPlayList;
+export default MyPlayList;

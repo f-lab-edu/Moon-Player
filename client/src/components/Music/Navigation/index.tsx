@@ -9,14 +9,14 @@ import useUIControl from 'hooks/useUIControl';
 export const Navigation = () => {
   const confirmCtx = useContext(ConfirmContext);
 
-  const { onhandleCustomPlayListUI, onhandleAddMusicListUI } = useUIControl();
+  const { onhandleOpenCustomPlayListUI, onhandleOpenAddPlayListUI } = useUIControl();
 
   const handleLogoutButton = () => {
     confirmCtx.showConfirm('로그아웃 하시겠습니까?', 'Logout');
   };
   const handleMusicButton = () => {
-    onhandleCustomPlayListUI(true);
-    onhandleAddMusicListUI(true);
+    onhandleOpenCustomPlayListUI(true);
+    onhandleOpenAddPlayListUI(true);
   };
 
   return (

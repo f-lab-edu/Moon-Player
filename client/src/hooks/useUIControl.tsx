@@ -1,40 +1,48 @@
 /* eslint-disable indent */
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import {
-  handleAddMusicListUI,
-  handleMyMusicListUI,
+  handleOpenMyPlayListUI,
+  handleOpenAddPlayListUI,
   handleOpenMusicFooterUI,
   handleOpenCustomPlayListUI,
+  handleOpenMusicInfoUI,
 } from 'store/feature/layout/LayoutSlice';
 
 export const useUIControl = () => {
+  const dispatch = useAppDispatch();
   const isOpenCustomPlayListUI = useAppSelector((state) => state.layout.music.customPlayList.isOpen);
   const isOpenAddMusicListUI = useAppSelector((state) => state.layout.music.customPlayList.addMusicList.isOpen);
   const isOpenMyMusicListUI = useAppSelector((state) => state.layout.music.customPlayList.myMusicList.isOpen);
   const isOpenMusicFooterUI = useAppSelector((state) => state.layout.music.footer.isOpen);
-  const dispatch = useAppDispatch();
-  const onhandleMusicFooterUI = (isActive: boolean) => {
+  const isOpenMusicInfoUI = useAppSelector((state) => state.layout.music.musicDialog.isOpen);
+
+  const onhandleOpenMusicInfoUI = (isActive: boolean) => {
+    dispatch(handleOpenMusicInfoUI(isActive));
+  };
+  const onhandleOpenMusicFooterUI = (isActive: boolean) => {
     dispatch(handleOpenMusicFooterUI(isActive));
   };
-  const onhandleAddMusicListUI = (isActive: boolean) => {
-    dispatch(handleAddMusicListUI(isActive));
+  const onhandleOpenAddPlayListUI = (isActive: boolean) => {
+    dispatch(handleOpenAddPlayListUI(isActive));
   };
-  const onhandleMyMusicListUi = (isActive: boolean) => {
-    dispatch(handleMyMusicListUI(isActive));
+  const onhandleOpenMyPlayListUI = (isActive: boolean) => {
+    dispatch(handleOpenMyPlayListUI(isActive));
   };
-  const onhandleCustomPlayListUI = (isActive: boolean) => {
+  const onhandleOpenCustomPlayListUI = (isActive: boolean) => {
     dispatch(handleOpenCustomPlayListUI(isActive));
   };
 
   return {
+    isOpenMusicInfoUI,
     isOpenMusicFooterUI,
     isOpenAddMusicListUI,
     isOpenMyMusicListUI,
     isOpenCustomPlayListUI,
-    onhandleMusicFooterUI,
-    onhandleMyMusicListUi,
-    onhandleAddMusicListUI,
-    onhandleCustomPlayListUI,
+    onhandleOpenMusicFooterUI,
+    onhandleOpenMyPlayListUI,
+    onhandleOpenAddPlayListUI,
+    onhandleOpenCustomPlayListUI,
+    onhandleOpenMusicInfoUI,
   };
 };
 

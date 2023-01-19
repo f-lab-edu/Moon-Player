@@ -3,17 +3,20 @@ import { Flex } from 'components/Global/style/Flex';
 import Image from 'components/Global/style/Image';
 import Text from 'components/Global/style/Text';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
+import useUIControl from 'hooks/useUIControl';
 
 export const MusicInfoDialog = ({ name, img_url }) => {
-  return (
+  const { onhandleOpenMusicInfoUI, isOpenMusicInfoUI } = useUIControl();
+  return isOpenMusicInfoUI ? (
     <Layout>
       <Box direction="column" alignItems="center">
-        <CloseButton name="close" color="white" size="2x" />
-
+        <CloseButton name="close" color="white" size="2x" onClick={() => onhandleOpenMusicInfoUI(false)} />
         <StyledImage img={img_url} />
         <Title textAlign="center">{name}</Title>
       </Box>
     </Layout>
+  ) : (
+    <></>
   );
 };
 

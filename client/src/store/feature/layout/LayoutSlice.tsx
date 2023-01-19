@@ -2,6 +2,10 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
 import { LayoutState } from 'types/store';
 
+type MusicDialogInfoType = {
+  name: string;
+  img_url: string;
+};
 export const initialState: LayoutState = {
   music: {
     customPlayList: {
@@ -11,6 +15,13 @@ export const initialState: LayoutState = {
       },
       myMusicList: {
         isOpen: false,
+      },
+    },
+    musicDialog: {
+      isOpen: false,
+      info: {
+        name: '',
+        img_url: '',
       },
     },
     footer: {
@@ -23,13 +34,18 @@ export const LayoutSlice = createSlice({
   name: 'layout',
   initialState,
   reducers: {
-    handleAddMusicListUI: (state: LayoutState, action: PayloadAction<boolean>) => {
+    handleOpenAddPlayListUI: (state: LayoutState, action: PayloadAction<boolean>) => {
       state.music.customPlayList.addMusicList.isOpen = action.payload;
     },
-    handleMyMusicListUI: (state: LayoutState, action: PayloadAction<boolean>) => {
+    handleOpenMyPlayListUI: (state: LayoutState, action: PayloadAction<boolean>) => {
       state.music.customPlayList.myMusicList.isOpen = action.payload;
     },
-
+    handleOpenMusicInfoUI: (state: LayoutState, action: PayloadAction<boolean>) => {
+      state.music.musicDialog.isOpen = action.payload;
+    },
+    handleSelectedMusicInfoUI: (state: LayoutState, action: PayloadAction<MusicDialogInfoType>) => {
+      state.music.musicDialog.info = action.payload;
+    },
     handleOpenMusicFooterUI: (state: LayoutState, action: PayloadAction<boolean>) => {
       state.music.footer.isOpen = action.payload;
     },
@@ -41,5 +57,11 @@ export const LayoutSlice = createSlice({
     builder.addCase(PURGE, () => initialState);
   },
 });
-export const { handleAddMusicListUI, handleMyMusicListUI, handleOpenMusicFooterUI, handleOpenCustomPlayListUI } =
-  LayoutSlice.actions;
+export const {
+  handleOpenAddPlayListUI,
+  handleOpenMyPlayListUI,
+  handleOpenMusicFooterUI,
+  handleOpenCustomPlayListUI,
+  handleOpenMusicInfoUI,
+  handleSelectedMusicInfoUI,
+} = LayoutSlice.actions;

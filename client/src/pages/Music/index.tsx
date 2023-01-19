@@ -10,14 +10,18 @@ import Flex from 'components/Global/style/Flex';
 import { ConfirmContextProvider } from 'provider/Confirm';
 import { ConfirmDialog } from 'components/Global/UI/Dialog/Confirm/ConfirmDialog';
 import useUIControl from 'hooks/useUIControl';
+import MusicInfoDialog from 'components/Global/UI/Dialog/MusicInfo/MusicInfoDialog';
+import { useAppSelector } from 'hooks/useAppDispatch';
 
 const MusicPage = () => {
   const { musicPlayer, playerModuleSelector } = usePlayerControlModule();
   const { isOpenCustomPlayListUI } = useUIControl();
 
+  const { name, img_url } = useAppSelector((state) => state.layout.music.musicDialog.info);
   return (
     <ConfirmContextProvider>
       <ConfirmDialog />
+      <MusicInfoDialog name={name} img_url={img_url} />
       <Layout direction="column">
         <Navigation />
         <Genre />

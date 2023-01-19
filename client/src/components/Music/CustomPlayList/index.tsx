@@ -1,26 +1,26 @@
 import styled from 'styled-components';
 import { useRef } from 'react';
-import AddMusicList from './AddMusicList';
+import AddPlayList from './AddPlayList';
 import Flex from 'components/Global/style/Flex';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
-import MyMusicList from './MyMusicList/index';
+import MyPlayList from './MyPlayList/index';
 import useUIControl from 'hooks/useUIControl';
 
 export const CustomPlayList = () => {
   const modalRef = useRef<HTMLDivElement>(null);
-  const { onhandleCustomPlayListUI, isOpenAddMusicListUI, onhandleAddMusicListUI, onhandleMyMusicListUi } =
+  const { onhandleOpenCustomPlayListUI, isOpenAddMusicListUI, onhandleOpenAddPlayListUI, onhandleOpenMyPlayListUI } =
     useUIControl();
 
   const handleCloseButton = () => {
-    onhandleCustomPlayListUI(false);
-    onhandleAddMusicListUI(false);
-    onhandleMyMusicListUi(false);
+    onhandleOpenCustomPlayListUI(false);
+    onhandleOpenAddPlayListUI(false);
+    onhandleOpenMyPlayListUI(false);
   };
   return (
     <Overlay>
       <Layout direction="column" ref={modalRef}>
         <CloseButton onClick={handleCloseButton} name="close" color="white" size="2x" />
-        {isOpenAddMusicListUI ? <AddMusicList /> : <MyMusicList />}
+        {isOpenAddMusicListUI ? <AddPlayList /> : <MyPlayList />}
       </Layout>
     </Overlay>
   );

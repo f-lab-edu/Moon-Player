@@ -6,16 +6,17 @@ import { useUIControl } from 'hooks/useUIControl';
 // AddMusicList에 맞는 UI제공
 
 export const MainHeader = ({ title }) => {
-  const { isOpenAddMusicListUI, isOpenMyMusicListUI, onhandleAddMusicListUI, onhandleMyMusicListUi } = useUIControl();
+  const { isOpenAddMusicListUI, isOpenMyMusicListUI, onhandleOpenAddPlayListUI, onhandleOpenMyPlayListUI } =
+    useUIControl();
   console.log(isOpenAddMusicListUI, isOpenMyMusicListUI);
   const handleMusicButton = () => {
-    onhandleAddMusicListUI(false);
-    onhandleMyMusicListUi(true);
+    onhandleOpenAddPlayListUI(false);
+    onhandleOpenMyPlayListUI(true);
     // MusicButton을 누르면 MyMusicListH UI를 보여준다.
   };
   const handlePlusButton = () => {
-    onhandleAddMusicListUI(true);
-    onhandleMyMusicListUi(false);
+    onhandleOpenAddPlayListUI(true);
+    onhandleOpenMyPlayListUI(false);
     // PlusButton을 누르면  AddMusicList UI를 보여준다.
   };
 

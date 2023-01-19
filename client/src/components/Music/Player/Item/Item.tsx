@@ -9,10 +9,11 @@ import { useUIControl } from 'hooks/useUIControl';
 import Music from 'components/Global/UI/Music/Music';
 import { useContext } from 'react';
 import { AlarmContext } from 'provider/Alarm';
+import { handleSelectedMusicInfoUI } from 'store/feature/layout/LayoutSlice';
 
 export const Item = ({ name, img_url, id, source_url }: MusicType) => {
   const dispatch = useAppDispatch();
-  const { onhandleMusicFooterUI } = useUIControl();
+  const { onhandleOpenMusicFooterUI, onhandleOpenMusicInfoUI } = useUIControl();
   const alarmCtx = useContext(AlarmContext);
 
   const playerSelector = useAppSelector((state) => state.music.player);
@@ -27,15 +28,18 @@ export const Item = ({ name, img_url, id, source_url }: MusicType) => {
   const handlePlayMusic = () => {
     const currentMusic = { name, img_url, id, source_url };
     dispatch(handleAddMusic(currentMusic));
-    // 음악재생시 footer바가 자동으로 올라오게
-    onhandleMusicFooterUI(true);
+    onhandleOpenMusicFooterUI(true); // 음악재생시 footer바가 자동으로 올라오게
   };
 
+  const handleInfoMusic = () => {
+    onhandleOpenMusicInfoUI(true);
+    dispatch(handleSelectedMusicInfoUI({ name, img_url }));
+  };
   return (
     <Layout isActive={isCurrentMusic} onClick={handlePlayMusic}>
       <Music id={id} img_url={img_url} name={name}>
         <div>
-          <IconButton color="rgba(255,255,255,0.64)" onClick={handleTrashButton} size="1x" name="info" />
+          <IconButton color="rgba(255,255,255,0.64)" onClick={handleInfoMusic} size="1x" name="info" />
           <IconButton color="rgba(255,255,255,0.64)" onClick={handleTrashButton} size="1x" name="trash" />
         </div>
       </Music>

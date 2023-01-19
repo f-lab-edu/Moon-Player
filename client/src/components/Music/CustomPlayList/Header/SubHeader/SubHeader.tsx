@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { ConfirmContext } from 'provider/Confirm';
 import useUIControl from 'hooks/useUIControl';
 export const SubHeader = ({ onUIhandle }) => {
-  const { onhandleAddMusicListUI, onhandleMyMusicListUi } = useUIControl();
+  const { onhandleOpenAddPlayListUI, onhandleOpenMyPlayListUI } = useUIControl();
 
   const confirmCtx = useContext(ConfirmContext);
   const handleHomeButton = () => {

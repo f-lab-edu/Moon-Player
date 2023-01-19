@@ -38,6 +38,13 @@ export interface LayoutState {
         isOpen: boolean;
       };
     };
+    musicDialog: {
+      isOpen: boolean;
+      info: {
+        name: string;
+        img_url: string;
+      };
+    };
     footer: {
       isOpen: boolean;
     };
