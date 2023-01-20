@@ -3,9 +3,8 @@ import styled from 'styled-components';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Image from 'components/Global/style/Image';
 import { useAppDispatch, useAppSelector } from 'hooks/useReduxStore';
-import { GenreType } from 'types/store';
-
-type ItemProps = Pick<GenreType, 'image_url' | 'genre_id'>;
+import { GenreDataType } from 'types/app/genre';
+type ItemProps = Pick<GenreDataType, 'image_url' | 'genre_id'>;
 
 export const Item = ({ image_url, genre_id }: ItemProps) => {
   const dispatch = useAppDispatch();

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { createContext, useState } from 'react';
-import { ConfirmType, DialogState } from 'types/app/Dialog';
+import { ConfirmType, DialogState } from 'types/app/UI/Dialog';
 
 const DEFAULT_STATE: DialogState = {
   alarm: {

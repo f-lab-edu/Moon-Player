@@ -6,7 +6,7 @@ import { Text } from 'components/Global/style/Text';
 import useAuthenticator from 'hooks/useAuthenticator';
 import { useContext } from 'react';
 import { DiaLogContext } from 'context/Dialog/index';
-import { ConfirmType } from 'types/app/Dialog';
+import { ConfirmType } from 'types/app/UI/Dialog';
 export const ConfirmDialog = () => {
   const { signOut } = useAuthenticator();
   const dialogCtx = useContext(DiaLogContext);

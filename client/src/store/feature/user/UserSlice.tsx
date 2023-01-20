@@ -1,15 +1,15 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
 import { getRequestForOauth } from 'utils/auth';
-import { Token } from 'types/store';
-
-import { UserState } from 'types/store';
+import { UserStateType } from 'types/store';
 import { getToken } from 'utils/auth';
+import { authTokenType } from 'types/app/auth/index';
+
 interface LoginInfo {
   code: string;
   socialName: string;
 }
-const initialState: UserState = {
+const initialState: UserStateType = {
   data: {
     access_token: '',
     expires_in: 0,
@@ -40,21 +40,21 @@ export const UserSlice = createSlice({
   // 가져온 유저 토큰
   initialState,
   reducers: {
-    handleLoginInfo: (state: UserState, action: PayloadAction<string>) => {
+    handleLoginInfo: (state: UserStateType, action: PayloadAction<string>) => {
       state.info = action.payload;
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchUserToken.pending, (state: UserState) => {
+    builder.addCase(fetchUserToken.pending, (state: UserStateType) => {
       state.status = 'Loading';
     });
 
-    builder.addCase(fetchUserToken.fulfilled, (state: UserState, action: PayloadAction<Token>) => {
+    builder.addCase(fetchUserToken.fulfilled, (state: UserStateType, action: PayloadAction<authTokenType>) => {
       state.status = 'Complete';
       state.data = action.payload;
     });
 
-    builder.addCase(fetchUserToken.rejected, (state: UserState) => {
+    builder.addCase(fetchUserToken.rejected, (state: UserStateType) => {
       state.status = 'Fail';
     });
 

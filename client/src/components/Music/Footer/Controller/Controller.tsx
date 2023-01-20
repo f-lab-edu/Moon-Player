@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 import Flex from 'components/Global/style/Flex';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
-import { PlayerControlModuleState } from 'types/app/player';
-import { Volume } from '../Volume/Volume';
-
+import { PlayerControlModuleType } from 'types/app/player';
 interface ControllerProps {
-  player: PlayerControlModuleState;
+  player: PlayerControlModuleType;
   onRepeat: React.MouseEventHandler<HTMLButtonElement>;
   onPlay: React.MouseEventHandler<HTMLButtonElement>;
   onPrevMusic: React.MouseEventHandler<HTMLButtonElement>;

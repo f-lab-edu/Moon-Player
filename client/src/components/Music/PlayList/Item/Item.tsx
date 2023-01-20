@@ -1,17 +1,17 @@
 import { handleAddPlayer } from 'store/feature/music/PlayerSlice';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
-import { MusicType } from 'types/store';
 import { useAppDispatch, useAppSelector } from 'hooks/useReduxStore';
 import Music from 'components/Global/UI/Music/Music';
 import { useContext } from 'react';
 import { DiaLogContext } from 'context/Dialog';
+import { MusicDataType } from 'types/app/data/index';
 
-export const Item = ({ id, name, img_url, source_url }: MusicType) => {
+export const Item = ({ id, name, img_url, source_url }: MusicDataType) => {
   const dispatch = useAppDispatch();
   const dialogCtx = useContext(DiaLogContext);
 
   const playerSelector = useAppSelector((state) => state.music.player);
-  const isInPlayer = playerSelector.list.find((music: MusicType) => music.name === name) ? true : false;
+  const isInPlayer = playerSelector.list.find((music: MusicDataType) => music.name === name) ? true : false;
   const handleAddMusic = () => {
     if (isInPlayer) return;
     const selectedMusic = { id, name, img_url, source_url };

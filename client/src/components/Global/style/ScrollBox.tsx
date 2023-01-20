@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { StyledProps } from 'types/app';
+import { StyledProps } from 'types/app/style';
 
 interface ScrollBoxProps extends StyledProps {
   radius?: string;

@@ -1,9 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
-import { MusicType, PlayerState } from 'types/store';
-import { PlayerControlModuleState } from 'types/app/player';
+import { PlayerStateType } from 'types/store';
 
-const initialState: PlayerState = {
+import { PlayerControlModuleType } from 'types/app/player';
+import { MusicDataType } from 'types/app/data/index';
+
+const initialState: PlayerStateType = {
   list: [],
   playingMusic: { source_url: '', name: '', img_url: '', id: 0 },
   playerControlModuleState: {
@@ -29,38 +31,38 @@ export const musicPlayerSlice = createSlice({
   // 동기적인 액션 처리
   reducers: {
     // 플레이어에 add 해주는 함수
-    handleAddPlayer: (state: PlayerState, action: PayloadAction<MusicType>) => {
+    handleAddPlayer: (state: PlayerStateType, action: PayloadAction<MusicDataType>) => {
       state.list = [...state.list, Object.assign({}, action.payload)];
     },
-    handleShuffleMusics: (state: PlayerState, action: PayloadAction<MusicType[]>) => {
+    handleShuffleMusics: (state: PlayerStateType, action: PayloadAction<MusicDataType[]>) => {
       state.list = action.payload;
     },
     // string바꿔야할듯
-    handleRemoveMusic: (state: PlayerState, action: PayloadAction<string>) => {
+    handleRemoveMusic: (state: PlayerStateType, action: PayloadAction<string>) => {
       state.list = state.list.filter((music) => music.name !== action.payload);
     },
-    handleAddMusic: (state: PlayerState, action: PayloadAction<MusicType>) => {
+    handleAddMusic: (state: PlayerStateType, action: PayloadAction<MusicDataType>) => {
       state.playingMusic = action.payload;
     },
-    handlePrevPlayMusic: (state: PlayerState, action: PayloadAction<MusicType>) => {
+    handlePrevPlayMusic: (state: PlayerStateType, action: PayloadAction<MusicDataType>) => {
       state.playingMusic = action.payload;
     },
-    handleNextPlayMusic: (state: PlayerState, action: PayloadAction<MusicType>) => {
+    handleNextPlayMusic: (state: PlayerStateType, action: PayloadAction<MusicDataType>) => {
       state.playingMusic = action.payload;
     },
-    handleRepeatMusicModule: (state: PlayerState, action: PayloadAction<PlayerControlModuleState>) => {
+    handleRepeatMusicModule: (state: PlayerStateType, action: PayloadAction<PlayerControlModuleType>) => {
       state.playerControlModuleState = action.payload;
     },
-    handlePlayMusicModule: (state: PlayerState, action: PayloadAction<PlayerControlModuleState>) => {
+    handlePlayMusicModule: (state: PlayerStateType, action: PayloadAction<PlayerControlModuleType>) => {
       state.playerControlModuleState = action.payload;
     },
-    handleVolumeMusicModule: (state: PlayerState, action: PayloadAction<PlayerControlModuleState>) => {
+    handleVolumeMusicModule: (state: PlayerStateType, action: PayloadAction<PlayerControlModuleType>) => {
       state.playerControlModuleState = action.payload;
     },
-    handleProgressBarModule: (state: PlayerState, action: PayloadAction<PlayerControlModuleState>) => {
+    handleProgressBarModule: (state: PlayerStateType, action: PayloadAction<PlayerControlModuleType>) => {
       state.playerControlModuleState = action.payload;
     },
-    handlePlaySelectedMusicModlue: (state: PlayerState, action: PayloadAction<PlayerControlModuleState>) => {
+    handlePlaySelectedMusicModlue: (state: PlayerStateType, action: PayloadAction<PlayerControlModuleType>) => {
       state.playerControlModuleState = action.payload;
     },
   },

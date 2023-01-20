@@ -1,9 +1,10 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchData } from 'utils/api';
 import { PURGE } from 'redux-persist';
-import { GenreState, GenreType } from 'types/store';
+import { GenreStateType } from 'types/store';
+import { GenreDataType } from 'types/app/genre';
 
-const initialState: GenreState = {
+const initialState: GenreStateType = {
   list: [],
   status: '',
 };
@@ -12,7 +13,7 @@ const initialState: GenreState = {
 const fetchmusicGenre = createAsyncThunk('genre', async (url: string, thunkApi: any) => {
   try {
     const response = await fetchData(url);
-    return response.music as GenreType;
+    return response.music as GenreDataType;
   } catch (error: any) {
     return thunkApi.rejectWithValue(error.message); //  Alert Store 생성해서 오류 발생시 addAlert() action 호출하는 방식으로 UI 노출 가능
   }
@@ -23,10 +24,10 @@ export const musicGenreSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchmusicGenre.pending, (state: GenreState) => {
+    builder.addCase(fetchmusicGenre.pending, (state: GenreStateType) => {
       state.status = 'Loading';
     });
-    builder.addCase(fetchmusicGenre.fulfilled, (state: GenreState, action: PayloadAction<GenreType[]>) => {
+    builder.addCase(fetchmusicGenre.fulfilled, (state: GenreStateType, action: PayloadAction<GenreDataType[]>) => {
       state.status = 'Complete';
       state.list = action.payload;
     });

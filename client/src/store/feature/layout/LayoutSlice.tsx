@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
-import { LayoutState } from 'types/store';
-export const initialState: LayoutState = {
+import { LayoutStateType } from 'types/store';
+export const initialState: LayoutStateType = {
   music: {
     customPlayList: {
       isOpen: false,
@@ -22,17 +22,17 @@ export const LayoutSlice = createSlice({
   name: 'layout',
   initialState,
   reducers: {
-    handleOpenAddPlayListUI: (state: LayoutState, action: PayloadAction<boolean>) => {
+    handleOpenAddPlayListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
       state.music.customPlayList.addMusicList.isOpen = action.payload;
     },
-    handleOpenMyPlayListUI: (state: LayoutState, action: PayloadAction<boolean>) => {
+    handleOpenMyPlayListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
       state.music.customPlayList.myMusicList.isOpen = action.payload;
     },
 
-    handleOpenMusicFooterUI: (state: LayoutState, action: PayloadAction<boolean>) => {
+    handleOpenMusicFooterUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
       state.music.footer.isOpen = action.payload;
     },
-    handleOpenCustomPlayListUI: (state: LayoutState, action: PayloadAction<boolean>) => {
+    handleOpenCustomPlayListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
       state.music.customPlayList.isOpen = action.payload;
     },
   },

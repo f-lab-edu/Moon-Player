@@ -3,10 +3,10 @@ import Flex from 'components/Global/style/Flex';
 import Image from 'components/Global/style/Image';
 import Text from 'components/Global/style/Text';
 
-import { PlayerControlModuleState } from 'types/app/player';
+import { PlayerControlModuleType } from 'types/app/player';
 
 interface InfoProps {
-  player: PlayerControlModuleState;
+  player: PlayerControlModuleType;
 }
 
 export const MusicInfo = ({ player }: InfoProps) => {

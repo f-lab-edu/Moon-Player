@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import { handleRemoveMusic, handleAddMusic } from 'store/feature/music/PlayerSlice';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { useAppSelector, useAppDispatch } from 'hooks/useReduxStore';
-import { MusicType } from 'types/store';
+
 import { useMusicPageUIControl } from 'hooks/useMusicPageUIControl';
 import Music from 'components/Global/UI/Music/Music';
 import { useContext } from 'react';
 import { DiaLogContext } from 'context/Dialog';
+import { MusicDataType } from 'types/app/data/index';
 
-export const Item = ({ name, img_url, id, source_url }: MusicType) => {
+export const Item = ({ name, img_url, id, source_url }: MusicDataType) => {
   const dispatch = useAppDispatch();
   const { onhandleOpenMusicFooterUI } = useMusicPageUIControl();
   const DialogCtx = useContext(DiaLogContext);

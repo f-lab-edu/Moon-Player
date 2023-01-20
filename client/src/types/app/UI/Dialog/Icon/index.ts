@@ -1,4 +1,3 @@
-import styled, { CSSObject } from 'styled-components';
 import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 
 import {
@@ -26,9 +25,6 @@ import {
   faSpinner,
   faCircleInfo,
 } from '@fortawesome/free-solid-svg-icons';
-
-export type StyledProps = Pick<CSSObject, 'height' | 'width' | 'color' | 'fontSize' | 'textAlign' | 'cursor'>;
-
 export const FontAwesomeIcons = {
   save: faSave,
   shuffle: faShuffle,
