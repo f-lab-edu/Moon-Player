@@ -3,17 +3,15 @@ import { Flex } from 'components/Global/style/Flex';
 import Text from 'components/Global/style/Text';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { useContext } from 'react';
-import { ConfirmContext } from 'provider/Confirm';
-import useUIControl from 'hooks/useUIControl';
-export const SubHeader = ({ onUIhandle }) => {
-  const { onhandleOpenAddPlayListUI, onhandleOpenMyPlayListUI } = useUIControl();
+import { DiaLogContext } from 'context/Dialog/index';
 
-  const confirmCtx = useContext(ConfirmContext);
+export const SubHeader = ({ onUIhandle }) => {
+  const dialogCtx = useContext(DiaLogContext);
   const handleHomeButton = () => {
     onUIhandle();
   };
   const handleSpinnerButton = () => {
-    confirmCtx.showConfirm('재생목록을 가져 오겠습니까?', 'Load');
+    dialogCtx.showConfirm('재생목록을 가져 오겠습니까?', 'Load');
   };
 
   return (

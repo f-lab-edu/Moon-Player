@@ -5,43 +5,48 @@ import Avatar from 'components/Global/style/Avatar';
 import { Text } from 'components/Global/style/Text';
 import useAuthenticator from 'hooks/useAuthenticator';
 import { useContext } from 'react';
-import { AlarmContext } from 'provider/Alarm';
-import { ConfirmContext } from 'provider/Confirm';
-
+import { DiaLogContext } from 'context/Dialog/index';
+import { ConfirmType } from 'types/app/Dialog';
 export const ConfirmDialog = () => {
-  const confirmCtx = useContext(ConfirmContext);
-  const alarmCtx = useContext(AlarmContext);
-
   const { signOut } = useAuthenticator();
+  const dialogCtx = useContext(DiaLogContext);
+  const confirm = dialogCtx.state.confirm;
+  console.log(confirm);
+
   const load = () => {
-    alarmCtx.showAlarm('재생목록을 가져왔습니다.');
-    confirmCtx.closeConfirm();
+    dialogCtx.showAlarm('재생목록을 가져왔습니다.');
+    dialogCtx.closeConfirm();
   };
   const Save = () => {
-    alarmCtx.showAlarm('저장하였습니다.');
-    confirmCtx.closeConfirm();
+    dialogCtx.showAlarm('저장하였습니다.');
+    dialogCtx.closeConfirm();
+  };
+  const logOut = () => {
+    signOut();
+    dialogCtx.showAlarm('로그아웃 되었습니다.');
+    dialogCtx.closeConfirm();
   };
 
   const handleYesButton = () => {
-    const type = confirmCtx.state.type;
-    return type === 'Logout' ? signOut() : type === 'Load' ? load() : type === 'Save' ? Save() : alert('잘못된타입');
+    const type: ConfirmType = confirm.type;
+    return type === 'Logout' ? logOut() : type === 'Load' ? load() : type === 'Save' ? Save() : alert('잘못된타입');
   };
-  return confirmCtx.state.isOpen ? (
+  return confirm.isOpen ? (
     <Layout>
-      <Box direction="column" justifyContent="center" alignItems="center">
+      <FlexBox direction="column" justifyContent="center" alignItems="center">
         <StyledAvatar img="logo"></StyledAvatar>
         <StyledText color="white" textAlign="center">
-          {confirmCtx.state.message}
+          {confirm.message}
         </StyledText>
         <Flex direction="row" gap="50px">
           <StyledButton fontColor="white" color="gray" onClick={handleYesButton}>
             YES
           </StyledButton>
-          <StyledButton fontColor="white" color="gray" onClick={confirmCtx.closeConfirm}>
+          <StyledButton fontColor="white" color="gray" onClick={dialogCtx.closeConfirm}>
             NO
           </StyledButton>
         </Flex>
-      </Box>
+      </FlexBox>
     </Layout>
   ) : (
     <></>
@@ -56,7 +61,7 @@ const Layout = styled.div`
   right: 0;
   z-index: 9999;
 `;
-const Box = styled(Flex)`
+const FlexBox = styled(Flex)`
   position: relative;
   width: 300px;
   height: fit-content;

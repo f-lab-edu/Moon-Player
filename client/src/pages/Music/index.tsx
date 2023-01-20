@@ -7,33 +7,23 @@ import Footer from 'components/Music/Footer';
 import { usePlayerControlModule } from 'hooks/usePlayerControlModule';
 import PlayerList from 'components/Music/Player/index';
 import Flex from 'components/Global/style/Flex';
-import { ConfirmContextProvider } from 'provider/Confirm';
-import { ConfirmDialog } from 'components/Global/UI/Dialog/Confirm/ConfirmDialog';
-import useUIControl from 'hooks/useUIControl';
-import MusicInfoDialog from 'components/Global/UI/Dialog/MusicInfo/MusicInfoDialog';
-import { useAppSelector } from 'hooks/useAppDispatch';
-
+import useMusicPageUIControl from 'hooks/useMusicPageUIControl';
 const MusicPage = () => {
   const { musicPlayer, playerModuleSelector } = usePlayerControlModule();
-  const { isOpenCustomPlayListUI } = useUIControl();
+  const { isOpenCustomPlayListUI } = useMusicPageUIControl();
 
-  const { name, img_url } = useAppSelector((state) => state.layout.music.musicDialog.info);
   return (
-    <ConfirmContextProvider>
-      <ConfirmDialog />
-      <MusicInfoDialog name={name} img_url={img_url} />
-      <Layout direction="column">
-        <Navigation />
-        <Genre />
-        <Main direction="row">
-          <PlayList />
-          <PlayerList />
-        </Main>
-        {playerModuleSelector.music && musicPlayer}
-        <Footer player={playerModuleSelector} />
-        {isOpenCustomPlayListUI ? <CustomPlayList /> : <></>}
-      </Layout>
-    </ConfirmContextProvider>
+    <Layout direction="column">
+      <Navigation />
+      <Genre />
+      <Main direction="row">
+        <PlayList />
+        <PlayerList />
+      </Main>
+      {playerModuleSelector.music && musicPlayer}
+      <Footer player={playerModuleSelector} />
+      {isOpenCustomPlayListUI ? <CustomPlayList /> : <></>}
+    </Layout>
   );
 };
 const Layout = styled(Flex)`

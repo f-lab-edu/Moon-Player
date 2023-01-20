@@ -4,12 +4,12 @@ import AddPlayList from './AddPlayList';
 import Flex from 'components/Global/style/Flex';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
 import MyPlayList from './MyPlayList/index';
-import useUIControl from 'hooks/useUIControl';
+import useMusicPageUIControl from 'hooks/useMusicPageUIControl';
 
 export const CustomPlayList = () => {
   const modalRef = useRef<HTMLDivElement>(null);
   const { onhandleOpenCustomPlayListUI, isOpenAddMusicListUI, onhandleOpenAddPlayListUI, onhandleOpenMyPlayListUI } =
-    useUIControl();
+    useMusicPageUIControl();
 
   const handleCloseButton = () => {
     onhandleOpenCustomPlayListUI(false);
@@ -19,7 +19,7 @@ export const CustomPlayList = () => {
   return (
     <Overlay>
       <Layout direction="column" ref={modalRef}>
-        <CloseButton onClick={handleCloseButton} name="close" color="white" size="2x" />
+        <StyledButton onClick={handleCloseButton} name="close" color="white" size="2x" />
         {isOpenAddMusicListUI ? <AddPlayList /> : <MyPlayList />}
       </Layout>
     </Overlay>
@@ -54,7 +54,7 @@ const Layout = styled(Flex)`
   left: 50%;
   transform: translate(-50%, -50%);
 `;
-const CloseButton = styled(IconButton)`
+const StyledButton = styled(IconButton)`
   position: absolute;
   right: 0;
   top: 0;

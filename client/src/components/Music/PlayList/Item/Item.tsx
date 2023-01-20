@@ -3,12 +3,12 @@ import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { MusicType } from 'types/store';
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 import Music from 'components/Global/UI/Music/Music';
-import useUIControl from 'hooks/useUIControl';
-import { handleSelectedMusicInfoUI } from 'store/feature/layout/LayoutSlice';
+import { useContext } from 'react';
+import { DiaLogContext } from 'context/Dialog';
 
 export const Item = ({ id, name, img_url, source_url }: MusicType) => {
   const dispatch = useAppDispatch();
-  const { onhandleOpenMusicInfoUI } = useUIControl();
+  const dialogCtx = useContext(DiaLogContext);
 
   const playerSelector = useAppSelector((state) => state.music.player);
   const isInPlayer = playerSelector.list.find((music: MusicType) => music.name === name) ? true : false;
@@ -18,8 +18,7 @@ export const Item = ({ id, name, img_url, source_url }: MusicType) => {
     dispatch(handleAddPlayer(selectedMusic));
   };
   const handleInfoMusic = () => {
-    onhandleOpenMusicInfoUI(true);
-    dispatch(handleSelectedMusicInfoUI({ name, img_url }));
+    dialogCtx.showMusicDialog(name, img_url);
   };
 
   return (

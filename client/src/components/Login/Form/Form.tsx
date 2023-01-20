@@ -4,10 +4,24 @@ import ImageIcon from 'components/Global/style/ImageIcon';
 import Button from 'components/Global/style/Button/Button';
 import Text from 'components/Global/style/Text';
 import Flex from 'components/Global/style/Flex';
-import { useLogin } from 'hooks/useLogin';
+import { useSocialLogin } from 'hooks/useSocialLogin';
+import { useEffect, useContext } from 'react';
+import { useAuthenticator } from 'hooks/useAuthenticator';
+import { DiaLogContext } from 'context/Dialog/index';
 
 export const Form = () => {
-  const { handleLoginButton } = useLogin();
+  const { handleLoginButton, socialName, onGetCode, getUserToken } = useSocialLogin();
+  const { signIn } = useAuthenticator();
+  const dialogCtx = useContext(DiaLogContext);
+
+  useEffect(() => {
+    const code = onGetCode();
+    if (!code) return;
+    if (!socialName) return;
+    getUserToken({ code, socialName });
+    signIn();
+    dialogCtx.showAlarm('로그인 하였습니다.');
+  }, [socialName]);
 
   return (
     <Layout direction="column" justifyContent="center" alignItems="center">

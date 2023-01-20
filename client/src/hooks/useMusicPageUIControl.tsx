@@ -5,20 +5,15 @@ import {
   handleOpenAddPlayListUI,
   handleOpenMusicFooterUI,
   handleOpenCustomPlayListUI,
-  handleOpenMusicInfoUI,
 } from 'store/feature/layout/LayoutSlice';
 
-export const useUIControl = () => {
+export const useMusicPageUIControl = () => {
   const dispatch = useAppDispatch();
   const isOpenCustomPlayListUI = useAppSelector((state) => state.layout.music.customPlayList.isOpen);
   const isOpenAddMusicListUI = useAppSelector((state) => state.layout.music.customPlayList.addMusicList.isOpen);
   const isOpenMyMusicListUI = useAppSelector((state) => state.layout.music.customPlayList.myMusicList.isOpen);
   const isOpenMusicFooterUI = useAppSelector((state) => state.layout.music.footer.isOpen);
-  const isOpenMusicInfoUI = useAppSelector((state) => state.layout.music.musicDialog.isOpen);
 
-  const onhandleOpenMusicInfoUI = (isActive: boolean) => {
-    dispatch(handleOpenMusicInfoUI(isActive));
-  };
   const onhandleOpenMusicFooterUI = (isActive: boolean) => {
     dispatch(handleOpenMusicFooterUI(isActive));
   };
@@ -33,7 +28,6 @@ export const useUIControl = () => {
   };
 
   return {
-    isOpenMusicInfoUI,
     isOpenMusicFooterUI,
     isOpenAddMusicListUI,
     isOpenMyMusicListUI,
@@ -42,8 +36,7 @@ export const useUIControl = () => {
     onhandleOpenMyPlayListUI,
     onhandleOpenAddPlayListUI,
     onhandleOpenCustomPlayListUI,
-    onhandleOpenMusicInfoUI,
   };
 };
 
-export default useUIControl;
+export default useMusicPageUIControl;

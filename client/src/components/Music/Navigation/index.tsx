@@ -3,16 +3,18 @@ import { Avatar } from 'components/Global/style/Avatar';
 
 import Flex from 'components/Global/style/Flex';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
-import { ConfirmContext } from 'provider/Confirm';
 import { useContext } from 'react';
-import useUIControl from 'hooks/useUIControl';
-export const Navigation = () => {
-  const confirmCtx = useContext(ConfirmContext);
+import useMusicPageUIControl from 'hooks/useMusicPageUIControl';
 
-  const { onhandleOpenCustomPlayListUI, onhandleOpenAddPlayListUI } = useUIControl();
+import { DiaLogContext } from 'context/Dialog/index';
+
+export const Navigation = () => {
+  const dialogCtx = useContext(DiaLogContext);
+
+  const { onhandleOpenCustomPlayListUI, onhandleOpenAddPlayListUI } = useMusicPageUIControl();
 
   const handleLogoutButton = () => {
-    confirmCtx.showConfirm('로그아웃 하시겠습니까?', 'Logout');
+    dialogCtx.showConfirm('로그아웃 하시겠습니까?', 'Logout');
   };
   const handleMusicButton = () => {
     onhandleOpenCustomPlayListUI(true);

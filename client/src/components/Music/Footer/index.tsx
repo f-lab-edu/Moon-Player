@@ -7,10 +7,9 @@ import ProgressBar from './ProgressBar/ProgressBar';
 import Volume from './Volume/Volume';
 import MusicInfo from './MusicInfo/MusicInfo';
 import Controller from './Controller/Controller';
-import useUIControl from 'hooks/useUIControl';
-import { Hide } from './Hide/Hide';
+import useMusicPageUIControl from 'hooks/useMusicPageUIControl';
+import HideController from './HideController/HideController';
 
-// hide버튼 누를시 프로그레스바만 보이게 구현
 export const Footer = ({ player }) => {
   const {
     handleRepeatMusic,
@@ -21,20 +20,16 @@ export const Footer = ({ player }) => {
     handleNextPlayingMusic,
   } = usePlayerControlModule();
 
-  const { isOpenMusicFooterUI } = useUIControl();
+  const { isOpenMusicFooterUI } = useMusicPageUIControl();
   const currentTime = formatTime(+player.currentTime);
   const endTime = formatTime(+player.endTime);
   const elapsedTime = Math.floor((+player.currentTime / +player.endTime) * 100);
   const playerVolume = player.volume.toString();
   return (
     <Layout active={isOpenMusicFooterUI}>
-      <Hide />
+      <HideController />
       <ProgressBar currentTime={currentTime} endTime={endTime} elapsedTime={elapsedTime} />
-
-      <MusicInfoBox direction="row">
-        <MusicInfo player={player}></MusicInfo>
-      </MusicInfoBox>
-
+      <MusicInfo player={player}></MusicInfo>
       <Flex direction="row" justifyContent="space-between">
         <Volume onVolume={handleVolumeMusic} volume={playerVolume} />
         <Controller
@@ -60,7 +55,5 @@ const Layout = styled.div<LayoutProps>(
   margin-top:${!active ? '-120px' : ''};
   `
 );
-const MusicInfoBox = styled(Flex)`
-  margin-top: 4px;
-`;
+
 export default Footer;

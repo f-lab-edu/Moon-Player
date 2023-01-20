@@ -2,13 +2,12 @@ import Text from 'components/Global/style/Text';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import Flex from 'components/Global/style/Flex';
 import styled from 'styled-components';
-import { useUIControl } from 'hooks/useUIControl';
+import { useMusicPageUIControl } from 'hooks/useMusicPageUIControl';
 // AddMusicList에 맞는 UI제공
 
 export const MainHeader = ({ title }) => {
   const { isOpenAddMusicListUI, isOpenMyMusicListUI, onhandleOpenAddPlayListUI, onhandleOpenMyPlayListUI } =
-    useUIControl();
-  console.log(isOpenAddMusicListUI, isOpenMyMusicListUI);
+    useMusicPageUIControl();
   const handleMusicButton = () => {
     onhandleOpenAddPlayListUI(false);
     onhandleOpenMyPlayListUI(true);

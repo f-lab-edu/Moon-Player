@@ -1,27 +1,25 @@
 import styled from 'styled-components';
 
 import { handleRemoveMusic, handleAddMusic } from 'store/feature/music/PlayerSlice';
-
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
 import { MusicType } from 'types/store';
-import { useUIControl } from 'hooks/useUIControl';
+import { useMusicPageUIControl } from 'hooks/useMusicPageUIControl';
 import Music from 'components/Global/UI/Music/Music';
 import { useContext } from 'react';
-import { AlarmContext } from 'provider/Alarm';
-import { handleSelectedMusicInfoUI } from 'store/feature/layout/LayoutSlice';
+import { DiaLogContext } from 'context/Dialog';
 
 export const Item = ({ name, img_url, id, source_url }: MusicType) => {
   const dispatch = useAppDispatch();
-  const { onhandleOpenMusicFooterUI, onhandleOpenMusicInfoUI } = useUIControl();
-  const alarmCtx = useContext(AlarmContext);
+  const { onhandleOpenMusicFooterUI } = useMusicPageUIControl();
+  const DialogCtx = useContext(DiaLogContext);
 
   const playerSelector = useAppSelector((state) => state.music.player);
   const isCurrentMusic = playerSelector.playingMusic.name === name ? true : false;
 
   const handleTrashButton = () => {
     return isCurrentMusic
-      ? alarmCtx.showAlarm('현재 재생중인 음악은 삭제할수없습니다.')
+      ? DialogCtx.showAlarm('현재 재생중인 음악은 삭제할수없습니다.')
       : dispatch(handleRemoveMusic(name));
   };
 
@@ -32,8 +30,7 @@ export const Item = ({ name, img_url, id, source_url }: MusicType) => {
   };
 
   const handleInfoMusic = () => {
-    onhandleOpenMusicInfoUI(true);
-    dispatch(handleSelectedMusicInfoUI({ name, img_url }));
+    DialogCtx.showMusicDialog(name, img_url);
   };
   return (
     <Layout isActive={isCurrentMusic} onClick={handlePlayMusic}>

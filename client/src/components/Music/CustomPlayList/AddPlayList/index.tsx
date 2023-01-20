@@ -7,14 +7,15 @@ import { useAppSelector } from 'hooks/useAppDispatch';
 import Music from 'components/Global/UI/Music/Music';
 import { ScrollBox } from 'components/Global/style/ScrollBox';
 import { useContext } from 'react';
-import { ConfirmContext } from 'provider/Confirm';
+
 import MainHeader from '../Header/MainHeader/MainHeader';
+import { DiaLogContext } from 'context/Dialog';
 export const AddPlayList = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
-  const confirmCtx = useContext(ConfirmContext);
+  const dialogCtx = useContext(DiaLogContext);
 
   const handleSaveButton = () => {
-    confirmCtx.showConfirm('현재 재생목록을 저장하시겠습니까?', 'Save');
+    dialogCtx.showConfirm('현재 재생목록을 저장하시겠습니까?', 'Save');
   };
 
   const playerMusics =

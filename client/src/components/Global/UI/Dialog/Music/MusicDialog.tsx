@@ -3,16 +3,19 @@ import { Flex } from 'components/Global/style/Flex';
 import Image from 'components/Global/style/Image';
 import Text from 'components/Global/style/Text';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
-import useUIControl from 'hooks/useUIControl';
+import { DiaLogContext } from 'context/Dialog/index';
+import { useContext } from 'react';
 
-export const MusicInfoDialog = ({ name, img_url }) => {
-  const { onhandleOpenMusicInfoUI, isOpenMusicInfoUI } = useUIControl();
-  return isOpenMusicInfoUI ? (
+export const MusicDialog = () => {
+  const dialogCtx = useContext(DiaLogContext);
+  const musicImage = dialogCtx.state.music.img_url;
+  const musicName = dialogCtx.state.music.name;
+  return dialogCtx.state.music.isOpen ? (
     <Layout>
       <Box direction="column" alignItems="center">
-        <CloseButton name="close" color="white" size="2x" onClick={() => onhandleOpenMusicInfoUI(false)} />
-        <StyledImage img={img_url} />
-        <Title textAlign="center">{name}</Title>
+        <StyledButton name="close" color="white" size="2x" onClick={dialogCtx.closeMusicDialog} />
+        <StyledImage img={musicImage} />
+        <Title textAlign="center">{musicName}</Title>
       </Box>
     </Layout>
   ) : (
@@ -52,11 +55,11 @@ const StyledImage = styled(Image)`
 `;
 
 const Title = styled(Text)``;
-const CloseButton = styled(IconButton)`
+const StyledButton = styled(IconButton)`
   position: absolute;
   right: 0;
   top: 0;
   margin: 10px;
 `;
 
-export default MusicInfoDialog;
+export default MusicDialog;

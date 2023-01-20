@@ -1,22 +1,14 @@
 import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
 import { fetchUserToken, handleLoginInfo } from 'store/feature/user/UserSlice';
 import { assignAuthURL, getCode } from 'utils/auth';
-import { useAuthenticator } from 'hooks/useAuthenticator';
 
-import { useEffect } from 'react';
-export const useLogin = () => {
+export const useSocialLogin = () => {
   const dispatch = useAppDispatch();
   const socialName = useAppSelector((state) => state.user.info);
-  const { signIn } = useAuthenticator();
 
-  useEffect(() => {
-    const code = getCode();
-    if (!code) return;
-    if (!socialName) return;
-    getUserToken({ code, socialName });
-    signIn();
-  }, [socialName]);
-
+  const onGetCode = () => {
+    return getCode();
+  };
   const getUserToken = (socialInfo) => {
     dispatch(fetchUserToken(socialInfo));
   };
@@ -26,5 +18,5 @@ export const useLogin = () => {
     assignAuthURL(loginName);
   };
 
-  return { handleLoginButton };
+  return { handleLoginButton, socialName, getUserToken, onGetCode };
 };
