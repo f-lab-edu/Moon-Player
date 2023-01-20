@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import ReactPlayer from 'react-player/lazy';
 import { usePlayerSelectMusic } from './usePlayerSelectMusic';
-import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
+import { useAppSelector, useAppDispatch } from 'hooks/useReduxStore';
 import {
   handleRepeatMusicModule,
   handlePlayMusicModule,

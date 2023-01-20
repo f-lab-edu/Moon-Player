@@ -1,7 +1,7 @@
 import { handleAddPlayer } from 'store/feature/music/PlayerSlice';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { MusicType } from 'types/store';
-import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
+import { useAppDispatch, useAppSelector } from 'hooks/useReduxStore';
 import Music from 'components/Global/UI/Music/Music';
 import { useContext } from 'react';
 import { DiaLogContext } from 'context/Dialog';

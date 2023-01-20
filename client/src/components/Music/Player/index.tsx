@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Music from 'components/Music/Player/Item/Item';
 import Text from 'components/Global/style/Text';
 import ScrollBox from 'components/Global/style/ScrollBox';
-import { useAppSelector } from 'hooks/useAppDispatch';
+import { useAppSelector } from 'hooks/useReduxStore';
 import Flex from 'components/Global/style/Flex';
 
 // 플레이어 메인

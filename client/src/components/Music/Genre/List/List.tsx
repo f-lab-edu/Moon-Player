@@ -2,8 +2,20 @@ import { useSwiper } from 'hooks/useSwiper';
 import styled from 'styled-components';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
 import Flex from 'components/Global/style/Flex';
-export const Carousel = ({ data }) => {
-  const { swiper, handleNextSlide, handlePrevSlide } = useSwiper(data);
+import { Item } from 'components/Music/Genre/Item/Item';
+import { useAppSelector } from 'hooks/useReduxStore';
+import { SwiperSlide } from 'swiper/react';
+
+export const List = () => {
+  const genreItems = useAppSelector((state) => state.music.genre.list);
+  const slideItems = genreItems.map(({ image_url, genre_id }) => (
+    <SwiperSlide key={genre_id}>
+      <Item image_url={image_url} key={genre_id} genre_id={genre_id}></Item>
+    </SwiperSlide>
+  ));
+
+  const { swiper, handleNextSlide, handlePrevSlide } = useSwiper(slideItems);
+
   return (
     <Layout direction="row">
       <StyledIconButton name="arrowLeft" size="2x" color="white" onClick={handlePrevSlide} />
@@ -18,4 +30,4 @@ const Layout = styled(Flex)`
 const StyledIconButton = styled(IconButton)`
   margin: 20px;
 `;
-export default Carousel;
+export default List;

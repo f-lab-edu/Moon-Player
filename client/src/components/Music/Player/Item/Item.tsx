@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { handleRemoveMusic, handleAddMusic } from 'store/feature/music/PlayerSlice';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
-import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
+import { useAppSelector, useAppDispatch } from 'hooks/useReduxStore';
 import { MusicType } from 'types/store';
 import { useMusicPageUIControl } from 'hooks/useMusicPageUIControl';
 import Music from 'components/Global/UI/Music/Music';

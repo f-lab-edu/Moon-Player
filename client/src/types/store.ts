@@ -7,7 +7,7 @@ export interface PlayerState {
 
 //  비동기 데이터
 export interface GenreState {
-  list: Array<Genre>;
+  list: Array<GenreType>;
   status: string;
 }
 
@@ -21,9 +21,9 @@ export interface PlayList {
   music_list: Array<MusicType>;
 }
 
-export interface Genre {
-  genre: string;
-  genre_img: string;
+export interface GenreType {
+  genre_name: string;
+  image_url: string;
   genre_id: number;
 }
 

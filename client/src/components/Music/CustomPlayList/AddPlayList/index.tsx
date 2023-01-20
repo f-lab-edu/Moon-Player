@@ -3,7 +3,7 @@ import IconButton from 'components/Global/UI/IconButton/IconButton';
 
 import Flex from 'components/Global/style/Flex';
 import { Text } from 'components/Global/style/Text';
-import { useAppSelector } from 'hooks/useAppDispatch';
+import { useAppSelector } from 'hooks/useReduxStore';
 import Music from 'components/Global/UI/Music/Music';
 import { ScrollBox } from 'components/Global/style/ScrollBox';
 import { useContext } from 'react';

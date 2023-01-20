@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import { useAppSelector, useAppDispatch } from 'hooks/useAppDispatch';
+import { useAppSelector, useAppDispatch } from 'hooks/useReduxStore';
 import {
   handleOpenMyPlayListUI,
   handleOpenAddPlayListUI,

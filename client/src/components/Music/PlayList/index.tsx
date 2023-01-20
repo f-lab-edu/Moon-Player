@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Music from 'components/Music/PlayList/Item/Item';
 import ScrollBox from 'components/Global/style/ScrollBox';
-import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
+import { useAppDispatch, useAppSelector } from 'hooks/useReduxStore';
 import Text from 'components/Global/style/Text';
 export const PlayList = () => {
   const dispatch = useAppDispatch();

@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
+import { useAppDispatch, useAppSelector } from 'hooks/useReduxStore';
 import { fetchUserToken, handleLoginInfo } from 'store/feature/user/UserSlice';
 import { assignAuthURL, getCode } from 'utils/auth';
 
