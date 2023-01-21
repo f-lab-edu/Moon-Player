@@ -8,6 +8,8 @@ import { SwiperSlide } from 'swiper/react';
 
 export const List = () => {
   const genreItems = useAppSelector((state) => state.music.genre.list);
+
+  // 외부라이브러리 노출 ?
   const slideItems = genreItems.map(({ image_url, genre_id }) => (
     <SwiperSlide key={genre_id}>
       <Item image_url={image_url} key={genre_id} genre_id={genre_id}></Item>
