@@ -27,6 +27,8 @@ const MusicPage = () => {
   );
 };
 const Layout = styled(Flex)`
+  position: relative;
+
   display: flex;
   flex-direction: column;
   overflow: hidden;
