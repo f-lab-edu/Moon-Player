@@ -1,16 +1,17 @@
 import { cloneDeep } from 'lodash';
-import { MusicType } from 'types/store';
+import { MusicDataType } from 'types/app/data/index';
 
-export const prevSelctedMusic = (playerItems: MusicType[], music: MusicType): MusicType => {
+export const prevSelctedMusic = (playerItems: readonly MusicDataType[], music: MusicDataType): MusicDataType => {
   const prevMusicIndex = playerItems.findIndex((item) => music.name === item.name) - 1;
   return prevMusicIndex < 0 ? playerItems[playerItems.length - 1] : playerItems[prevMusicIndex];
 };
-export const nextSelctedMusic = (playerItems: MusicType[], music: MusicType): MusicType => {
+export const nextSelctedMusic = (playerItems: readonly MusicDataType[], music: MusicDataType): MusicDataType => {
   const nextMusicIndex = playerItems.findIndex((item) => music.name === item.name) + 1;
   return nextMusicIndex < playerItems.length ? playerItems[nextMusicIndex] : playerItems[0];
 };
 
-export const shuffleMusic = (playerItems: MusicType[]): MusicType[] => {
+// 불변타입?
+export const shuffleMusic = (playerItems: MusicDataType[]): MusicDataType[] => {
   const newPlayerItems = cloneDeep(playerItems);
   for (let index = newPlayerItems.length - 1; index > 0; index--) {
     const randomIndex = Math.floor(Math.random() * (index + 1));
@@ -33,5 +34,5 @@ export const formatTime = (seconds: number): string => {
   return `${mm}:${ss}`;
 };
 const pad = (num: number) => ('0' + num).slice(-2);
-const swapArray = (newPlayerItems: MusicType[], index: number, randomIndex: number) =>
+const swapArray = (newPlayerItems: MusicDataType[], index: number, randomIndex: number) =>
   ([newPlayerItems[index], newPlayerItems[randomIndex]] = [newPlayerItems[randomIndex], newPlayerItems[index]]);

@@ -10,6 +10,7 @@ interface MusicProps {
   img_url: string;
   id: number;
   children?: ReactElement;
+  onPlayMusic?: React.MouseEventHandler<HTMLElement>;
 }
 export const Music = ({ name, img_url, id, children }: MusicProps) => {
   return (

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { StyledProps } from 'types/app';
+import { StyledProps } from 'types/app/style';
 
 export const OverFlowText = styled.div<StyledProps>(
   ({ width = '50%', fontSize = '16px', color = 'white', textAlign = 'start', cursor = 'default' }) => `

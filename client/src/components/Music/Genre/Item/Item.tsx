@@ -2,12 +2,11 @@ import styled from 'styled-components';
 
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import Image from 'components/Global/style/Image';
-import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
-import { Genre } from 'types/store';
+import { useAppDispatch, useAppSelector } from 'hooks/useReduxStore';
+import { GenreDataType } from 'types/app/genre';
+type ItemProps = Pick<GenreDataType, 'image_url' | 'genre_id'>;
 
-type ItemProps = Pick<Genre, 'genre_img' | 'genre_id'>;
-
-export const Item = ({ genre_img, genre_id }: ItemProps) => {
+export const Item = ({ image_url, genre_id }: ItemProps) => {
   const dispatch = useAppDispatch();
   const isInGenre = useAppSelector((state) => state.music.playList.genre.genre_id) === genre_id ? true : false;
 
@@ -15,7 +14,7 @@ export const Item = ({ genre_img, genre_id }: ItemProps) => {
     dispatch(fetchmusicList(`http://localhost:4000/api/music/genre/${genre_id}`));
   };
 
-  return <CardImage onClick={handleCardImage} img={genre_img} key={genre_id} disabled={isInGenre} />;
+  return <CardImage onClick={handleCardImage} img={image_url} key={genre_id} disabled={isInGenre} />;
 };
 
 interface CardImageProps {

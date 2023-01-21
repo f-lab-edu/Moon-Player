@@ -1,7 +1,7 @@
 import { handleNextPlayMusic, handlePrevPlayMusic, handleShuffleMusics } from 'store/feature/music/PlayerSlice';
 import { nextSelctedMusic, prevSelctedMusic, shuffleMusic } from 'utils/app/Player';
 
-import { useAppDispatch, useAppSelector } from 'hooks/useAppDispatch';
+import { useAppDispatch, useAppSelector } from 'hooks/useReduxStore';
 export const usePlayerSelectMusic = () => {
   const dispatch = useAppDispatch();
   const playerSelector = useAppSelector((state) => state.music.player);

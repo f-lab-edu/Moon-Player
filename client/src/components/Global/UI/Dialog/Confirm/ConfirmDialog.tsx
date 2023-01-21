@@ -1,0 +1,93 @@
+import styled from 'styled-components';
+import { Flex } from 'components/Global/style/Flex';
+import { Button } from 'components/Global/style/Button/Button';
+import Avatar from 'components/Global/style/Avatar';
+import { Text } from 'components/Global/style/Text';
+import useAuthenticator from 'hooks/useAuthenticator';
+import { useContext } from 'react';
+import { DiaLogContext } from 'context/Dialog/index';
+import { ConfirmType } from 'types/app/UI/Dialog';
+export const ConfirmDialog = () => {
+  const { signOut } = useAuthenticator();
+  const dialogCtx = useContext(DiaLogContext);
+  const confirm = dialogCtx.state.confirm;
+  console.log(confirm);
+
+  const load = () => {
+    dialogCtx.showAlarm('재생목록을 가져왔습니다.');
+    dialogCtx.closeConfirm();
+  };
+  const Save = () => {
+    dialogCtx.showAlarm('저장하였습니다.');
+    dialogCtx.closeConfirm();
+  };
+  const logOut = () => {
+    signOut();
+    dialogCtx.showAlarm('로그아웃 되었습니다.');
+    dialogCtx.closeConfirm();
+  };
+
+  const handleYesButton = () => {
+    const type: ConfirmType = confirm.type;
+    return type === 'Logout' ? logOut() : type === 'Load' ? load() : type === 'Save' ? Save() : alert('잘못된타입');
+  };
+  return confirm.isOpen ? (
+    <Layout>
+      <FlexBox direction="column" justifyContent="center" alignItems="center">
+        <StyledAvatar img="logo"></StyledAvatar>
+        <StyledText color="white" textAlign="center">
+          {confirm.message}
+        </StyledText>
+        <Flex direction="row" gap="50px">
+          <StyledButton fontColor="white" color="gray" onClick={handleYesButton}>
+            YES
+          </StyledButton>
+          <StyledButton fontColor="white" color="gray" onClick={dialogCtx.closeConfirm}>
+            NO
+          </StyledButton>
+        </Flex>
+      </FlexBox>
+    </Layout>
+  ) : (
+    <></>
+  );
+};
+const Layout = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+`;
+const FlexBox = styled(Flex)`
+  position: relative;
+  width: 300px;
+  height: fit-content;
+  padding: 30px;
+  background: linear-gradient(
+    333deg,
+    rgba(12, 12, 56, 1) 0%,
+    rgba(45, 34, 76, 1) 36%,
+    rgba(36, 18, 95, 1) 73%,
+    rgba(38, 64, 92, 1) 100%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+const StyledButton = styled(Button)`
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+`;
+const StyledAvatar = styled(Avatar)`
+  width: 100px;
+  height: 100px;
+  margin: 50px;
+`;
+const StyledText = styled(Text)`
+  font-size: 20px;
+`;
+export default ConfirmDialog;

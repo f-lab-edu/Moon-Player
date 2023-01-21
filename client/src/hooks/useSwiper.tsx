@@ -2,13 +2,14 @@ import { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SwiperCore from 'swiper';
-import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react';
-import { Item } from '../components/Music/Genre/Item/Item';
+import { Swiper, SwiperProps } from 'swiper/react';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
-import { useAppDispatch } from 'hooks/useAppDispatch';
-export const useSwiper = (items) => {
+import { useAppDispatch } from 'hooks/useReduxStore';
+import { SwiperSlide } from 'swiper/react';
+
+export const useSwiper = (slideitems) => {
   const dispatch = useAppDispatch();
   const [swiperModule, setSwiperModule] = useState<SwiperCore>();
   const handleNextSlide = () => {
@@ -19,20 +20,14 @@ export const useSwiper = (items) => {
   };
   const handlePrevSlide = () => {
     if (!swiperModule) return;
-    swiperModule?.slidePrev(1000);
+    swiperModule.slidePrev(1000);
     const idx = swiperModule.realIndex + 1;
     dispatch(fetchmusicList(`http://localhost:4000/api/music/genre/${idx}`));
   };
 
-  const genreItems = items.map(({ image_url, genre_id }) => (
-    <SwiperSlide key={genre_id}>
-      <Item genre_img={image_url} key={genre_id} genre_id={genre_id}></Item>
-    </SwiperSlide>
-  ));
-
   const swiper = (
     <Swiper {...DEFAULT_SETTING} onSwiper={setSwiperModule}>
-      {genreItems}
+      {slideitems}
     </Swiper>
   );
 
@@ -44,8 +39,8 @@ const DEFAULT_SETTING: SwiperProps = {
     el: '.pagination',
     type: 'bullets',
   },
-  slidesPerView: 6,
-  slidesPerGroup: 6,
+  slidesPerView: 5,
+  slidesPerGroup: 5,
   allowTouchMove: false,
   loopPreventsSlide: false,
   breakpoints: {
@@ -60,12 +55,12 @@ const DEFAULT_SETTING: SwiperProps = {
     768: {
       slidesPerView: 3,
       slidesPerGroup: 3,
-      spaceBetween: 10,
+      spaceBetween: 15,
     },
     1024: {
-      slidesPerView: 6,
-      slidesPerGroup: 6,
-      spaceBetween: 10,
+      slidesPerView: 5,
+      slidesPerGroup: 5,
+      spaceBetween: 15,
     },
   },
 };

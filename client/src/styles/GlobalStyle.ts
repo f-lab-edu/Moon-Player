@@ -17,13 +17,12 @@ body,html {
 
 .swiper-slide img {
   width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
+  height:150px;
+  object-fit: fill;
 }
 .swiper-pagination-bullet {
   background-color: grey;
-  margin:2px;
+  margin:3px;
   opacity: 1;
   width:10px;
   height: 10px;

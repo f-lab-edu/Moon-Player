@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { StyledProps } from 'types/app';
+import { StyledProps } from 'types/app/style';
 
 interface ButtonProps extends StyledProps {
   fontColor?: string;

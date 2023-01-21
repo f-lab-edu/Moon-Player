@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import { StyledProps, FontAwesomeIcons } from 'types/app';
+import { FontAwesomeIcons } from 'types/app/UI/Dialog/Icon/index';
+import { StyledProps } from 'types/app/style';
+
 import { forwardRef } from 'react';
 import Icon from 'components/Global/UI/Icon/Icon';
 import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';

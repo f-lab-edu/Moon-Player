@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import Flex from 'components/Global/style/Flex';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
-import { PlayerControlModuleState } from 'types/app/player';
-
+import { PlayerControlModuleType } from 'types/app/player';
 interface ControllerProps {
-  player: PlayerControlModuleState;
+  player: PlayerControlModuleType;
   onRepeat: React.MouseEventHandler<HTMLButtonElement>;
   onPlay: React.MouseEventHandler<HTMLButtonElement>;
   onPrevMusic: React.MouseEventHandler<HTMLButtonElement>;
@@ -18,7 +17,7 @@ export const Controller = ({ player, onRepeat, onPlay, onPrevMusic, onNextMusic,
 
   return (
     <Layout direction="row">
-      <IconButtonBox direction="row" gap="2px">
+      <FlexBox direction="row" gap="2px">
         {isRepeat ? (
           <IconButton onClick={onRepeat} name="repeat" size="2x" color="white" />
         ) : (
@@ -26,8 +25,8 @@ export const Controller = ({ player, onRepeat, onPlay, onPrevMusic, onNextMusic,
         )}
 
         <IconButton onClick={onShuffleMusic} name="shuffle" size="2x" color="white" />
-      </IconButtonBox>
-      <IconButtonBox direction="row" gap="3px">
+      </FlexBox>
+      <FlexBox direction="row" gap="3px">
         <IconButton onClick={onPrevMusic} name="backward" size="2x" color="white" />
         {isPlaying ? (
           <IconButton onClick={onPlay} name="pause" size="2x" color="white" />
@@ -35,7 +34,7 @@ export const Controller = ({ player, onRepeat, onPlay, onPrevMusic, onNextMusic,
           <IconButton onClick={onPlay} name="play" size="2x" color="gray" />
         )}
         <IconButton onClick={onNextMusic} name="forward" size="2x" color="white" />
-      </IconButtonBox>
+      </FlexBox>
     </Layout>
   );
 };
@@ -49,6 +48,6 @@ const Layout = styled(Flex)`
     justify-content: center;
   }
 `;
-const IconButtonBox = styled(Flex)`
+const FlexBox = styled(Flex)`
   margin: 15px;
 `;
