@@ -5,7 +5,7 @@ import CustomPlayList from 'components/Music/CustomPlayList';
 import PlayList from 'components/Music/PlayList';
 import Footer from 'components/Music/Footer';
 import { usePlayerControlModule } from 'hooks/usePlayerControlModule';
-import PlayerList from 'components/Music/Player/index';
+import PlayerList from 'components/Music/PlayerList/index';
 import Flex from 'components/Global/style/Flex';
 import useMusicPageUIControl from 'hooks/useMusicPageUIControl';
 const MusicPage = () => {

@@ -3,6 +3,12 @@ import { PURGE } from 'redux-persist';
 import { LayoutStateType } from 'types/store';
 export const initialState: LayoutStateType = {
   music: {
+    musicList: {
+      isOpen: true,
+    },
+    playerList: {
+      isOpen: true,
+    },
     customPlayList: {
       isOpen: false,
       addMusicList: {
@@ -28,7 +34,12 @@ export const LayoutSlice = createSlice({
     handleOpenMyPlayListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
       state.music.customPlayList.myMusicList.isOpen = action.payload;
     },
-
+    handleOpenPlayerListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
+      state.music.playerList.isOpen = action.payload;
+    },
+    handleOpenMusicListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
+      state.music.musicList.isOpen = action.payload;
+    },
     handleOpenMusicFooterUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
       state.music.footer.isOpen = action.payload;
     },
@@ -40,5 +51,11 @@ export const LayoutSlice = createSlice({
     builder.addCase(PURGE, () => initialState);
   },
 });
-export const { handleOpenAddPlayListUI, handleOpenMyPlayListUI, handleOpenMusicFooterUI, handleOpenCustomPlayListUI } =
-  LayoutSlice.actions;
+export const {
+  handleOpenAddPlayListUI,
+  handleOpenMyPlayListUI,
+  handleOpenMusicFooterUI,
+  handleOpenCustomPlayListUI,
+  handleOpenPlayerListUI,
+  handleOpenMusicListUI,
+} = LayoutSlice.actions;

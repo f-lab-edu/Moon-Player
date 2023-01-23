@@ -23,6 +23,12 @@ export interface PlayListStateType {
 
 export interface LayoutStateType {
   music: {
+    musicList: {
+      isOpen: boolean;
+    };
+    playerList: {
+      isOpen: boolean;
+    };
     customPlayList: {
       isOpen: boolean;
       addMusicList: {
