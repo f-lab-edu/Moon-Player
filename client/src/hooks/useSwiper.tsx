@@ -7,8 +7,6 @@ import SwiperCore from 'swiper';
 import { Swiper, SwiperProps } from 'swiper/react';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 import { useAppDispatch } from 'hooks/useReduxStore';
-import { SwiperSlide } from 'swiper/react';
-
 export const useSwiper = (slideitems) => {
   const dispatch = useAppDispatch();
   const [swiperModule, setSwiperModule] = useState<SwiperCore>();
@@ -57,7 +55,7 @@ const DEFAULT_SETTING: SwiperProps = {
       slidesPerGroup: 3,
       spaceBetween: 15,
     },
-    1024: {
+    1200: {
       slidesPerView: 5,
       slidesPerGroup: 5,
       spaceBetween: 15,

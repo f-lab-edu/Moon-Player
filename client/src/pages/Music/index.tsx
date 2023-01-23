@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Navigation from 'components/Music/Navigation/';
+import Navigation from 'components/Music/Navigation';
 import Genre from 'components/Music/Genre';
 import CustomPlayList from 'components/Music/CustomPlayList';
 import PlayList from 'components/Music/PlayList';
@@ -16,7 +16,7 @@ const MusicPage = () => {
     <Layout direction="column">
       <Navigation />
       <Genre />
-      <Main direction="row">
+      <Main direction="row" alignItems="center" justifyContent="center">
         <PlayList />
         <PlayerList />
       </Main>
@@ -43,7 +43,7 @@ const Layout = styled(Flex)`
 
 const Main = styled(Flex)`
   padding: 0 48px 24px 48px;
-  @media (max-width: 1024px) {
+  @media (max-width: 1199px) {
     flex-direction: column;
   }
 `;
