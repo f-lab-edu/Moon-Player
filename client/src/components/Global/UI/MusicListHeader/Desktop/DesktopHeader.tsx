@@ -1,7 +1,7 @@
 import Text from 'components/Global/style/Text';
 import styled from 'styled-components';
 
-const Header = ({ title }) => {
+const DesktopHeader = ({ title }) => {
   return (
     <>
       <Title>{title}</Title>
@@ -15,4 +15,4 @@ const Title = styled(Text)`
   padding-left: 10px;
   font-weight: normal;
 `;
-export default Header;
+export default DesktopHeader;

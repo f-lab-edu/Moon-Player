@@ -11,7 +11,6 @@ export const ConfirmDialog = () => {
   const { signOut } = useAuthenticator();
   const dialogCtx = useContext(DiaLogContext);
   const confirm = dialogCtx.state.confirm;
-  console.log(confirm);
 
   const load = () => {
     dialogCtx.showAlarm('재생목록을 가져왔습니다.');

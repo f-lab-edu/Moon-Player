@@ -3,11 +3,11 @@ import Music from 'components/Music/Player/Item/Item';
 import Text from 'components/Global/style/Text';
 import ScrollBox from 'components/Global/style/ScrollBox';
 import { useAppSelector } from 'hooks/useReduxStore';
-import DeskTopHeader from '../Header/Desktop';
-
+import PlayerHeader from '../MusicListHeader/index';
 // 플레이어 메인
 export const PlayerList = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
+
   const playerMusics =
     playerSelector.list.length > 0 ? (
       playerSelector.list.map(({ name, img_url, source_url }, index) => (
@@ -19,14 +19,14 @@ export const PlayerList = () => {
 
   return (
     <Layout>
-      <DeskTopHeader title="P L A Y L I S T" />
+      <PlayerHeader title="P L A Y L I S T" />
       {playerMusics}
     </Layout>
   );
 };
 
 const Layout = styled(ScrollBox)`
-  width: 30%;
+  width: 40%;
   height: 100vh;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.12));

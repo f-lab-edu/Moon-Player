@@ -6,13 +6,14 @@ import { useState, useEffect } from 'react';
 export const useResolution = () => {
   const [resolution, setResolution] = useState<'MOBILE' | 'TABLET' | 'DESKTOP'>('DESKTOP');
   useEffect(() => {
+    console.log(resolution);
     const ev = () => {
-      if (window.innerWidth <= 480) {
-        return setResolution('MOBILE');
-      } else if (window.innerWidth <= 768) {
-        return setResolution('TABLET');
-      } else if (window.innerWidth >= 1024) {
+      if (window.innerWidth >= 1200) {
         return setResolution('DESKTOP');
+      } else if (window.innerWidth >= 768) {
+        return setResolution('TABLET');
+      } else {
+        return setResolution('MOBILE');
       }
     };
     window.addEventListener('resize', ev);
@@ -22,7 +23,7 @@ export const useResolution = () => {
     };
   }, []);
 
-  return resolution;
+  return { resolution };
 };
 
 export default useResolution;
