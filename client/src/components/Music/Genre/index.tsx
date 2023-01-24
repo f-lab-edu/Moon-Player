@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { fetchmusicGenre } from 'store/feature/music/GenreSlice';
 import { useAppDispatch } from 'hooks/useReduxStore';
-import List from 'components/Music/Genre/List/List';
+import Slider from 'components/Music/Genre/Slider/Slider';
 import styled from 'styled-components';
 
 export const Genre = () => {
@@ -11,7 +11,7 @@ export const Genre = () => {
   }, []);
   return (
     <Layout>
-      <List />;
+      <Slider />;
       <Pagination className="pagination" />
     </Layout>
   );

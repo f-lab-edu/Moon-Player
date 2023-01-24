@@ -5,7 +5,7 @@ import IconButton from 'components/Global/UI/IconButton/IconButton';
 import { useContext } from 'react';
 import { DiaLogContext } from 'context/Dialog/index';
 
-export const SubHeader = ({ onUIhandle }) => {
+export const MyPlayListHeader = ({ onUIhandle }) => {
   const dialogCtx = useContext(DiaLogContext);
   const handleHomeButton = () => {
     onUIhandle();
@@ -35,4 +35,4 @@ const Title = styled(Text)`
 const IconButtonBox = styled(Flex)`
   margin: 10px;
 `;
-export default SubHeader;
+export default MyPlayListHeader;

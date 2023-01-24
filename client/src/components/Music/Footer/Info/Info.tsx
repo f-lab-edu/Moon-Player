@@ -9,7 +9,7 @@ interface InfoProps {
   player: PlayerControlModuleType;
 }
 
-export const MusicInfo = ({ player }: InfoProps) => {
+export const Info = ({ player }: InfoProps) => {
   const image =
     player.music.name.length > 0 ? (
       <StyledImage img={player.music.img_url} />
@@ -44,4 +44,4 @@ const StyledImage = styled(Image)`
   object-fit: cover;
 `;
 
-export default MusicInfo;
+export default Info;

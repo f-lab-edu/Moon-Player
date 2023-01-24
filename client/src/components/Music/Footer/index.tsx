@@ -5,10 +5,10 @@ import { Flex } from 'components/Global/style/Flex';
 import styled from 'styled-components';
 import ProgressBar from './ProgressBar/ProgressBar';
 import Volume from './Volume/Volume';
-import MusicInfo from './MusicInfo/MusicInfo';
+import Info from './Info/Info';
 import Controller from './Controller/Controller';
 import useMusicPageUIControl from 'hooks/useMusicPageUIControl';
-import HideController from './HideController/HideController';
+import HideButton from './HideButton/HideButton';
 
 export const Footer = ({ player }) => {
   const {
@@ -27,9 +27,9 @@ export const Footer = ({ player }) => {
   const playerVolume = player.volume.toString();
   return (
     <Layout active={isOpenMusicFooterUI}>
-      <HideController />
+      <HideButton />
       <ProgressBar currentTime={currentTime} endTime={endTime} elapsedTime={elapsedTime} />
-      <MusicInfo player={player}></MusicInfo>
+      <Info player={player}></Info>
       <Flex direction="row" justifyContent="space-between">
         <Volume onVolume={handleVolumeMusic} volume={playerVolume} />
         <Controller

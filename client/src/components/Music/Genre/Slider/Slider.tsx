@@ -6,7 +6,7 @@ import { Item } from 'components/Music/Genre/Item/Item';
 import { useAppSelector } from 'hooks/useReduxStore';
 import { SwiperSlide } from 'swiper/react';
 
-export const List = () => {
+export const Slider = () => {
   const genreItems = useAppSelector((state) => state.music.genre.list);
 
   // 외부라이브러리 노출 ?
@@ -32,4 +32,4 @@ const Layout = styled(Flex)`
 const StyledIconButton = styled(IconButton)`
   margin: 20px;
 `;
-export default List;
+export default Slider;

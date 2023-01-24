@@ -26,11 +26,11 @@ export const Navigation = () => {
       <Header>
         <StyledAvatar img="logo" />
       </Header>
-      <Nav direction="row">
+      <Box direction="row">
         <IconButton name="user" color="white" size="1x" />
         <IconButton name="music" color="white" size="1x" onClick={handleOpenCustomPlayListUI} />
         <IconButton name="bracket" color="white" size="1x" onClick={handleLogout} />
-      </Nav>
+      </Box>
     </Layout>
   );
 };
@@ -51,7 +51,7 @@ const StyledAvatar = styled(Avatar)`
   width: 50px;
   height: 50px;
 `;
-const Nav = styled(Flex)`
+const Box = styled(Flex)`
   gap: 20px;
   margin-top: 15px;
   padding-right: 30px;

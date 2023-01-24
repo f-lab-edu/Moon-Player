@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { useMusicPageUIControl } from 'hooks/useMusicPageUIControl';
 // AddMusicList에 맞는 UI제공
 
-export const MainHeader = ({ title }) => {
+export const AddPlayListHeader = ({ title }) => {
   const { isOpenAddMusicListUI, isOpenMyMusicListUI, onhandleOpenAddPlayListUI, onhandleOpenMyPlayListUI } =
     useMusicPageUIControl();
   const handleMusicButton = () => {
@@ -56,4 +56,4 @@ const StyledIconButton = styled(IconButton)`
 const IconButtonBox = styled(Flex)`
   margin: 10px;
 `;
-export default MainHeader;
+export default AddPlayListHeader;

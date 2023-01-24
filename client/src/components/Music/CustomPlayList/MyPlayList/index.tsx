@@ -5,8 +5,8 @@ import DataListItem from './Item/Item';
 import Music from 'components/Global/UI/Music/Music';
 
 import { useState } from 'react';
-import MainHeader from '../Header/MainHeader/MainHeader';
-import SubHeader from '../Header/SubHeader/SubHeader';
+import AddPlayListHeader from '../Header/AddPlayList/Header';
+import MyPlayListHeader from '../Header/MyPlayList/Header';
 
 const datas = [
   { title: '안녕하세요', id: 1 },
@@ -73,24 +73,29 @@ const playerDatas = [
 
 export const MyPlayList = () => {
   // 서버로부터 데이터리스트들을 받아서 렌더링
-  const [activeUI, setActiveUI] = useState(false);
+  const [activeMyPlayListUI, setActiveMyPlayListUI] = useState(false);
 
-  const DataListitems = datas.map((data) => (
-    <DataListItem title={data.title} key={data.id} id={data.id} onUIHandle={() => setActiveUI(!activeUI)} />
+  const userPlayList = datas.map((data) => (
+    <DataListItem
+      title={data.title}
+      key={data.id}
+      id={data.id}
+      onUIHandle={() => setActiveMyPlayListUI(!activeMyPlayListUI)}
+    />
   ));
   // 클릭시 서버로부터 데이터 페칭해서 가져오고 렌더링 현재는 mockdata
-  const playerMusicItems = playerDatas.map((data) => (
+  const userplayListMusics = playerDatas.map((data) => (
     <Music name={data.name} img_url={data.img_url} id={data.id} key={data.id} />
   ));
 
   return (
     <>
-      {!activeUI ? (
-        <MainHeader title="나만의 플레이리스트 목록" />
+      {!activeMyPlayListUI ? (
+        <AddPlayListHeader title="나만의 플레이리스트 목록" />
       ) : (
-        <SubHeader onUIhandle={() => setActiveUI(!activeUI)} />
+        <MyPlayListHeader onUIhandle={() => setActiveMyPlayListUI(!activeMyPlayListUI)} />
       )}
-      <MusicList>{!activeUI ? DataListitems : playerMusicItems}</MusicList>
+      <MusicList>{!activeMyPlayListUI ? userPlayList : userplayListMusics}</MusicList>
     </>
   );
 };
