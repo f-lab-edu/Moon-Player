@@ -1,15 +1,13 @@
 import styled from 'styled-components';
-import Music from 'components/Music/PlayerList/Item/Item';
+import Music from 'components/Music/Main/PlayList/Item/Item';
 import Text from 'components/Global/style/Text';
 import ScrollBox from 'components/Global/style/ScrollBox';
 import { useAppSelector } from 'hooks/useReduxStore';
-import PlayerHeader from '../MusicListHeader/index';
-import { useMusicPageUIControl } from 'hooks/useMusicPageUIControl';
+import PlayerHeader from '../Header/index';
 
 // 플레이어 메인
-export const PlayerList = () => {
+export const PlayList = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
-  const { isOpenPlayerListUI } = useMusicPageUIControl();
 
   const playerMusics =
     playerSelector.list.length > 0 ? (
@@ -21,18 +19,14 @@ export const PlayerList = () => {
     );
 
   return (
-    <Layout active={isOpenPlayerListUI}>
-      <PlayerHeader title="P L A Y E R L I S T" />
+    <Layout>
+      <PlayerHeader title="P L A Y L I S T" />
       {playerMusics}
     </Layout>
   );
 };
-interface LayoutProps {
-  active: boolean;
-}
 
-const Layout = styled(ScrollBox)<LayoutProps>(
-  ({ active = true }) => `
+const Layout = styled(ScrollBox)`
   width: 40%;
   height: 100vh;
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -40,15 +34,13 @@ const Layout = styled(ScrollBox)<LayoutProps>(
   border-radius: 7px;
   padding: 15px;
   margin-top: 15px;
-  display: ${!active ? 'none' : 'block'};
   @media (max-width: 1199px) {
     width: 100%;
   }
-`
-);
+`;
 const EmptyText = styled(Text)`
   color: rgba(255, 255, 255, 0.64);
   font-size: 20px;
 `;
 
-export default PlayerList;
+export default PlayList;

@@ -27,10 +27,7 @@ const Box = styled.div`
   flex: 1;
   height: 5px;
   overflow: hidden;
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1199px) {
     height: 15px;
-  }
-  @media screen and (max-width: 490px) {
-    height: 30px;
   }
 `;

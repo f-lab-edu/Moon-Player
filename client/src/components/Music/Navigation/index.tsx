@@ -13,10 +13,10 @@ export const Navigation = () => {
 
   const { onhandleOpenCustomPlayListUI, onhandleOpenAddPlayListUI } = useMusicPageUIControl();
 
-  const handleLogoutButton = () => {
+  const handleLogout = () => {
     dialogCtx.showConfirm('로그아웃 하시겠습니까?', 'Logout');
   };
-  const handleMusicButton = () => {
+  const handleOpenCustomPlayListUI = () => {
     onhandleOpenCustomPlayListUI(true);
     onhandleOpenAddPlayListUI(true);
   };
@@ -28,8 +28,8 @@ export const Navigation = () => {
       </Header>
       <Nav direction="row">
         <IconButton name="user" color="white" size="1x" />
-        <IconButton name="music" color="white" size="1x" onClick={handleMusicButton} />
-        <IconButton name="bracket" color="white" size="1x" onClick={handleLogoutButton} />
+        <IconButton name="music" color="white" size="1x" onClick={handleOpenCustomPlayListUI} />
+        <IconButton name="bracket" color="white" size="1x" onClick={handleLogout} />
       </Nav>
     </Layout>
   );

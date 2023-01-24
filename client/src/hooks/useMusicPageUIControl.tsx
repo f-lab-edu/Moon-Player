@@ -5,25 +5,27 @@ import {
   handleOpenAddPlayListUI,
   handleOpenMusicFooterUI,
   handleOpenCustomPlayListUI,
-  handleOpenPlayerListUI,
-  handleOpenMusicListUI,
+  handlePlayListUI,
+  handleMusicListUI,
 } from 'store/feature/layout/LayoutSlice';
 
 export const useMusicPageUIControl = () => {
   const dispatch = useAppDispatch();
-  const isOpenCustomPlayListUI = useAppSelector((state) => state.layout.music.customPlayList.isOpen);
-  const isOpenAddMusicListUI = useAppSelector((state) => state.layout.music.customPlayList.addMusicList.isOpen);
-  const isOpenMyMusicListUI = useAppSelector((state) => state.layout.music.customPlayList.myMusicList.isOpen);
-  const isOpenMusicFooterUI = useAppSelector((state) => state.layout.music.footer.isOpen);
-  const isOpenPlayerListUI = useAppSelector((state) => state.layout.music.playerList.isOpen);
-  const isOpenMusicListUI = useAppSelector((state) => state.layout.music.musicList.isOpen);
+  const isOpenCustomPlayListUI = useAppSelector((state) => state.layout.customPlayList.isOpen);
+  const isOpenAddMusicListUI = useAppSelector((state) => state.layout.customPlayList.addMusicList.isOpen);
+  const isOpenMyMusicListUI = useAppSelector((state) => state.layout.customPlayList.myMusicList.isOpen);
+  const isOpenMusicFooterUI = useAppSelector((state) => state.layout.footer.isOpen);
+  const isSelectedMusicList = useAppSelector((state) => state.layout.main.musicList.selected);
+  const isSelectedPlayList = useAppSelector((state) => state.layout.main.playList.selected);
 
-  const onhandleOpenPlayerListUI = (isActive: boolean) => {
-    dispatch(handleOpenPlayerListUI(isActive));
+  const onhandlePlayListUI = (isActive: boolean) => {
+    dispatch(handlePlayListUI(isActive));
   };
-  const onhandleOpenMusicListUI = (isActive: boolean) => {
-    dispatch(handleOpenMusicListUI(isActive));
+
+  const onhandleMusicListUI = (isActive: boolean) => {
+    dispatch(handleMusicListUI(isActive));
   };
+
   const onhandleOpenMusicFooterUI = (isActive: boolean) => {
     dispatch(handleOpenMusicFooterUI(isActive));
   };
@@ -42,14 +44,14 @@ export const useMusicPageUIControl = () => {
     isOpenAddMusicListUI,
     isOpenMyMusicListUI,
     isOpenCustomPlayListUI,
-    isOpenPlayerListUI,
-    isOpenMusicListUI,
+    isSelectedMusicList,
+    isSelectedPlayList,
     onhandleOpenMusicFooterUI,
     onhandleOpenMyPlayListUI,
     onhandleOpenAddPlayListUI,
     onhandleOpenCustomPlayListUI,
-    onhandleOpenPlayerListUI,
-    onhandleOpenMusicListUI,
+    onhandlePlayListUI,
+    onhandleMusicListUI,
   };
 };
 
