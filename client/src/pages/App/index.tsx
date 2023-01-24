@@ -10,6 +10,7 @@ import MusicDialog from 'components/Global/UI/Dialog/Music/MusicDialog';
 import ConfirmDialog from 'components/Global/UI/Dialog/Confirm/ConfirmDialog';
 import ProtectedRoute from 'Route/ProtectedRoute';
 
+// DiaLogContext Provider 내용 합치기 지저분하다.
 function App() {
   return (
     <DiaLogContextProvider>

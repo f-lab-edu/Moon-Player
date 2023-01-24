@@ -1,11 +1,3 @@
-export type ConfirmType = 'Logout' | 'Save' | 'Load' | '';
-
-export type ConfirmState = {
-  isOpen: boolean;
-  message: string;
-  type: ConfirmType;
-};
-
 export type DialogState = {
   alarm: {
     isOpen: boolean;
@@ -14,7 +6,7 @@ export type DialogState = {
   confirm: {
     isOpen: boolean;
     message: string;
-    type: ConfirmType;
+    isConfirm: boolean;
   };
   music: {
     isOpen: boolean;

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { createContext, useState } from 'react';
-import { ConfirmType, DialogState } from 'types/app/UI/Dialog';
+import { DialogState } from 'types/app/UI/Dialog';
 
 const DEFAULT_STATE: DialogState = {
   alarm: {
@@ -10,7 +10,7 @@ const DEFAULT_STATE: DialogState = {
   confirm: {
     isOpen: false,
     message: '',
-    type: '',
+    isConfirm: false,
   },
   music: {
     isOpen: false,
@@ -22,10 +22,11 @@ export const DiaLogContext = createContext({
   state: DEFAULT_STATE,
   showAlarm: function (text: string) {},
   closeAlarm: function () {},
-  showConfirm: function (message: string, type: ConfirmType) {},
+  showConfirm: function (message: string) {},
   closeConfirm: function () {},
   showMusicDialog: function (name: string, img_url: string) {},
   closeMusicDialog: function () {},
+  handleConfirmState: function (isConfirm: boolean) {},
 });
 export const DiaLogContextProvider = (props) => {
   const [activeDialog, setActiveDialog] = useState<DialogState>(DEFAULT_STATE);
@@ -48,14 +49,13 @@ export const DiaLogContextProvider = (props) => {
     }));
   };
 
-  const showConfirmHandler = (message: string, type: ConfirmType) => {
-    console.log(message, type);
+  const showConfirmHandler = (message: string) => {
     setActiveDialog((prev) => ({
       ...prev,
       confirm: {
         isOpen: true,
         message,
-        type,
+        isConfirm: activeDialog.confirm.isConfirm,
       },
     }));
   };
@@ -66,7 +66,17 @@ export const DiaLogContextProvider = (props) => {
       confirm: {
         isOpen: false,
         message: '',
-        type: '',
+        isConfirm: activeDialog.confirm.isConfirm,
+      },
+    }));
+  };
+  const confirmStateHandler = (isConfirm: boolean) => {
+    setActiveDialog((prev) => ({
+      ...prev,
+      confirm: {
+        isOpen: false,
+        message: '',
+        isConfirm: isConfirm,
       },
     }));
   };
@@ -99,6 +109,7 @@ export const DiaLogContextProvider = (props) => {
     closeConfirm: closeConfirmHandler,
     showMusicDialog: showMusicDialogHandler,
     closeMusicDialog: closeMusicDialogHandler,
+    handleConfirmState: confirmStateHandler,
   };
   return <DiaLogContext.Provider value={context}>{props.children}</DiaLogContext.Provider>;
 };

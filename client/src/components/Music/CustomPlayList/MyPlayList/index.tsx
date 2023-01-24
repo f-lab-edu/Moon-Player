@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import ScrollBox from 'components/Global/style/ScrollBox';
 import styled from 'styled-components';
-import DataListItem from './Item/Item';
+import MusicListItem from './MusicListItem/MusicListItem';
 import Music from 'components/Global/UI/Music/Music';
 
 import { useState } from 'react';
@@ -73,14 +73,14 @@ const playerDatas = [
 
 export const MyPlayList = () => {
   // 서버로부터 데이터리스트들을 받아서 렌더링
-  const [activeMyPlayListUI, setActiveMyPlayListUI] = useState(false);
+  const [activeMyPlayListHeader, setActiveMyPlayListHeader] = useState(false);
 
   const userPlayList = datas.map((data) => (
-    <DataListItem
+    <MusicListItem
       title={data.title}
       key={data.id}
       id={data.id}
-      onUIHandle={() => setActiveMyPlayListUI(!activeMyPlayListUI)}
+      onUIHandle={() => setActiveMyPlayListHeader(!activeMyPlayListHeader)}
     />
   ));
   // 클릭시 서버로부터 데이터 페칭해서 가져오고 렌더링 현재는 mockdata
@@ -90,17 +90,17 @@ export const MyPlayList = () => {
 
   return (
     <>
-      {!activeMyPlayListUI ? (
+      {!activeMyPlayListHeader ? (
         <AddPlayListHeader title="나만의 플레이리스트 목록" />
       ) : (
-        <MyPlayListHeader onUIhandle={() => setActiveMyPlayListUI(!activeMyPlayListUI)} />
+        <MyPlayListHeader onUIhandle={() => setActiveMyPlayListHeader(!activeMyPlayListHeader)} />
       )}
-      <MusicList>{!activeMyPlayListUI ? userPlayList : userplayListMusics}</MusicList>
+      <MyPlayListLayout>{!activeMyPlayListHeader ? userPlayList : userplayListMusics}</MyPlayListLayout>
     </>
   );
 };
 
-const MusicList = styled(ScrollBox)`
+const MyPlayListLayout = styled(ScrollBox)`
   height: 42vh;
   margin-top: 20px;
   h3 {

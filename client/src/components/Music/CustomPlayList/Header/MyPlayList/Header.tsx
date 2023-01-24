@@ -11,7 +11,7 @@ export const MyPlayListHeader = ({ onUIhandle }) => {
     onUIhandle();
   };
   const handleSpinnerButton = () => {
-    dialogCtx.showConfirm('재생목록을 가져 오겠습니까?', 'Load');
+    dialogCtx.showConfirm('재생목록을 가져 오겠습니까?');
   };
 
   return (

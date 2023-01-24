@@ -15,7 +15,7 @@ export const AddPlayList = () => {
   const dialogCtx = useContext(DiaLogContext);
 
   const handleSaveButton = () => {
-    dialogCtx.showConfirm('현재 재생목록을 저장하시겠습니까?', 'Save');
+    dialogCtx.showConfirm('현재 재생목록을 저장하시겠습니까?');
   };
 
   const playerMusics =

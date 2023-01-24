@@ -4,7 +4,7 @@ import Text from 'components/Global/style/Text';
 import { OverFlowText } from 'components/Global/style/OverFlowText';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
 
-export const Item = ({ title, id, onUIHandle }) => {
+export const MusicListItem = ({ title, id, onUIHandle }) => {
   // PlayListTitle 누르면 플레이어 목록들이 나오게끔 구현  //
   // 이떄 서버로부터 데이터페칭해서 전역스토어에 저장하면될듯
   //subHeader로 변경
@@ -47,4 +47,4 @@ const PlayListTitle = styled(OverFlowText)`
   cursor: pointer;
   overflow: hidden;
 `;
-export default Item;
+export default MusicListItem;
