@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import Navigation from 'components/Music/Navigation/';
+import Navigation from 'components/Music/Navigation';
 import Genre from 'components/Music/Genre';
 import CustomPlayList from 'components/Music/CustomPlayList';
-import PlayList from 'components/Music/PlayList';
 import Footer from 'components/Music/Footer';
 import { usePlayerControlModule } from 'hooks/usePlayerControlModule';
-import PlayerList from 'components/Music/Player/index';
 import Flex from 'components/Global/style/Flex';
 import useMusicPageUIControl from 'hooks/useMusicPageUIControl';
+import Main from 'components/Music/Main';
+
 const MusicPage = () => {
   const { musicPlayer, playerModuleSelector } = usePlayerControlModule();
   const { isOpenCustomPlayListUI } = useMusicPageUIControl();
@@ -16,10 +16,7 @@ const MusicPage = () => {
     <Layout direction="column">
       <Navigation />
       <Genre />
-      <Main direction="row">
-        <PlayList />
-        <PlayerList />
-      </Main>
+      <Main />
       {playerModuleSelector.music && musicPlayer}
       <Footer player={playerModuleSelector} />
       {isOpenCustomPlayListUI ? <CustomPlayList /> : <></>}
@@ -27,6 +24,8 @@ const MusicPage = () => {
   );
 };
 const Layout = styled(Flex)`
+  position: relative;
+
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -37,13 +36,6 @@ const Layout = styled(Flex)`
     rgba(36, 18, 95, 1) 73%,
     rgba(38, 64, 92, 1) 100%
   );
-`;
-
-const Main = styled(Flex)`
-  padding: 0 48px 24px 48px;
-  @media (max-width: 1024px) {
-    flex-direction: column;
-  }
 `;
 
 export default MusicPage;

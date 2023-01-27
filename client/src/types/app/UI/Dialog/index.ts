@@ -1,20 +1,15 @@
-export type ConfirmType = 'Logout' | 'Save' | 'Load' | '';
-
-export type ConfirmState = {
-  isOpen: boolean;
-  message: string;
-  type: ConfirmType;
-};
+export type ConfirmType = 'Logout' | 'Load' | 'Save';
+export type ConfirMessageType = { [K in ConfirmType]: string };
 
 export type DialogState = {
   alarm: {
     isOpen: boolean;
-    text: string;
+    message: string;
   };
   confirm: {
     isOpen: boolean;
     message: string;
-    type: ConfirmType;
+    type: 'Logout' | 'Load' | 'Save' | '';
   };
   music: {
     isOpen: boolean;

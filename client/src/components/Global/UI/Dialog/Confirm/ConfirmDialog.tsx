@@ -3,34 +3,42 @@ import { Flex } from 'components/Global/style/Flex';
 import { Button } from 'components/Global/style/Button/Button';
 import Avatar from 'components/Global/style/Avatar';
 import { Text } from 'components/Global/style/Text';
-import useAuthenticator from 'hooks/useAuthenticator';
 import { useContext } from 'react';
 import { DiaLogContext } from 'context/Dialog/index';
-import { ConfirmType } from 'types/app/UI/Dialog';
+import { useAuthenticator } from 'hooks/useAuthenticator';
+import { ConfirMessageType } from 'types/app/UI/Dialog';
+const confirmAlarmMessage: ConfirMessageType = {
+  Logout: '로그아웃되었습니다.',
+  Load: '재생목록을 가져왔습니다.',
+  Save: '플레이리스트를 만들었습니다.',
+};
 export const ConfirmDialog = () => {
-  const { signOut } = useAuthenticator();
   const dialogCtx = useContext(DiaLogContext);
+  const { signOut } = useAuthenticator();
   const confirm = dialogCtx.state.confirm;
-  console.log(confirm);
-
-  const load = () => {
-    dialogCtx.showAlarm('재생목록을 가져왔습니다.');
-    dialogCtx.closeConfirm();
-  };
-  const Save = () => {
-    dialogCtx.showAlarm('저장하였습니다.');
-    dialogCtx.closeConfirm();
-  };
-  const logOut = () => {
-    signOut();
-    dialogCtx.showAlarm('로그아웃 되었습니다.');
-    dialogCtx.closeConfirm();
-  };
-
+  // confirm 타입에 맞게 함수를 실행시켜준다
   const handleYesButton = () => {
-    const type: ConfirmType = confirm.type;
-    return type === 'Logout' ? logOut() : type === 'Load' ? load() : type === 'Save' ? Save() : alert('잘못된타입');
+    dialogCtx.closeConfirm();
+    const confirmType = confirm.type;
+    if (confirmType === '') return;
+    return confirmType === 'Logout' ? handleLogout() : confirmType === 'Load' ? handleLoadMusic() : handleSaveMusic();
   };
+  const handleNoButton = () => {
+    dialogCtx.closeConfirm();
+  };
+
+  const handleLogout = () => {
+    dialogCtx.showAlarm(confirmAlarmMessage.Logout);
+    signOut();
+  };
+
+  const handleLoadMusic = () => {
+    dialogCtx.showAlarm(confirmAlarmMessage.Load);
+  };
+  const handleSaveMusic = () => {
+    dialogCtx.showAlarm(confirmAlarmMessage.Save);
+  };
+
   return confirm.isOpen ? (
     <Layout>
       <FlexBox direction="column" justifyContent="center" alignItems="center">
@@ -42,7 +50,7 @@ export const ConfirmDialog = () => {
           <StyledButton fontColor="white" color="gray" onClick={handleYesButton}>
             YES
           </StyledButton>
-          <StyledButton fontColor="white" color="gray" onClick={dialogCtx.closeConfirm}>
+          <StyledButton fontColor="white" color="gray" onClick={handleNoButton}>
             NO
           </StyledButton>
         </Flex>

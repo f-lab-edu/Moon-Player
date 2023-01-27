@@ -1,49 +1,40 @@
 import styled from 'styled-components';
 import { useEffect } from 'react';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
-import Music from 'components/Music/PlayList/Item/Item';
+import Music from 'components/Music/Main/MusicList/Item/Item';
 import ScrollBox from 'components/Global/style/ScrollBox';
 import { useAppDispatch, useAppSelector } from 'hooks/useReduxStore';
-import Text from 'components/Global/style/Text';
-export const PlayList = () => {
+import MusicListHeader from '../Header/index';
+export const MusicList = () => {
   const dispatch = useAppDispatch();
   const { music_list } = useAppSelector((state) => state.music.playList.genre);
-
-  const playListMusics =
+  const MusicListItems =
     music_list &&
     music_list.map(({ name, id, img_url, source_url }) => (
       <Music key={id} id={id} name={name} img_url={img_url} source_url={source_url}></Music>
     ));
 
   useEffect(() => {
+    if (music_list.length) return;
     dispatch(fetchmusicList('http://localhost:4000/api/music/genre/1'));
   }, []);
 
   return (
     <Layout>
-      <Title>M U S I C L I S T</Title>
-      {playListMusics}
+      <MusicListHeader title="M U S I C" />
+      {MusicListItems}
     </Layout>
   );
 };
 
 const Layout = styled(ScrollBox)`
-  width: 70%;
+  width: 100%;
   border-radius: 7px;
   margin-top: 15px;
   margin-right: 15px;
   padding: 15px;
-  height: 74vh;
+  height: 100vh;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.12));
-  @media (max-width: 1024px) {
-    width: 100%;
-  }
 `;
-const Title = styled(Text)`
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.64);
-  margin: 8px 0;
-  font-weight: normal;
-`;
-export default PlayList;
+export default MusicList;

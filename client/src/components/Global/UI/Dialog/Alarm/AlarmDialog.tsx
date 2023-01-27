@@ -10,13 +10,12 @@ import { DiaLogContext } from 'context/Dialog/index';
 export const Alarm = () => {
   const dialogCtx = useContext(DiaLogContext);
   const alarm = dialogCtx.state.alarm;
-
   return alarm.isOpen ? (
     <Layout>
       <Box direction="column" justifyContent="center" alignItems="center">
         <AlarmAvatar img="logo"></AlarmAvatar>
         <AlarmText color="white" textAlign="center" data-testid="alarmText">
-          {alarm.text}
+          {alarm.message}
         </AlarmText>
         <StyledButton fontColor="white" color="gray" onClick={dialogCtx.closeAlarm}>
           확인

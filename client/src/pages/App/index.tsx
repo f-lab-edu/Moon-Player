@@ -2,20 +2,17 @@ import { Route, Routes } from 'react-router-dom';
 import MusicPage from 'pages/Music/index';
 import UserPage from 'pages/User/index';
 import LoginPage from 'pages/Login/index';
-import ProtectedRoute from 'components/Route/ProtectedRoute';
+
 import GlobalStyle from 'styles/GlobalStyle';
-import AlarmDialog from 'components/Global/UI/Dialog/Alarm/AlarmDialog';
 import { DiaLogContextProvider } from 'context/Dialog';
-import MusicDialog from 'components/Global/UI/Dialog/Music/MusicDialog';
-import ConfirmDialog from 'components/Global/UI/Dialog/Confirm/ConfirmDialog';
+import ProtectedRoute from 'Route/ProtectedRoute';
+import DiaLog from 'components/Global/UI/Dialog';
 
 function App() {
   return (
     <DiaLogContextProvider>
       <GlobalStyle />
-      <AlarmDialog />
-      <MusicDialog />
-      <ConfirmDialog />
+      <DiaLog />
       <Routes>
         <Route
           element={

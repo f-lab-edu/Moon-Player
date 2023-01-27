@@ -3,17 +3,23 @@ import { Flex } from 'components/Global/style/Flex';
 import Text from 'components/Global/style/Text';
 import { OverFlowText } from 'components/Global/style/OverFlowText';
 import { IconButton } from 'components/Global/UI/IconButton/IconButton';
+import useMusicPageUIControl from 'hooks/useMusicPageUIControl';
 
-export const Item = ({ title, id, onUIHandle }) => {
-  // PlayListTitle 누르면 플레이어 목록들이 나오게끔 구현  //
-  // 이떄 서버로부터 데이터페칭해서 전역스토어에 저장하면될듯
-  //subHeader로 변경
-  // 클릭시 서버로부터 데이터 페칭해서 가져오고 렌더링 현재는 mockdata 데이터 변화도 존재해야됨
+export const DataListItem = ({ title, id }) => {
+  // onClick을하면 MusicList UI로 전환시킨다.
+  const { onhandleMyPlayListOptionUI } = useMusicPageUIControl();
 
   return (
-    <Layout direction="row" justifyContent="space-between" alignItems="center" onClick={onUIHandle}>
-      <PlayListNumber>{id}</PlayListNumber>
-      <PlayListTitle>{title}</PlayListTitle>
+    <Layout
+      direction="row"
+      justifyContent="space-between"
+      alignItems="center"
+      onClick={() => {
+        onhandleMyPlayListOptionUI(false);
+      }}
+    >
+      <DataListNumber>{id}</DataListNumber>
+      <DataListTitle>{title}</DataListTitle>
       <IconButton color="rgba(255,255,255,0.64)" size="1x" name="trash" />
     </Layout>
   );
@@ -32,12 +38,12 @@ const Layout = styled(Flex)`
   height: 84px;
   overflow: hidden;
 `;
-const PlayListNumber = styled(Text)`
+const DataListNumber = styled(Text)`
   color: rgba(255, 255, 255, 0.64);
   font-size: 16px;
   width: 16px;
 `;
-const PlayListTitle = styled(OverFlowText)`
+const DataListTitle = styled(OverFlowText)`
   flex: 1;
   font-size: 14px;
   max-height: 48px;
@@ -47,4 +53,4 @@ const PlayListTitle = styled(OverFlowText)`
   cursor: pointer;
   overflow: hidden;
 `;
-export default Item;
+export default DataListItem;

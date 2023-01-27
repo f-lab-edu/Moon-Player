@@ -2,10 +2,10 @@ import { useMusicPageUIControl } from 'hooks/useMusicPageUIControl';
 import IconButton from 'components/Global/UI/IconButton/IconButton';
 import styled from 'styled-components';
 
-export const HideController = () => {
+export const HideButton = () => {
   const { onhandleOpenMusicFooterUI, isOpenMusicFooterUI } = useMusicPageUIControl();
 
-  const renderHideButton = isOpenMusicFooterUI ? (
+  const renderHideButton = !isOpenMusicFooterUI ? (
     <IconButton name="up" color="white" size="1x" />
   ) : (
     <IconButton name="down" color="white" size="1x" />
@@ -19,4 +19,4 @@ const Layout = styled.div`
   transform: translateY(-20px);
 `;
 
-export default HideController;
+export default HideButton;

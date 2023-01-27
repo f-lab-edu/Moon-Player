@@ -3,21 +3,9 @@ import IconButton from 'components/Global/UI/IconButton/IconButton';
 import Flex from 'components/Global/style/Flex';
 import styled from 'styled-components';
 import { useMusicPageUIControl } from 'hooks/useMusicPageUIControl';
-// AddMusicList에 맞는 UI제공
 
 export const MainHeader = ({ title }) => {
-  const { isOpenAddMusicListUI, isOpenMyMusicListUI, onhandleOpenAddPlayListUI, onhandleOpenMyPlayListUI } =
-    useMusicPageUIControl();
-  const handleMusicButton = () => {
-    onhandleOpenAddPlayListUI(false);
-    onhandleOpenMyPlayListUI(true);
-    // MusicButton을 누르면 MyMusicListH UI를 보여준다.
-  };
-  const handlePlusButton = () => {
-    onhandleOpenAddPlayListUI(true);
-    onhandleOpenMyPlayListUI(false);
-    // PlusButton을 누르면  AddMusicList UI를 보여준다.
-  };
+  const { isOpenAddMusicListUI, onhandleOpenAddPlayListUI } = useMusicPageUIControl();
 
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
@@ -27,15 +15,19 @@ export const MainHeader = ({ title }) => {
           name="plus"
           size="2x"
           color="white"
-          onClick={handlePlusButton}
+          onClick={() => {
+            onhandleOpenAddPlayListUI(true);
+          }}
           active={isOpenAddMusicListUI ? true : false}
         />
         <StyledIconButton
           name="music"
           size="2x"
           color="white"
-          onClick={handleMusicButton}
-          active={isOpenMyMusicListUI ? true : false}
+          onClick={() => {
+            onhandleOpenAddPlayListUI(false);
+          }}
+          active={!isOpenAddMusicListUI ? true : false}
         />
       </IconButtonBox>
     </Layout>

@@ -37,8 +37,8 @@ export const Item = ({ name, img_url, id, source_url }: MusicDataType) => {
     <Layout isActive={isCurrentMusic} onClick={handlePlayMusic}>
       <Music id={id} img_url={img_url} name={name}>
         <div>
-          <IconButton color="rgba(255,255,255,0.64)" onClick={handleInfoMusic} size="1x" name="info" />
-          <IconButton color="rgba(255,255,255,0.64)" onClick={handleTrashButton} size="1x" name="trash" />
+          <IconButton color="rgba(255,255,255,0.64)" onClick={handleInfoMusic} size="2x" name="info" />
+          <IconButton color="rgba(255,255,255,0.64)" onClick={handleTrashButton} size="2x" name="trash" />
         </div>
       </Music>
     </Layout>
@@ -50,10 +50,6 @@ interface RootProps {
 const Layout = styled.div<RootProps>`
   background-color: ${({ isActive }) => (isActive ? 'rgba(0,0,0,0.64)' : 'none')};
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-  img {
-    width: 100px;
-    height: 90px;
-  }
 `;
 
 export default Item;

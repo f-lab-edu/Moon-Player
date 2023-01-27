@@ -22,22 +22,25 @@ export interface PlayListStateType {
 }
 
 export interface LayoutStateType {
-  music: {
-    customPlayList: {
+  main: {
+    isOpenMusicList: boolean;
+  };
+  customPlayList: {
+    isOpen: boolean;
+    addPlayList: {
       isOpen: boolean;
-      addMusicList: {
-        isOpen: boolean;
-      };
-      myMusicList: {
-        isOpen: boolean;
-      };
     };
-
-    footer: {
-      isOpen: boolean;
+    myPlayList: {
+      option: {
+        isOpen: boolean;
+      };
     };
   };
+  footer: {
+    isOpen: boolean;
+  };
 }
+
 export interface UserStateType {
   status: string;
   info: string;

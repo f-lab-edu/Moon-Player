@@ -12,11 +12,10 @@ export const Navigation = () => {
   const dialogCtx = useContext(DiaLogContext);
 
   const { onhandleOpenCustomPlayListUI, onhandleOpenAddPlayListUI } = useMusicPageUIControl();
-
-  const handleLogoutButton = () => {
-    dialogCtx.showConfirm('로그아웃 하시겠습니까?', 'Logout');
+  const handleLogOutButton = () => {
+    dialogCtx.showConfirm('Logout');
   };
-  const handleMusicButton = () => {
+  const handleOpenCustomPlayListUI = () => {
     onhandleOpenCustomPlayListUI(true);
     onhandleOpenAddPlayListUI(true);
   };
@@ -26,11 +25,11 @@ export const Navigation = () => {
       <Header>
         <StyledAvatar img="logo" />
       </Header>
-      <Nav direction="row">
+      <Box direction="row">
         <IconButton name="user" color="white" size="1x" />
-        <IconButton name="music" color="white" size="1x" onClick={handleMusicButton} />
-        <IconButton name="bracket" color="white" size="1x" onClick={handleLogoutButton} />
-      </Nav>
+        <IconButton name="music" color="white" size="1x" onClick={handleOpenCustomPlayListUI} />
+        <IconButton name="bracket" color="white" size="1x" onClick={handleLogOutButton} />
+      </Box>
     </Layout>
   );
 };
@@ -51,7 +50,7 @@ const StyledAvatar = styled(Avatar)`
   width: 50px;
   height: 50px;
 `;
-const Nav = styled(Flex)`
+const Box = styled(Flex)`
   gap: 20px;
   margin-top: 15px;
   padding-right: 30px;

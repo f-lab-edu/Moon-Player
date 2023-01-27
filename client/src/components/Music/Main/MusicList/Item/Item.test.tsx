@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { renderWithProvider, screen, waitFor } from 'test-utils/rtkProvider';
-import Item from 'components/Music/PlayList/Item/Item';
+import Item from 'components/Music/Main/MusicList/Item/Item';
 import userEvent from '@testing-library/user-event';
 import { fetchmusicList } from 'store/feature/music/PlayListSlice';
 

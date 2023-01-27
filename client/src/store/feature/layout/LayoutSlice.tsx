@@ -2,19 +2,22 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
 import { LayoutStateType } from 'types/store';
 export const initialState: LayoutStateType = {
-  music: {
-    customPlayList: {
-      isOpen: false,
-      addMusicList: {
-        isOpen: false,
-      },
-      myMusicList: {
-        isOpen: false,
-      },
-    },
-    footer: {
+  main: {
+    isOpenMusicList: true,
+  },
+  customPlayList: {
+    isOpen: false,
+    addPlayList: {
       isOpen: false,
     },
+    myPlayList: {
+      option: {
+        isOpen: true,
+      },
+    },
+  },
+  footer: {
+    isOpen: false,
   },
 };
 
@@ -22,23 +25,30 @@ export const LayoutSlice = createSlice({
   name: 'layout',
   initialState,
   reducers: {
-    handleOpenAddPlayListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
-      state.music.customPlayList.addMusicList.isOpen = action.payload;
-    },
-    handleOpenMyPlayListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
-      state.music.customPlayList.myMusicList.isOpen = action.payload;
-    },
-
-    handleOpenMusicFooterUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
-      state.music.footer.isOpen = action.payload;
-    },
     handleOpenCustomPlayListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
-      state.music.customPlayList.isOpen = action.payload;
+      state.customPlayList.isOpen = action.payload;
+    },
+    handleOpenAddPlayListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
+      state.customPlayList.addPlayList.isOpen = action.payload;
+    },
+    handleMyPlayListOptionUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
+      state.customPlayList.myPlayList.option.isOpen = action.payload;
+    },
+    handleMusicListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
+      state.main.isOpenMusicList = action.payload;
+    },
+    handleOpenMusicFooterUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
+      state.footer.isOpen = action.payload;
     },
   },
   extraReducers: (builder) => {
     builder.addCase(PURGE, () => initialState);
   },
 });
-export const { handleOpenAddPlayListUI, handleOpenMyPlayListUI, handleOpenMusicFooterUI, handleOpenCustomPlayListUI } =
-  LayoutSlice.actions;
+export const {
+  handleOpenAddPlayListUI,
+  handleOpenMusicFooterUI,
+  handleOpenCustomPlayListUI,
+  handleMusicListUI,
+  handleMyPlayListOptionUI,
+} = LayoutSlice.actions;

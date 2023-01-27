@@ -8,17 +8,17 @@ import Music from 'components/Global/UI/Music/Music';
 import { ScrollBox } from 'components/Global/style/ScrollBox';
 import { useContext } from 'react';
 
-import MainHeader from '../Header/MainHeader/MainHeader';
+import AddPlayListHeader from '../Header/MainHeader/MainHeader';
 import { DiaLogContext } from 'context/Dialog';
 export const AddPlayList = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
   const dialogCtx = useContext(DiaLogContext);
 
   const handleSaveButton = () => {
-    dialogCtx.showConfirm('현재 재생목록을 저장하시겠습니까?', 'Save');
+    dialogCtx.showConfirm('Save');
   };
 
-  const playerMusics =
+  const currentPlayerMusics =
     playerSelector.list.length > 0 ? (
       playerSelector.list.map(({ name, img_url }, index) => (
         <Music name={name} img_url={img_url} key={index} id={++index} />
@@ -29,7 +29,7 @@ export const AddPlayList = () => {
 
   return (
     <>
-      <MainHeader title="나만의 플레이리스트 추가" />
+      <AddPlayListHeader title="나만의 플레이리스트 추가" />
       <Layout direction="column" justifyContent="center">
         <Flex direction="row" justifyContent="space-between" alignItems="center">
           <InputBox direction="row" alignItems="center" gap="15px">
@@ -37,15 +37,15 @@ export const AddPlayList = () => {
             <IconButton name="save" size="2x" color="white" onClick={handleSaveButton}></IconButton>
           </InputBox>
         </Flex>
-        <Title>재생목록</Title>
-        <MusicList>{playerMusics}</MusicList>
+        <PlayListTitle>재생목록</PlayListTitle>
+        <PlayList>{currentPlayerMusics}</PlayList>
       </Layout>
     </>
   );
 };
 export default AddPlayList;
 
-const MusicList = styled(ScrollBox)`
+const PlayList = styled(ScrollBox)`
   height: 30vh;
   padding-right: 10px;
 `;
@@ -80,6 +80,6 @@ const EmptyText = styled(Text)`
 
   font-size: 20px;
 `;
-const Title = styled(Text)`
-  font-size: 18px;
+const PlayListTitle = styled(Text)`
+  font-size: 20px;
 `;
