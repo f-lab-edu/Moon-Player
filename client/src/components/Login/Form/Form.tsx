@@ -11,8 +11,9 @@ import { DiaLogContext } from 'context/Dialog/index';
 
 export const Form = () => {
   const { handleLoginButton, socialName, onGetCode, getUserToken } = useSocialLogin();
-  const { signIn } = useAuthenticator();
   const dialogCtx = useContext(DiaLogContext);
+
+  const { signIn } = useAuthenticator();
 
   useEffect(() => {
     const code = onGetCode();

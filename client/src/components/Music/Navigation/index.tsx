@@ -7,19 +7,13 @@ import { useContext } from 'react';
 import useMusicPageUIControl from 'hooks/useMusicPageUIControl';
 
 import { DiaLogContext } from 'context/Dialog/index';
-import { useAuthenticator } from 'hooks/useAuthenticator';
 
 export const Navigation = () => {
   const dialogCtx = useContext(DiaLogContext);
-  const { signOut } = useAuthenticator();
 
   const { onhandleOpenCustomPlayListUI, onhandleOpenAddPlayListUI } = useMusicPageUIControl();
-
-  const handleLogout = () => {
-    dialogCtx.showConfirm('로그아웃 하시겠습니까?');
-    console.log(dialogCtx.state.confirm.isConfirm);
-    if (!dialogCtx.state.confirm.isConfirm) return;
-    signOut();
+  const handleLogOutButton = () => {
+    dialogCtx.showConfirm('Logout');
   };
   const handleOpenCustomPlayListUI = () => {
     onhandleOpenCustomPlayListUI(true);
@@ -34,7 +28,7 @@ export const Navigation = () => {
       <Box direction="row">
         <IconButton name="user" color="white" size="1x" />
         <IconButton name="music" color="white" size="1x" onClick={handleOpenCustomPlayListUI} />
-        <IconButton name="bracket" color="white" size="1x" onClick={handleLogout} />
+        <IconButton name="bracket" color="white" size="1x" onClick={handleLogOutButton} />
       </Box>
     </Layout>
   );

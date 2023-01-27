@@ -5,18 +5,31 @@ import Avatar from 'components/Global/style/Avatar';
 import { Text } from 'components/Global/style/Text';
 import { useContext } from 'react';
 import { DiaLogContext } from 'context/Dialog/index';
+import { useAuthenticator } from 'hooks/useAuthenticator';
 export const ConfirmDialog = () => {
   const dialogCtx = useContext(DiaLogContext);
+  const { signOut } = useAuthenticator();
   const confirm = dialogCtx.state.confirm;
-
+  // confirm 타입에 맞게 함수를 실행시켜준다
   const handleYesButton = () => {
-    dialogCtx.handleConfirmState(true);
-    console.log(confirm.isConfirm);
-    // dialogCtx.closeConfirm();
+    dialogCtx.closeConfirm();
+    const confirmType = confirm.type;
+    if (confirmType === '') return;
+    return confirmType === 'Logout' ? handleLogout() : confirmType === 'Load' ? handleLoadMusic() : handleSaveMusic();
   };
   const handleNoButton = () => {
-    dialogCtx.handleConfirmState(false);
     dialogCtx.closeConfirm();
+  };
+
+  const handleLogout = () => {
+    signOut();
+  };
+
+  const handleLoadMusic = () => {
+    console.log('load');
+  };
+  const handleSaveMusic = () => {
+    console.log('save');
   };
 
   return confirm.isOpen ? (

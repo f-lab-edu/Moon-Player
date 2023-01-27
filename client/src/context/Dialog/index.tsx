@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { createContext, useState } from 'react';
-import { DialogState } from 'types/app/UI/Dialog';
+import { DialogState, ConfirmType, ConfirMessageType } from 'types/app/UI/Dialog';
 
 const DEFAULT_STATE: DialogState = {
   alarm: {
     isOpen: false,
-    text: '',
+    message: '',
   },
   confirm: {
     isOpen: false,
     message: '',
-    isConfirm: false,
+    type: '',
   },
   music: {
     isOpen: false,
@@ -18,24 +18,34 @@ const DEFAULT_STATE: DialogState = {
     img_url: '',
   },
 };
+const confirmMessage: ConfirMessageType = {
+  Logout: '로그아웃 하시겠습니까?',
+  Load: '재생목록을 가져오시겠습니까?',
+  Save: '현재 재생목록을 저장하시겠습니까?',
+};
+const confirmAlarmMessage: ConfirMessageType = {
+  Logout: '로그아웃되었습니다.',
+  Load: '재생목록을 가져왔습니다.',
+  Save: '플레이리스트를 만들었습니다.',
+};
+
 export const DiaLogContext = createContext({
   state: DEFAULT_STATE,
-  showAlarm: function (text: string) {},
+  showAlarm: function (message: string) {},
   closeAlarm: function () {},
-  showConfirm: function (message: string) {},
+  showConfirm: function (type: ConfirmType) {},
   closeConfirm: function () {},
   showMusicDialog: function (name: string, img_url: string) {},
   closeMusicDialog: function () {},
-  handleConfirmState: function (isConfirm: boolean) {},
 });
 export const DiaLogContextProvider = (props) => {
   const [activeDialog, setActiveDialog] = useState<DialogState>(DEFAULT_STATE);
-  const showAlarmHandler = (text: string) => {
+  const showAlarmHandler = (message: string) => {
     setActiveDialog((prev) => ({
       ...prev,
       alarm: {
         isOpen: true,
-        text,
+        message,
       },
     }));
   };
@@ -44,43 +54,37 @@ export const DiaLogContextProvider = (props) => {
       ...prev,
       alarm: {
         isOpen: false,
-        text: '',
+        message: '',
       },
     }));
   };
 
-  const showConfirmHandler = (message: string) => {
+  const showConfirmHandler = (type: ConfirmType) => {
+    const confirmMsg = confirmMessage[type];
+    const alarmMsg = confirmAlarmMessage[type];
     setActiveDialog((prev) => ({
       ...prev,
+      alarm: {
+        isOpen: true,
+        message: alarmMsg,
+      },
       confirm: {
         isOpen: true,
-        message,
-        isConfirm: activeDialog.confirm.isConfirm,
+        message: confirmMsg,
+        type: type,
       },
     }));
   };
-
   const closeConfirmHandler = () => {
     setActiveDialog((prev) => ({
       ...prev,
       confirm: {
         isOpen: false,
         message: '',
-        isConfirm: activeDialog.confirm.isConfirm,
+        type: prev.confirm.type,
       },
     }));
   };
-  const confirmStateHandler = (isConfirm: boolean) => {
-    setActiveDialog((prev) => ({
-      ...prev,
-      confirm: {
-        isOpen: false,
-        message: '',
-        isConfirm: isConfirm,
-      },
-    }));
-  };
-
   const showMusicDialogHandler = (name: string, img_url: string) => {
     setActiveDialog((prev) => ({
       ...prev,
@@ -109,7 +113,6 @@ export const DiaLogContextProvider = (props) => {
     closeConfirm: closeConfirmHandler,
     showMusicDialog: showMusicDialogHandler,
     closeMusicDialog: closeMusicDialogHandler,
-    handleConfirmState: confirmStateHandler,
   };
   return <DiaLogContext.Provider value={context}>{props.children}</DiaLogContext.Provider>;
 };
