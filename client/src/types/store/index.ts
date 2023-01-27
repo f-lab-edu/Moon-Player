@@ -23,20 +23,17 @@ export interface PlayListStateType {
 
 export interface LayoutStateType {
   main: {
-    playList: {
-      selected: boolean;
-    };
-    musicList: {
-      selected: boolean;
-    };
+    isOpenMusicList: boolean;
   };
   customPlayList: {
     isOpen: boolean;
-    addMusicList: {
+    addPlayList: {
       isOpen: boolean;
     };
-    myMusicList: {
-      isOpen: boolean;
+    myPlayList: {
+      option: {
+        isOpen: boolean;
+      };
     };
   };
   footer: {

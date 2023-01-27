@@ -10,7 +10,7 @@ import { useMusicPageUIControl } from 'hooks/useMusicPageUIControl';
 // 데스톱일떄 모바일일떄 렌더링 할 대상을 정한다.
 
 export const Main = () => {
-  const { isSelectedMusicList, isSelectedPlayList } = useMusicPageUIControl();
+  const { isOpenMusicList } = useMusicPageUIControl();
   const { resolution, setResolution } = useResolution();
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export const Main = () => {
     return window.innerWidth >= 1200 ? setResolution('DESKTOP') : setResolution('MOBILE');
   }, [resolution]);
 
-  const renderUI = resolution === 'DESKTOP' ? DeskTopUI() : MobileUI(isSelectedMusicList, isSelectedPlayList);
+  const renderUI = resolution === 'DESKTOP' ? DeskTopUI() : MobileUI(isOpenMusicList);
   return <>{renderUI}</>;
 };
 
@@ -30,13 +30,8 @@ const DeskTopUI = () => {
     </DeskTopLayout>
   );
 };
-const MobileUI = (isSelectedMusicList, isSelectedMobilePlayList) => {
-  return (
-    <MobileLayout direction="column">
-      {isSelectedMusicList ? <MusicList /> : <></>}
-      {isSelectedMobilePlayList ? <PlayList /> : <></>}
-    </MobileLayout>
-  );
+const MobileUI = (isOpenMusicList) => {
+  return <MobileLayout direction="column">{isOpenMusicList ? <MusicList /> : <PlayList />}</MobileLayout>;
 };
 const DeskTopLayout = styled(Flex)`
   padding: 0 48px 24px 48px;

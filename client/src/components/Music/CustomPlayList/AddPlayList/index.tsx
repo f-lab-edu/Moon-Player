@@ -8,7 +8,7 @@ import Music from 'components/Global/UI/Music/Music';
 import { ScrollBox } from 'components/Global/style/ScrollBox';
 import { useContext } from 'react';
 
-import AddPlayListHeader from '../Header/AddPlayList/Header';
+import AddPlayListHeader from '../Header/MainHeader/MainHeader';
 import { DiaLogContext } from 'context/Dialog';
 export const AddPlayList = () => {
   const playerSelector = useAppSelector((state) => state.music.player);
@@ -18,7 +18,7 @@ export const AddPlayList = () => {
     dialogCtx.showConfirm('Save');
   };
 
-  const playerMusics =
+  const currentPlayerMusics =
     playerSelector.list.length > 0 ? (
       playerSelector.list.map(({ name, img_url }, index) => (
         <Music name={name} img_url={img_url} key={index} id={++index} />
@@ -38,7 +38,7 @@ export const AddPlayList = () => {
           </InputBox>
         </Flex>
         <PlayListTitle>재생목록</PlayListTitle>
-        <PlayList>{playerMusics}</PlayList>
+        <PlayList>{currentPlayerMusics}</PlayList>
       </Layout>
     </>
   );

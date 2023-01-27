@@ -3,20 +3,17 @@ import { PURGE } from 'redux-persist';
 import { LayoutStateType } from 'types/store';
 export const initialState: LayoutStateType = {
   main: {
-    playList: {
-      selected: false,
-    },
-    musicList: {
-      selected: true,
-    },
+    isOpenMusicList: true,
   },
   customPlayList: {
     isOpen: false,
-    addMusicList: {
+    addPlayList: {
       isOpen: false,
     },
-    myMusicList: {
-      isOpen: false,
+    myPlayList: {
+      option: {
+        isOpen: true,
+      },
     },
   },
   footer: {
@@ -32,16 +29,13 @@ export const LayoutSlice = createSlice({
       state.customPlayList.isOpen = action.payload;
     },
     handleOpenAddPlayListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
-      state.customPlayList.addMusicList.isOpen = action.payload;
+      state.customPlayList.addPlayList.isOpen = action.payload;
     },
-    handleOpenMyPlayListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
-      state.customPlayList.myMusicList.isOpen = action.payload;
+    handleMyPlayListOptionUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
+      state.customPlayList.myPlayList.option.isOpen = action.payload;
     },
     handleMusicListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
-      state.main.musicList.selected = action.payload;
-    },
-    handlePlayListUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
-      state.main.playList.selected = action.payload;
+      state.main.isOpenMusicList = action.payload;
     },
     handleOpenMusicFooterUI: (state: LayoutStateType, action: PayloadAction<boolean>) => {
       state.footer.isOpen = action.payload;
@@ -53,9 +47,8 @@ export const LayoutSlice = createSlice({
 });
 export const {
   handleOpenAddPlayListUI,
-  handleOpenMyPlayListUI,
   handleOpenMusicFooterUI,
   handleOpenCustomPlayListUI,
   handleMusicListUI,
-  handlePlayListUI,
+  handleMyPlayListOptionUI,
 } = LayoutSlice.actions;

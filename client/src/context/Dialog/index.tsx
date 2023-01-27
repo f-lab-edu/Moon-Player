@@ -23,11 +23,6 @@ const confirmMessage: ConfirMessageType = {
   Load: '재생목록을 가져오시겠습니까?',
   Save: '현재 재생목록을 저장하시겠습니까?',
 };
-const confirmAlarmMessage: ConfirMessageType = {
-  Logout: '로그아웃되었습니다.',
-  Load: '재생목록을 가져왔습니다.',
-  Save: '플레이리스트를 만들었습니다.',
-};
 
 export const DiaLogContext = createContext({
   state: DEFAULT_STATE,
@@ -61,13 +56,8 @@ export const DiaLogContextProvider = (props) => {
 
   const showConfirmHandler = (type: ConfirmType) => {
     const confirmMsg = confirmMessage[type];
-    const alarmMsg = confirmAlarmMessage[type];
     setActiveDialog((prev) => ({
       ...prev,
-      alarm: {
-        isOpen: true,
-        message: alarmMsg,
-      },
       confirm: {
         isOpen: true,
         message: confirmMsg,

@@ -6,25 +6,24 @@ import { useMusicPageUIControl } from 'hooks/useMusicPageUIControl';
 // Mobile화면일떄 보여주는 헤더
 // 헤더를 누르면 해당화면을 보여줘야한다.
 export const MobileHeader = () => {
-  const { onhandlePlayListUI, onhandleMusicListUI, isSelectedMusicList, isSelectedPlayList } = useMusicPageUIControl();
-
-  const handleMusicListUI = () => {
-    onhandleMusicListUI(true);
-    onhandlePlayListUI(false);
-    return;
-  };
-  const handlePlayListUI = () => {
-    onhandlePlayListUI(true);
-    onhandleMusicListUI(false);
-    return;
-  };
+  const { onhandleMusicListUI, isOpenMusicList } = useMusicPageUIControl();
 
   return (
     <Layout direction="row" justifyContent="space-between" alignItems="center">
-      <Title active={isSelectedMusicList} onClick={handleMusicListUI}>
+      <Title
+        active={isOpenMusicList}
+        onClick={() => {
+          onhandleMusicListUI(true);
+        }}
+      >
         M U S I C L I S T
       </Title>
-      <Title active={isSelectedPlayList} onClick={handlePlayListUI}>
+      <Title
+        active={!isOpenMusicList}
+        onClick={() => {
+          onhandleMusicListUI(false);
+        }}
+      >
         P L A Y L I S T
       </Title>
     </Layout>

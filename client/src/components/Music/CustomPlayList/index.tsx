@@ -8,18 +8,12 @@ import useMusicPageUIControl from 'hooks/useMusicPageUIControl';
 
 export const CustomPlayList = () => {
   const modalRef = useRef<HTMLDivElement>(null);
-  const { onhandleOpenCustomPlayListUI, isOpenAddMusicListUI, onhandleOpenAddPlayListUI, onhandleOpenMyPlayListUI } =
-    useMusicPageUIControl();
+  const { isOpenAddMusicListUI, onhandleCloseCustomPlayListUI } = useMusicPageUIControl();
 
-  const handleCloseButton = () => {
-    onhandleOpenCustomPlayListUI(false);
-    onhandleOpenAddPlayListUI(false);
-    onhandleOpenMyPlayListUI(false);
-  };
   return (
     <Overlay>
       <Layout direction="column" ref={modalRef}>
-        <StyledButton onClick={handleCloseButton} name="close" color="white" size="2x" />
+        <StyledButton onClick={onhandleCloseCustomPlayListUI} name="close" color="white" size="2x" />
         {isOpenAddMusicListUI ? <AddPlayList /> : <MyPlayList />}
       </Layout>
     </Overlay>

@@ -1,26 +1,20 @@
 /* eslint-disable indent */
 import { useAppSelector, useAppDispatch } from 'hooks/useReduxStore';
 import {
-  handleOpenMyPlayListUI,
   handleOpenAddPlayListUI,
   handleOpenMusicFooterUI,
   handleOpenCustomPlayListUI,
-  handlePlayListUI,
   handleMusicListUI,
+  handleMyPlayListOptionUI,
 } from 'store/feature/layout/LayoutSlice';
 
 export const useMusicPageUIControl = () => {
   const dispatch = useAppDispatch();
   const isOpenCustomPlayListUI = useAppSelector((state) => state.layout.customPlayList.isOpen);
-  const isOpenAddMusicListUI = useAppSelector((state) => state.layout.customPlayList.addMusicList.isOpen);
-  const isOpenMyMusicListUI = useAppSelector((state) => state.layout.customPlayList.myMusicList.isOpen);
+  const isOpenAddMusicListUI = useAppSelector((state) => state.layout.customPlayList.addPlayList.isOpen);
   const isOpenMusicFooterUI = useAppSelector((state) => state.layout.footer.isOpen);
-  const isSelectedMusicList = useAppSelector((state) => state.layout.main.musicList.selected);
-  const isSelectedPlayList = useAppSelector((state) => state.layout.main.playList.selected);
-
-  const onhandlePlayListUI = (isActive: boolean) => {
-    dispatch(handlePlayListUI(isActive));
-  };
+  const isOpenMusicList = useAppSelector((state) => state.layout.main.isOpenMusicList);
+  const isOpenMyPlayListOptionUI = useAppSelector((state) => state.layout.customPlayList.myPlayList.option.isOpen);
 
   const onhandleMusicListUI = (isActive: boolean) => {
     dispatch(handleMusicListUI(isActive));
@@ -32,26 +26,30 @@ export const useMusicPageUIControl = () => {
   const onhandleOpenAddPlayListUI = (isActive: boolean) => {
     dispatch(handleOpenAddPlayListUI(isActive));
   };
-  const onhandleOpenMyPlayListUI = (isActive: boolean) => {
-    dispatch(handleOpenMyPlayListUI(isActive));
-  };
+
   const onhandleOpenCustomPlayListUI = (isActive: boolean) => {
     dispatch(handleOpenCustomPlayListUI(isActive));
   };
-
+  const onhandleCloseCustomPlayListUI = () => {
+    onhandleOpenCustomPlayListUI(false);
+    onhandleOpenAddPlayListUI(false);
+    dispatch(handleMyPlayListOptionUI(true));
+  };
+  const onhandleMyPlayListOptionUI = (isActive: boolean) => {
+    dispatch(handleMyPlayListOptionUI(isActive));
+  };
   return {
     isOpenMusicFooterUI,
     isOpenAddMusicListUI,
-    isOpenMyMusicListUI,
     isOpenCustomPlayListUI,
-    isSelectedMusicList,
-    isSelectedPlayList,
+    isOpenMyPlayListOptionUI,
+    isOpenMusicList,
     onhandleOpenMusicFooterUI,
-    onhandleOpenMyPlayListUI,
     onhandleOpenAddPlayListUI,
     onhandleOpenCustomPlayListUI,
-    onhandlePlayListUI,
+    onhandleCloseCustomPlayListUI,
     onhandleMusicListUI,
+    onhandleMyPlayListOptionUI,
   };
 };
 

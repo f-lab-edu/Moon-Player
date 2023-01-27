@@ -1,5 +1,5 @@
-import DesktopHeader from 'components/Music/Main/Header/Desktop/Header';
-import MobileHeader from 'components/Music/Main/Header/Mobile/Header';
+import DesktopHeader from 'components/Music/Main/Header/Desktop/DesktopHeader';
+import MobileHeader from 'components/Music/Main/Header/Mobile/MobileHeader';
 
 import useResolution from 'hooks/useResolution';
 import { useEffect } from 'react';

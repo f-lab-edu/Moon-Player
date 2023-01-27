@@ -6,6 +6,12 @@ import { Text } from 'components/Global/style/Text';
 import { useContext } from 'react';
 import { DiaLogContext } from 'context/Dialog/index';
 import { useAuthenticator } from 'hooks/useAuthenticator';
+import { ConfirMessageType } from 'types/app/UI/Dialog';
+const confirmAlarmMessage: ConfirMessageType = {
+  Logout: '로그아웃되었습니다.',
+  Load: '재생목록을 가져왔습니다.',
+  Save: '플레이리스트를 만들었습니다.',
+};
 export const ConfirmDialog = () => {
   const dialogCtx = useContext(DiaLogContext);
   const { signOut } = useAuthenticator();
@@ -22,14 +28,15 @@ export const ConfirmDialog = () => {
   };
 
   const handleLogout = () => {
+    dialogCtx.showAlarm(confirmAlarmMessage.Logout);
     signOut();
   };
 
   const handleLoadMusic = () => {
-    console.log('load');
+    dialogCtx.showAlarm(confirmAlarmMessage.Load);
   };
   const handleSaveMusic = () => {
-    console.log('save');
+    dialogCtx.showAlarm(confirmAlarmMessage.Save);
   };
 
   return confirm.isOpen ? (
