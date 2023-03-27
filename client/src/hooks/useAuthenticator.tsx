@@ -5,7 +5,7 @@ import { useAppSelector } from './useReduxStore';
 
 export const useAuthenticator = () => {
   const navigate = useNavigate();
-  const isAuthenticated = useAppSelector((state) => state.user.data.access_token) ? true : false;
+  const isAuthenticated = true;
   useEffect(() => {
     if (!isAuthenticated) return;
     signIn();
